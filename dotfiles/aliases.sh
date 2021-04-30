@@ -1,5 +1,10 @@
 
 
+nixconfig(){
+    pushd ~/code/nixconfig > /dev/null
+    nix run .#$NIXCONFIG.activationPackage
+    popd > /dev/null
+}
 
 vterm_printf(){
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then

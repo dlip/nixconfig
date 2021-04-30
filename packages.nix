@@ -9,6 +9,7 @@ extra:
       deno
       dive
       exa
+      eksctl
       firefox
       fzf
       ghc
@@ -17,7 +18,7 @@ extra:
       haskellPackages.haskell-language-server
       htop
       jq
-      metasploit
+      kubectl
       nixfmt
       nixpkgs-fmt
       nodePackages.bash-language-server

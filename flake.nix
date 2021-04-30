@@ -22,7 +22,7 @@
               (import ./packages.nix [ envy-sh.defaultPackage.x86_64-linux ])
               ./starship.nix
               ./tmux.nix
-              ./zsh.nix
+              (import ./zsh.nix config)
             ];
           };
           system = "x86_64-linux";
@@ -32,14 +32,20 @@
 
       configs = rec {
         personal = {
+          configName = "personal";
           username = "dane";
           homeDirectory = "/home/dane";
           name = "Dane Lipscombe";
           email = "dane@lipscombe.com.au";
         };
 
-        immutable = personal // { email = "dane.lipscombe@immutable.com"; };
+        immutable = personal // {
+          configName = "immutable";
+          email = "dane.lipscombe@immutable.com";
+        };
+
         root = personal // {
+          configName = "root";
           username = "root";
           homeDirectory = "/root";
         };

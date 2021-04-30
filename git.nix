@@ -19,7 +19,6 @@
       pull = { default = "current"; };
       color = { ui = true; };
       merge = {
-        ff = "only";
         conflictstyle = "diff3";
         summary = true;
         tool = "vimdiff";

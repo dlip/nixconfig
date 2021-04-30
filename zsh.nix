@@ -1,3 +1,4 @@
+{ configName, ... }:
 { pkgs, lib, ... }:
 let aliases = builtins.readFile ./dotfiles/aliases.sh;
 in {
@@ -19,7 +20,8 @@ in {
 
     initExtra = ''
       source $HOME/.nix-profile/etc/profile.d/nix.sh
-      export PATH=$PATH:$HOME/go/bin
+      export PATH=$HOME/bin:$HOME/go/bin:$PATH
+      export NIXCONFIG=${configName}
     '' + aliases;
 
     oh-my-zsh = {
@@ -30,6 +32,7 @@ in {
         "encode64"
         "git"
         "git-extras"
+        "kubectl"
         "man"
         "nmap"
         "sudo"
