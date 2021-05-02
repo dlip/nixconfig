@@ -11,23 +11,29 @@
 
   outputs = { self, nixpkgs, nix-doom-emacs, home-manager, envy-sh }:
     let
-      createConfig = config@{ homeDirectory, username, ... }:
+      createConfig =
+        config@{ homeDirectory, username, extraImports ? [ ], ... }:
         home-manager.lib.homeManagerConfiguration {
           extraModules = [ nix-doom-emacs.hmModule ];
           configuration = {
             imports = [
+              (_: { home.packages = [ envy-sh.defaultPackage.x86_64-linux ]; })
               ./emacs.nix
               ./files.nix
               (import ./git.nix config)
-              (import ./packages.nix [ envy-sh.defaultPackage.x86_64-linux ])
+              ./packages.nix
               ./starship.nix
               ./tmux.nix
               (import ./zsh.nix config)
-            ];
+            ] ++ extraImports;
           };
           system = "x86_64-linux";
           homeDirectory = homeDirectory;
           username = username;
+          pkgs = import nixpkgs {
+            system = "x86_64-linux";
+            config.allowUnfree = true;
+          };
         };
 
       configs = rec {
@@ -39,9 +45,19 @@
           email = "dane@lipscombe.com.au";
         };
 
+        personal-nixos = personal // {
+          configName = "personal-nixos";
+          extraImports = [ ./graphical.nix ];
+        };
+
         immutable = personal // {
           configName = "immutable";
           email = "dane.lipscombe@immutable.com";
+        };
+
+        immutable-nixos = immutable // {
+          configName = "immutable-nixos";
+          extraImports = [ ./graphical.nix ];
         };
 
         root = personal // {

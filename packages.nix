@@ -1,39 +1,39 @@
-extra:
 { pkgs, ... }: {
-  home.packages = with pkgs;
-    [
-      awscli2
-      bat
-      cheat
-      circleci-cli
-      deno
-      dive
-      exa
-      eksctl
-      firefox
-      fzf
-      ghc
-      go
-      gopls
-      haskellPackages.haskell-language-server
-      htop
-      jq
-      kubectl
-      nixfmt
-      nixpkgs-fmt
-      nodePackages.bash-language-server
-      nodePackages.dockerfile-language-server-nodejs
-      nodePackages.javascript-typescript-langserver
-      nodePackages.typescript
-      nodejs
-      pandoc
-      ripgrep
-      rnix-lsp
-      rustup
-      sqlite
-      stack
-      tldr
-      vim
-      yarn
-    ] ++ extra;
+  home.packages = with pkgs; [
+    awscli2
+    bat
+    cheat
+    circleci-cli
+    deno
+    dive
+    docker-compose
+    exa
+    eksctl
+    firefox
+    fzf
+    ghc
+    go
+    gopls
+    haskellPackages.haskell-language-server
+    htop
+    jq
+    kubectl
+    nixfmt
+    nixpkgs-fmt
+    nodePackages.bash-language-server
+    nodePackages.dockerfile-language-server-nodejs
+    nodePackages.javascript-typescript-langserver
+    nodePackages.typescript
+    nodejs
+    openvpn
+    pandoc
+    ripgrep
+    rnix-lsp
+    rustup
+    sqlite
+    stack
+    tldr
+    vim
+    yarn
+  ];
 }
