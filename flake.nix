@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-20.09";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -9,11 +10,12 @@
     envy-sh.url = "github:dlip/envy.sh";
   };
 
-  outputs = { self, nixpkgs, nix-doom-emacs, home-manager, envy-sh }:
+  outputs =
+    { self, nixpkgs, nixpkgs-stable, nix-doom-emacs, home-manager, envy-sh }:
     let
-      createConfig =
+      createHomeConfig =
         config@{ homeDirectory, username, extraImports ? [ ], ... }:
-        home-manager.lib.homeManagerConfiguration {
+        (home-manager.lib.homeManagerConfiguration {
           extraModules = [ nix-doom-emacs.hmModule ];
           configuration = {
             imports = [
@@ -34,7 +36,7 @@
             system = "x86_64-linux";
             config.allowUnfree = true;
           };
-        };
+        }).activationPackage;
 
       configs = rec {
         personal = {
@@ -67,5 +69,12 @@
         };
       };
 
-    in builtins.mapAttrs (_: config: createConfig config) configs;
+    in {
+      homeConfigurations =
+        builtins.mapAttrs (_: config: createHomeConfig config) configs;
+      nixosConfigurations.nixos = nixpkgs-stable.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [ ./configuration.nix ];
+      };
+    };
 }

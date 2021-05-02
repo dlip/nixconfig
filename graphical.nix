@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     dbeaver
+    discord
     firefox
     godot
     google-chrome

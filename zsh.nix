@@ -29,6 +29,7 @@ in {
       plugins = [
         "aws"
         "docker"
+        "direnv"
         "encode64"
         "git"
         "git-extras"

@@ -2,7 +2,13 @@
 
 nixconfig(){
     pushd ~/code/nixconfig > /dev/null
-    nix run .#$NIXCONFIG.activationPackage
+    nix run .#homeConfigurations.$NIXCONFIG
+    popd > /dev/null
+}
+
+nixosconfig(){
+    pushd ~/code/nixconfig > /dev/null
+    sudo nixos-rebuild switch --flake '.#'
     popd > /dev/null
 }
 

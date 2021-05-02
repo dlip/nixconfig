@@ -6,6 +6,7 @@
     circleci-cli
     deno
     dive
+    direnv
     docker-compose
     exa
     eksctl

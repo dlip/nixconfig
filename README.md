@@ -21,13 +21,17 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 ``` sh
 git clone https://github.com/dlip/nixconfig.git
 cd nixconfig
-nix run .#personal.activationPackage
+nix run .#homeConfigurations.personal
+```
+
+``` sh
+sudo nixos-rebuild switch --flake '.#'
 ```
 
 ### Or run directly
 
 ``` sh
-nix run github:dlip/nixconfig#personal.activationPackage
+nix run github:dlip/nixconfig#homeConfigurations.personal
 ```
 
 ### Set zsh as default shell
