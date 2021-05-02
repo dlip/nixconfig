@@ -63,6 +63,13 @@ in {
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
+  services.syncthing = {
+    enable = true;
+    user = "dane";
+    dataDir = "/home/dane/Documents";
+    configDir = "/home/dane/.config/syncthing";
+  };
+
   hardware.nvidia.prime = {
     sync.enable = true;
 

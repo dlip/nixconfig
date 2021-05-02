@@ -13,9 +13,12 @@
     firefox
     fzf
     ghc
+    gnuplot
     go
     gopls
+    graphviz
     haskellPackages.haskell-language-server
+    hledger
     htop
     jq
     kubectl
