@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-20.09";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.09";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -11,7 +11,7 @@
   };
 
   outputs =
-    { self, nixpkgs, nixpkgs-stable, nix-doom-emacs, home-manager, envy-sh }:
+    { self, nixpkgs, nixpkgs-unstable, nix-doom-emacs, home-manager, envy-sh }:
     let
       createHomeConfig =
         config@{ homeDirectory, username, extraImports ? [ ], ... }:
@@ -32,7 +32,7 @@
           system = "x86_64-linux";
           homeDirectory = homeDirectory;
           username = username;
-          pkgs = import nixpkgs {
+          pkgs = import nixpkgs-unstable {
             system = "x86_64-linux";
             config.allowUnfree = true;
           };
@@ -72,7 +72,7 @@
     in {
       homeConfigurations =
         builtins.mapAttrs (_: config: createHomeConfig config) configs;
-      nixosConfigurations.nixos = nixpkgs-stable.lib.nixosSystem {
+      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
         modules = [ ./configuration.nix ];
       };

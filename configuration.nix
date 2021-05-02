@@ -102,6 +102,7 @@ in {
     git
     vim
     firefox
+    neofetch
     pciutils
     glxinfo
   ];

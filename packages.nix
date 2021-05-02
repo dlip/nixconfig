@@ -19,6 +19,7 @@
     htop
     jq
     kubectl
+    neofetch
     nixfmt
     nixpkgs-fmt
     nodePackages.bash-language-server
