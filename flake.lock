@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "arion": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1618911587,
+        "narHash": "sha256-hiWUqC0Y/IIrxfiNAUHqOoDKYmNZHMpqIsTOIbZzu2M=",
+        "owner": "hercules-ci",
+        "repo": "arion",
+        "rev": "5ed7b893bdf417b44bfb08ad5b6689bf753f7b5a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "arion",
+        "type": "github"
+      }
+    },
     "bats-assert": {
       "flake": false,
       "locked": {
@@ -446,6 +462,7 @@
     },
     "root": {
       "inputs": {
+        "arion": "arion",
         "envy-sh": "envy-sh",
         "home-manager": "home-manager",
         "nix-doom-emacs": "nix-doom-emacs",

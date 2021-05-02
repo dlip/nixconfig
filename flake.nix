@@ -8,18 +8,33 @@
     };
     nix-doom-emacs.url = "github:vlaci/nix-doom-emacs";
     envy-sh.url = "github:dlip/envy.sh";
+    arion = {
+      url = "github:hercules-ci/arion";
+      flake = false;
+    };
   };
 
-  outputs =
-    { self, nixpkgs, nixpkgs-unstable, nix-doom-emacs, home-manager, envy-sh }:
+  outputs = { self, nixpkgs, nixpkgs-unstable, nix-doom-emacs, home-manager
+    , envy-sh, arion }:
     let
+      pkgs = import nixpkgs-unstable {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+
       createHomeConfig =
         config@{ homeDirectory, username, extraImports ? [ ], ... }:
         (home-manager.lib.homeManagerConfiguration {
           extraModules = [ nix-doom-emacs.hmModule ];
           configuration = {
             imports = [
-              (_: { home.packages = [ envy-sh.defaultPackage.x86_64-linux ]; })
+              (_: {
+                home.packages = [
+                  envy-sh.defaultPackage.x86_64-linux
+                  (import arion { pkgs = pkgs; }).arion
+                ];
+
+              })
               ./emacs.nix
               ./files.nix
               (import ./git.nix config)
@@ -32,10 +47,7 @@
           system = "x86_64-linux";
           homeDirectory = homeDirectory;
           username = username;
-          pkgs = import nixpkgs-unstable {
-            system = "x86_64-linux";
-            config.allowUnfree = true;
-          };
+          pkgs = pkgs;
         }).activationPackage;
 
       configs = rec {
