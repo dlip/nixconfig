@@ -19,7 +19,7 @@ in {
     };
 
     initExtra = ''
-      source $HOME/.nix-profile/etc/profile.d/nix.sh
+      [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
       export PATH=$HOME/bin:$HOME/go/bin:$PATH
       export NIXCONFIG=${configName}
     '' + aliases;
