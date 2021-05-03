@@ -4,7 +4,6 @@
     blender
     dbeaver
     discord
-    firefox
     gimp
     godot
     google-chrome

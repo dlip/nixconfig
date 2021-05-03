@@ -11,7 +11,7 @@
     docker-compose
     exa
     eksctl
-    firefox
+    firefox-devedition-bin
     fzf
     ghc
     gnuplot
@@ -38,7 +38,7 @@
     rustup
     sqlite
     stack
-    terraform_0_14
+    terraform_0_15
     tldr
     vim
     yarn

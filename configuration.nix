@@ -115,12 +115,13 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    nvidia-offload
-    git
-    vim
     firefox
-    pciutils
+    git
     glxinfo
+    lm_sensors
+    nvidia-offload
+    pciutils
+    vim
   ];
 
   virtualisation.docker.enable = true;
