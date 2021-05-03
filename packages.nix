@@ -5,6 +5,7 @@
     cheat
     circleci-cli
     deno
+    dig
     dive
     direnv
     docker-compose
@@ -37,6 +38,7 @@
     rustup
     sqlite
     stack
+    terraform_0_14
     tldr
     vim
     yarn
