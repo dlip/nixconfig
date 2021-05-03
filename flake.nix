@@ -83,6 +83,7 @@
       };
 
     in {
+      pkgs = pkgs;
       homeConfigurations =
         builtins.mapAttrs (_: config: createHomeConfig config) configs;
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
