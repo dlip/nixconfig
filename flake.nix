@@ -86,9 +86,15 @@
       pkgs = pkgs;
       homeConfigurations =
         builtins.mapAttrs (_: config: createHomeConfig config) configs;
-      nixosConfigurations.nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [ ./configuration.nix ];
+      nixosConfigurations = {
+        nixos = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./configuration.nix ];
+        };
+        dex = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./dex.nix ];
+        };
       };
     };
 }

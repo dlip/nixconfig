@@ -14,7 +14,7 @@
     firefox-devedition-bin
     fzf
     ghc
-    gnuplot
+    #gnuplot
     go
     gopls
     graphviz
