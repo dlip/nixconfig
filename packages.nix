@@ -1,20 +1,21 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    aws-google-auth
     awscli2
     bat
     cheat
     circleci-cli
     deno
     dig
-    dive
     direnv
+    dive
     docker-compose
-    exa
     eksctl
+    exa
     firefox-devedition-bin
     fzf
     ghc
-    #gnuplot
+    gnuplot
     go
     gopls
     graphviz
@@ -33,6 +34,8 @@
     nodejs
     openvpn
     pandoc
+    python
+    python3
     ripgrep
     rnix-lsp
     rustup
