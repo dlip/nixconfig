@@ -11,6 +11,8 @@
 (package! org-web-tools)
 (package! ob-typescript)
 (package! super-save)
+(package! kubernetes)
+(package! k8s-mode)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:

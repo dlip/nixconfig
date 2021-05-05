@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    autoreconfHook
     aws-google-auth
     awscli2
     bat
@@ -20,6 +21,7 @@
     gopls
     graphviz
     haskellPackages.haskell-language-server
+    helm
     hledger
     htop
     jq
@@ -36,6 +38,8 @@
     pandoc
     python
     python3
+    python38Packages.pip
+    python38Packages.setuptools
     ripgrep
     rnix-lsp
     rustup

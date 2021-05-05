@@ -93,3 +93,20 @@ same directory as the org-buffer and insert a link to this file."
   ; insert into file if correctly taken
   (if (file-exists-p filename)
     (insert (concat "[[file:" filename "]]"))))
+
+(use-package kubernetes
+  :ensure t
+  :commands (kubernetes-overview))
+
+;; If you want to pull in the Evil compatibility package.
+(use-package kubernetes-evil
+  :ensure t
+  :after kubernetes)
+
+(use-package k8s-mode
+  :ensure t
+  :hook (k8s-mode . yas-minor-mode))
+
+(map! :leader
+      (:prefix ("TAB" . "workspace")
+       (:desc "Previous workspace" "p" #'+workspace:switch-previous)))
