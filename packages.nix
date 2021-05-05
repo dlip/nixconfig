@@ -1,9 +1,11 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    appimage-run
     autoreconfHook
     aws-google-auth
     awscli2
     bat
+    binutils
     cheat
     circleci-cli
     deno
@@ -13,9 +15,12 @@
     docker-compose
     eksctl
     exa
+    file
     firefox-devedition-bin
     fzf
+    gcc
     ghc
+    gnumake
     gnuplot
     go
     gopls
