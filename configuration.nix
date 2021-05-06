@@ -50,8 +50,12 @@ in {
     };
   };
 
-  fonts.fonts = with pkgs;
-    [ (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; }) ];
+  fonts.fonts = with pkgs; [
+    overpass
+    source-han-code-jp
+    source-serif-pro
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
 
   console = {
     font = "Lat2-Terminus16";
