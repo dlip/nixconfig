@@ -1,4 +1,4 @@
-{ configName, ... }:
+{ configName, nixConfigPath, ... }:
 { pkgs, lib, ... }:
 let aliases = builtins.readFile ./dotfiles/aliases.sh;
 in {
@@ -22,7 +22,7 @@ in {
       [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
       export EDITOR=nvim
       export GOPATH=$HOME/go
-      export PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
+      export PATH=${nixConfigPath}/node_modules/.bin:$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
 
       export NIXCONFIG=${configName}
     '' + aliases;

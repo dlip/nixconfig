@@ -36,13 +36,7 @@
     neofetch
     nixfmt
     nixpkgs-fmt
-    nodePackages.bash-language-server
-    nodePackages.dockerfile-language-server-nodejs
-    nodePackages.javascript-typescript-langserver
-    nodePackages.node2nix
-    nodePackages.prettier
-    nodePackages.typescript
-    nodePackages.quicktype
+    nodePackages.pnpm
     nodejs
     openvpn
     pandoc

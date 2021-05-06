@@ -52,12 +52,13 @@
         }).activationPackage;
 
       configs = rec {
-        personal = {
+        personal = rec {
           configName = "personal";
           username = "dane";
           homeDirectory = "/home/dane";
           name = "Dane Lipscombe";
           email = "dane@lipscombe.com.au";
+          nixConfigPath = homeDirectory + "/code/nixconfig";
         };
 
         personal-nixos = personal // {
