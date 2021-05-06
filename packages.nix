@@ -26,11 +26,11 @@
     gopls
     graphviz
     haskellPackages.haskell-language-server
-    helm
     hledger
     htop
     jq
     kubectl
+    kubernetes-helm
     neofetch
     nixfmt
     nixpkgs-fmt
