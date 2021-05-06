@@ -23,6 +23,9 @@ in {
   networking.hostName = "nixos"; # Define your hostname.
   networking.networkmanager.enable = true;
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.extraHosts = ''
+    10.10.0.1 dex
+  '';
 
   # Set your time zone.
   time.timeZone = "Australia/Sydney";

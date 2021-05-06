@@ -31,18 +31,25 @@
     jq
     kubectl
     kubernetes-helm
+    kubetail
+    mdl
     neofetch
     nixfmt
     nixpkgs-fmt
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.javascript-typescript-langserver
+    nodePackages.node2nix
+    nodePackages.prettier
     nodePackages.typescript
+    nodePackages.quicktype
     nodejs
     openvpn
     pandoc
+    proselint
     python
     python3
+    python39Packages.grip
     python38Packages.pip
     python38Packages.setuptools
     ripgrep

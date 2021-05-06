@@ -110,3 +110,5 @@ same directory as the org-buffer and insert a link to this file."
 (map! :leader
       (:prefix ("TAB" . "workspace")
        (:desc "Previous workspace" "p" #'+workspace:switch-previous)))
+
+(setq-hook! 'nix-mode-hook +format-with 'nixfmt)
