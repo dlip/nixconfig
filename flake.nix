@@ -1,6 +1,7 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.09";
+    nixpkgs-release.url = "github:NixOS/nixpkgs/release-20.09";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -14,10 +15,15 @@
     };
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, nix-doom-emacs, home-manager
-    , envy-sh, arion }:
+  outputs = { self, nixpkgs, nixpkgs-release, nixpkgs-unstable, nix-doom-emacs
+    , home-manager, envy-sh, arion }:
     let
       pkgs = import nixpkgs-unstable {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+
+      pkgs-release = import nixpkgs-release {
         system = "x86_64-linux";
         config.allowUnfree = true;
       };
@@ -32,6 +38,7 @@
                 home.packages = [
                   envy-sh.defaultPackage.x86_64-linux
                   (import arion { pkgs = pkgs; }).arion
+                  pkgs-release.csvkit
                 ];
 
               })

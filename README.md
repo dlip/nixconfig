@@ -10,7 +10,7 @@ https://nixos.org/guides/install-nix.html
 
 ### Enable flakes
 
-``` sh
+```sh
 nix-env -iA nixpkgs.nixUnstable
 mkdir -p ~/.config/nix
 echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
@@ -18,26 +18,25 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 
 ### Either clone and run locally
 
-``` sh
+```sh
 git clone https://github.com/dlip/nixconfig.git
 cd nixconfig
 nix run .#homeConfigurations.personal
 ```
 
-``` sh
+```sh
 sudo nixos-rebuild switch --flake '.#'
 ```
 
 ### Or run directly
 
-``` sh
+```sh
 nix run github:dlip/nixconfig#homeConfigurations.personal
 ```
 
 ### Set zsh as default shell
 
-``` sh
+```sh
 echo "$(which zsh)" | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 ```
-
