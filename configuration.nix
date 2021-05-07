@@ -136,9 +136,6 @@ in {
   networking.nat.enable = true;
   networking.nat.internalInterfaces = [ "ve-downloader" ];
   networking.nat.externalInterface = "wlp0s20f3";
-  # networking.nat.enable = true;
-  # networking.nat.internalInterfaces = [ "ve-+" ];
-  # networking.nat.externalInterface = "";
 
   containers.downloader = {
     ephemeral = true;

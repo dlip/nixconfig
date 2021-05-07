@@ -13,24 +13,35 @@
       url = "github:hercules-ci/arion";
       flake = false;
     };
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = { self, nixpkgs, nixpkgs-release, nixpkgs-unstable, nix-doom-emacs
-    , home-manager, envy-sh, arion }:
+    , home-manager, envy-sh, arion, sops-nix }:
     let
-      pkgs = import nixpkgs-unstable {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
-
-      pkgs-release = import nixpkgs-release {
-        system = "x86_64-linux";
-        config.allowUnfree = true;
-      };
+      systems = [
+        "x86_64-linux"
+        "i686-linux"
+        "x86_64-darwin"
+        "aarch64-linux"
+        "armv6l-linux"
+        "armv7l-linux"
+      ];
+      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
 
       createHomeConfig =
-        config@{ homeDirectory, username, extraImports ? [ ], ... }:
-        (home-manager.lib.homeManagerConfiguration {
+        config@{ system, homeDirectory, username, extraImports ? [ ], ... }:
+        let
+          pkgs = import nixpkgs-unstable {
+            system = system;
+            config.allowUnfree = true;
+          };
+
+          pkgs-release = import nixpkgs-release {
+            system = system;
+            config.allowUnfree = true;
+          };
+        in (home-manager.lib.homeManagerConfiguration {
           extraModules = [ nix-doom-emacs.hmModule ];
           configuration = {
             imports = [
@@ -42,6 +53,7 @@
                     pkgs = pkgs;
                   }).unified-language-server
                   pkgs-release.csvkit
+                  sops-nix.defaultPackage.x86_64-linux
                 ];
 
               })
@@ -55,7 +67,7 @@
               (import ./zsh.nix config)
             ] ++ extraImports;
           };
-          system = "x86_64-linux";
+          system = system;
           homeDirectory = homeDirectory;
           username = username;
           pkgs = pkgs;
@@ -63,7 +75,6 @@
 
       configs = rec {
         personal = rec {
-          configName = "personal";
           username = "dane";
           homeDirectory = "/home/dane";
           name = "Dane Lipscombe";
@@ -71,32 +82,26 @@
           nixConfigPath = homeDirectory + "/code/nixconfig";
         };
 
-        personal-nixos = personal // {
-          configName = "personal-nixos";
-          extraImports = [ ./graphical.nix ];
-        };
+        personal-nixos = personal // { extraImports = [ ./graphical.nix ]; };
 
-        immutable = personal // {
-          configName = "immutable";
-          email = "dane.lipscombe@immutable.com";
-        };
+        immutable = personal // { email = "dane.lipscombe@immutable.com"; };
 
-        immutable-nixos = immutable // {
-          configName = "immutable-nixos";
-          extraImports = [ ./graphical.nix ];
-        };
+        immutable-nixos = immutable // { extraImports = [ ./graphical.nix ]; };
 
         root = personal // {
-          configName = "root";
           username = "root";
           homeDirectory = "/root";
         };
       };
 
     in {
-      pkgs = pkgs;
-      homeConfigurations =
-        builtins.mapAttrs (_: config: createHomeConfig config) configs;
+      arionPkgs = import nixpkgs-unstable { system = "x86_64-linux"; };
+      homeConfigurations = builtins.mapAttrs (name: config:
+        (forAllSystems (system:
+          createHomeConfig (config // {
+            configName = "${name}.${system}";
+            system = system;
+          })))) configs;
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";

@@ -56,6 +56,7 @@
     ripgrep
     rnix-lsp
     rustup
+    sops
     sqlite
     stack
     tcpdump

@@ -21,7 +21,7 @@ echo "experimental-features = nix-command flakes" >> ~/.config/nix/nix.conf
 ```sh
 git clone https://github.com/dlip/nixconfig.git
 cd nixconfig
-nix run .#homeConfigurations.personal
+nix run .#homeConfigurations.personal.x86_64-linux
 ```
 
 ```sh

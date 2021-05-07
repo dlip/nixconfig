@@ -10,4 +10,4 @@ let
     url = "https://github.com/${owner}/${repo}/archive/${rev}.tar.gz";
     sha256 = narHash;
   };
-in flake.pkgs
+in flake.arionPkgs
