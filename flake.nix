@@ -94,8 +94,8 @@
         };
       };
 
-    in {
-      arionPkgs = import nixpkgs-unstable { system = "x86_64-linux"; };
+    in rec {
+      pkgs = import nixpkgs-unstable { system = "x86_64-linux"; };
       homeConfigurations = builtins.mapAttrs (name: config:
         (forAllSystems (system:
           createHomeConfig (config // {
@@ -115,6 +115,10 @@
           system = "x86_64-linux";
           modules = [ ./downloader.nix ];
         };
+      };
+      devShell.x86_64-linux = pkgs.mkShell {
+        sopsPGPKeyDirs = [ "./keys/hosts" "./keys/users" ];
+        nativeBuildInputs = [ (pkgs.callPackage sops-nix { }).sops-pgp-hook ];
       };
     };
 }

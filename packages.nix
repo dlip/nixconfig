@@ -21,6 +21,7 @@
     gcc
     ghc
     gnumake
+    gnupg
     gnuplot
     go
     gopls
