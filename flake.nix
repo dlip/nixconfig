@@ -106,6 +106,10 @@
           system = "x86_64-linux";
           modules = [ ./dex.nix ];
         };
+        downloader = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./downloader.nix ];
+        };
       };
     };
 }

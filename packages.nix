@@ -58,8 +58,10 @@
     rustup
     sqlite
     stack
+    tcpdump
     terraform_0_15
     tldr
+    tshark
     vim
     yarn
   ];

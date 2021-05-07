@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 let
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
@@ -133,6 +133,30 @@ in {
 
   virtualisation.docker.enable = true;
 
+  networking.nat.enable = true;
+  networking.nat.internalInterfaces = [ "ve-downloader" ];
+  networking.nat.externalInterface = "wlp0s20f3";
+  # networking.nat.enable = true;
+  # networking.nat.internalInterfaces = [ "ve-+" ];
+  # networking.nat.externalInterface = "";
+
+  containers.downloader = {
+    ephemeral = true;
+    autoStart = true;
+    config = (import ./downloader.nix {
+      pkgs = pkgs;
+      config = config;
+    });
+    privateNetwork = true;
+    hostAddress = "10.0.0.1";
+    localAddress = "10.0.0.2";
+    bindMounts = {
+      "/home/dane" = {
+        hostPath = "/home/dane";
+        isReadOnly = false;
+      };
+    };
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
