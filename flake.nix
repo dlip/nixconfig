@@ -53,7 +53,6 @@
                     pkgs = pkgs;
                   }).unified-language-server
                   pkgs-release.csvkit
-                  sops-nix.defaultPackage.x86_64-linux
                 ];
 
               })
@@ -63,6 +62,7 @@
               ./neovim.nix
               ./packages.nix
               ./starship.nix
+              ./services.nix
               ./tmux.nix
               (import ./zsh.nix config)
             ] ++ extraImports;
@@ -105,7 +105,7 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./configuration.nix ];
+          modules = [ ./configuration.nix sops-nix.nixosModules.sops ];
         };
         dex = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
