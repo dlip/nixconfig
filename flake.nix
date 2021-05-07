@@ -38,6 +38,9 @@
                 home.packages = [
                   envy-sh.defaultPackage.x86_64-linux
                   (import arion { pkgs = pkgs; }).arion
+                  (import ./modules/unified-language-server {
+                    pkgs = pkgs;
+                  }).unified-language-server
                   pkgs-release.csvkit
                 ];
 

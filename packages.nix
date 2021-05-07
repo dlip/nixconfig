@@ -37,6 +37,13 @@
     nixfmt
     nixpkgs-fmt
     nodePackages.pnpm
+    nodePackages.bash-language-server
+    nodePackages.dockerfile-language-server-nodejs
+    nodePackages.node2nix
+    nodePackages.prettier
+    nodePackages.typescript
+    nodePackages.typescript-language-server
+    nodePackages.quicktype
     nodejs
     openvpn
     pandoc
