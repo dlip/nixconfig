@@ -25,6 +25,9 @@ in {
       export PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
 
       export NIXCONFIG=${configName}
+      export GPG_TTY="$(tty)"
+      gpg-connect-agent /bye
+      export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
     '' + aliases;
 
     oh-my-zsh = {

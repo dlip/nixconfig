@@ -48,6 +48,8 @@
     nodejs
     openvpn
     pandoc
+    # For gpg to work with yubikey
+    pinentry
     proselint
     python
     python3
@@ -64,7 +66,9 @@
     terraform_0_15
     tldr
     tshark
+    usbutils
     vim
     yarn
+    yubikey-manager
   ];
 }

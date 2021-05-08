@@ -137,8 +137,9 @@ in rec {
     nvidia-offload
     pciutils
     vim
+    yubikey-personalization
   ];
-
+  services.udev.packages = with pkgs; [ yubikey-personalization ];
   virtualisation.docker.enable = true;
 
   networking.nat.enable = true;
@@ -181,6 +182,9 @@ in rec {
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+
+  # To use the smart card mode (CCID) of Yubikey, you will need the PCSC-Lite daemon:
+  services.pcscd.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
