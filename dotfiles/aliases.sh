@@ -1,5 +1,15 @@
 
 
+
+scpid(){
+    FILE=dane@lipscombe.com.au.pub
+    scp ~/code/nixconfig/keys/users/${FILE} ${1}:
+ssh -t ${1} << EOF
+cat ${FILE} >> .ssh/authorized_keys
+rm -f ${FILE}
+EOF
+}
+
 nixconfig(){
     pushd ~/code/nixconfig > /dev/null
     nix run .#homeConfigurations.$NIXCONFIG
