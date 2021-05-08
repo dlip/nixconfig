@@ -11,7 +11,7 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec -a "$0" "$@"
   '';
-in {
+in rec {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
@@ -25,6 +25,8 @@ in {
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.extraHosts = ''
     10.10.0.1 dex
+    ${containers.downloader.localAddress} transmission.downloader.lipscombe.com.au
+    ${containers.downloader.localAddress} sonarr.downloader.lipscombe.com.au
   '';
 
   # Set your time zone.
@@ -134,22 +136,29 @@ in {
   virtualisation.docker.enable = true;
 
   networking.nat.enable = true;
-  networking.nat.internalInterfaces = [ "ve-downloader" ];
+  networking.nat.internalInterfaces = [ "ve-+" ];
   networking.nat.externalInterface = "wlp0s20f3";
 
   containers.downloader = {
     ephemeral = true;
     autoStart = true;
+    enableTun = true;
     config = (import ./downloader.nix {
       pkgs = pkgs;
       config = config;
     });
     privateNetwork = true;
-    hostAddress = "10.0.0.1";
-    localAddress = "10.0.0.2";
+    hostAddress = "10.1.0.1";
+    localAddress = "10.1.0.2";
     bindMounts = {
-      "/home/dane" = {
-        hostPath = "/home/dane";
+      "/root/openvpn" = {
+        hostPath = "/mnt/downloader/openvpn";
+        isReadOnly = false;
+      };
+    };
+    bindMounts = {
+      "/mnt/transmission" = {
+        hostPath = "/mnt/downloader/transmission";
         isReadOnly = false;
       };
     };
