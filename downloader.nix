@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
-
-{
+let
+  domain = "downloader.lipscombe.com.au";
+  services = import ./downloader-services.nix;
+in {
   environment.systemPackages = with pkgs; [ traceroute ];
 
   networking = {
@@ -30,11 +32,10 @@
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
-    virtualHosts = {
-      "transmission.downloader.lipscombe.com.au" = {
-        locations."/" = { proxyPass = "http://127.0.0.1:9091"; };
-      };
-    };
+    virtualHosts = pkgs.lib.attrsets.mapAttrs' (name: port:
+      pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
+        locations."/" = { proxyPass = "http://127.0.0.1:${toString port}"; };
+      })) services;
   };
   services.sonarr = { enable = true; };
   services.radarr = { enable = true; };

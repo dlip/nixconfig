@@ -11,6 +11,13 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec -a "$0" "$@"
   '';
+
+  downloader-services = import ./downloader-services.nix;
+  downloader-hosts = address:
+    (lib.concatStrings (lib.strings.intersperse "\n" (lib.attrsets.attrValues
+      (builtins.mapAttrs
+        (name: config: "${address} ${name}.downloader.lipscombe.com.au")
+        downloader-services))));
 in rec {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -25,8 +32,7 @@ in rec {
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.extraHosts = ''
     10.10.0.1 dex
-    ${containers.downloader.localAddress} transmission.downloader.lipscombe.com.au
-    ${containers.downloader.localAddress} sonarr.downloader.lipscombe.com.au
+    ${downloader-hosts containers.downloader.localAddress}
   '';
 
   # Set your time zone.
