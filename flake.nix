@@ -109,7 +109,7 @@
         };
         dex = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./dex.nix ];
+          modules = [ ./systems/dex/configuration.nix ];
         };
         downloader = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
