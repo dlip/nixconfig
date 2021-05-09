@@ -84,6 +84,15 @@
 
         personal-nixos = personal // { extraImports = [ ./graphical.nix ]; };
 
+        tv = rec {
+          username = "tv";
+          homeDirectory = "/home/tv";
+          name = "TV Lipscombe";
+          email = "tv@lipscombe.com.au";
+          nixConfigPath = homeDirectory + "/code/nixconfig";
+          extraImports = [ ./tv.nix ];
+        };
+
         immutable = personal // { email = "dane.lipscombe@immutable.com"; };
 
         immutable-nixos = immutable // { extraImports = [ ./graphical.nix ]; };
