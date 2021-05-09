@@ -1,12 +1,12 @@
 { config, pkgs, ... }:
-let services = import ./services.nix;
+let downloader-services = import ./services.nix;
 in {
   environment.systemPackages = with pkgs; [ traceroute ];
 
   networking = {
     firewall = {
       enable = true;
-      allowedTCPPorts = pkgs.lib.attrsets.attrValues services;
+      allowedTCPPorts = pkgs.lib.attrsets.attrValues downloader-services;
     };
   };
 
@@ -22,15 +22,24 @@ in {
     serviceConfig.Restart = "always";
   };
 
-  services.sonarr = { enable = true; };
-  services.radarr = { enable = true; };
+  services.sonarr = {
+    enable = true;
+    user = "root";
+    group = "root";
+  };
+  services.radarr = {
+    enable = true;
+
+    user = "root";
+    group = "root";
+  };
   services.bazarr = { enable = true; };
   services.jackett = { enable = true; };
   services.transmission = {
     enable = true;
     settings = {
-      download-dir = "/media/media2/downloads/transmission";
-      incomplete-dir = "/media/media2/downloads/transmission/incomplete";
+      download-dir = "/f/downloads/transmission";
+      incomplete-dir = "/f/downloads/transmission/incomplete";
       incomplete-dir-enabled = true;
       message-level = 1;
       umask = "002";

@@ -4,6 +4,7 @@
 
 { config, pkgs, ... }:
 let
+  dex-services = import ./services.nix;
   downloader-services = import ../downloader/services.nix;
   domain = "home.lipscombe.com.au";
 in rec {
@@ -153,13 +154,16 @@ in rec {
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
-    virtualHosts = pkgs.lib.attrsets.mapAttrs' (name: port:
+    virtualHosts = (pkgs.lib.attrsets.mapAttrs' (name: port:
       pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
-        locations."/" = {
-          proxyPass =
-            "http://${containers.downloader.localAddress}:${toString port}";
-        };
-      })) downloader-services;
+        locations."/" = { proxyPass = "http://127.0.0.1:${toString port}"; };
+      })) dex-services) // (pkgs.lib.attrsets.mapAttrs' (name: port:
+        pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
+          locations."/" = {
+            proxyPass =
+              "http://${containers.downloader.localAddress}:${toString port}";
+          };
+        })) downloader-services);
   };
 
   services.plex = {
