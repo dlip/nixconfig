@@ -4,49 +4,78 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "vfat" "nls_cp437" "nls_iso8859-1" "xhci_pci" "ahci" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.availableKernelModules = [
+    "vfat"
+    "nls_cp437"
+    "nls_iso8859-1"
+    "xhci_pci"
+    "ahci"
+    "usbhid"
+    "usb_storage"
+    "sd_mod"
+  ];
   boot.initrd.luks.yubikeySupport = true;
   boot.initrd.kernelModules = [ "dm-snapshot" ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
   boot.initrd.luks.devices = {
-  "nixos-enc" = {
-    device = "/dev/sda2";
-    preLVM = true; # You may want to set this to false if you need to start a network service first
-    yubikey = {
-      slot = 2;
-      twoFactor = true; # Set to false if you did not set up a user password.
-      storage = {
-        device = "/dev/sda1";
+    "nixos-enc" = {
+      device = "/dev/sda2";
+      preLVM =
+        true; # You may want to set this to false if you need to start a network service first
+      yubikey = {
+        slot = 2;
+        twoFactor = true; # Set to false if you did not set up a user password.
+        storage = { device = "/dev/sda1"; };
       };
     };
-  }; 
-};
+  };
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/0ce174dc-b00d-4285-ab07-797a67519093";
-      fsType = "btrfs";
+  boot.initrd.secrets = { "lukskey" = "/root/lukskey"; };
+
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/0ce174dc-b00d-4285-ab07-797a67519093";
+    fsType = "btrfs";
+  };
+
+  fileSystems."/home" = {
+    device = "/dev/disk/by-uuid/0ce174dc-b00d-4285-ab07-797a67519093";
+    fsType = "btrfs";
+    options = [ "subvol=home" ];
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/F102-2386";
+    fsType = "vfat";
+  };
+
+  fileSystems."/media/media" = {
+    device =
+      "/dev/disk/by-uuid/ffea1765-0616-4311-ac3b-fde6e83ef011"; # UUID for /dev/mapper/media
+    encrypted = {
+      enable = true;
+      label = "media";
+      blkDev =
+        "/dev/disk/by-uuid/7c1152e4-b2a0-421a-815a-ea10ee700667"; # UUID for /dev/sda1
+      keyFile = "/lukskey";
     };
-
-  fileSystems."/home" =
-    { device = "/dev/disk/by-uuid/0ce174dc-b00d-4285-ab07-797a67519093";
-      fsType = "btrfs";
-      options = [ "subvol=home" ];
+  };
+  fileSystems."/media/media2" = {
+    device =
+      "/dev/disk/by-uuid/bd148b15-4950-4da8-9fd1-17d8a32390d5"; # UUID for /dev/mapper/media2
+    encrypted = {
+      enable = true;
+      label = "media2";
+      blkDev =
+        "/dev/disk/by-uuid/d5f1a797-6655-4ae4-995a-f42dc02f832a"; # UUID for /dev/sda1
+      keyFile = "/lukskey";
     };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/F102-2386";
-      fsType = "vfat";
-    };
-
+  };
   swapDevices =
-    [ { device = "/dev/disk/by-uuid/718617a6-3335-48cf-a7ae-e985664a6e64"; }
-    ];
+    [{ device = "/dev/disk/by-uuid/718617a6-3335-48cf-a7ae-e985664a6e64"; }];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }

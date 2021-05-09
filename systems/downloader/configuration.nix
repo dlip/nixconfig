@@ -13,7 +13,7 @@ in {
   services.openvpn.servers = {
     nordvpn = {
       updateResolvConf = true;
-      config = "config /root/openvpn/nordvpn.ovpn";
+      config = "config /mnt/services/openvpn/nordvpn.ovpn";
     };
   };
   systemd.services.transmission = {
@@ -28,11 +28,13 @@ in {
   services.transmission = {
     enable = true;
     settings = {
-      download-dir = "/mnt/transmission";
-      incomplete-dir = "/mnt/transmission/incomplete";
+      download-dir = "/media/media2/downloads/transmission";
+      incomplete-dir = "/media/media2/downloads/transmission/incomplete";
       incomplete-dir-enabled = true;
       message-level = 1;
       umask = "002";
+      user = "root";
+      group = "root";
       rpc-bind-address = "0.0.0.0";
       rpc-whitelist-enabled = false;
       rpc-host-whitelist-enabled = false;

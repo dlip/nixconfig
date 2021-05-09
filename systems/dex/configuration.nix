@@ -107,14 +107,26 @@ in rec {
     hostAddress = "10.1.0.1";
     localAddress = "10.1.0.2";
     bindMounts = {
-      "/root/openvpn" = {
-        hostPath = "/mnt/downloader/openvpn";
+      "/mnt/services" = {
+        hostPath = "/mnt/services";
         isReadOnly = false;
       };
     };
     bindMounts = {
-      "/mnt/transmission" = {
-        hostPath = "/mnt/downloader/transmission";
+      "/media/media" = {
+        hostPath = "/media/media";
+        isReadOnly = false;
+      };
+    };
+    bindMounts = {
+      "/media/media2" = {
+        hostPath = "/media/media2";
+        isReadOnly = false;
+      };
+    };
+    bindMounts = {
+      "/var/lib/transmission" = {
+        hostPath = "/mnt/services/transmission";
         isReadOnly = false;
       };
     };
