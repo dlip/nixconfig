@@ -74,6 +74,17 @@
       keyFile = "/lukskey";
     };
   };
+
+  fileSystems."/d" = {
+    device = "/media/media";
+    options = [ "bind" ];
+  };
+
+  fileSystems."/f" = {
+    device = "/media/media2";
+    options = [ "bind" ];
+  };
+
   swapDevices =
     [{ device = "/dev/disk/by-uuid/718617a6-3335-48cf-a7ae-e985664a6e64"; }];
 

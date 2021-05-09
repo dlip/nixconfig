@@ -143,6 +143,14 @@ in rec {
         };
       })) downloader-services;
   };
+
+  services.plex = {
+    enable = true;
+    openFirewall = true;
+    dataDir = "/mnt/services/plex";
+    user = "root";
+    group = "root";
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
