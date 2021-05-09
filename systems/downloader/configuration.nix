@@ -1,19 +1,12 @@
 { config, pkgs, ... }:
-let
-  domain = "home.lipscombe.com.au";
-  services = import ./services.nix;
+let services = import ./services.nix;
 in {
   environment.systemPackages = with pkgs; [ traceroute ];
 
   networking = {
     firewall = {
       enable = true;
-      allowedTCPPorts = [
-        80 # nginx
-        8989 # sonarr
-        7878 # radarr
-        9091 # transmission
-      ];
+      allowedTCPPorts = pkgs.lib.attrsets.attrValues services;
     };
   };
 
@@ -30,15 +23,6 @@ in {
   };
 
   services.sonarr = { enable = true; };
-  # services.nginx = {
-  #   enable = true;
-  #   recommendedProxySettings = true;
-  #   virtualHosts = pkgs.lib.attrsets.mapAttrs' (name: port:
-  #     pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
-  #       locations."/" = { proxyPass = "http://127.0.0.1:${toString port}"; };
-  #     })) services;
-  # };
-  # services.sonarr = { enable = true; };
   services.radarr = { enable = true; };
   services.bazarr = { enable = true; };
   services.transmission = {

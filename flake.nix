@@ -103,17 +103,14 @@
             system = system;
           })))) configs;
       nixosConfigurations = {
-        nixos = nixpkgs.lib.nixosSystem {
+        metabox = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./configuration.nix sops-nix.nixosModules.sops ];
+          modules =
+            [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
         };
         dex = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ ./systems/dex/configuration.nix ];
-        };
-        downloader = nixpkgs.lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [ ./downloader.nix ];
         };
       };
       devShell.x86_64-linux = pkgs.mkShell {

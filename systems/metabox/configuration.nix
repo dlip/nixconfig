@@ -12,7 +12,7 @@ let
     exec -a "$0" "$@"
   '';
 
-  downloader-services = import ./downloader-services.nix;
+  downloader-services = import ../downloader/services.nix;
   downloader-hosts = address:
     (lib.concatStrings (lib.strings.intersperse "\n" (lib.attrsets.attrValues
       (builtins.mapAttrs
@@ -150,7 +150,7 @@ in rec {
     ephemeral = true;
     autoStart = true;
     enableTun = true;
-    config = (import ./downloader.nix {
+    config = (import ../downloader/configuration.nix {
       pkgs = pkgs;
       config = config;
     });

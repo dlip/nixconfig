@@ -3,8 +3,10 @@
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
-
-{
+let
+  downloader-services = import ../downloader/services.nix;
+  domain = "home.lipscombe.com.au";
+in rec {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
   ];
@@ -24,7 +26,7 @@
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Set your time zone.
-  # time.timeZone = "Europe/Amsterdam";
+  time.timeZone = "Australia/Sydney";
 
   # The global useDHCP flag is deprecated, therefore explicitly set to false here.
   # Per-interface useDHCP will be mandatory in the future, so this generated config
@@ -89,6 +91,46 @@
     git
   ];
 
+  networking.nat.enable = true;
+  networking.nat.internalInterfaces = [ "ve-+" ];
+  networking.nat.externalInterface = "enp0s31f6";
+
+  containers.downloader = {
+    ephemeral = true;
+    autoStart = true;
+    enableTun = true;
+    config = (import ../downloader/configuration.nix {
+      pkgs = pkgs;
+      config = config;
+    });
+    privateNetwork = true;
+    hostAddress = "10.1.0.1";
+    localAddress = "10.1.0.2";
+    bindMounts = {
+      "/root/openvpn" = {
+        hostPath = "/mnt/downloader/openvpn";
+        isReadOnly = false;
+      };
+    };
+    bindMounts = {
+      "/mnt/transmission" = {
+        hostPath = "/mnt/downloader/transmission";
+        isReadOnly = false;
+      };
+    };
+  };
+
+  services.nginx = {
+    enable = true;
+    recommendedProxySettings = true;
+    virtualHosts = pkgs.lib.attrsets.mapAttrs' (name: port:
+      pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
+        locations."/" = {
+          proxyPass =
+            "http://${containers.downloader.localAddress}:${toString port}";
+        };
+      })) downloader-services;
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -103,7 +145,7 @@
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  networking.firewall.allowedTCPPorts = [ 80 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
