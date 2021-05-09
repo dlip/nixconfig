@@ -25,6 +25,7 @@ in {
   services.sonarr = { enable = true; };
   services.radarr = { enable = true; };
   services.bazarr = { enable = true; };
+  services.jackett = { enable = true; };
   services.transmission = {
     enable = true;
     settings = {

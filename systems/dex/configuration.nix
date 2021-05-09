@@ -111,22 +111,40 @@ in rec {
         hostPath = "/mnt/services";
         isReadOnly = false;
       };
-    };
-    bindMounts = {
       "/media/media" = {
         hostPath = "/media/media";
         isReadOnly = false;
       };
-    };
-    bindMounts = {
       "/media/media2" = {
         hostPath = "/media/media2";
         isReadOnly = false;
       };
-    };
-    bindMounts = {
+      "/d" = {
+        hostPath = "/d";
+        isReadOnly = false;
+      };
+      "/f" = {
+        hostPath = "/f";
+        isReadOnly = false;
+      };
       "/var/lib/transmission" = {
         hostPath = "/mnt/services/transmission";
+        isReadOnly = false;
+      };
+      "/var/lib/radarr/.config/Radarr" = {
+        hostPath = "/mnt/services/radarr";
+        isReadOnly = false;
+      };
+      "/var/lib/sonarr/.config/NzbDrone" = {
+        hostPath = "/mnt/services/sonarr";
+        isReadOnly = false;
+      };
+      "/var/lib/bazarr" = {
+        hostPath = "/mnt/services/bazarr";
+        isReadOnly = false;
+      };
+      "/var/lib/jackett/.config/Jackett" = {
+        hostPath = "/mnt/services/jackett";
         isReadOnly = false;
       };
     };
