@@ -19,6 +19,7 @@
   outputs = { self, nixpkgs, nixpkgs-release, nixpkgs-unstable, nix-doom-emacs
     , home-manager, envy-sh, arion, sops-nix }:
     let
+      inherit (nixpkgs) lib;
       systems = [
         "x86_64-linux"
         "i686-linux"
@@ -27,35 +28,33 @@
         "armv6l-linux"
         "armv7l-linux"
       ];
-      forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
+      forAllSystems = f: lib.genAttrs systems (system: f system);
 
-      createHomeConfig =
-        config@{ system, homeDirectory, username, extraImports ? [ ], ... }:
+      createHomeConfig = config@{ system, extraImports ? [ ], ... }:
         let
           pkgs = import nixpkgs-unstable {
-            system = system;
+            inherit system;
             config.allowUnfree = true;
+            overlays = [
+              (final: prev: {
+                my = import ./pkgs { inherit pkgs; };
+                envy-sh = envy-sh.defaultPackage.${system};
+                inherit (import arion { inherit pkgs; }) arion;
+              })
+            ];
           };
 
           pkgs-release = import nixpkgs-release {
-            system = system;
+            inherit system;
             config.allowUnfree = true;
           };
         in (home-manager.lib.homeManagerConfiguration {
+          inherit pkgs;
+          inherit (config) system homeDirectory username;
           extraModules = [ nix-doom-emacs.hmModule ];
           configuration = {
             imports = [
-              (_: {
-                home.packages = [
-                  envy-sh.defaultPackage.x86_64-linux
-                  (import arion { pkgs = pkgs; }).arion
-                  (import ./modules/unified-language-server {
-                    pkgs = pkgs;
-                  }).unified-language-server
-                  pkgs-release.csvkit
-                ];
-
-              })
+              (_: { home.packages = [ pkgs-release.csvkit ]; })
               ./emacs.nix
               ./files.nix
               (import ./git.nix config)
@@ -67,10 +66,6 @@
               (import ./zsh.nix config)
             ] ++ extraImports;
           };
-          system = system;
-          homeDirectory = homeDirectory;
-          username = username;
-          pkgs = pkgs;
         }).activationPackage;
 
       configs = rec {
@@ -108,16 +103,16 @@
       homeConfigurations = builtins.mapAttrs (name: config:
         (forAllSystems (system:
           createHomeConfig (config // {
+            inherit system;
             configName = "${name}.${system}";
-            system = system;
           })))) configs;
       nixosConfigurations = {
-        metabox = nixpkgs.lib.nixosSystem {
+        metabox = lib.nixosSystem {
           system = "x86_64-linux";
           modules =
             [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
         };
-        dex = nixpkgs.lib.nixosSystem {
+        dex = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ ./systems/dex/configuration.nix ];
         };

@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     appimage-run
+    arion
     autoreconfHook
     aws-google-auth
     awscli2
@@ -14,6 +15,7 @@
     dive
     docker-compose
     eksctl
+    envy-sh
     exa
     file
     firefox-devedition-bin
@@ -34,28 +36,28 @@
     kubernetes-helm
     kubetail
     mdl
+    my.nodePackages.unified-language-server
     neofetch
     nixfmt
     nixpkgs-fmt
-    nodePackages.pnpm
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.node2nix
+    nodePackages.pnpm
     nodePackages.prettier
+    nodePackages.quicktype
     nodePackages.typescript
     nodePackages.typescript-language-server
-    nodePackages.quicktype
     nodejs
     openvpn
     pandoc
-    # For gpg to work with yubikey
     pinentry
     proselint
     python
     python3
-    python39Packages.grip
     python38Packages.pip
     python38Packages.setuptools
+    python38Packages.grip
     ripgrep
     rnix-lsp
     rustup
