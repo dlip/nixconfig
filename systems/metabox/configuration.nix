@@ -11,13 +11,6 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec -a "$0" "$@"
   '';
-
-  downloader-services = import ../downloader/services.nix;
-  downloader-hosts = address:
-    (lib.concatStrings (lib.strings.intersperse "\n" (lib.attrsets.attrValues
-      (builtins.mapAttrs
-        (name: config: "${address} ${name}.downloader.lipscombe.com.au")
-        downloader-services))));
 in rec {
   imports = [ # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -27,12 +20,11 @@ in rec {
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "metabox"; # Define your hostname.
   networking.networkmanager.enable = true;
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.extraHosts = ''
     10.10.0.1 dex
-    ${downloader-hosts containers.downloader.localAddress}
   '';
 
   # Set your time zone.
@@ -142,34 +134,6 @@ in rec {
   services.udev.packages = with pkgs; [ yubikey-personalization ];
   virtualisation.docker.enable = true;
 
-  networking.nat.enable = true;
-  networking.nat.internalInterfaces = [ "ve-+" ];
-  networking.nat.externalInterface = "wlp0s20f3";
-
-  containers.downloader = {
-    ephemeral = true;
-    autoStart = true;
-    enableTun = true;
-    config = (import ../downloader/configuration.nix {
-      pkgs = pkgs;
-      config = config;
-    });
-    privateNetwork = true;
-    hostAddress = "10.1.0.1";
-    localAddress = "10.1.0.2";
-    bindMounts = {
-      "/root/openvpn" = {
-        hostPath = "/mnt/downloader/openvpn";
-        isReadOnly = false;
-      };
-    };
-    bindMounts = {
-      "/mnt/transmission" = {
-        hostPath = "/mnt/downloader/transmission";
-        isReadOnly = false;
-      };
-    };
-  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
