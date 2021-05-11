@@ -65,20 +65,17 @@ in rec {
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
+  # Enable the Gnome Desktop Environment.
+  services.xserver.displayManager.gdm.enable = true;
+  services.xserver.desktopManager.gnome3.enable = true;
+
   # Enable the Plasma 5 Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
-
-  services.syncthing = {
-    enable = true;
-    user = "dane";
-    dataDir = "/home/dane/Documents";
-    configDir = "/home/dane/.config/syncthing";
-  };
 
   hardware.nvidia.prime = {
     sync.enable = true;
@@ -89,7 +86,6 @@ in rec {
     # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
     intelBusId = "PCI:0:2:0";
   };
-
   # Configure keymap in X11
   # services.xserver.layout = "us";
   # services.xserver.xkbOptions = "eurosign:e";
@@ -150,6 +146,12 @@ in rec {
   # To use the smart card mode (CCID) of Yubikey, you will need the PCSC-Lite daemon:
   services.pcscd.enable = true;
 
+  services.syncthing = {
+    enable = true;
+    user = "dane";
+    dataDir = "/home/dane/Documents";
+    configDir = "/home/dane/.config/syncthing";
+  };
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
