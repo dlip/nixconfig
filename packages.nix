@@ -45,6 +45,7 @@
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.quicktype
+    nodePackages.yaml-language-server
     nodejs
     openvpn
     pandoc
