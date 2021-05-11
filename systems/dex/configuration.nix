@@ -181,16 +181,55 @@ in rec {
   #   enableSSHSupport = true;
   # };
 
+  services.samba = {
+    enable = true;
+    securityType = "user";
+    extraConfig = ''
+      workgroup = WORKGROUP
+      server string = ${networking.hostName}
+      netbios name = ${networking.hostName}
+      security = user
+      #use sendfile = yes
+      #max protocol = smb2
+      guest account = nobody
+      map to guest = bad user
+    '';
+    shares = {
+      homes = {
+        browseable = "no";
+        writable = "yes";
+      };
+      media = {
+        path = "/media/media";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+      };
+      media2 = {
+        path = "/media/media2";
+        browseable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+      };
+    };
+  };
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
   # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 80 ];
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
+
+  networking.firewall.allowedTCPPorts = [ 445 139 80 22 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
