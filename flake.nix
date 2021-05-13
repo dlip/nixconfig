@@ -85,7 +85,7 @@
           name = "TV Lipscombe";
           email = "tv@lipscombe.com.au";
           nixConfigPath = homeDirectory + "/code/nixconfig";
-          extraImports = [ ./tv.nix ];
+          extraImports = [ ./tv.nix ./emulation.nix ];
         };
 
         immutable = personal // { email = "dane.lipscombe@immutable.com"; };
