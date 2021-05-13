@@ -46,6 +46,21 @@ in rec {
   #   keyMap = "us";
   # };
 
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    inputMethod = {
+      enabled = "ibus";
+      ibus.engines = with pkgs.ibus-engines; [ anthy ];
+    };
+  };
+
+  fonts.fonts = with pkgs; [
+    overpass
+    source-han-code-jp
+    source-serif-pro
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -80,6 +95,7 @@ in rec {
     isNormalUser = true;
     initialPassword = "password";
     extraGroups = [ ]; # Enable ‘sudo’ for the user.
+    shell = "/home/tv/.nix-profile/bin/zsh";
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
