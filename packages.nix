@@ -18,7 +18,6 @@
     envy-sh
     exa
     file
-    firefox-devedition-bin
     fzf
     gcc
     ghc

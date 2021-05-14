@@ -4,6 +4,7 @@
     blender
     dbeaver
     discord
+    firefox-devedition-bin
     gimp
     godot
     google-chrome
