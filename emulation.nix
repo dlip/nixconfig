@@ -408,8 +408,9 @@ let
     <theme>${theme}</theme>
     </system>
   '';
-in {
-  home.packages = with pkgs; [ retroarch emulationstation ];
+in
+{
+  home.packages = with pkgs; [ retroarch emulationstation my.skyscraper ];
 
   home.file.".emulationstation/es_systems.cfg".text = ''
     <systemList>
