@@ -84,6 +84,12 @@ in {
 
       start-added-torrents = true;
 
+      # Stop seeding after being idle for N minutes.                                                                     +  83       idle-seeding-limit = 10;
+      idle-seeding-limit = 10;
+      idle-seeding-limit-enabled = true;
+      ratio-limit = 2.0;
+      ratio-limit-enabled = true;
+
       # notify me when download finished
       # script-torrent-done-enabled = true;
       # script-torrent-done-filename =
