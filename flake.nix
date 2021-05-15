@@ -16,8 +16,17 @@
     sops-nix.url = "github:Mic92/sops-nix";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-release, nixpkgs-unstable, nix-doom-emacs
-    , home-manager, envy-sh, arion, sops-nix }:
+  outputs =
+    { self
+    , nixpkgs
+    , nixpkgs-release
+    , nixpkgs-unstable
+    , nix-doom-emacs
+    , home-manager
+    , envy-sh
+    , arion
+    , sops-nix
+    }:
     let
       inherit (nixpkgs) lib;
       systems = [
@@ -30,25 +39,29 @@
       ];
       forAllSystems = f: lib.genAttrs systems (system: f system);
 
+      getPkgs = (system: import nixpkgs-unstable {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [
+          (final: prev: {
+            my = import ./pkgs { pkgs = getPkgs system; };
+            envy-sh = envy-sh.defaultPackage.${system};
+            inherit (import arion { pkgs = getPkgs system; }) arion;
+          })
+        ];
+      });
+
+      getPkgs-release = (system: import nixpkgs-release {
+        inherit system;
+        config.allowUnfree = true;
+      });
+
       createHomeConfig = config@{ system, extraImports ? [ ], ... }:
         let
-          pkgs = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-            overlays = [
-              (final: prev: {
-                my = import ./pkgs { inherit pkgs; };
-                envy-sh = envy-sh.defaultPackage.${system};
-                inherit (import arion { inherit pkgs; }) arion;
-              })
-            ];
-          };
-
-          pkgs-release = import nixpkgs-release {
-            inherit system;
-            config.allowUnfree = true;
-          };
-        in (home-manager.lib.homeManagerConfiguration {
+          pkgs = getPkgs system;
+          pkgs-release = getPkgs-release system;
+        in
+        (home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           inherit (config) system homeDirectory username;
           extraModules = [ nix-doom-emacs.hmModule ];
@@ -97,15 +110,17 @@
           homeDirectory = "/root";
         };
       };
-
-    in rec {
-      pkgs = import nixpkgs-unstable { system = "x86_64-linux"; };
-      homeConfigurations = builtins.mapAttrs (name: config:
-        (forAllSystems (system:
-          createHomeConfig (config // {
-            inherit system;
-            configName = "${name}.${system}";
-          })))) configs;
+    in
+    rec {
+      pkgs = forAllSystems getPkgs;
+      homeConfigurations = (forAllSystems (system:
+        builtins.mapAttrs
+          (name: config:
+            createHomeConfig (config // {
+              inherit system;
+              configName = "${system}.${name}";
+            }))
+          configs));
       nixosConfigurations = {
         metabox = lib.nixosSystem {
           system = "x86_64-linux";
@@ -117,9 +132,9 @@
           modules = [ ./systems/dex/configuration.nix ];
         };
       };
-      devShell.x86_64-linux = pkgs.mkShell {
+      devShell = forAllSystems (system: pkgs.${system}.mkShell {
         sopsPGPKeyDirs = [ "./keys/hosts" "./keys/users" ];
-        nativeBuildInputs = [ (pkgs.callPackage sops-nix { }).sops-pgp-hook ];
-      };
+        nativeBuildInputs = with pkgs.${system}; [ (callPackage sops-nix { }).sops-pgp-hook ];
+      });
     };
 }

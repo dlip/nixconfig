@@ -1,5 +1,5 @@
 { pkgs, ... }:
 with pkgs; {
-  nodePackages = (callPackage ./nodePackages/default.nix { });
-  skyscraper = (callPackage ./skyscraper/default.nix { });
+  nodePackages = (callPackage ./nodePackages { });
+  skyscraper = (callPackage ./skyscraper { });
 }
