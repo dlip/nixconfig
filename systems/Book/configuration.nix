@@ -4,6 +4,17 @@ with lib;
 let
   defaultUser = "dane";
   syschdemd = import ./syschdemd.nix { inherit lib pkgs config defaultUser; };
+  systemd-email = pkgs.writeShellScriptBin "systemd-email" ''
+    ${pkgs.ssmtp}/bin/sendmail -t <<ERRMAIL
+    To: $1
+    From: systemd <root@$HOSTNAME>
+    Subject: $2
+    Content-Transfer-Encoding: 8bit
+    Content-Type: text/plain; charset=UTF-8
+
+    $(systemctl status --full "$2")
+    ERRMAIL
+  '';
 in
 {
   imports = [
@@ -19,6 +30,7 @@ in
   networking.hostName = "Book"; # Define your hostname.
   networking.dhcpcd.enable = false;
 
+  time.timeZone = "Australia/Sydney";
   users.users.${defaultUser} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -40,12 +52,29 @@ in
     '';
   };
 
-  services.cron = {
+  systemd.services."email-alert@" = {
     enable = true;
-    mailto = "dane@lipscombe.com.au";
-    systemCronJobs = [
-      "46 16 * * *      root    cd /root/backup && ./restic-backup.sh"
-    ];
+    description = "Alert email for %i to user";
+    serviceConfig = {
+      Type = "oneshot";
+      ExecStart = "${systemd-email}/bin/systemd-email dane@lipscombe.com.au %i";
+      User = "nobody";
+      Group = "systemd-journal";
+    };
+  };
+
+
+  systemd.services.restic-backups-remotebackup.unitConfig.OnFailure = "email-alert@%i.service";
+  services.restic.backups = {
+    remotebackup = {
+      paths = [ "/home" "/root" ];
+      repository = "sftp:dane@10.10.0.123:/media/media/dane-backup/restic";
+      passwordFile = "/root/backup/restic-password";
+      timerConfig = {
+        OnCalendar = "daily";
+        Persistent = true;
+      };
+    };
   };
 
   services.ssmtp = {
