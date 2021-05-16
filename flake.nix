@@ -145,7 +145,7 @@
           };
           Book = lib.nixosSystem {
             system = "x86_64-linux";
-            modules = [ ./systems/wsl/configuration.nix ];
+            modules = [ ./systems/Book/configuration.nix ];
           };
         };
     };

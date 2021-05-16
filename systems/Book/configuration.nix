@@ -16,6 +16,7 @@ in
   environment.etc.hosts.enable = false;
   environment.etc."resolv.conf".enable = false;
 
+  networking.hostName = "Book"; # Define your hostname.
   networking.dhcpcd.enable = false;
 
   users.users.${defaultUser} = {
@@ -38,9 +39,33 @@ in
       experimental-features = nix-command flakes
     '';
   };
+
+  services.cron = {
+    enable = true;
+    mailto = "dane@lipscombe.com.au";
+    systemCronJobs = [
+      "46 16 * * *      root    cd /root/backup && ./restic-backup.sh"
+    ];
+  };
+
+  services.ssmtp = {
+    enable = true;
+    # The user that gets all the mails (UID < 1000, usually the admin)
+    root = "dane@lipscombe.com.au";
+    useTLS = true;
+    useSTARTTLS = true;
+    hostName = "smtp.gmail.com:587";
+    # The address where the mail appears to come from for user authentication.
+    domain = "lipscombe.com.au";
+    # Username/Password File
+    authUser = "dane@lipscombe.com.au";
+    authPassFile = "/mnt/services/ssmtp/pass";
+  };
+
   environment.systemPackages = with pkgs; [
     git
     vim
+    restic
   ];
   # Disable systemd units that don't make sense on WSL
   systemd.services."serial-getty@ttyS0".enable = false;
