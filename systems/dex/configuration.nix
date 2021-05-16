@@ -16,6 +16,9 @@ rec {
   ];
 
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "homeassistant-0.114.4"
+  ];
   nix = {
     package = pkgs.nixUnstable;
     extraOptions = ''
@@ -110,6 +113,7 @@ rec {
     pciutils
     git
     restic
+    python38Packages.aiohttp
   ];
 
   networking.nat.enable = true;
@@ -197,6 +201,27 @@ rec {
     user = "root";
     group = "root";
   };
+
+  services.home-assistant = {
+    enable = true;
+    openFirewall = true;
+    package = (pkgs.home-assistant.override {
+      extraPackages = py: with py; [ psycopg2 ];
+    });
+    config.recorder.db_url = "postgresql://@/hass";
+  };
+
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "hass" ];
+    ensureUsers = [{
+      name = "hass";
+      ensurePermissions = {
+        "DATABASE hass" = "ALL PRIVILEGES";
+      };
+    }];
+  };
+
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
