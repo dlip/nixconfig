@@ -197,6 +197,20 @@ rec {
     user = "root";
     group = "root";
   };
+
+  services.ssmtp = {
+    enable = true;
+    # The user that gets all the mails (UID < 1000, usually the admin)
+    root = "dane@lipscombe.com.au";
+    useTLS = true;
+    useSTARTTLS = true;
+    hostName = "smtp.gmail.com:587";
+    # The address where the mail appears to come from for user authentication.
+    domain = "lipscombe.com.au";
+    # Username/Password File
+    authUser = "dane@lipscombe.com.au";
+    authPassFile = "/mnt/services/ssmtp/pass";
+  };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
