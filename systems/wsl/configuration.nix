@@ -16,12 +16,12 @@ in
   environment.etc.hosts.enable = false;
   environment.etc."resolv.conf".enable = false;
 
-  networking.hostName = "wsl"; # Define your hostname.
   networking.dhcpcd.enable = false;
 
   users.users.${defaultUser} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
+    shell = "/home/dane/.nix-profile/bin/zsh";
   };
 
   users.users.root = {

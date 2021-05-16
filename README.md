@@ -22,10 +22,10 @@ cd nixconfig
 ### Run home configuration
 
 ```sh
-nix run .#homeConfigurations.x86_64-linux.personal
+nix run .#homeConfigurations.personal
 ```
 
-### Set zsh as default shell
+### Set zsh as default shell in non-NixOS
 
 ```sh
 echo "$(which zsh)" | sudo tee -a /etc/shells
@@ -35,11 +35,11 @@ chsh -s $(which zsh)
 ### Run NixOS configuration
 
 ```sh
-sudo nixos-rebuild switch --flake '.#'
+sudo nixos-rebuild switch --flake .
 ```
 
 ### Run REPL
 
 ```sh
-nix run .#repl.x86_64-linux
+nix run .
 ```

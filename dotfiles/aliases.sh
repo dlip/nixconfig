@@ -18,7 +18,7 @@ nixconfig(){
 
 nixosconfig(){
     pushd ~/code/nixconfig > /dev/null
-    sudo nixos-rebuild switch --flake '.#'
+    sudo nixos-rebuild switch --flake .
     popd > /dev/null
 }
 

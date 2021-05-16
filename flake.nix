@@ -54,26 +54,33 @@
           config.allowUnfree = true;
         };
 
-        createHomeConfig = config@{ extraImports ? [ ], ... }:
-          (home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            inherit (config) system homeDirectory username;
-            extraModules = [ nix-doom-emacs.hmModule ];
-            configuration = {
-              imports = [
-                (_: { home.packages = [ pkgs-release.csvkit ]; })
-                ./emacs.nix
-                ./files.nix
-                (import ./git.nix config)
-                ./neovim.nix
-                ./packages.nix
-                ./starship.nix
-                ./services.nix
-                ./tmux.nix
-                (import ./zsh.nix config)
-              ] ++ extraImports;
+        createHomeConfig = configName: config@{ extraImports ? [ ], ... }:
+          flake-utils.lib.mkApp
+            {
+              drv = (home-manager.lib.homeManagerConfiguration
+                {
+                  inherit pkgs;
+                  inherit (config) system homeDirectory username;
+                  extraModules = [ nix-doom-emacs.hmModule ];
+                  configuration = {
+                    imports = [
+                      (_: { home.packages = [ pkgs-release.csvkit ]; })
+                      ./emacs.nix
+                      ./files.nix
+                      (import ./git.nix config)
+                      ./neovim.nix
+                      ./packages.nix
+                      ./starship.nix
+                      ./services.nix
+                      ./tmux.nix
+                      (import ./zsh.nix (config // {
+                        inherit configName;
+                      }))
+                    ] ++ extraImports;
+                  };
+                }
+              ).activationPackage;
             };
-          }).activationPackage;
 
         configs = rec {
           personal = rec {
@@ -107,44 +114,39 @@
       in
       rec {
         inherit pkgs;
-
-        homeConfigurations = builtins.mapAttrs
-          (name: config:
-            createHomeConfig (config // {
-              configName = "${system}.${name}";
-            }))
-          configs;
-
         defaultApp = apps.repl;
-        apps.repl = flake-utils.lib.mkApp
-          {
-            drv = pkgs.writeShellScriptBin "repl" ''
-              confnix=$(mktemp)
-              echo "builtins.getFlake (toString $(git rev-parse --show-toplevel))" >$confnix
-              trap "rm $confnix" EXIT
-              nix repl $confnix
-            '';
-          };
-
+        apps = {
+          repl = flake-utils.lib.mkApp
+            {
+              drv = pkgs.writeShellScriptBin "repl" ''
+                confnix=$(mktemp)
+                echo "builtins.getFlake (toString $(git rev-parse --show-toplevel))" >$confnix
+                trap "rm $confnix" EXIT
+                nix repl $confnix
+              '';
+            };
+          homeConfigurations = builtins.mapAttrs createHomeConfig configs;
+        };
         devShell = pkgs.mkShell {
           sopsPGPKeyDirs = [ "./keys/hosts" "./keys/users" ];
           nativeBuildInputs = with pkgs; [ (callPackage sops-nix { }).sops-pgp-hook ];
         };
       }) // {
-      nixosConfigurations = with nixpkgs; {
-        metabox = lib.nixosSystem {
-          system = "x86_64-linux";
-          modules =
-            [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
+      nixosConfigurations = with nixpkgs;
+        {
+          metabox = lib.nixosSystem {
+            system = "x86_64-linux";
+            modules =
+              [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
+          };
+          dex = lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [ ./systems/dex/configuration.nix ];
+          };
+          Book = lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [ ./systems/wsl/configuration.nix ];
+          };
         };
-        dex = lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [ ./systems/dex/configuration.nix ];
-        };
-        wsl = lib.nixosSystem {
-          system = "x86_64-linux";
-          modules = [ ./systems/wsl/configuration.nix ];
-        };
-      };
     };
 }
