@@ -18,6 +18,7 @@
       url = "github:edolstra/flake-compat";
       flake = false;
     };
+    flake-utils.url = "github:numtide/flake-utils";
   };
 
   outputs =
@@ -31,6 +32,7 @@
     , arion
     , sops-nix
     , flake-compat
+    , flake-utils
     }:
     let
       inherit (nixpkgs) lib;
@@ -43,6 +45,7 @@
         "armv7l-linux"
       ];
       forAllSystems = f: lib.genAttrs systems (system: f system);
+      forAllSystemPackages = p: f: (forAllSystems (system: f p.${system}));
 
       getPkgs = (system: import nixpkgs-unstable {
         inherit system;
@@ -137,9 +140,17 @@
           modules = [ ./systems/dex/configuration.nix ];
         };
       };
-      devShell = forAllSystems (system: pkgs.${system}.mkShell {
+      devShell = forAllSystemPackages pkgs (pkgs: pkgs.mkShell {
         sopsPGPKeyDirs = [ "./keys/hosts" "./keys/users" ];
-        nativeBuildInputs = with pkgs.${system}; [ (callPackage sops-nix { }).sops-pgp-hook ];
+        nativeBuildInputs = with pkgs; [ (callPackage sops-nix { }).sops-pgp-hook ];
+      });
+      repl = forAllSystemPackages pkgs (pkgs: flake-utils.lib.mkApp {
+        drv = pkgs.writeShellScriptBin "repl" ''
+          confnix=$(mktemp)
+          echo "builtins.getFlake (toString $(git rev-parse --show-toplevel))" >$confnix
+          trap "rm $confnix" EXIT
+          nix repl $confnix
+        '';
       });
     };
 }

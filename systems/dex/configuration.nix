@@ -198,6 +198,14 @@ rec {
     group = "root";
   };
 
+  services.cron = {
+    enable = true;
+    mailto = "dane@lipscombe.com.au";
+    systemCronJobs = [
+      "46 16 * * *      root    cd /root/backup && ./restic-backup.sh"
+    ];
+  };
+
   services.ssmtp = {
     enable = true;
     # The user that gets all the mails (UID < 1000, usually the admin)
