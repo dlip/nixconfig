@@ -21,6 +21,7 @@
     firefox-devedition-bin
     fzf
     gcc
+    gh
     ghc
     gnumake
     gnupg
