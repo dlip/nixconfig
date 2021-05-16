@@ -34,123 +34,113 @@
     , flake-compat
     , flake-utils
     }:
-    let
-      inherit (nixpkgs) lib;
-      systems = [
-        "x86_64-linux"
-        "i686-linux"
-        "x86_64-darwin"
-        "aarch64-linux"
-        "armv6l-linux"
-        "armv7l-linux"
-      ];
-      forAllSystems = f: lib.genAttrs systems (system: f system);
-      forAllSystemPackages = p: f: (forAllSystems (system: f p.${system}));
+    flake-utils.lib.eachDefaultSystem
+      (system:
+      let
+        pkgs = import nixpkgs-unstable rec {
+          inherit system;
+          config.allowUnfree = true;
+          overlays = [
+            (final: prev: {
+              my = import ./pkgs { inherit pkgs; };
+              envy-sh = envy-sh.defaultPackage.${system};
+              inherit (import arion { inherit pkgs; }) arion;
+            })
+          ];
+        };
 
-      getPkgs = (system: import nixpkgs-unstable {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = [
-          (final: prev: {
-            my = import ./pkgs { pkgs = getPkgs system; };
-            envy-sh = envy-sh.defaultPackage.${system};
-            inherit (import arion { pkgs = getPkgs system; }) arion;
-          })
-        ];
-      });
+        pkgs-release = import nixpkgs-release rec {
+          inherit system;
+          config.allowUnfree = true;
+        };
 
-      getPkgs-release = (system: import nixpkgs-release {
-        inherit system;
-        config.allowUnfree = true;
-      });
+        createHomeConfig = config@{ extraImports ? [ ], ... }:
+          (home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            inherit (config) system homeDirectory username;
+            extraModules = [ nix-doom-emacs.hmModule ];
+            configuration = {
+              imports = [
+                (_: { home.packages = [ pkgs-release.csvkit ]; })
+                ./emacs.nix
+                ./files.nix
+                (import ./git.nix config)
+                ./neovim.nix
+                ./packages.nix
+                ./starship.nix
+                ./services.nix
+                ./tmux.nix
+                (import ./zsh.nix config)
+              ] ++ extraImports;
+            };
+          }).activationPackage;
 
-      createHomeConfig = config@{ system, extraImports ? [ ], ... }:
-        let
-          pkgs = getPkgs system;
-          pkgs-release = getPkgs-release system;
-        in
-        (home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          inherit (config) system homeDirectory username;
-          extraModules = [ nix-doom-emacs.hmModule ];
-          configuration = {
-            imports = [
-              (_: { home.packages = [ pkgs-release.csvkit ]; })
-              ./emacs.nix
-              ./files.nix
-              (import ./git.nix config)
-              ./neovim.nix
-              ./packages.nix
-              ./starship.nix
-              ./services.nix
-              ./tmux.nix
-              (import ./zsh.nix config)
-            ] ++ extraImports;
+        configs = rec {
+          personal = rec {
+            username = "dane";
+            homeDirectory = "/home/dane";
+            name = "Dane Lipscombe";
+            email = "dane@lipscombe.com.au";
+            nixConfigPath = homeDirectory + "/code/nixconfig";
           };
-        }).activationPackage;
 
-      configs = rec {
-        personal = rec {
-          username = "dane";
-          homeDirectory = "/home/dane";
-          name = "Dane Lipscombe";
-          email = "dane@lipscombe.com.au";
-          nixConfigPath = homeDirectory + "/code/nixconfig";
+          personal-nixos = personal // { extraImports = [ ./graphical.nix ]; };
+
+          tv = rec {
+            username = "tv";
+            homeDirectory = "/home/tv";
+            name = "TV Lipscombe";
+            email = "tv@lipscombe.com.au";
+            nixConfigPath = homeDirectory + "/code/nixconfig";
+            extraImports = [ ./tv.nix ./emulation.nix ];
+          };
+
+          immutable = personal // { email = "dane.lipscombe@immutable.com"; };
+
+          immutable-nixos = immutable // { extraImports = [ ./graphical.nix ]; };
+
+          root = personal // {
+            username = "root";
+            homeDirectory = "/root";
+          };
         };
+      in
+      rec {
+        inherit pkgs;
 
-        personal-nixos = personal // { extraImports = [ ./graphical.nix ]; };
-
-        tv = rec {
-          username = "tv";
-          homeDirectory = "/home/tv";
-          name = "TV Lipscombe";
-          email = "tv@lipscombe.com.au";
-          nixConfigPath = homeDirectory + "/code/nixconfig";
-          extraImports = [ ./tv.nix ./emulation.nix ];
-        };
-
-        immutable = personal // { email = "dane.lipscombe@immutable.com"; };
-
-        immutable-nixos = immutable // { extraImports = [ ./graphical.nix ]; };
-
-        root = personal // {
-          username = "root";
-          homeDirectory = "/root";
-        };
-      };
-    in
-    rec {
-      pkgs = forAllSystems getPkgs;
-      homeConfigurations = (forAllSystems (system:
-        builtins.mapAttrs
+        homeConfigurations = builtins.mapAttrs
           (name: config:
             createHomeConfig (config // {
-              inherit system;
               configName = "${system}.${name}";
             }))
-          configs));
+          configs;
+
+        defaultApp = apps.repl;
+        apps.repl = flake-utils.lib.mkApp
+          {
+            drv = pkgs.writeShellScriptBin "repl" ''
+              confnix=$(mktemp)
+              echo "builtins.getFlake (toString $(git rev-parse --show-toplevel))" >$confnix
+              trap "rm $confnix" EXIT
+              nix repl $confnix
+            '';
+          };
+
+        devShell = pkgs.mkShell {
+          sopsPGPKeyDirs = [ "./keys/hosts" "./keys/users" ];
+          nativeBuildInputs = with pkgs; [ (callPackage sops-nix { }).sops-pgp-hook ];
+        };
+      }) // {
       nixosConfigurations = {
-        metabox = lib.nixosSystem {
+        metabox = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules =
             [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
         };
-        dex = lib.nixosSystem {
+        dex = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ ./systems/dex/configuration.nix ];
         };
       };
-      devShell = forAllSystemPackages pkgs (pkgs: pkgs.mkShell {
-        sopsPGPKeyDirs = [ "./keys/hosts" "./keys/users" ];
-        nativeBuildInputs = with pkgs; [ (callPackage sops-nix { }).sops-pgp-hook ];
-      });
-      repl = forAllSystemPackages pkgs (pkgs: flake-utils.lib.mkApp {
-        drv = pkgs.writeShellScriptBin "repl" ''
-          confnix=$(mktemp)
-          echo "builtins.getFlake (toString $(git rev-parse --show-toplevel))" >$confnix
-          trap "rm $confnix" EXIT
-          nix repl $confnix
-        '';
-      });
     };
 }
