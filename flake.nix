@@ -14,6 +14,10 @@
       flake = false;
     };
     sops-nix.url = "github:Mic92/sops-nix";
+    flake-compat = {
+      url = "github:edolstra/flake-compat";
+      flake = false;
+    };
   };
 
   outputs =
@@ -26,6 +30,7 @@
     , envy-sh
     , arion
     , sops-nix
+    , flake-compat
     }:
     let
       inherit (nixpkgs) lib;
