@@ -1,6 +1,7 @@
 { config, pkgs, ... }:
 let downloader-services = import ./services.nix;
-in {
+in
+{
   environment.systemPackages = with pkgs; [ traceroute ];
 
   networking = {
@@ -10,6 +11,19 @@ in {
     };
   };
 
+  services.ssmtp = {
+    enable = true;
+    # The user that gets all the mails (UID < 1000, usually the admin)
+    root = "dane@lipscombe.com.au";
+    useTLS = true;
+    useSTARTTLS = true;
+    hostName = "smtp.gmail.com:587";
+    # The address where the mail appears to come from for user authentication.
+    domain = "lipscombe.com.au";
+    # Username/Password File
+    authUser = "dane@lipscombe.com.au";
+    authPassFile = "/mnt/services/ssmtp/pass";
+  };
   services.openvpn.servers = {
     nordvpn = {
       updateResolvConf = true;
@@ -81,18 +95,11 @@ in {
       start-added-torrents = true;
 
       # notify me when download finished
-      # script-torrent-done-enabled = true;
-      # script-torrent-done-filename =
-      #   (pkgs.writers.writeBash "torrent-finished" ''
-      #     JSON_STRING=$( ${pkgs.jq}/bin/jq -n --arg torrent_name "$TR_TORRENT_NAME" \
-      #       '{text: ":tada: finished : \($torrent_name)", channel: "torrent"}' )
-      #     ${pkgs.curl}/bin/curl \
-      #       --include \
-      #       --request POST \
-      #       --data-urlencode \
-      #       "payload=$JSON_STRING" \
-      #       ${lib.fileContents <common_secrets/mattermost_sink_url>}
-      #   '');
+      script-torrent-done-enabled = true;
+      script-torrent-done-filename =
+        (pkgs.writers.writeBash "torrent-finished" ''
+          echo -e "Subject: Torrent Completed: $TR_TORRENT_NAME\n\n$TR_TORRENT_NAME" | ${pkgs.ssmtp} -v dane@lipscombe.com.au
+        '');
     };
   };
 }

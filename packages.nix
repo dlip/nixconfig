@@ -18,7 +18,6 @@
     envy-sh
     exa
     file
-    firefox-devedition-bin
     fzf
     gcc
     gh
@@ -32,12 +31,14 @@
     haskellPackages.haskell-language-server
     hledger
     htop
+    iotop
     jq
     kubectl
     kubernetes-helm
     kubetail
     mdl
     my.nodePackages.unified-language-server
+    ncdu
     neofetch
     nixfmt
     nixpkgs-fmt

@@ -74,6 +74,11 @@
       keyFile = "/lukskey";
     };
   };
+  fileSystems."/media/games" = {
+    device = "/dev/disk/by-uuid/0BB20EC37670AE62";
+    fsType = "ntfs";
+    options = [ "rw" "uid=1000" ];
+  };
 
   fileSystems."/d" = {
     device = "/media/media";

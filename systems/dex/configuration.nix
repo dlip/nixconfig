@@ -7,9 +7,12 @@ let
   dex-services = import ./services.nix;
   downloader-services = import ../downloader/services.nix;
   domain = "home.lipscombe.com.au";
-in rec {
-  imports = [ # Include the results of the hardware scan.
+in
+rec {
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
+    ../../cachix.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -46,6 +49,21 @@ in rec {
   #   keyMap = "us";
   # };
 
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    inputMethod = {
+      enabled = "ibus";
+      ibus.engines = with pkgs.ibus-engines; [ anthy ];
+    };
+  };
+
+  fonts.fonts = with pkgs; [
+    overpass
+    source-han-code-jp
+    source-serif-pro
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
+
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -80,6 +98,7 @@ in rec {
     isNormalUser = true;
     initialPassword = "password";
     extraGroups = [ ]; # Enable ‘sudo’ for the user.
+    shell = "/home/tv/.nix-profile/bin/zsh";
   };
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -90,6 +109,7 @@ in rec {
     glxinfo
     pciutils
     git
+    restic
   ];
 
   networking.nat.enable = true;
@@ -154,16 +174,20 @@ in rec {
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
-    virtualHosts = (pkgs.lib.attrsets.mapAttrs' (name: port:
-      pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
-        locations."/" = { proxyPass = "http://127.0.0.1:${toString port}"; };
-      })) dex-services) // (pkgs.lib.attrsets.mapAttrs' (name: port:
+    virtualHosts = (pkgs.lib.attrsets.mapAttrs'
+      (name: port:
+        pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
+          locations."/" = { proxyPass = "http://127.0.0.1:${toString port}"; };
+        }))
+      dex-services) // (pkgs.lib.attrsets.mapAttrs'
+      (name: port:
         pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
           locations."/" = {
             proxyPass =
               "http://${containers.downloader.localAddress}:${toString port}";
           };
-        })) downloader-services);
+        }))
+      downloader-services);
   };
 
   services.plex = {
@@ -172,6 +196,28 @@ in rec {
     dataDir = "/mnt/services/plex";
     user = "root";
     group = "root";
+  };
+
+  services.cron = {
+    enable = true;
+    mailto = "dane@lipscombe.com.au";
+    systemCronJobs = [
+      "46 16 * * *      root    cd /root/backup && ./restic-backup.sh"
+    ];
+  };
+
+  services.ssmtp = {
+    enable = true;
+    # The user that gets all the mails (UID < 1000, usually the admin)
+    root = "dane@lipscombe.com.au";
+    useTLS = true;
+    useSTARTTLS = true;
+    hostName = "smtp.gmail.com:587";
+    # The address where the mail appears to come from for user authentication.
+    domain = "lipscombe.com.au";
+    # Username/Password File
+    authUser = "dane@lipscombe.com.au";
+    authPassFile = "/mnt/services/ssmtp/pass";
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
