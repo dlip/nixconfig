@@ -109,6 +109,7 @@ rec {
     glxinfo
     pciutils
     git
+    restic
   ];
 
   networking.nat.enable = true;
