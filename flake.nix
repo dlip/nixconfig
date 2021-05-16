@@ -131,15 +131,19 @@
           nativeBuildInputs = with pkgs; [ (callPackage sops-nix { }).sops-pgp-hook ];
         };
       }) // {
-      nixosConfigurations = {
-        metabox = nixpkgs.lib.nixosSystem {
+      nixosConfigurations = with nixpkgs; {
+        metabox = lib.nixosSystem {
           system = "x86_64-linux";
           modules =
             [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
         };
-        dex = nixpkgs.lib.nixosSystem {
+        dex = lib.nixosSystem {
           system = "x86_64-linux";
           modules = [ ./systems/dex/configuration.nix ];
+        };
+        wsl = lib.nixosSystem {
+          system = "x86_64-linux";
+          modules = [ ./systems/wsl/configuration.nix ];
         };
       };
     };
