@@ -5,3 +5,4 @@ tmp/
 /result
 /.tmp
 /node_modules
+/.tmp*
