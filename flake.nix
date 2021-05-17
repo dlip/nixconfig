@@ -37,20 +37,23 @@
     flake-utils.lib.eachDefaultSystem
       (system:
       let
-        pkgs = import nixpkgs-unstable rec {
+        overlays = [
+          (final: prev: {
+            my = final.callPackage ./pkgs { };
+            envy-sh = envy-sh.defaultPackage.${system};
+            inherit (final.callPackage arion { }) arion;
+          })
+        ];
+
+        pkgs = import nixpkgs-unstable {
           inherit system;
+          inherit overlays;
           config.allowUnfree = true;
-          overlays = [
-            (final: prev: {
-              my = import ./pkgs { inherit pkgs; };
-              envy-sh = envy-sh.defaultPackage.${system};
-              inherit (import arion { inherit pkgs; }) arion;
-            })
-          ];
         };
 
-        pkgs-release = import nixpkgs-release rec {
+        pkgs-release = import nixpkgs-release {
           inherit system;
+          inherit overlays;
           config.allowUnfree = true;
         };
 
