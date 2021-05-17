@@ -9,6 +9,7 @@
     godot
     google-chrome
     krita
+    lens
     libreoffice
     plexamp
     slack
