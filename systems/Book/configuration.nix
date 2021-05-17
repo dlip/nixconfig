@@ -4,21 +4,12 @@ with lib;
 let
   defaultUser = "dane";
   syschdemd = import ./syschdemd.nix { inherit lib pkgs config defaultUser; };
-  systemd-email = pkgs.writeShellScriptBin "systemd-email" ''
-    ${pkgs.ssmtp}/bin/sendmail -t <<ERRMAIL
-    To: $1
-    From: systemd <root@$HOSTNAME>
-    Subject: $2
-    Content-Transfer-Encoding: 8bit
-    Content-Type: text/plain; charset=UTF-8
-
-    $(systemctl status --full "$2")
-    ERRMAIL
-  '';
 in
 {
   imports = [
     "${modulesPath}/profiles/minimal.nix"
+    ../../services/notify-problems.nix
+    ../../services/ssmtp.nix
   ];
 
   # WSL is closer to a container than anything else
@@ -34,7 +25,7 @@ in
   users.users.${defaultUser} = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
-    shell = "/home/dane/.nix-profile/bin/zsh";
+    shell = "/home/${defaultUser}/.nix-profile/bin/zsh";
   };
 
   users.users.root = {
@@ -52,19 +43,7 @@ in
     '';
   };
 
-  systemd.services."email-alert@" = {
-    enable = true;
-    description = "Alert email for %i to user";
-    serviceConfig = {
-      Type = "oneshot";
-      ExecStart = "${systemd-email}/bin/systemd-email dane@lipscombe.com.au %i";
-      User = "nobody";
-      Group = "systemd-journal";
-    };
-  };
-
-
-  systemd.services.restic-backups-remotebackup.unitConfig.OnFailure = "email-alert@%i.service";
+  systemd.services.restic-backups-remotebackup.unitConfig.OnFailure = "notify-problems@%i.service";
   services.restic.backups = {
     remotebackup = {
       paths = [ "/home" "/root" ];
@@ -77,19 +56,6 @@ in
     };
   };
 
-  services.ssmtp = {
-    enable = true;
-    # The user that gets all the mails (UID < 1000, usually the admin)
-    root = "dane@lipscombe.com.au";
-    useTLS = true;
-    useSTARTTLS = true;
-    hostName = "smtp.gmail.com:587";
-    # The address where the mail appears to come from for user authentication.
-    domain = "lipscombe.com.au";
-    # Username/Password File
-    authUser = "dane@lipscombe.com.au";
-    authPassFile = "/mnt/services/ssmtp/pass";
-  };
 
   environment.systemPackages = with pkgs; [
     git
