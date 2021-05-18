@@ -2,6 +2,6 @@
 {
   programs.doom-emacs = {
     enable = true;
-    doomPrivateDir = ./dotfiles/doom.d;
+    doomPrivateDir = ./doom.d;
   };
 }

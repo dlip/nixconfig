@@ -42,6 +42,7 @@
             my = final.callPackage ./pkgs { };
             envy-sh = envy-sh.defaultPackage.${system};
             inherit (final.callPackage arion { }) arion;
+            release = pkgs-release;
           })
         ];
 
@@ -60,29 +61,17 @@
         createHomeConfig = configName: config@{ extraImports ? [ ], ... }:
           flake-utils.lib.mkApp
             {
-              drv = (home-manager.lib.homeManagerConfiguration
-                {
-                  inherit pkgs;
-                  inherit (config) system homeDirectory username;
-                  extraModules = [ nix-doom-emacs.hmModule ];
-                  configuration = {
-                    imports = [
-                      (_: { home.packages = [ pkgs-release.csvkit ]; })
-                      ./emacs.nix
-                      ./files.nix
-                      (import ./git.nix config)
-                      ./neovim.nix
-                      ./packages.nix
-                      ./starship.nix
-                      ./services.nix
-                      ./tmux.nix
-                      (import ./zsh.nix (config // {
-                        inherit configName;
-                      }))
-                    ] ++ extraImports;
-                  };
-                }
-              ).activationPackage;
+              drv =
+                (home-manager.lib.homeManagerConfiguration
+                  {
+                    inherit pkgs;
+                    inherit (config) system homeDirectory username;
+                    extraModules = [ nix-doom-emacs.hmModule ];
+                    configuration = {
+                      imports = (import ./home { inherit config; inherit configName; }) ++ extraImports;
+                    };
+                  }
+                ).activationPackage;
             };
 
         configs = rec {
@@ -94,7 +83,7 @@
             nixConfigPath = homeDirectory + "/code/nixconfig";
           };
 
-          personal-nixos = personal // { extraImports = [ ./graphical.nix ]; };
+          personal-nixos = personal // { extraImports = [ ./home/graphical.nix ]; };
 
           tv = rec {
             username = "tv";
@@ -102,12 +91,12 @@
             name = "TV Lipscombe";
             email = "tv@lipscombe.com.au";
             nixConfigPath = homeDirectory + "/code/nixconfig";
-            extraImports = [ ./tv.nix ./emulation.nix ];
+            extraImports = [ ./home/media.nix ./home/emulation.nix ];
           };
 
           immutable = personal // { email = "dane.lipscombe@immutable.com"; };
 
-          immutable-nixos = immutable // { extraImports = [ ./graphical.nix ]; };
+          immutable-nixos = immutable // { extraImports = [ ./home/graphical.nix ]; };
 
           root = personal // {
             username = "root";

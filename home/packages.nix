@@ -61,6 +61,7 @@
     python38Packages.pip
     python38Packages.setuptools
     python38Packages.grip
+    release.csvkit
     ripgrep
     rnix-lsp
     rustup

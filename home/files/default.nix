@@ -2,7 +2,7 @@
   home.file = {
 
     # tmux theme
-    ".palenight-tmux".source = ./dotfiles/palenight-tmux;
+    ".palenight-tmux".source = ./palenight-tmux;
 
     #  ".config/starship.toml".text = ''
     #   [nix_shell]

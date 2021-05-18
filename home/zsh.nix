@@ -1,7 +1,8 @@
 { configName, nixConfigPath, ... }:
 { pkgs, lib, ... }:
-let aliases = builtins.readFile ./dotfiles/aliases.sh;
-in {
+let aliases = builtins.readFile ./aliases.sh;
+in
+{
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
