@@ -9,6 +9,7 @@
     binutils
     cheat
     circleci-cli
+    csvkit
     deno
     dig
     direnv
@@ -58,10 +59,9 @@
     proselint
     python
     python3
+    python38Packages.grip
     python38Packages.pip
     python38Packages.setuptools
-    python38Packages.grip
-    release.csvkit
     ripgrep
     rnix-lsp
     rustup
