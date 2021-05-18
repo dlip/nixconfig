@@ -90,9 +90,14 @@ in
       # Enable UPnP or NAT-PMP.
       peer-port = 51413;
       port-forwarding-enabled = false;
-      # Start torrents as soon as they are added
-
+      # Start torrents as soon as they are added.
       start-added-torrents = true;
+
+      # Stop seeding after being idle for N minutes.
+      idle-seeding-limit = 10;
+      idle-seeding-limit-enabled = true;
+      ratio-limit = 2.0;
+      ratio-limit-enabled = true;
 
       # notify me when download finished
       script-torrent-done-enabled = true;

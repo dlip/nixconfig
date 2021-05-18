@@ -410,7 +410,7 @@ let
   '';
 in
 {
-  home.packages = with pkgs; [ retroarch emulationstation my.skyscraper ];
+  home.packages = with pkgs; [ retroarch emulationstation ];
 
   home.file.".emulationstation/es_systems.cfg".text = ''
     <systemList>
