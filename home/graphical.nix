@@ -16,6 +16,7 @@
     spotify
     vscode
     xorg.xmodmap
+    xclip
     yubikey-manager-qt
     yubioath-desktop
   ];

@@ -17,6 +17,7 @@ in
     shellAliases = {
       c = "clear";
       g = "git";
+      clip = "xclip -sel c";
     };
 
     initExtra = ''
