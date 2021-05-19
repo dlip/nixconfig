@@ -148,24 +148,8 @@ rec {
         hostPath = "/f";
         isReadOnly = false;
       };
-      "/var/lib/transmission" = {
-        hostPath = "/mnt/services/transmission";
-        isReadOnly = false;
-      };
-      "/var/lib/radarr/.config/Radarr" = {
-        hostPath = "/mnt/services/radarr";
-        isReadOnly = false;
-      };
-      "/var/lib/sonarr/.config/NzbDrone" = {
-        hostPath = "/mnt/services/sonarr";
-        isReadOnly = false;
-      };
-      "/var/lib/bazarr" = {
-        hostPath = "/mnt/services/bazarr";
-        isReadOnly = false;
-      };
-      "/var/lib/jackett/.config/Jackett" = {
-        hostPath = "/mnt/services/jackett";
+      "/var/lib" = {
+        hostPath = "/mnt/downloader/var/lib";
         isReadOnly = false;
       };
     };
