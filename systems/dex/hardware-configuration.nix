@@ -10,6 +10,7 @@
     "vfat"
     "nls_cp437"
     "nls_iso8859-1"
+    "xhci_hcd"
     "xhci_pci"
     "ahci"
     "usbhid"
@@ -53,8 +54,8 @@
   };
 
   fileSystems."/media/media" = {
-    device =
-      "/dev/disk/by-uuid/ffea1765-0616-4311-ac3b-fde6e83ef011"; # UUID for /dev/mapper/media
+    device = "/dev/disk/by-uuid/ffea1765-0616-4311-ac3b-fde6e83ef011"; # UUID for /dev/mapper/media
+    fsType = "btrfs";
     encrypted = {
       enable = true;
       label = "media";
@@ -64,8 +65,8 @@
     };
   };
   fileSystems."/media/media2" = {
-    device =
-      "/dev/disk/by-uuid/bd148b15-4950-4da8-9fd1-17d8a32390d5"; # UUID for /dev/mapper/media2
+    device = "/dev/disk/by-uuid/bd148b15-4950-4da8-9fd1-17d8a32390d5"; # UUID for /dev/mapper/media2
+    fsType = "btrfs";
     encrypted = {
       enable = true;
       label = "media2";
@@ -74,6 +75,22 @@
       keyFile = "/lukskey";
     };
   };
+
+  # Why does this not work???
+  # fileSystems."/media/backup" = {
+  #   device =
+  #     "/dev/disk/by-uuid/52c6c483-1036-4bc8-b019-1064e6bc5593"; # UUID for /dev/mapper/media2
+  #   fsType = "ext4";
+  #   options = [ "nofail" "x-systemd.device-timeout=10" ];
+  #   encrypted = {
+  #     enable = true;
+  #     label = "backup";
+  #     blkDev =
+  #       "/dev/disk/by-uuid/8c4746b9-7ccb-4a94-8e72-502ea6ff4a49"; # UUID for /dev/sda1
+  #     keyFile = "/lukskey";
+  #   };
+  # };
+
   fileSystems."/media/games" = {
     device = "/dev/disk/by-uuid/0BB20EC37670AE62";
     fsType = "ntfs";

@@ -83,6 +83,23 @@ rec {
   sound.enable = true;
   hardware.pulseaudio.enable = true;
 
+  systemd.services.mount-backup = {
+    enable = true;
+    description = "Mount backup";
+
+    after = [ "network.target" ];
+    wantedBy = [ "multi-user.target" ];
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+      Group = "root";
+    };
+    script = ''
+      ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/sdf backup
+      /run/wrappers/bin/mount /dev/mapper/backup /media/backup
+    '';
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
