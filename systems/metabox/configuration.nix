@@ -103,6 +103,7 @@ rec {
   services.xserver.libinput.enable = true;
   services.k3s = {
     enable = true;
+    docker = true;
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
