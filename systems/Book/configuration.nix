@@ -43,11 +43,11 @@ in
     '';
   };
 
-  systemd.services.restic-backups-remotebackup.unitConfig.OnFailure = "notify-problems@%i.service";
+  systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
   services.restic.backups = {
-    remotebackup = {
-      paths = [ "/home" "/root" ];
-      repository = "sftp:dane@10.10.0.123:/media/media/dane-backup/restic";
+    dex = {
+      paths = [ "/home" "/root" "/mnt/c/Users/danel" ];
+      repository = "sftp:dane@10.10.0.123:/media/backup/book";
       passwordFile = "/root/backup/restic-password";
       timerConfig = {
         OnCalendar = "daily";
