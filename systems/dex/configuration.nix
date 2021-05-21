@@ -13,6 +13,8 @@ rec {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ../../cachix.nix
+    ../../services/notify-problems.nix
+    ../../services/ssmtp.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -95,8 +97,10 @@ rec {
       Group = "root";
     };
     script = ''
-      ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/sdf backup
-      /run/wrappers/bin/mount /dev/mapper/backup /media/backup
+      if ! /run/wrappers/bin/mount | grep -q -wi "/media/backup"; then
+         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/sdf backup
+         /run/wrappers/bin/mount /dev/mapper/backup /media/backup
+      fi
     '';
   };
 
@@ -199,26 +203,32 @@ rec {
     group = "root";
   };
 
-  services.cron = {
-    enable = true;
-    mailto = "dane@lipscombe.com.au";
-    systemCronJobs = [
-      "46 16 * * *      root    cd /root/backup && ./restic-backup.sh"
-    ];
-  };
-
-  services.ssmtp = {
-    enable = true;
-    # The user that gets all the mails (UID < 1000, usually the admin)
-    root = "dane@lipscombe.com.au";
-    useTLS = true;
-    useSTARTTLS = true;
-    hostName = "smtp.gmail.com:587";
-    # The address where the mail appears to come from for user authentication.
-    domain = "lipscombe.com.au";
-    # Username/Password File
-    authUser = "dane@lipscombe.com.au";
-    authPassFile = "/mnt/services/ssmtp/pass";
+  environment.etc.restic-ignore.text = ''
+    .rustup
+    .cache
+    node_modules
+  '';
+  systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
+  services.restic.backups = {
+    dex = {
+      paths = [
+        "/home"
+        "/root"
+        "/media/media/dane"
+        "/media/media/ryoko"
+        "/mnt/services"
+      ];
+      repository = "/media/backup/restic";
+      passwordFile = "/root/backup/restic-password";
+      pruneOpts = [
+        "--keep-daily 1"
+      ];
+      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" ];
+      timerConfig = {
+        OnCalendar = "daily";
+        Persistent = true;
+      };
+    };
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
