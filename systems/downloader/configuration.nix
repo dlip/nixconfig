@@ -33,8 +33,8 @@ in
     wantedBy = [ "timers.target" ];
     partOf = [ "restart-qbittorrent.service" ];
     timerConfig = {
-      OnCalendar = "hourly";
-      Persistent = true;
+      OnActiveSec = "4h";
+      OnUnitActiveSec = "4h";
     };
   };
 
