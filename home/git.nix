@@ -48,6 +48,7 @@
       stat = "status -s";
       unadd = "rm --cached";
       dlog = "log --decorate";
+      merge = "merge --no-edit";
     };
   };
 }

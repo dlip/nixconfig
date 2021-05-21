@@ -74,7 +74,7 @@ in
       pruneOpts = [
         "--keep-daily 1"
       ];
-      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" ];
+      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" ];
       timerConfig = {
         OnCalendar = "daily";
         Persistent = true;
