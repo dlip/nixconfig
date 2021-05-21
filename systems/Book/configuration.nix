@@ -43,12 +43,38 @@ in
     '';
   };
 
+  environment.etc.restic-ignore.text = ''
+    NTUSER.DAT
+    ntuser.dat.*
+    .rustup
+    .cache
+    .vscode
+    *.vhdx
+    Temp
+    node_modules
+    Google Drive
+    Dropbox
+    OneDrive
+    VirtualBox VMs
+    **/AppData/Local/BraveSoftware/**
+    **/AppData/Local/Comms/**
+    **/AppData/Local/Google/**
+    **/AppData/Local/Microsoft/**
+    **/AppData/Local/NVIDIA/**
+    **/AppData/Local/Packages/**
+    **/AppData/Local/Spotify/**
+    **/AppData/Local/Syncthing/**
+  '';
   systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
   services.restic.backups = {
     dex = {
       paths = [ "/home" "/root" "/mnt/c/Users/danel" ];
       repository = "sftp:dane@10.10.0.123:/media/backup/book";
       passwordFile = "/root/backup/restic-password";
+      pruneOpts = [
+        "--keep-daily 1"
+      ];
+      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" ];
       timerConfig = {
         OnCalendar = "daily";
         Persistent = true;
