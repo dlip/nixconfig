@@ -14,6 +14,30 @@ in
     };
   };
 
+  # qbittorrent stops downloading when vpn gets reconnected
+  systemd.services.restart-qbittorrent = {
+    enable = true;
+    description = "Restart qbittorrent";
+
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+      Group = "root";
+    };
+    script = ''
+      systemctl restart qbittorrent
+    '';
+  };
+
+  systemd.timers.restart-qbittorrent = {
+    wantedBy = [ "timers.target" ];
+    partOf = [ "restart-qbittorrent.service" ];
+    timerConfig = {
+      OnCalendar = "hourly";
+      Persistent = true;
+    };
+  };
+
   services.ssmtp = {
     enable = true;
     # The user that gets all the mails (UID < 1000, usually the admin)
