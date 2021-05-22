@@ -70,12 +70,13 @@ in
   services.restic.backups = {
     dex = {
       paths = [ "/home" "/root" "/mnt/c/Users/danel" ];
-      repository = "sftp:dane@10.10.0.123:/media/backup/book";
+      repository = "rest:http://10.10.0.123:8000/book";
       passwordFile = "/root/backup/restic-password";
       pruneOpts = [
-        "--keep-daily 1"
+        "--keep-daily 7"
+        "--keep-weekly 4"
       ];
-      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" ];
+      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" "2" ];
       timerConfig = {
         OnCalendar = "daily";
         Persistent = true;
