@@ -70,7 +70,11 @@ in
   };
   services.radarr = {
     enable = true;
-
+    user = "root";
+    group = "root";
+  };
+  services.lidarr = {
+    enable = true;
     user = "root";
     group = "root";
   };

@@ -3,4 +3,4 @@
     kodi
     spotify
   ];
- }
+}
