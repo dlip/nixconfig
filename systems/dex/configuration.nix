@@ -218,17 +218,24 @@ rec {
         "/media/media/ryoko"
         "/mnt/services"
       ];
-      repository = "/media/backup/restic";
+      repository = "/media/backup/restic/dex";
       passwordFile = "/root/backup/restic-password";
       pruneOpts = [
-        "--keep-daily 1"
+        "--keep-daily 7"
+        "--keep-weekly 4"
       ];
-      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" ];
+      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" "2" ];
       timerConfig = {
         OnCalendar = "daily";
         Persistent = true;
       };
     };
+  };
+  services.restic.server = {
+    enable = true;
+    listenAddress = "0.0.0.0:8000";
+    dataDir = "/media/backup/restic";
+    extraFlags = [ "--no-auth" ];
   };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -283,7 +290,7 @@ rec {
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
 
-  networking.firewall.allowedTCPPorts = [ 445 139 80 22 ];
+  networking.firewall.allowedTCPPorts = [ 445 139 80 22 8000 ];
   networking.firewall.allowedUDPPorts = [ 137 138 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
