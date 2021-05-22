@@ -24,7 +24,7 @@ in
   time.timeZone = "Australia/Sydney";
   users.users.${defaultUser} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = "/home/${defaultUser}/.nix-profile/bin/zsh";
   };
 
@@ -44,26 +44,27 @@ in
   };
 
   environment.etc.restic-ignore.text = ''
-    NTUSER.DAT
-    ntuser.dat.*
-    .rustup
-    .cache
-    .vscode
-    *.vhdx
-    Temp
-    node_modules
-    Google Drive
-    Dropbox
-    OneDrive
-    VirtualBox VMs
     **/AppData/Local/BraveSoftware/**
     **/AppData/Local/Comms/**
+    **/AppData/Local/ElevatedDiagnostics/**
     **/AppData/Local/Google/**
     **/AppData/Local/Microsoft/**
     **/AppData/Local/NVIDIA/**
     **/AppData/Local/Packages/**
     **/AppData/Local/Spotify/**
     **/AppData/Local/Syncthing/**
+    *.vhdx
+    .cache
+    .rustup
+    .vscode
+    Dropbox
+    Google Drive
+    NTUSER.DAT
+    OneDrive
+    Temp
+    VirtualBox VMs
+    node_modules
+    ntuser.dat.*
   '';
   systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
   services.restic.backups = {
@@ -97,6 +98,8 @@ in
   systemd.services.firewall.enable = false;
   systemd.services.systemd-resolved.enable = false;
   systemd.services.systemd-udevd.enable = false;
+  services.openssh.enable = true;
+  virtualisation.docker.enable = true;
 
   # Don't allow emergency mode, because we don't have a console.
   systemd.enableEmergencyMode = false;
