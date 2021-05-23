@@ -24,7 +24,7 @@ in
   time.timeZone = "Australia/Sydney";
   users.users.${defaultUser} = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
     shell = "/home/${defaultUser}/.nix-profile/bin/zsh";
   };
 
@@ -44,37 +44,39 @@ in
   };
 
   environment.etc.restic-ignore.text = ''
-    NTUSER.DAT
-    ntuser.dat.*
-    .rustup
-    .cache
-    .vscode
-    *.vhdx
-    Temp
-    node_modules
-    Google Drive
-    Dropbox
-    OneDrive
-    VirtualBox VMs
     **/AppData/Local/BraveSoftware/**
     **/AppData/Local/Comms/**
+    **/AppData/Local/ElevatedDiagnostics/**
     **/AppData/Local/Google/**
     **/AppData/Local/Microsoft/**
     **/AppData/Local/NVIDIA/**
     **/AppData/Local/Packages/**
     **/AppData/Local/Spotify/**
     **/AppData/Local/Syncthing/**
+    *.vhdx
+    .cache
+    .rustup
+    .vscode
+    Dropbox
+    Google Drive
+    NTUSER.DAT
+    OneDrive
+    Temp
+    VirtualBox VMs
+    node_modules
+    ntuser.dat.*
   '';
   systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
   services.restic.backups = {
     dex = {
       paths = [ "/home" "/root" "/mnt/c/Users/danel" ];
-      repository = "sftp:dane@10.10.0.123:/media/backup/book";
+      repository = "rest:http://10.10.0.123:8000/book";
       passwordFile = "/root/backup/restic-password";
       pruneOpts = [
-        "--keep-daily 1"
+        "--keep-daily 7"
+        "--keep-weekly 4"
       ];
-      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" ];
+      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" "2" ];
       timerConfig = {
         OnCalendar = "daily";
         Persistent = true;
@@ -97,6 +99,8 @@ in
   systemd.services.firewall.enable = false;
   systemd.services.systemd-resolved.enable = false;
   systemd.services.systemd-udevd.enable = false;
+  services.openssh.enable = true;
+  virtualisation.docker.enable = true;
 
   # Don't allow emergency mode, because we don't have a console.
   systemd.enableEmergencyMode = false;
