@@ -14,6 +14,7 @@
       flake = false;
     };
     sops-nix.url = "github:Mic92/sops-nix";
+    kubenix.url = "github:xtruder/kubenix";
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
@@ -31,6 +32,7 @@
     , envy-sh
     , arion
     , sops-nix
+    , kubenix
     , flake-compat
     , flake-utils
     }:
@@ -49,6 +51,7 @@
             (final: prev: {
               my = final.callPackage ./pkgs { };
               envy-sh = envy-sh.defaultPackage.${system};
+              kubenix = kubenix.defaultPackage.${system};
               inherit (final.callPackage arion { }) arion;
               csvkit = pkgs-release.csvkit; # unstable has a build error
             })
@@ -70,6 +73,8 @@
                   }
                 ).activationPackage;
             };
+
+        k8sConfig = kubenix.defaultPackage.${system}.buildResources { configuration = import ./k8s.nix { }; };
 
         configs = rec {
           personal = rec {
@@ -112,6 +117,12 @@
                 echo "builtins.getFlake (toString $(git rev-parse --show-toplevel))" >$confnix
                 trap "rm $confnix" EXIT
                 nix repl $confnix
+              '';
+            };
+          k8s = flake-utils.lib.mkApp
+            {
+              drv = with pkgs; writeShellScriptBin "k8s" ''
+                ${kubectl}/bin/kubectl apply -f ${k8sConfig}
               '';
             };
           homeConfigurations = builtins.mapAttrs createHomeConfig configs;
