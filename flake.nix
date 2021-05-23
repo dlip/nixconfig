@@ -74,7 +74,7 @@
                 ).activationPackage;
             };
 
-        k8sConfig = kubenix.defaultPackage.${system}.buildResources { configuration = import ./k8s.nix { }; };
+        k8sConfig = kubenix.defaultPackage.${system}.buildResources { configuration = import ./k8s { }; };
 
         configs = rec {
           personal = rec {
@@ -122,10 +122,11 @@
           k8s = flake-utils.lib.mkApp
             {
               drv = with pkgs; writeShellScriptBin "k8s" ''
+                set -euo pipefail
                 ${kubectl}/bin/kubectl apply -f https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
                 ${kubectl}/bin/kubectl apply -f https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml
-                ${helm}/bin/helm repo add traefik https://helm.traefik.io/traefik
-                ${helm}/bin/helm upgrade --install traefik traefik/traefik --wait --set --set ports.traefik.expose=true --set ports.web.expose=false --set ports.websecure.expose=false
+                ${kubernetes-helm}/bin/helm repo add traefik https://helm.traefik.io/traefik
+                ${kubernetes-helm}/bin/helm upgrade --install traefik traefik/traefik -f k8s/traefik.yaml -n kube-system --wait
                 ${kubectl}/bin/kubectl apply -f ${k8sConfig}
               '';
             };
