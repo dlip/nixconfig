@@ -253,10 +253,19 @@ rec {
         </runcommand>
       '';
   };
+  # Open ports in the firewall.
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
+
+  networking.firewall.allowedTCPPorts = [ 445 139 80 22 8000 6443 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
 
   services.k3s = {
     enable = true;
     docker = true;
+    extraFlags = "--no-deploy traefik";
   };
   virtualisation.docker.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
@@ -308,14 +317,6 @@ rec {
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  networking.firewall.enable = true;
-  networking.firewall.allowPing = true;
-
-  networking.firewall.allowedTCPPorts = [ 445 139 80 22 8000 ];
-  networking.firewall.allowedUDPPorts = [ 137 138 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

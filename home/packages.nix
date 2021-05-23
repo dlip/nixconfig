@@ -69,6 +69,7 @@
     sqlite
     stack
     tcpdump
+    tektoncd-cli
     terraform_0_15
     tldr
     tshark

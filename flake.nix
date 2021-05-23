@@ -122,6 +122,8 @@
           k8s = flake-utils.lib.mkApp
             {
               drv = with pkgs; writeShellScriptBin "k8s" ''
+                ${kubectl}/bin/kubectl apply -f https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
+                ${kubectl}/bin/kubectl apply -f https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml
                 ${kubectl}/bin/kubectl apply -f ${k8sConfig}
               '';
             };
