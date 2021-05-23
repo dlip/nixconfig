@@ -124,6 +124,8 @@
               drv = with pkgs; writeShellScriptBin "k8s" ''
                 ${kubectl}/bin/kubectl apply -f https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
                 ${kubectl}/bin/kubectl apply -f https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml
+                ${helm}/bin/helm repo add traefik https://helm.traefik.io/traefik
+                ${helm}/bin/helm upgrade --install traefik traefik/traefik --wait --set --set ports.traefik.expose=true --set ports.web.expose=false --set ports.websecure.expose=false
                 ${kubectl}/bin/kubectl apply -f ${k8sConfig}
               '';
             };
