@@ -111,7 +111,7 @@ rec {
   users.users.dane = {
     isNormalUser = true;
     initialPassword = "password";
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
     shell = "/home/dane/.nix-profile/bin/zsh";
   };
 
@@ -237,6 +237,37 @@ rec {
     dataDir = "/media/backup/restic";
     extraFlags = [ "--no-auth" ];
   };
+  services.hydra = {
+    enable = true;
+    hydraURL = "http://localhost:3000"; # externally visible URL
+    notificationSender = "hydra@localhost"; # e-mail of hydra service
+    # a standalone hydra will require you to unset the buildMachinesFiles list to avoid using a nonexistant /etc/nix/machines
+    buildMachinesFiles = [ ];
+    # you will probably also want, otherwise *everything* will be built from scratch
+    useSubstitutes = true;
+    extraConfig =
+      ''
+        <runcommand>
+          job = *:*:*
+          command = cat $HYDRA_JSON >> /tmp/hydra
+        </runcommand>
+      '';
+  };
+  # Open ports in the firewall.
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
+
+  networking.firewall.allowedTCPPorts = [ 445 139 80 22 8000 6443 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+
+  services.k3s = {
+    enable = true;
+    docker = true;
+    extraFlags = "--no-deploy traefik";
+  };
+  virtualisation.docker.enable = true;
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -286,14 +317,6 @@ rec {
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Open ports in the firewall.
-  networking.firewall.enable = true;
-  networking.firewall.allowPing = true;
-
-  networking.firewall.allowedTCPPorts = [ 445 139 80 22 8000 ];
-  networking.firewall.allowedUDPPorts = [ 137 138 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
