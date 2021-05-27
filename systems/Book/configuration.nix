@@ -56,6 +56,7 @@ in
     *.vhdx
     .cache
     .rustup
+    .spago
     .vscode
     Dropbox
     Google Drive
