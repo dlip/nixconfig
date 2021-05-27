@@ -44,6 +44,15 @@ rec {
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
+  # Open ports in the firewall.
+  networking.firewall.enable = true;
+  networking.firewall.allowPing = true;
+
+  networking.firewall.allowedTCPPorts = [ 445 139 80 22 8000 6443 1234 ];
+  networking.firewall.allowedUDPPorts = [ 137 138 ];
+
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
   # console = {
@@ -131,6 +140,8 @@ rec {
     pciutils
     git
     restic
+    pkgs-unstable.tektoncd-cli
+    kubectl
   ];
 
   networking.nat.enable = true;
@@ -203,6 +214,10 @@ rec {
     group = "root";
   };
 
+  services.nix-serve = {
+    enable = true;
+    secretKeyFile = "/var/cache-priv-key.pem";
+  };
   environment.etc.restic-ignore.text = ''
     .rustup
     .cache
@@ -244,23 +259,16 @@ rec {
     # a standalone hydra will require you to unset the buildMachinesFiles list to avoid using a nonexistant /etc/nix/machines
     buildMachinesFiles = [ ];
     # you will probably also want, otherwise *everything* will be built from scratch
+    #tkn task start hydra --dry-run -p json="$(cat $HYDRA_JSON)"
     useSubstitutes = true;
     extraConfig =
       ''
         <runcommand>
           job = *:*:*
-          command = cat $HYDRA_JSON >> /tmp/hydra
+          command = . /etc/profile; tkn task start hydra -p json="$(cat $HYDRA_JSON)"
         </runcommand>
       '';
   };
-  # Open ports in the firewall.
-  networking.firewall.enable = true;
-  networking.firewall.allowPing = true;
-
-  networking.firewall.allowedTCPPorts = [ 445 139 80 22 8000 6443 ];
-  networking.firewall.allowedUDPPorts = [ 137 138 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
 
   services.k3s = {
     enable = true;
