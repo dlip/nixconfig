@@ -7,6 +7,21 @@ let
   dex-services = import ./services.nix;
   downloader-services = import ../downloader/services.nix;
   domain = "home.lipscombe.com.au";
+  push-image = pkgs.writeShellScriptBin "push-image" ''
+    . /etc/profile
+    set -euo pipefail
+    STORE=$1
+    IMAGE=$2
+
+    if [[ $(jq '.buildStatus' < $HYDRA_JSON) != 0 ]]; then
+      echo "Build failed, skipping push-image"
+      exit 0
+    fi
+    OUTPUT_PATH="$(jq -r '.outputs[0].path' < $HYDRA_JSON)"
+    VERSION=$(echo "$OUTPUT_PATH" | tr "/" "\n" | tail -n1 | tr "-" "\n" | head -n +1)
+
+    tkn task start push -p store=$STORE -p outputPath=$OUTPUT_PATH -p image=$IMAGE -p version=$VERSION --serviceaccount tekton
+  '';
 in
 rec {
   imports = [
@@ -142,6 +157,8 @@ rec {
     restic
     pkgs-unstable.tektoncd-cli
     kubectl
+    push-image
+    jq
   ];
 
   networking.nat.enable = true;
@@ -216,7 +233,7 @@ rec {
 
   services.nix-serve = {
     enable = true;
-    secretKeyFile = "/var/cache-priv-key.pem";
+    #secretKeyFile = "/var/cache-priv-key.pem";
   };
   environment.etc.restic-ignore.text = ''
     .rustup
@@ -264,8 +281,8 @@ rec {
     extraConfig =
       ''
         <runcommand>
-          job = *:*:*
-          command = . /etc/profile; tkn task start hydra -p json="$(cat $HYDRA_JSON)"
+          job = envy-sh:build:dockerImage
+          command = ${push-image}/bin/push-image http://nix-cache.home.lipscombe.com.au dlip/envynix
         </runcommand>
       '';
   };

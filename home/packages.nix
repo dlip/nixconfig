@@ -19,6 +19,7 @@
     envy-sh
     exa
     file
+    fluxcd
     fzf
     gcc
     gh
@@ -34,6 +35,7 @@
     htop
     iotop
     jq
+    k9s
     kubectl
     kubernetes-helm
     kubetail
