@@ -83,7 +83,7 @@ in
     overpass
     source-han-code-jp
     source-serif-pro
-    (nerdfonts.override { fonts = [ "FiraCodea" "DroidSansMono" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
   ];
 
   # Disable systemd units that don't make sense on WSL
