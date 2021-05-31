@@ -44,33 +44,20 @@ in
   };
 
   environment.etc.restic-ignore.text = ''
-    **/AppData/Local/BraveSoftware/**
-    **/AppData/Local/Comms/**
-    **/AppData/Local/ElevatedDiagnostics/**
-    **/AppData/Local/Google/**
-    **/AppData/Local/Microsoft/**
-    **/AppData/Local/NVIDIA/**
-    **/AppData/Local/Packages/**
-    **/AppData/Local/Spotify/**
-    **/AppData/Local/Syncthing/**
-    *.vhdx
     .cache
     .rustup
     .spago
     .vscode
     Dropbox
     Google Drive
-    NTUSER.DAT
-    OneDrive
     Temp
     VirtualBox VMs
     node_modules
-    ntuser.dat.*
   '';
   systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
   services.restic.backups = {
     dex = {
-      paths = [ "/home" "/root" "/mnt/c/Users/danel" ];
+      paths = [ "/home" "/root" ];
       repository = "rest:http://10.10.0.123:8000/book";
       passwordFile = "/root/backup/restic-password";
       pruneOpts = [
@@ -91,6 +78,14 @@ in
     vim
     restic
   ];
+
+  fonts.fonts = with pkgs; [
+    overpass
+    source-han-code-jp
+    source-serif-pro
+    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+  ];
+
   # Disable systemd units that don't make sense on WSL
   systemd.services."serial-getty@ttyS0".enable = false;
   systemd.services."serial-getty@hvc0".enable = false;

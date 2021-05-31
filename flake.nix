@@ -14,7 +14,6 @@
       flake = false;
     };
     sops-nix.url = "github:Mic92/sops-nix";
-    kubenix.url = "github:xtruder/kubenix";
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
@@ -32,7 +31,6 @@
     , envy-sh
     , arion
     , sops-nix
-    , kubenix
     , flake-compat
     , flake-utils
     }:
@@ -51,7 +49,6 @@
             (final: prev: {
               my = final.callPackage ./pkgs { };
               envy-sh = envy-sh.defaultPackage.${system};
-              kubenix = kubenix.defaultPackage.${system};
               inherit (final.callPackage arion { }) arion;
               csvkit = pkgs-release.csvkit; # unstable has a build error
             })
@@ -73,8 +70,6 @@
                   }
                 ).activationPackage;
             };
-
-        k8sConfig = kubenix.defaultPackage.${system}.buildResources { configuration = import ./k8s { }; };
 
         configs = rec {
           personal = rec {
@@ -119,17 +114,6 @@
                 nix repl $confnix
               '';
             };
-          k8s = flake-utils.lib.mkApp
-            {
-              drv = with pkgs; writeShellScriptBin "k8s" ''
-                set -euo pipefail
-                ${kubectl}/bin/kubectl apply -f https://storage.googleapis.com/tekton-releases/pipeline/latest/release.yaml
-                ${kubectl}/bin/kubectl apply -f https://storage.googleapis.com/tekton-releases/dashboard/latest/tekton-dashboard-release.yaml
-                ${kubernetes-helm}/bin/helm repo add traefik https://helm.traefik.io/traefik
-                ${kubernetes-helm}/bin/helm upgrade --install traefik traefik/traefik -f k8s/traefik.yaml -n kube-system --wait
-                ${kubectl}/bin/kubectl apply -f ${k8sConfig}
-              '';
-            };
           homeConfigurations = builtins.mapAttrs createHomeConfig configs;
         };
         devShell = pkgs.mkShell {
@@ -166,6 +150,18 @@
           };
           dex = with nixpkgs; lib.nixosSystem {
             system = "x86_64-linux";
+            pkgs = import nixpkgs {
+              system = "x86_64-linux";
+              config.allowUnfree = true;
+              overlays = [
+                (final: prev: {
+                  pkgs-unstable = import nixpkgs-unstable {
+                    system = "x86_64-linux";
+                    config.allowUnfree = true;
+                  };
+                })
+              ];
+            };
             modules = [ ./systems/dex/configuration.nix ];
           };
           Book = with nixpkgs; lib.nixosSystem {

@@ -1,7 +1,0 @@
-ports:
-    traefik:
-        expose: true
-    web:
-        expose: false
-    websecure:
-        expose: false

@@ -19,6 +19,7 @@
     envy-sh
     exa
     file
+    fluxcd
     fzf
     gcc
     gh
