@@ -22,6 +22,14 @@ nixosconfig(){
     popd > /dev/null
 }
 
+reset-k3s(){
+    sudo systemctl stop k3s
+    sudo rm -rf /etc/rancher
+    sudo rm -rf /var/lib/rancher
+    sudo systemctl start k3s
+    sudo cat /etc/rancher/k3s/k3s.yaml > ~/.kube/k3s.yaml
+}
+
 vterm_printf(){
     if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ] ); then
         # Tell tmux to pass the escape sequences through

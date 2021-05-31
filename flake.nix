@@ -157,18 +157,18 @@
 
         };
       }) // {
-      nixosConfigurations = with nixpkgs;
+      nixosConfigurations =
         {
-          metabox = lib.nixosSystem {
+          metabox = with nixpkgs-unstable; lib.nixosSystem {
             system = "x86_64-linux";
             modules =
               [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
           };
-          dex = lib.nixosSystem {
+          dex = with nixpkgs; lib.nixosSystem {
             system = "x86_64-linux";
             modules = [ ./systems/dex/configuration.nix ];
           };
-          Book = lib.nixosSystem {
+          Book = with nixpkgs; lib.nixosSystem {
             system = "x86_64-linux";
             modules = [ ./systems/Book/configuration.nix ];
           };
