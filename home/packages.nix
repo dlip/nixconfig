@@ -36,6 +36,7 @@
     iotop
     jq
     k9s
+    kind
     kubectl
     kubernetes-helm
     kubetail
@@ -67,6 +68,7 @@
     ripgrep
     rnix-lsp
     rustup
+    skopeo
     sops
     sqlite
     stack
