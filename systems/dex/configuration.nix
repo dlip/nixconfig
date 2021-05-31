@@ -223,6 +223,12 @@ rec {
       downloader-services);
   };
 
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    guiAddress = "0.0.0.0:8384";
+  };
+
   services.plex = {
     enable = true;
     openFirewall = true;
@@ -249,6 +255,8 @@ rec {
         "/media/media/dane"
         "/media/media/ryoko"
         "/mnt/services"
+        "/mnt/downloader"
+        "/var/lib"
       ];
       repository = "/media/backup/restic/dex";
       passwordFile = "/root/backup/restic-password";
