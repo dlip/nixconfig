@@ -247,21 +247,6 @@
     },
     "flake-utils_2": {
       "locked": {
-        "lastModified": 1605370193,
-        "narHash": "sha256-YyMTf3URDL/otKdKgtoMChu4vfVL3vCMkRqpGifhUn0=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "5021eac20303a61fafe17224c087f5519baed54d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "flake-utils_3": {
-      "locked": {
         "lastModified": 1618868421,
         "narHash": "sha256-vyoJhLV6cJ8/tWz+l9HZLIkb9Rd9esE7p+0RL6zDR6Y=",
         "owner": "numtide",
@@ -295,25 +280,6 @@
         "type": "github"
       }
     },
-    "kubenix": {
-      "inputs": {
-        "flake-utils": "flake-utils_2",
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1613933677,
-        "narHash": "sha256-XluRu59pnTxLgTmKSIsb60quYF2n06H0Q+0iHdD7dUg=",
-        "owner": "xtruder",
-        "repo": "kubenix",
-        "rev": "473a18371d2c0bb22bf060f750589695fb7d3100",
-        "type": "github"
-      },
-      "original": {
-        "owner": "xtruder",
-        "repo": "kubenix",
-        "type": "github"
-      }
-    },
     "nix-doom-emacs": {
       "inputs": {
         "doom-emacs": "doom-emacs",
@@ -324,9 +290,9 @@
         "evil-org-mode": "evil-org-mode",
         "evil-quick-diff": "evil-quick-diff",
         "explain-pause-mode": "explain-pause-mode",
-        "flake-utils": "flake-utils_3",
+        "flake-utils": "flake-utils_2",
         "nix-straight": "nix-straight",
-        "nixpkgs": "nixpkgs_3",
+        "nixpkgs": "nixpkgs_2",
         "nose": "nose",
         "ob-racket": "ob-racket",
         "org-mode": "org-mode",
@@ -416,21 +382,6 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1609233094,
-        "narHash": "sha256-Ltzng3h4LDNjYAvmoX0kQ3023TvdupwuMvm1D7hZkyY=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "2b556ea6712cd4fa76a433093df0cb375a267e3d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_3": {
-      "locked": {
         "lastModified": 1619105186,
         "narHash": "sha256-n/+A1JUMhJjs2eQAcWFrC9FRNENWaiLr+q9NKSd1EQU=",
         "owner": "NixOS",
@@ -444,7 +395,7 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_4": {
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1621231671,
         "narHash": "sha256-JibKd8VVGRCS0fpjkQcMxkCsCJz0qbrDMkf5++OMkyE=",
@@ -460,7 +411,7 @@
         "type": "github"
       }
     },
-    "nixpkgs_5": {
+    "nixpkgs_4": {
       "locked": {
         "lastModified": 1613917044,
         "narHash": "sha256-YvBBwtvrnove51SXQ67OVQHctYjEEpFu6GEzRe0pp5I=",
@@ -579,9 +530,8 @@
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
-        "kubenix": "kubenix",
         "nix-doom-emacs": "nix-doom-emacs",
-        "nixpkgs": "nixpkgs_4",
+        "nixpkgs": "nixpkgs_3",
         "nixpkgs-release": "nixpkgs-release",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "sops-nix": "sops-nix"
@@ -605,7 +555,7 @@
     },
     "sops-nix": {
       "inputs": {
-        "nixpkgs": "nixpkgs_5"
+        "nixpkgs": "nixpkgs_4"
       },
       "locked": {
         "lastModified": 1618840526,

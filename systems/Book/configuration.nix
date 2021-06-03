@@ -72,18 +72,17 @@ in
     };
   };
 
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+    user = "dane";
+    group = "users";
+  };
 
   environment.systemPackages = with pkgs; [
     git
     vim
     restic
-  ];
-
-  fonts.fonts = with pkgs; [
-    overpass
-    source-han-code-jp
-    source-serif-pro
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
   ];
 
   # Disable systemd units that don't make sense on WSL
