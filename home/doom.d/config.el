@@ -115,3 +115,7 @@ same directory as the org-buffer and insert a link to this file."
        (:desc "Previous workspace" "p" #'+workspace:switch-previous)))
 
 (setq-hook! 'nix-mode-hook +format-with 'nixfmt)
+
+(setq deft-directory "~/org"
+      deft-extensions '("org")
+      deft-recursive t)

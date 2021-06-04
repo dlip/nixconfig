@@ -2,6 +2,7 @@
 [
   ./emacs.nix
   ./files
+  ./fonts.nix
   (import ./git.nix config)
   ./neovim.nix
   ./packages.nix

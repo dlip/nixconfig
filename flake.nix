@@ -1,7 +1,7 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-20.09";
-    nixpkgs-release.url = "github:NixOS/nixpkgs/release-20.09";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
+    nixpkgs-release.url = "github:NixOS/nixpkgs/release-21.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -164,7 +164,7 @@
             };
             modules = [ ./systems/dex/configuration.nix ];
           };
-          Book = with nixpkgs; lib.nixosSystem {
+          Book = with nixpkgs-unstable; lib.nixosSystem {
             system = "x86_64-linux";
             modules = [ ./systems/Book/configuration.nix ];
           };

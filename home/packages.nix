@@ -40,6 +40,8 @@
     kubectl
     kubernetes-helm
     kubetail
+    ledger
+    ledger-autosync
     mdl
     my.nodePackages.unified-language-server
     ncdu
