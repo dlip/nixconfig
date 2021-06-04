@@ -227,6 +227,8 @@ rec {
     enable = true;
     openDefaultPorts = true;
     guiAddress = "0.0.0.0:8384";
+    user = "dane";
+    group = "users";
   };
 
   services.plex = {
