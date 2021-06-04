@@ -57,7 +57,7 @@ in
   systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
   services.restic.backups = {
     dex = {
-      paths = [ "/home" "/root" ];
+      paths = [ "/home" "/root" "/var/lib" ];
       repository = "rest:http://10.10.0.123:8000/book";
       passwordFile = "/root/backup/restic-password";
       pruneOpts = [
@@ -79,11 +79,17 @@ in
     group = "users";
   };
 
-  environment.systemPackages = with pkgs; [
-    git
-    vim
-    restic
-  ];
+  services.hledger-web =
+    {
+      enable = true;
+    };
+
+  environment.systemPackages = with pkgs;
+    [
+      git
+      vim
+      restic
+    ];
 
   # Disable systemd units that don't make sense on WSL
   systemd.services."serial-getty@ttyS0".enable = false;
