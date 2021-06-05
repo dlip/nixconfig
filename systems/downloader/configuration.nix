@@ -83,5 +83,7 @@ in
 
   services.qbittorrent = {
     enable = true;
+    user = "root";
+    group = "root";
   };
 }

@@ -150,18 +150,6 @@
           };
           dex = with nixpkgs; lib.nixosSystem {
             system = "x86_64-linux";
-            pkgs = import nixpkgs {
-              system = "x86_64-linux";
-              config.allowUnfree = true;
-              overlays = [
-                (final: prev: {
-                  pkgs-unstable = import nixpkgs-unstable {
-                    system = "x86_64-linux";
-                    config.allowUnfree = true;
-                  };
-                })
-              ];
-            };
             modules = [ ./systems/dex/configuration.nix ];
           };
           Book = with nixpkgs-unstable; lib.nixosSystem {
