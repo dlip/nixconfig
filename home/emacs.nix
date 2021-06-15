@@ -25,7 +25,9 @@
     package = pkgs.emacsGcc;
     extraPackages = (epkgs:
       (with epkgs; [
+       magit
        doom-themes
+       doom-modeline
        ivy
        command-log-mode
       ]));
