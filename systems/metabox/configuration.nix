@@ -27,6 +27,7 @@ rec {
   #networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   networking.extraHosts = ''
     10.10.0.1 dex
+    127.0.0.1 token-landing.local.x.immutable.com
   '';
 
   # Set your time zone.
@@ -68,12 +69,12 @@ rec {
   services.xserver.enable = true;
 
   # Enable the Gnome Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
   # Enable the Plasma 5 Desktop Environment.
-  #services.xserver.displayManager.sddm.enable = true;
-  #services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.plasma5.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 
@@ -111,6 +112,7 @@ rec {
   services.k3s = {
     enable = true;
     docker = true;
+    extraFlags = "--no-deploy traefik";
   };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
