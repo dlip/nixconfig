@@ -15,3 +15,12 @@
 (cua-mode)
 (set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 120)
 (doom-modeline-mode 1)
+
+(setq projectile-project-search-path '("~/code/"))
+(setq magit-revision-show-gravatars t)
+(setq org-directory "~/org/")
+
+;; This determines the style of line numbers in effect. If set to `nil', line
+;; numbers are disabled. For relative line numbers, set this to `relative'.
+(setq display-line-numbers-type t)
+(all-the-icons-ivy-setup)

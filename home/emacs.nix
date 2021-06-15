@@ -25,11 +25,20 @@
     package = pkgs.emacsGcc;
     extraPackages = (epkgs:
       (with epkgs; [
-       magit
-       doom-themes
-       doom-modeline
-       ivy
-       command-log-mode
+        all-the-icons-ivy
+        command-log-mode
+        counsel
+        counsel-projectile
+        doom-modeline
+        doom-themes
+        format-all
+        ivy
+        lsp-mode
+        magit
+        nix-mode
+        org
+        org-roam
+        projectile
       ]));
   };
 }
