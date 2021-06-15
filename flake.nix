@@ -7,7 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
-    nix-doom-emacs.url = "github:vlaci/nix-doom-emacs";
     envy-sh.url = "github:dlip/envy.sh";
     arion = {
       url = "github:hercules-ci/arion";
@@ -19,6 +18,7 @@
       flake = false;
     };
     flake-utils.url = "github:numtide/flake-utils";
+    emacs-overlay.url = "github:nix-community/emacs-overlay";
   };
 
   outputs =
@@ -26,13 +26,13 @@
     , nixpkgs
     , nixpkgs-release
     , nixpkgs-unstable
-    , nix-doom-emacs
     , home-manager
     , envy-sh
     , arion
     , sops-nix
     , flake-compat
     , flake-utils
+    , emacs-overlay
     }:
     flake-utils.lib.eachDefaultSystem
       (system:
@@ -52,6 +52,7 @@
               inherit (final.callPackage arion { }) arion;
               csvkit = pkgs-release.csvkit; # unstable has a build error
             })
+            emacs-overlay.overlay
           ];
         };
 
@@ -63,7 +64,6 @@
                   {
                     inherit pkgs;
                     inherit (config) system homeDirectory username;
-                    extraModules = [ nix-doom-emacs.hmModule ];
                     configuration = {
                       imports = (import ./home { inherit config; inherit configName; }) ++ extraImports;
                     };

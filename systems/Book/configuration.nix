@@ -79,11 +79,6 @@ in
     group = "users";
   };
 
-  services.hledger-web =
-    {
-      enable = true;
-    };
-
   environment.systemPackages = with pkgs;
     [
       git
