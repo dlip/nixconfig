@@ -42,6 +42,7 @@
         consult
         embark
         marginalia
+        which-key
       ]));
   };
 }

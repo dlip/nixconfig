@@ -34,7 +34,14 @@
 (setq completion-styles '(orderless))
 (marginalia-mode)
 
-(define-key selectrum-minibuffer-map (kbd "C-c C-o") 'embark-export)
+;; Allow C-h to trigger which-key before it is done automatically
+(setq which-key-show-early-on-C-h t)
+;; make sure which-key doesn't show normally but refreshes quickly after it is
+;; triggered.
+(setq which-key-idle-secondary-delay 0.05)
+(which-key-mode)
+
+(define-key selectrum-minibuffer-map (kbd "C-c C-o") 'embark)
 (define-key selectrum-minibuffer-map (kbd "C-c C-c") 'embark-act)
 (global-set-key (kbd "M-?") 'consult-ripgrep)
 (add-hook 'embark-collect-mode-hook 'embark-consult-preview-minor-mode)
