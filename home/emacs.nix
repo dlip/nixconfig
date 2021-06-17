@@ -27,18 +27,21 @@
       (with epkgs; [
         all-the-icons-ivy
         command-log-mode
-        counsel
-        counsel-projectile
         doom-modeline
         doom-themes
         format-all
-        ivy
         lsp-mode
         magit
         nix-mode
         org
         org-roam
         projectile
+        selectrum
+        selectrum-prescient
+        orderless
+        consult
+        embark
+        marginalia
       ]));
   };
 }
