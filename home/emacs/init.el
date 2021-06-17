@@ -50,3 +50,7 @@
 (global-set-key [remap switch-to-buffer-other-frame] 'consult-buffer-other-frame)
 (global-set-key [remap goto-line] 'consult-goto-line)
 (global-set-key [remap isearch-forward] 'consult-isearch)
+(persp-mode 1)
+(persp-mode-projectile-bridge-mode 1)
+(setq auto-save-file-name-transforms
+  `((".*" "~/.emacs-saves/" t)))

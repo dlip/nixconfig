@@ -43,6 +43,8 @@
         embark
         marginalia
         which-key
+        persp-mode
+        persp-mode-projectile-bridge
       ]));
   };
 }
