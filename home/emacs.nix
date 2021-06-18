@@ -49,6 +49,9 @@
         neotree
         org-journal
         org-web-tools
+        rainbow-delimiters
+        typescript-mode
+        web-mode
       ]));
   };
 }

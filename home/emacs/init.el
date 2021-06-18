@@ -5,6 +5,8 @@
 (set-fringe-mode 10)        ; Give some breathing room
 
 (menu-bar-mode -1)            ; Disable the menu bar
+(show-paren-mode 1)
+
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
 
@@ -70,3 +72,7 @@
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (global-set-key (kbd "C-c t") 'neotree-projectile-action)
 (setq org-journal-dir "~/org/journal/")
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
