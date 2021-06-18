@@ -27,7 +27,7 @@ rec {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../../cachix.nix
+    ../cachix.nix
     ../../services/notify-problems.nix
     ../../services/ssmtp.nix
   ];

@@ -10,6 +10,7 @@ in
     "${modulesPath}/profiles/minimal.nix"
     ../../services/notify-problems.nix
     ../../services/ssmtp.nix
+    ../cachix.nix
   ];
 
   # WSL is closer to a container than anything else
