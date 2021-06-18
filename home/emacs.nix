@@ -45,6 +45,7 @@
         which-key
         persp-mode
         persp-mode-projectile-bridge
+        iflipb
       ]));
   };
 }

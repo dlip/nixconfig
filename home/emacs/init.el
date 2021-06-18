@@ -50,7 +50,20 @@
 (global-set-key [remap switch-to-buffer-other-frame] 'consult-buffer-other-frame)
 (global-set-key [remap goto-line] 'consult-goto-line)
 (global-set-key [remap isearch-forward] 'consult-isearch)
-(persp-mode 1)
-(persp-mode-projectile-bridge-mode 1)
+;; (persp-mode 1)
+;; (persp-mode-projectile-bridge-mode 1)
 (setq auto-save-file-name-transforms
-  `((".*" "~/.emacs-saves/" t)))
+      `((".*" "/tmp/" t)))
+
+(global-set-key (kbd "<C-tab>") 'iflipb-next-buffer)
+(global-set-key
+ (if (featurep 'xemacs) (kbd "<C-iso-left-tab>") (kbd "<C-S-iso-lefttab>"))
+ 'iflipb-previous-buffer)
+
+(defun switch-to-last-buffer ()
+  (interactive)
+  (switch-to-buffer nil))
+
+(global-set-key (kbd "C-`") 'switch-to-last-buffer)
+;; save open buffers
+(desktop-save-mode 1)
