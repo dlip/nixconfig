@@ -67,3 +67,5 @@
 (global-set-key (kbd "C-`") 'switch-to-last-buffer)
 ;; save open buffers
 (desktop-save-mode 1)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(global-set-key (kbd "C-c t") 'neotree-projectile-action)

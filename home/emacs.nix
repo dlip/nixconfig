@@ -25,7 +25,7 @@
     package = pkgs.emacsGcc;
     extraPackages = (epkgs:
       (with epkgs; [
-        all-the-icons-ivy
+        all-the-icons
         command-log-mode
         doom-modeline
         doom-themes
@@ -46,6 +46,7 @@
         persp-mode
         persp-mode-projectile-bridge
         iflipb
+        neotree
       ]));
   };
 }
