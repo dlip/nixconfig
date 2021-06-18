@@ -47,6 +47,8 @@
         persp-mode-projectile-bridge
         iflipb
         neotree
+        org-journal
+        org-web-tools
       ]));
   };
 }

@@ -69,3 +69,4 @@
 (desktop-save-mode 1)
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (global-set-key (kbd "C-c t") 'neotree-projectile-action)
+(setq org-journal-dir "~/org/journal/")
