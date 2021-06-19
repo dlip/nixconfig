@@ -74,5 +74,13 @@
 (setq org-journal-dir "~/org/journal/")
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode . lsp-defered))
 (add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
+
+;; Autosave on focus lost
+(defun save-all ()
+  (interactive)
+  (save-some-buffers t))
+
+(add-hook 'focus-out-hook 'save-all)
+
