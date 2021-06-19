@@ -152,7 +152,7 @@
             system = "x86_64-linux";
             modules = [ ./systems/dex/configuration.nix ];
           };
-          Book = with nixpkgs-unstable; lib.nixosSystem {
+          Book = with nixpkgs; lib.nixosSystem {
             system = "x86_64-linux";
             modules = [ ./systems/Book/configuration.nix ];
           };
