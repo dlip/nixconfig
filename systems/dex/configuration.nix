@@ -153,6 +153,7 @@ rec {
     wget
     vim
     firefox
+    google-chrome
     glxinfo
     pciutils
     git
