@@ -5,6 +5,7 @@
     autoreconfHook
     aws-google-auth
     awscli2
+    avrdude
     bat
     binutils
     cheat
@@ -76,9 +77,9 @@
     stack
     tcpdump
     tektoncd-cli
-    terraform_0_15
     tldr
     tshark
+    unzip
     usbutils
     vim
     yarn
