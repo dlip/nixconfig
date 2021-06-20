@@ -86,10 +86,10 @@ rec {
   };
 
   fonts.fonts = with pkgs; [
-    overpass
-    source-han-code-jp
-    source-serif-pro
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
+    liberation_ttf
   ];
 
   # Enable the X11 windowing system.
