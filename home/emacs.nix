@@ -53,12 +53,19 @@
         neotree
         org-journal
         org-web-tools
+        org-bullets
+        org-tree-slide
         rainbow-delimiters
         typescript-mode
         web-mode
         vterm
         flycheck
         use-package
+        lsp-ui
+        treemacs
+        lsp-treemacs
+        dap-mode
+        ripgrep
       ]));
   };
 }
