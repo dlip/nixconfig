@@ -39,6 +39,10 @@
         selectrum
         selectrum-prescient
         orderless
+        company
+        company-prescient
+        company-go
+        go-mode
         consult
         embark
         marginalia
@@ -52,6 +56,9 @@
         rainbow-delimiters
         typescript-mode
         web-mode
+        vterm
+        flycheck
+        use-package
       ]));
   };
 }

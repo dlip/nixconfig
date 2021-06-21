@@ -22,6 +22,7 @@
 (setq magit-revision-show-gravatars t)
 (setq org-directory "~/org/")
 
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
@@ -29,6 +30,7 @@
 (selectrum-mode +1)
 ;; to make sorting and filtering more intelligent
 (selectrum-prescient-mode +1)
+(company-prescient-mode +1)
 ;; to save your command history on disk, so the sorting gets more
 ;; intelligent over time
 (prescient-persist-mode +1)
@@ -69,13 +71,6 @@
 (global-set-key (kbd "C-`") 'switch-to-last-buffer)
 ;; save open buffers
 (desktop-save-mode 1)
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
-(global-set-key (kbd "C-c t") 'neotree-projectile-action)
-(setq org-journal-dir "~/org/journal/")
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
-(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . web-mode))
 
 ;; Autosave on focus lost
 (defun save-all ()
@@ -84,3 +79,25 @@
 
 (add-hook 'focus-out-hook 'save-all)
 
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
+(global-set-key (kbd "C-c t") 'neotree-projectile-action)
+(setq org-journal-dir "~/org/journal/")
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+(global-flycheck-mode)
+
+(use-package lsp-mode
+  :defer t
+  :hook ((lsp-mode . (lambda ()
+                       (let ((lsp-keymap-prefix "C-c l"))
+                         (lsp-enable-which-key-integration))))
+	 (go-mode . lsp-deferred)
+	 (web-mode . lsp-deferred))
+  :commands (lsp lsp-deferred)
+  :init (setq lsp-keep-workspace-alive nil ;; Auto kill LSP server
+              lsp-enable-indentation nil
+              lsp-enable-on-type-formatting nil
+              lsp-auto-guess-root nil
+              lsp-enable-snippet t)
+  :config
+  (define-key lsp-mode-map (kbd "C-c l") lsp-command-map))

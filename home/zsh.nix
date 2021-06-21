@@ -47,7 +47,6 @@ in
         "sudo"
         "systemd"
         "tig"
-        "vi-mode"
         "yarn"
         "zsh-navigation-tools"
         "urltools"
