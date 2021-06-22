@@ -21,9 +21,7 @@
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 (setq projectile-project-search-path '("~/code/"))
 (setq magit-revision-show-gravatars t)
-(setq org-directory "~/org/")
-(use-package org-bullets
-    :hook (org-mode . org-bullets-mode))
+
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)

@@ -1,6 +1,6 @@
 ;;; init-org --- org settings
 
-(defun efs/org-font-setup ()
+(defun dlip/org-font-setup ()
   ;; Replace list hyphen with dot
   (font-lock-add-keywords 'org-mode
                           '(("^ *\\([-]\\) "
@@ -30,14 +30,14 @@
   (set-face-attribute 'line-number nil :inherit 'fixed-pitch)
   (set-face-attribute 'line-number-current-line nil :inherit 'fixed-pitch))
 
-(defun efs/org-mode-setup ()
+(defun dlip/org-mode-setup ()
   (org-indent-mode)
   (variable-pitch-mode 1)
   (visual-line-mode 1))
 
 (use-package org
   :commands (org-capture org-agenda)
-  :hook (org-mode . efs/org-mode-setup)
+  :hook (org-mode . dlip/org-mode-setup)
   :config
   (setq org-ellipsis " ▾")
 
@@ -46,7 +46,9 @@
   (setq org-log-into-drawer t)
 
   (setq org-agenda-files
-        '("~/org/todo.org"))
+        '("~/org/Tasks.org"
+          "~/org/Habits.org"
+          "~/org/Birthdays.org"))
 
   (require 'org-habit)
   (add-to-list 'org-modules 'org-habit)
@@ -59,6 +61,8 @@
   (setq org-refile-targets
     '(("Archive.org" :maxlevel . 1)
       ("Tasks.org" :maxlevel . 1)))
+
+  (setq org-directory "~/org/")
 
   ;; Save Org buffers after refiling!
   (advice-add 'org-refile :after 'org-save-all-org-buffers)
@@ -127,28 +131,28 @@
 
   (setq org-capture-templates
     `(("t" "Tasks / Projects")
-      ("tt" "Task" entry (file+olp "~/Projects/Code/emacs-from-scratch/OrgFiles/Tasks.org" "Inbox")
+      ("tt" "Task" entry (file+olp "~/org/Tasks.org" "Inbox")
            "* TODO %?\n  %U\n  %a\n  %i" :empty-lines 1)
 
       ("j" "Journal Entries")
       ("jj" "Journal" entry
-           (file+olp+datetree "~/Projects/Code/emacs-from-scratch/OrgFiles/Journal.org")
+           (file+olp+datetree "~/org/Journal.org")
            "\n* %<%I:%M %p> - Journal :journal:\n\n%?\n\n"
            ;; ,(dw/read-file-as-string "~/Notes/Templates/Daily.org")
            :clock-in :clock-resume
            :empty-lines 1)
       ("jm" "Meeting" entry
-           (file+olp+datetree "~/Projects/Code/emacs-from-scratch/OrgFiles/Journal.org")
+           (file+olp+datetree "~/org/Journal.org")
            "* %<%I:%M %p> - %a :meetings:\n\n%?\n\n"
            :clock-in :clock-resume
            :empty-lines 1)
 
       ("w" "Workflows")
-      ("we" "Checking Email" entry (file+olp+datetree "~/Projects/Code/emacs-from-scratch/OrgFiles/Journal.org")
+      ("we" "Checking Email" entry (file+olp+datetree "~/org/Journal.org")
            "* Checking Email :email:\n\n%?" :clock-in :clock-resume :empty-lines 1)
 
       ("m" "Metrics Capture")
-      ("mw" "Weight" table-line (file+headline "~/Projects/Code/emacs-from-scratch/OrgFiles/Metrics.org" "Weight")
+      ("mw" "Weight" table-line (file+headline "~/org/Metrics.org" "Weight")
        "| %U | %^{Weight} | %^{Notes} |" :kill-buffer t)))
 
   (define-key global-map (kbd "C-c j")
