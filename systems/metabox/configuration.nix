@@ -55,10 +55,9 @@ rec {
   };
 
   fonts.fonts = with pkgs; [
-    overpass
-    source-han-code-jp
-    source-serif-pro
-    (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
   ];
 
   console = {

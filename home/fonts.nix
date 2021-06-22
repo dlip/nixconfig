@@ -3,10 +3,9 @@
   home.packages = with pkgs; [
     emacs-all-the-icons-fonts
     fontconfig
-    cantarell-fonts
+    noto-fonts
+    noto-fonts-cjk
+    noto-fonts-emoji
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
-    overpass
-    source-han-code-jp
-    source-serif-pro
   ];
 }

@@ -1,4 +1,5 @@
 ;;; init-misc --- misc settings
+
 (setq inhibit-startup-message t)
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
@@ -14,7 +15,16 @@
 (load-theme 'doom-one t)
 
 (cua-mode)
+
 (set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 120)
+(set-face-attribute 'variable-pitch nil :family "Noto Sans" :height 120)
+
+;; Emoji: 😄 🤦 🏴
+(set-fontset-font t 'symbol "Apple Color Emoji")
+(set-fontset-font t 'symbol "Noto Color Emoji" nil 'append)
+(set-fontset-font t 'symbol "Segoe UI Emoji" nil 'append)
+(set-fontset-font t 'symbol "Symbola" nil 'append)
+
 (doom-modeline-mode 1)
 
 (projectile-mode +1)
@@ -58,7 +68,6 @@
 (global-set-key (kbd "C-c r") 'consult-ripgrep)
 (global-set-key (kbd "C-c v") 'projectile-run-vterm)
 
-(setq org-journal-dir "~/org/journal/")
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (global-flycheck-mode)
