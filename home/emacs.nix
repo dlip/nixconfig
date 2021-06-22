@@ -45,6 +45,7 @@
         go-mode
         consult
         embark
+        embark-consult
         marginalia
         which-key
         persp-mode
@@ -66,6 +67,7 @@
         lsp-treemacs
         dap-mode
         ripgrep
+        wgrep
       ]));
   };
 }

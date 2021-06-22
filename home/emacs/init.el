@@ -154,6 +154,7 @@
   :config
   (marginalia-mode))
 
+;; Context menu for the mini buffer
 (use-package embark
   :bind
   (("C-." . embark-act)         ;; pick some comfortable binding
@@ -212,7 +213,7 @@
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (global-set-key (kbd "C-c f") 'projectile-find-file)
 (global-set-key (kbd "C-c n") 'neotree-projectile-action)
-(global-set-key (kbd "C-c r") 'projectile-ripgrep)
+(global-set-key (kbd "C-c r") 'consult-ripgrep)
 (global-set-key (kbd "C-c v") 'projectile-run-vterm)
 
 (setq org-journal-dir "~/org/journal/")
@@ -261,3 +262,11 @@
          (dap-mode . dap-ui-mode)
          (dap-mode . dap-tooltip-mode)
          (go-mode . (lambda() (require 'dap-go)))))
+
+(use-package wgrep
+  :init (setq wgrep-auto-save-buffer t
+	      wgrep-enable-key "E")
+)
+
+(provide 'init)
+;;; init ends here
