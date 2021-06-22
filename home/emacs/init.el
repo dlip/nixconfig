@@ -4,6 +4,7 @@
 
 (require 'init-misc)
 (require 'init-completion)
+(require 'init-org)
 (require 'init-lsp)
 
 (provide 'init)

@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
     emacs-all-the-icons-fonts
     fontconfig
+    cantarell-fonts
     (nerdfonts.override { fonts = [ "FiraCode" "DroidSansMono" ]; })
     overpass
     source-han-code-jp

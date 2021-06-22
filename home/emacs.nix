@@ -56,6 +56,7 @@
         org-web-tools
         org-bullets
         org-tree-slide
+        visual-fill-column
         rainbow-delimiters
         typescript-mode
         web-mode
