@@ -51,7 +51,6 @@
         persp-mode
         persp-mode-projectile-bridge
         iflipb
-        neotree
         org-journal
         org-web-tools
         org-bullets
@@ -69,6 +68,11 @@
         dap-mode
         ripgrep
         wgrep
+        treemacs
+        treemacs-projectile
+        treemacs-magit
+        treemacs-icons-dired
+        treemacs-all-the-icons
       ]));
   };
 }

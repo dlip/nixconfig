@@ -64,7 +64,6 @@
 
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (global-set-key (kbd "C-c f") 'projectile-find-file)
-(global-set-key (kbd "C-c n") 'neotree-projectile-action)
 (global-set-key (kbd "C-c r") 'consult-ripgrep)
 (global-set-key (kbd "C-c v") 'projectile-run-vterm)
 
