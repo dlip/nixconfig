@@ -32,9 +32,7 @@
 (setq projectile-project-search-path '("~/code/"))
 (setq magit-revision-show-gravatars t)
 
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 ;; (persp-mode 1)
 ;; (persp-mode-projectile-bridge-mode 1)
@@ -62,7 +60,6 @@
 
 (add-hook 'focus-out-hook 'save-all)
 
-(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 (global-set-key (kbd "C-c f") 'projectile-find-file)
 (global-set-key (kbd "C-c r") 'consult-ripgrep)
 (global-set-key (kbd "C-c v") 'projectile-run-vterm)

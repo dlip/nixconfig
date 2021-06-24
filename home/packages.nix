@@ -61,6 +61,7 @@
     nodejs
     openvpn
     pandoc
+    postgresql
     pinentry
     proselint
     python
