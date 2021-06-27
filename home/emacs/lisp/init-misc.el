@@ -72,5 +72,14 @@
   :init (setq wgrep-auto-save-buffer t
 	      wgrep-enable-key "E"))
 
+(use-package nov
+  :hook
+  (nov-mode . visual-line-mode)
+  (nov-mode . visual-fill-column-mode)  
+  :config
+  (setq nov-text-width t)
+  (setq visual-fill-column-center-text t)
+  :mode ("\\.epub\\'" . nov-mode))
+
 (provide 'init-misc)
 ;;; init-misc.el ends here

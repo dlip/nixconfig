@@ -86,4 +86,8 @@ in
     user = "root";
     group = "root";
   };
+  services.nzbhydra2 = {
+    enable = true;
+  };
+
 }
