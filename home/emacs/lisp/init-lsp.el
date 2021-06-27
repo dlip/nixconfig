@@ -1,5 +1,7 @@
 ;;; init-lsp --- lsp settings
 
+(setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
+
 (use-package lsp-mode
   :defer t
   :hook ((lsp-mode . (lambda ()
