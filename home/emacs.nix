@@ -74,6 +74,7 @@
         treemacs-icons-dired
         treemacs-all-the-icons
         yaml-mode
+        nov
       ]));
   };
 }
