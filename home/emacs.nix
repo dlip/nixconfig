@@ -76,6 +76,7 @@
         yaml-mode
         nov
         org-noter
+        org-drill
       ]));
   };
 }
