@@ -17,7 +17,7 @@
 (cua-mode)
 
 (set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 120)
-(set-face-attribute 'variable-pitch nil :family "Noto Sans" :height 120)
+(set-face-attribute 'variable-pitch nil :family "Noto Sans" :height 150)
 
 ;; Emoji: 😄 🤦 🏴
 (set-fontset-font t 'symbol "Apple Color Emoji")
@@ -27,10 +27,14 @@
 
 (doom-modeline-mode 1)
 
-(projectile-mode +1)
-(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
-(setq projectile-project-search-path '("~/code/"))
-(setq magit-revision-show-gravatars t)
+(use-package projectile
+  :config
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (setq projectile-enable-caching t)
+  (setq projectile-project-search-path '("~/code/"))
+  (setq magit-revision-show-gravatars t)
+  (projectile-mode 1))
+
 
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
@@ -39,16 +43,16 @@
 (setq auto-save-file-name-transforms
       `((".*" "/tmp/" t)))
 
-(global-set-key (kbd "<C-tab>") 'iflipb-next-buffer)
+(global-set-key (kbd "C-`") 'iflipb-next-buffer)
 (global-set-key
- (if (featurep 'xemacs) (kbd "<C-iso-left-tab>") (kbd "<C-S-iso-lefttab>"))
+ (if (featurep 'xemacs) (kbd "C-`") (kbd "C-~"))
  'iflipb-previous-buffer)
 
 (defun switch-to-last-buffer ()
   (interactive)
   (switch-to-buffer nil))
 
-(global-set-key (kbd "C-`") 'switch-to-last-buffer)
+(global-set-key (kbd "C-<tab>") 'switch-to-last-buffer)
 (global-set-key (kbd "C-c C-w") 'kill-current-buffer)
 ;; save open buffers
 (desktop-save-mode 1)
@@ -59,10 +63,13 @@
   (save-some-buffers t))
 
 (add-hook 'focus-out-hook 'save-all)
-
-(global-set-key (kbd "C-c f") 'projectile-find-file)
-(global-set-key (kbd "C-c r") 'consult-ripgrep)
-(global-set-key (kbd "C-c v") 'projectile-run-vterm)
+(global-set-key (kbd "C-S-M-b") 'consult-buffer)
+(global-set-key (kbd "C-S-M-f") 'projectile-find-file)
+(global-set-key (kbd "C-S-M-g") 'magit-status)
+(global-set-key (kbd "C-S-M-r") 'consult-ripgrep)
+(global-set-key (kbd "C-S-M-s") 'save-buffer)
+(global-set-key (kbd "C-S-M-v") 'projectile-run-vterm)
+(global-set-key (kbd "C-S-M-w") 'kill-this-buffer)
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
@@ -75,7 +82,7 @@
 (use-package nov
   :hook
   (nov-mode . visual-line-mode)
-  (nov-mode . visual-fill-column-mode)  
+  (nov-mode . visual-fill-column-mode)
   :config
   (setq nov-text-width t)
   (setq visual-fill-column-center-text t)
@@ -84,18 +91,18 @@
 (require 're-builder)
 (setq reb-re-syntax 'string)
 
- (defvar my/re-builder-positions nil
-    "Store point and region bounds before calling re-builder")
-  (advice-add 're-builder
-              :before
-              (defun my/re-builder-save-state (&rest _)
-                "Save into `my/re-builder-positions' the point and region
+(defvar my/re-builder-positions nil
+  "Store point and region bounds before calling re-builder")
+(advice-add 're-builder
+            :before
+            (defun my/re-builder-save-state (&rest _)
+              "Save into `my/re-builder-positions' the point and region
 positions before calling `re-builder'."
-                          (setq my/re-builder-positions
-                                (cons (point)
-                                      (when (region-active-p)
-                                        (list (region-beginning)
-                                              (region-end)))))))
+              (setq my/re-builder-positions
+                    (cons (point)
+                          (when (region-active-p)
+                            (list (region-beginning)
+                                  (region-end)))))))
 (defun reb-replace-regexp (&optional delimited)
   "Run `query-replace-regexp' with the contents of re-builder. With
 non-nil optional argument DELIMITED, only replace matches
@@ -118,8 +125,8 @@ surrounded by word boundaries."
          (end (caddr my/re-builder-positions)))
     (with-selected-window reb-target-window
       (goto-char pnt) ; replace with (goto-char (match-beginning 0)) if you want
-                      ; to control where in the buffer the replacement starts
-                      ; with re-builder
+					; to control where in the buffer the replacement starts
+					; with re-builder
       (setq my/re-builder-positions nil)
       (reb-quit)
       (query-replace-regexp re replacement delimited beg end))))

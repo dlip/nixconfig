@@ -11,62 +11,56 @@
   :after evil
   :config
   (evil-collection-init)
-  ;;(evil-define-key 'normal 'global (kbd "SPC") mode-specific-map)
-  )
+  (evil-define-key 'normal 'global (kbd "SPC") mode-specific-map))
 
-(use-package hydra
-  :after evil
-  :config
+;; (use-package hydra
+;;   :after evil
+;;   :config
 
-  (defhydra hydra-space (:color blue :idle 1.0 :hint nil)
-    "
-_:_ → M-x            _g_ → magit
-_b_ → switch buffer  _k_ → kill buffer
-_d_ → dired          _p_ → +project
-_f_ → find file
-"
-    ("b" my/switch-to-buffer)
-    ("d" dired)
-    ("f" my/find-file)
-    ("g" magit)
-    ("p" hydra-project/body)
-    ("k" kill-this-buffer)
-    (":" my/M-x))
+;;   (defhydra hydra-space (:color blue :idle 1.0 :hint nil)
+;;     "
+;; _;_ → M-x            _g_ → magit        _v_ → vterm
+;; _b_ → switch buffer  _k_ → kill buffer
+;; _d_ → dired          _p_ → +project
+;; _f_ → find file      _r_ → ripgrep
+;; "
+;;     ("p" projectile-)
+;;   )
 
-  (defhydra hydra-project (:color blue :idle 0.5 :hint nil)
-    "
-+project
-_c_ → compile project
-_f_ → find project file
-_r_ → replace
-_R_ → replace regexp
-_s_ → search
-"
-    ("c" projectile-compile-project)
-    ("f" projectile-find-file)
-    ("r" projectile-replace)
-    ("R" projectile-replace-regexp)
-    ("s" projectile-ag))
+;;   (defhydra hydra-project (:color blue :idle 0.5 :hint nil)
+;;     "
+;; +project
+;; _c_ → compile project
+;; _f_ → find project file
+;; _r_ → replace
+;; _R_ → replace regexp
+;; _s_ → search
+;; "
+;;     ("c" projectile-compile-project)
+;;     ("f" projectile-find-file)
+;;     ("r" projectile-replace)
+;;     ("R" projectile-replace-regexp)
+;;     ("s" projectile-ag))
 
-  ;;(evil-global-set-key 'normal (kbd "<SPC>") 'hydra-space/body)
-  )
+;;   ;;(evil-global-set-key 'normal (kbd "<SPC>") 'hydra-space/body)
+;;   )
 
-(use-package general
-  :after hydra
-  :init
-  (setq general-override-states '(insert
-                                  emacs
-                                  hybrid
-                                  normal
-                                  visual
-                                  motion
-                                  operator
-                                  replace))
-  :config
-  (general-define-key
-   :states '(normal visual motion)
-   :keymaps 'override
-   "SPC" 'hydra-space/body))
+;; (use-package general
+;;   :after hydra
+;;   :init
+;;   (setq general-override-states '(insert
+;;                                   emacs
+;;                                   hybrid
+;;                                   normal
+;;                                   visual
+;;                                   motion
+;;                                   operator
+;;                                   replace))
+;;   :config
+;;   (general-define-key
+;;    :states '(normal visual motion)
+;;    :keymaps 'override
+;;    "SPC" 'hydra-space/body))
 
 (provide 'init-evil)
 ;;; init-evil.el ends here
