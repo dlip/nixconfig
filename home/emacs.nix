@@ -77,10 +77,10 @@
         nov
         org-noter
         org-drill
-        evil
-        evil-collection
         general
         hydra
+        multiple-cursors
+        expand-region
       ]));
   };
 }

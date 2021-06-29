@@ -3,7 +3,6 @@
 (add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/")))
 
 (require 'init-misc)
-(require 'init-evil)
 (require 'init-completion)
 (require 'init-org)
 (require 'init-treemacs)

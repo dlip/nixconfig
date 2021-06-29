@@ -17,7 +17,7 @@
 (cua-mode)
 
 (set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 120)
-(set-face-attribute 'variable-pitch nil :family "Noto Sans" :height 150)
+(set-face-attribute 'variable-pitch nil :family "Noto Sans" :height 140)
 
 ;; Emoji: 😄 🤦 🏴
 (set-fontset-font t 'symbol "Apple Color Emoji")
@@ -38,6 +38,14 @@
 
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
+;; save open buffers
+(desktop-save-mode 1)
+(defalias 'yes-or-no-p 'y-or-n-p)
+;; Autosave on focus lost
+(defun save-all ()
+  (interactive)
+  (save-some-buffers t))
+
 ;; (persp-mode 1)
 ;; (persp-mode-projectile-bridge-mode 1)
 (setq auto-save-file-name-transforms
@@ -54,22 +62,20 @@
 
 (global-set-key (kbd "C-<tab>") 'switch-to-last-buffer)
 (global-set-key (kbd "C-c C-w") 'kill-current-buffer)
-;; save open buffers
-(desktop-save-mode 1)
-(defalias 'yes-or-no-p 'y-or-n-p)
-;; Autosave on focus lost
-(defun save-all ()
-  (interactive)
-  (save-some-buffers t))
 
 (add-hook 'focus-out-hook 'save-all)
 (global-set-key (kbd "C-S-M-b") 'consult-buffer)
+(global-set-key (kbd "C-S-M-d") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-S-M-e") 'er/expand-region)
 (global-set-key (kbd "C-S-M-f") 'projectile-find-file)
 (global-set-key (kbd "C-S-M-g") 'magit-status)
+(global-set-key (kbd "C-S-M-l") 'consult-line)
+(global-set-key (kbd "C-S-M-p") 'projectile-switch-project)
 (global-set-key (kbd "C-S-M-r") 'consult-ripgrep)
 (global-set-key (kbd "C-S-M-s") 'save-buffer)
 (global-set-key (kbd "C-S-M-v") 'projectile-run-vterm)
 (global-set-key (kbd "C-S-M-w") 'kill-this-buffer)
+(global-set-key (kbd "C-S-M-x") 'mc/skip-to-next-like-this)
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
@@ -130,7 +136,7 @@ surrounded by word boundaries."
       (setq my/re-builder-positions nil)
       (reb-quit)
       (query-replace-regexp re replacement delimited beg end))))
-(define-key reb-mode-map (kbd "RET") #'reb-replace-regexp)
+(define-key reb-mode-map (kbd "RET") #'reb-repiace-regexp)
 (define-key reb-lisp-mode-map (kbd "RET") #'reb-replace-regexp)
 (global-set-key (kbd "C-M-%") #'re-builder)
 
