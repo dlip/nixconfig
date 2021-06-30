@@ -29,7 +29,7 @@
 
 (use-package projectile
   :config
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
   (setq projectile-enable-caching t)
   (setq projectile-project-search-path '("~/code/"))
   (setq magit-revision-show-gravatars t)
@@ -61,21 +61,24 @@
   (switch-to-buffer nil))
 
 (global-set-key (kbd "C-<tab>") 'switch-to-last-buffer)
-(global-set-key (kbd "C-c C-w") 'kill-current-buffer)
+
+(global-set-key (kbd "C->") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-,") 'mc/skip-to-next-like-this)
 
 (add-hook 'focus-out-hook 'save-all)
-(global-set-key (kbd "C-S-M-b") 'consult-buffer)
-(global-set-key (kbd "C-S-M-d") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-S-M-e") 'er/expand-region)
-(global-set-key (kbd "C-S-M-f") 'projectile-find-file)
-(global-set-key (kbd "C-S-M-g") 'magit-status)
-(global-set-key (kbd "C-S-M-l") 'consult-line)
-(global-set-key (kbd "C-S-M-p") 'projectile-switch-project)
-(global-set-key (kbd "C-S-M-r") 'consult-ripgrep)
-(global-set-key (kbd "C-S-M-s") 'save-buffer)
-(global-set-key (kbd "C-S-M-v") 'projectile-run-vterm)
-(global-set-key (kbd "C-S-M-w") 'kill-this-buffer)
-(global-set-key (kbd "C-S-M-x") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-c b") 'consult-buffer)
+(global-set-key (kbd "C-c d") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c e") 'er/expand-region)
+(global-set-key (kbd "C-c f") 'projectile-find-file)
+(global-set-key (kbd "C-c g") 'magit-status)
+(global-set-key (kbd "C-c l") 'consult-line)
+(global-set-key (kbd "C-c p") 'projectile-switch-project)
+(global-set-key (kbd "C-c r") 'consult-ripgrep)
+(global-set-key (kbd "C-c s") 'save-buffer)
+(global-set-key (kbd "C-c v") 'projectile-run-vterm)
+(global-set-key (kbd "C-c w") 'kill-this-buffer)
+(global-set-key (kbd "C-c x") 'mc/skip-to-next-like-this)
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 

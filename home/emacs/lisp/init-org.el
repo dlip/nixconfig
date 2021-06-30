@@ -173,6 +173,16 @@
 (use-package visual-fill-column
   :hook (org-mode . dlip/org-mode-visual-fill))
 
+(use-package org-journal
+  :after org
+  :defer t
+  :init
+  ;; Change default prefix key; needs to be set before loading org-journal
+  (setq org-journal-prefix-key "C-c C-j ")
+  :config
+  (setq org-journal-dir "~/org/journal/"
+        org-journal-date-format "%A, %d %B %Y"))
+
 (use-package org-drill
   :after org
   :commands (org-drill)
