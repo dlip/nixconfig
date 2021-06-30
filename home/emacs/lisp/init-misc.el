@@ -1,6 +1,30 @@
 ;;; init-misc --- misc settings
 
-(setq inhibit-startup-message t)
+(setq
+   ;; No need to see GNU agitprop.
+   inhibit-startup-screen t
+   ;; No need to remind me what a scratch buffer is.
+   initial-scratch-message nil
+   ;; Double-spaces after periods is morally wrong.
+   sentence-end-double-space nil
+   ;; Never ding at me, ever.
+   ring-bell-function 'ignore
+   ;; Prompts should go in the minibuffer, not in a GUI.
+   use-dialog-box nil
+   ;; Fix undo in commands affecting the mark.
+   mark-even-if-inactive nil
+   ;; Let C-k delete the whole line.
+   kill-whole-line t
+   ;; search should be case-sensitive by default
+   case-fold-search nil
+   ;; no need to prompt for the read command _every_ time
+   compilation-read-command nil
+   ;; always scroll
+   compilation-scroll-output t
+   ;; my source directory
+   default-directory "~/code/"
+   )
+
 (scroll-bar-mode -1)        ; Disable visible scrollbar
 (tool-bar-mode -1)          ; Disable the toolbar
 (tooltip-mode -1)           ; Disable tooltips
@@ -8,6 +32,16 @@
 
 (menu-bar-mode -1)            ; Disable the menu bar
 (show-paren-mode 1)
+(setq gc-cons-threshold 100000000) ; Set garbage collection threshold to 100mb
+
+; Default to unicode
+(set-charset-priority 'unicode)
+(setq locale-coding-system 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
+(prefer-coding-system 'utf-8)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
 
 ;; Make ESC quit prompts
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
@@ -40,6 +74,8 @@
 
 ;; save open buffers
 (desktop-save-mode 1)
+
+;; Use y/p for prompts
 (defalias 'yes-or-no-p 'y-or-n-p)
 ;; Autosave on focus lost
 (defun save-all ()
@@ -48,8 +84,12 @@
 
 ;; (persp-mode 1)
 ;; (persp-mode-projectile-bridge-mode 1)
-(setq auto-save-file-name-transforms
-      `((".*" "/tmp/" t)))
+
+;; Disable backup/lock files
+(setq
+ make-backup-files nil
+ auto-save-default nil
+ create-lockfiles nil)
 
 (global-set-key (kbd "C-`") 'iflipb-next-buffer)
 (global-set-key
@@ -65,6 +105,7 @@
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-,") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "C-:") 'avy-goto-char)
 
 (add-hook 'focus-out-hook 'save-all)
 (global-set-key (kbd "C-c b") 'consult-buffer)

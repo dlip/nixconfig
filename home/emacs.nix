@@ -81,6 +81,7 @@
         hydra
         multiple-cursors
         expand-region
+        avy
       ]));
   };
 }
