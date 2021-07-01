@@ -82,6 +82,7 @@
         multiple-cursors
         expand-region
         avy
+        duplicate-thing
       ]));
   };
 }

@@ -23,6 +23,8 @@
    compilation-scroll-output t
    ;; my source directory
    default-directory "~/code/"
+   ;; ignore warnings
+   ;; warning-minimum-level :emergency
    )
 
 (scroll-bar-mode -1)        ; Disable visible scrollbar
@@ -123,22 +125,27 @@
 (global-set-key (kbd "C-:") 'avy-goto-char)
 
 (add-hook 'focus-out-hook 'save-all)
-(global-set-key (kbd "C-c b") 'consult-buffer)
-(global-set-key (kbd "C-c d") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c e") 'er/expand-region)
-(global-set-key (kbd "C-c f") 'projectile-find-file)
-(global-set-key (kbd "C-c g") 'magit-status)
-(global-set-key (kbd "C-c l") 'consult-line)
-(global-set-key (kbd "C-c p") 'projectile-switch-project)
-(global-set-key (kbd "C-c r") 'consult-ripgrep)
-(global-set-key (kbd "C-c s") 'save-buffer)
-(global-set-key (kbd "C-c v") 'projectile-run-vterm)
-(global-set-key (kbd "C-c w") 'kill-this-buffer)
-(global-set-key (kbd "C-c x") 'mc/skip-to-next-like-this)
+(global-unset-key (kbd "C-t"))
+(global-set-key (kbd "C-t e") 'er/expand-region)
+(global-set-key (kbd "C-t f") 'projectile-find-file)
+(global-set-key (kbd "C-t g") 'magit-status)
+(global-set-key (kbd "C-t l") 'consult-line)
+(global-set-key (kbd "C-t p") 'projectile-switch-project)
+(global-set-key (kbd "C-t r") 'consult-ripgrep)
+(global-set-key (kbd "C-t v") 'projectile-run-vterm)
+(global-set-key (kbd "C-t w") 'kill-this-buffer)
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (global-flycheck-mode)
+
+(use-package duplicate-thing
+  :init
+  (defun my-duplicate-thing ()
+    "Duplicate thing at point without changing the mark."
+    (interactive)
+    (save-mark-and-excursion (duplicate-thing 1)))
+  :bind (("C-t d" . my-duplicate-thing)))
 
 (use-package wgrep
   :init (setq wgrep-auto-save-buffer t
