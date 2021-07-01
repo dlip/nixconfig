@@ -83,6 +83,7 @@
         expand-region
         avy
         duplicate-thing
+        ace-window
       ]));
   };
 }

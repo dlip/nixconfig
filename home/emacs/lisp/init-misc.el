@@ -117,6 +117,7 @@
   (interactive)
   (switch-to-buffer nil))
 
+(global-set-key (kbd "M-o") 'ace-window)
 (global-set-key (kbd "C-<tab>") 'switch-to-last-buffer)
 
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
@@ -132,12 +133,34 @@
 (global-set-key (kbd "C-t l") 'consult-line)
 (global-set-key (kbd "C-t p") 'projectile-switch-project)
 (global-set-key (kbd "C-t r") 'consult-ripgrep)
+(global-set-key (kbd "C-t t") 'treemacs-select-window)
 (global-set-key (kbd "C-t v") 'projectile-run-vterm)
 (global-set-key (kbd "C-t w") 'kill-this-buffer)
 
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 (global-flycheck-mode)
+
+(use-package ace-window
+  :config
+  ;; Show the window designators in the modeline.
+  (ace-window-display-mode)
+
+   ;; Make the number indicators a little larger. I'm getting old.
+  (set-face-attribute 'aw-leading-char-face nil :height 2.0 :background "black")
+
+  (defun my-ace-window (args)
+    "As ace-window, but hiding the cursor while the action is active."
+    (interactive "P")
+    (cl-letf
+        ((cursor-type nil)
+         (cursor-in-non-selected-window nil))
+      (ace-window nil)))
+
+  :bind (("M-o" . my-ace-window))
+  :custom
+  (aw-keys '(?a ?r ?s ?t ?n ?e ?i ?o) "Designate windows by home row keys, not numbers.")
+  (aw-background nil))
 
 (use-package duplicate-thing
   :init
