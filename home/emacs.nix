@@ -85,6 +85,8 @@
         avy
         duplicate-thing
         ace-window
+        visual-regexp
+        visual-regexp-steroids
       ]));
   };
 }
