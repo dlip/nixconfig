@@ -149,15 +149,7 @@
    ;; Make the number indicators a little larger. I'm getting old.
   (set-face-attribute 'aw-leading-char-face nil :height 2.0 :background "black")
 
-  (defun my-ace-window (args)
-    "As ace-window, but hiding the cursor while the action is active."
-    (interactive "P")
-    (cl-letf
-        ((cursor-type nil)
-         (cursor-in-non-selected-window nil))
-      (ace-window nil)))
-
-  :bind (("M-o" . my-ace-window))
+  :bind (("M-o" . ace-window))
   :custom
   (aw-keys '(?a ?r ?s ?t ?n ?e ?i ?o) "Designate windows by home row keys, not numbers.")
   (aw-background nil))
