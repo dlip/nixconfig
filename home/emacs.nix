@@ -32,6 +32,7 @@
         format-all
         lsp-mode
         magit
+        forge
         nix-mode
         org
         org-roam
