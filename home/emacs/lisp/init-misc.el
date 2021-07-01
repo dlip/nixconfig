@@ -63,25 +63,6 @@
 
 (doom-modeline-mode 1)
 
-(use-package projectile
-  :config
-  (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
-  (setq projectile-enable-caching t)
-  (setq projectile-project-search-path '("~/code/"))
-  (setq magit-revision-show-gravatars t)
-  (projectile-mode 1))
-
-(use-package magit
-  :diminish magit-auto-revert-mode
-  :diminish auto-revert-mode
-  :config
-  (add-to-list 'magit-no-confirm 'stage-all-changes))
-
-(use-package forge
-  :after magit)
-
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-
 ;; save open buffers
 (desktop-save-mode 1)
 
@@ -115,6 +96,9 @@
 
 (setq dired-use-ls-dired nil)
 
+;; my prefix
+(global-unset-key (kbd "C-t"))
+
 ;; ctrl-tab
 (global-set-key (kbd "C-`") 'iflipb-next-buffer)
 (global-set-key
@@ -125,45 +109,7 @@
   (interactive)
   (switch-to-buffer nil))
 
-(global-set-key (kbd "M-o") 'ace-window)
-(global-set-key (kbd "C-<tab>") 'switch-to-last-buffer)
-
-(global-set-key (kbd "C->") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-,") 'mc/skip-to-next-like-this)
-(global-set-key (kbd "C-:") 'avy-goto-char)
-
 (add-hook 'focus-out-hook 'save-all)
-(global-unset-key (kbd "C-t"))
-(global-set-key (kbd "C-t e") 'er/expand-region)
-(global-set-key (kbd "C-t f") 'projectile-find-file)
-(global-set-key (kbd "C-t g") 'magit-status)
-(global-set-key (kbd "C-t l") 'consult-line)
-(global-set-key (kbd "C-t p") 'projectile-switch-project)
-(global-set-key (kbd "C-t r") 'consult-ripgrep)
-(global-set-key (kbd "C-t s") 'vr/replace)
-(global-set-key (kbd "C-t t") 'treemacs-select-window)
-(global-set-key (kbd "C-t v") 'projectile-run-vterm)
-(global-set-key (kbd "C-t w") 'kill-this-buffer)
-
-(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
-
-(use-package flycheck
-  :after org
-  :hook
-  (org-src-mode . disable-flycheck-for-elisp)
-  :custom
-  (flycheck-emacs-lisp-initialize-packages t)
-  (flycheck-display-errors-delay 0.1)
-  :config
-  (global-flycheck-mode)
-  (flycheck-set-indication-mode 'left-margin)
-
-  (defun disable-flycheck-for-elisp ()
-    (setq-local flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
-
-  (add-to-list 'flycheck-checkers 'proselint)
-  (setq-default flycheck-disabled-checkers '(haskell-stack-ghc)))
 
 (use-package ace-window
   :config

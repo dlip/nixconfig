@@ -6,7 +6,8 @@
 (require 'init-completion)
 (require 'init-org)
 (require 'init-treemacs)
-(require 'init-lsp)
+(require 'init-programming)
+(require 'init-keymap)
 
 (provide 'init)
 

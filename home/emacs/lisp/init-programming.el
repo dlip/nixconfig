@@ -1,4 +1,42 @@
-;;; init-lsp --- lsp settings
+;;; init-programming --- programming settings
+
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
+(use-package flycheck
+  :after org
+  :hook
+  (org-src-mode . disable-flycheck-for-elisp)
+  :custom
+  (flycheck-emacs-lisp-initialize-packages t)
+  (flycheck-display-errors-delay 0.1)
+  :config
+  (global-flycheck-mode)
+  (flycheck-set-indication-mode 'left-margin)
+
+  (defun disable-flycheck-for-elisp ()
+    (setq-local flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
+
+  (add-to-list 'flycheck-checkers 'proselint)
+  (setq-default flycheck-disabled-checkers '(haskell-stack-ghc)))
+
+(use-package projectile
+  :config
+  (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
+  (setq projectile-enable-caching t)
+  (setq projectile-project-search-path '("~/code/"))
+  (setq magit-revision-show-gravatars t)
+  (projectile-mode 1))
+
+(use-package magit
+  :diminish magit-auto-revert-mode
+  :diminish auto-revert-mode
+  :config
+  (add-to-list 'magit-no-confirm 'stage-all-changes))
+
+(use-package forge
+  :after magit)
+
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 (setenv "TSSERVER_LOG_FILE" "/tmp/tsserver.log")
 
@@ -56,5 +94,5 @@
          (dap-mode . dap-tooltip-mode)
          (go-mode . (lambda() (require 'dap-go)))))
 
-(provide 'init-lsp)
-;;; init-lsp.el ends here
+(provide 'init-programming)
+;;; init-programming.el ends here
