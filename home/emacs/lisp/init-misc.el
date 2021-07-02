@@ -71,7 +71,8 @@
 
 (use-package super-save
   :config
-  (super-save-mode +1))
+  (super-save-mode +1)
+  (add-to-list 'super-save-triggers 'ace-window))
 
 ;; (persp-mode 1)
 ;; (persp-mode-projectile-bridge-mode 1)
