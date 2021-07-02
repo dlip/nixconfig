@@ -83,6 +83,7 @@
         multiple-cursors
         expand-region
         avy
+        avy-zap
         duplicate-thing
         ace-window
         visual-regexp

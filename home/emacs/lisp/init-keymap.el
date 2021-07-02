@@ -1,6 +1,9 @@
 ;;; init-keymap --- keymap settings
 
 (global-set-key (kbd "M-o") 'ace-window)
+(global-set-key (kbd "M-z") 'avy-zap-to-char-dwim)
+(global-set-key (kbd "M-Z") 'avy-zap-up-to-char-dwim)
+
 (global-set-key (kbd "C-<tab>") 'switch-to-last-buffer)
 
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
