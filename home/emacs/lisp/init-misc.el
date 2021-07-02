@@ -109,8 +109,6 @@
   (interactive)
   (switch-to-buffer nil))
 
-(add-hook 'focus-out-hook 'save-all)
-
 (use-package ace-window
   :config
   ;; Show the window designators in the modeline.
