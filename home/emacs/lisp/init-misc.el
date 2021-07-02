@@ -68,10 +68,10 @@
 
 ;; Use y/p for prompts
 (defalias 'yes-or-no-p 'y-or-n-p)
-;; Autosave on focus lost
-(defun save-all ()
-  (interactive)
-  (save-some-buffers t))
+
+(use-package super-save
+  :config
+  (super-save-mode +1))
 
 ;; (persp-mode 1)
 ;; (persp-mode-projectile-bridge-mode 1)

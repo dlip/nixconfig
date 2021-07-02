@@ -8,9 +8,11 @@
 (global-set-key (kbd "C-,") 'mc/skip-to-next-like-this)
 (global-set-key (kbd "C-:") 'avy-goto-char)
 
+(global-set-key (kbd "C-t b") 'switch-to-buffer)
 (global-set-key (kbd "C-t e") 'er/expand-region)
 (global-set-key (kbd "C-t f") 'projectile-find-file)
 (global-set-key (kbd "C-t g") 'magit-status)
+(global-set-key (kbd "C-t j") 'org-journal-new-entry)
 (global-set-key (kbd "C-t l") 'consult-line)
 (global-set-key (kbd "C-t p") 'projectile-switch-project)
 (global-set-key (kbd "C-t r") 'consult-ripgrep)

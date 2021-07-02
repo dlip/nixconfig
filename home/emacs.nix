@@ -87,6 +87,7 @@
         ace-window
         visual-regexp
         visual-regexp-steroids
+        super-save
       ]));
   };
 }

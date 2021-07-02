@@ -24,13 +24,14 @@
   (define-key projectile-mode-map (kbd "C-c C-p") 'projectile-command-map)
   (setq projectile-enable-caching t)
   (setq projectile-project-search-path '("~/code/"))
-  (setq magit-revision-show-gravatars t)
   (projectile-mode 1))
 
 (use-package magit
   :diminish magit-auto-revert-mode
   :diminish auto-revert-mode
   :config
+  (setq magit-revision-show-gravatars t)
+  (setq magit-save-repository-buffers 'dontask)
   (add-to-list 'magit-no-confirm 'stage-all-changes))
 
 (use-package forge
