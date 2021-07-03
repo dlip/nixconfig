@@ -116,6 +116,9 @@ in
     glxinfo
     pciutils
     nvidia-offload
+    wine
+    dropbox
+    pavucontrol
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
