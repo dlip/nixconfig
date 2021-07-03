@@ -156,6 +156,10 @@
             system = "x86_64-linux";
             modules = [ ./systems/Book/configuration.nix ];
           };
+          g = with nixpkgs; lib.nixosSystem {
+            system = "x86_64-linux";
+            modules = [ ./systems/g/configuration.nix ];
+          };
         };
     };
 }
