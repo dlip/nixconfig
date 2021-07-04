@@ -19,6 +19,10 @@
     };
     flake-utils.url = "github:numtide/flake-utils";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
+    kmonad = {
+      url = "github:kmonad/kmonad";
+      flake = false;
+    };
   };
 
   outputs =
@@ -33,6 +37,7 @@
     , flake-compat
     , flake-utils
     , emacs-overlay
+    , kmonad
     }:
     flake-utils.lib.eachDefaultSystem
       (system:
@@ -50,6 +55,7 @@
               my = final.callPackage ./pkgs { };
               envy-sh = envy-sh.defaultPackage.${system};
               inherit (final.callPackage arion { }) arion;
+              kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { stdenv = { lib = final.lib; }; };
               csvkit = pkgs-release.csvkit; # unstable has a build error
             })
             emacs-overlay.overlay

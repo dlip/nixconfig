@@ -38,6 +38,7 @@
     jq
     k9s
     kind
+    kmonad
     kubectl
     kubernetes-helm
     kubetail

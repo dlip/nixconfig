@@ -151,6 +151,22 @@
         "type": "github"
       }
     },
+    "kmonad": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1625291100,
+        "narHash": "sha256-oFCLBjr8fX6JtIoUY3Xa14SFMLMczvFQYVa5uSa5uCA=",
+        "owner": "kmonad",
+        "repo": "kmonad",
+        "rev": "26a6df040ce7a3d67a208ad82b8e55611ccb1fd8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kmonad",
+        "repo": "kmonad",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1619398436,
@@ -239,6 +255,7 @@
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
+        "kmonad": "kmonad",
         "nixpkgs": "nixpkgs_2",
         "nixpkgs-release": "nixpkgs-release",
         "nixpkgs-unstable": "nixpkgs-unstable",
