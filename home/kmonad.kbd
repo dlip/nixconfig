@@ -33,7 +33,7 @@
   tab     q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps    a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft      z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl    lmet lalt           spc            ralt rmet cmp  rctl
+  lctl    lmet lalt           spc            ralt rctl cmp  rctl
 )
 
 (deflayer colemak-dh
@@ -42,7 +42,7 @@
   tab      q    w    f    p    b    j    l    u    y    ;    [    ]    \\
   bspc     @sft_a    @fn_r    @num_s    @sym_t    g    m    n    @nav_e    i    @sft_o    ret    ret
   grv       z    x    c    d    v    k    h    ,    .    '    /
-  lctl     lmet lalt           spc            lctrl rmet _    _
+  lctl     lalt lctl           spc            ralt lmet _    _
 )
 
 (deflayer nav
