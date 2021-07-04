@@ -15,6 +15,18 @@
   fallthrough true
 )
 
+(defalias
+  nav_e (tap-hold-next-release 200 e (layer-toggle nav))
+  num_s (tap-hold-next-release 200 s (layer-toggle num))
+  sym_t (tap-hold-next-release 200 t (layer-toggle sym))
+  fn_r (tap-hold-next-release 200 r (layer-toggle fn))
+  sft_a (tap-hold-next-release 200 a lsft)
+  sft_o (tap-hold-next-release 200 o lsft)
+  
+  bk Back
+  fw Forward
+)
+
 (defsrc
   esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -23,29 +35,13 @@
   lsft      z    x    c    v    b    n    m    ,    .    /    rsft
   lctl    lmet lalt           spc            ralt rmet cmp  rctl
 )
- 
-(defalias nav_e (tap-hold-next-release 200 e (layer-toggle nav)))
-(defalias num_s (tap-hold-next-release 200 s (layer-toggle num)))
-(defalias sym_t (tap-hold-next-release 200 t (layer-toggle sym)))
-(defalias fn_r (tap-hold-next-release 200 r (layer-toggle fn)))
-
-(defalias
-  cpy C-c
-  pst C-v
-  cut C-x
-  udo C-z
-  all C-a
-  fnd C-f
-  bk Back
-  fw Forward
-)
 
 (deflayer colemak-dh
   esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv      1    2    3    4    5    6    7    8    9    0    -    =    bspc
   tab      q    w    f    p    b    j    l    u    y    ;    [    ]    \\
-  bspc     a    @fn_r    @num_s    @sym_t    g    m    n    @nav_e    i    o    '    ret
-  lsft       z    x    c    d    v    k    h    ,    .    /    rsft
+  bspc     @sft_a    @fn_r    @num_s    @sym_t    g    m    n    @nav_e    i    @sft_o    ret    ret
+  grv       z    x    c    d    v    k    h    ,    .    '    /
   lctl     lmet lalt           spc            lctrl rmet _    _
 )
 
@@ -82,24 +78,5 @@
   _        _    _    _    _    _    f13    f7    f8    f9    f10    _    _    _
   _        _    _    _    _    _    f14    f4    f5    f6    f11    _    _ 
   _          _    _    _    _    _    f15    f1    f2    f3    f12    _ 
-  _        _    _              _              _    _    _    _
-)
-
-(deflayer extend
-  _        play rewind previoussong nextsong ejectcd refresh brdn brup www mail prog1 prog2
-  _        f1   f2   f3   f4   f5   f6   f7   f8   f9  f10   f11  f12  _
-  _        esc  @bk  @fnd @fw  ins  pgup home up   end  menu prnt slck _
-  _        lalt lmet lsft lctl ralt pgdn lft  down rght del  caps _
-  _          @cut @cpy  tab  @pst @udo pgdn bks  lsft lctl comp _
-  _        _    _              ret            _    _    _    _
-)
-
-
-(deflayer empty
-  _        _    _    _    _    _    _    _    _    _    _    _    _    
-  _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        _    _    _    _    _    _    _    _    _    _    _    _ 
-  _          _    _    _    _    _    _    _    _    _    _    _ 
   _        _    _              _              _    _    _    _
 )

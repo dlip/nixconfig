@@ -19,6 +19,8 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../cachix.nix
+      ../../services/notify-problems.nix
+      ../../services/ssmtp.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -119,7 +121,43 @@ in
     wine
     dropbox
     pavucontrol
+    restic
   ];
+
+  environment.etc.restic-ignore.text = ''
+    .cache
+    .rustup
+    .spago
+    .vscode
+    Dropbox
+    Google Drive
+    Temp
+    VirtualBox VMs
+    node_modules
+  '';
+  systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
+  services.restic.backups = {
+    dex = {
+      paths = [ "/home" "/root" "/var/lib" ];
+      repository = "rest:http://10.10.0.123:8000/q";
+      passwordFile = "/root/restic-password";
+      pruneOpts = [
+        "--keep-daily 7"
+        "--keep-weekly 4"
+      ];
+      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" "2" ];
+      timerConfig = {
+        OnCalendar = "daily";
+        Persistent = true;
+      };
+    };
+  };
+
+  services.syncthing = {
+    enable = true;
+    user = "dane";
+    group = "users";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
