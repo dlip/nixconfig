@@ -1,6 +1,7 @@
 (defcfg
   ;; ** For Linux **
-  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  ;; input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
   ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
   output (uinput-sink "KMonad output")
 
@@ -28,55 +29,43 @@
 )
 
 (defsrc
-  esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab     q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps    a    s    d    f    g    h    j    k    l    ;    '    ret
+  tab     q    w    e    r    t    y    u    i    o    p    [
+  caps    a    s    d    f    g    h    j    k    l    ;    '
   lsft      z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl    lmet lalt           spc            ralt rctl cmp  rctl
+  lctl    lmet lalt      bspc     spc            ralt rctl cmp  rctl
 )
 
 (deflayer colemak-dh
-  esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  grv      1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab      q    w    f    p    b    j    l    u    y    ;    [    ]    \\
-  bspc     @sft_a    @fn_r    @num_s    @sym_t    g    m    n    @nav_e    i    @sft_o    ret    ret
+  tab      q    w    f    p    b    j    l    u    y    ;    esc
+  bspc     @sft_a    @fn_r    @num_s    @sym_t    g    m    n    @nav_e    i    @sft_o    ret
   grv       z    x    c    d    v    k    h    ,    .    '    /
-  lctl     lalt lctl           spc            ralt lmet _    _
+  lctl     lalt lctl      lsft    spc            lmet ralt _    _
 )
 
 (deflayer nav
-  _        _    _    _    _    _    _    _    _    _    _    _    _    
-  _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        esc    home    up    end    pgup    _    _    _    _    _    _    _    _
-  _        del    left    down    right    pgdn    _    _    _    _    _    _    _ 
+  _        esc    home    up    end    pgup    _    _    _    _    _    _
+  _        del    left    down    right    pgdn    _    _    _    _    _    _
   _          _    _    prnt    caps    _    _    _    _    _    _    _ 
-  _        _    _              _              _    _    _    _
+  _        _    _           _   _              _    _    _    _
 )
 
 (deflayer num
-  _        _    _    _    _    _    _    _    _    _    _    _    _    
-  _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        _    _    _    _    _    =    7    8    9    \    _    _    _
-  _        _    _    _    _    _    -    4    5    6    0    _    _ 
+  _        _    _    _    _    _    =    7    8    9    \    _
+  _        _    _    _    _    _    -    4    5    6    0    _
   _          _    _    _    _    _    [    1    2    3    ]    _ 
-  _        _    _              _              _    _    _    _
+  _        _    _           _   _              _    _    _    _
 )
 
 (deflayer sym
-  _        _    _    _    _    _    _    _    _    _    _    _    _    
-  _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        _    _    _    _    _    +    &    *    \(    |    _    _    _
-  _        _    _    _    _    _    \_    $    %    ^    \)    _    _ 
+  _        _    _    _    _    _    +    &    *    \(    |    _
+  _        _    _    _    _    _    \_    $    %    ^    \)    _
   _          _    _    _    _    _    {    !    @    #    }    _ 
-  _        _    _              _              _    _    _    _
+  _        _    _           _   _              _    _    _    _
 )
 
 (deflayer fn
-  _        _    _    _    _    _    _    _    _    _    _    _    _    
-  _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        _    _    _    _    _    f13    f7    f8    f9    f10    _    _    _
-  _        _    _    _    _    _    f14    f4    f5    f6    f11    _    _ 
+  _        _    _    _    _    _    f13    f7    f8    f9    f10    _
+  _        _    _    _    _    _    f14    f4    f5    f6    f11    _
   _          _    _    _    _    _    f15    f1    f2    f3    f12    _ 
-  _        _    _              _              _    _    _    _
+  _        _    _           _   _              _    _    _    _
 )
