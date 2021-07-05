@@ -18,7 +18,7 @@
 
 (defalias
   navnum_layer (layer-toggle navnum)
-  symfun_layer (layer-toggle symfun)
+  mediafn_layer (layer-toggle mediafn)
 
   lmet_a (tap-hold-next-release 200 a lmet)
   lalt_r (tap-hold-next-release 200 r lalt)
@@ -61,7 +61,22 @@
   tab      q    w    f    p    b    j    l    u    y    ;    esc    _    _
   bspc     @lmet_a    @lalt_r     @lsft_s     @lctl_t     g     m     @rctl_n     @rsft_e     @lalt_i     @rmet_o     ret    _
   grv       z    x    c    d    v    k    h    ,    .    '    /
-  lctl     lalt @navnum_layer           spc            @symfun_layer lmet _    _
+  lctl     lalt @navnum_layer           spc            @mediafn_layer lmet _    _
+)
+
+(defalias
+  bk Back
+  fw Forward
+  v+ VolumeUp
+  v- VolumeDown 
+  v0 Mute
+  mpl play
+  mps previoussong
+  mns nextsong
+  mrw rewind
+  mff fastforward
+  mpp pause
+  mst stop
 )
 
 (deflayer navnum
@@ -73,11 +88,11 @@
   _        _    _              _              _    _    _    _
 )
 
-(deflayer symfun
+(deflayer mediafn
   _        _    _    _    _    _    _    _    _    _    _    _    _    
   _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        _    _    _    _    _    f13    f7    f8    f9    f10    _    _    _
-  _        _    _    _    _    _    f14    f4    f5    f6    f11    _    _ 
-  _          _    _    _    _    _    f15    f1    f2    f3    f12    _ 
+  _        _    _    @bk    @fw    _    f13    f7    f8    f9    f10    _    _    _
+  _        @v-    @mps    @mpl    @mns    @v+    f14    f4    f5    f6    f11    _    _ 
+  _          @mst    @mrw    @mpp    @mff    @v0    f15    f1    f2    f3    f12    _ 
   _        _    _              _              _    _    _    _
 )
