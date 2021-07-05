@@ -1,0 +1,83 @@
+(defcfg
+  ;; ** For Linux **
+  ;;input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
+  output (uinput-sink "KMonad output")
+
+  ;; ** For Windows **
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; ** For MacOS **
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  fallthrough true
+)
+
+(defalias
+  navnum_layer (layer-toggle navnum)
+  symfun_layer (layer-toggle symfun)
+
+  lmet_a (tap-hold-next-release 200 a lmet)
+  lalt_r (tap-hold-next-release 200 r lalt)
+  lsft_s (tap-hold-next-release 200 s lsft)
+  lctl_t (tap-hold-next-release 200 t lctl)
+
+  rctl_n (tap-hold-next-release 200 n rctl)
+  rsft_e (tap-hold-next-release 200 e rsft)
+  lalt_i (tap-hold-next-release 200 i lalt)
+  rmet_o (tap-hold-next-release 200 o rmet)
+
+  lmet_del (tap-hold-next-release 200 del lmet)
+  lalt_left (tap-hold-next-release 200 left lalt)
+  lsft_down (tap-hold-next-release 200 down lsft)
+  lctl_right (tap-hold-next-release 200 right lctl)
+
+  rctl_4 (tap-hold-next-release 200 4 rctl)
+  rsft_5 (tap-hold-next-release 200 5 rsft)
+  lalt_6 (tap-hold-next-release 200 6 lalt)
+  rmet_0 (tap-hold-next-release 200 0 rmet)
+
+  cpy C-c
+  pst C-v
+  cut C-x
+  udo C-z
+)
+
+(defsrc
+  esc     f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv     1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab     q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps    a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft      z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl    lmet lalt           spc            ralt rctl cmp  rctl
+)
+
+(deflayer colemak-dh
+  _        _    _    _    _    _    _    _    _    _    _    _    _ 
+  _        _    _    _    _    _    _    _    _    _    _    _    _    spc
+  tab      q    w    f    p    b    j    l    u    y    ;    esc    _    _
+  bspc     @lmet_a    @lalt_r     @lsft_s     @lctl_t     g     m     @rctl_n     @rsft_e     @lalt_i     @rmet_o     ret    _
+  grv       z    x    c    d    v    k    h    ,    .    '    /
+  lctl     lalt @navnum_layer           spc            @symfun_layer lmet _    _
+)
+
+(deflayer navnum
+  _        _    _    _    _    _    _    _    _    _    _    _    _    
+  _        _    _    _    _    _    _    _    _    _    _    _    _    _
+  _        prnt    home    up    end    pgup    =    7    8    9    \    _    _    _
+  _        @lmet_del    @lalt_left    @lsft_down    @lctl_right    pgdn    -    @rctl_4    @rsft_5    @lalt_6    @rmet_0    _    _  
+  _          @udo    @cut    @cpy    @pst    caps   [    1    2    3    ]   _ 
+  _        _    _              _              _    _    _    _
+)
+
+(deflayer symfun
+  _        _    _    _    _    _    _    _    _    _    _    _    _    
+  _        _    _    _    _    _    _    _    _    _    _    _    _    _
+  _        _    _    _    _    _    f13    f7    f8    f9    f10    _    _    _
+  _        _    _    _    _    _    f14    f4    f5    f6    f11    _    _ 
+  _          _    _    _    _    _    f15    f1    f2    f3    f12    _ 
+  _        _    _              _              _    _    _    _
+)
