@@ -17,21 +17,14 @@
 )
 
 (defalias
-  num_s (tap-hold-next-release 200 s (layer-toggle num))
-  nav_e (tap-hold-next-release 200 e (layer-toggle nav))
-  fn_r (tap-hold-next-release 200 r (layer-toggle fn))
-  media_i (tap-hold-next-release 200 i (layer-toggle media))
+  num_s (tap-hold-next-release 170 s (layer-toggle num))
+  nav_e (tap-hold-next-release 170 e (layer-toggle nav))
+  fn_t (tap-hold-next-release 170 t (layer-toggle fn))
+  media_n (tap-hold-next-release 170 n (layer-toggle media))
 
-  lsft_t (tap-hold-next-release 200 t lsft)
-  lsft_n (tap-hold-next-release 200 n lsft)
-
-  lctl_spc (tap-hold-next-release 200 spc lctl)
-  lsft_a (tap-hold-next-release 200 a lsft)
-  lsft_o (tap-hold-next-release 200 o lsft)
-  cpy C-c
-  pst C-v
-  cut C-x
-  udo C-z
+  lsft_grv (tap-hold-next-release 170 grv lsft)
+  rsft_slsh (tap-hold-next-release 170 / rsft)
+  lctl_spc (tap-hold-next-release 170 spc lctl)
 )
 
 (defsrc
@@ -45,11 +38,11 @@
 
 (deflayer colemak-dh
   _        _    _    _    _    _    _    _    _    _    _    _    _ 
-  _        _    _    _    _    _    _    _    _    _    _    _    _    @lctl_spc
-  tab      q    w    f    p    b    j    l    u    y    ;    esc    _    _
-  bspc     @lsft_a    @fn_r    @num_s     @lsft_t     g     m     @lsft_n     @nav_e     @media_i     @lsft_o     ret    _
-  grv    z    x    c    d    v    k    h    ,    .    '    /
-  _        _    _          @lctl_spc             _    _   _    _
+  _        _    _    _    _    _    _    _    _    _    _    _    _    lctl
+  tab      q    w    f    p    b    j    l    u    y    ;    esc    _    spc
+  bspc     a    r    @num_s     @fn_t     g     m     @media_n     @nav_e     i     o     ret    _
+  @lsft_grv    z    x    c    d    v    k    h    ,    .    '    @rsft_slsh
+  _        _    _          @lctl_spc            lsft    ralt   _    _
 )
 
 
@@ -73,7 +66,7 @@
   _        _    _    _    _    _    _    _    _    _    _    _    _    _
   _        prnt    home    up    end    pgup    _    _    _    _    _    _    _    _
   _        del    left    down    right    pgdn    _    _    _    _    _    _    _  
-  _          @udo    @cut    @cpy    @pst    caps   _    _    _    _    _   _ 
+  _          _    _    caps    _       _    _    _    _    _   _ 
   _        _    _              _              _    _    _    _
 )
 
