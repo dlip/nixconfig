@@ -1,7 +1,7 @@
 (defcfg
   ;; ** For Linux **
-  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
-  ;; input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  ;;input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
   ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
   output (uinput-sink "KMonad output")
 
@@ -19,16 +19,13 @@
 (defalias
   num_s (tap-hold-next-release 200 s (layer-toggle num))
   nav_e (tap-hold-next-release 200 e (layer-toggle nav))
-  fn_a (tap-hold-next-release 200 a (layer-toggle fn))
-  media_o (tap-hold-next-release 200 o (layer-toggle media))
+  fn_r (tap-hold-next-release 200 r (layer-toggle fn))
+  media_i (tap-hold-next-release 200 i (layer-toggle media))
 
-  lctl_r (tap-hold-next-release 200 r lctl)
-  lalt_t (tap-hold-next-release 200 t lalt)
-  lctl_i (tap-hold-next-release 200 i lctl)
-  lalt_n (tap-hold-next-release 200 n lalt)
+  lctl_t (tap-hold-next-release 200 t lctl)
+  lctl_n (tap-hold-next-release 200 n lctl)
 
   lsft_spc (tap-hold-next-release 200 spc lsft)
-  lsft_grv (tap-hold-next-release 200 grv lsft)
 
   cpy C-c
   pst C-v
@@ -49,9 +46,9 @@
   _        _    _    _    _    _    _    _    _    _    _    _    _ 
   _        _    _    _    _    _    _    _    _    _    _    _    _    @lsft_spc
   tab      q    w    f    p    b    j    l    u    y    ;    esc    _    _
-  bspc     @fn_a    @lctl_r    @num_s     @lalt_t     g     m     @lalt_n     @nav_e     @lctl_i     @media_o     ret    _
-  @lsft_grv    z    x    c    d    v    k    h    ,    .    '    /
-  lctl     lalt lctl           @lsft_spc             lmet  _  _    _
+  bspc     a    @fn_r    @num_s     @lctl_t     g     m     @lctl_n     @nav_e     @media_i     o     ret    _
+  grv    z    x    c    d    v    k    h    ,    .    '    /
+  _        _    _          @lsft_spc             _    _   _    _
 )
 
 
