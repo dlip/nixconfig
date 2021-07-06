@@ -22,11 +22,12 @@
   fn_r (tap-hold-next-release 200 r (layer-toggle fn))
   media_i (tap-hold-next-release 200 i (layer-toggle media))
 
-  lctl_t (tap-hold-next-release 200 t lctl)
-  lctl_n (tap-hold-next-release 200 n lctl)
+  lsft_t (tap-hold-next-release 200 t lsft)
+  lsft_n (tap-hold-next-release 200 n lsft)
 
-  lsft_spc (tap-hold-next-release 200 spc lsft)
-
+  lctl_spc (tap-hold-next-release 200 spc lctl)
+  lsft_a (tap-hold-next-release 200 a lsft)
+  lsft_o (tap-hold-next-release 200 o lsft)
   cpy C-c
   pst C-v
   cut C-x
@@ -44,11 +45,11 @@
 
 (deflayer colemak-dh
   _        _    _    _    _    _    _    _    _    _    _    _    _ 
-  _        _    _    _    _    _    _    _    _    _    _    _    _    @lsft_spc
+  _        _    _    _    _    _    _    _    _    _    _    _    _    @lctl_spc
   tab      q    w    f    p    b    j    l    u    y    ;    esc    _    _
-  bspc     a    @fn_r    @num_s     @lctl_t     g     m     @lctl_n     @nav_e     @media_i     o     ret    _
+  bspc     @lsft_a    @fn_r    @num_s     @lsft_t     g     m     @lsft_n     @nav_e     @media_i     @lsft_o     ret    _
   grv    z    x    c    d    v    k    h    ,    .    '    /
-  _        _    _          @lsft_spc             _    _   _    _
+  _        _    _          @lctl_spc             _    _   _    _
 )
 
 
