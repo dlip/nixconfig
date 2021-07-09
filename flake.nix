@@ -20,7 +20,7 @@
     flake-utils.url = "github:numtide/flake-utils";
     emacs-overlay.url = "github:nix-community/emacs-overlay";
     kmonad = {
-      url = "github:kmonad/kmonad";
+      url = "github:dlip/kmonad/fix-nix-build";
       flake = false;
     };
   };

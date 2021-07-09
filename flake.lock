@@ -154,15 +154,16 @@
     "kmonad": {
       "flake": false,
       "locked": {
-        "lastModified": 1625291100,
-        "narHash": "sha256-oFCLBjr8fX6JtIoUY3Xa14SFMLMczvFQYVa5uSa5uCA=",
-        "owner": "kmonad",
+        "lastModified": 1625820927,
+        "narHash": "sha256-WnmNKs5AaJFpwmOI4XqQRi/STbysktzEqnlIN+oQNOw=",
+        "owner": "dlip",
         "repo": "kmonad",
-        "rev": "26a6df040ce7a3d67a208ad82b8e55611ccb1fd8",
+        "rev": "5c07a3c3c834deb8c5aea5a6ddb0b6f4ec43bad3",
         "type": "github"
       },
       "original": {
-        "owner": "kmonad",
+        "owner": "dlip",
+        "ref": "fix-nix-build",
         "repo": "kmonad",
         "type": "github"
       }
