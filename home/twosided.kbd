@@ -39,8 +39,8 @@
 
 (deflayer colemak-dh
   _        _    _    _    _    _    _    _    _    _    _    _    _ 
-  _        _    _    _    _    _    _    _    _    _    _    _    _    lctl
-  tab      q    w    f    p    b    j    l    u    y    ;    esc    _    spc
+  _        _    _    _    _    _    _    _    _    _    _    _    _    spc
+  tab      q    w    f    p    b    j    l    u    y    ;    esc    _   _
   bspc     a    @fn_r    @num_s     @sym_t     g     m     @media_n     @nav_e     i     o     ret    _
   @lsft_grv    z    x    c    d    v    k    h    ,    .    '    @rsft_slsh
   _        _    _          @lctl_spc            lsft    ralt   _    _
@@ -49,9 +49,9 @@
 (deflayer nav
   _        _    _    _    _    _    _    _    _    _    _    _    _    
   _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        prnt    home    up    end    pgup    _    _    _    _    _    _    _    _
-  _        del    left    down    right    pgdn    _    _    _    _    _    _    _  
-  _          _    _    _    _    caps     _    _    _    _    _   _ 
+  _        _    home    up    end    pgup    _    _    _    _    _    _    _    _
+  _        del    left    down    right  pgdn    _    _    _    _    _    _    _  
+  _        _      back    caps    fwd    prnt     _    _    _    _    _   _ 
   _        _    _              _              _    _    _    _
 )
 
@@ -74,34 +74,26 @@
 )
 
 (defalias
-  bk Back
-  fw Forward
-  v+ VolumeUp
-  v- VolumeDown 
-  v0 Mute
-  mpl play
-  mps previoussong
-  mns nextsong
-  mrw rewind
-  mff fastforward
-  mpp pause
+  rw rewind
+  ff fastforward
+  p pause
   mst stop
 )
 
 (deflayer media
   _        _    _    _    _    _    _    _    _    _    _    _    _    
   _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        _    _    @bk    @fw     _    _    _    _   _    _    _    _    _
-  _        @v-    @mps    @mpl    @mns    @v+    _    _    _    _    _    _    _ 
-  _          @mst    @mrw    @mpp    @mff    @v0    _    _   _    _    _    _ 
+  _        _    _    _    _     _    _    _    _   _    _    _    _    _
+  _        vold    prev    pp    next    volu    _    _    _    _    _    _    _ 
+  _          @mst    @rw   _     @ff     mute    _    _   _    _    _    _ 
   _        _    _              _              _    _    _    _
 )
 
 (deflayer fn
   _        _    _    _    _    _    _    _    _    _    _    _    _    
   _        _    _    _    _    _    _    _    _    _    _    _    _    _
-  _        _    _    _    _    _    f13    f7    f8    f9    f10    _    _    _
-  _        _    _    _    _    _    f14    f4    f5    f6    f11    _    _ 
-  _        _    _    _    _    _    f15    f1    f2    f3    f12    _ 
+  _        _    _    _    _    _    ins     f7    f8    f9    f10    _    _    _
+  _        _    _    _    _    _    pause   f4    f5    f6    f11    _    _ 
+  _        _    _    _    _    _    slck    f1    f2    f3    f12    _ 
   _        _    _              _              _    _    _    _
 )

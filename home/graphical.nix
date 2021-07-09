@@ -19,5 +19,6 @@
     xclip
     yubikey-manager-qt
     yubioath-desktop
+    zoom-us
   ];
 }
