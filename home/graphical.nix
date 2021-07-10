@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [
+    ./vscode.nix
+  ];
+  
   home.packages = with pkgs; [
     anki
     blender
@@ -12,9 +16,10 @@
     lens
     libreoffice
     plexamp
+    mpv
+    gwenview
     slack
     spotify
-    vscode
     xorg.xmodmap
     xclip
     yubikey-manager-qt

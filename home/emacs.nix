@@ -89,6 +89,8 @@
         visual-regexp
         visual-regexp-steroids
         super-save
+        pdf-tools
+        calibredb
       ]));
   };
 }
