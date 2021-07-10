@@ -44,8 +44,16 @@
 
     keybindings = [
       {
+        "key" = "ctrl+j";
+        "command" = "editor.action.joinLines";
+      }
+      {
         key = "ctrl+'";
         command = "projectManager.listProjectsNewWindow";
+      }
+      {
+        "key" = "ctrl+e g";
+        "command" = "magit.status";
       }
     ];
 
