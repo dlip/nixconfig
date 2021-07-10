@@ -3,35 +3,51 @@
   programs.vscode = {
     enable = true;
     userSettings = {
-      "editor.renderWhitespace" = "all";
-      "files.autoSave" = "onFocusChange";
-      "editor.rulers" = [ 80 120 ];
-      "telemetry.enableTelemetry" = false;
-      "telemetry.enableCrashReporter" = false;
-      "editor.tabSize" = 2;
-      "files.exclude" = { "**/node_modules/**" = true; };
-      "editor.formatOnSave" = false;
       "breadcrumbs.enabled" = true;
-      "editor.useTabStops" = false;
       "editor.fontFamily" = "FiraCode Nerd Font";
-      "editor.fontSize" = 16;
       "editor.fontLigatures" = true;
+      "editor.fontSize" = 16;
+      "editor.formatOnSave" = true;
       "editor.lineHeight" = 20;
-      "files.trimTrailingWhitespace" = true;
       "editor.minimap.enabled" = false;
+      "editor.renderWhitespace" = "all";
+      "editor.rulers" = [ 80 120 ];
+      "editor.tabSize" = 2;
+      "editor.useTabStops" = false;
+      "extensions.autoUpdate" = false;
+      "files.autoSave" = "onFocusChange";
+      "files.exclude" = { "**/node_modules/**" = true; };
+      "files.trimTrailingWhitespace" = true;
+      "git.autofetch" = true;
+      "metaGo.decoration.additionalSingleCharCodeCharacters" = "E,S,N,T,I,R,O,A,C,H,D,G,M,X,Z,O,U,F,Y,W,U,P,Q";
+      "metaGo.decoration.characters" = "e,s,n,t,i,r,o,a,c,h,d,g,m,x,z,o,u,f,y,w,u,p,q";
+      "projectManager.git.baseFolders" = [ "$home/code" ];
+      "telemetry.enableCrashReporter" = false;
+      "telemetry.enableTelemetry" = false;
+      "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
+      "terminal.integrated.fontSize" = 16;
+      "todo-tree.general.tags" = [
+        "BUG"
+        "HACK"
+        "FIXME"
+        "TODO"
+        "XXX"
+        "[ ]"
+        "[x]"
+      ];
+      "todo-tree.regex.regex" = "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)";
       "workbench.colorTheme" = "Default Dark+";
       "workbench.editor.enablePreview" = false;
       "workbench.iconTheme" = "vs-seti";
       "workbench.startupEditor" = "none";
-      "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
-      "files.watcherExclude" = { "**/*" = true; };
     };
 
-    keybindings = [{
-      key = "shift+cmd+d";
-      command = "editor.action.copyLinesDownAction";
-      when = "editorTextFocus && !editorReadonly";
-    }];
+    keybindings = [
+      {
+        key = "ctrl+'";
+        command = "projectManager.listProjectsNewWindow";
+      }
+    ];
 
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace
       (import ./vscode-extensions.nix).extensions;
