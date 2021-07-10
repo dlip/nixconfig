@@ -6,7 +6,7 @@
       "breadcrumbs.enabled" = true;
       "editor.fontFamily" = "FiraCode Nerd Font";
       "editor.fontLigatures" = true;
-      "editor.fontSize" = 16;
+      "editor.fontSize" = 12;
       "editor.formatOnSave" = true;
       "editor.lineHeight" = 20;
       "editor.minimap.enabled" = false;
@@ -25,7 +25,7 @@
       "telemetry.enableCrashReporter" = false;
       "telemetry.enableTelemetry" = false;
       "terminal.integrated.fontFamily" = "FiraCode Nerd Font";
-      "terminal.integrated.fontSize" = 16;
+      "terminal.integrated.fontSize" = 12;
       "todo-tree.general.tags" = [
         "BUG"
         "HACK"
@@ -36,6 +36,7 @@
         "[x]"
       ];
       "todo-tree.regex.regex" = "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)";
+      "window.zoomLevel" = 2;
       "workbench.colorTheme" = "Monokai Pro";
       "workbench.editor.enablePreview" = false;
       "workbench.iconTheme" = "Monokai Pro Icons";
