@@ -36,9 +36,9 @@
         "[x]"
       ];
       "todo-tree.regex.regex" = "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)";
-      "workbench.colorTheme" = "Default Dark+";
+      "workbench.colorTheme" = "Monokai Pro";
       "workbench.editor.enablePreview" = false;
-      "workbench.iconTheme" = "vs-seti";
+      "workbench.iconTheme" = "Monokai Pro Icons";
       "workbench.startupEditor" = "none";
     };
 
