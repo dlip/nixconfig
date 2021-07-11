@@ -264,6 +264,12 @@
     sha256 = "1ll046rf5dyc7294nbxqk5ya56g2bzqnmxyciqpz2w5x7j75rjib";
   }
   {
+    name = "vscode-markdown-paste-image";
+    publisher = "telesoho";
+    version = "0.13.3";
+    sha256 = "00xxq5vv7ryp9m4cnpal4ji63gnd65c622xcya7pdjbshyibqgjx";
+  }
+  {
     name = "markdown-all-in-one";
     publisher = "yzhang";
     version = "3.4.0";
