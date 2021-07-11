@@ -53,6 +53,16 @@
 )
 
 (defalias
+  del (tap-hold-next-release 200 del lctl)
+  lft (tap-hold-next-release 200 lft lmet)
+  dwn (tap-hold-next-release 200 down lsft)
+  rht (tap-hold-next-release 200 rght lalt)
+
+  4 (tap-hold-next-release 200 4 lalt)
+  5 (tap-hold-next-release 200 5 rsft)
+  6 (tap-hold-next-release 200 6 lmet)
+  0 (tap-hold-next-release 200 0 lctl)
+
   bk A-left
   fwd A-right
 )
@@ -61,7 +71,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    home up   end  pgup =    7    8    9    \    _    _    _
-  _    del  lft  down rght pgdn -    4    5    6    0    _    _
+  _    @del @lft @dwn @rht pgdn -    @4   @5   @6   @0    _    _
   _    _    @bk  caps @fwd prnt [    1    2    3    ]    _
   _    _    _              _              _    _    _    _
 )
