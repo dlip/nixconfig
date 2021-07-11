@@ -53,8 +53,21 @@
         command = "projectManager.listProjectsNewWindow";
       }
       {
-        "key" = "ctrl+e g";
+        "key" = "alt+g";
         "command" = "magit.status";
+      }
+      {
+        "key" = "ctrl+o";
+        "command" = "editor.action.openLink";
+        "when" = "editorFocus";
+      }
+      {
+        "key" = "alt+left";
+        "command" = "workbench.action.navigateBack";
+      }
+      {
+        "key" = "alt+right";
+        "command" = "workbench.action.navigateForward";
       }
     ];
 
