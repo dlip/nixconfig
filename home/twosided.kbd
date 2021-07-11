@@ -16,6 +16,15 @@
   fallthrough true
 )
 
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl cmp  rctl
+)
+
 (defalias
   s (tap-hold-next-release 200 s (layer-toggle num))
   e (tap-hold-next-release 200 e (layer-toggle nav))
@@ -26,15 +35,6 @@
   grv (tap-hold-next-release 200 grv lsft)
   sls (tap-hold-next-release 200 / rsft)
   spc (tap-hold-next-release 200 spc lctl)
-)
-
-(defsrc
-  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
-  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-  caps a    s    d    f    g    h    j    k    l    ;    '    ret
-  lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rctl cmp  rctl
 )
 
 (deflayer colemak-dh
@@ -55,7 +55,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    home up   end  pgup _    _    _    _    _    _    _    _
-  _    del  lft  down rght  pgdn _    _    _    _    _    _    _
+  _    del  lft  down rght pgdn _    _    _    _    _    _    _
   _    _    @bk  caps @fwd prnt _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
@@ -75,7 +75,7 @@
   _        _    _    _    _    _    +    &    *    \(   |    _    _    _
   _        _    _    _    _    _    \_    $    %    ^   \)   _    _
   _        _    _    _    _    _    {    !    @    #    }    _
-  _        _    _              _              _    _    _    _
+  _        _    _         _              _    _    _    _
 )
 
 (defalias
@@ -86,9 +86,9 @@
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _   _    _    _    _    _
-  _    vold prev pp   next volu    _    _    _    _    _    _    _
-  _    stop @rw   _   @ff  mute    _    _   _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    vold prev pp   next volu _    _    _    _    _    _    _
+  _    stop @rw   _   @ff  mute _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
 
