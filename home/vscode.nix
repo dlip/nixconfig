@@ -3,6 +3,7 @@
   programs.vscode = {
     enable = true;
     userSettings = {
+      "aws.telemetry" = false;
       "breadcrumbs.enabled" = true;
       "editor.fontFamily" = "FiraCode Nerd Font";
       "editor.fontLigatures" = true;
@@ -36,7 +37,7 @@
         "[x]"
       ];
       "todo-tree.regex.regex" = "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)";
-      "window.zoomLevel" = 2;
+      "window.zoomLevel" = 1;
       "workbench.colorTheme" = "Monokai Pro";
       "workbench.editor.enablePreview" = false;
       "workbench.iconTheme" = "Monokai Pro Icons";
