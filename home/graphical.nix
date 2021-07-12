@@ -2,7 +2,7 @@
   imports = [
     ./vscode.nix
   ];
-  
+
   home.packages = with pkgs; [
     anki
     blender
@@ -15,6 +15,7 @@
     krita
     lens
     libreoffice
+    obsidian
     plexamp
     mpv
     gwenview
