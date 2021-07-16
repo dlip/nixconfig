@@ -2,6 +2,7 @@
 {
   programs.vscode = {
     enable = true;
+    package = pkgs.vscode-fhs;
     userSettings = {
       "aws.telemetry" = false;
       "breadcrumbs.enabled" = true;
