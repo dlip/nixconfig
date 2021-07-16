@@ -20,6 +20,8 @@
       "files.exclude" = { "**/node_modules/**" = true; };
       "files.trimTrailingWhitespace" = true;
       "git.autofetch" = true;
+      "git.confirmSync" = false;
+      "git.enableSmartCommit" = true;
       "metaGo.decoration.additionalSingleCharCodeCharacters" = "E,S,N,T,I,R,O,A,C,H,D,G,M,X,Z,O,U,F,Y,W,U,P,Q";
       "metaGo.decoration.characters" = "e,s,n,t,i,r,o,a,c,h,d,g,m,x,z,o,u,f,y,w,u,p,q";
       "projectManager.git.baseFolders" = [ "$home/code" ];
@@ -38,9 +40,9 @@
       ];
       "todo-tree.regex.regex" = "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)";
       "window.zoomLevel" = 1;
-      "workbench.colorTheme" = "Monokai Pro";
+      "workbench.colorTheme" = "One Dark Pro";
       "workbench.editor.enablePreview" = false;
-      "workbench.iconTheme" = "Monokai Pro Icons";
+      "workbench.iconTheme" = "material-icon-theme";
       "workbench.startupEditor" = "none";
     };
 
