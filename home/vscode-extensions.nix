@@ -234,6 +234,12 @@
     sha256 = "1cym3x36a3lpysqfwxmqf9iwykjf72l8f3s8a3ayl2m7njg15wbh";
   }
   {
+    name = "material-icon-theme";
+    publisher = "PKief";
+    version = "4.8.0";
+    sha256 = "06xsb1dqqdgr9ack0d92rc96qkhymyfba4msm884l52scd6jr7mx";
+  }
+  {
     name = "polacode";
     publisher = "pnp";
     version = "0.3.4";
