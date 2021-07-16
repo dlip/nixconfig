@@ -2,7 +2,6 @@
 {
   programs.vscode = {
     enable = true;
-    package = pkgs.vscode-fhs;
     userSettings = {
       "aws.telemetry" = false;
       "breadcrumbs.enabled" = true;
@@ -75,10 +74,10 @@
       }
     ];
 
-    extensions = (with pkgs.vscode-extensions; [
+    extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-extensions.nix).extensions ++ (with pkgs.vscode-extensions; [
       ms-vscode.cpptools
       ms-vsliveshare.vsliveshare
-    ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-extensions.nix).extensions;
+    ]);
   };
 
 }
