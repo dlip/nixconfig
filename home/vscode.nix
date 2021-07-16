@@ -74,7 +74,10 @@
       }
     ];
 
-    extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace
-      (import ./vscode-extensions.nix).extensions;
+    extensions = (with pkgs.vscode-extensions; [
+      ms-vscode.cpptools
+      ms-vsliveshare.vsliveshare
+    ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-extensions.nix).extensions;
   };
+
 }
