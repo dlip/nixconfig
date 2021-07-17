@@ -15,6 +15,7 @@
     krita
     lens
     libreoffice
+    logseq
     obsidian
     plexamp
     mpv

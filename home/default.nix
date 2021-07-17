@@ -1,6 +1,7 @@
 { configName, config }:
 [
   ./emacs.nix
+  ./espanso.nix
   ./files
   ./fonts.nix
   (import ./git.nix config)
