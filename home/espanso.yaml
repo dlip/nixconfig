@@ -8,12 +8,15 @@
 # it gets replaced by the "replace" string.
 matches:
   # Simple text replacement
-  - trigger: ":espanso"
-    replace: "Hi there!"
+  - trigger: ".,ee"
+    replace: "dane@lipscombe.com.au"
+
+  - trigger: ".,ew"
+    replace: "dane.lipscombe@immutable.com"
 
   # Dates
 
-  - trigger: ":date"
+  - trigger: ".,da"
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -21,7 +24,7 @@ matches:
         params:
           format: "%m/%d/%Y"
 
-  - trigger: ":dd"
+  - trigger: ".,dd"
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -29,7 +32,7 @@ matches:
         params:
           format: "%Y-%m-%d"
 
-  - trigger: ":tt"
+  - trigger: ".,tt"
     replace: "{{mytime}}"
     vars:
       - name: mytime
@@ -38,10 +41,10 @@ matches:
           format: "%H:%M"
 
   # Shell commands
-  - trigger: ":shell"
+  - trigger: ",.ip"
     replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: "echo Hello from your shell"
+          cmd: "curl 'https://api.ipify.org'"
