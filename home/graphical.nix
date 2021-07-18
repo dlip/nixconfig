@@ -8,6 +8,7 @@
     blender
     dbeaver
     discord
+    drawio
     firefox-devedition-bin
     gimp
     godot
