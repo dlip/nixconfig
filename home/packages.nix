@@ -63,6 +63,7 @@
     openvpn
     pandoc
     postgresql
+    postman
     pinentry
     proselint
     python

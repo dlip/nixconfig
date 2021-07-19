@@ -25,72 +25,73 @@
     package = pkgs.emacsGcc;
     extraPackages = (epkgs:
       (with epkgs; [
+        ace-window
         all-the-icons
-        command-log-mode
-        doom-modeline
-        doom-themes
-        format-all
-        lsp-mode
-        magit
-        forge
-        nix-mode
-        org
-        org-roam
-        projectile
-        selectrum
-        selectrum-prescient
-        orderless
-        company
-        company-prescient
-        company-go
-        go-mode
-        consult
-        embark
-        embark-consult
-        marginalia
-        which-key
-        persp-mode
-        persp-mode-projectile-bridge
-        iflipb
-        org-journal
-        org-web-tools
-        org-bullets
-        org-tree-slide
-        visual-fill-column
-        rainbow-delimiters
-        typescript-mode
-        web-mode
-        vterm
-        flycheck
-        use-package
-        lsp-ui
-        treemacs
-        lsp-treemacs
-        dap-mode
-        ripgrep
-        wgrep
-        treemacs
-        treemacs-projectile
-        treemacs-magit
-        treemacs-icons-dired
-        treemacs-all-the-icons
-        yaml-mode
-        nov
-        org-noter
-        org-drill
-        general
-        hydra
-        multiple-cursors
-        expand-region
         avy
         avy-zap
+        calibredb
+        command-log-mode
+        company
+        company-go
+        company-prescient
+        consult
+        crux
+        dap-mode
+        doom-modeline
+        doom-themes
         duplicate-thing
-        ace-window
+        embark
+        embark-consult
+        expand-region
+        flycheck
+        forge
+        format-all
+        general
+        go-mode
+        hydra
+        iflipb
+        lsp-mode
+        lsp-treemacs
+        lsp-ui
+        magit
+        marginalia
+        multiple-cursors
+        nix-mode
+        nov
+        orderless
+        org
+        org-bullets
+        org-drill
+        org-journal
+        org-noter
+        org-roam
+        org-tree-slide
+        org-web-tools
+        pdf-tools
+        persp-mode
+        persp-mode-projectile-bridge
+        projectile
+        rainbow-delimiters
+        ripgrep
+        selectrum
+        selectrum-prescient
+        super-save
+        treemacs
+        treemacs
+        treemacs-all-the-icons
+        treemacs-icons-dired
+        treemacs-magit
+        treemacs-projectile
+        typescript-mode
+        use-package
+        visual-fill-column
         visual-regexp
         visual-regexp-steroids
-        super-save
-        pdf-tools
-        calibredb
+        vterm
+        web-mode
+        wgrep
+        which-key
+        yaml-mode
       ]));
   };
 }
