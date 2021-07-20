@@ -85,7 +85,9 @@
 (use-package org-agenda
   :bind (("C-c a" . org-agenda))
   :config
-  (setq org-agenda-files '("~/notes/org/roam/")))
+  (setq org-agenda-files '("~/notes/org/roam/daily/"))
+  (setq org-todo-keywords
+      '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" ))))
 
 
 (defun dlip/org-mode-visual-fill ()
