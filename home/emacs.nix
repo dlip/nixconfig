@@ -92,6 +92,7 @@
         wgrep
         which-key
         yaml-mode
+        git-timemachine
       ]));
   };
 }

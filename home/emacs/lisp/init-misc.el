@@ -51,6 +51,7 @@
 (load-theme 'doom-one t)
 
 (cua-mode)
+(winner-mode +1)
 
 (set-face-attribute 'default nil :font "FiraCode Nerd Font" :height 120)
 (set-face-attribute 'variable-pitch nil :family "Noto Sans" :height 140)
