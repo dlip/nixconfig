@@ -55,14 +55,25 @@
            "* %<%H:%M> %?"
            :if-new (file+head "%<%Y-%m-%d>.org"
                               "#+title: %<%Y-%m-%d>\n"))))
+
+  (setq org-roam-capture-templates
+	'(("d" "default" plain "%?"
+	   :if-new (file+head "%<%Y%m%d%H%M%S>-${slug}.org"
+			      "#+title: ${title}\n")
+	   :unnarrowed t)
+	  ("p" "project" plain "%?"
+	   :if-new (file+head "projects/%<%Y%m%d%H%M%S>-${slug}.org"
+			      "#+title: ${title}\n")
+	   :unnarrowed t)))
+
   (add-to-list 'display-buffer-alist
-             '("\\*org-roam\\*"
-               (display-buffer-in-side-window)
-               (side . right)
-               (slot . 0)
-               (window-width . 0.33)
-               (window-parameters . ((no-other-window . t)
-                                     (no-delete-other-windows . t)))))
+               '("\\*org-roam\\*"
+		 (display-buffer-in-side-window)
+		 (side . right)
+		 (slot . 0)
+		 (window-width . 0.33)
+		 (window-parameters . ((no-other-window . t)
+                                       (no-delete-other-windows . t)))))
   (org-roam-setup)
   ;; If using org-roam-protocol
   (require 'org-roam-protocol)
@@ -87,7 +98,7 @@
   :config
   (setq org-agenda-files '("~/notes/org/roam/daily/"))
   (setq org-todo-keywords
-      '((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" ))))
+	'((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" ))))
 
 
 (defun dlip/org-mode-visual-fill ()
