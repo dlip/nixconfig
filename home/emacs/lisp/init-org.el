@@ -98,7 +98,7 @@
   :config
   (setq org-agenda-files '("~/notes/org/roam/daily/"))
   (setq org-todo-keywords
-	'((sequence "TODO(t)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" ))))
+	'((sequence "INBOX(i)" "BACKLOG(b)" "TODO(t)" "DOING(d)" "WAITING(w)" "|" "DONE(o)" "CANCELLED(c)" ))))
 
 
 (defun dlip/org-mode-visual-fill ()
@@ -108,16 +108,6 @@
 
 (use-package visual-fill-column
   :hook (org-mode . dlip/org-mode-visual-fill))
-
-(use-package org-journal
-  :after org
-  :defer t
-  :init
-  ;; Change default prefix key; needs to be set before loading org-journal
-  (setq org-journal-prefix-key "C-c C-j ")
-  :config
-  (setq org-journal-dir "~/notes/org/journal/"
-        org-journal-date-format "%A, %d %B %Y"))
 
 (use-package org-drill
   :after org

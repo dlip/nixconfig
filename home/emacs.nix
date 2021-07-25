@@ -62,7 +62,6 @@
         org
         org-bullets
         org-drill
-        org-journal
         org-noter
         org-roam
         org-tree-slide
