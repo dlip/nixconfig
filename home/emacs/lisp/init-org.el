@@ -47,6 +47,7 @@
   (dlip/org-font-setup))
 
 (use-package org-agenda
+  :after org
   :bind (("C-c a" . org-agenda))
   :config
   (setq org-agenda-files (list "~/notes/org/roam/inbox/"
