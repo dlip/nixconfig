@@ -46,8 +46,20 @@
   (setq org-link-frame-setup '((file . find-file)))
   (dlip/org-font-setup))
 
+(use-package org-agenda
+  :bind (("C-c a" . org-agenda))
+  :config
+  (setq org-agenda-files (list "~/notes/org/roam/inbox/"
+                               "~/notes/org/roam/daily/"
+                               "~/notes/org/roam/projects/"))
+  (setq org-todo-keywords
+	'((sequence "INBOX(i)" "BACKLOG(b)" "TODO(t)" "PROGRESS(p)" "WAITING(w)" "|" "DONE(d)" "CANCELLED(c)" ))))
+
+
+
 (setq org-roam-v2-ack t)
 (use-package org-roam
+  :after org
   :config
   (setq org-roam-dailies-directory "daily/")
   (setq org-roam-dailies-capture-templates
@@ -91,15 +103,6 @@
   :hook (org-mode . org-bullets-mode)
   :custom
   (org-bullets-bullet-list '("◉" "○" "●" "○" "●" "○" "●")))
-
-
-(use-package org-agenda
-  :bind (("C-c a" . org-agenda))
-  :config
-  (setq org-agenda-files '("~/notes/org/roam/daily/"))
-  (setq org-todo-keywords
-	'((sequence "INBOX(i)" "BACKLOG(b)" "TODO(t)" "DOING(d)" "WAITING(w)" "|" "DONE(o)" "CANCELLED(c)" ))))
-
 
 (defun dlip/org-mode-visual-fill ()
   (setq visual-fill-column-width 100
