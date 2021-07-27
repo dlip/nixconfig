@@ -26,33 +26,20 @@
 )
 
 (defalias
-  a a
-  s (tap-hold-next-release 200 s (layer-toggle num))
-  r (tap-hold-next-release 200 r (layer-toggle fn))
-  t (tap-hold-next-release 200 t S-(layer-toggle num))
-
-  n (tap-hold-next-release 200 n (layer-toggle media))
-  e (tap-hold-next-release 200 e (layer-toggle nav))
-  i i
-  o o
-  
-  grv (tap-hold-next-release 200 grv lsft)
-  sls (tap-hold-next-release 200 / rsft)
-
   spc (tap-hold-next-release 200 spc lctl)
 
-  ls_s (sticky-key 1500 (layer-toggle mods))
-
-
+  nav (layer-toggle nav)
+  num (layer-toggle num)
+  med (layer-toggle media)
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    spc
   tab  q    w    f    p    b    j    l    u    y    ;    esc  esc  _
-  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o   ret  _
-  @grv z    x    c    d    v    k    h    ,    .    '    @sls
-  _    _    _              @spc           @ls_s ralt _    _
+  bspc a    r    s    t    g    m    n    e    i    o    ret  _
+  grv  z    x    c    d    v    k    h    ,    .    '    /
+  _    _    @num           spc            @nav ralt _    _
 )
 
 (defalias
@@ -64,9 +51,9 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    home up   end  pgup _    @ca  @hyp @am  @cm  _    _    _
-  _    del  lft  down rght pgdn @to1 @sct @ssf @sal @sme _    _
+  _    del  lft  down rght pgdn _    @sct @ssf @sal @sme _    _
   _    _    @bk  caps @fwd prnt _    @cs  @meh @as  @ms  _
-  _    _    _              _              _    _    _    _
+  _    _    @med           _              _    _    _    _
 )
 
 (defalias
@@ -83,53 +70,29 @@
   cm (around @sme @sct)
   ca (around @sct @sal)
   am (around @sal @sme)
-
-  osl (tap-hold-next-release 500 (layer-next nav) (layer-switch nav))
-  to1 (layer-switch colemak-dh)
-)
-
-(deflayer mods
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    @ca  @hyp @am  @cm  _    _    _
-  _    _    _    _    _    _    @osl @sct @ssf @sal @sme _    _
-  _    _    _    _    _    _    _    @cs  @meh @as  @ms  _
-  _    _    _              _              _    _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    =    7    8    9    \    _    _    _
-  _    _    _    _    _    _    -    4    5    6    0    _    _
-  _    _    _    _    _    _    [    1    2    3    ]    _
-  _    _    _              _              _    _    _    _
+  _    @cm  @am  @hyp @ca  _    =    7    8    9    \    _    _    _
+  _    @sme @sal @ssf @sct _    -    4    5    6    0    _    _
+  _    @ms  @as  @meh @cs  _    [    1    2    3    ]    _
+  _    _    _              _              @med _    _    _
 )
 
 (defalias
   rw rewind
   ff fastforward
+  p pause
 )
 
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    vold prev pp   next volu _    _    _    _    _    _    _
-  _    stop @rw   _   @ff  mute _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-)
-
-(defalias
-  p pause
-)
-
-(deflayer fn
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    ins  f7   f8   f9   f10  _    _    _
-  _    _    _    _    _    _    @p   f4   f5   f6   f11  _    _
-  _    _    _    _    _    _    slck f1   f2   f3   f12  _
+  _    vold prev pp   next volu @p   f4   f5   f6   f11  _    _
+  _    stop @rw   _   @ff  mute slck f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
 )
 
