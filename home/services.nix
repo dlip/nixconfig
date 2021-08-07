@@ -5,7 +5,9 @@
     enable = true;
     enableSshSupport = true;
     enableExtraSocket = true;
-    pinentryFlavor = "curses";
+    extraConfig = ''
+      pinentry-program ${pkgs.pinentry.qt}/bin/pinentry
+    '';
     defaultCacheTtl = 34560000;
     defaultCacheTtlSsh = 34560000;
     maxCacheTtl = 34560000;
