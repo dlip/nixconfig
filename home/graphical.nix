@@ -10,6 +10,7 @@
     dbeaver
     discord
     drawio
+    emoji-menu
     firefox
     gimp
     godot
@@ -24,6 +25,7 @@
     obs-studio
     obsidian
     plexamp
+    rofi
     slack
     spotify
     vlc

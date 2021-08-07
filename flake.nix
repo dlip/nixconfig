@@ -23,6 +23,10 @@
       url = "github:kmonad/kmonad";
       flake = false;
     };
+    emoji-menu = {
+      url = "github:jchook/emoji-menu";
+      flake = false;
+    };
   };
 
   outputs =
@@ -38,6 +42,7 @@
     , flake-utils
     , emacs-overlay
     , kmonad
+    , emoji-menu
     }:
     flake-utils.lib.eachDefaultSystem
       (system:
@@ -57,6 +62,7 @@
               inherit (final.callPackage arion { }) arion;
               kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { stdenv = { lib = final.lib; }; };
               csvkit = pkgs-release.csvkit; # unstable has a build error
+              emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             })
             emacs-overlay.overlay
           ];

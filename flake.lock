@@ -79,6 +79,22 @@
         "type": "github"
       }
     },
+    "emoji-menu": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1546726985,
+        "narHash": "sha256-/yBfS/gjVHerT0VOCZM2xAvBCuNzDxdvcJQYCW76aIM=",
+        "owner": "jchook",
+        "repo": "emoji-menu",
+        "rev": "ff879f13d4eb7a3abf26405b64ede1c1ea0a9ce7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jchook",
+        "repo": "emoji-menu",
+        "type": "github"
+      }
+    },
     "envy-sh": {
       "inputs": {
         "bats-assert": "bats-assert",
@@ -251,6 +267,7 @@
       "inputs": {
         "arion": "arion",
         "emacs-overlay": "emacs-overlay",
+        "emoji-menu": "emoji-menu",
         "envy-sh": "envy-sh",
         "flake-compat": "flake-compat",
         "flake-utils": "flake-utils",

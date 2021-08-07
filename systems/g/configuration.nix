@@ -53,6 +53,7 @@ in
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = { LC_ALL = "en_US.UTF-8"; };
     inputMethod = {
       enabled = "ibus";
       ibus.engines = with pkgs.ibus-engines; [ anthy ];

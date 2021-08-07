@@ -25,6 +25,8 @@ in
       export EDITOR=nvim
       export GOPATH=$HOME/go
       export PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
+      export LANG=en_US.UTF-8
+      export LC_ALL=en_US.UTF-8
 
       export NIXCONFIG=${configName}
       export GPG_TTY="$(tty)"
