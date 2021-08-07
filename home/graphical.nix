@@ -6,29 +6,29 @@
   home.packages = with pkgs; [
     anki
     blender
+    chromium
     dbeaver
     discord
     drawio
-    firefox-devedition-bin
+    firefox
     gimp
     godot
-    google-chrome
+    gwenview
+    kdenlive
     krita
     lens
     libreoffice
     logseq
+    mpv
     nyxt
     obs-studio
     obsidian
     plexamp
-    mpv
-    gwenview
     slack
     spotify
-    xorg.xmodmap
-    xclip
     vlc
-    kdenlive
+    xclip
+    xorg.xmodmap
     yubikey-manager-qt
     yubioath-desktop
     zoom-us

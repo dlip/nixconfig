@@ -51,6 +51,7 @@
     neofetch
     nixfmt
     nixpkgs-fmt
+    nmap
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.node2nix
