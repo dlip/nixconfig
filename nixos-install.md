@@ -46,6 +46,9 @@ fallocate -l 8G /mnt/.swapfile
 chmod 600 /mnt/.swapfile
 mkswap /mnt/.swapfile
 
+nixos-generate-config --root /mnt
+
+mkdir /mnt/root
 git clone https://github.com/dlip/nixconfig.git
 cd nixconfig
 
