@@ -19,6 +19,7 @@
     eksctl
     envy-sh
     exa
+    fd # Better find
     file
     fluxcd
     fzf

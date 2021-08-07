@@ -17,7 +17,6 @@
       "editor.useTabStops" = false;
       "extensions.autoUpdate" = false;
       "files.autoSave" = "onFocusChange";
-      "files.exclude" = { "**/node_modules/**" = true; };
       "files.trimTrailingWhitespace" = true;
       "git.autofetch" = true;
       "git.confirmSync" = false;
