@@ -2,19 +2,26 @@
 
 ```sh
 # format the disk with the luks structure
-$ cryptsetup luksFormat /dev/sda4
+cryptsetup luksFormat /dev/sda4
 # open the encrypted partition and map it to /dev/mapper/cryptroot
-$ cryptsetup luksOpen /dev/sda4 cryptroot
+cryptsetup luksOpen /dev/sda4 cryptroot
 # mount
-$ mount /dev/disk/by-label/nixos /mnt
-$ mkdir /mnt/boot
-$ mount /dev/sda1 /mnt/boot
+mount /dev/disk/by-label/nixos /mnt
+mkdir /mnt/boot
+mount /dev/sda1 /mnt/boot
 
 parted /dev/sda -- mklabel gpt
 
 ```
 
 ```nix
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
 	networking.networkmanager.enable = true;
 
 	users.users.dane = {
@@ -36,5 +43,3 @@ chmod 600 /.swapfile
 mkswap /.swapfile
 ```
 
-# format as usual
-$ mkfs.ext4 -L nixos /dev/mapper/cryptroot
