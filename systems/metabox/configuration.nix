@@ -11,6 +11,12 @@ let
     export __VK_LAYER_NV_optimus=NVIDIA_only
     exec -a "$0" "$@"
   '';
+  restic-dex = pkgs.writeShellScriptBin "restic-dex" ''
+    export RESTIC_REPOSITORY="rest:http://10.10.0.123:8000/metabox"
+    export RESTIC_PASSWORD="$(cat /root/restic-password)"
+
+    ${pkgs.restic}/bin/restic $@
+  '';
 in
 rec {
   imports = [
@@ -145,6 +151,7 @@ rec {
     pciutils
     vim
     restic
+    restic-dex
     yubikey-personalization
   ];
   services.udev.packages = with pkgs; [ yubikey-personalization ];
