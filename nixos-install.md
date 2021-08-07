@@ -1,16 +1,56 @@
-# NixOS Install Steps
+# NixOS Install
 
 ```sh
-# format the disk with the luks structure
-cryptsetup luksFormat /dev/sda4
-# open the encrypted partition and map it to /dev/mapper/cryptroot
-cryptsetup luksOpen /dev/sda4 cryptroot
-# mount
-mount /dev/disk/by-label/nixos /mnt
-mkdir /mnt/boot
-mount /dev/sda1 /mnt/boot
+sudo -s
+fdisk -l
+export D=/dev/nvme0n1
 
-parted /dev/sda -- mklabel gpt
+# partition disk
+gdisk $D
+# create new partition table
+o
+# create efi partition
+n
+<enter>
+<enter>
++512M
+ef00
+# create root partition
+n
+<enter>
+<enter>
+<enter>
+<enter>
+# wp write
+w
+
+export P1=${D}p1
+export P2=${D}p2
+
+mkfs.fat $P1
+fatlabel $P1 BOOT
+
+# format the disk with the luks structure
+cryptsetup luksFormat $P2
+# open the encrypted partition and map it to /dev/mapper/cryptroot
+cryptsetup luksOpen $P2 cryptroot
+# format encrypted partition
+mkfs.ext4 /dev/mapper/cryptroot -L ROOT
+# mount
+mount /dev/disk/by-label/ROOT /mnt
+mkdir /mnt/boot
+mount /dev/disk/by-label/BOOT /mnt/boot
+
+# create swap file
+fallocate -l 8G /mnt/.swapfile
+chmod 600 /mnt/.swapfile
+mkswap /mnt/.swapfile
+
+git clone https://github.com/dlip/nixconfig.git
+cd nixconfig
+
+nix-shell -p nixUnstable --run "nix build .#nixosConfigurations.$(hostname).config.system.build.toplevel"
+nixos-install --system result
 
 ```
 
@@ -37,9 +77,5 @@ parted /dev/sda -- mklabel gpt
   ];
 ```
 
-```
-fallocate -l 8G /.swapfile
-chmod 600 /.swapfile
-mkswap /.swapfile
-```
+
 
