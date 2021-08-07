@@ -49,11 +49,24 @@ mkswap /mnt/.swapfile
 nixos-generate-config --root /mnt
 
 mkdir /mnt/root
+cd /mnt/root
 git clone https://github.com/dlip/nixconfig.git
 cd nixconfig
 
-nix-shell -p nixUnstable --run "nix build .#nixosConfigurations.$(hostname).config.system.build.toplevel"
-nixos-install --system result
+export HOST=metabox
+mkdir systems/$HOST
+cp /mnt/etc/nixos systems/$HOST
+vim systems/$HOST/hardware-configuration.nix
+```
+
+Add
+ 
+```
+swapDevices = [{ device = "/.swapfile"; }];
+```
+
+```
+vim systems/$HOST/configuration.nix
 
 ```
 
@@ -65,9 +78,10 @@ nixos-install --system result
     '';
   };
 
-	networking.networkmanager.enable = true;
+  # Enable wifi
+  networking.networkmanager.enable = true;
 
-	users.users.dane = {
+  users.users.dane = {
      isNormalUser = true;
      extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
    };
@@ -80,5 +94,24 @@ nixos-install --system result
   ];
 ```
 
+```
+vim flake.nix
+```
 
+Add to nixosConfigurations, replace HOST with name above
+
+```nix
+
+          HOST = with nixpkgs; lib.nixosSystem {
+            system = "x86_64-linux";
+            modules =
+              [ ./systems/HOST/configuration.nix ];
+          };
+```
+
+Install system
+
+```
+nixos-install --flake .#$HOST
+```
 

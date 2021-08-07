@@ -159,6 +159,7 @@ rec {
 
   environment.etc.restic-ignore.text = ''
     .cache
+    .Cache
     .rustup
     .spago
     .vscode
