@@ -159,6 +159,8 @@ rec {
 
   environment.etc.restic-ignore.text = ''
     .cache
+    .Cache
+    /var/lib/docker
     .rustup
     .spago
     .vscode
