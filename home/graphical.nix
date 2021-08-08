@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./vscode.nix
+    ./xmonad.nix
   ];
 
   home.packages = with pkgs; [

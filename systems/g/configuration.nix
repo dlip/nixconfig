@@ -88,21 +88,29 @@ in
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
-  services.xserver.windowManager.session =
-    let
-      # Allow for per-system injected Emacs configuration.
-      loadScript = pkgs.writeText "emacs-exwm-load" ''
-          (require 'exwm-config)
-          (exwm-config-default)
-      '';
-    in
-    lib.singleton {
-      name = "exwm";
-      start = ''
-        ${pkgs.dbus.dbus-launch} --exit-with-session emacs -mm --fullscreen \
-          -l "${loadScript}"
-      '';
-    };
+  # services.xserver.windowManager.session =
+  #   let
+  #     # Allow for per-system injected Emacs configuration.
+  #     loadScript = pkgs.writeText "emacs-exwm-load" ''
+  #       (require 'init-exwm)
+  #     '';
+  #   in
+  #   lib.singleton {
+  #     name = "exwm";
+  #     start = ''
+  #       ${pkgs.dbus.dbus-launch} --exit-with-session emacs -mm --fullscreen \
+  #         -l "${loadScript}"
+  #     '';
+  #   };
+
+  # services.xserver.windowManager.xmonad = {
+  #   # displayManager = {
+  #   #   defaultSession = lib.mkDefault "none+xmonad";
+  #   # };
+
+  #   enable = true;
+  #   enableContribAndExtras = true;
+  # };
 
   nixpkgs.config.allowUnfree = true;
   # Configure keymap in X11
