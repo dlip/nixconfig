@@ -3,7 +3,10 @@
   xsession = {
     enable = true;
 
-    # initExtra = extra + polybarOpts;
+    initExtra = ''
+      ${pkgs.alttab}/bin/alttab -w 1&
+      ${pkgs.firefox}/bin/firefox&
+    '';
 
     windowManager.xmonad = {
       enable = true;
