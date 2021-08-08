@@ -12,7 +12,7 @@
         hp.dbus
         hp.monad-logger
       ];
-      config = ./files/xmonad.hs;
+      config = ./xmonad-config/app/Main.hs;
     };
   };
 }
