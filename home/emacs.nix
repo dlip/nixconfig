@@ -43,6 +43,7 @@
         embark
         embark-consult
         expand-region
+        exwm
         flycheck
         forge
         format-all

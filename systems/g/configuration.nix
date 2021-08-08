@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
@@ -88,6 +88,21 @@ in
   # Enable the Plasma 5 Desktop Environment.
   services.xserver.displayManager.sddm.enable = true;
   services.xserver.desktopManager.plasma5.enable = true;
+  services.xserver.windowManager.session =
+    let
+      # Allow for per-system injected Emacs configuration.
+      loadScript = pkgs.writeText "emacs-exwm-load" ''
+          (require 'exwm-config)
+          (exwm-config-default)
+      '';
+    in
+    lib.singleton {
+      name = "exwm";
+      start = ''
+        ${pkgs.dbus.dbus-launch} --exit-with-session emacs -mm --fullscreen \
+          -l "${loadScript}"
+      '';
+    };
 
   nixpkgs.config.allowUnfree = true;
   # Configure keymap in X11
