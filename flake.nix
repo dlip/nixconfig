@@ -1,10 +1,10 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixos.url = "github:NixOS/nixpkgs/nixos-21.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     envy-sh.url = "github:dlip/envy.sh";
     arion = {
@@ -30,8 +30,8 @@
 
   outputs =
     { self
+    , nixos
     , nixpkgs
-    , nixpkgs-unstable
     , home-manager
     , envy-sh
     , arion
@@ -45,7 +45,7 @@
     flake-utils.lib.eachDefaultSystem
       (system:
       let
-        pkgs = import nixpkgs-unstable {
+        pkgs = import nixpkgs {
           inherit system;
           config.allowUnfree = true;
           overlays = [
@@ -147,20 +147,16 @@
       }) // {
       nixosConfigurations =
         {
-          metabox = with nixpkgs; lib.nixosSystem {
+          metabox = nixos.lib.nixosSystem {
             system = "x86_64-linux";
             modules =
               [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
           };
-          dex = with nixpkgs; lib.nixosSystem {
+          dex = nixos.lib.nixosSystem {
             system = "x86_64-linux";
             modules = [ ./systems/dex/configuration.nix ];
           };
-          Book = with nixpkgs; lib.nixosSystem {
-            system = "x86_64-linux";
-            modules = [ ./systems/Book/configuration.nix ];
-          };
-          g = with nixpkgs; lib.nixosSystem {
+          g = nixos.lib.nixosSystem {
             system = "x86_64-linux";
             modules = [ ./systems/g/configuration.nix ];
           };

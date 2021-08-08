@@ -150,7 +150,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "nixpkgs"
         ]
       },
       "locked": {
@@ -183,6 +183,22 @@
         "type": "github"
       }
     },
+    "nixos": {
+      "locked": {
+        "lastModified": 1628186972,
+        "narHash": "sha256-wWXlIQdZq/EtlBAGFJ62YHYEnJclxCuUOUGnrQqJ3zg=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "733682c32929293341f113f297b64ea6319e9089",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-21.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1619398436,
@@ -199,34 +215,18 @@
         "type": "github"
       }
     },
-    "nixpkgs-unstable": {
+    "nixpkgs_2": {
       "locked": {
-        "lastModified": 1628293053,
-        "narHash": "sha256-vRyP/9sX+K39mPHqWC13WzKCr8lxtuswU4DDGcN41zU=",
+        "lastModified": 1628320020,
+        "narHash": "sha256-4xBEb+TOHyIGpK37EVsZx6dGPwNMf5YWNBJaQ4VyZws=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "bd807ed5dec14377f87f63c3f467adf93f03de2e",
+        "rev": "67c80531be622641b5b2ccc3a7aff355cb02476b",
         "type": "github"
       },
       "original": {
         "owner": "NixOS",
         "ref": "nixpkgs-unstable",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1628186972,
-        "narHash": "sha256-wWXlIQdZq/EtlBAGFJ62YHYEnJclxCuUOUGnrQqJ3zg=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "733682c32929293341f113f297b64ea6319e9089",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-21.05",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -257,8 +257,8 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "kmonad": "kmonad",
+        "nixos": "nixos",
         "nixpkgs": "nixpkgs_2",
-        "nixpkgs-unstable": "nixpkgs-unstable",
         "sops-nix": "sops-nix"
       }
     },
