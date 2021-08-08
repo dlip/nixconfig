@@ -186,6 +186,14 @@ in
     };
   };
 
+  systemd.services.kmonad = {
+    enable = true;
+    description = "kmonad";
+    script = ''
+      ${pkgs.kmonad}/bin/kmonad -i 'device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd"' ${../../keymaps/kmonad/homelayers.kbd}
+    '';
+  };
+
   services.syncthing = {
     enable = true;
     user = "dane";

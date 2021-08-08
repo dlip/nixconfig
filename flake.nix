@@ -42,23 +42,27 @@
     , kmonad
     , emoji-menu
     }:
+    let
+      getPkgs = pkgs: system: import pkgs {
+        inherit system;
+        config.allowUnfree = true;
+        overlays = [
+          (final: prev: {
+            my = final.callPackage ./pkgs { };
+            envy-sh = envy-sh.defaultPackage.${system};
+            inherit (final.callPackage arion { }) arion;
+            kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { stdenv = { lib = final.lib; }; };
+            emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
+          })
+          emacs-overlay.overlay
+        ];
+      };
+
+    in
     flake-utils.lib.eachDefaultSystem
       (system:
       let
-        pkgs = import nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-          overlays = [
-            (final: prev: {
-              my = final.callPackage ./pkgs { };
-              envy-sh = envy-sh.defaultPackage.${system};
-              inherit (final.callPackage arion { }) arion;
-              kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { stdenv = { lib = final.lib; }; };
-              emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
-            })
-            emacs-overlay.overlay
-          ];
-        };
+        pkgs = getPkgs nixpkgs system;
 
         createHomeConfig = configName: config@{ extraImports ? [ ], ... }:
           flake-utils.lib.mkApp
@@ -144,22 +148,29 @@
           };
 
         };
-      }) // {
-      nixosConfigurations =
-        {
-          metabox = nixos.lib.nixosSystem {
-            system = "x86_64-linux";
-            modules =
-              [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
+      }) // (
+      let
+        system = "x86_64-linux";
+        pkgs = getPkgs nixos system;
+      in
+      {
+        nixosConfigurations =
+          {
+            metabox = nixos.lib.nixosSystem {
+              system = "x86_64-linux";
+              modules =
+                [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
+            };
+            dex = nixos.lib.nixosSystem {
+              system = "x86_64-linux";
+              modules = [ ./systems/dex/configuration.nix ];
+            };
+            g = nixos.lib.nixosSystem {
+              inherit system;
+              inherit pkgs;
+              modules = [ ./systems/g/configuration.nix ];
+            };
           };
-          dex = nixos.lib.nixosSystem {
-            system = "x86_64-linux";
-            modules = [ ./systems/dex/configuration.nix ];
-          };
-          g = nixos.lib.nixosSystem {
-            system = "x86_64-linux";
-            modules = [ ./systems/g/configuration.nix ];
-          };
-        };
-    };
+      }
+    );
 }
