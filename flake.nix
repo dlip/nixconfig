@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-21.05";
-    nixpkgs-release.url = "github:NixOS/nixpkgs/release-21.05";
     nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -32,7 +31,6 @@
   outputs =
     { self
     , nixpkgs
-    , nixpkgs-release
     , nixpkgs-unstable
     , home-manager
     , envy-sh
@@ -47,11 +45,6 @@
     flake-utils.lib.eachDefaultSystem
       (system:
       let
-        pkgs-release = import nixpkgs-release {
-          inherit system;
-          config.allowUnfree = true;
-        };
-
         pkgs = import nixpkgs-unstable {
           inherit system;
           config.allowUnfree = true;
@@ -61,7 +54,6 @@
               envy-sh = envy-sh.defaultPackage.${system};
               inherit (final.callPackage arion { }) arion;
               kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { stdenv = { lib = final.lib; }; };
-              csvkit = pkgs-release.csvkit; # unstable has a build error
               emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             })
             emacs-overlay.overlay

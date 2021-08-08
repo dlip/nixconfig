@@ -10,7 +10,6 @@
     binutils
     cheat
     circleci-cli
-    csvkit
     deno
     dig
     direnv
