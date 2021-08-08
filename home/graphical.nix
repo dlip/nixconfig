@@ -1,5 +1,7 @@
 { pkgs, ... }: {
   imports = [
+    ./alacritty.nix
+    ./rofi.nix
     ./vscode.nix
     ./xmonad.nix
   ];
@@ -27,7 +29,6 @@
     obs-studio
     obsidian
     plexamp
-    rofi
     slack
     spotify
     vlc

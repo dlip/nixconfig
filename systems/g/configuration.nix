@@ -71,10 +71,25 @@ in
     keyMap = "us";
   };
 
-  services.gnome.gnome-keyring.enable = true;
+  services = {
+    gnome.gnome-keyring.enable = true;
+    upower.enable = true;
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+    dbus = {
+      enable = true;
+      packages = [ pkgs.gnome3.dconf ];
+    };
+
+    xserver = {
+      enable = true;
+      layout = "us";
+
+      # Enable touchpad support (enabled default in most desktopManager).
+      libinput.enable = true;
+      libinput.touchpad.disableWhileTyping = true;
+
+    };
+  };
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.prime = {
@@ -125,9 +140,6 @@ in
   hardware.pulseaudio.enable = true;
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dane = {

@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    alacritty
     appimage-run
     arion
     autoreconfHook
@@ -38,6 +37,7 @@
     iotop
     jq
     k9s
+    killall
     kind
     kmonad
     kubectl
