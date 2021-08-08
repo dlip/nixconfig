@@ -1,5 +1,6 @@
 { pkgs, ... }:
 {
+  services.network-manager-applet.enable = true;
   xsession = {
     enable = true;
 
