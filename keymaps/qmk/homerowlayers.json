@@ -309,8 +309,8 @@
       "KC_RSFT",
       "KC_LGUI",
       "KC_LALT",
-      "KC_LCTL",
       "KC_BSPC",
+      "KC_SPC",
       "KC_RALT",
       "KC_RCTL"
     ],

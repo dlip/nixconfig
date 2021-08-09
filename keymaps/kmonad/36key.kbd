@@ -1,0 +1,109 @@
+(defcfg
+  ;; ** For Linux **
+  ;;input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
+  output (uinput-sink "KMonad output")
+
+  ;; ** For Windows **
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; ** For MacOS **
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  fallthrough true
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl cmp  rctl
+)
+
+(defalias
+;; idea separate layers for shift ctrl to avoid rolls
+;; https://configure.zsa.io/ergodox-ez/layouts/Malb/latest/0
+  a (tap-hold-next-release 200 a lmet)
+  r (tap-hold-next-release 200 r lalt)
+  s (tap-hold-next-release 200 s lsft)
+  t (tap-hold-next-release 200 t lctl)
+
+  n (tap-hold-next-release 200 n rctl)
+  e (tap-hold-next-release 200 e rsft)
+  i (tap-hold-next-release 200 i ralt)
+  o (tap-hold-next-release 200 o rmet)
+
+  grv (tap-hold-next-release 200 grv lsft)
+  sls (tap-hold-next-release 200 / rsft)
+
+  lme (tap-hold-next-release 200 tab lmet)
+  lal (tap-hold-next-release 200 esc lalt)
+  bsp (tap-hold-next-release 200 bspc lctl)
+  spc (tap-hold-next-release 200 spc (layer-toggle numnav))
+  ral (tap-hold-next-release 200 ret (layer-toggle mediafn))
+  rct (tap-hold-next-release 200 del (layer-toggle mediafn))
+
+  adj (tap-hold-next-release 200 s (layer-toggle mediafn))
+)
+
+(deflayer colemak-dh
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    @bsp
+  tab  q    w    f    p    b    j    l    u    y    ;    esc  esc  _
+  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o    ret  _
+  @grv z    x    c    d    v    k    h    ,    .    '    @sls
+  _    @lme @lal           @spc           @ral @rct _    _
+)
+
+(defalias
+  tld (tap-hold-next-release 200 ~ lmet)
+  lft (tap-hold-next-release 200 lft lalt)
+  dwn (tap-hold-next-release 200 down lsft)
+  rht (tap-hold-next-release 200 rght lctl)
+
+  4 (tap-hold-next-release 200 4 rctl)
+  5 (tap-hold-next-release 200 5 rsft)
+  6 (tap-hold-next-release 200 6 ralt)
+  0 (tap-hold-next-release 200 0 rmet)
+
+  bk A-left
+  fwd A-right
+)
+
+(deflayer numnav
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    home up   end  pgup =    7    8    9    \    _    _    _
+  _    @tld @lft @dwn @rht pgdn -    @4   @5   @6   @0    _    _
+  _    /    @bk  caps @fwd prnt [    1    2    3    ]    _
+  _    _    @adj           _              _    _    _    _
+)
+
+(defalias
+  rw rewind
+  ff fastforward
+  p pause
+)
+
+(deflayer mediafn
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    ins  f7   f8   f9   f10  _    _    _
+  _    vold prev pp   next volu @p   f4   f5   f6   f11  _    _
+  _    stop @rw   _   @ff  mute slck f1   f2   f3   f12  _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer empty
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
