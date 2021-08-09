@@ -22,7 +22,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt           spc            ralt rctl cmp  rctl
+  lctl lmet lalt           spc            ralt rctl lft  rctl
 )
 
 (defalias
@@ -39,111 +39,103 @@
   o (tap-hold-next-release 200 o rmet)
 
 
-  del (tap-hold-next-release 200 esc (layer-toggle fun))
+  del (tap-hold-next-release 200 del (layer-toggle fun))
   bsp (tap-hold-next-release 200 bspc (layer-toggle num))
   tab (tap-hold-next-release 200 tab (layer-toggle sym))
 
-  ret (tap-hold-next-release 200 ret (layer-toggle mse))
+  ret (tap-hold-next-release 200 ret (layer-toggle med))
   spc (tap-hold-next-release 200 spc (layer-toggle nav))
-  esc (tap-hold-next-release 200 del (layer-toggle med))
+  esc (tap-hold-next-release 200 esc (layer-toggle mse))
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    q    w    f    p    b    _    j    l    u    y    ;    _
-  _    @a   @r   @s   @t   g    _    _    m    @n   @e   @i   @o   _
-  z    x    c    d    v    _    _    _    k    h    ,    .    '
-  _    _    @del @bsp @tab _    _    _    @ret @spc @esc _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  q    w    f    p    b    _    _    j    l    u    y    '    _    _
+  @a   @r   @s   @t   g    _    _    m    @n   @e   @i   @o   _
+  z    x    c    d    v    _    _    k    h    ,    .    /
+  _    @del @bsp @tab                     @ret @spc @esc _
 )
 
 (defalias
-  tld (tap-hold-next-release 200 ~ lmet)
-  lft (tap-hold-next-release 200 lft lalt)
-  dwn (tap-hold-next-release 200 down lsft)
-  rht (tap-hold-next-release 200 rght lctl)
 
-  4 (tap-hold-next-release 200 4 rctl)
-  5 (tap-hold-next-release 200 5 rsft)
-  6 (tap-hold-next-release 200 6 ralt)
-  0 (tap-hold-next-release 200 0 rmet)
+
+  cpy C-c
+  pst C-v
+  cut C-x
+  udo C-z
+  rdo C-y
 
   bk A-left
   fwd A-right
 )
 
-
+(defalias
+  p pause
+)
 
 (deflayer fun
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    =    7    8    9    \    _
-  _    lmet lalt lctl lsft _    _    _    -    4    5    6    0   _
-  _    _    _    _    _    _    _    _    [    1    2    3    ]
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    prnt f7   f8   f9   f10  _    _
+  lmet lalt lctl lsft _    _    _    slck f4   f5   f6   f11  _
+  _    _    _    _    _    _    _    @p   f1   f2   f3   f12
+  _    _    _    _                        ret  spc  cmp  _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    =    7    8    9    \    _
-  _    lmet lalt lctl lsft _    _    _    -    4    5    6    0   _
-  _    _    _    _    _    _    _    _    [    1    2    3    ]
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    [    7    8    9    ]    _    _
+  lmet lalt lctl lsft _    _    _    =    4    5    6    ;    _
+  @udo @cut @cpy @pst @rdo _    _    \    1    2    3    `
+  _    _    _    _                        -    0    .    _
 )
 
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    =    7    8    9    \    _
-  _    lmet lalt lctl lsft _    _    _    -    4    5    6    0   _
-  _    _    _    _    _    _    _    _    [    1    2    3    ]
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-)
-
-
-
-(deflayer mse
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    home up   end  pgup _    _    _    _    _    _    _
-  _    del  lft  down rght pgdn _    _    _    rsft rctl ralt rmet _
-  _    @bk  caps @fwd prnt      _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-)
-
-(deflayer nav
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    home up   end  pgup _    _    _    _    _    _    _
-  _    del  lft  down rght pgdn _    _    _    rsft rctl ralt rmet _
-  _    @bk  caps @fwd prnt      _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-)
-
-(deflayer med
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    home up   end  pgup _    _    _    _    _    _    _
-  _    del  lft  down rght pgdn _    _    _    rsft rctl ralt rmet _
-  _    @bk  caps @fwd prnt      _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    {    &    *    \(   }    _    _
+  lmet lalt lctl lsft _    _    _    +    $    %    ^    :    _
+  _    _    _    _    _    _    _    |    !    @    #    ~
+  _    _    _    _                        \_   \(   \)   _
 )
 
 (defalias
   rw rewind
   ff fastforward
-  p pause
 )
 
-(deflayer mediafn
+
+(deflayer med
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    ins  f7   f8   f9   f10  _    _    _
-  _    vold prev pp   next volu @p   f4   f5   f6   f11  _    _
-  _    stop @rw   _   @ff  mute slck f1   f2   f3   f12  _
-  _    _    _              _              _    _    _    _
+  _    _    volu _    _    _    _    _    _    _    _    _    _    _
+  _   prev  vold next _    _    _    _    rsft rctl ralt rmet _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    mute pp   stop                     _    _    _    _
 )
+
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  pgup home up   end  ins  _    _    _    _    _    _    _    _    _
+  pgdn lft  down rght caps _    _    _    rsft rctl ralt rmet _
+  @udo @cut @cpy @pst @rdo _    _    _    _    _    _    _
+  _    del  bspc tab                      _    _    _    _
+)
+
+(deflayer mse
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  pgup home up   end  ins  _    _    _    _    _    _    _    _    _
+  pgdn lft  down rght caps _    _    _    rsft rctl ralt rmet _
+  @udo @cut @cpy @pst @rdo _    _    _    _    _    _    _
+  _    del  bspc tab                      _    _    _    _
+)
+
+
+
 
 (deflayer empty
   _    _    _    _    _    _    _    _    _    _    _    _    _
