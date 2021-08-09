@@ -1,0 +1,155 @@
+(defcfg
+  ;; ** For Linux **
+  ;;input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
+  output (uinput-sink "KMonad output")
+
+  ;; ** For Windows **
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; ** For MacOS **
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  fallthrough true
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl cmp  rctl
+)
+
+(defalias
+;; idea separate layers for shift ctrl to avoid rolls
+;; https://configure.zsa.io/ergodox-ez/layouts/Malb/latest/0
+  a (tap-hold-next-release 200 a lmet)
+  r (tap-hold-next-release 200 r lalt)
+  s (tap-hold-next-release 200 s lctl)
+  t (tap-hold-next-release 200 t lsft)
+
+  n (tap-hold-next-release 200 n rsft)
+  e (tap-hold-next-release 200 e rctl)
+  i (tap-hold-next-release 200 i ralt)
+  o (tap-hold-next-release 200 o rmet)
+
+
+  del (tap-hold-next-release 200 esc (layer-toggle fun))
+  bsp (tap-hold-next-release 200 bspc (layer-toggle num))
+  tab (tap-hold-next-release 200 tab (layer-toggle sym))
+
+  ret (tap-hold-next-release 200 ret (layer-toggle mse))
+  spc (tap-hold-next-release 200 spc (layer-toggle nav))
+  esc (tap-hold-next-release 200 del (layer-toggle med))
+)
+
+(deflayer colemak-dh
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    q    w    f    p    b    _    j    l    u    y    ;    _
+  _    @a   @r   @s   @t   g    _    _    m    @n   @e   @i   @o   _
+  z    x    c    d    v    _    _    _    k    h    ,    .    '
+  _    _    @del @bsp @tab _    _    _    @ret @spc @esc _
+  _    _    _              _              _    _    _    _
+)
+
+(defalias
+  tld (tap-hold-next-release 200 ~ lmet)
+  lft (tap-hold-next-release 200 lft lalt)
+  dwn (tap-hold-next-release 200 down lsft)
+  rht (tap-hold-next-release 200 rght lctl)
+
+  4 (tap-hold-next-release 200 4 rctl)
+  5 (tap-hold-next-release 200 5 rsft)
+  6 (tap-hold-next-release 200 6 ralt)
+  0 (tap-hold-next-release 200 0 rmet)
+
+  bk A-left
+  fwd A-right
+)
+
+
+
+(deflayer fun
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    =    7    8    9    \    _
+  _    lmet lalt lctl lsft _    _    _    -    4    5    6    0   _
+  _    _    _    _    _    _    _    _    [    1    2    3    ]
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    =    7    8    9    \    _
+  _    lmet lalt lctl lsft _    _    _    -    4    5    6    0   _
+  _    _    _    _    _    _    _    _    [    1    2    3    ]
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer sym
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    =    7    8    9    \    _
+  _    lmet lalt lctl lsft _    _    _    -    4    5    6    0   _
+  _    _    _    _    _    _    _    _    [    1    2    3    ]
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+
+
+(deflayer mse
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    home up   end  pgup _    _    _    _    _    _    _
+  _    del  lft  down rght pgdn _    _    _    rsft rctl ralt rmet _
+  _    @bk  caps @fwd prnt      _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    home up   end  pgup _    _    _    _    _    _    _
+  _    del  lft  down rght pgdn _    _    _    rsft rctl ralt rmet _
+  _    @bk  caps @fwd prnt      _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer med
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    home up   end  pgup _    _    _    _    _    _    _
+  _    del  lft  down rght pgdn _    _    _    rsft rctl ralt rmet _
+  _    @bk  caps @fwd prnt      _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(defalias
+  rw rewind
+  ff fastforward
+  p pause
+)
+
+(deflayer mediafn
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    ins  f7   f8   f9   f10  _    _    _
+  _    vold prev pp   next volu @p   f4   f5   f6   f11  _    _
+  _    stop @rw   _   @ff  mute slck f1   f2   f3   f12  _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer empty
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
