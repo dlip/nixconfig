@@ -28,6 +28,7 @@
 (defalias
 ;; idea separate layers for shift ctrl to avoid rolls
 ;; https://configure.zsa.io/ergodox-ez/layouts/Malb/latest/0
+  na reserved
   a (tap-hold-next-release 200 a lmet)
   r (tap-hold-next-release 200 r lalt)
   s (tap-hold-next-release 200 s lsft)
@@ -35,7 +36,7 @@
 
   n (tap-hold-next-release 200 n rctl)
   e (tap-hold-next-release 200 e rsft)
-  i (tap-hold-next-release 200 i ralt)
+  i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o rmet)
 
 
@@ -48,9 +49,9 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  q    w    f    p    b    _    _    j    l    u    y    '    _    _
-  @a   @r   @s   @t   g    _    _    m    @n   @e   @i   @o   _
-  z    x    c    d    v    _    _    k    h    ,    .    /
+  q    w    f    p    b    @na  @na  j    l    u    y    '    @na  @na
+  @a   @r   @s   @t   g    @na  @na  m    @n   @e   @i   @o   @na
+  z    x    c    d    v    @na  @na  k    h    ,    .    /
   _         esc  @tab      @spc           @bsp ret
 )
 
@@ -84,7 +85,7 @@
 
   f4 (tap-hold-next-release 200 f4 rctl)
   f5 (tap-hold-next-release 200 f5 rsft)
-  f6 (tap-hold-next-release 200 f6 ralt)
+  f6 (tap-hold-next-release 200 f6 lalt)
   f11 (tap-hold-next-release 200 f11 rmet)
 )
 
@@ -102,7 +103,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   caps home up   end  ins  _    _    _    _    _    _    _    _    _
-  @bk  lft  down rght @fwd _    _    _    rctl rsft ralt rmet _
+  @bk  lft  down rght @fwd _    _    _    rctl rsft lalt rmet _
   @udo @cut @cpy @pst @rdo _    _    _    _    _    _    _
   _         _    pgup      pgdn           _    _
 )
