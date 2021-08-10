@@ -30,11 +30,11 @@
 ;; https://configure.zsa.io/ergodox-ez/layouts/Malb/latest/0
   a (tap-hold-next-release 200 a lmet)
   r (tap-hold-next-release 200 r lalt)
-  s (tap-hold-next-release 200 s lctl)
-  t (tap-hold-next-release 200 t lsft)
+  s (tap-hold-next-release 200 s lsft)
+  t (tap-hold-next-release 200 t lctl)
 
-  n (tap-hold-next-release 200 n rsft)
-  e (tap-hold-next-release 200 e rctl)
+  n (tap-hold-next-release 200 n rctl)
+  e (tap-hold-next-release 200 e rsft)
   i (tap-hold-next-release 200 i ralt)
   o (tap-hold-next-release 200 o rmet)
 
@@ -73,7 +73,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    [    7    8    9    ]    _    _
-  lmet lalt lctl lsft _    _    _    =    4    5    6    ;    _
+  lmet lalt lsft lctl _    _    _    =    4    5    6    ;    _
   @udo @cut @cpy @pst @rdo _    _    \    1    2    3    `
   _         _    _         -              0    .
 )
@@ -82,8 +82,8 @@
   rw rewind
   ff fastforward
 
-  f4 (tap-hold-next-release 200 f4 rsft)
-  f5 (tap-hold-next-release 200 f5 rctl)
+  f4 (tap-hold-next-release 200 f4 rctl)
+  f5 (tap-hold-next-release 200 f5 rsft)
   f6 (tap-hold-next-release 200 f6 ralt)
   f11 (tap-hold-next-release 200 f11 rmet)
 )
@@ -102,7 +102,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   pgup home up   end  ins  _    _    _    _    _    _    _    _    _
-  pgdn lft  down rght caps _    _    _    rsft rctl ralt rmet _
+  pgdn lft  down rght caps _    _    _    rctl rsft ralt rmet _
   @udo @cut @cpy @pst @rdo _    _    _    _    _    _    _
   _         esc  tab       _              _    _
 )
