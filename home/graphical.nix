@@ -31,6 +31,7 @@
     plexamp
     slack
     spotify
+    tdesktop
     vlc
     xclip
     xorg.xmodmap
