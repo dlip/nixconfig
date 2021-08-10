@@ -101,10 +101,10 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  pgup home up   end  ins  _    _    _    _    _    _    _    _    _
-  pgdn lft  down rght caps _    _    _    rctl rsft ralt rmet _
+  caps home up   end  ins  _    _    _    _    _    _    _    _    _
+  @bk  lft  down rght @fwd _    _    _    rctl rsft ralt rmet _
   @udo @cut @cpy @pst @rdo _    _    _    _    _    _    _
-  _         esc  tab       _              _    _
+  _         _    pgup      pgdn           _    _
 )
 
 
