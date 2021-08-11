@@ -26,7 +26,6 @@
 )
 
 (defalias
-
   na reserved
   a (tap-hold-next-release 200 a lmet)
   r (tap-hold-next-release 200 r lalt)
@@ -38,9 +37,11 @@
   i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o rmet)
 
+  esc (tap-hold-next-release 200 esc (layer-toggle right))
   bsp (tap-hold-next-release 200 bspc (layer-toggle num))
   tab (tap-hold-next-release 200 tab (layer-toggle medfn))
   spc (tap-hold-next-release 200 spc (layer-toggle nav))
+  ret (tap-hold-next-release 200 ret (layer-toggle left))
 )
 
 (deflayer colemak-dh
@@ -49,7 +50,7 @@
   q    w    f    p    b    @na  @na  j    l    u    y    '    @na  @na
   @a   @r   @s   @t   g    @na  @na  m    @n   @e   @i   @o   @na
   z    x    c    d    v    @na  @na  k    h    ,    .    /
-  _         esc  @bsp      @tab           @spc ret
+  _         @esc @bsp      @tab           @spc @ret
 )
 
 (defalias
@@ -101,6 +102,24 @@
   prnt lft  down rght caps _    _    _    rctl rsft lalt rmet _
   @pau _    @bk  @fwd _    _    _    _    _    _    _    _
   _         pgup del       pgdn           _    _
+)
+
+(deflayer left
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  q    w    f    p    b    _    _    _    _    _    _    _    _    _
+  a    r    s    t    g    _    _    _    rctl rsft lalt rmet _
+  z    x    c    d    v    _    _    _    _    _    _    _
+  _         esc  bspc      tab            _    _
+)
+
+(deflayer right
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    j    l    u    y    '    _    _
+  _    _    _    _    _    _    _    m    n    e    i    o    _
+  _    _    _    _    _    _    _    k    h    ,    .    /
+  _         _    _         tab            spc  ret
 )
 
 (deflayer empty
