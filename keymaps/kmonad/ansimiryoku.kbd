@@ -26,8 +26,7 @@
 )
 
 (defalias
-;; idea separate layers for shift ctrl to avoid rolls
-;; https://configure.zsa.io/ergodox-ez/layouts/Malb/latest/0
+
   na reserved
   a (tap-hold-next-release 200 a lmet)
   r (tap-hold-next-release 200 r lalt)
@@ -39,11 +38,10 @@
   i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o rmet)
 
+  bsp (tap-hold-next-release 200 bspc (layer-toggle num))
+  tab (tap-hold-next-release 200 tab (layer-toggle medfn))
 
-  bsp (tap-hold-next-release 200 bspc (layer-toggle nav))
-  tab (tap-hold-next-release 200 tab (layer-toggle num))
-
-  spc (tap-hold-next-release 200 spc (layer-toggle medfn))
+  spc (tap-hold-next-release 200 spc (layer-toggle nav))
 )
 
 (deflayer colemak-dh
@@ -52,7 +50,7 @@
   q    w    f    p    b    @na  @na  j    l    u    y    '    @na  @na
   @a   @r   @s   @t   g    @na  @na  m    @n   @e   @i   @o   @na
   z    x    c    d    v    @na  @na  k    h    ,    .    /
-  _         esc  @tab      @spc           @bsp ret
+  _         esc  @bsp      @tab           @spc ret
 )
 
 (defalias
@@ -61,13 +59,6 @@
   cut C-x
   udo C-z
   rdo C-y
-
-  bk A-left
-  fwd A-right
-)
-
-(defalias
-  p pause
 )
 
 (deflayer num
@@ -80,6 +71,10 @@
 )
 
 (defalias
+  pau pause
+  bk A-left
+  fwd A-right
+
   rw rewind
   ff fastforward
 
@@ -92,23 +87,20 @@
 (deflayer medfn
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    volu _    _    _    _    prnt f7   f8   f9   f10  _    _
-  _   prev  vold next _    _    _    slck @f4  @f5  @f6  @f11  _
-  @udo @cut @cpy @pst @rdo _    _    @p   f1   f2   f3   f12
-  _         mute pp        _              del  cmp
+  _    _    volu _    _    _    _    f13  f7   f8   f9   f10  _    _
+  _   prev  vold next _    _    _    f14  @f4  @f5  @f6  @f11  _
+  _    _    _    _    _    _    _    f15  f1   f2   f3   f12
+  _         mute pp        _              f16  f17
 )
-
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   caps home up   end  ins  _    _    _    _    _    _    _    _    _
-  @bk  lft  down rght @fwd _    _    _    rctl rsft lalt rmet _
-  @udo @cut @cpy @pst @rdo _    _    _    _    _    _    _
-  _         _    pgup      pgdn           _    _
+  prnt lft  down rght caps _    _    _    rctl rsft lalt rmet _
+  @pau _    @bk  @fwd _    _    _    _    _    _    _    _
+  _         pgup del       pgdn           _    _
 )
-
-
 
 (deflayer empty
   _    _    _    _    _    _    _    _    _    _    _    _    _
