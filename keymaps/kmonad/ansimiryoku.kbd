@@ -40,7 +40,6 @@
 
   bsp (tap-hold-next-release 200 bspc (layer-toggle num))
   tab (tap-hold-next-release 200 tab (layer-toggle medfn))
-
   spc (tap-hold-next-release 200 spc (layer-toggle nav))
 )
 
@@ -71,10 +70,6 @@
 )
 
 (defalias
-  pau pause
-  bk A-left
-  fwd A-right
-
   rw rewind
   ff fastforward
 
@@ -91,6 +86,12 @@
   _   prev  vold next _    _    _    f14  @f4  @f5  @f6  @f11  _
   _    _    _    _    _    _    _    f15  f1   f2   f3   f12
   _         mute pp        _              f16  f17
+)
+
+(defalias
+  pau pause
+  bk A-left
+  fwd A-right
 )
 
 (deflayer nav
