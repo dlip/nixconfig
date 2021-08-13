@@ -17,7 +17,7 @@
         hp.monad-logger
         hp.xmonad-contrib
       ];
-      config = ./xmonad-config/app/Main.hs;
+      config = ./xmonad-config/Main.hs;
     };
   };
 }
