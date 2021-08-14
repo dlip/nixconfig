@@ -63,7 +63,7 @@
         org
         org-bullets
         org-drill
-        org-noter
+        #org-noter issue building
         org-roam
         org-tree-slide
         org-web-tools

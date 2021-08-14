@@ -1,15 +1,31 @@
+-- Needed to export windows to rofi
+
+import System.IO (hPutStrLn)
 import XMonad
-import XMonad.Hooks.EwmhDesktops (ewmh) -- Needed to export windows to rofi
+import XMonad.Hooks.DynamicLog
+import XMonad.Hooks.EwmhDesktops (ewmh)
+import XMonad.Hooks.ManageDocks (avoidStruts, docks, manageDocks)
 import XMonad.Util.EZConfig (additionalKeysP)
+import XMonad.Util.Run (spawnPipe)
 
 main :: IO ()
-main =
+main = do
+  xmproc <- spawnPipe "xmobar"
   xmonad $
-    ewmh
-      def
-        { modMask = mod4Mask, -- Use Super instead of Alt
-          terminal = "alacritty"
-        }
-      `additionalKeysP` [ ("M-r", spawn "rofi -show run -drun-show-actions"),
-                          ("M-p", spawn "rofi -show window")
-                        ]
+    docks $
+      ewmh
+        def
+          { modMask = mod4Mask, -- Use Super instead of Alt
+            terminal = "alacritty",
+            manageHook = manageDocks <+> manageHook def,
+            layoutHook = avoidStruts $ layoutHook def,
+            logHook =
+              dynamicLogWithPP
+                xmobarPP
+                  { ppOutput = hPutStrLn xmproc,
+                    ppTitle = xmobarColor "green" "" . shorten 50
+                  }
+          }
+        `additionalKeysP` [ ("M-r", spawn "rofi -show drun"),
+                            ("M-p", spawn "rofi -show window")
+                          ]

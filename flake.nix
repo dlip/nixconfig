@@ -7,10 +7,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     envy-sh.url = "github:dlip/envy.sh";
-    arion = {
-      url = "github:hercules-ci/arion";
-      flake = false;
-    };
     sops-nix.url = "github:Mic92/sops-nix";
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -34,7 +30,6 @@
     , nixpkgs
     , home-manager
     , envy-sh
-    , arion
     , sops-nix
     , flake-compat
     , flake-utils
@@ -50,7 +45,6 @@
           (final: prev: {
             my = final.callPackage ./pkgs { };
             envy-sh = envy-sh.defaultPackage.${system};
-            inherit (final.callPackage arion { }) arion;
             kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { stdenv = { lib = final.lib; }; };
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
           })

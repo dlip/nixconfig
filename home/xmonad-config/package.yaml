@@ -34,3 +34,4 @@ executables:
     dependencies:
       - xmonad-contrib
       - xmonad
+      - X11
