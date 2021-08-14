@@ -26,11 +26,13 @@
 )
 
 (defalias
-  s (tap-hold-next-release 200 s (layer-toggle num))
-  t (tap-hold-next-release 200 t (layer-toggle fn))
+  d (tap-hold-next-release 200 d (layer-toggle fn))
+  s (tap-hold-next-release 200 s lsft)
+  t (tap-hold-next-release 200 t (layer-toggle num))
 
-  e (tap-hold-next-release 200 e (layer-toggle nav))
-  n (tap-hold-next-release 200 n (layer-toggle media))
+  n (tap-hold-next-release 200 n (layer-toggle nav))
+  e (tap-hold-next-release 200 e rsft)
+  h (tap-hold-next-release 200 h (layer-toggle media))
 
   spc (tap-hold-next-release 200 spc lctl)
 )
@@ -40,8 +42,8 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    spc
   grv  q    w    f    p    b    j    l    u    y    ;    \    _    _
   bspc a    r    @s   @t   g    m    @n   @e   i    o    ret  _
-  tab  z    x    c    d    v    k    h    ,    .    '    esc
-  _    _    _              @spc           lsft ralt _    _
+  tab  z    x    c    @d   v    k    @h   ,    .    '    esc
+  _    _    _              @spc           lmet ralt    _    _
 )
 
 (defalias

@@ -22,8 +22,7 @@ main = do
             logHook =
               dynamicLogWithPP
                 xmobarPP
-                  { ppOutput = hPutStrLn xmproc,
-                    ppTitle = xmobarColor "green" "" . shorten 50
+                  { ppOutput = hPutStrLn xmproc
                   }
           }
         `additionalKeysP` [ ("M-r", spawn "rofi -show drun"),

@@ -23,22 +23,25 @@
   programs.xmobar = {
     enable = true;
     extraConfig = ''
-      Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
-             , bgColor = "black"
-             , fgColor = "grey"
-             , position = TopW L 90
-             , lowerOnStart = True
-             , commands = [ Run Weather "EGPF" ["-t"," <tempF>F","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
-                          , Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
-                          , Run Memory ["-t","Mem: <usedratio>%"] 10
-                          , Run Swap [] 10
-                          , Run Date "%a %b %_d %l:%M" "date" 10
-                          , Run StdinReader
-                          ]
-             , sepChar = "%"
-             , alignSep = "}{"
-             , template = "%StdinReader% }{ %cpu% | %memory% * %swap%    <fc=#ee9a00>%date%</fc> | %EGPF%"
-             }
+      Config
+        { font        = "Fira Code"
+        , borderColor = "#d0d0d0"
+        , border      = FullB
+        , borderWidth = 3
+        , bgColor     = "#222"
+        , fgColor     = "grey"
+        , position    = TopSize C 99 30
+        , commands    =
+            [ Run Cpu ["-t", "cpu: <fc=#4eb4fa><bar> <total>%</fc>"] 10
+            , Run Network "enp3s0" ["-S", "True", "-t", "eth: <fc=#4eb4fa><rx></fc>/<fc=#4eb4fa><tx></fc>"] 10
+            , Run Memory ["-t","mem: <fc=#4eb4fa><usedbar> <usedratio>%</fc>"] 10
+            , Run Date "date: <fc=#4eb4fa>%a %d %b %Y %H:%M:%S </fc>" "date" 10
+            , Run StdinReader
+            ]
+        , sepChar     = "%"
+        , alignSep    = "}{"
+        , template    = "  %StdinReader% | %cpu% | %memory% | %enp3s0%  }{%date%  "
+        }
     '';
   };
   services.screen-locker = {
@@ -49,18 +52,76 @@
       "Xautolock.killer: systemctl suspend"
     ];
   };
-
+  services.picom = {
+    enable = true;
+    activeOpacity = "1.0";
+    inactiveOpacity = "0.8";
+    backend = "glx";
+    fade = true;
+    fadeDelta = 5;
+    opacityRule = [ "100:name *= 'i3lock'" ];
+    shadow = true;
+    shadowOpacity = "0.75";
+  };
   services.stalonetray = {
     enable = true;
     config = {
-      geometry = "3x1-600+0";
       decorations = null;
-      icon_size = 30;
+      transparent = false;
+      dockapp_mode = null;
+      geometry = "5x1-250+5";
+      max_geometry = "5x1-325-10";
+      background = "#222";
+      kludges = "force_icons_size";
+      grow_gravity = "NE";
+      icon_gravity = "NE";
+      icon_size = 12;
       sticky = true;
-      background = "#cccccc";
+      # window_strut = null;
+      window_type = "dock";
+      window_layer = "bottom";
+      # no_shrink = false;
+      skip_taskbar = true;
     };
   };
-
+  services.dunst = {
+    enable = true;
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome3.adwaita-icon-theme;
+      size = "16x16";
+    };
+    settings = {
+      global = {
+        monitor = 0;
+        geometry = "600x50-50+65";
+        shrink = "yes";
+        transparency = 10;
+        padding = 16;
+        horizontal_padding = 16;
+        font = "FiraCode Nerd Font 10";
+        line_height = 4;
+        format = ''<b>%s</b>\n%b'';
+      };
+    };
+  };
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome3.adwaita-icon-theme;
+    };
+    theme = {
+      name = "Adwaita-dark";
+      package = pkgs.gnome3.adwaita-icon-theme;
+    };
+  };
+  services.udiskie = {
+    enable = true;
+    tray = "always";
+  };
+  services.blueman-applet.enable = true;
+  services.pasystray.enable = true;
   home.packages = with pkgs; [
     feh
     xmobar
