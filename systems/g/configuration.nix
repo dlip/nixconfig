@@ -91,6 +91,8 @@ in
     };
   };
 
+  programs.nm-applet.enable = true;
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.prime = {
     offload.enable = true;
@@ -144,7 +146,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dane = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
     shell = "/home/dane/.nix-profile/bin/zsh";
   };
 
@@ -201,8 +203,9 @@ in
   systemd.services.kmonad = {
     enable = true;
     description = "kmonad";
+    wantedBy = [ "multi-user.target" ];
     script = ''
-      ${pkgs.kmonad}/bin/kmonad -i 'device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd"' ${../../keymaps/kmonad/ansimiryoku.kbd}
+      ${pkgs.kmonad}/bin/kmonad -i 'device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd"' ${../../keymaps/kmonad/homelayers.kbd}
     '';
   };
 

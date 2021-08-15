@@ -26,18 +26,13 @@
 )
 
 (defalias
-  a (tap-hold-next-release 200 a lsft)
-  s (tap-hold-next-release 200 s (layer-toggle num))
-  r (tap-hold-next-release 200 r (layer-toggle fn))
-  t (tap-hold-next-release 200 t lsft)
+  d (tap-hold-next-release 200 d (layer-toggle fn))
+  s (tap-hold-next-release 200 s lsft)
+  t (tap-hold-next-release 200 t (layer-toggle num))
 
-  n (tap-hold-next-release 200 n rsft)
-  e (tap-hold-next-release 200 e (layer-toggle nav))
-  i (tap-hold-next-release 200 i (layer-toggle media))
-  o (tap-hold-next-release 200 o lsft)
-
-  grv (tap-hold-next-release 200 grv lsft)
-  sls (tap-hold-next-release 200 / rsft)
+  n (tap-hold-next-release 200 n (layer-toggle nav))
+  e (tap-hold-next-release 200 e rsft)
+  h (tap-hold-next-release 200 h (layer-toggle media))
 
   spc (tap-hold-next-release 200 spc lctl)
 )
@@ -45,46 +40,48 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    spc
-  tab  q    w    f    p    b    j    l    u    y    ;    esc  esc  _
-  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o    ret  _
-  @grv z    x    c    d    v    k    h    ,    .    '    @sls
-  _    _    _              @spc           lsft ralt _    _
+  grv  q    w    f    p    b    j    l    u    y    ;    \    _    _
+  bspc a    r    @s   @t   g    m    @n   @e   i    o    ret  _
+  tab  z    x    c    @d   v    k    @h   ,    .    '    esc
+  _    _    _              @spc           lmet ralt    _    _
 )
 
 (defalias
   bk A-left
   fwd A-right
+  csp C-spc
 )
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    home up   end  pgup _    _    _    _    _    _    _    _
+  _    prnt home up   end  pgup _    _    _    _    _    _    _    _
   _    del  lft  down rght pgdn _    _    _    _    _    _    _
-  _    _    @bk  caps @fwd prnt _    _    _    _    _    _
+  _    @csp caps  @bk @fwd _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    =    7    8    9    \    _    _    _
-  _    _    _    _    _    _    -    4    5    6    0    _    _
-  _    _    _    _    _    _    [    1    2    3    ]    _
+  _    _    _    _    _    _    [    7    8    9    ]    _    _    _
+  _    _    _    _    _    _    =    4    5    6    0    _    _
+  _    _    _    _    _    _    -    1    2    3    /    _
   _    _    _              _              _    _    _    _
 )
 
 (defalias
   rw rewind
   ff fastforward
+  gam (layer-switch gaming)
 )
 
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    vold prev pp   next volu _    _    _    _    _    _    _
-  _    stop @rw   _   @ff  mute _    _    _    _    _    _
+  _    _    @rw  volu @ff  _    _    _    _    _    _    _    _    _
+  _    _    prev pp   next _    _    _    _    _    _    _    _
+  _    _    mute vold stop _    _    _    _    _    @gam _
   _    _    _              _              _    _    _    _
 )
 
@@ -95,10 +92,23 @@
 (deflayer fn
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    ins  f7   f8   f9   f10  _    _    _
-  _    _    _    _    _    _    @p   f4   f5   f6   f11  _    _
-  _    _    _    _    _    _    slck f1   f2   f3   f12  _
+  _    _    _    _    _    _    slck f7   f8   f9   f10  _    _    _
+  _    _    _    _    _    _    ins  f4   f5   f6   f11  _    _
+  _    _    _    _    _    _    @p   f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
+)
+
+(defalias
+  col (layer-switch colemak-dh)
+)
+
+(deflayer gaming
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    q    w    e    r    t    _    _    _    _    _    _    _    _
+  lsft a    s    d    f    g    _    _    _    _    _    _    _
+  lctl z    x    c    v    b    _    _    _    _    @col _
+  _    esc  _              _              _    _    _    _
 )
 
 (deflayer empty

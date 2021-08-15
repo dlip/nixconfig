@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     appimage-run
-    arion
     autoreconfHook
     aws-google-auth
     awscli2

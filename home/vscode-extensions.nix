@@ -98,14 +98,14 @@
   {
     name = "vscode-pull-request-github";
     publisher = "GitHub";
-    version = "0.29.0";
-    sha256 = "1isg0s0zlsg6lshihjxk2kjccaprjw8x7xhqsxqk739ld13ahvlx";
+    version = "0.29.2";
+    sha256 = "0fhxdfzk54pmql5awj4v77fg2jag29hsd5bw09r4faw6l1dfd4nq";
   }
   {
     name = "go";
     publisher = "golang";
-    version = "0.26.0";
-    sha256 = "1lhpzz68vsxkxwp12rgwiqwm1rmlwn6anmz6z4alr100hxxx31h7";
+    version = "0.27.1";
+    sha256 = "1985bbmnqqlss8h2ma0qgzj2g9xp4za58y2dyiwkh64bzpd6814x";
   }
   {
     name = "todo-tree";
@@ -118,6 +118,12 @@
     publisher = "hashicorp";
     version = "2.14.0";
     sha256 = "1q43a28l6xfp3yw6wlr1kcidik0dbp8b7lg9vc83rhw4rjgvjsfm";
+  }
+  {
+    name = "haskell";
+    publisher = "haskell";
+    version = "1.6.0";
+    sha256 = "01f87wn7lnrh9cyk6yxdv91bn9z6a9c6h62vxznqd6ff5ryv2fiw";
   }
   {
     name = "vscode-drawio";
@@ -138,10 +144,16 @@
     sha256 = "1wkc5mvxv7snrpd0py6x83aci05b9fb9v4w9pl9d1hyaszqbfnif";
   }
   {
+    name = "language-haskell";
+    publisher = "justusadam";
+    version = "3.4.0";
+    sha256 = "0ab7m5jzxakjxaiwmg0jcck53vnn183589bbxh3iiylkpicrv67y";
+  }
+  {
     name = "magit";
     publisher = "kahole";
-    version = "0.6.18";
-    sha256 = "0sqzz5bbqqg60aypvwxcqnxrr72gmwfj9sv0amgkyaf60zg5sf7w";
+    version = "0.6.20";
+    sha256 = "0h2a0psg53ywav7ld6wrvz3dbdn4w79vkfk3qydy0ars6an55iz4";
   }
   {
     name = "Lisp";
@@ -200,8 +212,8 @@
   {
     name = "jupyter";
     publisher = "ms-toolsai";
-    version = "2021.8.1195043623";
-    sha256 = "0ki7xa9lf8wy32rrd404gb6m3cyh0jn1n8p5izvl1q8rf9i591nf";
+    version = "2021.8.2027072902";
+    sha256 = "1nqibqgy36xnxw9jx81r6b2k8dw194pfyskpxdfgrcm03l7rrpk9";
   }
   {
     name = "remote-ssh-edit";
