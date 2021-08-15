@@ -24,7 +24,7 @@
     enable = true;
     extraConfig = ''
       Config
-        { font        = "xft:Hack Nerd Font Mono:size=13:bold:antialias=true:hinting=true"
+        { font        = "xft:FiraCode Nerd Font Mono:size=13:bold:antialias=true:hinting=true"
         , borderColor = "#d0d0d0"
         , border      = FullB
         , borderWidth = 3
@@ -69,13 +69,13 @@
       decorations = null;
       transparent = false;
       dockapp_mode = null;
-      geometry = "6x1-250+5";
-      max_geometry = "6x1-425-5";
+      geometry = "6x1-330+5";
+      max_geometry = "6x1-525-5";
       background = "#222";
       kludges = "force_icons_size";
       grow_gravity = "NE";
       icon_gravity = "NE";
-      icon_size = 12;
+      icon_size = 16;
       sticky = true;
       # window_strut = null;
       window_type = "dock";
