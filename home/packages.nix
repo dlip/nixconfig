@@ -87,6 +87,7 @@
     unzip
     usbutils
     vim
+    wally-cli
     wget
     yarn
     yubikey-manager

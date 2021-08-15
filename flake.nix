@@ -26,6 +26,11 @@
       url = "github:jchook/emoji-menu";
       flake = false;
     };
+    wally-cli = {
+      url = "github:zsa/wally-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs =
@@ -41,6 +46,7 @@
     , emacs-overlay
     , kmonad
     , emoji-menu
+    , wally-cli
     }:
     let
       getPkgs = pkgs: system: import pkgs {
@@ -53,6 +59,7 @@
             inherit (final.callPackage arion { }) arion;
             kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { stdenv = { lib = final.lib; }; };
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
+            wally-cli = wally-cli.defaultPackage.${system};
           })
           emacs-overlay.overlay
         ];
@@ -101,7 +108,7 @@
 
           immutable = personal // { email = "dane.lipscombe@immutable.com"; };
 
-          immutable-nixos = immutable // { extraImports = [ ./home/graphical.nix ]; };
+          immutable-nixos = immutable // { extraImports = [ ./home/graphical.nix ./home/gaming.nix ]; };
 
           root = personal // {
             username = "root";

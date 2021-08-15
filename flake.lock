@@ -259,7 +259,8 @@
         "kmonad": "kmonad",
         "nixos": "nixos",
         "nixpkgs": "nixpkgs_2",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "wally-cli": "wally-cli"
       }
     },
     "sops-nix": {
@@ -277,6 +278,29 @@
       "original": {
         "owner": "Mic92",
         "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "wally-cli": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1626652908,
+        "narHash": "sha256-287w+gq5vUOPNoLOpOaMqaQUCffGgPsQJAnk/y4sdZU=",
+        "owner": "zsa",
+        "repo": "wally-cli",
+        "rev": "96db616ef6d5b5cb85b2f2c16e426497b2366e06",
+        "type": "github"
+      },
+      "original": {
+        "owner": "zsa",
+        "repo": "wally-cli",
         "type": "github"
       }
     }
