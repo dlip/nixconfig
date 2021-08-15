@@ -69,8 +69,8 @@
       decorations = null;
       transparent = false;
       dockapp_mode = null;
-      geometry = "5x1-250+5";
-      max_geometry = "5x1-325-10";
+      geometry = "6x1-250+5";
+      max_geometry = "6x1-425-5";
       background = "#222";
       kludges = "force_icons_size";
       grow_gravity = "NE";
@@ -122,7 +122,8 @@
   };
   services.blueman-applet.enable = true;
   services.pasystray.enable = true;
-
+  services.clipmenu.enable = true;
+  services.dropbox.enable = true;
   services.flameshot.enable = true;
   home.packages = with pkgs; [
     feh
@@ -130,5 +131,7 @@
     alttab
     light
     scrot
+    playerctl
+    dmenu
   ];
 }
