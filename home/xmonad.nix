@@ -6,6 +6,16 @@ let
     slack&
     spotify&
   '';
+
+  update-wallpaper = pkgs.writeShellScriptBin "update-wallpaper" ''
+    nice -19 ${pkgs.betterlockscreen}/bin/betterlockscreen -u ~/wallpapers --fx dim
+    ${pkgs.betterlockscreen}/bin/betterlockscreen -w dim
+  '';
+
+  lock-screen = pkgs.writeShellScriptBin "lock-screen" ''
+    ${pkgs.betterlockscreen}/bin/betterlockscreen -l dim
+  '';
+
 in
 {
   services.network-manager-applet.enable = true;
@@ -15,7 +25,7 @@ in
     initExtra = ''
       ${pkgs.alttab}/bin/alttab -w 1&
       ${pkgs.betterlockscreen}/bin/betterlockscreen -w dim&
-      bash -c "nice -19 ${pkgs.betterlockscreen}/bin/betterlockscreen -u ~/wallpapers --fx dim; ${pkgs.betterlockscreen}/bin/betterlockscreen -w dim"&
+      ${update-wallpaper}/bin/update-wallpaper&
     '';
 
     windowManager.xmonad = {
@@ -53,14 +63,16 @@ in
         }
     '';
   };
+
   services.screen-locker = {
     enable = true;
     inactiveInterval = 5;
-    lockCmd = "${pkgs.betterlockscreen}/bin/betterlockscreen -l dim";
+    lockCmd = "${lock-screen}/bin/lock-screen";
     xautolockExtraOptions = [
       "Xautolock.killer: systemctl suspend"
     ];
   };
+
   services.picom = {
     enable = true;
     activeOpacity = "1.0";
@@ -136,6 +148,8 @@ in
   services.flameshot.enable = true;
   home.packages = with pkgs; [
     launch-default-programs
+    update-wallpaper
+    lock-screen
     feh
     xmobar
     alttab
