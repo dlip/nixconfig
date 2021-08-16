@@ -135,5 +135,6 @@
     playerctl
     dmenu
     betterlockscreen
+    brightnessctl
   ];
 }
