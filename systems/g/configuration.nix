@@ -84,6 +84,15 @@ in
       enable = true;
       layout = "us";
 
+      windowManager = {
+        xmonad = {
+          enable = true;
+          enableContribAndExtras = true;
+        };
+      };
+
+      displayManager.defaultSession = "none+xmonad";
+
       # Enable touchpad support (enabled default in most desktopManager).
       libinput.enable = true;
       libinput.touchpad.disableWhileTyping = true;
@@ -102,9 +111,12 @@ in
     nvidiaBusId = "PCI:1:0:0";
   };
 
+  # services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
+
   # Enable the Plasma 5 Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
   # services.xserver.windowManager.session =
   #   let
   #     # Allow for per-system injected Emacs configuration.

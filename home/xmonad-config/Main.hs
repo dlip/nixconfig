@@ -1,5 +1,6 @@
 -- Needed to export windows to rofi
 
+import Data.Ratio ((%))
 import Graphics.X11.ExtraTypes.XF86
 import System.IO (hPutStrLn)
 import XMonad
@@ -7,9 +8,20 @@ import XMonad.Actions.CycleWS (nextWS, prevWS, shiftToNext, shiftToPrev)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops (ewmh)
 import XMonad.Hooks.ManageDocks (avoidStruts, docks, manageDocks)
+import XMonad.Layout.Grid
+import XMonad.Layout.Spacing (spacingRaw)
+import XMonad.Layout.Spiral (spiral)
 import XMonad.StackSet (focusDown, focusUp)
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
+
+myLayoutHook = avoidStruts (layoutFull ||| layoutTall ||| layoutSpiral ||| layoutGrid ||| layoutMirror)
+  where
+    layoutFull = Full
+    layoutTall = Tall 1 (3 / 100) (1 / 2)
+    layoutSpiral = spiral (125 % 146)
+    layoutGrid = Grid
+    layoutMirror = Mirror (Tall 1 (3 / 100) (3 / 5))
 
 main :: IO ()
 main =
@@ -22,7 +34,7 @@ main =
             { modMask = mod4Mask, -- Use Super instead of Alt
               terminal = "alacritty",
               manageHook = manageDocks <+> manageHook def,
-              layoutHook = avoidStruts $ layoutHook def,
+              layoutHook = myLayoutHook,
               logHook =
                 dynamicLogWithPP
                   xmobarPP
