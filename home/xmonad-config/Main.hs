@@ -33,6 +33,7 @@ main =
                               ("M-p", spawn "rofi -show window"),
                               ("M-c", spawn "CM_LAUNCHER=rofi clipmenu"),
                               ("M-l", spawn "betterlockscreen -l dim"),
+                              ("M-;", spawn "launch-default-programs"),
                               ("M-<Return>", spawn "alacritty"),
                               ("<XF86AudioPlay>", spawn "playerctl play-pause"),
                               ("<XF86AudioNext>", spawn "playerctl next"),

@@ -1,4 +1,12 @@
 { pkgs, ... }:
+let
+  launch-default-programs = pkgs.writeShellScriptBin "launch-default-programs" ''
+    firefox&
+    code&
+    slack&
+    spotify&
+  '';
+in
 {
   services.network-manager-applet.enable = true;
   xsession = {
@@ -127,6 +135,7 @@
   services.dropbox.enable = true;
   services.flameshot.enable = true;
   home.packages = with pkgs; [
+    launch-default-programs
     feh
     xmobar
     alttab
