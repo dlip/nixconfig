@@ -6,7 +6,8 @@
 
     initExtra = ''
       ${pkgs.alttab}/bin/alttab -w 1&
-      ${pkgs.feh}/bin/feh --bg-fill --randomize ~/wallpapersx/*&
+      ${pkgs.betterlockscreen}/bin/betterlockscreen -w dim&
+      bash -c "nice -19 ${pkgs.betterlockscreen}/bin/betterlockscreen -u ~/wallpapers --fx dim; ${pkgs.betterlockscreen}/bin/betterlockscreen -w dim"&
     '';
 
     windowManager.xmonad = {
@@ -46,8 +47,8 @@
   };
   services.screen-locker = {
     enable = true;
-    inactiveInterval = 30;
-    lockCmd = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ~/wallpapers; ${pkgs.betterlockscreen}/bin/betterlockscreen -l dim";
+    inactiveInterval = 5;
+    lockCmd = "${pkgs.betterlockscreen}/bin/betterlockscreen -l dim";
     xautolockExtraOptions = [
       "Xautolock.killer: systemctl suspend"
     ];
