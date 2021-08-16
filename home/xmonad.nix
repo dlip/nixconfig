@@ -159,5 +159,6 @@ in
     dmenu
     betterlockscreen
     brightnessctl
+    networkmanager_dmenu
   ];
 }

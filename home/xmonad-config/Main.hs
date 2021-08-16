@@ -45,6 +45,7 @@ main =
                               ("M-p", spawn "rofi -show window"),
                               ("M-c", spawn "CM_LAUNCHER=rofi clipmenu"),
                               ("M-l", spawn "lock-screen"),
+                              ("M-n", spawn "networkmanager_dmenu"),
                               ("M-w", spawn "update-wallpaper"),
                               ("M-;", spawn "launch-default-programs"),
                               ("M-<Return>", spawn "alacritty"),
