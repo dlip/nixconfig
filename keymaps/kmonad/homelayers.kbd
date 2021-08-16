@@ -79,8 +79,8 @@
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    @rw  volu @ff  _    _    _    _    _    _    _    _    _
-  _    _    prev pp   next _    _    _    _    _    _    _    _
+  _    _    @rw  volu @ff  brup _    _    _    _    _    _    _    _
+  _    _    prev pp   next brdn _    _    _    _    _    _    _
   _    _    mute vold stop _    _    _    _    _    @gam _
   _    _    _              _              _    _    _    _
 )
