@@ -73,10 +73,25 @@ rec {
     keyMap = "us";
   };
 
-  services.gnome.gnome-keyring.enable = true;
+  services = {
+    gnome.gnome-keyring.enable = true;
+    upower.enable = true;
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
+    dbus = {
+      enable = true;
+      packages = [ pkgs.gnome3.dconf ];
+    };
+
+    xserver = {
+      enable = true;
+      layout = "us";
+
+      # Enable touchpad support (enabled default in most desktopManager).
+      libinput.enable = true;
+      libinput.touchpad.disableWhileTyping = true;
+
+    };
+  };
 
   # Enable the Gnome Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
@@ -109,11 +124,8 @@ rec {
 
   # Enable sound.
   sound.enable = true;
+  hardware.bluetooth.enable = true;
   hardware.pulseaudio.enable = true;
-
-  # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
-
 
   # Open ports in the firewall.
   #networking.firewall.allowedTCPPorts = [ ];

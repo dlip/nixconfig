@@ -6,7 +6,7 @@
 
     initExtra = ''
       ${pkgs.alttab}/bin/alttab -w 1&
-      ${pkgs.feh}/bin/feh --bg-fill --randomize ~/Pictures/*&
+      ${pkgs.feh}/bin/feh --bg-fill --randomize ~/wallpapersx/*&
     '';
 
     windowManager.xmonad = {
@@ -47,7 +47,7 @@
   services.screen-locker = {
     enable = true;
     inactiveInterval = 30;
-    lockCmd = "${pkgs.betterlockscreen}/bin/betterlockscreen -l dim";
+    lockCmd = "${pkgs.betterlockscreen}/bin/betterlockscreen -u ~/wallpapers; ${pkgs.betterlockscreen}/bin/betterlockscreen -l dim";
     xautolockExtraOptions = [
       "Xautolock.killer: systemctl suspend"
     ];
@@ -133,5 +133,6 @@
     scrot
     playerctl
     dmenu
+    betterlockscreen
   ];
 }

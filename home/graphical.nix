@@ -3,7 +3,7 @@
     ./alacritty.nix
     ./rofi.nix
     ./vscode.nix
-    #./xmonad.nix
+    ./xmonad.nix
   ];
 
   home.packages = with pkgs; [

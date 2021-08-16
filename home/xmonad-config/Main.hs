@@ -46,7 +46,7 @@ main =
                               ("M-p", spawn "rofi -show window"),
                               ("M-c", spawn "CM_LAUNCHER=rofi clipmenu"),
                               ("M-l", spawn "xscreensaver-command -lock; xset dpms force off"),
-                              ("M-t", spawn "alacritty"),
+                              ("M-<Return>", spawn "alacritty"),
                               ("<XF86AudioPlay>", spawn "playerctl play-pause"),
                               ("<XF86AudioNext>", spawn "playerctl next"),
                               ("<XF86AudioPrev>", spawn "playerctl previous"),
