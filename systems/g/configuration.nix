@@ -91,7 +91,12 @@ in
         };
       };
 
-      displayManager.defaultSession = "none+xmonad";
+      displayManager = {
+        lightdm.enable = true;
+        defaultSession = "none+xmonad";
+        autoLogin.enable = true;
+        autoLogin.user = "dane";
+      };
 
       # Enable touchpad support (enabled default in most desktopManager).
       libinput.enable = true;
@@ -110,9 +115,6 @@ in
     # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
     nvidiaBusId = "PCI:1:0:0";
   };
-
-  # services.xserver.displayManager.gdm.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
 
   # Enable the Plasma 5 Desktop Environment.
   # services.xserver.displayManager.sddm.enable = true;
