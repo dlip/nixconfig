@@ -187,7 +187,7 @@ rec {
     restic-dex
     yubikey-personalization
   ];
-  services.udev.packages = with pkgs; [ yubikey-personalization ];
+  services.udev.packages = with pkgs; [ yubikey-personalization via vial ];
   virtualisation.docker.enable = true;
 
   environment.etc.restic-ignore.text = ''

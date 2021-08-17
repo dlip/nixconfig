@@ -8,7 +8,7 @@
       "editor.fontFamily" = "FiraCode Nerd Font";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 12;
-      "editor.formatOnSave" = true;
+      "editor.formatOnSave" = false;
       "editor.lineHeight" = 20;
       "editor.minimap.enabled" = false;
       "editor.renderWhitespace" = "all";

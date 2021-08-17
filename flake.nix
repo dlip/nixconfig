@@ -153,17 +153,19 @@
       let
         system = "x86_64-linux";
         pkgs = getPkgs nixos system;
+        pkgsUnstable = getPkgs nixpkgs system;
       in
       {
         nixosConfigurations =
           {
-            metabox = nixos.lib.nixosSystem {
-              system = "x86_64-linux";
+            metabox = nixpkgs.lib.nixosSystem {
+              inherit system;
+              pkgs = pkgsUnstable;
               modules =
                 [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
             };
             dex = nixos.lib.nixosSystem {
-              system = "x86_64-linux";
+              inherit system;
               modules = [ ./systems/dex/configuration.nix ];
             };
             g = nixos.lib.nixosSystem {
