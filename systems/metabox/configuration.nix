@@ -85,6 +85,21 @@ rec {
     xserver = {
       enable = true;
       layout = "us";
+      # dpi = 120;
+
+      windowManager = {
+        xmonad = {
+          enable = true;
+          enableContribAndExtras = true;
+        };
+      };
+
+      displayManager = {
+        lightdm.enable = true;
+        defaultSession = "none+xmonad";
+        autoLogin.enable = true;
+        autoLogin.user = "dane";
+      };
 
       # Enable touchpad support (enabled default in most desktopManager).
       libinput.enable = true;
@@ -92,14 +107,19 @@ rec {
 
     };
   };
+  # environment.variables = {
+  #   GDK_SCALE = "1.3";
+  #   GDK_DPI_SCALE = "0.7";
+  #   _JAVA_OPTIONS = "-Dsun.java2d.uiScale=1.3";
+  # };
 
   # Enable the Gnome Desktop Environment.
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
 
   # Enable the Plasma 5 Desktop Environment.
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.desktopManager.plasma5.enable = true;
+  # services.xserver.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.plasma5.enable = true;
 
   nixpkgs.config.allowUnfree = true;
 

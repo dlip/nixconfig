@@ -29,9 +29,12 @@
     obs-studio
     obsidian
     plexamp
+    gnome.seahorse
     slack
     spotify
     tdesktop
+    via
+    vial
     vlc
     xclip
     xorg.xmodmap
