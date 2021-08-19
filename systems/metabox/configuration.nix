@@ -162,7 +162,7 @@ rec {
   users.users.dane = {
     isNormalUser = true;
     initialPassword = "password";
-    extraGroups = [ "wheel" "docker" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
     shell = "/home/dane/.nix-profile/bin/zsh";
   };
 
