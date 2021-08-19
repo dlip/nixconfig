@@ -91,7 +91,7 @@ in
       transparent = false;
       dockapp_mode = null;
       geometry = "6x1-330+5";
-      max_geometry = "6x1-525-5";
+      max_geometry = "12x1-525-5";
       background = "#222";
       kludges = "force_icons_size";
       grow_gravity = "NE";
