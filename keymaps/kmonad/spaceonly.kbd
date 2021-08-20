@@ -61,7 +61,7 @@
   cp C-c
   pst C-v
 
-  del (tap-hold-next-release 200 del lmet)
+  tab (tap-hold-next-release 200 tab lmet)
   lft (tap-hold-next-release 200 lft lalt)
   dwn (tap-hold-next-release 200 down lsft)
   rgt (tap-hold-next-release 200 rght lctl)
@@ -76,7 +76,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    prnt home up   end  pgup [    7    8    9    ]    _    _    _
-  _    @del @lft @dwn @rgt pgdn =    @4   @5   @6   @0   _    _
+  del  @tab @lft @dwn @rgt pgdn =    @4   @5   @6   @0   _    _
   _    @und @cut @cp  @pst caps -    1    2    3    /    _
   _    _    _              _              _    _    _    _
 )
