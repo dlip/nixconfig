@@ -14,10 +14,11 @@ import XMonad.Layout.Spiral (spiral)
 import XMonad.StackSet (focusDown, focusUp)
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
+import XMonad.Layout.NoBorders (noBorders)
 
 myLayoutHook = avoidStruts (layoutFull ||| layoutTall ||| layoutSpiral ||| layoutGrid ||| layoutMirror)
   where
-    layoutFull = Full
+    layoutFull = noBorders Full
     layoutTall = Tall 1 (3 / 100) (1 / 2)
     layoutSpiral = spiral (125 % 146)
     layoutGrid = Grid

@@ -49,17 +49,37 @@ in
         , borderWidth = 3
         , bgColor     = "#222"
         , fgColor     = "grey"
-        , position    = TopSize C 99 30
+        , position    = TopSize C 100 30
         , commands    =
             [ Run Cpu ["-t", "cpu: <fc=#4eb4fa><bar> <total>%</fc>"] 10
             , Run Network "wlp0s20f3" ["-S", "True", "-t", "net: <fc=#4eb4fa><rx></fc>/<fc=#4eb4fa><tx></fc>"] 10
             , Run Memory ["-t","mem: <fc=#4eb4fa><usedbar> <usedratio>%</fc>"] 10
             , Run Date "<fc=#4eb4fa>%a %d %b %Y %H:%M:%S </fc>" "date" 10
             , Run StdinReader
+            -- battery monitor
+            , Run Battery        [ "--template" , "batt: <acstatus>"
+                                 , "--Low"      , "10"        -- units: %
+                                 , "--High"     , "80"        -- units: %
+                                 , "--low"      , "darkred"
+                                 , "--normal"   , "darkorange"
+                                 , "--high"     , "darkgreen"
+
+                                 , "--" -- battery specific options
+                                           -- discharging status
+                                           , "-o"	, "<left>% (<timeleft>)"
+                                           -- AC "on" status
+                                           , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                           -- charged status
+                                           , "-i"	, "<fc=#006000>Charged</fc>"
+                                 ] 50
+            -- keyboard layout indicator
+            , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
+                                 , ("us"         , "<fc=#8B0000>US</fc>")
+                                 ]
             ]
         , sepChar     = "%"
         , alignSep    = "}{"
-        , template    = "  %StdinReader% | %cpu% | %memory% | %wlp0s20f3%  }{ %date%  "
+        , template    = "  %StdinReader% | %cpu% | %memory% | %wlp0s20f3% | %battery% | %kbd% }{  %date%  "
         }
     '';
   };
