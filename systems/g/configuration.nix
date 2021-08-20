@@ -219,7 +219,7 @@ in
     description = "kmonad";
     wantedBy = [ "multi-user.target" ];
     script = ''
-      ${pkgs.kmonad}/bin/kmonad -i 'device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd"' ${../../keymaps/kmonad/homelayers.kbd}
+      ${pkgs.kmonad}/bin/kmonad -i 'device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd"' ${../../keymaps/kmonad/spaceonly.kbd}
     '';
   };
 
