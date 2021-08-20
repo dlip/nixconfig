@@ -16,6 +16,10 @@ let
     ${pkgs.betterlockscreen}/bin/betterlockscreen -l dim
   '';
 
+  ssuspend = pkgs.writeShellScriptBin "ssuspend" ''
+    systemctl suspend
+  '';
+
 in
 {
   services.network-manager-applet.enable = true;
@@ -66,11 +70,11 @@ in
 
                                  , "--" -- battery specific options
                                            -- discharging status
-                                           , "-o"	, "<left>% (<timeleft>)"
+                                           , "-o"  , "<left>% (<timeleft>)"
                                            -- AC "on" status
-                                           , "-O"	, "<fc=#dAA520>Charging</fc>"
+                                           , "-O"  , "<fc=#dAA520>Charging</fc>"
                                            -- charged status
-                                           , "-i"	, "<fc=#006000>Charged</fc>"
+                                           , "-i"  , "<fc=#006000>Charged</fc>"
                                  ] 50
             -- keyboard layout indicator
             , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
@@ -182,5 +186,6 @@ in
     betterlockscreen
     brightnessctl
     networkmanager_dmenu
+    ssuspend
   ];
 }
