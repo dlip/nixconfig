@@ -6,7 +6,7 @@ import System.IO (hPutStrLn)
 import XMonad
 import XMonad.Actions.CycleWS (nextWS, prevWS, shiftToNext, shiftToPrev)
 import XMonad.Hooks.DynamicLog
-import XMonad.Hooks.EwmhDesktops (ewmh)
+import XMonad.Hooks.EwmhDesktops (ewmh, fullscreenEventHook)
 import XMonad.Hooks.ManageDocks (avoidStruts, docks, manageDocks)
 import XMonad.Layout.Grid
 import XMonad.Layout.Spacing (spacingRaw)
@@ -35,14 +35,17 @@ main =
               terminal = "alacritty",
               manageHook = manageDocks <+> manageHook def,
               layoutHook = myLayoutHook,
+              handleEventHook = handleEventHook def <+> fullscreenEventHook,
               logHook =
                 dynamicLogWithPP
                   xmobarPP
                     { ppOutput = hPutStrLn xmproc
                     }
             }
-          `additionalKeysP` [ ("M-r", spawn "rofi -show drun"),
+          `additionalKeysP` [ ("M-r", spawn "rofi -show run"),
+                              ("M-d", spawn "rofi -show drun"),
                               ("M-p", spawn "rofi -show window"),
+                              ("M-.", spawn "emoji-menu"),
                               ("M-c", spawn "CM_LAUNCHER=rofi clipmenu"),
                               ("M-l", spawn "lock-screen"),
                               ("M-n", spawn "networkmanager_dmenu"),

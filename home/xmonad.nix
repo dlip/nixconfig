@@ -83,7 +83,9 @@ in
     opacityRule = [ "100:name *= 'i3lock'" ];
     shadow = true;
     shadowOpacity = "0.75";
+    vSync = true;
   };
+
   services.stalonetray = {
     enable = true;
     config = {
