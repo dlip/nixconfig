@@ -43,7 +43,6 @@
         embark
         embark-consult
         expand-region
-        exwm
         flycheck
         forge
         format-all
@@ -51,6 +50,7 @@
         go-mode
         hydra
         iflipb
+        init-loader
         lsp-mode
         lsp-treemacs
         lsp-ui
@@ -63,7 +63,7 @@
         org
         org-bullets
         org-drill
-        #org-noter issue building
+        org-noter
         org-roam
         org-tree-slide
         org-web-tools

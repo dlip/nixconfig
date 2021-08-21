@@ -47,7 +47,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    spc
   grv  q    w    f    p    b    j    l    u    y    ;    \    _    _
   bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o   ret  _
-  tab  z    x    c    d    v    k    h    ,    .    '    esc
+  esc  z    x    c    d    v    k    h    ,    .    '    /
   _    _    @med           @spc           @gam _    _    _
 )
 
@@ -61,7 +61,7 @@
   cp C-c
   pst C-v
 
-  tab (tap-hold-next-release 200 tab lmet)
+  pgd (tap-hold-next-release 200 pgdn lmet)
   lft (tap-hold-next-release 200 lft lalt)
   dwn (tap-hold-next-release 200 down lsft)
   rgt (tap-hold-next-release 200 rght lctl)
@@ -75,9 +75,9 @@
 (deflayer navnum
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    prnt home up   end  pgup [    7    8    9    ]    _    _    _
-  del  @tab @lft @dwn @rgt pgdn =    @4   @5   @6   @0   _    _
-  _    @und @cut @cp  @pst caps -    1    2    3    /    _
+  _    pgup home up   end  prnt [    7    8    9    ]    _    _    _
+  del  @pgd @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
+  _    @und @cut @cp  @pst caps -    1    2    3    .    _
   _    _    _              _              _    _    _    _
 )
 
@@ -85,13 +85,17 @@
   rw rewind
   ff fastforward
   p pause
+
+  pre (tap-hold-next-release 200 prev lalt)
+  pp (tap-hold-next-release 200 pp lsft)
+  nxt (tap-hold-next-release 200 next lctl)
 )
 
 (deflayer mediafn
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    @rw  volu @ff  brup slck f7   f8   f9   f10  _    _    _
-  _    _    prev pp   next brdn @gam f4   f5   f6   f11  _    _
+  _    lmet @pre @pp  @nxt brdn _    f4   f5   f6   f11  _    _
   _    _    mute vold stop _    @p   f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
 )

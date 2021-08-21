@@ -1,13 +1,10 @@
 ;;; init --- emacs settings
 
-(add-to-list 'load-path (expand-file-name (concat user-emacs-directory "lisp/")))
-
-(require 'init-misc)
-(require 'init-completion)
-(require 'init-org)
-(require 'init-treemacs)
-(require 'init-programming)
-(require 'init-keymap)
+(use-package init-loader
+  :defer nil
+  :init
+  (setq init-loader-show-log-after-init 'error-only)
+  (init-loader-load (expand-file-name "init" user-emacs-directory)))
 
 (provide 'init)
 
