@@ -106,7 +106,7 @@ in
 
       displayManager = {
         lightdm.enable = true;
-        defaultSession = "none+xmonad";
+        defaultSession = "xfce+xmonad";
         autoLogin.enable = true;
         autoLogin.user = "dane";
       };
