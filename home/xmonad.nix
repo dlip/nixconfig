@@ -30,6 +30,7 @@ in
       ${pkgs.alttab}/bin/alttab -w 1&
       ${pkgs.betterlockscreen}/bin/betterlockscreen -w dim&
       ${update-wallpaper}/bin/update-wallpaper&
+      ibus-daemon&
     '';
 
     windowManager.xmonad = {
@@ -76,14 +77,10 @@ in
                                            -- charged status
                                            , "-i"  , "<fc=#006000>Charged</fc>"
                                  ] 50
-            -- keyboard layout indicator
-            , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
-                                 , ("us"         , "<fc=#8B0000>US</fc>")
-                                 ]
             ]
         , sepChar     = "%"
         , alignSep    = "}{"
-        , template    = "  %StdinReader% | %cpu% | %memory% | %wlp0s20f3% | %battery% | %kbd% }{  %date%  "
+        , template    = "  %StdinReader% | %cpu% | %memory% | %wlp0s20f3% | %battery% }{  %date%  "
         }
     '';
   };
