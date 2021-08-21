@@ -51,6 +51,7 @@
     nixfmt
     nixpkgs-fmt
     nmap
+    nnn
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.node2nix

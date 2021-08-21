@@ -43,7 +43,7 @@ in
   # Per-interface useDHCP will be mandatory in the future, so this generated config
   # replicates the default behaviour.
   networking.useDHCP = false;
-  Networking.interfaces.enp3s0.useDHCP = true;
+  networking.interfaces.enp3s0.useDHCP = true;
   networking.interfaces.wlp0s20f3.useDHCP = true;
   networking.networkmanager.enable = true;
   # Configure network proxy if necessary
