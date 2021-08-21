@@ -83,11 +83,24 @@ in
     xserver = {
       enable = true;
       layout = "us";
-
+      desktopManager = {
+        xterm.enable = false;
+        xfce = {
+          enable = true;
+          noDesktop = true;
+          enableXfwm = false;
+          thunarPlugins = [ pkgs.xfce.thunar-archive-plugin ];
+        };
+      };
       windowManager = {
         xmonad = {
           enable = true;
           enableContribAndExtras = true;
+          extraPackages = haskellPackages: [
+            haskellPackages.xmonad-contrib
+            haskellPackages.xmonad-extras
+            haskellPackages.xmonad
+          ];
         };
       };
 

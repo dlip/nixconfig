@@ -63,6 +63,7 @@
     nodePackages.yaml-language-server
     nodejs
     openvpn
+    p7zip
     pandoc
     postgresql
     postman

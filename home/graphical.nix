@@ -17,6 +17,7 @@
     emoji-menu
     firefox
     gimp
+    gnome.file-roller
     godot
     gwenview
     kdenlive
@@ -37,11 +38,6 @@
     vial
     vlc
     xclip
-    xfce.exo
-    xfce.thunar
-    xfce.tumbler
-    xfce.xfconf
-    xorg.xmodmap
     yubikey-manager-qt
     yubioath-desktop
     zoom-us
