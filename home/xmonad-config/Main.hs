@@ -15,7 +15,12 @@ import XMonad.StackSet (focusDown, focusUp)
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Layout.NoBorders (noBorders)
-
+import XMonad.Hooks.RefocusLast
+    ( isFloat,
+      refocusLastLogHook,
+      refocusLastWhen,
+      refocusingIsActive,
+      toggleFocus )
 myLayoutHook = avoidStruts (layoutFull ||| layoutTall ||| layoutSpiral ||| layoutGrid ||| layoutMirror)
   where
     layoutFull = noBorders Full
@@ -23,6 +28,8 @@ myLayoutHook = avoidStruts (layoutFull ||| layoutTall ||| layoutSpiral ||| layou
     layoutSpiral = spiral (125 % 146)
     layoutGrid = Grid
     layoutMirror = Mirror (Tall 1 (3 / 100) (3 / 5))
+
+myPred = refocusingIsActive <||> isFloat
 
 main :: IO ()
 main =
@@ -36,17 +43,17 @@ main =
               terminal = "alacritty",
               manageHook = manageDocks <+> manageHook def,
               layoutHook = myLayoutHook,
-              handleEventHook = handleEventHook def <+> fullscreenEventHook,
-              logHook =
-                dynamicLogWithPP
+              handleEventHook = refocusLastWhen myPred <+> handleEventHook def <+> fullscreenEventHook,
+              logHook = refocusLastLogHook<+> dynamicLogWithPP
                   xmobarPP
                     { ppOutput = hPutStrLn xmproc
                     }
             }
-          `additionalKeysP` [ ("M-r", spawn "rofi -show run"),
-                              ("M-d", spawn "rofi -show drun"),
-                              ("M-p", spawn "rofi -show window"),
+          `additionalKeysP` [ ("M-r", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show run"),
+                              ("M-d", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show drun"),
+                              ("M-p", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show window"),
                               ("M-.", spawn "emoji-menu"),
+                              ("M-f", toggleFocus),
                               ("M-c", spawn "CM_LAUNCHER=rofi clipmenu"),
                               ("M-l", spawn "lock-screen"),
                               ("M-n", spawn "networkmanager_dmenu"),
