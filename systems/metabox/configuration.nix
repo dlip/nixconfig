@@ -87,7 +87,7 @@ rec {
       layout = "us";
       # dpi = 120;
 
-   desktopManager = {
+      desktopManager = {
         xterm.enable = false;
         xfce = {
           enable = true;
