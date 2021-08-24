@@ -8,19 +8,23 @@ import XMonad.Actions.CycleWS (nextWS, prevWS, shiftToNext, shiftToPrev)
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.EwmhDesktops (ewmh, fullscreenEventHook)
 import XMonad.Hooks.ManageDocks (avoidStruts, docks, manageDocks)
+import XMonad.Hooks.RefocusLast
+  ( isFloat,
+    refocusLastLogHook,
+    refocusLastWhen,
+    refocusingIsActive,
+    toggleFocus,
+  )
 import XMonad.Layout.Grid
+import XMonad.Layout.NoBorders (noBorders)
 import XMonad.Layout.Spacing (spacingRaw)
 import XMonad.Layout.Spiral (spiral)
 import XMonad.StackSet (focusDown, focusUp)
+import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeysP)
+import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run (spawnPipe)
-import XMonad.Layout.NoBorders (noBorders)
-import XMonad.Hooks.RefocusLast
-    ( isFloat,
-      refocusLastLogHook,
-      refocusLastWhen,
-      refocusingIsActive,
-      toggleFocus )
+
 myLayoutHook = avoidStruts (layoutFull ||| layoutTall ||| layoutSpiral ||| layoutGrid ||| layoutMirror)
   where
     layoutFull = noBorders Full
@@ -30,6 +34,56 @@ myLayoutHook = avoidStruts (layoutFull ||| layoutTall ||| layoutSpiral ||| layou
     layoutMirror = Mirror (Tall 1 (3 / 100) (3 / 5))
 
 myPred = refocusingIsActive <||> isFloat
+
+scratchpads =
+  [ -- run htop in term, top half, perfect fit.
+    NS
+      "ttyload"
+      "xterm -e ttyload"
+      (title =? "ttyload")
+      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
+    -- run htop in term, top half, perfect fit.
+    NS
+      "htop"
+      "xterm -e htop"
+      (title =? "htop")
+      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
+    -- run alsamixer in term, bottom half of screen space around edge.
+    NS
+      "alsamixer"
+      "xterm -e alsamixer"
+      (title =? "alsamixer")
+      (customFloating $ W.RationalRect (1 / 100) (49 / 100) (98 / 100) (1 / 2)),
+    -- run emacs bottom half of screen space around edge.
+    NS
+      "emacs"
+      "emacs"
+      (className =? "Emacs")
+      (customFloating $ W.RationalRect (1 / 100) (49 / 100) (98 / 100) (1 / 2)),
+    -- drop-down terminal    like yeahconsole/tilda/guake/yakuake
+    NS
+      "xterm"
+      "xterm -e tmux"
+      (title =? "tmux")
+      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
+    -- drop-down terminalMK2
+    --    NS "tmux" "terminology -e tmux" (className =? "terminology")
+    --        (customFloating $ W.RationalRect (0/1) (0/1) (1/1) (1/2)) ,
+    -- pop bigbrowser
+    NS
+      "firefox"
+      "firefox"
+      (className =? "Firefox")
+      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
+    -- pop-in terminal chat    like above, but one for chat.
+    NS
+      "chat"
+      "iirc"
+      (title =? "chat")
+      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 2) (1 / 2))
+  ]
+  where
+    role = stringProperty "WM_WINDOW_ROLE"
 
 main :: IO ()
 main =
@@ -41,13 +95,15 @@ main =
           def
             { modMask = mod4Mask, -- Use Super instead of Alt
               terminal = "alacritty",
-              manageHook = manageDocks <+> manageHook def,
+              manageHook = manageDocks <+> namedScratchpadManageHook scratchpads <+> manageHook def,
               layoutHook = myLayoutHook,
               handleEventHook = refocusLastWhen myPred <+> handleEventHook def <+> fullscreenEventHook,
-              logHook = refocusLastLogHook<+> dynamicLogWithPP
-                  xmobarPP
-                    { ppOutput = hPutStrLn xmproc
-                    }
+              logHook =
+                refocusLastLogHook
+                  <+> dynamicLogWithPP
+                    xmobarPP
+                      { ppOutput = hPutStrLn xmproc
+                      }
             }
           `additionalKeysP` [ ("M-r", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show run"),
                               ("M-d", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show drun"),
@@ -75,5 +131,6 @@ main =
                               ("M-S-<Home>", shiftToPrev >> prevWS),
                               ("M-S-<End>", shiftToNext >> nextWS),
                               ("M-<Down>", windows focusDown),
-                              ("M-<Up>", windows focusUp)
+                              ("M-<Up>", windows focusUp),
+                              ("M-<F8>", namedScratchpadAction scratchpads "htop")
                             ]
