@@ -45,6 +45,7 @@
   w (tap-hold 400 w C-w)
   p (tap-hold 200 p M-p)
   f (tap-hold 200 f M-f)
+  g (tap-hold 200 g ret)
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
   c (tap-hold 200 c C-c)
@@ -58,7 +59,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    spc
   grv  @q   @w   @f   @p   b    j    l    u    y    ;    \    _    _
-  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o   del  _
+  bspc @a   @r   @s   @t   @g   m    @n   @e   @i   @o   del  _
   @tab @z   @x   @c   @d   v    k    h    ,    .    '    /
   _    _    @esc           @spc           @ret @gam _    _
 )
@@ -131,7 +132,7 @@
   _    q    w    e    r    t    _    _    _    _    _    _    _    _
   lsft a    s    d    f    g    _    _    _    _    _    _    _
   lctl z    x    c    v    b    _    _    _    _    _    _
-  _    esc  _              _              @col _    _    _
+  _    esc  _              _              _    @col _    _
 )
 
 (deflayer empty
