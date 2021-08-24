@@ -10,6 +10,7 @@
     alttab
     anki
     blender
+    calibre
     chromium
     dbeaver
     discord
@@ -40,6 +41,7 @@
     xclip
     yubikey-manager-qt
     yubioath-desktop
+    zathura
     zoom-us
   ];
 }
