@@ -52,7 +52,6 @@
   d (tap-hold 200 d C-v)
 
   tab (tap-hold 200 tab A-tab)
-
 )
 
 (deflayer colemak-dh
@@ -132,7 +131,7 @@
   _    q    w    e    r    t    _    _    _    _    _    _    _    _
   lsft a    s    d    f    g    _    _    _    _    _    _    _
   lctl z    x    c    v    b    _    _    _    _    _    _
-  _    esc  _              _              _    @col _    _
+  _    lalt esc            spc           _    @col _    _
 )
 
 (deflayer empty
