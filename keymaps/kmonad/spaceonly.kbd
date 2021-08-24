@@ -36,27 +36,31 @@
   i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o rmet)
 
-  med (layer-toggle mediafn)
-
   spc (tap-hold-next-release 200 spc (layer-toggle navnum))
+  esc (tap-hold-next-release 200 esc (layer-toggle fn))
+  ret (tap-hold-next-release 200 ret (layer-toggle media))
   gam (layer-switch gaming)
 
-  z (tap-hold 300 z C-z)
-  x (tap-hold 300 x C-x)
-  c (tap-hold 300 c C-c)
-  d (tap-hold 300 d C-v)
+  q (tap-hold 400 q A-f4)
+  w (tap-hold 400 w C-w)
+  p (tap-hold 200 p M-p)
+  f (tap-hold 200 f M-f)
+  g (tap-hold 200 g ret)
+  z (tap-hold 200 z C-z)
+  x (tap-hold 200 x C-x)
+  c (tap-hold 200 c C-c)
+  d (tap-hold 200 d C-v)
 
-  tab (tap-hold 300 tab A-tab)
-
+  tab (tap-hold 200 tab A-tab)
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    spc
-  grv  q    w    f    p    b    j    l    u    y    ;    \    _    _
-  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o   ret  _
-  @tab @z   @x   @c   @d    v    k    h    ,    .    '    /
-  _    _    @med           @spc           @gam _    _    _
+  grv  @q   @w   @f   @p   b    j    l    u    y    ;    \    _    _
+  bspc @a   @r   @s   @t   @g   m    @n   @e   @i   @o   del  _
+  @tab @z   @x   @c   @d   v    k    h    ,    .    '    /
+  _    _    @esc           @spc           @ret @gam _    _
 )
 
 (defalias
@@ -84,7 +88,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    pgup home up   end  prnt [    7    8    9    ]    _    _    _
-  del  @pgd @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
+  _    @pgd @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
   _    @und @cut @cp  @pst caps -    1    2    3    .    _
   _    _    _              _              _    _    _    _
 )
@@ -92,19 +96,28 @@
 (defalias
   rw rewind
   ff fastforward
-  p pause
+  pau pause
 
   pre (tap-hold-next-release 200 prev lalt)
   pp (tap-hold-next-release 200 pp lsft)
   nxt (tap-hold-next-release 200 next lctl)
 )
 
-(deflayer mediafn
+(deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    @rw  volu @ff  brup slck f7   f8   f9   f10  _    _    _
-  _    lmet @pre @pp  @nxt brdn _    f4   f5   f6   f11  _    _
-  _    _    mute vold stop _    @p   f1   f2   f3   f12  _
+  _    _    @rw  volu @ff  brup _    _    _    _    _    _    _    _
+  _    lmet @pre @pp  @nxt brdn _    rctl rsft lalt rmet _    _
+  _    _    mute vold stop _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer fn
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    slck f7   f8   f9   f10  _    _    _
+  _    lmet lalt lsft lctl _    _    f4   f5   f6   f11  _    _
+  _    _    _    _    _    _    @pau f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
 )
 
@@ -118,7 +131,7 @@
   _    q    w    e    r    t    _    _    _    _    _    _    _    _
   lsft a    s    d    f    g    _    _    _    _    _    _    _
   lctl z    x    c    v    b    _    _    _    _    _    _
-  _    esc  _              _              @col _    _    _
+  _    lalt esc            spc           _    @col _    _
 )
 
 (deflayer empty
