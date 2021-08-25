@@ -36,51 +36,12 @@ myLayoutHook = avoidStruts (layoutFull ||| layoutTall ||| layoutSpiral ||| layou
 myPred = refocusingIsActive <||> isFloat
 
 scratchpads =
-  [ -- run htop in term, top half, perfect fit.
-    NS
-      "ttyload"
-      "xterm -e ttyload"
-      (title =? "ttyload")
-      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
-    -- run htop in term, top half, perfect fit.
+  [
     NS
       "htop"
       "xterm -e htop"
       (title =? "htop")
-      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
-    -- run alsamixer in term, bottom half of screen space around edge.
-    NS
-      "alsamixer"
-      "xterm -e alsamixer"
-      (title =? "alsamixer")
-      (customFloating $ W.RationalRect (1 / 100) (49 / 100) (98 / 100) (1 / 2)),
-    -- run emacs bottom half of screen space around edge.
-    NS
-      "emacs"
-      "emacs"
-      (className =? "Emacs")
-      (customFloating $ W.RationalRect (1 / 100) (49 / 100) (98 / 100) (1 / 2)),
-    -- drop-down terminal    like yeahconsole/tilda/guake/yakuake
-    NS
-      "xterm"
-      "xterm -e tmux"
-      (title =? "tmux")
-      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
-    -- drop-down terminalMK2
-    --    NS "tmux" "terminology -e tmux" (className =? "terminology")
-    --        (customFloating $ W.RationalRect (0/1) (0/1) (1/1) (1/2)) ,
-    -- pop bigbrowser
-    NS
-      "firefox"
-      "firefox"
-      (className =? "Firefox")
-      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
-    -- pop-in terminal chat    like above, but one for chat.
-    NS
-      "chat"
-      "iirc"
-      (title =? "chat")
-      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 2) (1 / 2))
+      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2))
   ]
   where
     role = stringProperty "WM_WINDOW_ROLE"
@@ -95,7 +56,7 @@ main =
           def
             { modMask = mod4Mask, -- Use Super instead of Alt
               terminal = "alacritty",
-              manageHook = manageDocks <+> namedScratchpadManageHook scratchpads <+> manageHook def,
+              manageHook = namedScratchpadManageHook scratchpads <+> manageDocks <+> manageHook def,
               layoutHook = myLayoutHook,
               handleEventHook = refocusLastWhen myPred <+> handleEventHook def <+> fullscreenEventHook,
               logHook =
