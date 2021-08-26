@@ -19,6 +19,7 @@
     firefox
     gimp
     gnome.file-roller
+    gnome.seahorse
     godot
     gwenview
     kdenlive
@@ -31,7 +32,7 @@
     obs-studio
     obsidian
     plexamp
-    gnome.seahorse
+    qalculate-gtk
     slack
     spotify
     tdesktop

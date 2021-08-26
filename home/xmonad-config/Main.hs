@@ -18,18 +18,25 @@ import XMonad.Hooks.RefocusLast
 import XMonad.Layout.Accordion
 import XMonad.Layout.Grid
 import XMonad.Layout.NoBorders (noBorders)
-import XMonad.Layout.Spacing (spacingRaw)
+import XMonad.Layout.Spacing (spacingRaw, Spacing, Border (Border))
 import XMonad.Layout.Spiral (spiral)
 import XMonad.StackSet (focusDown, focusUp)
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run (spawnPipe)
+import qualified XMonad.Layout.Decoration as XMonad.Layout.LayoutModifier
+
+mySpacing :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
+
+mySpacing' :: Integer -> l a -> XMonad.Layout.LayoutModifier.ModifiedLayout Spacing l a
+mySpacing' i = spacingRaw True (Border i i i i) True (Border i i i i) True
 
 myLayoutHook = avoidStruts (layoutFull ||| Accordion ||| layoutTall)
   where
     layoutFull = noBorders Full
-    layoutTall = Tall 1 (3 / 100) (1 / 2)
+    layoutTall = mySpacing 8 $ Tall 1 (3 / 100) (1 / 2)
     layoutSpiral = spiral (125 % 146)
     layoutGrid = Grid
     layoutMirror = Mirror (Tall 1 (3 / 100) (3 / 5))
@@ -92,7 +99,7 @@ main =
                               ("M-w", spawn "update-wallpaper"),
                               ("M-S-;", spawn "launch-default-programs"),
                               ("M-<Return>", spawn "alacritty"),
-                              ("<Print>", spawn "flameshot gui")
+                              ("<Print>", spawn "flameshot gui"),
                               ("<XF86AudioPlay>", spawn "playerctl play-pause"),
                               ("<XF86AudioNext>", spawn "playerctl next"),
                               ("<XF86AudioPrev>", spawn "playerctl previous"),
@@ -101,5 +108,5 @@ main =
                               ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%"),
                               ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@"),
                               ("<XF86MonBrightnessUp>", spawn "brightnessctl set +5%"),
-                              ("<XF86MonBrightnessDown>", spawn "brightnessctl set 5%-"),
+                              ("<XF86MonBrightnessDown>", spawn "brightnessctl set 5%-")
                             ]
