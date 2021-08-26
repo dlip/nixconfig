@@ -15,6 +15,7 @@ import XMonad.Hooks.RefocusLast
     refocusingIsActive,
     toggleFocus,
   )
+import XMonad.Layout.Accordion
 import XMonad.Layout.Grid
 import XMonad.Layout.NoBorders (noBorders)
 import XMonad.Layout.Spacing (spacingRaw)
@@ -25,7 +26,7 @@ import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run (spawnPipe)
 
-myLayoutHook = avoidStruts (layoutFull ||| layoutTall ||| layoutSpiral ||| layoutGrid ||| layoutMirror)
+myLayoutHook = avoidStruts (layoutFull ||| Accordion ||| layoutTall)
   where
     layoutFull = noBorders Full
     layoutTall = Tall 1 (3 / 100) (1 / 2)
@@ -36,12 +37,16 @@ myLayoutHook = avoidStruts (layoutFull ||| layoutTall ||| layoutSpiral ||| layou
 myPred = refocusingIsActive <||> isFloat
 
 scratchpads =
-  [
-    NS
+  [ NS
       "htop"
-      "xterm -e htop"
+      "alacritty -e htop"
       (title =? "htop")
-      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2))
+      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
+    NS
+      "nnn"
+      "alacritty --class nnn -e nnn"
+      (resource =? "nnn")
+      nonFloating
   ]
   where
     role = stringProperty "WM_WINDOW_ROLE"
@@ -66,17 +71,28 @@ main =
                       { ppOutput = hPutStrLn xmproc
                       }
             }
-          `additionalKeysP` [ ("M-r", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show run"),
+          `additionalKeysP` [ ("M-f", windows W.focusUp),
+                              ("M-s", windows W.focusDown),
+                              ("M-S-f", windows W.swapUp),
+                              ("M-S-s", windows W.swapDown),
+                              ("M-r", prevWS),
+                              ("M-t", nextWS),
+                              ("M-S-r", shiftToPrev >> prevWS),
+                              ("M-S-t", shiftToNext >> nextWS),
+                              ("M-g", toggleFocus),
+                              ("M-<F8>", namedScratchpadAction scratchpads "htop"),
+                              ("M-<F9>", namedScratchpadAction scratchpads "nnn"),
+                              ("M-o", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show run"),
                               ("M-d", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show drun"),
                               ("M-p", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show window"),
                               ("M-.", spawn "emoji-menu"),
-                              ("M-f", toggleFocus),
                               ("M-c", spawn "CM_LAUNCHER=rofi clipmenu"),
                               ("M-l", spawn "lock-screen"),
-                              ("M-n", spawn "networkmanager_dmenu"),
+                              ("M-m", spawn "networkmanager_dmenu"),
                               ("M-w", spawn "update-wallpaper"),
-                              ("M-;", spawn "launch-default-programs"),
+                              ("M-S-;", spawn "launch-default-programs"),
                               ("M-<Return>", spawn "alacritty"),
+                              ("<Print>", spawn "flameshot gui")
                               ("<XF86AudioPlay>", spawn "playerctl play-pause"),
                               ("<XF86AudioNext>", spawn "playerctl next"),
                               ("<XF86AudioPrev>", spawn "playerctl previous"),
@@ -86,12 +102,4 @@ main =
                               ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@"),
                               ("<XF86MonBrightnessUp>", spawn "brightnessctl set +5%"),
                               ("<XF86MonBrightnessDown>", spawn "brightnessctl set 5%-"),
-                              ("<Print>", spawn "flameshot gui"),
-                              ("M-<Home>", prevWS),
-                              ("M-<End>", nextWS),
-                              ("M-S-<Home>", shiftToPrev >> prevWS),
-                              ("M-S-<End>", shiftToNext >> nextWS),
-                              ("M-<Down>", windows focusDown),
-                              ("M-<Up>", windows focusUp),
-                              ("M-<F8>", namedScratchpadAction scratchpads "htop")
                             ]
