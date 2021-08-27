@@ -49,16 +49,16 @@ in
     extraConfig = ''
       Config
         { font        = "xft:FiraCode Nerd Font Mono:size=13:bold:antialias=true:hinting=true"
-        , borderColor = "#d0d0d0"
-        , border      = FullB
-        , borderWidth = 3
-        , bgColor     = "#222"
-        , fgColor     = "grey"
+        , borderColor = "#4eb4fa"
+        , border      = BottomB
+        , borderWidth = 2
+        , bgColor     = "#313846"
+        , fgColor     = "#d0d0d0"
         , position    = TopSize C 100 30
         , commands    =
-            [ Run Cpu ["-t", "cpu: <fc=#4eb4fa><bar> <total>%</fc>"] 10
+            [ Run Cpu ["-t", "cpu: <fc=#4eb4fa><total>%</fc>"] 10
             , Run Network "wlp0s20f3" ["-S", "True", "-t", "net: <fc=#4eb4fa><rx></fc>/<fc=#4eb4fa><tx></fc>"] 10
-            , Run Memory ["-t","mem: <fc=#4eb4fa><usedbar> <usedratio>%</fc>"] 10
+            , Run Memory ["-t","mem: <fc=#4eb4fa><usedratio>%</fc>"] 10
             , Run Date "<fc=#4eb4fa>%a %d %b %Y %H:%M:%S </fc>" "date" 10
             , Run StdinReader
             -- battery monitor
@@ -113,13 +113,13 @@ in
       decorations = null;
       transparent = false;
       dockapp_mode = null;
-      geometry = "6x1-330+5";
-      max_geometry = "12x1-525-5";
-      background = "#222";
+      geometry = "6x1-330+4";
+      max_geometry = "0x0";
+      background = "#313846";
       kludges = "force_icons_size";
       grow_gravity = "NE";
       icon_gravity = "NE";
-      icon_size = 16;
+      icon_size = 21;
       sticky = true;
       # window_strut = null;
       window_type = "dock";

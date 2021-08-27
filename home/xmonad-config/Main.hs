@@ -27,29 +27,38 @@ import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run (spawnPipe)
+import XMonad.Layout.TwoPane
+import XMonad.Layout.TwoPanePersistent
 
 mySpacing :: Integer -> l a -> ModifiedLayout Spacing l a
 mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
 
 mySpacing' :: Integer -> l a -> ModifiedLayout Spacing l a
 mySpacing' i = spacingRaw True (Border i i i i) True (Border i i i i) True
-myTabTheme = def { fontName            = "xft:FiraCode Nerd Font:regular:size=9:antialias=true:hinting=true"
-                 , activeColor         = "#46d9ff"
-                 , inactiveColor       = "#313846"
-                 , activeBorderColor   = "#46d9ff"
-                 , inactiveBorderColor = "#282c34"
-                 , activeTextColor     = "#282c34"
-                 , inactiveTextColor   = "#d0d0d0"
-                 }
 
-myLayoutHook = avoidStruts (layoutTabbed ||| layoutTall)
+myTabTheme =
+  def
+    { fontName = "xft:FiraCode Nerd Font:bold:size=11:antialias=true:hinting=true",
+      activeColor = "#4eb4fa",
+      inactiveColor = "#313846",
+      activeBorderColor = "#4eb4fa",
+      inactiveBorderColor = "#282c34",
+      activeTextColor = "#313846",
+      inactiveTextColor = "#d0d0d0",
+      activeBorderWidth = 2,
+      inactiveBorderWidth = 2
+    }
+
+myLayoutHook = avoidStruts (layoutTabbed ||| layoutTwoPanePersist)
   where
+    layoutTabbed = noBorders $ tabbed shrinkText myTabTheme
+    layoutTwoPane = mySpacing 4 $ TwoPane (3/100) (1/2)
+    layoutTwoPanePersist = mySpacing 4 $ TwoPanePersistent Nothing (3/100) (1/2)
     layoutFull = noBorders Full
-    layoutTall = mySpacing 8 $ Tall 1 (3 / 100) (1 / 2)
+    layoutTall = mySpacing 4 $ Tall 1 (3 / 100) (1 / 2)
     layoutSpiral = spiral (125 % 146)
     layoutGrid = Grid
     layoutMirror = Mirror (Tall 1 (3 / 100) (3 / 5))
-    layoutTabbed = noBorders $ tabbed shrinkText myTabTheme
 
 myPred = refocusingIsActive <||> isFloat
 
