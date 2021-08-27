@@ -49,7 +49,7 @@ myLayoutHook = avoidStruts (layoutTabbed ||| layoutFull ||| Accordion ||| layout
     layoutSpiral = spiral (125 % 146)
     layoutGrid = Grid
     layoutMirror = Mirror (Tall 1 (3 / 100) (3 / 5))
-    layoutTabbed = tabbed shrinkText myTabTheme
+    layoutTabbed = noBorders $ tabbed shrinkText myTabTheme
 
 myPred = refocusingIsActive <||> isFloat
 
@@ -88,14 +88,14 @@ main =
                       { ppOutput = hPutStrLn xmproc
                       }
             }
-          `additionalKeysP` [ ("M-f", windows W.focusUp),
-                              ("M-s", windows W.focusDown),
-                              ("M-S-f", windows W.swapUp),
-                              ("M-S-s", windows W.swapDown),
-                              ("M-r", prevWS),
-                              ("M-t", nextWS),
-                              ("M-S-r", shiftToPrev >> prevWS),
-                              ("M-S-t", shiftToNext >> nextWS),
+          `additionalKeysP` [ ("M-r", windows W.focusUp),
+                              ("M-t", windows W.focusDown),
+                              ("M-S-r", windows W.swapUp),
+                              ("M-S-t", windows W.swapDown),
+                              ("M-f", prevWS),
+                              ("M-s", nextWS),
+                              ("M-S-f", shiftToPrev >> prevWS),
+                              ("M-S-s", shiftToNext >> nextWS),
                               ("M-g", toggleFocus),
                               ("M-d", withFocused $ windows . W.sink),
                               ("M-<F8>", namedScratchpadAction scratchpads "htop"),

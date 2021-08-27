@@ -51,7 +51,7 @@
           (final: prev: {
             my = final.callPackage ./pkgs { };
             envy-sh = envy-sh.defaultPackage.${system};
-            kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { stdenv = { lib = final.lib; }; };
+            kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { };
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             wally-cli = wally-cli.defaultPackage.${system};
           })
@@ -168,9 +168,9 @@
               inherit system;
               modules = [ ./systems/dex/configuration.nix ];
             };
-            g = nixos.lib.nixosSystem {
+            g = nixpkgs.lib.nixosSystem {
               inherit system;
-              inherit pkgs;
+              pkgs = pkgsUnstable;
               modules = [ ./systems/g/configuration.nix ];
             };
           };
