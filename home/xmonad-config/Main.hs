@@ -16,17 +16,17 @@ import XMonad.Hooks.RefocusLast
     toggleFocus,
   )
 import XMonad.Layout.Accordion
+import XMonad.Layout.Decoration (ModifiedLayout)
 import XMonad.Layout.Grid
 import XMonad.Layout.NoBorders (noBorders)
-import XMonad.Layout.Spacing (spacingRaw, Spacing, Border (Border))
+import XMonad.Layout.Spacing (Border (Border), Spacing, spacingRaw)
 import XMonad.Layout.Spiral (spiral)
+import XMonad.Layout.Tabbed
 import XMonad.StackSet (focusDown, focusUp)
 import qualified XMonad.StackSet as W
 import XMonad.Util.EZConfig (additionalKeysP)
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run (spawnPipe)
-import XMonad.Layout.Tabbed
-import XMonad.Layout.Decoration (ModifiedLayout)
 
 mySpacing :: Integer -> l a -> ModifiedLayout Spacing l a
 mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
@@ -42,7 +42,7 @@ myTabTheme = def { fontName            = "xft:FiraCode Nerd Font:regular:size=9:
                  , inactiveTextColor   = "#d0d0d0"
                  }
 
-myLayoutHook = avoidStruts (layoutTabbed ||| layoutFull ||| Accordion ||| layoutTall)
+myLayoutHook = avoidStruts (layoutTabbed ||| layoutTall)
   where
     layoutFull = noBorders Full
     layoutTall = mySpacing 8 $ Tall 1 (3 / 100) (1 / 2)
@@ -88,14 +88,14 @@ main =
                       { ppOutput = hPutStrLn xmproc
                       }
             }
-          `additionalKeysP` [ ("M-f", windows W.focusUp),
-                              ("M-s", windows W.focusDown),
-                              ("M-S-f", windows W.swapUp),
-                              ("M-S-s", windows W.swapDown),
-                              ("M-r", prevWS),
-                              ("M-t", nextWS),
-                              ("M-S-r", shiftToPrev >> prevWS),
-                              ("M-S-t", shiftToNext >> nextWS),
+          `additionalKeysP` [ ("M-r", windows W.focusUp),
+                              ("M-t", windows W.focusDown),
+                              ("M-S-r", windows W.swapUp),
+                              ("M-S-t", windows W.swapDown),
+                              ("M-f", prevWS),
+                              ("M-s", nextWS),
+                              ("M-S-f", shiftToPrev >> prevWS),
+                              ("M-S-s", shiftToNext >> nextWS),
                               ("M-g", toggleFocus),
                               ("M-d", withFocused $ windows . W.sink),
                               ("M-<F8>", namedScratchpadAction scratchpads "htop"),
