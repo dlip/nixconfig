@@ -49,7 +49,7 @@ myLayoutHook = avoidStruts (layoutTabbed ||| layoutTall)
     layoutSpiral = spiral (125 % 146)
     layoutGrid = Grid
     layoutMirror = Mirror (Tall 1 (3 / 100) (3 / 5))
-    layoutTabbed = tabbed shrinkText myTabTheme
+    layoutTabbed = noBorders $ tabbed shrinkText myTabTheme
 
 myPred = refocusingIsActive <||> isFloat
 
