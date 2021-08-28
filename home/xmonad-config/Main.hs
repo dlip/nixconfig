@@ -27,6 +27,7 @@ import XMonad.Util.NamedScratchpad
 import XMonad.Util.Run (spawnPipe)
 import XMonad.Layout.TwoPane
 import XMonad.Layout.TwoPanePersistent
+import XMonad.Actions.GridSelect
 
 mySpacing :: Integer -> l a -> ModifiedLayout Spacing l a
 mySpacing i = spacingRaw False (Border i i i i) True (Border i i i i) True
@@ -115,6 +116,7 @@ main =
                               ("M--", sendMessage Shrink),
                               ("M-=", sendMessage Expand),
                               ("M-d", withFocused $ windows . W.sink),
+                              ("M-o", goToSelected defaultGSConfig),
                               ("M-<F8>", namedScratchpadAction scratchpads "htop"),
                               ("M-<F9>", namedScratchpadAction scratchpads "nnn"),
                               ("M-n", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show run"),
