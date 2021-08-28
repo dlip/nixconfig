@@ -68,8 +68,8 @@ in
               , "-L", "20"
               , "-H", "85"
               , "-l", "#fa4e4e"
-              , "-n", "#fad84e"
-              , "-h", "#4efa6b"
+              , "-n", "#e4b63c"
+              , "-h", "#7cac7a"
               , "--" -- battery specific options
               -- discharging status
               , "-o"  , "<fn=1>\xf242</fn> <left>% (<timeleft>) <watts>"
@@ -81,13 +81,24 @@ in
               , "--on-icon-pattern", "<fn=1>\xf1e6</fn>"
               ] 10
             --- https://www.icao.int/safety/iStars/Pages/Weather-Conditions.aspx
-            , Run Weather "YSSY"
-              [ "-t", "<fc=#93a1a1><fn=1>\xf2cb</fn><tempC>°</fc>"
-              , "-L", "50"
-              , "-H", "80"
-              , "--low", "#93a1a1"
-              , "--normal", "#93a1a1"
-              , "--high", "#93a1a1"
+            , Run WeatherX "YSSY"
+              [ ("clear", "")
+               , ("sunny", "")
+               , ("mostly clear", "")
+               , ("mostly sunny", "")
+               , ("partly sunny", "")
+               , ("fair", "")
+               , ("cloudy","")
+               , ("overcast","")
+               , ("partly cloudy", "杖")
+               , ("mostly cloudy", "")
+               , ("considerable cloudiness", "")]
+              [ "-t", "<fn=2><skyConditionS></fn> <tempC>°"
+              , "-L", "10"
+              , "-H", "20"
+              , "-l", "#d0d0d0"
+              , "-n", "#d0d0d0"
+              , "-h", "#d0d0d0"
               ] 36000
             ]
         , sepChar     = "%"
@@ -125,7 +136,7 @@ in
       decorations = null;
       transparent = false;
       dockapp_mode = null;
-      geometry = "6x1-330+4";
+      geometry = "6x1-400+4";
       max_geometry = "0x0";
       background = "#313846";
       kludges = "force_icons_size";

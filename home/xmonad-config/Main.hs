@@ -1,5 +1,3 @@
--- Needed to export windows to rofi
-
 import Data.Ratio ((%))
 import Graphics.X11.ExtraTypes.XF86
 import System.IO (hPutStrLn)
@@ -77,10 +75,19 @@ scratchpads =
   where
     role = stringProperty "WM_WINDOW_ROLE"
 
+myLogHook h = refocusLastLogHook <+> dynamicLogWithPP xmobarPP
+  { ppLayout = const ""  -- wrap "(<fc=#e4b63c>" "</fc>)"
+  -- , ppSort = getSortByXineramaRule  -- Sort left/right screens on the left, non-empty workspaces after those
+  , ppTitleSanitize = const ""  -- Also about window's title
+  , ppVisible = wrap "(" ")"  -- Non-focused (but still visible) screen
+  , ppCurrent = wrap "<fc=#d0d0d0>[</fc><fc=#7cac7a>" "</fc><fc=#d0d0d0>]</fc>"-- Non-focused (but still visible) screen
+  , ppOutput = hPutStrLn h
+  }
+
 main :: IO ()
 main =
   do
-    xmproc <- spawnPipe "killall xmobar; xmobar"
+    xmobarProc <- spawnPipe "killall xmobar; xmobar"
     xmonad $
       docks $
         ewmh
@@ -90,12 +97,7 @@ main =
               manageHook = namedScratchpadManageHook scratchpads <+> manageDocks <+> manageHook def,
               layoutHook = myLayoutHook,
               handleEventHook = refocusLastWhen myPred <+> handleEventHook def <+> fullscreenEventHook,
-              logHook =
-                refocusLastLogHook
-                  <+> dynamicLogWithPP
-                    xmobarPP
-                      { ppOutput = hPutStrLn xmproc
-                      }
+              logHook = myLogHook xmobarProc
             }
           `additionalKeysP` [ ("M-r", windows W.focusUp),
                               ("M-t", windows W.focusDown),
