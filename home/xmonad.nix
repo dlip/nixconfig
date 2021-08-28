@@ -80,10 +80,19 @@ in
               , "--off-icon-pattern", "<fn=1>\xf1e6</fn>"
               , "--on-icon-pattern", "<fn=1>\xf1e6</fn>"
               ] 10
+            --- https://www.icao.int/safety/iStars/Pages/Weather-Conditions.aspx
+            , Run Weather "YSSY"
+              [ "-t", "<fc=#93a1a1><fn=1>\xf2cb</fn><tempC>°</fc>"
+              , "-L", "50"
+              , "-H", "80"
+              , "--low", "#93a1a1"
+              , "--normal", "#93a1a1"
+              , "--high", "#93a1a1"
+              ] 36000
             ]
         , sepChar     = "%"
         , alignSep    = "}{"
-        , template    = " <fn=2></fn> %StdinReader% %cpu% %memory% %wlp0s20f3% %battery% }{ %date% <fn=2></fn> "
+        , template    = " <fn=2></fn> %StdinReader% %cpu% %memory% %wlp0s20f3% %battery% }{ %date% %YSSY%<fn=2></fn> "
         }
     '';
   };
