@@ -49,7 +49,8 @@ in
     extraConfig = ''
       Config
         { font        = "xft:FiraCode Nerd Font Mono:size=13:bold:antialias=true:hinting=true"
-        , additionalFonts = [ "xft:FiraCode Nerd Font Mono:size=24:normal:antialias=true:hinting=true" ]
+        , additionalFonts = [ "xft:FontAwesome:pixelsize=14:antialias=true:hinting=true",
+                              "xft:FiraCode Nerd Font Mono:size=24:normal:antialias=true:hinting=true" ]
         , borderColor = "#4eb4fa"
         , border      = BottomB
         , borderWidth = 2
@@ -57,31 +58,32 @@ in
         , fgColor     = "#d0d0d0"
         , position    = TopSize C 100 30
         , commands    =
-            [ Run Cpu ["-t", "<fn=1></fn> <fc=#4eb4fa><total>%</fc>"] 10
-            , Run Network "wlp0s20f3" ["-S", "True", "-t", "<fn=1></fn> <fc=#4eb4fa><rx></fc> <fn=1></fn> <fc=#4eb4fa><tx></fc>"] 10
-            , Run Memory ["-t","<fn=1></fn> <fc=#4eb4fa><usedratio>%</fc>"] 10
+            [ Run Cpu ["-t", "<fn=2></fn> <fc=#4eb4fa><total>%</fc>"] 10
+            , Run Network "wlp0s20f3" ["-S", "True", "-t", "<fn=2></fn> <fc=#4eb4fa><rx></fc> <fn=2></fn> <fc=#4eb4fa><tx></fc>"] 10
+            , Run Memory ["-t","<fn=2></fn> <fc=#4eb4fa><usedratio>%</fc>"] 10
             , Run Date "<fc=#4eb4fa>%a %d %b %Y %H:%M:%S </fc>" "date" 10
             , Run StdinReader
-            -- battery monitor
-            , Run Battery        [ "--template" , "batt: <acstatus>"
-                                 , "--Low"      , "10"        -- units: %
-                                 , "--High"     , "80"        -- units: %
-                                 , "--low"      , "darkred"
-                                 , "--normal"   , "darkorange"
-                                 , "--high"     , "darkgreen"
-
-                                 , "--" -- battery specific options
-                                           -- discharging status
-                                           , "-o"  , "<left>% (<timeleft>)"
-                                           -- AC "on" status
-                                           , "-O"  , "<fc=#dAA520>Charging</fc>"
-                                           -- charged status
-                                           , "-i"  , "<fc=#006000>Charged</fc>"
-                                 ] 50
+            , Run Battery
+              [ "-t", "<fc=#d0d0d0><acstatus></fc>"
+              , "-L", "20"
+              , "-H", "85"
+              , "-l", "#fa4e4e"
+              , "-n", "#fad84e"
+              , "-h", "#4efa6b"
+              , "--" -- battery specific options
+              -- discharging status
+              , "-o"  , "<fn=1>\xf242</fn> <left>% (<timeleft>) <watts>"
+              -- AC "on" status
+              , "-O"  , "<fn=1>\xf1e6</fn> <left>%"
+              -- charged status
+              , "-i"  , "<fn=1>\xf1e6</fn> <left>%"
+              , "--off-icon-pattern", "<fn=1>\xf1e6</fn>"
+              , "--on-icon-pattern", "<fn=1>\xf1e6</fn>"
+              ] 10
             ]
         , sepChar     = "%"
         , alignSep    = "}{"
-        , template    = " <fn=1></fn> %StdinReader% %cpu% %memory% %wlp0s20f3% %battery% }{ %date% <fn=1></fn> "
+        , template    = " <fn=2></fn> %StdinReader% %cpu% %memory% %wlp0s20f3% %battery% }{ %date% <fn=2></fn> "
         }
     '';
   };
