@@ -75,13 +75,13 @@ scratchpads =
   where
     role = stringProperty "WM_WINDOW_ROLE"
 
-myLogHook h = refocusLastLogHook <+> dynamicLogWithPP xmobarPP
-  { ppLayout = const ""  -- wrap "(<fc=#e4b63c>" "</fc>)"
+myLogHook xmobarProc = refocusLastLogHook <+> dynamicLogWithPP xmobarPP
+  { ppLayout = const ""  -- wrap "(<fc=#4eb4fa>" "</fc>)"
   -- , ppSort = getSortByXineramaRule  -- Sort left/right screens on the left, non-empty workspaces after those
   , ppTitleSanitize = const ""  -- Also about window's title
   , ppVisible = wrap "(" ")"  -- Non-focused (but still visible) screen
-  , ppCurrent = wrap "<fc=#d0d0d0>[</fc><fc=#7cac7a>" "</fc><fc=#d0d0d0>]</fc>"-- Non-focused (but still visible) screen
-  , ppOutput = hPutStrLn h
+  , ppCurrent = wrap "<fc=#d0d0d0>[</fc><fc=#4eb4fa>" "</fc><fc=#d0d0d0>]</fc>"-- Non-focused (but still visible) screen
+  , ppOutput = hPutStrLn xmobarProc
   }
 
 main :: IO ()
@@ -97,17 +97,23 @@ main =
               manageHook = namedScratchpadManageHook scratchpads <+> manageDocks <+> manageHook def,
               layoutHook = myLayoutHook,
               handleEventHook = refocusLastWhen myPred <+> handleEventHook def <+> fullscreenEventHook,
-              logHook = myLogHook xmobarProc
+              logHook = myLogHook xmobarProc,
+              focusedBorderColor = "#4eb4fa",
+              borderWidth = 2
             }
           `additionalKeysP` [ ("M-r", windows W.focusUp),
                               ("M-t", windows W.focusDown),
                               ("M-S-r", windows W.swapUp),
                               ("M-S-t", windows W.swapDown),
+                              ("M-m", windows W.focusMaster),
+                              ("M-S-m", windows W.swapMaster),
                               ("M-f", prevWS),
                               ("M-s", nextWS),
                               ("M-S-f", shiftToPrev >> prevWS),
                               ("M-S-s", shiftToNext >> nextWS),
                               ("M-g", toggleFocus),
+                              ("M--", sendMessage Shrink),
+                              ("M-=", sendMessage Expand),
                               ("M-d", withFocused $ windows . W.sink),
                               ("M-<F8>", namedScratchpadAction scratchpads "htop"),
                               ("M-<F9>", namedScratchpadAction scratchpads "nnn"),

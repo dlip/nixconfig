@@ -72,7 +72,7 @@ in
               , "-h", "#7cac7a"
               , "--" -- battery specific options
               -- discharging status
-              , "-o"  , "<fn=1>\xf242</fn> <left>% (<timeleft>) <watts>"
+              , "-o"  , "<fn=1>\xf242</fn> <left>% <fc=#d0d0d0>(<timeleft>)</fc>"
               -- AC "on" status
               , "-O"  , "<fn=1>\xf1e6</fn> <left>%"
               -- charged status
@@ -207,5 +207,6 @@ in
     brightnessctl
     networkmanager_dmenu
     ssuspend
+    notify-desktop
   ];
 }
