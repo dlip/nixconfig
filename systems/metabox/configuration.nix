@@ -138,6 +138,11 @@ rec {
   nixpkgs.config.allowUnfree = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.screenSection = ''
+    Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+    Option         "AllowIndirectGLXProtocol" "off"
+    Option         "TripleBuffer" "on"
+  '';
 
   hardware.nvidia.prime = {
     sync.enable = true;
@@ -167,7 +172,7 @@ rec {
   # Or disable the firewall altogether.
   networking.firewall.enable = false;
   services.k3s = {
-    enable = true;
+    enable = false;
     docker = true;
     extraFlags = "--no-deploy traefik";
   };

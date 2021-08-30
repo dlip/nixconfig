@@ -64,13 +64,23 @@ myPred = refocusingIsActive <||> isFloat
 scratchpads =
   [ NS
       "htop"
-      "alacritty -e htop"
-      (title =? "htop")
+      "alacritty -t scratchpad-htop -e htop"
+      (title =? "scratchpad-htop")
+      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
+    NS
+      "qalculate"
+      "qalculate-gtk"
+      (title =? "Qalculate!")
       (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
     NS
       "nnn"
-      "alacritty --class nnn -e nnn"
-      (resource =? "nnn")
+      "alacritty -t scratchpad-nnn -e nnn"
+      (title =? "scratchpad-nnn")
+      nonFloating,
+    NS
+      "emacs"
+      "emacs"
+      (className =? "Emacs")
       nonFloating
   ]
   where
@@ -113,22 +123,25 @@ main =
                               ("M-S-f", shiftToPrev >> prevWS),
                               ("M-S-s", shiftToNext >> nextWS),
                               ("M-g", toggleFocus),
-                              ("M--", sendMessage Shrink),
-                              ("M-=", sendMessage Expand),
+                              ("M-,", sendMessage Shrink),
+                              ("M-.", sendMessage Expand),
                               ("M-d", withFocused $ windows . W.sink),
                               ("M-o", goToSelected defaultGSConfig),
-                              ("M-<F8>", namedScratchpadAction scratchpads "htop"),
-                              ("M-<F9>", namedScratchpadAction scratchpads "nnn"),
-                              ("M-n", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show run"),
-                              ("M-e", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show drun"),
-                              ("M-p", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show window"),
-                              ("M-.", spawn "emoji-menu"),
-                              ("M-c", spawn "CM_LAUNCHER=rofi clipmenu"),
-                              ("M-l", spawn "lock-screen"),
-                              ("M-m", spawn "networkmanager_dmenu"),
-                              ("M-w", spawn "update-wallpaper"),
-                              ("M-S-;", spawn "launch-default-programs"),
-                              ("M-<Return>", spawn "alacritty"),
+                              ("M-M1-C-S-h", namedScratchpadAction scratchpads "htop"),
+                              ("M-M1-C-S-f", namedScratchpadAction scratchpads "nnn"),
+                              ("M-M1-C-S-;", spawn "launch-default-programs"),
+                              ("M-M1-C-S-.", spawn "emoji-menu"),
+                              ("M-M1-C-S-<Return>", namedScratchpadAction scratchpads "qalculate"),
+                              ("M-M1-C-S-b", spawn "update-wallpaper"),
+                              ("M-M1-C-S-c", spawn "CM_LAUNCHER=rofi clipmenu"),
+                              ("M-M1-C-S-d", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show drun"),
+                              ("M-M1-C-S-e", namedScratchpadAction scratchpads "emacs"),
+                              ("M-M1-C-S-l", spawn "lock-screen"),
+                              ("M-M1-C-S-n", spawn "networkmanager_dmenu"),
+                              ("M-M1-C-S-r", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show run"),
+                              ("M-M1-C-S-t", spawn "alacritty"),
+                              ("M-M1-C-S-v", spawn "vial"),
+                              ("M-M1-C-S-w", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show window"),
                               ("<Print>", spawn "flameshot gui"),
                               ("<XF86AudioPlay>", spawn "playerctl play-pause"),
                               ("<XF86AudioNext>", spawn "playerctl next"),
