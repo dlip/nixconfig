@@ -82,7 +82,8 @@ in
               ] 10
             --- https://www.icao.int/safety/iStars/Pages/Weather-Conditions.aspx
             , Run WeatherX "YSSY"
-              [ ("clear", "")
+              [ ("", "")
+               , ("clear", "")
                , ("sunny", "")
                , ("mostly clear", "")
                , ("mostly sunny", "")

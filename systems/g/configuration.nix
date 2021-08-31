@@ -118,6 +118,11 @@ in
     };
   };
 
+  services.gvfs = {
+    enable = true;
+    package = lib.mkForce pkgs.gnome3.gvfs;
+  };
+
   programs.nm-applet.enable = true;
 
   services.xserver.videoDrivers = [ "nvidia" ];
