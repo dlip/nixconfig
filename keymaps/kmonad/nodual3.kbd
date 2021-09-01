@@ -68,34 +68,34 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    lmet lalt lsft lctl _    _    _    _    _    _    _    _
-  _    @und @cut @cp  @pst _    _    _    _    _    _    _
-  _    _    _              @lfa               _    _    _    _
+  _    @lfa lalt lsft lctl _    _    _    _    _    _    _    _
+  _    @und @cut @cp  lmet _    _    _    _    _    _    _
+  _    _    _              spc            _    _    _    _
 )
 
 (deflayer right
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    rctl rsft lalt rmet _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    -              @rga              _    _    _    _
+  _    _    _    _    _    _    _    rctl @rga rsft lalt _    _
+  _    _    _    _    _    _    _    rmet    _    _    _    _
+  _    _    -              spc              _    _    _    _
 )
 
 (deflayer lefta
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    =    7    8    9    \    _    _    _
-  _    lmet lalt lsft lctl _    -    4    5    6    0    _    _
-  _    @und @cut @cp  @pst _    _    [    1    2    3    ]
+  _    _    lalt lsft lctl _    -    4    5    6    0    _    _
+  _    @und @cut @cp  lmet _    _    [    1    2    3    ]
   _    _    _              _                   _    _    _    _
 )
 (deflayer righta
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    home up   end  pgup _    _    _    _    _    _    _    _
-  _    del  lft  down rght pgdn _    rctl rsft lalt rmet _    _
-  _    _    @bk  caps @fwd prnt _    _    _    _    _    _
+  _    del  lft  down rght pgdn _    rctl rsft lalt _    _    _
+  _    _    @bk  caps @fwd prnt _    rmet _    _    _    _
   _    _    -              _              _    _    _    _
 )
 (defalias
