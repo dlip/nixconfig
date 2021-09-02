@@ -63,6 +63,11 @@ myPred = refocusingIsActive <||> isFloat
 
 scratchpads =
   [ NS
+      "alacritty"
+      "alacritty -t scratchpad-alacritty"
+      (title =? "scratchpad-alacritty")
+      (customFloating $ W.RationalRect (0 / 1) (0 / 1) (1 / 1) (1 / 2)),
+    NS
       "htop"
       "alacritty -t scratchpad-htop -e htop"
       (title =? "scratchpad-htop")
@@ -127,21 +132,21 @@ main =
                               ("M-.", sendMessage Expand),
                               ("M-d", withFocused $ windows . W.sink),
                               ("M-o", goToSelected defaultGSConfig),
+                              ("M-S-;", spawn "launch-default-programs"),
+                              ("M-e", spawn "emoji-menu"),
+                              ("M-w", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show window"),
+                              ("M-;", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show-icons -show combi -combi-modi 'drun,run' -modi combi"),
+                              ("M-<Return>", namedScratchpadAction scratchpads "alacritty"),
+                              ("M-S-<Return>", spawn "alacritty"),
+                              ("M-l", spawn "lock-screen"),
                               ("M-M1-C-S-h", namedScratchpadAction scratchpads "htop"),
                               ("M-M1-C-S-f", namedScratchpadAction scratchpads "nnn"),
-                              ("M-M1-C-S-;", spawn "launch-default-programs"),
-                              ("M-M1-C-S-.", spawn "emoji-menu"),
                               ("M-M1-C-S-<Return>", namedScratchpadAction scratchpads "qalculate"),
                               ("M-M1-C-S-b", spawn "update-wallpaper"),
                               ("M-M1-C-S-c", spawn "CM_LAUNCHER=rofi clipmenu"),
-                              ("M-M1-C-S-d", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show drun"),
                               ("M-M1-C-S-e", namedScratchpadAction scratchpads "emacs"),
-                              ("M-M1-C-S-l", spawn "lock-screen"),
                               ("M-M1-C-S-n", spawn "networkmanager_dmenu"),
-                              ("M-M1-C-S-r", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show run"),
-                              ("M-M1-C-S-t", spawn "alacritty"),
                               ("M-M1-C-S-v", spawn "vial"),
-                              ("M-M1-C-S-w", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show window"),
                               ("<Print>", spawn "flameshot gui"),
                               ("<XF86AudioPlay>", spawn "playerctl play-pause"),
                               ("<XF86AudioNext>", spawn "playerctl next"),
