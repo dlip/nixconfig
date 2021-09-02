@@ -37,8 +37,8 @@
   o (tap-hold-next-release 200 o rmet)
 
   spc (tap-hold-next-release 200 spc (layer-toggle navnum))
-  esc (tap-hold-next-release 200 esc (layer-toggle fn))
-  ret (tap-hold-next-release 200 ret (layer-toggle media))
+  fn (layer-toggle fn)
+  med (layer-toggle media)
   gam (layer-switch gaming)
 
   q (tap-hold 400 q A-f4)
@@ -58,21 +58,15 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    spc
-  grv  @q   @w   @f   @p   b    j    l    u    y    ;    \    _    _
-  bspc @a   @r   @s   @t   @g   @m   @n   @e   @i   @o   del  _
-  @tab @z   @x   @c   @d   v    k    h    ,    .    '    /
-  _    _    @esc           @spc           @ret @gam _    _
+  tab  @q   @w   @f   @p   b    j    l    u    y    ;    \    _    _
+  bspc @a   @r   @s   @t   @g   @m   @n   @e   @i   @o   ret  _
+  esc  @z   @x   @c   @d   v    k    h    ,    .    '    /
+  _    _    @fn           @spc            @med  _    _    _
 )
 
 (defalias
   bk A-left
   fwd A-right
-  csp C-spc
-
-  und C-z
-  cut C-x
-  cp C-c
-  pst C-v
 
   pgd (tap-hold-next-release 200 pgdn lmet)
   lft (tap-hold-next-release 200 lft lalt)
@@ -88,9 +82,9 @@
 (deflayer navnum
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    pgup home up   end  prnt [    7    8    9    ]    _    _    _
-  _    @pgd @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
-  _    @und @cut @cp  @pst caps -    1    2    3    .    _
+  _    pgup home up   end  _    [    7    8    9    ]    _    _    _
+  _    @pgd @lft @dwn @rgt caps =    @4   @5   @6   @0   _    _
+  _    grv  _    del  tab  _    -    1    2    3    .    _
   _    _    _              _              _    _    _    _
 )
 
@@ -117,7 +111,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    slck f7   f8   f9   f10  _    _    _
-  _    lmet lalt lsft lctl _    _    f4   f5   f6   f11  _    _
+  _    lmet lalt lsft lctl _    @gam f4   f5   f6   f11  _    _
   _    _    _    _    _    _    @pau f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
 )
@@ -129,10 +123,10 @@
 (deflayer gaming
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    q    w    e    r    t    _    _    _    _    _    _    _    _
-  lsft a    s    d    f    g    _    _    _    _    _    _    _
+  tab  q    w    e    r    t    _    _    up   _    _    _    _    _
+  lsft a    s    d    f    g    @col lft  down rght _    _    _
   lctl z    x    c    v    b    _    _    _    _    _    _
-  _    lalt esc            spc           _    @col _    _
+  _    lalt esc            spc            _    _    _    _
 )
 
 (deflayer empty
