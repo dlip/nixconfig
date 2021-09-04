@@ -57,7 +57,7 @@
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    spc
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
   tab  @q   @w   @f   @p   b    j    l    u    y    ;    \    _    _
   bspc @a   @r   @s   @t   @g   @m   @n   @e   @i   @o   ret  _
   esc  @z   @x   @c   @d   v    k    h    ,    .    '    /
@@ -67,6 +67,8 @@
 (defalias
   bk A-left
   fwd A-right
+  sc C-S-c
+  sp C-S-v
 
   pgd (tap-hold-next-release 200 pgdn lmet)
   lft (tap-hold-next-release 200 lft lalt)
@@ -82,9 +84,9 @@
 (deflayer navnum
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    pgup home up   end  _    [    7    8    9    ]    _    _    _
-  _    @pgd @lft @dwn @rgt caps =    @4   @5   @6   @0   _    _
-  _    grv  _    del  tab  _    -    1    2    3    .    _
+  _    pgup home up   end  prnt  [    7    8    9    ]    _    _    _
+  _    @pgd @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
+  _    grv  del  @sc  @sp  caps -    1    2    3    .    _
   _    _    _              _              _    _    _    _
 )
 
