@@ -7,12 +7,12 @@
     };
   };
 
-  services.emacs = {
-    enable = true;
-    # temporarily disable to work around a desktop file collision issue
-    # https://github.com/nix-community/emacs-overlay/issues/58
-    # client.enable = true;
-  };
+  # services.emacs = {
+  #   enable = true;
+  #   # temporarily disable to work around a desktop file collision issue
+  #   # https://github.com/nix-community/emacs-overlay/issues/58
+  #   # client.enable = true;
+  # };
 
   home.packages = with pkgs; [
     aspell
@@ -22,7 +22,7 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsGcc;
+    package = pkgs.emacsNg;
     extraPackages = (epkgs:
       (with epkgs; [
         ace-window
@@ -44,7 +44,8 @@
         embark-consult
         expand-region
         flycheck
-        forge
+        # yaml taking ages to compile
+        # forge
         format-all
         general
         go-mode

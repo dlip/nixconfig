@@ -1,4 +1,15 @@
 {
+  nixConfig = {
+    extra-substituters = [
+      "https://nix-community.cachix.org"
+      "https://emacsng.cachix.org"
+    ];
+    extra-trusted-public-keys = [
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "emacsng.cachix.org-1:i7wOr4YpdRpWWtShI8bT6V7lOTnPeI7Ho6HaZegFWMI="
+    ];
+  };
+
   inputs = {
     nixos.url = "github:NixOS/nixpkgs/nixos-21.05";
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -13,7 +24,9 @@
       flake = false;
     };
     flake-utils.url = "github:numtide/flake-utils";
-    emacs-overlay.url = "github:nix-community/emacs-overlay";
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+    };
     kmonad = {
       url = "github:kmonad/kmonad";
       flake = false;
@@ -26,6 +39,12 @@
       url = "github:zsa/wally-cli";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
+    };
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+    };
+    emacs-ng = {
+      url = "github:emacs-ng/emacs-ng";
     };
   };
 
@@ -42,6 +61,8 @@
     , kmonad
     , emoji-menu
     , wally-cli
+    , rust-overlay
+    , emacs-ng
     }:
     let
       getPkgs = pkgs: system: import pkgs {
@@ -54,7 +75,9 @@
             kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { };
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             wally-cli = wally-cli.defaultPackage.${system};
+            emacsNg = emacs-ng.defaultPackage.${system};
           })
+          rust-overlay.overlay
           emacs-overlay.overlay
         ];
       };
