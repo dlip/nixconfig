@@ -75,7 +75,9 @@
             kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { };
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             wally-cli = wally-cli.defaultPackage.${system};
-            emacsNg = emacs-ng.defaultPackage.${system};
+            emacsNg = emacs-ng.defaultPackage.${system};/*.overrideAttrs (old: {
+              withWebrender = true;
+            });*/
           })
           rust-overlay.overlay
           emacs-overlay.overlay
