@@ -8,25 +8,25 @@
       '';
   };
 
-  services.stalonetray = {
+  services.dunst = {
     enable = true;
-    config = {
-      decorations = null;
-      transparent = false;
-      dockapp_mode = null;
-      geometry = "6x1-400+4";
-      max_geometry = "0x0";
-      background = "#313846";
-      kludges = "force_icons_size";
-      grow_gravity = "NE";
-      icon_gravity = "NE";
-      icon_size = 21;
-      sticky = true;
-      # window_strut = null;
-      window_type = "dock";
-      window_layer = "bottom";
-      # no_shrink = false;
-      skip_taskbar = true;
+    iconTheme = {
+      name = "Adwaita";
+      package = pkgs.gnome3.adwaita-icon-theme;
+      size = "16x16";
+    };
+    settings = {
+      global = {
+        monitor = 0;
+        geometry = "600x50-50+65";
+        shrink = "yes";
+        transparency = 10;
+        padding = 16;
+        horizontal_padding = 16;
+        font = "FiraCode Nerd Font 10";
+        line_height = 4;
+        format = ''<b>%s</b>\n%b'';
+      };
     };
   };
 
@@ -40,6 +40,8 @@
     xmobar
     lemonbar
     conky
+    dunst
+    leftwm
   ];
 
 }
