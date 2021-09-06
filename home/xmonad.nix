@@ -22,7 +22,6 @@ let
 
 in
 {
-  services.network-manager-applet.enable = true;
   xsession = {
     enable = true;
 
@@ -212,15 +211,19 @@ in
     enable = true;
     tray = "always";
   };
+  services.network-manager-applet.enable = true;
   services.blueman-applet.enable = true;
   services.pasystray.enable = true;
   services.clipmenu.enable = true;
   services.dropbox.enable = true;
   services.flameshot.enable = true;
+
   home.packages = with pkgs; [
     launch-default-programs
     update-wallpaper
     lock-screen
+    ssuspend
+
     feh
     xmobar
     alttab
@@ -231,7 +234,6 @@ in
     betterlockscreen
     brightnessctl
     networkmanager_dmenu
-    ssuspend
     notify-desktop
   ];
 }

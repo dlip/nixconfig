@@ -1,6 +1,6 @@
 modkey = "Mod4"
 mousekey = "Mod4"
-workspaces = []
+workspaces = [ ]
 tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
 layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
 scratchpad = []
@@ -38,8 +38,8 @@ key = "q"
 
 [[keybind]]
 command = "Execute"
-value = "slock"
-modifier = ["modkey", "Control"]
+value = "lock-screen"
+modifier = ["modkey"]
 key = "l"
 
 [[keybind]]
@@ -48,44 +48,24 @@ modifier = ["modkey", "Shift"]
 key = "w"
 
 [[keybind]]
+command = "FocusNextTag"
+modifier = ["modkey"]
+key = "s"
+
+[[keybind]]
+command = "FocusPreviousTag"
+modifier = ["modkey"]
+key = "f"
+
+[[keybind]]
 command = "SwapTags"
 modifier = ["modkey"]
 key = "w"
 
 [[keybind]]
-command = "MoveWindowUp"
-modifier = ["modkey", "Shift"]
-key = "k"
-
-[[keybind]]
-command = "MoveWindowDown"
-modifier = ["modkey", "Shift"]
-key = "j"
-
-[[keybind]]
 command = "MoveWindowTop"
 modifier = ["modkey"]
 key = "m"
-
-[[keybind]]
-command = "FocusWindowUp"
-modifier = ["modkey"]
-key = "k"
-
-[[keybind]]
-command = "FocusWindowDown"
-modifier = ["modkey"]
-key = "j"
-
-[[keybind]]
-command = "NextLayout"
-modifier = ["modkey", "Control"]
-key = "k"
-
-[[keybind]]
-command = "PreviousLayout"
-modifier = ["modkey", "Control"]
-key = "j"
 
 [[keybind]]
 command = "MoveWindowUp"
@@ -119,12 +99,12 @@ key = "t"
 
 [[keybind]]
 command = "FocusWorkspaceNext"
-modifier = ["modkey"]
+modifier = ["modkey", "Control"]
 key = "s"
 
 [[keybind]]
 command = "FocusWorkspacePrevious"
-modifier = ["modkey"]
+modifier = ["modkey", "Control"]
 key = "f"
 
 [[keybind]]
@@ -234,3 +214,8 @@ command = "MoveToTag"
 value = "9"
 modifier = ["modkey", "Shift"]
 key = "9"
+
+[[keybind]]
+command = "ToggleFullScreen"
+modifier = ["modkey"]
+key = "g"

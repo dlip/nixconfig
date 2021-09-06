@@ -3,7 +3,7 @@
     ./alacritty.nix
     ./rofi.nix
     ./vscode.nix
-    ./leftwm.nix
+    ./leftwm
   ];
 
   home.packages = with pkgs; [
