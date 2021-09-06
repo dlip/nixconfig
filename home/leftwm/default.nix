@@ -91,6 +91,7 @@ in
     leftwm
     kitty
     stalonetray
+    trayer
   ];
 
 }
