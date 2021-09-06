@@ -19,7 +19,7 @@ ln -s $SCRIPTPATH/down /tmp/leftwm-theme-down
 echo "LoadTheme $SCRIPTPATH/theme.toml" > $XDG_RUNTIME_DIR/leftwm/commands.pipe
 
 if [ -x "$(command -v trayer)" ]; then
-  trayer --edge top --transparent true --width 10 --height 25 --alpha 255 &> /dev/null &
+  trayer --edge top --tint 0x313846 --transparent true --alpha 0 --width 10 --height 22 --heighttype pixel --align right --distancefrom right --distance 400 &> /dev/null &
 fi
 
 if [ -x "$(command -v betterlockscreen)" ]; then
