@@ -1,8 +1,8 @@
 modkey = "Mod4"
 mousekey = "Mod4"
 workspaces = [ ]
-tags = ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
-layouts = ["MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "Monocle", "RightWiderLeftStack", "LeftWiderRightStack"]
+tags = ["1", "2", "3", "4"]
+layouts = ["Monocle", "MainAndVertStack", "MainAndHorizontalStack", "MainAndDeck", "GridHorizontal", "EvenHorizontal", "EvenVertical", "Fibonacci", "CenterMain", "CenterMainBalanced", "RightWiderLeftStack", "LeftWiderRightStack"]
 scratchpad = []
 disable_current_tag_swap = false
 focus_behaviour = "Sloppy"
@@ -22,13 +22,13 @@ key = "Return"
 
 [[keybind]]
 command = "CloseWindow"
-modifier = ["modkey", "Shift"]
-key = "c"
+modifier = ["modkey"]
+key = "w"
 
 [[keybind]]
 command = "SoftReload"
-modifier = ["modkey", "Shift", "Control"]
-key = "r"
+modifier = ["modkey"]
+key = "q"
 
 [[keybind]]
 command = "Execute"
@@ -50,17 +50,17 @@ key = "w"
 [[keybind]]
 command = "FocusNextTag"
 modifier = ["modkey"]
-key = "s"
+key = "t"
 
 [[keybind]]
 command = "FocusPreviousTag"
 modifier = ["modkey"]
-key = "f"
+key = "r"
 
 [[keybind]]
 command = "SwapTags"
 modifier = ["modkey"]
-key = "w"
+key = "Tab"
 
 [[keybind]]
 command = "MoveWindowTop"
@@ -70,150 +70,90 @@ key = "m"
 [[keybind]]
 command = "MoveWindowUp"
 modifier = ["modkey", "Shift"]
-key = "r"
+key = "f"
 
 [[keybind]]
 command = "MoveWindowDown"
 modifier = ["modkey", "Shift"]
-key = "t"
+key = "s"
 
 [[keybind]]
 command = "FocusWindowUp"
 modifier = ["modkey"]
-key = "r"
+key = "f"
 
 [[keybind]]
 command = "FocusWindowDown"
 modifier = ["modkey"]
-key = "t"
-
-[[keybind]]
-command = "NextLayout"
-modifier = ["modkey", "Control"]
-key = "r"
-
-[[keybind]]
-command = "PreviousLayout"
-modifier = ["modkey", "Control"]
-key = "t"
-
-[[keybind]]
-command = "FocusWorkspaceNext"
-modifier = ["modkey", "Control"]
 key = "s"
 
 [[keybind]]
+command = "NextLayout"
+modifier = ["modkey", "Shift"]
+key = "t"
+
+[[keybind]]
+command = "PreviousLayout"
+modifier = ["modkey", "Shift"]
+key = "r"
+
+[[keybind]]
+command = "FocusWorkspaceNext"
+modifier = ["modkey", "Shift", "Control"]
+key = "t"
+
+[[keybind]]
 command = "FocusWorkspacePrevious"
-modifier = ["modkey", "Control"]
-key = "f"
+modifier = ["modkey", "Shift", "Control"]
+key = "r"
 
 [[keybind]]
 command = "GotoTag"
 value = "1"
 modifier = ["modkey"]
-key = "1"
+key = "z"
 
 [[keybind]]
 command = "GotoTag"
 value = "2"
 modifier = ["modkey"]
-key = "2"
+key = "x"
 
 [[keybind]]
 command = "GotoTag"
 value = "3"
 modifier = ["modkey"]
-key = "3"
+key = "c"
 
 [[keybind]]
 command = "GotoTag"
 value = "4"
 modifier = ["modkey"]
-key = "4"
-
-[[keybind]]
-command = "GotoTag"
-value = "5"
-modifier = ["modkey"]
-key = "5"
-
-[[keybind]]
-command = "GotoTag"
-value = "6"
-modifier = ["modkey"]
-key = "6"
-
-[[keybind]]
-command = "GotoTag"
-value = "7"
-modifier = ["modkey"]
-key = "7"
-
-[[keybind]]
-command = "GotoTag"
-value = "8"
-modifier = ["modkey"]
-key = "8"
-
-[[keybind]]
-command = "GotoTag"
-value = "9"
-modifier = ["modkey"]
-key = "9"
+key = "d"
 
 [[keybind]]
 command = "MoveToTag"
 value = "1"
 modifier = ["modkey", "Shift"]
-key = "1"
+key = "z"
 
 [[keybind]]
 command = "MoveToTag"
 value = "2"
 modifier = ["modkey", "Shift"]
-key = "2"
+key = "x"
 
 [[keybind]]
 command = "MoveToTag"
 value = "3"
 modifier = ["modkey", "Shift"]
-key = "3"
+key = "c"
 
 [[keybind]]
 command = "MoveToTag"
 value = "4"
 modifier = ["modkey", "Shift"]
-key = "4"
-
-[[keybind]]
-command = "MoveToTag"
-value = "5"
-modifier = ["modkey", "Shift"]
-key = "5"
-
-[[keybind]]
-command = "MoveToTag"
-value = "6"
-modifier = ["modkey", "Shift"]
-key = "6"
-
-[[keybind]]
-command = "MoveToTag"
-value = "7"
-modifier = ["modkey", "Shift"]
-key = "7"
-
-[[keybind]]
-command = "MoveToTag"
-value = "8"
-modifier = ["modkey", "Shift"]
-key = "8"
-
-[[keybind]]
-command = "MoveToTag"
-value = "9"
-modifier = ["modkey", "Shift"]
-key = "9"
+key = "d"
 
 [[keybind]]
 command = "ToggleFullScreen"
