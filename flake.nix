@@ -35,6 +35,10 @@
       url = "github:jchook/emoji-menu";
       flake = false;
     };
+    power-menu = {
+      url = "github:jluttine/rofi-power-menu";
+      flake = false;
+    };
     wally-cli = {
       url = "github:zsa/wally-cli";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -60,6 +64,7 @@
     , emacs-overlay
     , kmonad
     , emoji-menu
+    , power-menu
     , wally-cli
     , rust-overlay
     , emacs-ng
@@ -74,6 +79,7 @@
             envy-sh = envy-sh.defaultPackage.${system};
             kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { };
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
+            power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
             wally-cli = wally-cli.defaultPackage.${system};
             emacsNg = emacs-ng.defaultPackage.${system};/*.overrideAttrs (old: {
               withWebrender = true;

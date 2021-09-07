@@ -430,6 +430,22 @@
         "type": "github"
       }
     },
+    "power-menu": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1612008659,
+        "narHash": "sha256-Bkc87BXSnAR517wCkyOAfoACYx/5xprDGJQhLWGUNns=",
+        "owner": "jluttine",
+        "repo": "rofi-power-menu",
+        "rev": "368ba43f9b9c367288fb2dfc090902434b1de1ee",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jluttine",
+        "repo": "rofi-power-menu",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "emacs-ng": "emacs-ng",
@@ -442,6 +458,7 @@
         "kmonad": "kmonad",
         "nixos": "nixos",
         "nixpkgs": "nixpkgs_3",
+        "power-menu": "power-menu",
         "rust-overlay": "rust-overlay_2",
         "sops-nix": "sops-nix",
         "wally-cli": "wally-cli"

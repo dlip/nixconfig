@@ -3,7 +3,7 @@
     ./alacritty.nix
     ./rofi.nix
     ./vscode.nix
-    ./leftwm
+    ./xmonad.nix
   ];
 
   home.packages = with pkgs; [
@@ -16,6 +16,7 @@
     discord
     drawio
     emoji-menu
+    power-menu
     firefox
     gimp
     gnome.file-roller

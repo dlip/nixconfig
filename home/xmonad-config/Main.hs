@@ -137,6 +137,7 @@ main =
                               ("M-w", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -modi windowcd -show windowcd"),
                               ("M-S-w", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -modi window -show window"),
                               ("M-;", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show-icons -show combi -combi-modi 'drun,run' -modi combi"),
+                              ("M-<Delete>", spawn "rofi -show power-menu -modi power-menu:power-menu"),
                               ("M-<Return>", namedScratchpadAction scratchpads "alacritty"),
                               ("M-S-<Return>", spawn "alacritty"),
                               ("M-l", spawn "lock-screen"),
