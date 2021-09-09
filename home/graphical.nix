@@ -9,6 +9,7 @@
   home.packages = with pkgs; [
     alttab
     anki
+    audacity
     blender
     calibre
     chromium

@@ -120,7 +120,7 @@
             nixConfigPath = homeDirectory + "/code/nixconfig";
           };
 
-          personal-nixos = personal // { extraImports = [ ./home/graphical.nix ]; };
+          personal-nixos = personal // { extraImports = [ ./home/graphical.nix ./home/gaming.nix ]; };
 
           tv = rec {
             username = "tv";

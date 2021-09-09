@@ -154,9 +154,9 @@ main =
                               ("<XF86AudioNext>", spawn "playerctl next"),
                               ("<XF86AudioPrev>", spawn "playerctl previous"),
                               ("<XF86AudioStop>", spawn "playerctl stop"),
-                              ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%"),
-                              ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%"),
-                              ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@"),
+                              ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -5% && volnoti-show $(pamixer --get-volume) && play ~/Music/volume.mp3"),
+                              ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5% && volnoti-show $(pamixer --get-volume) && play ~/Music/volume.mp3"),
+                              ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ && volnoti-show $(pamixer --get-volume)"),
                               ("<XF86MonBrightnessUp>", spawn "brightnessctl set +5%"),
                               ("<XF86MonBrightnessDown>", spawn "brightnessctl set 5%-")
                             ]
