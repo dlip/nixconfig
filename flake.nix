@@ -189,8 +189,9 @@
               modules =
                 [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
             };
-            dex = nixos.lib.nixosSystem {
+            dex = nixpkgs.lib.nixosSystem {
               inherit system;
+              pkgs = pkgsUnstable;
               modules = [ ./systems/dex/configuration.nix ];
             };
             g = nixpkgs.lib.nixosSystem {
