@@ -82,6 +82,7 @@
     sqlite
     stack
     tcpdump
+    tesseract4
     tektoncd-cli
     tldr
     tshark
