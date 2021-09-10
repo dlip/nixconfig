@@ -82,6 +82,7 @@
     sqlite
     stack
     tcpdump
+    tesseract4
     tektoncd-cli
     tldr
     tshark
@@ -91,6 +92,7 @@
     wally-cli
     wget
     yarn
+    youtube-dl
     yubikey-manager
   ];
 }

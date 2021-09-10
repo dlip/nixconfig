@@ -3,12 +3,13 @@
     ./alacritty.nix
     ./rofi.nix
     ./vscode.nix
-    ./leftwm
+    ./xmonad.nix
   ];
 
   home.packages = with pkgs; [
     alttab
     anki
+    audacity
     blender
     calibre
     chromium
@@ -16,6 +17,7 @@
     discord
     drawio
     emoji-menu
+    power-menu
     firefox
     gimp
     gnome.file-roller

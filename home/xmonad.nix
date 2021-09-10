@@ -217,6 +217,7 @@ in
   services.clipmenu.enable = true;
   services.dropbox.enable = true;
   services.flameshot.enable = true;
+  services.volnoti.enable = true;
 
   home.packages = with pkgs; [
     launch-default-programs
@@ -230,6 +231,8 @@ in
     light
     scrot
     playerctl
+    pamixer
+    sox
     dmenu
     betterlockscreen
     brightnessctl
