@@ -92,6 +92,7 @@
     wally-cli
     wget
     yarn
+    youtube-dl
     yubikey-manager
   ];
 }

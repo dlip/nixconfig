@@ -136,8 +136,8 @@ main =
                               ("M-e", spawn "emoji-menu"),
                               ("M-w", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -modi windowcd -show windowcd"),
                               ("M-S-w", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -modi window -show window"),
-                              ("M-;", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show-icons -show combi -combi-modi 'drun,run' -modi combi"),
-                              ("M-<Delete>", spawn "rofi -show power-menu -modi power-menu:power-menu"),
+                              ("M-p", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show-icons -show combi -combi-modi 'drun,run' -modi combi"),
+                              ("M-S-q", spawn "rofi -show power-menu -modi power-menu:power-menu"),
                               ("M-<Return>", namedScratchpadAction scratchpads "alacritty"),
                               ("M-S-<Return>", spawn "alacritty"),
                               ("M-l", spawn "lock-screen"),
@@ -154,9 +154,9 @@ main =
                               ("<XF86AudioNext>", spawn "playerctl next"),
                               ("<XF86AudioPrev>", spawn "playerctl previous"),
                               ("<XF86AudioStop>", spawn "playerctl stop"),
-                              ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -5%"),
-                              ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5%"),
-                              ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@"),
+                              ("<XF86AudioLowerVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ -5% && volnoti-show $(pamixer --get-volume) && play ~/Music/volume.mp3"),
+                              ("<XF86AudioRaiseVolume>", spawn "pactl set-sink-volume @DEFAULT_SINK@ +5% && volnoti-show $(pamixer --get-volume) && play ~/Music/volume.mp3"),
+                              ("<XF86AudioMute>", spawn "pactl set-sink-mute @DEFAULT_SINK@ && volnoti-show $(pamixer --get-volume)"),
                               ("<XF86MonBrightnessUp>", spawn "brightnessctl set +5%"),
                               ("<XF86MonBrightnessDown>", spawn "brightnessctl set 5%-")
                             ]
