@@ -104,7 +104,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    @rw  volu @ff  brup _    _    _    _    _    _    _    _
-  _    lmet @pre @pp  @nxt brdn _    rctl rsft lalt rmet _    _
+  _    lmet @pre @pp  @nxt brdn @gam rctl rsft lalt rmet _    _
   _    _    mute vold stop _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
@@ -113,7 +113,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    slck f7   f8   f9   f10  _    _    _
-  _    lmet lalt lsft lctl _    @gam f4   f5   f6   f11  _    _
+  _    lmet lalt lsft lctl _    _    f4   f5   f6   f11  _    _
   _    _    _    _    _    _    @pau f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
 )

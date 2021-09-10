@@ -13,6 +13,7 @@
     blender
     calibre
     chromium
+    cozy
     dbeaver
     discord
     drawio
@@ -26,9 +27,11 @@
     gwenview
     kdenlive
     krita
+    koreader
     lens
     libreoffice
     logseq
+    mindforger
     mpv
     nyxt
     obs-studio
@@ -42,6 +45,7 @@
     vial
     vlc
     xclip
+    yacreader
     yubikey-manager-qt
     yubioath-desktop
     zathura
