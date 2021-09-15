@@ -1,13 +1,10 @@
-;; reducing the number of layers helped, but does require some timing with ctrl p etc
-;; probably better to just use alts as esc and enter
-;; no timed modifiers, double tap mods maybe ok?
-;; no hold with 2 fingers on the same hand, maybe left hand can have consecutive presses?
-
+;; using space as the only dual as an exception
 
 (defcfg
   ;; ** For Linux **
   ;;input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
-  input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-foostan_Corne_vial:f64c2b3c-event-kbd")
   ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
   output (uinput-sink "KMonad output")
 
@@ -32,16 +29,7 @@
 )
 
 (defalias
-  a (tap-hold-next-release 200 a lmet)
-  r (tap-hold-next-release 200 r lalt)
-  s (tap-hold-next-release 200 s lsft)
-  t (tap-hold-next-release 200 t lctl)
-
-  n (tap-hold-next-release 200 n rctl)
-  e (tap-hold-next-release 200 e rsft)
-  i (tap-hold-next-release 200 i lalt)
-  o (tap-hold-next-release 200 o rmet)
-
+  spc (tap-hold-next-release 200 spc lsft)
   med (layer-toggle mediafn)
 
   gam (layer-switch gaming)
@@ -49,55 +37,58 @@
   tab (tap-hold 300 tab A-tab)
 
   lft (sticky-key 1500 (layer-toggle left))
-  lfa (sticky-key 1500 (layer-toggle lefta))
+  num (sticky-key 1500 (layer-toggle num))
   rgt (sticky-key 1500 (layer-toggle right))
-  rga (sticky-key 1500 (layer-toggle righta))
+  nav (sticky-key 1500 (layer-toggle nav))
 )
-;; options
-;;
+
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    spc
-  grv  q    w    f    p    b    j    l    u    y    ;    \    _    _
+  tab  q    w    f    p    b    j    l    u    y    ;    \    _    _
   bspc a    r    s    t    g    m    n    e    i    o    ret  _
-  tab  z    x    c    d    v    k    h    ,    .    '    esc
-  _    _    @lft           spc            @rgt _    _    _
+  esc  z    x    c    d    v    k    h    ,    .    '    esc
+  _    _    @lft           @spc           @rgt _    _    _
+)
+
+
+(deflayer right
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    rctl @nav lalt lmet _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    -              _              _    _    _    _
 )
 
 (deflayer left
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    lmet lalt @lfa lctl _    _    _    _    _    _    _    _
-  _    @und @cut @cp  _    _    _    _    _    _    _    _
-  _    _    _              lsft           _    _    _    _
-)
-What Are You Talking
-(deflayer right
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    rctl @rga lalt rmet _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    -              lsft              _    _    _    _
+  _    lmet lalt @num lctl tab  _    _    _    _    _    _    _
+  _    @und @cut @cp  @pst _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
 )
 
-(deflayer lefta
+
+(deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    =    7    8    9    \    _    _    _
-  _    lmet lalt _    lctl _    -    4    5    6    0    _    _
-  _    @und @cut @cp  lmet _    _    [    1    2    3    ]
-  _    _    _              _                   _    _    _    _
+  _    _    _    _    _    _    [    7    8    9    ]    _    _    _
+  _    _    _    _    _    _    =    4    5    6    0    _    _
+  _    _    _    _    _    _    -    1    2    3    grv  _
+  _    _    _              _              _    _    _    _
 )
-(deflayer righta
+
+(deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    home up   end  pgup _    _    _    _    _    _    _    _
-  _    del  lft  down rght pgdn _    rctl @rga lalt rmet _    _
-  _    _    @bk  caps @fwd prnt _    _    _    _    _    _
+  _    pgup home up   end  prnt _    _    _    _    _    _    _    _
+  _    pgdn lft  down rght pgdn _    _    _    _    _    _    _
+  _    _    del  _    _    caps _    _    _    _    _    _
   _    _    -              _              _    _    _    _
 )
+
 (defalias
   bk A-left
   fwd A-right
@@ -107,12 +98,6 @@ What Are You Talking
   cut C-x
   cp C-c
   pst C-v
-
-
-  4 (tap-hold-next-release 200 4 rctl)
-  5 (tap-hold-next-release 200 5 rsft)
-  6 (tap-hold-next-release 200 6 lalt)
-  0 (tap-hold-next-release 200 0 rmet)
 )
 
 

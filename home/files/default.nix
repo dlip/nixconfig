@@ -14,6 +14,10 @@
       zoom_out 5
     '';
 
+    ".config/zathura/zathurarc".text = ''
+      set selection-clipboard clipboard
+    '';
+
     #  ".config/starship.toml".text = ''
     #   [nix_shell]
     #   use_name = false
