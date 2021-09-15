@@ -16,7 +16,10 @@
       status = { showUntrackedFiles = "all"; };
       transfer = { fsckobjects = false; };
       push = { default = "current"; };
-      pull = { default = "current"; };
+      pull = {
+        rebase = false;
+        default = "current";
+      };
       color = { ui = true; };
       merge = {
         conflictstyle = "diff3";
