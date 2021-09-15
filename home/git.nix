@@ -7,6 +7,7 @@
     userName = name;
 
     extraConfig = {
+      init.defaultBranch = "main";
       core = {
         pager = "less -R";
         autocrlf = "input";

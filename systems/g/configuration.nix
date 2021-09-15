@@ -183,6 +183,10 @@ in
     shell = "/home/dane/.nix-profile/bin/zsh";
   };
 
+  virtualisation.docker.enable = true;
+  virtualisation.docker.enableNvidia = true;
+  systemd.enableUnifiedCgroupHierarchy = false;
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [

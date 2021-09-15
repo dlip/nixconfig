@@ -71,9 +71,9 @@
     proselint
     python
     python3
-    python38Packages.grip
-    python38Packages.pip
-    python38Packages.setuptools
+    python39Packages.grip
+    python39Packages.pip
+    python39Packages.setuptools
     ripgrep
     rnix-lsp
     rustup

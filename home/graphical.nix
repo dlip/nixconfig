@@ -24,14 +24,13 @@
     gnome.file-roller
     gnome.seahorse
     godot
+    gramps
     gwenview
     kdenlive
     krita
     koreader
     lens
     libreoffice
-    logseq
-    mindforger
     mpv
     nyxt
     obs-studio
@@ -45,6 +44,7 @@
     vial
     vlc
     xclip
+    xfce.thunar
     yacreader
     yubikey-manager-qt
     yubioath-desktop
