@@ -1,4 +1,4 @@
-{ hostname, intelBusId, nvidiaBusId }:
+{ hostname }:
 { config, pkgs, lib, ... }:
 
 let
@@ -128,23 +128,6 @@ in
   };
 
   programs.nm-applet.enable = true;
-
-  services.xserver.screenSection = ''
-    Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
-    Option         "AllowIndirectGLXProtocol" "off"
-    Option         "TripleBuffer" "on"
-  '';
-
-  services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.prime = {
-    #sync.enable = true;
-
-    offload.enable = true;
-    # Bus ID of the Intel GPU. You can find it using lspci, either under 3D or VGA
-    inherit intelBusId;
-    # Bus ID of the NVIDIA GPU. You can find it using lspci, either under 3D or VGA
-    inherit nvidiaBusId;
-  };
   hardware.opengl.driSupport32Bit = true;
 
   # Enable the Plasma 5 Desktop Environment.

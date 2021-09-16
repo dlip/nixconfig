@@ -1,8 +1,6 @@
 { config, pkgs, lib, ... }:
 let params = {
   hostname = "metabox";
-  nvidiaBusId = "PCI:1:0:0";
-  intelBusId = "PCI:0:2:0";
 };
 in
 {
@@ -21,4 +19,18 @@ in
     docker = true;
     extraFlags = "--no-deploy traefik";
   };
+
+  services.xserver.screenSection = ''
+    Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
+    Option         "AllowIndirectGLXProtocol" "off"
+    Option         "TripleBuffer" "on"
+  '';
+
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.prime = {
+    sync.enable = true;
+    nvidiaBusId = "PCI:1:0:0";
+    intelBusId = "PCI:0:2:0";
+  };
+
 }
