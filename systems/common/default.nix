@@ -220,7 +220,7 @@ in
   services.restic.backups = {
     dex = {
       paths = [ "/home" "/root" "/var/lib" ];
-      repository = "rest:http://10.10.0.123:8000/${hostname}";
+      repository = "rest:http://dex:8000/${hostname}";
       passwordFile = "/root/restic-password";
       pruneOpts = [
         "--keep-daily 7"
