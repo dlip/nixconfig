@@ -8,7 +8,10 @@ in
   programs = {
     neovim = {
       enable = true;
+      viAlias = true;
       vimAlias = true;
+      vimdiffAlias = true;
+
       package = pkgs.neovim;
 
       extraPackages = with pkgs; [
@@ -63,10 +66,12 @@ in
             vim-surround
             vim-easy-align
             editorconfig-vim
-
+            vim-which-key # spacemacs-like leader key menu
+            nvim-whichkey-setup-lua
             plenary-nvim
             popup-nvim
             telescope
+
 
             nvim-lspconfig
             (

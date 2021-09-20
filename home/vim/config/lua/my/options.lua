@@ -13,8 +13,6 @@ local function opt(scope, key, value)
   if scope ~= 'o' then scopes['o'][key] = value end
 end
 
-g.mapleader = " "
-
 local indent = 2
 opt('b', 'expandtab', true)         -- Use spaces instead of tabs
 opt('b', 'shiftwidth', indent)      -- Size of an indent

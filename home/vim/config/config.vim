@@ -1,7 +1,7 @@
 " vim:fdm=marker
 
 colorscheme gruvbox
-
+set clipboard+=unnamedplus
 " Plugin options {{{
 " Highlight on yank
 augroup LuaHighlight
@@ -9,7 +9,10 @@ augroup LuaHighlight
   autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank()
 augroup END
 " }}}
-
+let g:mapleader = "\<Space>"
+let g:maplocalleader = ','
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
 " Keybindings {{{
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
