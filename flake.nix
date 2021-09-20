@@ -50,6 +50,15 @@
     emacs-ng = {
       url = "github:emacs-ng/emacs-ng";
     };
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    neovim = {
+      url = "github:neovim/neovim?dir=contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs =
@@ -68,6 +77,8 @@
     , wally-cli
     , rust-overlay
     , emacs-ng
+    , fenix
+    , neovim
     }:
     let
       getPkgs = pkgs: system: import pkgs {
@@ -87,6 +98,8 @@
           })
           rust-overlay.overlay
           emacs-overlay.overlay
+          fenix.overlay
+          neovim.overlay
         ];
       };
 
