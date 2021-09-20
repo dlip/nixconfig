@@ -238,6 +238,7 @@ in
     restic
     restic-dex
     yubikey-personalization
+    pulseaudio
   ];
   services.udev.packages = with pkgs; [ yubikey-personalization ];
   # To use the smart card mode (CCID) of Yubikey, you will need the PCSC-Lite daemon:
