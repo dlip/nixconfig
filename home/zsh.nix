@@ -30,6 +30,7 @@ in
 
       export NIXCONFIG=${configName}
       export GPG_TTY="$(tty)"
+      export HOME_MANAGER_BACKUP_EXT=backup
       gpg-connect-agent /bye
       export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
     '' + aliases;
