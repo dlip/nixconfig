@@ -38,6 +38,7 @@
         "[x]"
       ];
       "todo-tree.regex.regex" = "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)";
+      "vscode-lua-format.binaryPath" = "~/.nix-profile/bin/lua-format";
       "window.zoomLevel" = 1;
       "workbench.colorTheme" = "One Dark Pro";
       "workbench.editor.enablePreview" = false;

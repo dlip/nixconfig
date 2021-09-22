@@ -44,6 +44,8 @@
     kubetail
     ledger
     ledger-autosync
+    lua
+    luaformatter
     mdl
     my.nodePackages.unified-language-server
     ncdu
@@ -81,6 +83,7 @@
     skopeo
     sops
     sqlite
+    sumneko-lua-language-server
     stack
     tcpdump
     tektoncd-cli
