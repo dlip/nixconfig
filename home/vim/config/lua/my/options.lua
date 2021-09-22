@@ -10,7 +10,8 @@ local function opt(scope, key, value)
     scopes[scope][key] = value
     if scope ~= 'o' then scopes['o'][key] = value end
 end
-
+vim.opt.clipboard = 'unnamedplus'
+cmd[[colorscheme tokyonight]]
 local indent = 2
 opt('b', 'expandtab', true) -- Use spaces instead of tabs
 opt('b', 'shiftwidth', indent) -- Size of an indent

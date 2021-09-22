@@ -51,7 +51,6 @@ in
         set shadafile=${nvimHome}/viminfo
 
         lua require'my'
-        runtime config.vim
       '';
 
       plugins = with pkgs.vimPlugins;
@@ -72,7 +71,7 @@ in
             vim-fugitive
             vim-surround
             vim-which-key # spacemacs-like leader key menu
-
+            tokyonight-nvim
 
             nvim-lspconfig
             (

@@ -1,6 +1,5 @@
 require 'my.options'
 require 'my.keymap'
-
 require'trouble'.setup()
 require'gitsigns'.setup()
 require'nvim-treesitter.configs'.setup {

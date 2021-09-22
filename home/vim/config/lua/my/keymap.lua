@@ -20,25 +20,26 @@ local keymap = {
             c = {'<Cmd>Telescope commands<CR>', 'commands'},
             h = {'<Cmd>Telescope command_history<CR>', 'history'}
         },
-        g = {
-            name = '+git',
+        g = {'<Cmd>Telescope live_grep<CR>', 'grep'},
+        h = {'<Cmd>Telescope help_tags<CR>', 'help tags'},
+        m = {'<Cmd>Telescope man_pages<CR>', 'help tags'},
+        q = {'<Cmd>Telescope quickfix<CR>', 'quickfix'},
+        v = {
+            name = '+vcs',
             b = {'<Cmd>Telescope git_branches<CR>', 'branches'},
             c = {'<Cmd>Telescope git_bcommits<CR>', 'bcommits'},
             g = {'<Cmd>Telescope git_commits<CR>', 'commits'},
             s = {'<Cmd>Telescope git_status<CR>', 'status'}
         },
-        h = {'<Cmd>Telescope help_tags<CR>', 'help tags'},
-        q = {'<Cmd>Telescope quickfix<CR>', 'quickfix'}
     },
     g = {
         name = '+git',
         s = {':Git<CR>', 'Git Status'},
         g = {':Neogit<CR>', 'Neogit'},
-        l = {':LazyGit<CR>', 'Lazygit'},
-        d = {':DiffviewOpen<CR>', 'Diffview'},
         p = {':Neogit push<CR>', 'push'}
     },
     n = {':NvimTreeToggle<CR>', 'NvimTree'},
+    p = {'<Cmd>Telescope fd<CR>', 'buffers'},
     s = {':w!<CR>', 'save file'}, -- set a single command and text
     w = {
         name = '+window',
