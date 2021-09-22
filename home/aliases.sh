@@ -48,3 +48,7 @@ vterm_printf(){
         printf "\e]%s\e\\" "$1"
     fi
 }
+
+easyocr(){
+    nvidia-docker run -it --rm -v $HOME/.EasyOCR:/root/.EasyOCR -v $PWD:/workspace challisa/easyocr easyocr -l en --detail 0 --gpu true -f "$1"
+}

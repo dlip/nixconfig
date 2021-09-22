@@ -2,9 +2,9 @@
   home.packages = with pkgs; [
     appimage-run
     autoreconfHook
+    avrdude
     aws-google-auth
     awscli2
-    avrdude
     bat
     binutils
     cheat
@@ -52,6 +52,7 @@
     nixpkgs-fmt
     nmap
     nnn
+    nodejs
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.node2nix
@@ -61,13 +62,12 @@
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.yaml-language-server
-    nodejs
     openvpn
     p7zip
     pandoc
+    pinentry
     postgresql
     postman
-    pinentry
     proselint
     python
     python3
@@ -75,6 +75,7 @@
     python39Packages.pip
     python39Packages.setuptools
     ripgrep
+    ripgrep-all
     rnix-lsp
     rustup
     skopeo
@@ -82,8 +83,8 @@
     sqlite
     stack
     tcpdump
-    tesseract4
     tektoncd-cli
+    tesseract4
     tldr
     tshark
     unzip
