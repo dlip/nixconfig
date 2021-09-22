@@ -29,70 +29,26 @@
 )
 
 (defalias
-  a (tap-hold-next-release 200 a lmet)
-  r (tap-hold-next-release 200 r lalt)
-  s (tap-hold-next-release 200 s lsft)
-  t (tap-hold-next-release 200 t lctl)
-
-  n (tap-hold-next-release 200 n rctl)
-  e (tap-hold-next-release 200 e rsft)
-  i (tap-hold-next-release 200 i lalt)
-  o (tap-hold-next-release 200 o rmet)
-
   spc (tap-hold-next-release 200 spc (layer-toggle navnum))
-  nn (layer-toggle navnum)
-  fn (layer-toggle fn)
   med (layer-toggle media)
   gam (layer-switch gaming)
-
-  q (tap-hold 400 q A-f4)
-  w (tap-hold 400 w C-w)
-  p (tap-hold 200 p M-p)
-  f (tap-hold 200 f M-f)
-  g (tap-hold 200 g C-A-M-S)
-  m (tap-hold 200 m C-A-M-S)
-  z (tap-hold 200 z C-z)
-  x (tap-hold 200 x C-x)
-  c (tap-hold 200 c C-c)
-  d (tap-hold 200 d C-v)
-
-  tab (tap-hold 200 tab A-tab)
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  tab  q    w    f    p    b    j    l    u    y    ;    \    _    _
+  tab  q    w    f    p    b    j    l    u    y    ;    esc  _    _
   bspc a    r    s    t    g    m    n    e    i    o    ret  _
   lsft z    x    c    d    v    k    h    ,    .    '    rsft
   _    lalt lctl           @spc           lmet @med @med _
 )
 
-
-
-(defalias
-  bk A-left
-  fwd A-right
-  sc C-S-c
-  sp C-S-v
-
-  pgd (tap-hold-next-release 200 pgdn lmet)
-  lft (tap-hold-next-release 200 lft lalt)
-  dwn (tap-hold-next-release 200 down lsft)
-  rgt (tap-hold-next-release 200 rght lctl)
-
-  4 (tap-hold-next-release 200 4 rctl)
-  5 (tap-hold-next-release 200 5 rsft)
-  6 (tap-hold-next-release 200 6 lalt)
-  0 (tap-hold-next-release 200 0 rmet)
-)
-
 (deflayer navnum
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    pgup home up   end  prnt  [    7    8    9    ]    _    _    _
-  _    @pgd @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
-  _    grv  del  @sc  @sp  caps -    1    2    3    .    _
+  _    prnt home up   end  _    [    7    8    9    ]    _    _    _
+  _    del  lft  down rght caps =    4    5    6    0    _    _
+  _    grv  \    pgdn pgup _    -    1    2    3    /    _
   _    _    _              _              _    _    _    _
 )
 
@@ -100,27 +56,14 @@
   rw rewind
   ff fastforward
   pau pause
-
-  pre (tap-hold-next-release 200 prev lalt)
-  pp (tap-hold-next-release 200 pp lsft)
-  nxt (tap-hold-next-release 200 next lctl)
 )
 
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    @rw  volu @ff  brup _    _    _    _    _    _    _    _
-  _    lmet @pre @pp  @nxt brdn @gam rctl rsft lalt rmet _    _
-  _    _    mute vold stop _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-)
-
-(deflayer fn
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    slck f7   f8   f9   f10  _    _    _
-  _    lmet lalt lsft lctl _    _    f4   f5   f6   f11  _    _
-  _    _    _    _    _    _    @pau f1   f2   f3   f12  _
+  _    _    @rw  volu @ff  brup slck f7   f8   f9   f10  _    _    _
+  _    lmet prev pp   next brdn @gam f4   f5   f6   f11  _    _
+  _    _    mute vold stop _    @pau f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
 )
 
