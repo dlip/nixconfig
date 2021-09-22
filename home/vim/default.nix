@@ -61,16 +61,17 @@ in
         in
           [
             (pluginWithDeps gruvbox-nvim [ lush-nvim ])
-            undotree
-            vim-fugitive
-            vim-surround
-            vim-easy-align
             editorconfig-vim
-            vim-which-key # spacemacs-like leader key menu
+            neogit
             nvim-whichkey-setup-lua
             plenary-nvim
             popup-nvim
             telescope
+            undotree
+            vim-easy-align
+            vim-fugitive
+            vim-surround
+            vim-which-key # spacemacs-like leader key menu
 
 
             nvim-lspconfig
