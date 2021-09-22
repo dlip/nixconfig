@@ -1,0 +1,142 @@
+;; using space as shift on the layer
+
+(defcfg
+  ;; ** For Linux **
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne_vial:f64c2b3c-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
+  output (uinput-sink "KMonad output")
+
+  ;; ** For Windows **
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; ** For MacOS **
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  fallthrough true
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl cmp  rctl
+)
+
+(defalias
+  med (layer-toggle mediafn)
+
+  gam (layer-switch gaming)
+
+  tab (tap-hold 300 tab A-tab)
+
+  lft (sticky-key 1500 (layer-toggle left))
+  num (sticky-key 1500 (layer-toggle num))
+  rgt (sticky-key 1500 (layer-toggle right))
+  nav (sticky-key 1500 (layer-toggle nav))
+)
+
+(deflayer colemak-dh
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    spc
+  tab  q    w    f    p    b    j    l    u    y    ;    \    _    _
+  bspc a    r    s    t    g    m    n    e    i    o    ret  _
+  esc  z    x    c    d    v    k    h    ,    .    '    esc
+  _    _    @lft           spc           @rgt _    _    _
+)
+
+
+(deflayer right
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    rctl @nav lalt lmet _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    -              lsft           _    _    _    _
+)
+
+(deflayer left
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    lmet lalt @num lctl tab  _    _    _    _    _    _    _
+  _    @und @cut @cp  @pst _    _    _    _    _    _    _
+  _    _    _              lsft           _    _    _    _
+)
+
+
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    [    7    8    9    ]    _    _    _
+  _    _    _    _    _    _    =    4    5    6    0    _    _
+  _    _    _    _    _    _    -    1    2    3    grv  _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    pgup home up   end  prnt _    _    _    _    _    _    _    _
+  _    pgdn lft  down rght pgdn _    _    _    _    _    _    _
+  _    _    del  _    _    caps _    _    _    _    _    _
+  _    _    -              _              _    _    _    _
+)
+
+(defalias
+  bk A-left
+  fwd A-right
+  csp C-spc
+
+  und C-z
+  cut C-x
+  cp C-c
+  pst C-v
+)
+
+
+(defalias
+  rw rewind
+  ff fastforward
+  p pause
+
+  pre (tap-hold-next-release 200 prev lalt)
+  pp (tap-hold-next-release 200 pp lsft)
+  nxt (tap-hold-next-release 200 next lctl)
+)
+
+(deflayer mediafn
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    @rw  volu @ff  brup slck f7   f8   f9   f10  _    _    _
+  _    lmet @pre @pp  @nxt brdn _    f4   f5   f6   f11  _    _
+  _    _    mute vold stop _    @p   f1   f2   f3   f12  _
+  _    _    _              _              _    _    _    _
+)
+
+(defalias
+  col (layer-switch colemak-dh)
+)
+
+(deflayer gaming
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    q    w    e    r    t    _    _    _    _    _    _    _    _
+  lsft a    s    d    f    g    _    _    _    _    _    _    _
+  lctl z    x    c    v    b    _    _    _    _    _    _
+  _    esc  _              _              @col _    _    _
+)
+
+(deflayer empty
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
