@@ -49,7 +49,7 @@ in
         set directory=${nvimHome}/swaps
         set undodir=${nvimHome}/undo
         set shadafile=${nvimHome}/viminfo
-
+        let test#go#runner = 'gotest'
         lua require'my'
       '';
 
@@ -72,6 +72,7 @@ in
             vim-surround
             vim-which-key # spacemacs-like leader key menu
             tokyonight-nvim
+            vim-test
 
             nvim-lspconfig
             (
