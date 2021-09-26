@@ -35,7 +35,7 @@
     nyxt
     obs-studio
     obsidian
-    plexamp
+    # plexamp # sha incorrect
     qalculate-gtk
     slack
     spotify

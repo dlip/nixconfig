@@ -21,15 +21,11 @@ in
     nvidiaBusId = "PCI:1:0:0";
   };
 
-  systemd.services.kmonad = {
+  services.kmonad = {
     enable = true;
-    description = "kmonad";
-    wantedBy = [ "multi-user.target" ];
-    script = ''
-      ${pkgs.kmonad}/bin/kmonad -i 'device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd"' ${../../keymaps/kmonad/spaceonly2.kbd}
-    '';
+    configfiles = [
+      ../../keymaps/kmonad/spaceonly2.kbd
+    ];
   };
-
-
 }
 

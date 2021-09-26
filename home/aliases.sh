@@ -11,6 +11,7 @@ EOF
 }
 
 nixconfig(){
+    export HOME_MANAGER_BACKUP_EXT=backup-$(date +"%Y%m%d")
     pushd ~/code/nixconfig > /dev/null
     nix run .#homeConfigurations.$NIXCONFIG
     popd > /dev/null

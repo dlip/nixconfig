@@ -50,6 +50,7 @@
     my.nodePackages.unified-language-server
     ncdu
     neofetch
+    niv
     nixfmt
     nixpkgs-fmt
     nmap

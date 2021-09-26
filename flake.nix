@@ -28,8 +28,9 @@
       url = "github:nix-community/emacs-overlay";
     };
     kmonad = {
-      url = "github:kmonad/kmonad";
-      flake = false;
+      url = "github:dlip/kmonad/fix-nix-build?dir=nix";
+      inputs.nixpkgs.follows = "nixos";
+      inputs.flake-utils.follows = "flake-utils";
     };
     emoji-menu = {
       url = "github:jchook/emoji-menu";
@@ -88,7 +89,6 @@
           (final: prev: {
             my = final.callPackage ./pkgs { };
             envy-sh = envy-sh.defaultPackage.${system};
-            kmonad = final.haskellPackages.callPackage (import "${kmonad}/nix/kmonad.nix") { };
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
             wally-cli = wally-cli.defaultPackage.${system};
@@ -100,6 +100,7 @@
           emacs-overlay.overlay
           fenix.overlay
           neovim.overlay
+          kmonad.overlay
         ];
       };
 
@@ -216,7 +217,7 @@
             g = nixpkgs.lib.nixosSystem {
               inherit system;
               pkgs = pkgsUnstable;
-              modules = [ ./systems/g/configuration.nix ];
+              modules = [ ./systems/g/configuration.nix kmonad.nixosModule ];
             };
           };
       }

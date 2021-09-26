@@ -81,11 +81,6 @@ scratchpads =
       "nnn"
       "alacritty -t scratchpad-nnn -e nnn"
       (title =? "scratchpad-nnn")
-      nonFloating,
-    NS
-      "emacs"
-      "emacs"
-      (className =? "Emacs")
       nonFloating
   ]
   where
@@ -121,34 +116,31 @@ main =
                               ("M-t", windows W.focusDown),
                               ("M-S-r", windows W.swapUp),
                               ("M-S-t", windows W.swapDown),
-                              ("M-m", windows W.focusMaster),
-                              ("M-S-m", windows W.swapMaster),
+                              ("M-a", windows W.focusMaster),
+                              ("M-S-a", windows W.swapMaster),
                               ("M-f", prevWS),
                               ("M-s", nextWS),
                               ("M-S-f", shiftToPrev >> prevWS),
                               ("M-S-s", shiftToNext >> nextWS),
                               ("M-g", toggleFocus),
-                              ("M-,", sendMessage Shrink),
-                              ("M-.", sendMessage Expand),
+                              ("M-k", sendMessage Shrink),
+                              ("M-m", sendMessage Expand),
                               ("M-d", withFocused $ windows . W.sink),
-                              ("M-o", goToSelected defaultGSConfig),
                               ("M-S-;", spawn "launch-default-programs"),
-                              ("M-e", spawn "emoji-menu"),
+                              ("M-.", spawn "emoji-menu"),
                               ("M-w", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -modi windowcd -show windowcd"),
                               ("M-S-w", spawn "rofi -show-icons -hover-select -me-select-entry '' -me-accept-entry MousePrimary -modi window -show window"),
                               ("M-p", spawn "rofi -hover-select -me-select-entry '' -me-accept-entry MousePrimary -show-icons -show combi -combi-modi 'drun,run' -modi combi"),
-                              ("M-S-q", spawn "rofi -show power-menu -modi power-menu:power-menu"),
-                              ("M-<Return>", namedScratchpadAction scratchpads "alacritty"),
-                              ("M-S-<Return>", spawn "alacritty"),
+                              ("M-S-q", spawn "rofi -M-S-show power-menu -modi power-menu:power-menu"),
+                              ("M-e", namedScratchpadAction scratchpads "alacritty"),
+                              ("M-S-e", spawn "alacritty"),
                               ("M-l", spawn "lock-screen"),
-                              ("M-M1-C-S-h", namedScratchpadAction scratchpads "htop"),
-                              ("M-M1-C-S-f", namedScratchpadAction scratchpads "nnn"),
-                              ("M-M1-C-S-<Return>", namedScratchpadAction scratchpads "qalculate"),
-                              ("M-M1-C-S-b", spawn "update-wallpaper"),
-                              ("M-M1-C-S-c", spawn "CM_LAUNCHER=rofi clipmenu"),
-                              ("M-M1-C-S-e", namedScratchpadAction scratchpads "emacs"),
-                              ("M-M1-C-S-n", spawn "networkmanager_dmenu"),
-                              ("M-M1-C-S-v", spawn "vial"),
+                              ("M-x", kill),
+                              ("M-h", namedScratchpadAction scratchpads "htop"),
+                              ("M-n", namedScratchpadAction scratchpads "nnn"),
+                              ("M-<Return>", namedScratchpadAction scratchpads "qalculate"),
+                              ("M-b", spawn "update-wallpaper"),
+                              ("M-c", spawn "CM_LAUNCHER=rofi clipmenu"),
                               ("<Print>", spawn "flameshot gui"),
                               ("<XF86AudioPlay>", spawn "playerctl play-pause"),
                               ("<XF86AudioNext>", spawn "playerctl next"),
