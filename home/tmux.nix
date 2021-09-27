@@ -13,6 +13,7 @@
       continuum
       nord
       pain-control
+      extrakto
     ];
     keyMode = "vi";
     extraConfig = ''
