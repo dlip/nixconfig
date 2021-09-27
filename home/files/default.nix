@@ -1,8 +1,6 @@
 { ... }: {
   home.file = {
 
-    # tmux theme
-    ".palenight-tmux".source = ./palenight-tmux;
     ".config/networkmanager-dmenu".source = ./networkmanager-dmenu;
     ".config/feh/themes".text = ''
       feh --reverse --auto-rotate --fullscreen

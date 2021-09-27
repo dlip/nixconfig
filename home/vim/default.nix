@@ -73,6 +73,7 @@ in
             vim-which-key # spacemacs-like leader key menu
             tokyonight-nvim
             vim-test
+            vim-tmux-navigator
 
             nvim-lspconfig
             (
