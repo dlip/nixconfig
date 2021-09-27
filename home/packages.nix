@@ -28,6 +28,7 @@
     gnupg
     gnuplot
     go
+    gotop
     gopls
     graphviz
     haskellPackages.haskell-language-server
