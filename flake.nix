@@ -28,7 +28,7 @@
       url = "github:nix-community/emacs-overlay";
     };
     kmonad = {
-      url = "github:dlip/kmonad/fix-nix-build?dir=nix";
+      url = "github:kmonad/kmonad?dir=nix";
       inputs.nixpkgs.follows = "nixos";
       inputs.flake-utils.follows = "flake-utils";
     };

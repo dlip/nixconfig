@@ -14,6 +14,7 @@
       nord
       pain-control
       extrakto
+      tmux-fzf
     ];
     keyMode = "vi";
     extraConfig = ''
@@ -24,6 +25,8 @@
       set -g mouse on
       bind s split-window -h
       bind v split-window -v
+      TMUX_FZF_LAUNCH_KEY="C-f"
+      TMUX_FZF_POPUP=0
       bind-key r source-file ~/.config/tmux/tmux.conf \; display-message "config reloaded"
     '';
   };
