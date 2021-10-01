@@ -1,8 +1,8 @@
 (defcfg
   ;; ** For Linux **
-  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  ;;input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
   ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
-  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne_vial:f64c2b3c-event-kbd")
+  input  (device-file "/dev/input/by-id/usb-foostan_Corne_vial:f64c2b3c-event-kbd")
   ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
   output (uinput-sink "KMonad output")
 
@@ -27,30 +27,27 @@
 )
 
 (defalias
+  a (tap-hold-next-release 200 a lmet)
+  r (tap-hold-next-release 200 r lalt)
+  s (tap-hold-next-release 200 s (layer-toggle num))
+  t (tap-hold-next-release 200 t lctl)
 
-  hyp C-A-M-S
-  a (tap-hold 200 a @hyp)
-  r (tap-hold-next-release 200 r lmet)
-  s (tap-hold-next-release 200 s lctl)
-  t (tap-hold-next-release 200 t lalt)
+  n (tap-hold-next-release 200 n rctl)
+  e (tap-hold-next-release 200 e (layer-toggle nav))
+  i (tap-hold-next-release 200 i lalt)
+  o (tap-hold-next-release 200 o rmet)
 
-  n (tap-hold-next-release 200 n lalt)
-  e (tap-hold-next-release 200 e rctl)
-  i (tap-hold-next-release 200 i rmet)
-  o (tap-hold 200 o @hyp)
-
-  ses (tap-hold-next-release 200 esc lsft)
-  sen (tap-hold-next-release 200 ret rsft)
-
-  spc (tap-hold-next-release 200 spc (layer-toggle navnum))
-  fn (layer-toggle fn)
-  med (layer-toggle media)
+  spc (tap-hold-next-release 200 spc lsft)
+  fn (tap-hold-next-release 200 esc (layer-toggle fn))
+  med (tap-hold-next-release 200 ret (layer-toggle media))
   gam (layer-switch gaming)
 
   q (tap-hold 400 q A-f4)
   w (tap-hold 400 w C-w)
   p (tap-hold 200 p M-p)
   f (tap-hold 200 f M-f)
+  g (tap-hold 200 g C-A-M-S)
+  m (tap-hold 200 m C-A-M-S)
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
   c (tap-hold 200 c C-c)
@@ -63,33 +60,44 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   tab  @q   @w   @f   @p   b    j    l    u    y    ;    \    _    _
-  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o   del  _
+  bspc @a   @r   @s   @t   @g   @m   @n   @e   @i   @o   del  _
   grv  @z   @x   @c   @d   v    k    h    ,    .    '    /
-  _    @fn  @ses           @spc           @sen @med   _    _
+  _    _    @fn           @spc            @med  _    _    _
 )
 
 (defalias
   bk A-left
   fwd A-right
+  sc C-S-c
+  sp C-S-v
 
-  bkh (tap-hold-next-release 200 @bk @hyp)
-  lft (tap-hold-next-release 200 lft lmet)
-  dwn (tap-hold-next-release 200 down lctl)
-  rgt (tap-hold-next-release 200 rght lalt)
+  pgd (tap-hold-next-release 200 pgdn lmet)
+  lft (tap-hold-next-release 200 lft lalt)
+  dwn (tap-hold-next-release 200 down lsft)
+  rgt (tap-hold-next-release 200 rght lctl)
 
-  4 (tap-hold-next-release 200 4 ralt)
-  5 (tap-hold-next-release 200 5 rctl)
-  6 (tap-hold-next-release 200 6 rmet)
-  0 (tap-hold-next-release 200 0 @hyp)
+  4 (tap-hold-next-release 200 4 rctl)
+  5 (tap-hold-next-release 200 5 rsft)
+  6 (tap-hold-next-release 200 6 lalt)
+  0 (tap-hold-next-release 200 0 rmet)
 )
 
-(deflayer navnum
+(deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    prnt home up   end  _    [    7    8    9    ]    _    _    _
-  _    @bkh @lft @dwn @rgt @fwd  =    @4   @5   @6   @0   _    _
-  _    _    _    pgup pgdn caps  -    1    2    3    .    _
+  _    _    _    _    _    _    [    7    8    9    ]    _    _    _
+  _    _    _    _    _    _    =    4    5    6    0    _    _
+  _    _    _    _    _    _    -    1    2    3    grv  _
   _    _    _              _              _    _    _    _
+)
+
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    prnt home up   end  _    _    _    _    _    _    _    _    _
+  _    @bk  lft  down rght @fwd _    _    _    _    _    _    _
+  _    _    _    pgup pgdn caps _    _    _    _    _    _
+  _    _    -              _              _    _    _    _
 )
 
 (defalias
@@ -106,7 +114,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    @rw  volu @ff  brup _    _    _    _    _    _    _    _
-  _    lmet @pre @pp  @nxt brdn @gam lalt rctl rmet @hyp _    _
+  _    lmet @pre @pp  @nxt brdn @gam _    _    _    _    _    _
   _    _    mute vold stop _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
@@ -115,7 +123,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    slck f7   f8   f9   f10  _    _    _
-  _    @hyp lmet lctl lalt _    _    f4   f5   f6   f11  _    _
+  _    _    _    _    _    _    _    f4   f5   f6   f11  _    _
   _    _    _    _    _    _    @pau f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
 )
