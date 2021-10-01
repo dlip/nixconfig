@@ -44,6 +44,46 @@
       "workbench.editor.enablePreview" = false;
       "workbench.iconTheme" = "material-icon-theme";
       "workbench.startupEditor" = "none";
+      # Vim easymotion is required for Jump menu - <SPC> j
+      "vim.easymotion" = true;
+      # Use system clipboard for vim
+      "vim.useSystemClipboard" = true;
+      # Trigger the main which key menu with in the active editor with vim
+      # This cannot be put into keybindings.json because it will
+      # create conflict with Vim.
+      # https://github.com/stevenguh/spacecode/issues/3
+      "vim.normalModeKeyBindingsNonRecursive" = [
+        {
+          "before" = [ "<space>" ];
+          "commands" = [ "vspacecode.space" ];
+        }
+        {
+          "before" = [ "," ];
+          "commands" = [
+            "vspacecode.space"
+            {
+              "command" = "whichkey.triggerKey";
+              "args" = "m";
+            }
+          ];
+        }
+      ];
+      "vim.visualModeKeyBindingsNonRecursive" = [
+        {
+          "before" = [ "<space>" ];
+          "commands" = [ "vspacecode.space" ];
+        }
+        {
+          "before" = [ "," ];
+          "commands" = [
+            "vspacecode.space"
+            {
+              "command" = "whichkey.triggerKey";
+              "args" = "m";
+            }
+          ];
+        }
+      ];
     };
 
     keybindings = [
@@ -192,7 +232,8 @@
       }
     ];
 
-    extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace (import ./vscode-extensions.nix).extensions ++ (with pkgs.vscode-extensions; [
+    extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace
+      (import ./vscode-extensions.nix).extensions ++ (with pkgs.vscode-extensions; [
       ms-vscode.cpptools
       ms-vsliveshare.vsliveshare
     ]);
