@@ -27,59 +27,41 @@
 )
 
 (defalias
+
+  q (tap-hold 400 q A-f4)
+  w (tap-hold 400 w C-w)
+  f (tap-hold-next-release 200 f (layer-toggle fn))
+  p (tap-hold 200 p M-p)
+
+  u (tap-hold-next-release 200 u (layer-toggle media))
+
   a (tap-hold-next-release 200 a lmet)
   r (tap-hold-next-release 200 r lalt)
   s (tap-hold-next-release 200 s (layer-toggle num))
   t (tap-hold-next-release 200 t lctl)
+  g (tap-hold 200 g C-A-M-S)
 
+  m (tap-hold 200 m C-A-M-S)
   n (tap-hold-next-release 200 n rctl)
   e (tap-hold-next-release 200 e (layer-toggle nav))
   i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o rmet)
 
-  spc (tap-hold-next-release 200 spc lsft)
-  fn (tap-hold-next-release 200 esc (layer-toggle fn))
-  med (tap-hold-next-release 200 ret (layer-toggle media))
-  gam (layer-switch gaming)
-
-  q (tap-hold 400 q A-f4)
-  w (tap-hold 400 w C-w)
-  p (tap-hold 200 p M-p)
-  f (tap-hold 200 f M-f)
-  g (tap-hold 200 g C-A-M-S)
-  m (tap-hold 200 m C-A-M-S)
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
   c (tap-hold 200 c C-c)
   d (tap-hold 200 d C-v)
 
-  tab (tap-hold 200 tab A-tab)
+  spc (tap-hold-next-release 200 spc lsft)
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  tab  @q   @w   @f   @p   b    j    l    u    y    ;    \    _    _
-  bspc @a   @r   @s   @t   @g   @m   @n   @e   @i   @o   del  _
-  grv  @z   @x   @c   @d   v    k    h    ,    .    '    /
-  _    _    @fn           @spc            @med  _    _    _
-)
-
-(defalias
-  bk A-left
-  fwd A-right
-  sc C-S-c
-  sp C-S-v
-
-  pgd (tap-hold-next-release 200 pgdn lmet)
-  lft (tap-hold-next-release 200 lft lalt)
-  dwn (tap-hold-next-release 200 down lsft)
-  rgt (tap-hold-next-release 200 rght lctl)
-
-  4 (tap-hold-next-release 200 4 rctl)
-  5 (tap-hold-next-release 200 5 rsft)
-  6 (tap-hold-next-release 200 6 lalt)
-  0 (tap-hold-next-release 200 0 rmet)
+  tab  @q   @w   @f   @p   b    j    l    @u   y    ;    \    _    _
+  bspc @a   @r   @s   @t   @g   @m   @n   @e   @i   @o   ret  _
+  esc  @z   @x   @c   @d   v    k    h    ,    .    '    /
+  _    _    _             @spc            _    _    _    _
 )
 
 (deflayer num
@@ -91,39 +73,44 @@
   _    _    _              _              _    _    _    _
 )
 
+(defalias
+  bk A-left
+  fwd A-right
+)
+
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    prnt home up   end  _    _    _    _    _    _    _    _    _
   _    @bk  lft  down rght @fwd _    _    _    _    _    _    _
-  _    _    _    pgup pgdn caps _    _    _    _    _    _
+  _    grv  del  pgup pgdn caps _    _    _    _    _    _
   _    _    -              _              _    _    _    _
 )
 
 (defalias
   rw rewind
   ff fastforward
-  pau pause
-
-  pre (tap-hold-next-release 200 prev lalt)
-  pp (tap-hold-next-release 200 pp lsft)
-  nxt (tap-hold-next-release 200 next lctl)
 )
 
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    @rw  volu @ff  brup _    _    _    _    _    _    _    _
-  _    lmet @pre @pp  @nxt brdn @gam _    _    _    _    _    _
+  _    lmet prev pp   next brdn _    _    _    _    _    _    _
   _    _    mute vold stop _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
+)
+
+(defalias
+  pau pause
+  gam (layer-switch gaming)
 )
 
 (deflayer fn
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    slck f7   f8   f9   f10  _    _    _
-  _    _    _    _    _    _    _    f4   f5   f6   f11  _    _
+  _    _    _    _    _    _    @gam f4   f5   f6   f11  _    _
   _    _    _    _    _    _    @pau f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
 )
