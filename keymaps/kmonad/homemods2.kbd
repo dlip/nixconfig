@@ -63,7 +63,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   tab  @q   @w   @f   @p   b    j    l    u    y    ;    \    _    _
-  bspc @a   @r   @s   @t   g   m   @n   @e   @i   @o     del  _
+  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o   del  _
   grv  @z   @x   @c   @d   v    k    h    ,    .    '    /
   _    @fn  @ses           @spc           @sen @med   _    _
 )
@@ -71,10 +71,8 @@
 (defalias
   bk A-left
   fwd A-right
-  sc C-S-c
-  sp C-S-v
 
-  pgd (tap-hold-next-release 200 pgdn @hyp)
+  bkh (tap-hold-next-release 200 @bk @hyp)
   lft (tap-hold-next-release 200 lft lmet)
   dwn (tap-hold-next-release 200 down lctl)
   rgt (tap-hold-next-release 200 rght lalt)
@@ -89,8 +87,8 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    prnt home up   end  pgup  [    7    8    9    ]    _    _    _
-  _    @pgd @lft @dwn @rgt pgdn  =    @4   @5   @6   @0   _    _
-  _    _    _    @sc  @sp  caps  -    1    2    3    .    _
+  _    @bkh @lft @dwn @rgt @fwd  =    @4   @5   @6   @0   _    _
+  _    _    _    pgup pgdn caps  -    1    2    3    .    _
   _    _    _              _              _    _    _    _
 )
 
