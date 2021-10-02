@@ -5,6 +5,7 @@
     userSettings = {
       "aws.telemetry" = false;
       "breadcrumbs.enabled" = true;
+      "editor.bracketPairColorization.enabled" = true;
       "editor.fontFamily" = "FiraCode Nerd Font";
       "editor.fontLigatures" = true;
       "editor.fontSize" = 12;
@@ -84,20 +85,21 @@
           ];
         }
       ];
+      "vspacecode.bindingOverrides" = [
+        {
+          "keys" = "p.o";
+          "name" = "Project Manager Open";
+          "type" = "command";
+          "icon" = "files";
+          command = "projectManager.listProjectsNewWindow";
+        }
+      ];
     };
 
     keybindings = [
       {
-        "key" = "ctrl+j";
-        "command" = "editor.action.joinLines";
-      }
-      {
-        key = "ctrl+'";
-        command = "projectManager.listProjectsNewWindow";
-      }
-      {
-        "key" = "alt+g";
-        "command" = "magit.status";
+        "key" = "alt+space";
+        "command" = "vspacecode.space";
       }
       {
         "key" = "ctrl+o";
