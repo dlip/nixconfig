@@ -19,8 +19,8 @@ in
 {
 
   home.file = {
-    "${configFilePath}".source = ./settings.json;
-    "${keybindingsFilePath}".source = ./keybindings.json;
+    "${configFilePath}".source = ./settings.jsonc;
+    "${keybindingsFilePath}".source = ./keybindings.jsonc;
   };
 
   programs.vscode = {
