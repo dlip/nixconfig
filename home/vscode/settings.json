@@ -1,0 +1,114 @@
+{
+  "aws.telemetry": false,
+  "breadcrumbs.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 12,
+  "editor.formatOnSave": false,
+  "editor.lineHeight": 20,
+  "editor.minimap.enabled": false,
+  "editor.renderWhitespace": "all",
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.tabSize": 2,
+  "editor.useTabStops": false,
+  "extensions.autoUpdate": false,
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "metaGo.decoration.additionalSingleCharCodeCharacters": "E,S,N,T,I,R,O,A,C,H,D,G,M,X,Z,O,U,F,Y,W,U,P,Q",
+  "metaGo.decoration.characters": "e,s,n,t,i,r,o,a,c,h,d,g,m,x,z,o,u,f,y,w,u,p,q",
+  "projectManager.git.baseFolders": [
+    "$home/code"
+  ],
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontSize": 12,
+  "todo-tree.general.tags": [
+    "BUG",
+    "HACK",
+    "FIXME",
+    "TODO",
+    "XXX",
+    "[ ]",
+    "[x]"
+  ],
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+  "vim.easymotion": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "vspacecode.space"
+      ]
+    },
+    {
+      "before": [
+        ","
+      ],
+      "commands": [
+        "vspacecode.space",
+        {
+          "args": "m",
+          "command": "whichkey.triggerKey"
+        }
+      ]
+    }
+  ],
+  "vim.useSystemClipboard": true,
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<space>"
+      ],
+      "commands": [
+        "vspacecode.space"
+      ]
+    },
+    {
+      "before": [
+        ","
+      ],
+      "commands": [
+        "vspacecode.space",
+        {
+          "args": "m",
+          "command": "whichkey.triggerKey"
+        }
+      ]
+    }
+  ],
+  "vscode-lua-format.binaryPath": "~/.nix-profile/bin/lua-format",
+  "vspacecode.bindingOverrides": [
+    {
+      "command": "projectManager.listProjectsNewWindow",
+      "icon": "files",
+      "keys": "p.o",
+      "name": "Project Manager Open",
+      "type": "command"
+    },
+    {
+      "command": "projectManager.refreshGitProjects",
+      "icon": "repo-sync",
+      "keys": "p.r",
+      "name": "Refresh Git Projects",
+      "type": "command"
+    }
+  ],
+  "whichkey": {
+    "delay": 500
+  },
+  "window.zoomLevel": 1,
+  "workbench.colorTheme": "One Dark Pro",
+  "workbench.editor.enablePreview": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none"
+}
