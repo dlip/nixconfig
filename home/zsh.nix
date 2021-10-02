@@ -29,6 +29,7 @@ in
       export LC_ALL=en_US.UTF-8
 
       export NIXCONFIG=${configName}
+      export FZF_DEFAULT_COMMAND='fd'
       export GPG_TTY="$(tty)"
       gpg-connect-agent /bye
       export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"

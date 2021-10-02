@@ -18,6 +18,7 @@
   "extensions.autoUpdate": false,
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
+  "fzf-quick-open.findDirectoriesCmd": "fd --type d",
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
@@ -41,6 +42,7 @@
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "vim.easymotion": true,
+  "vim.surround": true,
   "vim.hlsearch": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {

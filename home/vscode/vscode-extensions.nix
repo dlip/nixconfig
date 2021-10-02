@@ -72,12 +72,6 @@
     sha256 = "0lhrw24ilncdczh90jnjx71ld3b626xpk8b9qmwgzzhby89qs417";
   }
   {
-    name = "vscode-go-test-adapter";
-    publisher = "ethan-reesor";
-    version = "0.1.6";
-    sha256 = "13q9fsa5mhxc5k8fwaxr7aar0m3giwdiqh6jd3al1gscz7cmcgh2";
-  }
-  {
     name = "vscode-reveal";
     publisher = "evilz";
     version = "4.0.3";
@@ -114,6 +108,12 @@
     sha256 = "1fiycdss64izdxk7gnp1gx6bdl040cr5lk17cnb2p30qpgpjv0gz";
   }
   {
+    name = "gc-excelviewer";
+    publisher = "GrapeCity";
+    version = "3.0.44";
+    sha256 = "07l9vx838cs0j7h8bi5ckkyapi3n5fp93k01c8yw3r5276mx44im";
+  }
+  {
     name = "todo-tree";
     publisher = "Gruntfuggly";
     version = "0.0.214";
@@ -144,16 +144,16 @@
     sha256 = "1jndmdqa8pmipj7p31bm740aysvz09lwdf6ay9wvcqv6lglif6gp";
   }
   {
+    name = "randomeverything";
+    publisher = "helixquar";
+    version = "0.0.3";
+    sha256 = "1rsjy1cprmmiff4857y0xb3qxd1s8nrclfhgn4kj9238clrl5qg1";
+  }
+  {
     name = "rest-client";
     publisher = "humao";
     version = "0.24.5";
     sha256 = "1hj294nsmlzvhbvwv4wyf7mgfw64q4pgkjzzgyjfc26pzyaxb4bn";
-  }
-  {
-    name = "fuzzy-search";
-    publisher = "jacobdufault";
-    version = "0.0.3";
-    sha256 = "0hvg4ac4zdxmimfwab1lzqizgq8bjfq6rksc9n7953m9gk6m5pd0";
   }
   {
     name = "nix-ide";
@@ -198,24 +198,6 @@
     sha256 = "1is81gmik2lc4wkil682lc34p1qcymb6xfwc942ig1msd33qv1g3";
   }
   {
-    name = "metago";
-    publisher = "metaseed";
-    version = "4.2.0";
-    sha256 = "0vvdfbacbmmb4b4zlplaz4lqzgxqx6lphr8xhav838d6w3c8d9sa";
-  }
-  {
-    name = "MetaJump";
-    publisher = "metaseed";
-    version = "1.3.0";
-    sha256 = "161xy2g151jny7nbxr57ackp0mlxw9vaiyxracgvcppa6wg0sng4";
-  }
-  {
-    name = "MetaWord";
-    publisher = "metaseed";
-    version = "1.3.0";
-    sha256 = "030p6vjmhx69rzjb7ias2fnk2zvj6c43w2mzxjh5cg84symcvpnc";
-  }
-  {
     name = "git-graph";
     publisher = "mhutchie";
     version = "1.30.0";
@@ -246,12 +228,6 @@
     sha256 = "105vj20749bck6ijdlf7hsg5nb82bi5pklf80l1s7fn4ajr2yk02";
   }
   {
-    name = "jupyter";
-    publisher = "ms-toolsai";
-    version = "2021.9.1001294413";
-    sha256 = "0j6lslrbsfzxa1n6gc5wyb0a9r152vmdmcrc44n8b8mmwasrs84x";
-  }
-  {
     name = "remote-ssh-edit";
     publisher = "ms-vscode-remote";
     version = "0.65.8";
@@ -274,12 +250,6 @@
     publisher = "ms-vsliveshare";
     version = "1.0.4836";
     sha256 = "1sigix4cdism09k53vd6vxa57mjkr9585n94vqnn9njlsfkbc4pf";
-  }
-  {
-    name = "debugger-for-chrome";
-    publisher = "msjsdiag";
-    version = "4.13.0";
-    sha256 = "0r6l804dyinqfk012bmaynv73f07kgnvvxf74nc83pw61vvk5jk9";
   }
   {
     name = "vscode-paste-image";
@@ -336,6 +306,18 @@
     sha256 = "0hdly0cxj13fs5q06nlcic3yhv6jq641q01y07sxl9xaprb0n2dm";
   }
   {
+    name = "fzf-quick-open";
+    publisher = "rlivings39";
+    version = "0.4.3";
+    sha256 = "0s0gk8wrq1fih68by9ksc192pncbjryg9l9bzyypxnc4hwvjjynp";
+  }
+  {
+    name = "svg-preview";
+    publisher = "SimonSiefke";
+    version = "2.8.3";
+    sha256 = "0b3c8fb837qk2hs881l0lna8q0a85h2naymf1plf3jm4r7a5x1c4";
+  }
+  {
     name = "code-spell-checker";
     publisher = "streetsidesoftware";
     version = "2.0.8";
@@ -352,6 +334,12 @@
     publisher = "telesoho";
     version = "0.13.8";
     sha256 = "13hqcrin3ays67ki9ypykxyww20wmk7645qbakcv7rd99g9nkdsx";
+  }
+  {
+    name = "errorlens";
+    publisher = "usernamehw";
+    version = "3.4.0";
+    sha256 = "1x9rkyhbp15dwp6dikzpk9lzjnh9cnxac89gzx533681zld906m8";
   }
   {
     name = "vim";
