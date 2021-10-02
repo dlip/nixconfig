@@ -2,12 +2,9 @@
   "breadcrumbs.enabled": true,
   "cSpell.enabledLanguageIds": [
     "asciidoc",
-    "git-commit",
     "latex",
     "markdown",
-    "plaintext",
-    "restructuredtext",
-    "text"
+    "restructuredtext"
   ],
   "editor.bracketPairColorization.enabled": true,
   "editor.fontFamily": "FiraCode Nerd Font",
