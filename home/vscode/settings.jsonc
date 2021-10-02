@@ -41,6 +41,7 @@
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
   "vim.easymotion": true,
+  "vim.hlsearch": true,
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -61,10 +62,24 @@
           "command": "whichkey.triggerKey"
         }
       ]
+    },
+    // Clear highlight search
+    {
+      "before": ["<esc>"],
+      "commands": [":nohl"]
+    },
+    {
+        "before": [ "<enter>" ],
+        "after":["o","<space>", "<backspace>", "<esc>"]
     }
   ],
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
+    // Disable yank on paste
+    {
+        "before": [ "p" ],
+        "after":["p","g","v","y"]
+    },
     {
       "before": [
         "<space>"
