@@ -29,12 +29,8 @@
 (defalias
   esc (tap-hold-next-release 200 esc (layer-toggle num))
   ret (tap-hold-next-release 200 ret (layer-toggle nav))
-  lbr (tap-hold-next-release 200 { (layer-toggle fn))
-  rbr (tap-hold-next-release 200 } (layer-toggle media))
-
-  q (tap-hold 400 q A-f4)
-  w (tap-hold 400 w C-w)
-  p (tap-hold 200 p M-p)
+  lbr (tap-hold-next-release 200 [ (layer-toggle fn))
+  rbr (tap-hold-next-release 200 ] (layer-toggle media))
 
   r (tap-hold-next-release 200 r lmet)
   s (tap-hold-next-release 200 s lctl)
@@ -55,7 +51,7 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  tab  @q   @w   f    @p   b    j    l    u    y    ;    \    _    _
+  tab  q    w    f    p   b    j    l    u    y    ;    \    _    _
   bspc a    @r   @s   @t   g    m    @n   @e   @i    o   del  _
   grv  @z   @x   @c   @d   v    k    h    ,    .    '    /
   _    @lbr @esc           @spc          @ret @rbr @rbr  _

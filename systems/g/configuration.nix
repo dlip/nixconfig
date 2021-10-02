@@ -24,7 +24,7 @@ in
   services.kmonad = {
     enable = true;
     configfiles = [
-      ../../keymaps/kmonad/superspace2.kbd
+      ../../keymaps/kmonad/superspace.kbd
     ];
   };
 }
