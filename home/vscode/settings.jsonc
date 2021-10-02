@@ -1,6 +1,14 @@
 {
-  "aws.telemetry": false,
   "breadcrumbs.enabled": true,
+  "cSpell.enabledLanguageIds": [
+    "asciidoc",
+    "git-commit",
+    "latex",
+    "markdown",
+    "plaintext",
+    "restructuredtext",
+    "text"
+  ],
   "editor.bracketPairColorization.enabled": true,
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontLigatures": true,
@@ -22,8 +30,6 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "metaGo.decoration.additionalSingleCharCodeCharacters": "E,S,N,T,I,R,O,A,C,H,D,G,M,X,Z,O,U,F,Y,W,U,P,Q",
-  "metaGo.decoration.characters": "e,s,n,t,i,r,o,a,c,h,d,g,m,x,z,o,u,f,y,w,u,p,q",
   "projectManager.git.baseFolders": [
     "$home/code"
   ],
@@ -44,6 +50,7 @@
   "vim.easymotion": true,
   "vim.surround": true,
   "vim.hlsearch": true,
+  "vim.easymotionKeys": "setnriaodhc,",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -73,6 +80,18 @@
     {
         "before": [ "<enter>" ],
         "after":["o","<space>", "<backspace>", "<esc>"]
+    },
+    {
+      "before": ["g", "n"],
+      "commands": ["workbench.action.compareEditor.nextChange"]
+    },
+    {
+      "before": ["g", "p"],
+      "commands": ["workbench.action.compareEditor.previousChange"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["git.revertSelectedRanges"]
     }
   ],
   "vim.useSystemClipboard": true,
@@ -118,11 +137,23 @@
       "keys": "p.r",
       "name": "Refresh Git Projects",
       "type": "command"
+    },
+    {
+      "command": "editor.action.startFindReplaceAction",
+      "icon": "file",
+      "keys": "s.b",
+      "name": "Search and replace in current buffer",
+      "type": "command"
+    },
+    {
+      "command": "git.openChange",
+      "icon": "diff",
+      "keys": "g.d",
+      "name": "Diff",
+      "type": "command"
     }
   ],
-  "whichkey": {
-    "delay": 500
-  },
+  "whichkey.delay": 500,
   "window.zoomLevel": 1,
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.enablePreview": false,

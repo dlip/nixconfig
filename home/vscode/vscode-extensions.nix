@@ -156,6 +156,12 @@
     sha256 = "1hj294nsmlzvhbvwv4wyf7mgfw64q4pgkjzzgyjfc26pzyaxb4bn";
   }
   {
+    name = "fuzzy-search";
+    publisher = "jacobdufault";
+    version = "0.0.3";
+    sha256 = "0hvg4ac4zdxmimfwab1lzqizgq8bjfq6rksc9n7953m9gk6m5pd0";
+  }
+  {
     name = "nix-ide";
     publisher = "jnoortheen";
     version = "0.1.16";
