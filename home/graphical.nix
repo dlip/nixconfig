@@ -2,7 +2,7 @@
   imports = [
     ./alacritty.nix
     ./rofi.nix
-    ./vscode.nix
+    ./vscode
     ./xmonad.nix
   ];
 

@@ -93,7 +93,15 @@
           "icon" = "files";
           command = "projectManager.listProjectsNewWindow";
         }
+        {
+          "keys" = "p.r";
+          "name" = "Refresh Git Projects";
+          "type" = "command";
+          "icon" = "repo-sync";
+          command = "projectManager.refreshGitProjects";
+        }
       ];
+      whichkey.delay = 500;
     };
 
     keybindings = [
