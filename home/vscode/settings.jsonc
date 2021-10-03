@@ -71,32 +71,38 @@
     },
     // Clear highlight search
     {
-      "before": ["<esc>"],
-      "commands": [":nohl"]
+      "before": [
+        "<esc>"
+      ],
+      "commands": [
+        ":nohl"
+      ]
     },
     {
-        "before": [ "<enter>" ],
-        "after":["o","<space>", "<backspace>", "<esc>"]
-    },
-    {
-      "before": ["g", "n"],
-      "commands": ["workbench.action.compareEditor.nextChange"]
-    },
-    {
-      "before": ["g", "p"],
-      "commands": ["workbench.action.compareEditor.previousChange"]
-    },
-    {
-      "before": ["g", "r"],
-      "commands": ["git.revertSelectedRanges"]
+      "before": [
+        "<enter>"
+      ],
+      "after": [
+        "o",
+        "<space>",
+        "<backspace>",
+        "<esc>"
+      ]
     }
   ],
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     // Disable yank on paste
     {
-        "before": [ "p" ],
-        "after":["p","g","v","y"]
+      "before": [
+        "p"
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
     },
     {
       "before": [
@@ -148,6 +154,53 @@
       "keys": "g.d",
       "name": "Diff",
       "type": "command"
+    },
+    {
+      "command": "git.revertSelectedRanges",
+      "icon": "notebook-revert",
+      "keys": "g.r",
+      "name": "Revert ranges",
+      "type": "command"
+    },
+    {
+      "icon": "diff",
+      "keys": "g.n",
+      "name": "Next change",
+      "type": "conditional",
+      "bindings": [
+        {
+          "key": "",
+          "name": "default",
+          "type": "command",
+          "command": "workbench.action.editor.nextChange"
+        },
+        {
+          "key": "when:textCompareEditorVisible",
+          "name": "Next change",
+          "type": "command",
+          "command": "workbench.action.compareEditor.nextChange"
+        }
+      ]
+    },
+    {
+      "icon": "diff",
+      "keys": "g.p",
+      "name": "Previous change",
+      "type": "conditional",
+      "bindings": [
+        {
+          "key": "",
+          "name": "default",
+          "type": "command",
+          "command": "workbench.action.editor.previousChange"
+        },
+        {
+          "key": "when:textCompareEditorVisible",
+          "name": "Previous change",
+          "type": "command",
+          "command": "workbench.action.compareEditor.previousChange"
+        }
+      ]
     }
   ],
   "whichkey.delay": 500,

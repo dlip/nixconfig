@@ -52,6 +52,7 @@
     ncdu
     neofetch
     niv
+    nix-du
     nixfmt
     nixpkgs-fmt
     nmap
@@ -97,6 +98,7 @@
     vim
     wally-cli
     wget
+    xdotool
     yarn
     youtube-dl
     yubikey-manager
