@@ -195,5 +195,23 @@
     "key": "ctrl+right",
     "command": "workbench.action.navigateRight",
     "when": "isInDiffEditor && !isInDiffLeftEditor"
+  },
+  {
+    "key": "n",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "n",
+      "when": "textCompareEditorVisible"
+    },
+    "when": "whichkeyVisible && textCompareEditorVisible"
+  },
+  {
+    "key": "p",
+    "command": "whichkey.triggerKey",
+    "args": {
+      "key": "p",
+      "when": "textCompareEditorVisible"
+    },
+    "when": "whichkeyVisible && textCompareEditorVisible"
   }
 ]
