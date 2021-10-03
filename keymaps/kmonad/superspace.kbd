@@ -51,7 +51,7 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  tab  q    w    f    p   b    j    l    u    y    ;    \    _    _
+  tab  q    w    f    p   b    j    l    u    y    ;     \    _    _
   bspc a    @r   @s   @t   g    m    @n   @e   @i    o   del  _
   grv  @z   @x   @c   @d   v    k    h    ,    .    '    /
   _    @lbr @esc           @spc          @ret @rbr @rbr  _

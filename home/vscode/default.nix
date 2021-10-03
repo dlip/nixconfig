@@ -29,6 +29,7 @@ in
       (import ./vscode-extensions.nix).extensions ++ (with pkgs.vscode-extensions; [
       ms-vscode.cpptools
       ms-vsliveshare.vsliveshare
+      (pkgs.callPackage ./rescript { })
     ]);
   };
 
