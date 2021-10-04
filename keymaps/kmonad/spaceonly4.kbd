@@ -27,18 +27,25 @@
 )
 
 (defalias
-  esc (tap-hold-next-release 200 esc (layer-toggle num))
-  ret (tap-hold-next-release 200 ret (layer-toggle nav))
-  lbr (tap-hold-next-release 200 [ (layer-toggle fn))
-  rbr (tap-hold-next-release 200 ] (layer-toggle media))
 
-  r (tap-hold-next-release 200 r lmet)
-  s (tap-hold-next-release 200 s lctl)
-  t (tap-hold-next-release 200 t lalt)
+  q (tap-hold 400 q A-f4)
+  w (tap-hold 400 w C-w)
+  f (tap-hold-next-release 200 f (layer-toggle fn))
+  p (tap-hold 200 p M-p)
 
-  n (tap-hold-next-release 200 n lalt)
-  e (tap-hold-next-release 200 e rctl)
-  i (tap-hold-next-release 200 i rmet)
+  u (tap-hold-next-release 200 u (layer-toggle media))
+
+  a (tap-hold-next-release 200 a lmet)
+  r (tap-hold-next-release 200 r lalt)
+  s (tap-hold-next-release 200 s (layer-toggle num))
+  t (tap-hold-next-release 200 t lctl)
+  g (tap-hold 200 g C-A-M-S)
+
+  m (tap-hold 200 m C-A-M-S)
+  n (tap-hold-next-release 200 n rctl)
+  e (tap-hold-next-release 200 e (layer-toggle nav))
+  i (tap-hold-next-release 200 i lalt)
+  o (tap-hold-next-release 200 o rmet)
 
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
@@ -51,10 +58,10 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  tab  q    w    f    p   b    j    l    u    y    ;     \    _    _
-  bspc a    @r   @s   @t   g    m    @n   @e   @i    o   del  _
-  grv  @z   @x   @c   @d   v    k    h    ,    .    '    /
-  _    @lbr @esc           @spc          @ret @rbr @rbr  _
+  tab  @q   @w   @f   @p   b    j    l    @u   y    ;    \    _    _
+  bspc @a   @r   @s   @t   @g   @m   @n   @e   @i   @o   ret  _
+  esc  @z   @x   @c   @d   v    k    h    ,    .    '    /
+  _    _    _             @spc            _    _    _    _
 )
 
 (deflayer num
@@ -66,17 +73,12 @@
   _    _    _              _              _    _    _    _
 )
 
-(defalias
-  bk A-left
-  fwd A-right
-)
-
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    prnt home up   end  _    _    _    _    _    _    _    _    _
-  _    @bk  lft  down rght @fwd _    _    _    _    _    _    _
-  _    _    del  pgup pgdn _    _    _    _    _    _    _
+  _    prnt home up   end  pgup  _    _    _    _    _    _    _    _
+  _    del  lft  down rght pgdn _    _    _    _    _    _    _
+  _    grv  _    [    ]    _    _    _    _    _    _    _
   _    _    -              _              _    _    _    _
 )
 

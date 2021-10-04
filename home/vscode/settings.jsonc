@@ -21,6 +21,9 @@
   "editor.tabSize": 2,
   "editor.useTabStops": false,
   "extensions.autoUpdate": false,
+  "files.associations": {
+    "*.kbd": "list"
+  },
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
   "fzf-quick-open.findDirectoriesCmd": "fd --type d",
