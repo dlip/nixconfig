@@ -50,7 +50,9 @@
   "vim.easymotion": true,
   "vim.surround": true,
   "vim.hlsearch": true,
-  "vim.easymotionKeys": "setnriaodhc,",
+  "vim.useCtrlKeys": false,
+  "vim.visualstar": true,
+  "vim.easymotionKeys": "setnriaodhc,fuwypl",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
       "before": [
@@ -163,6 +165,13 @@
       "icon": "notebook-revert",
       "keys": "g.r",
       "name": "Revert ranges",
+      "type": "command"
+    },
+    {
+      "command": "extension.vim_ctrl+v",
+      "icon": "text",
+      "keys": "V",
+      "name": "Visual block",
       "type": "command"
     },
     {
