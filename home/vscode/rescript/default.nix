@@ -1,6 +1,11 @@
-{ lib, vscode-utils, callPackage }:
+{ lib, stdenv, vscode-utils, callPackage }:
 let
   rescript-editor-analysis = (callPackage ./rescript-editor-analysis.nix { });
+  arch =
+    if stdenv.isLinux then "linux"
+    else if stdenv.isDarwin then "darwin"
+    else throw "Only Linux and Darwin are supported.";
+  analysisDir = "server/analysis_binaries/${arch}";
 in vscode-utils.buildVscodeMarketplaceExtension rec {
   mktplcRef = {
     name = "rescript-vscode";
@@ -9,8 +14,8 @@ in vscode-utils.buildVscodeMarketplaceExtension rec {
     sha256 = "1c1ipxgm0f0a3vlnhr0v85jr5l3rwpjzh9w8nv2jn5vgvpas0b2a";
   };
   postPatch = ''
-    rm -rf server/analysis_binaries/linux
-    ln -s ${rescript-editor-analysis}/bin server/analysis_binaries/linux
+    rm -rf ${analysisDir}
+    ln -s ${rescript-editor-analysis}/bin ${analysisDir}
   '';
 
   meta = with lib; {
