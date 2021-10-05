@@ -1,6 +1,6 @@
 { configName, config }:
 [
-  #./emacs.nix
+  ./emacs.nix
   ./espanso.nix
   ./files
   ./fonts.nix

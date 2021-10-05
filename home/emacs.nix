@@ -22,7 +22,7 @@
 
   programs.emacs = {
     enable = true;
-    package = pkgs.emacsNg;
+    package = pkgs.emacsGcc;
     extraPackages = (epkgs:
       (with epkgs; [
         ace-window
