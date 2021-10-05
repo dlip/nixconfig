@@ -85,6 +85,14 @@
     },
     {
       "before": [
+        "U"
+      ],
+      "after": [
+        "<C-r>"
+      ]
+    },
+    {
+      "before": [
         "<enter>"
       ],
       "after": [

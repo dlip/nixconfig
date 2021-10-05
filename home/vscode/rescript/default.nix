@@ -14,7 +14,7 @@ in vscode-utils.buildVscodeMarketplaceExtension rec {
     sha256 = "1c1ipxgm0f0a3vlnhr0v85jr5l3rwpjzh9w8nv2jn5vgvpas0b2a";
   };
   postPatch = ''
-    rm -rf ${analysisDir}
+    rm -r ${analysisDir}
     ln -s ${rescript-editor-analysis}/bin ${analysisDir}
   '';
 
