@@ -1,5 +1,5 @@
-require 'my.options'
-require 'my.keymap'
+require 'options'
+require 'keymap'
 require'trouble'.setup()
 require'gitsigns'.setup()
 require'nvim-treesitter.configs'.setup {
@@ -17,8 +17,9 @@ require'nvim-treesitter.configs'.setup {
     indent = {enable = false}
 }
 
-require 'my.completion'
-require 'my.dap'
-require 'my.lsp'
-require 'my.lualine'
-require 'my.telescope'
+require 'plugins/compe'
+require 'plugins/dap'
+require 'plugins/lsp'
+require 'plugins/nvim-tree'
+require 'plugins/lualine'
+require 'plugins/telescope'

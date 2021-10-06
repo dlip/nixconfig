@@ -50,7 +50,7 @@ in
         set undodir=${nvimHome}/undo
         set shadafile=${nvimHome}/viminfo
         let test#go#runner = 'gotest'
-        lua require'my'
+        lua require'init'
       '';
 
       plugins = with pkgs.vimPlugins;

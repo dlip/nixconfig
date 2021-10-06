@@ -5,7 +5,7 @@
   ./files
   ./fonts.nix
   (import ./git.nix config)
-  ./vim
+  ./neovim
   ./packages.nix
   ./starship.nix
   ./services.nix
