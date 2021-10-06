@@ -16,7 +16,7 @@ import XMonad.Hooks.RefocusLast
 import XMonad.Layout.Accordion
 import XMonad.Layout.Decoration (ModifiedLayout)
 import XMonad.Layout.Grid
-import XMonad.Layout.NoBorders (noBorders)
+import XMonad.Layout.NoBorders (noBorders, smartBorders)
 import XMonad.Layout.Spacing (Border (Border), Spacing, spacingRaw)
 import XMonad.Layout.Spiral (spiral)
 import XMonad.Layout.Tabbed
@@ -106,7 +106,7 @@ main =
             { modMask = mod4Mask, -- Use Super instead of Alt
               terminal = "alacritty",
               manageHook = namedScratchpadManageHook scratchpads <+> manageDocks <+> manageHook def,
-              layoutHook = myLayoutHook,
+              layoutHook = smartBorders myLayoutHook,
               handleEventHook = refocusLastWhen myPred <+> handleEventHook def <+> fullscreenEventHook,
               logHook = myLogHook xmobarProc,
               focusedBorderColor = "#4eb4fa",
