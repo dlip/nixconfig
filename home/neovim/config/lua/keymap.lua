@@ -161,3 +161,15 @@ map('x', 'gK', 'K', default_opts)
 -- extra alias
 map('n', 'gh', 'K', default_opts)
 map('x', 'gh', 'K', default_opts)
+
+-- Move lines
+map('n', '<A-e>', ':m .+1<CR>==', default_opts)
+map('n', '<A-u>', ':m .-2<CR>==', default_opts)
+map('i', '<A-e>', '<Esc>:m .+1<CR>==gi', default_opts)
+map('i', '<A-u>', '<Esc>:m .-2<CR>==gi', default_opts)
+map('v', '<A-e>', ':m \'>+1<CR>gv=gv', default_opts)
+map('v', '<A-u>', ':m \'<-2<CR>gv=gv', default_opts)
+
+-- Navigate back/forward
+map('', '<A-n>', '<C-o>', default_opts)
+map('', '<A-i>', '<C-i>', default_opts)
