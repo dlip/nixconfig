@@ -27,14 +27,16 @@ map('', 'i', 'l', default_opts)
 -- Word left/right
 map('', 'l', 'b', default_opts)
 map('', 'y', 'w', default_opts)
---     nnoremap l b|xnoremap l b|onoremap l b|
---     nnoremap y w|xnoremap y w|onoremap y w|
---     nnoremap <C-l> B|vnoremap <C-l> B|onoremap <C-l> B|
---     nnoremap <C-y> W|vnoremap <C-y> W|onoremap <C-y> W|
+map('', '<C-l>', 'B', default_opts)
+map('', '<C-y>', 'W', default_opts)
 
 -- End of word left/right
---     nnoremap <silent> N ge|xnoremap <silent> N ge|onoremap N ge|
---     nnoremap <silent> I e|xnoremap <silent> I e|onoremap I e
+map('n', 'N', 'ge', default_opts)
+map('x', 'N', 'ge', default_opts)
+map('o', 'N', 'ge', default_opts)
+map('n', 'I', 'e', default_opts)
+map('x', 'I', 'e', default_opts)
+map('o', 'I', 'e', default_opts)
 
 -- Beginning/end of line
 map('', 'L', '^', default_opts)
@@ -52,9 +54,13 @@ map('x', 'V', 'P', default_opts)
 map('n', 'cc', 'yy', default_opts)
 
 -- Undo/redo
---     nnoremap z u|xnoremap z :<C-u>undo<CR>|
---     nnoremap gz U|xnoremap gz U<C-u>undo<CR>|
---     nnoremap Z <C-r>|xnoremap Z :<C-u>redo<CR>|
+map('n', 'z', 'u', default_opts)
+map('x', 'z', ':<C-u>undo<CR>', default_opts)
+map('n', 'Z', '<C-r>', default_opts)
+map('x', 'Z', ':<C-u>redo<CR>', default_opts)
+map('n', 'gz', 'U', default_opts)
+map('x', 'gz', 'U<C-u>undo<CR>', default_opts)
+
 -- PageUp/PageDown
 --     nnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
 --     nnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
@@ -68,75 +74,87 @@ map('n', 'cc', 'yy', default_opts)
 --     vnoremap <silent> <expr> <S-PageDown> (winheight(0)-1) . "\<C-d>"
 
 -- Jumplist navigation
---     nnoremap <C-u> <C-i>
---     nnoremap <C-e> <C-o>
---     vnoremap <C-u> <C-i>
---     vnoremap <C-e> <C-o>
+map('n', '<C-u>', '<C-i>', default_opts)
+map('n', '<C-e>', '<C-o>', default_opts)
+map('v', '<C-u>', '<C-i>', default_opts)
+map('v', '<C-e>', '<C-o>', default_opts)
 
 -- Text objects
 -- diw is drw. daw is now dtw.
---     onoremap r i
---     vnoremap r i
---     onoremap t a
---     vnoremap t a
+map('o', 'r', 'i', default_opts)
+map('v', 'r', 'i', default_opts)
+map('o', 't', 'a', default_opts)
+map('v', 't', 'a', default_opts)
 -- Move visual replace from 'r' to 'R'
---     onoremap R r
---     vnoremap R r
+map('o', 'R', 'r', default_opts)
+map('v', 'R', 'r', default_opts)
 
 -- Folds
---     nnoremap b z|xnoremap b z|
---     nnoremap bb zb|xnoremap bb zb|
---     nnoremap bu zk|xnoremap bu zk|
---     nnoremap be zj|xnoremap be zj|
-
-
+map('n', 'b', 'z', default_opts)
+map('x', 'b', 'z', default_opts)
+map('n', 'bb', 'zb', default_opts)
+map('x', 'bb', 'zb', default_opts)
+map('n', 'bu', 'zk', default_opts)
+map('x', 'bu', 'zk', default_opts)
+map('n', 'be', 'zj', default_opts)
+map('x', 'be', 'zj', default_opts)
 
 -- inSert/append (T)
---     nnoremap s i|
---     nnoremap S I|
---     nnoremap t a|
---     nnoremap T A|
+map('n', 's', 'i', default_opts)
+map('n', 'S', 'I', default_opts)
+map('n', 't', 'a', default_opts)
+map('n', 'T', 'A', default_opts)
 
 -- Change
---     nnoremap w c|xnoremap w c|
---     nnoremap W C|xnoremap W C|
---     nnoremap ww cc|
+map('n', 'w', 'c', default_opts)
+map('x', 'w', 'c', default_opts)
+map('n', 'W', 'C', default_opts)
+map('x', 'W', 'C', default_opts)
+map('n', 'ww', 'cc', default_opts)
 
 -- Visual mode
---     nnoremap a v|xnoremap a v|
---     nnoremap A V|xnoremap A V|
+map('n', 'a', 'v', default_opts)
+map('x', 'a', 'v', default_opts)
+map('n', 'A', 'V', default_opts)
+map('x', 'A', 'V', default_opts)
 
 -- Insert in Visual mode
---     vnoremap S I
+map('v', 'S', 'I', default_opts)
 
 -- Search
---     nnoremap k n|xnoremap k n|onoremap k n|
---     nnoremap K N|xnoremap K N|onoremap K N|
+map('', 'k', 'n', default_opts)
+map('', 'K', 'N', default_opts)
 
 -- 'til
 -- Breaks diffput
---     nnoremap p t|xnoremap p t|onoremap p t|
---     nnoremap P T|xnoremap P T|onoremap P T|
+map('', 'p', 't', default_opts)
+map('', 'P', 'T', default_opts)
 
 -- Fix diffput (t for 'transfer')
---     nnoremap dt dp
+map('n', 'dt', 'dp', default_opts)
 
 -- Macros (replay the macro recorded by qq)
---     nnoremap Q @q|
+map('n', 'Q', '@q', default_opts)
 
 -- Cursor to bottom of screen
 -- H and M haven't been remapped, only L needs to be mapped
---     nnoremap B L
---     vnoremap B L
+map('n', 'B', 'L', default_opts)
+map('v', 'B', 'L', default_opts)
 
 -- Misc overridden keys must be prefixed with g
---     nnoremap gS S|xnoremap gS S|
---     nnoremap gX X|xnoremap gX X|
---     nnoremap gU U|xnoremap gU U|
---     nnoremap gQ Q|xnoremap gQ Q|
---     nnoremap gK K|xnoremap gK K|
+map('n', 'gS', 'S', default_opts)
+map('x', 'gS', 'S', default_opts)
+map('n', 'gX', 'X', default_opts)
+map('x', 'gX', 'X', default_opts)
+map('n', 'gU', 'U', default_opts)
+map('x', 'gU', 'U', default_opts)
+map('n', 'gQ', 'Q', default_opts)
+map('x', 'gQ', 'Q', default_opts)
+map('n', 'gK', 'K', default_opts)
+map('x', 'gK', 'K', default_opts)
 -- extra alias
---     nnoremap gh K|xnoremap gh K|
+map('n', 'gh', 'K', default_opts)
+map('x', 'gh', 'K', default_opts)
 
 -- Window navigation
 --     nnoremap <C-w>n <C-w>h|xnoremap <C-w>n <C-w>h|
