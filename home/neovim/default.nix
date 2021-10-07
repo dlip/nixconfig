@@ -68,8 +68,8 @@ in
             telescope
             undotree
             vim-easy-align
-            vim-fugitive
-            vim-surround
+            # vim-fugitive
+            # vim-surround
             vim-which-key # spacemacs-like leader key menu
             tokyonight-nvim
             vim-test

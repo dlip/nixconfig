@@ -1,82 +1,102 @@
--- Helpers
-local cmd = vim.cmd -- to execute Vim commands e.g. cmd('pwd')
-local fn = vim.fn -- to call Vim functions e.g. fn.bufnr()
-local g = vim.g -- a table to access global variables
-local scopes = {o = vim.o, b = vim.bo, w = vim.wo}
+-----------------------------------------------------------
+-- Neovim API aliases
+-----------------------------------------------------------
+local cmd = vim.cmd             -- execute Vim commands
+local exec = vim.api.nvim_exec  -- execute Vimscript
+local fn = vim.fn               -- call Vim functions
+local g = vim.g                 -- global variables
+local opt = vim.opt             -- global/buffer/windows-scoped options
 
-local function opt(scope, key, value)
-    -- Concatenate lists with ','
-    if type(value) == 'table' then value = table.concat(value, ',') end
-    scopes[scope][key] = value
-    if scope ~= 'o' then scopes['o'][key] = value end
-end
-vim.opt.clipboard = 'unnamedplus'
-cmd[[colorscheme tokyonight]]
-local indent = 2
-opt('b', 'expandtab', true) -- Use spaces instead of tabs
-opt('b', 'shiftwidth', indent) -- Size of an indent
-opt('b', 'softtabstop', indent) -- <Tab> does two spaces
-opt('b', 'smartindent', true) -- Insert indents automatically
-opt('b', 'tabstop', 8) -- Number of spaces tabs count for
+-----------------------------------------------------------
+-- General
+-----------------------------------------------------------
+g.mapleader = ' '             -- change leader to a space
+g.maplocalleader = ','        -- change local leader to a comma
+opt.mouse = 'a'               -- enable mouse support
+opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
+opt.swapfile = false          -- don't use swapfile
 
-opt('o', 'cursorline', true)
-opt('o', 'completeopt', {'menuone', 'noselect'})
-opt('o', 'diffopt', {
-    'filler', -- Add vertical spaces to keep right and left aligned
-    'iwhite' -- Ignore whitespace changes (focus on code changes)
-})
-opt('o', 'foldenable', true) -- Enable folding
-opt('o', 'foldlevel', 100) -- Open all folds by default
-opt('o', 'foldmethod', 'expr') -- Fold with tree-sitter
-opt('o', 'foldexpr', 'nvim_treesitter#foldexpr()')
-opt('o', 'formatoptions', 'c' .. -- Format comments
-'r' .. -- Continue comments by default
-'o' .. -- Make comment when using o or O from comment line
-'q' .. -- Format comments with gq
-'n' .. -- Recognize numbered lists
-'2' .. -- Use indent from 2nd line of a paragraph
-'l' .. -- Don't break lines that are already long
-'1' -- Break before 1-letter words
-)
-opt('o', 'gdefault', true) -- g flag by default for search/replace
-opt('o', 'hidden', true) -- Buffers can go in the background
-opt('o', 'ignorecase', true) -- Ignore case of searches
-opt('o', 'smartcase', true) -- ...unless something is uppercase in that search
-opt('o', 'lazyredraw', true)
-opt('o', 'listchars', {'tab:▸ ', 'eol:¬', 'nbsp:•'})
-opt('o', 'magic', true) -- Extended regexes
-opt('o', 'mouse', 'a') -- Mouse support
-opt('o', 'errorbells', false) -- Disable error bells
-opt('o', 'joinspaces', false) -- Only insert single space after a '.', '?' and '!' with a join command
-opt('o', 'showmode', false) -- Already done by a plugin
-opt('o', 'startofline', false) -- Don't reset cursor to start of line when moving around
-opt('w', 'number', true) -- Show line numbers
-opt('o', 'report', 0) -- Show all changes
-opt('o', 'scrolloff', 3) -- Scroll offset
-opt('o', 'sidescrolloff', 3) -- same, but for the sides
-opt('o', 'shell', '/bin/sh') -- Shell for executing commands
-opt('o', 'showtabline', 2) -- Always show the tab line
-opt('o', 'signcolumn', 'yes:1') -- Fixed width sign column
-opt('o', 'splitbelow', true) -- New windows goes below
-opt('o', 'splitright', true) -- New windows goes right
-opt('o', 'suffixes', { -- Files to ignore
-    '.bak', '~', '.swp', '.swo', '.o', '.d', '.info', '.aux', '.log', '.dvi',
-    '.pdf', '.bin', '.bbl', '.blg', '.brf', '.cb', '.dmg', '.exe', '.ind',
-    '.idx', '.ilg', '.inx', '.out', '.toc', '.pyc', '.pyd', '.dll'
-})
-opt('o', 'termguicolors', true) -- True RGB colors (HDR10 when?)
-opt('o', 'title', true) -- Filename in window titlebar
-opt('o', 'undofile', true) -- Persistent undo
-opt('o', 'shada', {
-    '!', -- Save and restore global variables
-    "'9999", -- Number of remembered marks
-    's512', -- 512KiB of registers max
-    'h' -- Disable "hlsearch" on load
-})
+-----------------------------------------------------------
+-- Neovim UI
+-----------------------------------------------------------
+opt.number = true             -- show line number
+opt.showmatch = true          -- highlight matching parenthesis
+opt.foldmethod = 'marker'     -- enable folding (default 'foldmarker')
+opt.colorcolumn = '80'        -- line lenght marker at 80 columns
+opt.splitright = true         -- vertical split to the right
+opt.splitbelow = true         -- orizontal split to the bottom
+opt.ignorecase = true         -- ignore case letters when search
+opt.smartcase = true          -- ignore lowercase for the whole pattern
+opt.linebreak = true          -- wrap on word boundary
 
--- TODO: more wildmenu things
-opt('o', 'wildchar', 9) -- <TAB> == 9
-opt('o', 'wildmode', 'list:longest')
+-- remove whitespace on save
+cmd [[au BufWritePre * :%s/\s\+$//e]]
 
-opt('o', 'winminheight', 0) -- Allow splits to be reduced to a single line
-opt('o', 'wrapscan', true) -- Searches wrap around end of file
+-- highlight on yank
+exec([[
+  augroup YankHighlight
+    autocmd!
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+  augroup end
+]], false)
+
+-----------------------------------------------------------
+-- Memory, CPU
+-----------------------------------------------------------
+opt.hidden = true         -- enable background buffers
+opt.history = 100         -- remember n lines in history
+opt.lazyredraw = true     -- faster scrolling
+opt.synmaxcol = 240       -- max column for syntax highlight
+
+-----------------------------------------------------------
+-- Colorscheme
+-----------------------------------------------------------
+opt.termguicolors = true      -- enable 24-bit RGB colors
+cmd [[colorscheme tokyonight]]
+
+-----------------------------------------------------------
+-- Tabs, indent
+-----------------------------------------------------------
+opt.expandtab = true      -- use spaces instead of tabs
+opt.shiftwidth = 4        -- shift 4 spaces when tab
+opt.tabstop = 4           -- 1 tab == 4 spaces
+opt.smartindent = true    -- autoindent new lines
+
+-- don't auto commenting new lines
+cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
+
+-- remove line lenght marker for selected filetypes
+cmd [[autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0]]
+
+-- 2 spaces for selected filetypes
+cmd [[
+  autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
+]]
+
+-- IndentLine
+--g.indentLine_setColors = 0  -- set indentLine color
+g.indentLine_char = '|'       -- set indentLine character
+
+-- disable IndentLine for markdown files (avoid concealing)
+cmd [[autocmd FileType markdown let g:indentLine_enabled=0]]
+
+-----------------------------------------------------------
+-- Autocompletion
+-----------------------------------------------------------
+opt.completeopt = 'menuone,noinsert' -- completion options
+--opt.shortmess = 'c'   -- don't show completion messages
+
+-----------------------------------------------------------
+-- Terminal
+-----------------------------------------------------------
+-- open a terminal pane on the right using :Term
+cmd [[command Term :botright vsplit term://$SHELL]]
+
+-- Terminal visual tweaks
+--- enter insert mode when switching to terminal
+--- close terminal buffer on process exit
+cmd [[
+    autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
+    autocmd TermOpen * startinsert
+    autocmd BufLeave term://* stopinsert
+]]
