@@ -1,5 +1,3 @@
-local g = vim.g    -- global variables
-
 local map = vim.api.nvim_set_keymap
 local default_opts = {noremap = true, silent = true}
 local cmd = vim.cmd
@@ -12,6 +10,10 @@ map('', '<up>', '<C-w>k', default_opts)
 map('', '<down>', '<C-w>j', default_opts)
 map('', '<left>', '<C-w>h', default_opts)
 map('', '<right>', '<C-w>l', default_opts)
+map('', '<S-up>', '<C-w>K', default_opts)
+map('', '<S-down>', '<C-w>J', default_opts)
+map('', '<S-left>', '<C-w>H', default_opts)
+map('', '<S-right>', '<C-w>L', default_opts)
 
 
 ----------------------------------------------------------
@@ -23,6 +25,8 @@ map('', 'u', 'k', default_opts)
 map('', 'e', 'j', default_opts)
 map('', 'n', 'h', default_opts)
 map('', 'i', 'l', default_opts)
+map('', 'U', '5k', default_opts)
+map('', 'E', '5j', default_opts)
 
 -- Word left/right
 map('', 'l', 'b', default_opts)
@@ -88,6 +92,8 @@ map('v', 't', 'a', default_opts)
 -- Move visual replace from 'r' to 'R'
 map('o', 'R', 'r', default_opts)
 map('v', 'R', 'r', default_opts)
+-- Quicker word change
+map('o', '<space>', 'iw', default_opts)
 
 -- Folds
 map('n', 'b', 'z', default_opts)
@@ -155,15 +161,3 @@ map('x', 'gK', 'K', default_opts)
 -- extra alias
 map('n', 'gh', 'K', default_opts)
 map('x', 'gh', 'K', default_opts)
-
--- Window navigation
---     nnoremap <C-w>n <C-w>h|xnoremap <C-w>n <C-w>h|
---     nnoremap <C-w>u <C-w>k|xnoremap <C-w>u <C-w>k|
---     nnoremap <C-w>e <C-w>j|xnoremap <C-w>e <C-w>j|
---     nnoremap <C-w>i <C-w>l|xnoremap <C-w>i <C-w>l|
---     nnoremap <C-w>N <C-w>H|xnoremap <C-w>n <C-w>h|
---     nnoremap <C-w>U <C-w>K|xnoremap <C-w>u <C-w>k|
---     nnoremap <C-w>E <C-w>J|xnoremap <C-w>e <C-w>j|
---     nnoremap <C-w>I <C-w>L|xnoremap <C-w>i <C-w>l|
--- Disable spawning empty buffer
---     nnoremap <C-w><C-n> <nop>|xnoremap <C-w><C-n> <nop>|
