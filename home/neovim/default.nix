@@ -3,6 +3,15 @@
 let
   pluginWithDeps = plugin: deps: plugin.overrideAttrs (_: { dependencies = deps; });
   nvimHome = "${config.xdg.configHome}/nvim";
+  extraPlugins.nvim-dap-go = pkgs.vimUtils.buildVimPlugin {
+    name = "dap-go";
+    src = pkgs.fetchFromGitHub {
+      owner = "leoluz";
+      repo = "nvim-dap-go";
+      rev = "624a8b610083f8206cd3988cefb9549b8ffe2799";
+      sha256 = "16fgc0lx1jr8zbayanf5w677ssiw5xb8vwfaca295c8xlk760c3m";
+    };
+  };
 in
 {
   programs = {
@@ -53,7 +62,7 @@ in
         lua require'init'
       '';
 
-      plugins = with pkgs.vimPlugins;
+      plugins = with pkgs.vimPlugins // extraPlugins;
         let
           telescope =
             (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim ]);
@@ -119,6 +128,7 @@ in
           trouble-nvim
 
           nvim-dap
+          nvim-dap-go
           telescope-dap-nvim
           rust-tools-nvim
 
