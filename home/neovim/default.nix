@@ -58,77 +58,74 @@ in
           telescope =
             (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim ]);
         in
-          [
-            (pluginWithDeps gruvbox-nvim [ lush-nvim ])
-            editorconfig-vim
-            neogit
-            nvim-whichkey-setup-lua
-            plenary-nvim
-            popup-nvim
-            telescope
-            undotree
-            vim-easy-align
-            # vim-fugitive
-            # vim-surround
-            vim-which-key # spacemacs-like leader key menu
-            tokyonight-nvim
-            vim-test
-            vim-tmux-navigator
+        [
+          neogit
+          editorconfig-vim
+          nvim-whichkey-setup-lua
+          plenary-nvim
+          popup-nvim
+          telescope
+          undotree
+          vim-easy-align
+          # vim-fugitive
+          # vim-surround
+          vim-which-key # spacemacs-like leader key menu
+          tokyonight-nvim
+          vim-test
+          vim-tmux-navigator
 
-            nvim-lspconfig
-            (
-              nvim-treesitter.withPlugins (
-                grammars:
-                  [
-                    # TODO: package tree-sitter-comment
-                    grammars.tree-sitter-bash
-                    grammars.tree-sitter-c
-                    grammars.tree-sitter-cpp
-                    grammars.tree-sitter-css
-                    grammars.tree-sitter-go
-                    grammars.tree-sitter-html
-                    grammars.tree-sitter-java
-                    grammars.tree-sitter-javascript
-                    grammars.tree-sitter-jsdoc
-                    grammars.tree-sitter-json
-                    grammars.tree-sitter-lua
-                    grammars.tree-sitter-markdown
-                    grammars.tree-sitter-nix
-                    grammars.tree-sitter-php
-                    grammars.tree-sitter-python
-                    grammars.tree-sitter-regex
-                    grammars.tree-sitter-ruby
-                    grammars.tree-sitter-rust
-                    grammars.tree-sitter-tsx
-                    grammars.tree-sitter-typescript
-                    grammars.tree-sitter-yaml
-                  ]
-              )
+          nvim-lspconfig
+          (
+            nvim-treesitter.withPlugins (
+              grammars:
+              [
+                # TODO: package tree-sitter-comment
+                grammars.tree-sitter-bash
+                grammars.tree-sitter-c
+                grammars.tree-sitter-cpp
+                grammars.tree-sitter-css
+                grammars.tree-sitter-go
+                grammars.tree-sitter-html
+                grammars.tree-sitter-java
+                grammars.tree-sitter-javascript
+                grammars.tree-sitter-jsdoc
+                grammars.tree-sitter-json
+                grammars.tree-sitter-lua
+                grammars.tree-sitter-markdown
+                grammars.tree-sitter-nix
+                grammars.tree-sitter-php
+                grammars.tree-sitter-python
+                grammars.tree-sitter-regex
+                grammars.tree-sitter-ruby
+                grammars.tree-sitter-rust
+                grammars.tree-sitter-tsx
+                grammars.tree-sitter-typescript
+                grammars.tree-sitter-yaml
+              ]
             )
-            nvim-web-devicons
-            (pluginWithDeps nvim-tree-lua [ nvim-web-devicons ])
-            (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
-            (pluginWithDeps rust-tools-nvim [ telescope nvim-lspconfig ])
-            (pluginWithDeps telescope-symbols-nvim [ telescope ])
-            nvim-compe
-            lsp-status-nvim
-            vim-vsnip
-            vim-vsnip-integ
-            friendly-snippets
-            lspkind-nvim
-            lualine-nvim
-            trouble-nvim
+          )
+          nvim-web-devicons
+          (pluginWithDeps nvim-tree-lua [ nvim-web-devicons ])
+          (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
+          (pluginWithDeps rust-tools-nvim [ telescope nvim-lspconfig ])
+          (pluginWithDeps telescope-symbols-nvim [ telescope ])
+          nvim-compe
+          lsp-status-nvim
+          vim-vsnip
+          vim-vsnip-integ
+          friendly-snippets
+          lspkind-nvim
+          lualine-nvim
+          trouble-nvim
 
-            nvim-dap
-            telescope-dap-nvim
-            rust-tools-nvim
+          nvim-dap
+          telescope-dap-nvim
+          rust-tools-nvim
 
-            # lightline-vim
-
-            vim-polyglot
-            vim-jsonnet
-            goyo-vim
-          ];
+          vim-polyglot
+          vim-jsonnet
+          goyo-vim
+        ];
     };
   };
 
@@ -136,20 +133,22 @@ in
     let
       # Symlink everything in ./config to ~/.config/nvim/
       cfg = builtins.listToAttrs (
-        map (
-          file: {
-            name = "${nvimHome}/${file}";
-            value = {
-              source = ./config + "/${file}";
-              recursive = true;
-            };
-          }
-        ) (builtins.attrNames (builtins.readDir ./config))
+        map
+          (
+            file: {
+              name = "${nvimHome}/${file}";
+              value = {
+                source = ./config + "/${file}";
+                recursive = true;
+              };
+            }
+          )
+          (builtins.attrNames (builtins.readDir ./config))
       );
     in
-      cfg // {
-        "${nvimHome}/undo/.keep".text = "";
-        "${nvimHome}/swaps/.keep".text = "";
-        "${nvimHome}/backups/.keep".text = "";
-      };
+    cfg // {
+      "${nvimHome}/undo/.keep".text = "";
+      "${nvimHome}/swaps/.keep".text = "";
+      "${nvimHome}/backups/.keep".text = "";
+    };
 }

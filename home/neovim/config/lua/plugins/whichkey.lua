@@ -16,13 +16,13 @@ local keymap = {
         name = '+find',
         b = {'<Cmd>Telescope buffers<CR>', 'buffers'},
         c = {
-            name = '+cormands',
+            name = '+commands',
             c = {'<Cmd>Telescope commands<CR>', 'commands'},
             h = {'<Cmd>Telescope command_history<CR>', 'history'}
         },
         g = {'<Cmd>Telescope live_grep<CR>', 'grep'},
         h = {'<Cmd>Telescope help_tags<CR>', 'help tags'},
-        m = {'<Cmd>Telescope man_pages<CR>', 'help tags'},
+        m = {'<Cmd>Telescope man_pages<CR>', 'man pages'},
         q = {'<Cmd>Telescope quickfix<CR>', 'quickfix'},
         v = {
             name = '+vcs',
@@ -34,22 +34,18 @@ local keymap = {
     },
     g = {
         name = '+git',
-        s = {':Git<CR>', 'Git Status'},
-        g = {':Neogit<CR>', 'Neogit'},
-        p = {':Neogit push<CR>', 'push'}
+        s = {':Neogit<CR>', 'status'},
+        p = {':Neogit push<CR>', 'push'},
+        l = {':Neogit pull<CR>', 'pull'}
     },
-    n = {':NvimTreeToggle<CR>', 'NvimTree'},
-    p = {'<Cmd>Telescope fd<CR>', 'buffers'},
+    p = {'<Cmd>Telescope fd<CR>', 'Find Files'},
     s = {':w!<CR>', 'save file'}, -- set a single command and text
+    t = {':NvimTreeToggle<CR>', 'Tree'},
     w = {
         name = '+window',
-        f = {'<C-W>k', 'up'},
         h = {':sp<CR>', 'horizontal split window'},
         o = {'<C-W>o', 'other'},
         q = {'<C-W>q', 'close'},
-        r = {'<C-W>h', 'left'},
-        s = {'<C-W>j', 'down'},
-        t = {'<C-W>l', 'right'},
         v = {':vsplit<CR>', 'vertical split window'}
     }
 }
