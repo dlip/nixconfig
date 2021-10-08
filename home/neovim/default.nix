@@ -93,8 +93,6 @@ in
           vim-test
           vim-tmux-navigator
           vim-which-key # spacemacs-like leader key menu
-          #plenary-nvim
-          #popup-nvim
 
           nvim-lspconfig
           (
