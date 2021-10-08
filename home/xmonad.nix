@@ -140,7 +140,7 @@ in
     enable = true;
     inactiveInterval = 5;
     lockCmd = "${lock-screen}/bin/lock-screen";
-    xautolockExtraOptions = [
+    xautolock.extraOptions = [
       "Xautolock.killer: systemctl suspend"
     ];
   };
