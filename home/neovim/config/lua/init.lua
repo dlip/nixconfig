@@ -1,5 +1,6 @@
 require 'keymap'
 require 'settings'
+require 'plugins/autosave'
 require 'plugins/compe'
 require 'plugins/dap'
 require 'plugins/gitsigns'

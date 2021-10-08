@@ -3,13 +3,24 @@
 let
   pluginWithDeps = plugin: deps: plugin.overrideAttrs (_: { dependencies = deps; });
   nvimHome = "${config.xdg.configHome}/nvim";
-  extraPlugins.nvim-dap-go = pkgs.vimUtils.buildVimPlugin {
-    name = "dap-go";
-    src = pkgs.fetchFromGitHub {
-      owner = "leoluz";
-      repo = "nvim-dap-go";
-      rev = "624a8b610083f8206cd3988cefb9549b8ffe2799";
-      sha256 = "16fgc0lx1jr8zbayanf5w677ssiw5xb8vwfaca295c8xlk760c3m";
+  extraPlugins = {
+    nvim-dap-go = pkgs.vimUtils.buildVimPlugin {
+      name = "dap-go";
+      src = pkgs.fetchFromGitHub {
+        owner = "leoluz";
+        repo = "nvim-dap-go";
+        rev = "624a8b610083f8206cd3988cefb9549b8ffe2799";
+        sha256 = "5FOEBf0+Gi+pnEqDeFT++XXFqIFVDjhTGsY37uHx+Rk=";
+      };
+    };
+    autosave-nvim = pkgs.vimUtils.buildVimPlugin {
+      name = "autosave-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "Pocco81";
+        repo = "AutoSave.nvim";
+        rev = "6af27430c47c8121e479c641381c3c220f38bace";
+        sha256 = "7SFwfR8VTsPgLYj7BnGzTp3uee21BexgMW934V8DROo=";
+      };
     };
   };
 in
@@ -64,77 +75,80 @@ in
 
       plugins = with pkgs.vimPlugins // extraPlugins;
         let
-          telescope =
-            (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim ]);
+          telescope = (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim ]);
         in
         [
+          autosave-nvim
+
           neogit
-          editorconfig-vim
+          nvim-compe
+          nvim-dap
+          nvim-dap-go
           nvim-whichkey-setup-lua
-          plenary-nvim
-          popup-nvim
+          rust-tools-nvim
           telescope
-          undotree
-          vim-easy-align
-          # vim-fugitive
-          # vim-surround
-          vim-which-key # spacemacs-like leader key menu
+          telescope-dap-nvim
           tokyonight-nvim
+          trouble-nvim
           vim-test
           vim-tmux-navigator
+          vim-which-key # spacemacs-like leader key menu
+          #plenary-nvim
+          #popup-nvim
 
           nvim-lspconfig
           (
-            nvim-treesitter.withPlugins (
-              grammars:
-              [
-                # TODO: package tree-sitter-comment
-                grammars.tree-sitter-bash
-                grammars.tree-sitter-c
-                grammars.tree-sitter-cpp
-                grammars.tree-sitter-css
-                grammars.tree-sitter-go
-                grammars.tree-sitter-html
-                grammars.tree-sitter-java
-                grammars.tree-sitter-javascript
-                grammars.tree-sitter-jsdoc
-                grammars.tree-sitter-json
-                grammars.tree-sitter-lua
-                grammars.tree-sitter-markdown
-                grammars.tree-sitter-nix
-                grammars.tree-sitter-php
-                grammars.tree-sitter-python
-                grammars.tree-sitter-regex
-                grammars.tree-sitter-ruby
-                grammars.tree-sitter-rust
-                grammars.tree-sitter-tsx
-                grammars.tree-sitter-typescript
-                grammars.tree-sitter-yaml
-              ]
-            )
+            nvim-treesitter.withPlugins
+              (
+                grammars:
+                [
+                  # TODO: package tree-sitt
+                  grammars.tree-sitter-c
+                  grammars.tree-sitter-cpp
+                  grammars.tree-sitter-css
+                  grammars.tree-sitter-go
+                  grammars.tree-sitter-html
+                  grammars.tree-sitter-java
+                  grammars.tree-sitter-javascript
+                  grammars.tree-sitter-jsdoc
+                  grammars.tree-sitter-json
+                  grammars.tree-sitter-lua
+                  grammars.tree-sitter-markdown
+                  grammars.tree-sitter-nix
+                  grammars.tree-sitter-php
+                  grammars.tree-sitter-python
+                  grammars.tree-sitter-regex
+                  grammars.tree-sitter-ruby
+                  grammars.tree-sitter-rust
+                  grammars.tree-sitter-tsx
+                  grammars.tree-sitter-typescript
+                  grammars.tree-sitter-yaml
+                ]
+              )
           )
-          nvim-web-devicons
-          (pluginWithDeps nvim-tree-lua [ nvim-web-devicons ])
+
           (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
+          (pluginWithDeps lualine-nvim [ lsp-status-nvim ])
+          (pluginWithDeps nvim-tree-lua [ nvim-web-devicons ])
           (pluginWithDeps rust-tools-nvim [ telescope nvim-lspconfig ])
           (pluginWithDeps telescope-symbols-nvim [ telescope ])
-          nvim-compe
-          lsp-status-nvim
-          vim-vsnip
-          vim-vsnip-integ
-          friendly-snippets
-          lspkind-nvim
-          lualine-nvim
-          trouble-nvim
 
-          nvim-dap
-          nvim-dap-go
-          telescope-dap-nvim
-          rust-tools-nvim
 
-          vim-polyglot
-          vim-jsonnet
-          goyo-vim
+          # editorconfig-vim
+
+          # undotree
+          # vim-easy-align
+          # vim-fugitive
+          # vim-surround
+          # nvim-web-devicons
+          # lsp-status-nvim
+          # vim-vsnip
+          # vim-vsnip-integ
+          # friendly-snippets
+          # lspkind-nvim
+          # vim-polyglot
+          # vim-jsonnet
+          # goyo-vim
         ];
     };
   };

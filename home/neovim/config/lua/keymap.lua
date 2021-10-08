@@ -6,15 +6,22 @@ local cmd = vim.cmd
 map('n', '<esc>', ':nohl<CR>', default_opts)
 
 -- move windows using arrows
-map('', '<up>', '<C-w>k', default_opts)
-map('', '<down>', '<C-w>j', default_opts)
-map('', '<left>', '<C-w>h', default_opts)
-map('', '<right>', '<C-w>l', default_opts)
-map('', '<S-up>', '<C-w>K', default_opts)
-map('', '<S-down>', '<C-w>J', default_opts)
-map('', '<S-left>', '<C-w>H', default_opts)
-map('', '<S-right>', '<C-w>L', default_opts)
-
+map('', '<C-up>', '<C-w>k', default_opts)
+map('', '<C-down>', '<C-w>j', default_opts)
+map('', '<C-left>', '<C-w>h', default_opts)
+map('', '<C-right>', '<C-w>l', default_opts)
+map('', '<C-S-up>', '<C-w>K', default_opts)
+map('', '<C-S-down>', '<C-w>J', default_opts)
+map('', '<C-S-left>', '<C-w>H', default_opts)
+map('', '<C-S-right>', '<C-w>L', default_opts)
+map('t', '<C-up>', '<C-\\><C-n><C-w>k', default_opts)
+map('t', '<C-down>', '<C-\\><C-n><C-w>j', default_opts)
+map('t', '<C-left>', '<C-\\><C-n><C-w>h', default_opts)
+map('t', '<C-right>', '<C-\\><C-n><C-w>l', default_opts)
+map('t', '<C-S-up>', '<C-\\><C-n><C-w>K', default_opts)
+map('t', '<C-S-down>', '<C-\\><C-n><C-w>J', default_opts)
+map('t', '<C-S-left>', '<C-\\><C-n><C-w>H', default_opts)
+map('t', '<C-S-right>', '<C-\\><C-n><C-w>L', default_opts)
 
 ----------------------------------------------------------
 -- Colemak remapings:
