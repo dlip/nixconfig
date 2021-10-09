@@ -59,6 +59,7 @@ in
         terraform-ls
         nodePackages.typescript
         nodePackages.typescript-language-server
+        sumneko-lua-language-server
       ];
 
       # Can't rely on init.lua, because it gets loaded before init.vim and

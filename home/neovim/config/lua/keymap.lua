@@ -32,8 +32,8 @@ map('', 'f', 'k', default_opts)
 map('', 's', 'j', default_opts)
 map('', 'r', 'h', default_opts)
 map('', 't', 'l', default_opts)
-map('', 'F', '5k', default_opts)
-map('', 'S', '5j', default_opts)
+map('', 'F', '<C-d>', default_opts)
+map('', 'S', '<C-u>', default_opts)
 
 -- Word left/right
 map('', 'R', 'b', default_opts)
@@ -44,6 +44,7 @@ map('', 'P', 'W', default_opts)
 -- Beginning/end of line
 map('', 'w', '^', default_opts)
 map('', 'p', '$', default_opts)
+map('v', 'p', 'g_', default_opts)
 
 -- Copy/paste
 map('n', 'c', 'y', default_opts)
@@ -120,7 +121,6 @@ map('v', 'x', 'd', default_opts)
 map('n', 'X', 'D', default_opts)
 map('v', 'X', 'D', default_opts)
 map('n', 'xx', 'dd', default_opts)
-map('v', 'xx', 'dd', default_opts)
 
 -- 'til
 map('', 'l', 't', default_opts)
@@ -154,3 +154,8 @@ map('v', '<A-s>', ':m \'>+1<CR>gv=gv', default_opts)
 -- Navigate back/forward
 map('', '<A-r>', '<C-o>', default_opts)
 map('', '<A-t>', '<C-i>', default_opts)
+
+
+-- Enable enter and backspace in normal mode
+map('n', '<CR>', 'o<Space><Backspace><Esc>', default_opts)
+map('n', '<Backspace>', 'i<Backspace><Esc>', default_opts)
