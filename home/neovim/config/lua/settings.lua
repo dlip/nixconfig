@@ -15,11 +15,14 @@ g.maplocalleader = ','        -- change local leader to a comma
 opt.mouse = 'a'               -- enable mouse support
 opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 opt.swapfile = false          -- don't use swapfile
+opt.timeoutlen = 300          -- timeout for key sequences
+opt.scrolloff = 5             -- keep cursor away from top/bottom edge of the screen
 
 -----------------------------------------------------------
 -- Neovim UI
 -----------------------------------------------------------
 opt.number = true             -- show line number
+opt.relativenumber = true     -- show relative line numbers
 opt.showmatch = true          -- highlight matching parenthesis
 opt.foldmethod = 'marker'     -- enable folding (default 'foldmarker')
 opt.colorcolumn = '80'       -- line lenght marker at 80 columns

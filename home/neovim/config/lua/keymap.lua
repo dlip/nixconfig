@@ -1,9 +1,11 @@
 local map = vim.api.nvim_set_keymap
 local default_opts = {noremap = true, silent = true}
-local cmd a = vim.cmd
 
 -- clear search highlighting
 map('n', '<esc>', ':nohl<CR>', default_opts)
+
+-- Escape sequence in terminal
+map('t', '<Esc><Esc>', '<C-\\><C-n>', default_opts)
 
 -- move windows using arrows
 map('', '<C-up>', '<C-w>k', default_opts)
@@ -32,8 +34,8 @@ map('', 'f', 'k', default_opts)
 map('', 's', 'j', default_opts)
 map('', 'r', 'h', default_opts)
 map('', 't', 'l', default_opts)
-map('', 'F', '<C-d>', default_opts)
-map('', 'S', '<C-u>', default_opts)
+map('', 'F', '<C-u>', default_opts)
+map('', 'S', '<C-d>', default_opts)
 
 -- Word left/right
 map('', 'R', 'b', default_opts)
