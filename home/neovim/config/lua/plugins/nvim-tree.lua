@@ -22,7 +22,7 @@ require'nvim-tree'.setup {
     auto_open = true,
   },
   -- hijack the cursor in the tree to put it at the start of the filename
-  hijack_cursor       = false,
+  hijack_cursor       = true,
   -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
   update_cwd          = false,
   -- show lsp diagnostics in the signcolumn
@@ -30,7 +30,7 @@ require'nvim-tree'.setup {
   -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
   update_focused_file = {
     -- enables the feature
-    enable      = false,
+    enable      = true,
     -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
     -- only relevant when `update_focused_file.enable` is true
     update_cwd  = false,
@@ -61,7 +61,7 @@ require'nvim-tree'.setup {
       custom_only = true,
       -- list of mappings to set on the tree manually
       list = {
-        { key = {"<CR>", "o", "<2-LeftMouse>"}, cb = tree_cb("edit") },
+        { key = {"<CR>", "t", "<2-LeftMouse>"}, cb = tree_cb("edit") },
         { key = {"<2-RightMouse>", "<C-]>"},    cb = tree_cb("cd") },
         { key = "<C-v>",                        cb = tree_cb("vsplit") },
         { key = "<C-x>",                        cb = tree_cb("split") },
@@ -69,7 +69,7 @@ require'nvim-tree'.setup {
         { key = "<",                            cb = tree_cb("prev_sibling") },
         { key = ">",                            cb = tree_cb("next_sibling") },
         { key = "P",                            cb = tree_cb("parent_node") },
-        { key = "<BS>",                         cb = tree_cb("close_node") },
+        { key = "r",                         cb = tree_cb("close_node") },
         { key = "<S-CR>",                       cb = tree_cb("close_node") },
         { key = "<Tab>",                        cb = tree_cb("preview") },
         { key = "K",                            cb = tree_cb("first_sibling") },

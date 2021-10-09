@@ -3,7 +3,6 @@
 -----------------------------------------------------------
 local cmd = vim.cmd             -- execute Vim commands
 local exec = vim.api.nvim_exec  -- execute Vimscript
-local fn = vim.fn               -- call Vim functions
 local g = vim.g                 -- global variables
 local opt = vim.opt             -- global/buffer/windows-scoped options
 
@@ -16,7 +15,6 @@ opt.mouse = 'a'               -- enable mouse support
 opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 opt.swapfile = false          -- don't use swapfile
 opt.timeoutlen = 300          -- timeout for key sequences
-opt.scrolloff = 5             -- keep cursor away from top/bottom edge of the screen
 
 -----------------------------------------------------------
 -- Neovim UI
@@ -27,10 +25,11 @@ opt.showmatch = true          -- highlight matching parenthesis
 opt.foldmethod = 'marker'     -- enable folding (default 'foldmarker')
 opt.colorcolumn = '80'       -- line lenght marker at 80 columns
 opt.splitright = true         -- vertical split to the right
-opt.splitbelow = true         -- orizontal split to the bottom
+opt.splitbelow = true         -- horizontal split to the bottom
 opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = true          -- ignore lowercase for the whole pattern
 opt.linebreak = true          -- wrap on word boundary
+opt.scrolloff = 5             -- keep cursor away from top/bottom edge of the screen
 
 -- remove whitespace on save
 cmd [[au BufWritePre * :%s/\s\+$//e]]
@@ -39,7 +38,7 @@ cmd [[au BufWritePre * :%s/\s\+$//e]]
 exec([[
   augroup YankHighlight
     autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=700}
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
   augroup end
 ]], false)
 
