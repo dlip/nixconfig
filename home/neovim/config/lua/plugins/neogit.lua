@@ -37,13 +37,12 @@ neogit.setup {
     status = {
       ["l"] = "PullPopup",
       ["p"] = "PushPopup",
-      ["z"] = "Unstage",
-      ["Z"] = "UnstageStaged",
-      ["Z"] = "UnstageStaged",
       ["t"] = "StashPopup",
       ["g"] = "LogPopup",
-      ["u"] = "",
-      ["U"] = "",
+      ["s"] = "",
+      ["S"] = "",
+      ["e"] = "Stage",
+      ["E"] = "StageUnstaged",
     }
   }
 }
