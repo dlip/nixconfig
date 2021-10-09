@@ -51,9 +51,6 @@ end
 
 -- Sumneko lua-language-server setup
 
--- set the path to the sumneko installation; if you previously installed via the now deprecated :LspInstall, use
-local sumneko_root_path = "/nix/store/1iz9924yn5i9cy13axrw1ck0mg6fg4rr-sumneko-lua-language-server-2.3.6"
-
 local runtime_path = vim.split(package.path, ';')
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")

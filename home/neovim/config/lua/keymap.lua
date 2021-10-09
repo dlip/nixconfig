@@ -158,4 +158,4 @@ map('', '<A-t>', '<C-i>', default_opts)
 
 -- Enable enter and backspace in normal mode
 map('n', '<CR>', 'o<Space><Backspace><Esc>', default_opts)
-map('n', '<Backspace>', 'i<Backspace><Esc>', default_opts)
+map('n', '<Backspace>', 'a<Backspace><Esc>', default_opts)

@@ -173,5 +173,8 @@ in
       "${nvimHome}/undo/.keep".text = "";
       "${nvimHome}/swaps/.keep".text = "";
       "${nvimHome}/backups/.keep".text = "";
+      "${nvimHome}/lua/env.lua".text = ''
+        sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
+      '';
     };
 }
