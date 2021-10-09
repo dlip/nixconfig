@@ -1,6 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local default_opts = {noremap = true, silent = true}
-local cmd = vim.cmd
+local cmd a = vim.cmd
 
 -- clear search highlighting
 map('n', '<esc>', ':nohl<CR>', default_opts)
@@ -28,40 +28,32 @@ map('t', '<C-S-right>', '<C-\\><C-n><C-w>L', default_opts)
 ----------------------------------------------------------
 
 -- arrows
-map('', 'u', 'k', default_opts)
-map('', 'e', 'j', default_opts)
-map('', 'n', 'h', default_opts)
-map('', 'i', 'l', default_opts)
-map('', 'U', '5k', default_opts)
-map('', 'E', '5j', default_opts)
+map('', 'f', 'k', default_opts)
+map('', 's', 'j', default_opts)
+map('', 'r', 'h', default_opts)
+map('', 't', 'l', default_opts)
+map('', 'F', '5k', default_opts)
+map('', 'S', '5j', default_opts)
 
 -- Word left/right
-map('', 'l', 'b', default_opts)
-map('', 'y', 'w', default_opts)
-map('', '<C-l>', 'B', default_opts)
-map('', '<C-y>', 'W', default_opts)
-
--- End of word left/right
-map('n', 'N', 'ge', default_opts)
-map('x', 'N', 'ge', default_opts)
-map('o', 'N', 'ge', default_opts)
-map('n', 'I', 'e', default_opts)
-map('x', 'I', 'e', default_opts)
-map('o', 'I', 'e', default_opts)
+map('', 'R', 'b', default_opts)
+map('', 'T', 'w', default_opts)
+map('', 'W', 'B', default_opts)
+map('', 'P', 'W', default_opts)
 
 -- Beginning/end of line
-map('', 'L', '^', default_opts)
-map('', 'Y', 'g_', default_opts)
+map('', 'w', '^', default_opts)
+map('', 'p', '$', default_opts)
 
 -- Copy/paste
 map('n', 'c', 'y', default_opts)
 map('x', 'c', 'y', default_opts)
-map('n', 'v', 'p', default_opts)
-map('x', 'v', 'p', default_opts)
+map('n', 'd', 'p', default_opts)
+map('x', 'd', 'p', default_opts)
 map('n', 'C', 'yg_', default_opts)
 map('x', 'C', 'y', default_opts)
-map('n', 'V', 'P', default_opts)
-map('x', 'V', 'P', default_opts)
+map('n', 'D', 'P', default_opts)
+map('x', 'D', 'P', default_opts)
 map('n', 'cc', 'yy', default_opts)
 
 -- Undo/redo
@@ -85,98 +77,80 @@ map('x', 'gz', 'U<C-u>undo<CR>', default_opts)
 --     vnoremap <silent> <expr> <S-PageDown> (winheight(0)-1) . "\<C-d>"
 
 -- Jumplist navigation
-map('n', '<C-u>', '<C-i>', default_opts)
-map('n', '<C-e>', '<C-o>', default_opts)
-map('v', '<C-u>', '<C-i>', default_opts)
-map('v', '<C-e>', '<C-o>', default_opts)
+map('n', '<C-f>', '<C-i>', default_opts)
+map('n', '<C-s>', '<C-o>', default_opts)
+map('v', '<C-f>', '<C-i>', default_opts)
+map('v', '<C-s>', '<C-o>', default_opts)
 
--- Text objects
--- diw is drw. daw is now dtw.
-map('o', 'r', 'i', default_opts)
-map('v', 'r', 'i', default_opts)
-map('o', 't', 'a', default_opts)
-map('v', 't', 'a', default_opts)
--- Move visual replace from 'r' to 'R'
-map('o', 'R', 'r', default_opts)
-map('v', 'R', 'r', default_opts)
 -- Quicker word change
 map('o', '<space>', 'iw', default_opts)
 
 -- Folds
-map('n', 'b', 'z', default_opts)
-map('x', 'b', 'z', default_opts)
-map('n', 'bb', 'zb', default_opts)
-map('x', 'bb', 'zb', default_opts)
-map('n', 'bu', 'zk', default_opts)
-map('x', 'bu', 'zk', default_opts)
-map('n', 'be', 'zj', default_opts)
-map('x', 'be', 'zj', default_opts)
-
--- inSert/append (T)
-map('n', 's', 'i', default_opts)
-map('n', 'S', 'I', default_opts)
-map('n', 't', 'a', default_opts)
-map('n', 'T', 'A', default_opts)
+map('n', 'j', 'z', default_opts)
+map('x', 'j', 'z', default_opts)
+map('n', 'jb', 'zb', default_opts)
+map('x', 'jb', 'zb', default_opts)
+map('n', 'ju', 'zk', default_opts)
+map('x', 'ju', 'zk', default_opts)
+map('n', 'je', 'zj', default_opts)
+map('x', 'je', 'zj', default_opts)
 
 -- Change
-map('n', 'w', 'c', default_opts)
-map('x', 'w', 'c', default_opts)
-map('n', 'W', 'C', default_opts)
-map('x', 'W', 'C', default_opts)
-map('n', 'ww', 'cc', default_opts)
+map('n', 'u', 'c', default_opts)
+map('x', 'u', 'c', default_opts)
+map('n', 'U', 'C', default_opts)
+map('x', 'U', 'C', default_opts)
+map('n', 'uu', 'cc', default_opts)
 
--- Visual mode
-map('n', 'a', 'v', default_opts)
-map('x', 'a', 'v', default_opts)
-map('n', 'A', 'V', default_opts)
-map('x', 'A', 'V', default_opts)
+-- Replace
+map('n', 'y', 'r', default_opts)
+map('x', 'y', 'r', default_opts)
+map('n', 'Y', 'R', default_opts)
+map('x', 'Y', 'R', default_opts)
 
--- Insert in Visual mode
-map('v', 'S', 'I', default_opts)
+-- Substitute
+map('n', 'k', 's', default_opts)
+map('x', 'k', 's', default_opts)
+map('n', 'K', 'S', default_opts)
+map('x', 'K', 'S', default_opts)
 
--- Search
-map('', 'k', 'n', default_opts)
-map('', 'K', 'N', default_opts)
+-- Delete
+map('n', 'x', 'd', default_opts)
+map('v', 'x', 'd', default_opts)
+map('n', 'X', 'D', default_opts)
+map('v', 'X', 'D', default_opts)
+map('n', 'xx', 'dd', default_opts)
+map('v', 'xx', 'dd', default_opts)
 
 -- 'til
--- Breaks diffput
-map('', 'p', 't', default_opts)
-map('', 'P', 'T', default_opts)
-
--- Fix diffput (t for 'transfer')
-map('n', 'dt', 'dp', default_opts)
+map('', 'l', 't', default_opts)
+map('', 'L', 'T', default_opts)
 
 -- Macros (replay the macro recorded by qq)
 map('n', 'Q', '@q', default_opts)
 
 -- Cursor to bottom of screen
--- H and M haven't been remapped, only L needs to be mapped
-map('n', 'B', 'L', default_opts)
-map('v', 'B', 'L', default_opts)
+map('n', '<C-s>', 'L', default_opts)
+map('v', '<C-s>', 'L', default_opts)
 
--- Misc overridden keys must be prefixed with g
-map('n', 'gS', 'S', default_opts)
-map('x', 'gS', 'S', default_opts)
-map('n', 'gX', 'X', default_opts)
-map('x', 'gX', 'X', default_opts)
-map('n', 'gU', 'U', default_opts)
-map('x', 'gU', 'U', default_opts)
-map('n', 'gQ', 'Q', default_opts)
-map('x', 'gQ', 'Q', default_opts)
-map('n', 'gK', 'K', default_opts)
-map('x', 'gK', 'K', default_opts)
--- extra alias
-map('n', 'gh', 'K', default_opts)
-map('x', 'gh', 'K', default_opts)
+-- Cursor to top of screen
+map('n', '<C-f>', 'H', default_opts)
+map('v', '<C-f>', 'H', default_opts)
+
+-- Go to mark / switch case
+map('n', 'b', '`', default_opts)
+map('v', 'b', '`', default_opts)
+map('n', 'B', '~', default_opts)
+map('v', 'B', '~', default_opts)
 
 -- Move lines
-map('n', '<A-e>', ':m .+1<CR>==', default_opts)
-map('n', '<A-u>', ':m .-2<CR>==', default_opts)
-map('i', '<A-e>', '<Esc>:m .+1<CR>==gi', default_opts)
-map('i', '<A-u>', '<Esc>:m .-2<CR>==gi', default_opts)
-map('v', '<A-e>', ':m \'>+1<CR>gv=gv', default_opts)
-map('v', '<A-u>', ':m \'<-2<CR>gv=gv', default_opts)
+map('n', '<A-f>', ':m .-2<CR>==', default_opts)
+map('n', '<A-s>', ':m .+1<CR>==', default_opts)
+map('i', '<A-f>', '<Esc>:m .-2<CR>==gi', default_opts)
+map('i', '<A-s>', '<Esc>:m .+1<CR>==gi', default_opts)
+map('v', '<A-f>', ':m \'<-2<CR>gv=gv', default_opts)
+map('v', '<A-s>', ':m \'>+1<CR>gv=gv', default_opts)
 
 -- Navigate back/forward
-map('', '<A-n>', '<C-o>', default_opts)
-map('', '<A-i>', '<C-i>', default_opts)
+map('', '<A-r>', '<C-o>', default_opts)
+map('', '<A-t>', '<C-i>', default_opts)

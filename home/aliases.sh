@@ -1,4 +1,4 @@
-
+NIXCONFIGPATH=~/code/nixconfig
 
 
 scpid(){
@@ -11,22 +11,16 @@ EOF
 }
 
 nixconfig(){
-    export HOME_MANAGER_BACKUP_EXT=backup-$(date +"%Y%m%d")
-    pushd ~/code/nixconfig > /dev/null
-    nix run .#homeConfigurations.$NIXCONFIG
-    popd > /dev/null
+    export HOME_MANAGER_BACKUP_EXT=$(date +"%Y%m%d%H%M%S").nixbackup
+    nix run $NIXCONFIGPATH/#homeConfigurations.$NIXCONFIG "$@"
 }
 
 nixosconfig(){
-    pushd ~/code/nixconfig > /dev/null
-    sudo nixos-rebuild switch --flake .
-    popd > /dev/null
+    sudo nixos-rebuild switch --flake $NIXCONFIGPATH "$@"
 }
 
 nixosconfigboot(){
-    pushd ~/code/nixconfig > /dev/null
-    sudo nixos-rebuild boot --flake .
-    popd > /dev/null
+    sudo nixos-rebuild boot --flake $NIXCONFIGPATH "$@"
 }
 
 reset-k3s(){
