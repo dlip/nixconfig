@@ -91,9 +91,17 @@ in
           telescope-dap-nvim
           tokyonight-nvim
           trouble-nvim
+          vim-easymotion
+          vim-commentary
           vim-test
           vim-tmux-navigator
           vim-which-key # spacemacs-like leader key menu
+
+          (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
+          (pluginWithDeps lualine-nvim [ lsp-status-nvim ])
+          (pluginWithDeps nvim-tree-lua [ nvim-web-devicons ])
+          (pluginWithDeps rust-tools-nvim [ telescope nvim-lspconfig ])
+          (pluginWithDeps telescope-symbols-nvim [ telescope ])
 
           nvim-lspconfig
           (
@@ -125,12 +133,6 @@ in
                 ]
               )
           )
-
-          (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
-          (pluginWithDeps lualine-nvim [ lsp-status-nvim ])
-          (pluginWithDeps nvim-tree-lua [ nvim-web-devicons ])
-          (pluginWithDeps rust-tools-nvim [ telescope nvim-lspconfig ])
-          (pluginWithDeps telescope-symbols-nvim [ telescope ])
 
 
           # editorconfig-vim

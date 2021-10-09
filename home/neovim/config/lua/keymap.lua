@@ -1,5 +1,6 @@
 local map = vim.api.nvim_set_keymap
 local default_opts = {noremap = true, silent = true}
+local cmd = vim.cmd 	-- using cmd to execute vim script
 
 -- clear search highlighting
 map('n', '<esc>', ':nohl<CR>', default_opts)
@@ -111,12 +112,6 @@ map('x', 'y', 'r', default_opts)
 map('n', 'Y', 'R', default_opts)
 map('x', 'Y', 'R', default_opts)
 
--- Substitute
-map('n', 'k', 's', default_opts)
-map('x', 'k', 's', default_opts)
-map('n', 'K', 'S', default_opts)
-map('x', 'K', 'S', default_opts)
-
 -- Delete
 map('n', 'x', 'd', default_opts)
 map('v', 'x', 'd', default_opts)
@@ -160,4 +155,11 @@ map('', '<A-t>', '<C-i>', default_opts)
 
 -- Enable enter and backspace in normal mode
 map('n', '<CR>', 'o<Space><Backspace><Esc>', default_opts)
-map('n', '<Backspace>', 'a<Backspace><Esc>', default_opts)
+map('n', '<Backspace>', 'X', default_opts)
+
+-- Plugins
+cmd[[
+" Easymotion
+map k <Plug>(easymotion-sl)
+map K <Plug>(easymotion-bd-f)
+]]
