@@ -90,6 +90,7 @@ in
           nvim-compe
           nvim-dap
           nvim-dap-go
+          nvim-dap-ui
           nvim-treesitter-textobjects
           nvim-ts-rainbow
           nvim-whichkey-setup-lua

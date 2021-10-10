@@ -22,7 +22,8 @@ local keymap = {
         B = {':lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', 'Toggle Breakpoint Condition'},
         l = {':lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', 'Toggle Breakpoint Log'},
         r = {':lua require\'dap\'.repl.open()<CR>', 'Open REPL'},
-        e = {':lua require\'dap\'.run_last()<CR>', 'Run Last'}
+        e = {':lua require\'dap\'.run_last()<CR>', 'Run Last'},
+        u = {':lua require("dapui").toggle()<CR>', 'Toggle DAP UI'}
     },
     f = {
         name = '+Find',
