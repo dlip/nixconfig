@@ -95,6 +95,8 @@ in
           nvim-compe
           nvim-dap
           nvim-dap-go
+          nvim-treesitter-textobjects
+          nvim-ts-rainbow
           nvim-whichkey-setup-lua
           rust-tools-nvim
           telescope

@@ -155,6 +155,9 @@ map('n', '<Backspace>', 'X', default_opts)
 map('v', 'gu', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>Ncgn', default_opts)
 map('v', 'gU', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>NcgN', default_opts)
 
+-- Paste in insert mode
+map('', '<C-v>', '<C-r>"', default_opts)
+
 -- Plugins
 cmd[[
 " Easymotion
