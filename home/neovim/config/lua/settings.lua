@@ -14,6 +14,9 @@ g.maplocalleader = ','        -- change local leader to a comma
 opt.mouse = 'a'               -- enable mouse support
 opt.clipboard = 'unnamedplus' -- copy/paste to system clipboard
 opt.swapfile = false          -- don't use swapfile
+opt.backup = false            -- don't create backups
+opt.undofile = true           -- enable undofile for persistent undo
+opt.undodir = '~/.config/nvim/undo' -- set undofile dir
 opt.timeoutlen = 500          -- timeout for key sequences
 
 -----------------------------------------------------------

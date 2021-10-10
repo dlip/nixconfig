@@ -71,12 +71,7 @@ in
         sumneko-lua-language-server
       ];
 
-      # Can't rely on init.lua, because it gets loaded before init.vim and
-      # home-manager sets things like runtimepath and packpath in it
-      # TODO: make that use ~/.local/share/nvim instead
       extraConfig = ''
-        set backupdir=${nvimHome}/backups
-        set directory=${nvimHome}/swaps
         set undodir=${nvimHome}/undo
         set shadafile=${nvimHome}/viminfo
         let test#go#runner = 'gotest'
@@ -186,8 +181,6 @@ in
     in
     cfg // {
       "${nvimHome}/undo/.keep".text = "";
-      "${nvimHome}/swaps/.keep".text = "";
-      "${nvimHome}/backups/.keep".text = "";
       "${nvimHome}/lua/env.lua".text = ''
         sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
       '';

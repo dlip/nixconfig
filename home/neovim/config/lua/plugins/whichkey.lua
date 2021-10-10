@@ -70,9 +70,9 @@ local keymap = {
         w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', 'Add Workspace Folder'},
         x = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'Remove Workspace Folder'},
     },
+    n = {':NvimTreeToggle<CR>', 'NvimTreeToggle'},
     p = {':Telescope fd<CR>', 'Find Files'},
     s = {':w!<CR>', 'save file'}, -- set a single command and text
-    t = {':NvimTreeToggle<CR>', 'Tree'},
     w = {
         name = '+Window',
         h = {':sp<CR>', 'horizontal split window'},
