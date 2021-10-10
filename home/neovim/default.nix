@@ -22,6 +22,15 @@ let
         sha256 = "7SFwfR8VTsPgLYj7BnGzTp3uee21BexgMW934V8DROo=";
       };
     };
+    firenvim = pkgs.vimUtils.buildVimPlugin {
+      name = "firenvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "glacambre";
+        repo = "firenvim";
+        rev = "eb3abef4520d17dbd9957f5d23ada74b853133e4";
+        sha256 = "xXVWK13aKpGA0JNyOY+sPE8aiZlUsXwojiL3CwdsVGo=";
+      };
+    };
   };
 in
 {
@@ -81,6 +90,7 @@ in
         [
           autosave-nvim
 
+          firenvim
           neogit
           nvim-compe
           nvim-dap
@@ -92,6 +102,7 @@ in
           tokyonight-nvim
           trouble-nvim
           vim-easymotion
+          vim-eunuch
           vim-commentary
           vim-test
           vim-tmux-navigator

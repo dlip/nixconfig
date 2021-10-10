@@ -157,6 +157,10 @@ map('', '<A-t>', '<C-i>', default_opts)
 map('n', '<CR>', 'o<Space><Backspace><Esc>', default_opts)
 map('n', '<Backspace>', 'X', default_opts)
 
+-- Enable repeating change of selection
+map('v', 'gu', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>Ncgn', default_opts)
+map('v', 'gU', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>NcgN', default_opts)
+
 -- Plugins
 cmd[[
 " Easymotion
