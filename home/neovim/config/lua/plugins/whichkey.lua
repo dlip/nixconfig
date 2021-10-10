@@ -49,7 +49,18 @@ local keymap = {
         name = '+Git',
         s = {':Neogit<CR>', 'status'},
         p = {':Neogit push<CR>', 'push'},
-        l = {':Neogit pull<CR>', 'pull'}
+        l = {':Neogit pull<CR>', 'pull'},
+        g = {
+          name = '+Git Signs',
+          s = {'<cmd>lua require"gitsigns".stage_hunk()<CR>', 'Stage Hunk'},
+          u = {'<cmd>lua require"gitsigns".undo_stage_hunk()<CR>', 'Undo Stage Hunk'},
+          r = {'<cmd>lua require"gitsigns".reset_hunk()<CR>', 'Reset Hunk'},
+          R = {'<cmd>lua require"gitsigns".reset_buffer()<CR>', 'Reset Buffer'},
+          p = {'<cmd>lua require"gitsigns".preview_hunk()<CR>', 'Preview Hunk'},
+          b = {'<cmd>lua require"gitsigns".blame_line(true)<CR>', 'Blame Line'},
+          S = {'<cmd>lua require"gitsigns".stage_buffer()<CR>', 'Stage Buffer'},
+          U = {'<cmd>lua require"gitsigns".reset_buffer_index()<CR>', 'Reset Buffer Index'}
+      },
     },
     l = {
         name = '+LSP',

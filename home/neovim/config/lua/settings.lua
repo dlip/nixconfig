@@ -32,7 +32,7 @@ opt.splitright = true         -- vertical split to the right
 opt.splitbelow = true         -- horizontal split to the bottom
 opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = true          -- ignore lowercase for the whole pattern
-opt.linebreak = true          -- wrap on word boundary
+opt.wrap = false              -- No wrap
 opt.scrolloff = 5             -- keep cursor away from top/bottom edge of the screen
 
 -- remove whitespace on save
