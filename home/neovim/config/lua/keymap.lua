@@ -92,12 +92,6 @@ map('o', '<space>', 'iw', default_opts)
 -- Folds
 map('n', 'j', 'z', default_opts)
 map('x', 'j', 'z', default_opts)
-map('n', 'jb', 'zb', default_opts)
-map('x', 'jb', 'zb', default_opts)
-map('n', 'ju', 'zk', default_opts)
-map('x', 'ju', 'zk', default_opts)
-map('n', 'je', 'zj', default_opts)
-map('x', 'je', 'zj', default_opts)
 
 -- Change
 map('n', 'u', 'c', default_opts)
