@@ -12,6 +12,18 @@ require("whichkey_setup").config {
 
 local keymap = {
     ['<Tab>'] = {'<C-^>', 'Previous Buffer'},
+    d = {
+        name = '+Debug',
+        c = {':lua require\'dap\'.continue()<CR>', 'Continue'},
+        o = {':lua require\'dap\'.step_over()<CR>', 'Step Over'},
+        i = {':lua require\'dap\'.step_into()<CR>', 'Step Into'},
+        t = {':lua require\'dap\'.step_out()<CR>', 'Step Out'},
+        b = {':lua require\'dap\'.toggle_breakpoint()<CR>', 'Toggle Breakpoint'},
+        B = {':lua require\'dap\'.set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', 'Toggle Breakpoint Condition'},
+        l = {':lua require\'dap\'.set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', 'Toggle Breakpoint Log'},
+        r = {':lua require\'dap\'.repl.open()<CR>', 'Open REPL'},
+        e = {':lua require\'dap\'.run_last()<CR>', 'Run Last'}
+    },
     f = {
         name = '+Find',
         b = {':Telescope buffers<CR>', 'buffers'},

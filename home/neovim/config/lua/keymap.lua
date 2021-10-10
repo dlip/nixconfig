@@ -87,7 +87,7 @@ map('v', '<C-f>', '<C-i>', default_opts)
 map('v', '<C-s>', '<C-o>', default_opts)
 
 -- Quicker word change
-map('o', '<space>', 'iw', default_opts)
+map('n', 'u<space>', 'ciw', default_opts)
 
 -- Folds
 map('n', 'j', 'z', default_opts)
