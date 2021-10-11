@@ -3,6 +3,7 @@
 let
   pluginWithDeps = plugin: deps: plugin.overrideAttrs (_: { dependencies = deps; });
   nvimHome = "${config.xdg.configHome}/nvim";
+  # Test sha 0000000000000000000000000000000000000000000000000000
   extraPlugins = {
     nvim-dap-go = pkgs.vimUtils.buildVimPlugin {
       name = "dap-go";
@@ -29,6 +30,15 @@ let
         repo = "firenvim";
         rev = "eb3abef4520d17dbd9957f5d23ada74b853133e4";
         sha256 = "xXVWK13aKpGA0JNyOY+sPE8aiZlUsXwojiL3CwdsVGo=";
+      };
+    };
+    vim-delve = pkgs.vimUtils.buildVimPlugin {
+      name = "vim-delve";
+      src = pkgs.fetchFromGitHub {
+        owner = "sebdah";
+        repo = "vim-delve";
+        rev = "554b7997caba5d2b38bc4a092e3a468e4abb7f18";
+        sha256 = "udfWUTQj3aNLi/OcDjdSNcXP6/MVVqNnq3xmjQffGoc=";
       };
     };
   };
@@ -103,6 +113,7 @@ in
           vim-eunuch
           vim-commentary
           vim-test
+          vim-delve
           vim-tmux-navigator
           vim-which-key # spacemacs-like leader key menu
 
