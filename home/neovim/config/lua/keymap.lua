@@ -39,21 +39,21 @@ map('', 'F', '<C-u>', default_opts)
 map('', 'S', '<C-d>', default_opts)
 
 -- Word left/right
-map('', 'R', 'b', default_opts)
-map('', 'T', 'w', default_opts)
+map('', 'w', 'b', default_opts)
+map('', 'p', 'w', default_opts)
 map('', 'W', 'B', default_opts)
 map('', 'P', 'W', default_opts)
 
 -- Beginning/end of line
-map('', 'w', '^', default_opts)
-map('', 'p', '$', default_opts)
-map('v', 'p', 'g_', default_opts)
+map('', 'R', '^', default_opts)
+map('', 'T', '$', default_opts)
+map('v', 'T', 'g_', default_opts)
 
 -- Copy/paste
 map('n', 'c', 'y', default_opts)
 map('x', 'c', 'y', default_opts)
 map('n', 'd', 'p', default_opts)
-map('x', 'd', 'p', default_opts)
+map('x', 'd', 'pgvy', default_opts) -- paste without yanking
 map('n', 'C', 'yg_', default_opts)
 map('x', 'C', 'y', default_opts)
 map('n', 'D', 'P', default_opts)

@@ -49,15 +49,27 @@ easyocr(){
 }
 
 # Open project
+local projectdir="$HOME/code"
+local projectfile="$projectdir/projects.txt"
 p(){
     filter_params=""
     if [ -n "$1" ]; then
         filter_params="-q $1"
     fi
-    dir="$HOME/code"
-    repo_path=$(find "$dir" -maxdepth 4 -name .git -prune | sed 's/\/.git$//' | sed "s|$dir/||" | sort | fzf $filter_params --select-1)
+    projectdir="$HOME/code"
+    repo_path=$(cat "$projectfile" | fzf $filter_params --select-1)
     if [ -n "$repo_path" ]; then
-        cd "$dir/$repo_path"
+        cd "$projectdir/$repo_path"
         nvim
     fi
+}
+
+# Project add current dir
+pa(){
+    pwd | sed "s|$projectdir/||" >> $projectfile
+}
+
+# Project add git folders
+pag(){
+    find ~+ -maxdepth 4 -name .git -prune | sed 's|/.git$||' | sed "s|$projectdir/||" >> $projectfile
 }
