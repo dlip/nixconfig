@@ -91,6 +91,13 @@ local keymap = {
         o = {'<C-W>o', 'other'},
         q = {'<C-W>q', 'close'},
         v = {':vsplit<CR>', 'vertical split window'}
+    },
+    q = {
+        name = '+Quickfix',
+        o = {':copen<CR>', 'Open'},
+        c = {':ccl<CR>', 'Close'},
+        n = {':cn<CR>', 'Next'},
+        p = {':cp<CR>', 'Previous'},
     }
 }
 

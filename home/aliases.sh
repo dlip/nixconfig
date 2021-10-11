@@ -47,3 +47,17 @@ vterm_printf(){
 easyocr(){
     nvidia-docker run -it --rm -v $HOME/.EasyOCR:/root/.EasyOCR -v $PWD:/workspace challisa/easyocr easyocr -l en --detail 0 --gpu true -f "$1"
 }
+
+# Open project
+p(){
+    filter_params=""
+    if [ -n "$1" ]; then
+        filter_params="-q $1"
+    fi
+    dir="$HOME/code"
+    repo_path=$(find "$dir" -maxdepth 4 -name .git -prune | sed 's/\/.git$//' | sed "s|$dir/||" | sort | fzf $filter_params --select-1)
+    if [ -n "$repo_path" ]; then
+        cd "$dir/$repo_path"
+        nvim
+    fi
+}

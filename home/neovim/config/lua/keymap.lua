@@ -153,6 +153,9 @@ map('', '<A-t>', '<C-i>', default_opts)
 
 -- Enable enter and backspace in normal mode
 map('n', '<CR>', 'o<Space><Backspace><Esc>', default_opts)
+cmd[[
+au FileType qf nmap <buffer> <CR> <CR>
+]]
 map('n', '<Backspace>', 'X', default_opts)
 
 -- Enable repeating change of selection
@@ -167,4 +170,6 @@ cmd[[
 " Easymotion
 map k <Plug>(easymotion-sl)
 map K <Plug>(easymotion-bd-f)
+" Close quickfix by q
+au FileType qf nmap <buffer><silent> q :ccl<CR>
 ]]

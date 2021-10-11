@@ -28,6 +28,9 @@
       TMUX_FZF_LAUNCH_KEY="C-f"
       TMUX_FZF_POPUP=0
       bind-key r source-file ~/.config/tmux/tmux.conf \; display-message "config reloaded"
+      set-option -g status-interval 5
+      set-option -g automatic-rename on
+      set-option -g automatic-rename-format '#{b:pane_current_path}'
     '';
   };
 }
