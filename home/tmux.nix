@@ -18,8 +18,8 @@
     ];
     keyMode = "vi";
     extraConfig = ''
-      set-option -g default-terminal "screen-256color"
-      set -ga terminal-overrides ",*256col*:Tc"
+      set -g default-terminal "tmux-256color"
+      set -ag terminal-overrides ",xterm-256color:RGB"
       set-option -g prefix C-a
       bind C-a send-prefix
       set -g mouse on

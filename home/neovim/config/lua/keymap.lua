@@ -68,6 +68,10 @@ map('x', 'Z', ':<C-u>redo<CR>', default_opts)
 map('n', 'gz', 'U', default_opts)
 map('x', 'gz', 'U<C-u>undo<CR>', default_opts)
 
+-- Visual mode
+map('n', 'h', 'v', default_opts)
+map('n', 'H', 'V', default_opts)
+
 -- PageUp/PageDown
 --     nnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
 --     nnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"

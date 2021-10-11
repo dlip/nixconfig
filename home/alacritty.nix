@@ -16,6 +16,9 @@
           foreground = "#c5c8c6";
         };
       };
+      env = {
+          TERM = "xterm-256color";
+      };
       font = {
         normal = {
           family = "FiraCode Nerd Font";
