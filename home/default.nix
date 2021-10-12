@@ -7,6 +7,7 @@
   (import ./git.nix config)
   ./neovim
   ./packages.nix
+  ./readline.nix
   ./starship.nix
   ./services.nix
   ./tmux.nix
