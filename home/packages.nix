@@ -60,6 +60,7 @@
     nodejs
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
+    nodePackages.eslint_d
     nodePackages.node2nix
     nodePackages.pnpm
     nodePackages.prettier

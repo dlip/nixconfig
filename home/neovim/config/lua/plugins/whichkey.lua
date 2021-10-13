@@ -12,6 +12,7 @@ require("whichkey_setup").config {
 
 local keymap = {
     ['<Tab>'] = {'<C-^>', 'Previous Buffer'},
+    b = {':Telescope buffers<CR>', 'Find Buffers'},
     d = {
         name = '+Debug',
         c = {':lua require"dap".continue()<CR>', 'Continue'},
@@ -27,15 +28,17 @@ local keymap = {
     },
     f = {
         name = '+Find',
-        b = {':Telescope buffers<CR>', 'buffers'},
+        b = {':Telescope buffers<CR>', 'Buffers'},
         c = {
             name = '+Commands',
             c = {':Telescope commands<CR>', 'commands'},
             h = {':Telescope command_history<CR>', 'history'}
         },
+        f = {':Telescope fd<CR>', 'Find Files'},
         g = {':Telescope live_grep<CR>', 'grep'},
         h = {':Telescope help_tags<CR>', 'help tags'},
         m = {':Telescope man_pages<CR>', 'man pages'},
+        p = {':Telescope frecency frecency default_text=:CWD:<CR>', 'Find Recent Files'},
         q = {':Telescope quickfix<CR>', 'quickfix'},
         v = {
             name = '+VCS',
@@ -67,11 +70,11 @@ local keymap = {
         c = {'<cmd>lua vim.lsp.buf.code_action()<CR>', 'Code Action'},
         d = {'<cmd>lua vim.lsp.buf.definition()<CR>', 'Go to Definition'},
         D = {'<cmd>lua vim.lsp.buf.declaration()<CR>', 'Go to Declaration'},
-        e = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', 'Show Line Diagnostics'},
+        e = {'<cmd>!eslint_d --fix %<CR>', 'ESLint Fix Current File'},
         f = {'<cmd>lua vim.lsp.buf.formatting()<CR>', 'Format Buffer'},
         h = {'<cmd>lua vim.lsp.buf.hover()<CR>', 'Trigger Hover'},
         i = {'<cmd>lua vim.lsp.buf.implementation()<CR>', 'Go to Implementation'},
-        l = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'List Workspace Folders'},
+        l = {'<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>', 'Show Line Diagnostics'},
         m = {'<cmd>lua vim.lsp.buf.rename()<CR>', 'Rename'},
         n = {'<cmd>lua vim.lsp.diagnostic.goto_next()<CR>', 'Go to Next Error'},
         N = {'<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>', 'Go to Previous Error'},
@@ -80,10 +83,11 @@ local keymap = {
         s = {'<cmd>lua vim.lsp.buf.signature_help()<CR>', 'Signature Help'},
         t = {'<cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type Definitions'},
         w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', 'Add Workspace Folder'},
+        W = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'List Workspace Folders'},
         x = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'Remove Workspace Folder'},
     },
     n = {':NvimTreeToggle<CR>', 'NvimTreeToggle'},
-    p = {':Telescope fd<CR>', 'Find Files'},
+    p = {':Telescope frecency frecency default_text=:CWD:<CR>', 'Find Recent Files'},
     s = {':w!<CR>', 'save file'}, -- set a single command and text
     w = {
         name = '+Window',

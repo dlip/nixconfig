@@ -90,7 +90,7 @@ in
 
       plugins = with pkgs.vimPlugins // extraPlugins;
         let
-          telescope = (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim ]);
+          telescope = (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim telescope-frecency-nvim]);
         in
         [
           autosave-nvim
