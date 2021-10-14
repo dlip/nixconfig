@@ -48,6 +48,11 @@ easyocr(){
     nvidia-docker run -it --rm -v $HOME/.EasyOCR:/root/.EasyOCR -v $PWD:/workspace challisa/easyocr easyocr -l en --detail 0 --gpu true -f "$1"
 }
 
+
+nvimterm(){
+    nvim -c 'Term' -c 'res 10' -c 'wincmd k' -c 'Telescope frecency frecency default_text=:CWD:' "$@"
+}
+
 # Open project
 local projectdir="$HOME/code"
 local projectfile="$projectdir/projects.txt"
@@ -60,7 +65,7 @@ p(){
     repo_path=$(cat "$projectfile" | fzf $filter_params --select-1)
     if [ -n "$repo_path" ]; then
         cd "$projectdir/$repo_path"
-        nvim
+        nvim -c 'Term' -c 'res 10' -c 'wincmd k' -c 'Telescope frecency frecency default_text=:CWD:'
     fi
 }
 

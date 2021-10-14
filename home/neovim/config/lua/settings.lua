@@ -96,7 +96,7 @@ opt.completeopt = 'menuone,noinsert' -- completion options
 -- Terminal
 -----------------------------------------------------------
 -- open a terminal pane on the right using :Term
-cmd [[command Term :botright vsplit term://$SHELL]]
+cmd [[command Term :botright split term://$SHELL]]
 
 -- Terminal visual tweaks
 --- enter insert mode when switching to terminal
