@@ -41,6 +41,15 @@ let
         sha256 = "udfWUTQj3aNLi/OcDjdSNcXP6/MVVqNnq3xmjQffGoc=";
       };
     };
+    lspkind-nvim = pkgs.vimUtils.buildVimPlugin {
+      name = "lspkind-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "onsails";
+        repo = "lspkind-nvim";
+        rev = "0f7851772ebdd5cb67a04b3d3cda5281a1eb83c1";
+        sha256 = "fTIqhgDhQ3U7Kuqf/jMAAV2we6v7m0QbIHybji7tYUo=";
+      };
+    };
   };
 in
 {
@@ -94,10 +103,13 @@ in
         in
         [
           autosave-nvim
-
+          cmp-buffer
+          cmp-nvim-lsp
+          cmp-vsnip
           firenvim
+          lspkind-nvim # Icons for lsp popup
           neogit
-          nvim-compe
+          nvim-cmp
           nvim-dap
           nvim-dap-go
           nvim-dap-ui
@@ -109,12 +121,13 @@ in
           telescope-dap-nvim
           tokyonight-nvim
           trouble-nvim
+          vim-commentary
+          vim-delve
           vim-easymotion
           vim-eunuch
-          vim-commentary
           vim-test
-          vim-delve
           vim-tmux-navigator
+          vim-vsnip
           vim-which-key # spacemacs-like leader key menu
 
           (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
@@ -163,10 +176,8 @@ in
           # vim-surround
           # nvim-web-devicons
           # lsp-status-nvim
-          # vim-vsnip
           # vim-vsnip-integ
           # friendly-snippets
-          # lspkind-nvim
           # vim-polyglot
           # vim-jsonnet
           # goyo-vim
