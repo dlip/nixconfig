@@ -99,7 +99,7 @@ in
 
       plugins = with pkgs.vimPlugins // extraPlugins;
         let
-          telescope = (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim telescope-frecency-nvim]);
+          telescope = (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim telescope-frecency-nvim ]);
         in
         [
           autosave-nvim
@@ -107,6 +107,7 @@ in
           cmp-nvim-lsp
           cmp-vsnip
           firenvim
+          friendly-snippets
           lspkind-nvim # Icons for lsp popup
           neogit
           nvim-cmp
