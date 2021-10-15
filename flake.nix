@@ -45,16 +45,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-    };
-    emacs-ng = {
-      url = "github:emacs-ng/emacs-ng";
-    };
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     neovim = {
       url = "github:neovim/neovim?dir=contrib";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -76,9 +66,6 @@
     , emoji-menu
     , power-menu
     , wally-cli
-    , rust-overlay
-    , emacs-ng
-    , fenix
     , neovim
     }:
     let
@@ -92,13 +79,8 @@
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
             wally-cli = wally-cli.defaultPackage.${system};
-            emacsNg = emacs-ng.defaultPackage.${system};/*.overrideAttrs (old: {
-              withWebrender = true;
-            });*/
           })
-          rust-overlay.overlay
           emacs-overlay.overlay
-          fenix.overlay
           neovim.overlay
           kmonad.overlay
         ];
