@@ -5,7 +5,7 @@ let
   nvimHome = "${config.xdg.configHome}/nvim";
   # Test sha 0000000000000000000000000000000000000000000000000000
   extraPlugins = {
-    nvim-dap-go = pkgs.vimUtils.buildVimPlugin {
+    nvim-dap-go = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "dap-go";
       src = pkgs.fetchFromGitHub {
         owner = "leoluz";
@@ -14,7 +14,7 @@ let
         sha256 = "5FOEBf0+Gi+pnEqDeFT++XXFqIFVDjhTGsY37uHx+Rk=";
       };
     };
-    autosave-nvim = pkgs.vimUtils.buildVimPlugin {
+    autosave-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "autosave-nvim";
       src = pkgs.fetchFromGitHub {
         owner = "Pocco81";
@@ -23,7 +23,7 @@ let
         sha256 = "7SFwfR8VTsPgLYj7BnGzTp3uee21BexgMW934V8DROo=";
       };
     };
-    firenvim = pkgs.vimUtils.buildVimPlugin {
+    firenvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "firenvim";
       src = pkgs.fetchFromGitHub {
         owner = "glacambre";
@@ -32,7 +32,7 @@ let
         sha256 = "xXVWK13aKpGA0JNyOY+sPE8aiZlUsXwojiL3CwdsVGo=";
       };
     };
-    vim-delve = pkgs.vimUtils.buildVimPlugin {
+    vim-delve = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "vim-delve";
       src = pkgs.fetchFromGitHub {
         owner = "sebdah";
@@ -41,13 +41,22 @@ let
         sha256 = "udfWUTQj3aNLi/OcDjdSNcXP6/MVVqNnq3xmjQffGoc=";
       };
     };
-    lspkind-nvim = pkgs.vimUtils.buildVimPlugin {
+    lspkind-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "lspkind-nvim";
       src = pkgs.fetchFromGitHub {
         owner = "onsails";
         repo = "lspkind-nvim";
         rev = "0f7851772ebdd5cb67a04b3d3cda5281a1eb83c1";
         sha256 = "fTIqhgDhQ3U7Kuqf/jMAAV2we6v7m0QbIHybji7tYUo=";
+      };
+    };
+    nvim-cmp = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "nvim-cmp";
+      src = pkgs.fetchFromGitHub {
+        owner = "hrsh7th";
+        repo = "nvim-cmp";
+        rev = "f5393d5bd934428a469f03f5bc225922f8c48367";
+        sha256 = "Cz20X1ICBjGXI2g170/oTdfSELOWc2BYjCQ5q0pDWj8=";
       };
     };
   };
