@@ -8,7 +8,7 @@ let
   '';
 
   update-wallpaper = pkgs.writeShellScriptBin "update-wallpaper" ''
-    nice -19 ${pkgs.betterlockscreen}/bin/betterlockscreen -u ~/wallpapers --fx dim -- dim 60
+    nice -19 ${pkgs.betterlockscreen}/bin/betterlockscreen -u ~/wallpapers --fx dim --dim 50
     ${pkgs.betterlockscreen}/bin/betterlockscreen -w dim
   '';
 

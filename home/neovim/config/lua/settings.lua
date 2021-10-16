@@ -34,9 +34,8 @@ opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = true          -- ignore lowercase for the whole pattern
 opt.wrap = false              -- No wrap
 opt.scrolloff = 5             -- keep cursor away from top/bottom edge of the screen
-
 -- remove whitespace on save
-cmd [[au BufWritePre * :%s/\s\+$//e]]
+-- cmd [[au BufWritePre * :%s/\s\+$//e]]
 
 -- highlight on yank
 exec([[
@@ -62,6 +61,7 @@ cmd [[
   autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
   autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
   autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
+  autocmd ColorScheme * highlight NvimTreeNormal ctermbg=NONE guibg=NONE
   colorscheme tokyonight
 ]]
 
@@ -76,7 +76,7 @@ opt.smartindent = true    -- autoindent new lines
 -- don't auto commenting new lines
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
--- remove line lenght marker for selected filetypes
+-- remove line length marker for selected filetypes
 cmd [[autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0]]
 
 -- 2 spaces for selected filetypes
@@ -109,5 +109,7 @@ cmd [[command Term :botright split term://$SHELL]]
 cmd [[
     autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
     autocmd TermOpen * startinsert
+    autocmd TermOpen * setlocal winfixheight
+    autocmd BufWinEnter,WinEnter term://* startinsert
     autocmd BufLeave term://* stopinsert
 ]]

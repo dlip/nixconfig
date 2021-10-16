@@ -4,7 +4,7 @@
   programs.alacritty = {
     enable = true;
     settings = {
-      background_opacity = 0.5;
+      background_opacity = 0.7;
       bell = {
         animation = "EaseOutExpo";
         duration = 5;
@@ -22,9 +22,9 @@
       font = {
         normal = {
           family = "FiraCode Nerd Font";
-          style = "Medium";
+          style = "Regular";
         };
-        size = 8;
+        size = 9;
       };
       selection.save_to_clipboard = true;
       shell.program = "${pkgs.zsh}/bin/zsh";
