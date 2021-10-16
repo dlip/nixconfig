@@ -112,6 +112,7 @@ in
         in
         [
           autosave-nvim
+          bufferline-nvim
           cmp_luasnip
           cmp-buffer
           cmp-nvim-lsp
