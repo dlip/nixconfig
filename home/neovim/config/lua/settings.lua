@@ -27,7 +27,7 @@ opt.relativenumber = true     -- show relative line numbers
 opt.showmatch = true          -- highlight matching parenthesis
 -- opt.foldmethod = 'expr'       -- enable folding by expression
 -- opt.foldexpr = 'nvim_treesitter#foldexpr()' -- enable treesitter folding
-opt.colorcolumn = '80'        -- line lenght marker at 80 columns
+-- opt.colorcolumn = '80'        -- line lenght marker at 80 columns
 opt.splitright = true         -- vertical split to the right
 opt.splitbelow = true         -- horizontal split to the bottom
 opt.ignorecase = true         -- ignore case letters when search
@@ -58,7 +58,12 @@ opt.synmaxcol = 240       -- max column for syntax highlight
 -- Colorscheme
 -----------------------------------------------------------
 opt.termguicolors = true      -- enable 24-bit RGB colors
-cmd [[colorscheme tokyonight]]
+cmd [[
+  autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+  autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
+  autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
+  colorscheme tokyonight
+]]
 
 -----------------------------------------------------------
 -- Tabs, indent
