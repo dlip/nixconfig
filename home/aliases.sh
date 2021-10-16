@@ -65,7 +65,9 @@ p(){
     repo_path=$(cat "$projectfile" | fzf $filter_params --select-1)
     if [ -n "$repo_path" ]; then
         cd "$projectdir/$repo_path"
-        nvim -c 'Term' -c 'res 10' -c 'wincmd k' -c 'Telescope frecency frecency default_text=:CWD:'
+        tmux split-window -p 20
+        tmux select-pane -U
+        nvim -c 'Telescope frecency frecency default_text=:CWD:'
     fi
 }
 

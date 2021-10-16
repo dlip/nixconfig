@@ -9,10 +9,10 @@ local keymaps = {
   {'t', '<Esc><Esc>', '<C-\\><C-n>'},
 
   -- move windows using arrows
-  {'nxo', '<C-up>', '<C-w>k'},
-  {'nxo', '<C-down>', '<C-w>j'},
-  {'nxo', '<C-left>', '<C-w>h'},
-  {'nxo', '<C-right>', '<C-w>l'},
+  {'nxo', '<C-f>', ':TmuxNavigateUp<CR>'},
+  {'nxo', '<C-s>', ':TmuxNavigateDown<CR>'},
+  {'nxo', '<C-r>', ':TmuxNavigateLeft<CR>'},
+  {'nxo', '<C-t>', ':TmuxNavigateRight<CR>'},
   {'nxo', '<C-S-up>', '<C-w>K'},
   {'nxo', '<C-S-down>', '<C-w>J'},
   {'nxo', '<C-S-left>', '<C-w>H'},
@@ -67,8 +67,8 @@ local keymaps = {
   {'n', 'H', 'V'},
 
   -- Jumplist navigation
-  {'nx', '<C-f>', '<C-i>'},
-  {'nx', '<C-s>', '<C-o>'},
+  -- {'nx', '<C-f>', '<C-i>'},
+  -- {'nx', '<C-s>', '<C-o>'},
 
   -- Quicker word change
   {'n', 'u<space>', 'ciw'},
@@ -98,10 +98,10 @@ local keymaps = {
   {'n', 'Q', '@q'},
 
   -- Cursor to bottom of screen
-  {'nx', '<C-s>', 'L'},
+  -- {'nx', '<C-s>', 'L'},
 
   -- Cursor to top of screen
-  {'nx', '<C-f>', 'H'},
+  -- {'nx', '<C-f>', 'H'},
 
   -- Go to mark / switch case
   {'nx', 'b', '`'},

@@ -133,6 +133,7 @@ in
           telescope-dap-nvim
           tokyonight-nvim
           trouble-nvim
+          vim-bbye
           vim-commentary
           vim-delve
           vim-easymotion

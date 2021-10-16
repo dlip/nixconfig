@@ -104,7 +104,8 @@ local keymap = {
         c = {':ccl<CR>', 'Close'},
         n = {':cn<CR>', 'Next'},
         p = {':cp<CR>', 'Previous'},
-    }
+    },
+    x = {':Bdelete<CR>', 'Close Buffer'},
 }
 
 wk.register_keymap('leader', keymap)

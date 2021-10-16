@@ -113,3 +113,5 @@ cmd [[
     autocmd BufWinEnter,WinEnter term://* startinsert
     autocmd BufLeave term://* stopinsert
 ]]
+
+g.tmux_navigator_no_mappings = 1

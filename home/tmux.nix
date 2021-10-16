@@ -38,6 +38,26 @@
       bind -n M-Right next-window
       bind-key -n M-S-Left swap-window -t -1\; select-window -t -1
       bind-key -n M-S-Right swap-window -t +1\; select-window -t +1
+    
+      # Smart pane switching with awareness of Vim splits.
+      # See: https://github.com/christoomey/vim-tmux-navigator
+      is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
+          | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
+      bind-key -n 'C-r' if-shell "$is_vim" 'send-keys C-r'  'select-pane -L'
+      bind-key -n 'C-s' if-shell "$is_vim" 'send-keys C-s'  'select-pane -D'
+      bind-key -n 'C-f' if-shell "$is_vim" 'send-keys C-f'  'select-pane -U'
+      bind-key -n 'C-t' if-shell "$is_vim" 'send-keys C-t'  'select-pane -R'
+      tmux_version='$(tmux -V | sed -En "s/^tmux ([0-9]+(.[0-9]+)?).*/\1/p")'
+      if-shell -b '[ "$(echo "$tmux_version < 3.0" | bc)" = 1 ]' \
+          "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
+      if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
+          "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
+
+      bind-key -T copy-mode-vi 'C-r' select-pane -L
+      bind-key -T copy-mode-vi 'C-s' select-pane -D
+      bind-key -T copy-mode-vi 'C-f' select-pane -U
+      bind-key -T copy-mode-vi 'C-t' select-pane -R
+      bind-key -T copy-mode-vi 'C-\' select-pane -l
     '';
   };
 }
