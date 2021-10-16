@@ -112,11 +112,12 @@ in
         in
         [
           autosave-nvim
+          cmp_luasnip
           cmp-buffer
           cmp-nvim-lsp
-          cmp-vsnip
           firenvim
           friendly-snippets
+          luasnip
           lspkind-nvim # Icons for lsp popup
           neogit
           nvim-cmp
@@ -137,7 +138,6 @@ in
           vim-eunuch
           vim-test
           vim-tmux-navigator
-          vim-vsnip
           vim-which-key # spacemacs-like leader key menu
 
           (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
@@ -186,7 +186,6 @@ in
           # vim-surround
           # nvim-web-devicons
           # lsp-status-nvim
-          # vim-vsnip-integ
           # friendly-snippets
           # vim-polyglot
           # vim-jsonnet
@@ -216,6 +215,7 @@ in
       "${nvimHome}/undo/.keep".text = "";
       "${nvimHome}/lua/env.lua".text = ''
         sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
+        friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"
       '';
     };
 }

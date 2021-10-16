@@ -1,5 +1,6 @@
 local cmp = require'cmp'
 local lspkind = require('lspkind')
+local luasnip = require("luasnip")
 
 local has_words_before = function()
   local line, col = unpack(vim.api.nvim_win_get_cursor(0))
@@ -14,10 +15,10 @@ cmp.setup({
   snippet = {
     expand = function(args)
       -- For `vsnip` user.
-      vim.fn["vsnip#anonymous"](args.body)
+      -- vim.fn["vsnip#anonymous"](args.body)
 
       -- For `luasnip` user.
-      -- require('luasnip').lsp_expand(args.body)
+      require('luasnip').lsp_expand(args.body)
 
       -- For `ultisnips` user.
       -- vim.fn["UltiSnips#Anon"](args.body)
@@ -32,19 +33,22 @@ cmp.setup({
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
-      elseif vim.fn["vsnip#available"]() == 1 then
-        feedkey("<Plug>(vsnip-expand-or-jump)", "")
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
       elseif has_words_before() then
         cmp.complete()
       else
-        fallback() -- The fallback function sends a already mapped key. In this case, it's probably `<Tab>`.
+        fallback()
       end
     end, { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(function()
+
+    ["<S-Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
-        feedkey("<Plug>(vsnip-jump-prev)", "")
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
       end
     end, { "i", "s" }),
   },
@@ -52,10 +56,10 @@ cmp.setup({
     { name = 'nvim_lsp' },
 
     -- For vsnip user.
-    { name = 'vsnip' },
+    -- { name = 'vsnip' },
 
     -- For luasnip user.
-    -- { name = 'luasnip' },
+    { name = 'luasnip' },
 
     -- For ultisnips user.
     -- { name = 'ultisnips' },
