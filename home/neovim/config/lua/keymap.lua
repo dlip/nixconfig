@@ -9,16 +9,14 @@ local keymaps = {
   {'t', '<Esc><Esc>', '<C-\\><C-n>'},
 
   -- move windows using arrows
-  {'nvo', '<C-up>', '<C-w>k'},
-  {'nvo', '<C-down>', '<C-w>j'},
-  {'nvo', '<C-left>', '<C-w>h'},
-  {'nvo', '<C-right>', '<C-w>l'},
-  {'nvo', '<C-S-up>', '<C-w>K'},
-  {'nvo', '<C-S-down>', '<C-w>J'},
-  {'nvo', '<C-S-left>', '<C-w>H'},
-  {'nvo', '<C-S-right>', '<C-w>L'},
-  -- {'nvo', '<C-S-right>', '<C-w>y<C-w>l<C-w>pp'},
-  -- {'nvo', '<C-S-right>', '<C-w>l:e <C-r>#<CR><C-w>h:bp<CR>'},
+  {'nxo', '<C-up>', '<C-w>k'},
+  {'nxo', '<C-down>', '<C-w>j'},
+  {'nxo', '<C-left>', '<C-w>h'},
+  {'nxo', '<C-right>', '<C-w>l'},
+  {'nxo', '<C-S-up>', '<C-w>K'},
+  {'nxo', '<C-S-down>', '<C-w>J'},
+  {'nxo', '<C-S-left>', '<C-w>H'},
+  {'nxo', '<C-S-right>', '<C-w>L'},
   {'t', '<C-up>', '<C-\\><C-n><C-w>k'},
   {'t', '<C-down>', '<C-\\><C-n><C-w>j'},
   {'t', '<C-left>', '<C-\\><C-n><C-w>h'},
@@ -29,33 +27,31 @@ local keymaps = {
   {'t', '<C-S-right>', '<C-\\><C-n><C-w>L'},
 
   -- arrows
-  {'nvo', 'f', 'k'},
-  {'nvo', 's', 'j'},
-  {'nvo', 'r', 'h'},
-  {'nvo', 't', 'l'},
-  {'nvo', 'F', '<C-u>'},
-  {'nvo', 'S', '<C-d>'},
+  {'nxo', 'f', 'k'},
+  {'nxo', 's', 'j'},
+  {'nxo', 'r', 'h'},
+  {'nxo', 't', 'l'},
+  {'nxo', 'F', '<C-u>'},
+  {'nxo', 'S', '<C-d>'},
 
   -- Word left/right
-  {'nvo', 'w', 'b'},
-  {'nvo', 'p', 'w'},
-  {'nvo', 'W', 'B'},
-  {'nvo', 'P', 'W'},
+  {'nxo', 'w', 'b'},
+  {'nxo', 'p', 'w'},
+  {'nxo', 'W', 'B'},
+  {'nxo', 'P', 'W'},
 
   -- Beginning/end of line
-  {'nvo', 'R', '^'},
-  {'nvo', 'T', '$'},
-  {'v', 'T', 'g_'},
+  {'nxo', 'R', '^'},
+  {'nxo', 'T', '$'},
+  {'x', 'T', 'g_'},
 
   -- Copy/paste
-  {'n', 'c', 'y'},
-  {'x', 'c', 'y'},
+  {'nx', 'c', 'y'},
   {'n', 'd', 'p'},
   {'x', 'd', 'pgvy'},
   {'n', 'C', 'yg_'},
   {'x', 'C', 'y'},
-  {'n', 'D', 'P'},
-  {'x', 'D', 'P'},
+  {'nx', 'D', 'P'},
   {'n', 'cc', 'yy'},
 
   -- Undo/redo
@@ -70,83 +66,58 @@ local keymaps = {
   {'n', 'h', 'v'},
   {'n', 'H', 'V'},
 
-  -- PageUp/PageDown
-  --     nnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
-  --     nnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
-  --     xnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
-  --     xnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
-  --     nnoremap <silent> <expr> <PageUp> (winheight(0)-1) . "\<C-u>"
-  --     nnoremap <silent> <expr> <PageDown> (winheight(0)-1) . "\<C-d>"
-  --     vnoremap <silent> <expr> <PageUp> (winheight(0)-1) . "\<C-u>"
-  --     vnoremap <silent> <expr> <PageDown> (winheight(0)-1) . "\<C-d>"
-  --     vnoremap <silent> <expr> <S-PageUp> (winheight(0)-1) . "\<C-u>"
-  --     vnoremap <silent> <expr> <S-PageDown> (winheight(0)-1) . "\<C-d>"
-
   -- Jumplist navigation
-  {'n', '<C-f>', '<C-i>'},
-  {'n', '<C-s>', '<C-o>'},
-  {'v', '<C-f>', '<C-i>'},
-  {'v', '<C-s>', '<C-o>'},
+  {'nx', '<C-f>', '<C-i>'},
+  {'nx', '<C-s>', '<C-o>'},
 
   -- Quicker word change
   {'n', 'u<space>', 'ciw'},
 
   -- Folds
-  {'n', 'j', 'z'},
-  {'x', 'j', 'z'},
+  {'nx', 'j', 'z'},
 
   -- Change
-  {'n', 'u', 'c'},
-  {'x', 'u', 'c'},
-  {'n', 'U', 'C'},
-  {'x', 'U', 'C'},
+  {'nx', 'u', 'c'},
+  {'nx', 'U', 'C'},
   {'n', 'uu', 'cc'},
 
   -- Replace
-  {'n', 'y', 'r'},
-  {'x', 'y', 'r'},
-  {'n', 'Y', 'R'},
-  {'x', 'Y', 'R'},
+  {'nx', 'y', 'r'},
+  {'nx', 'Y', 'R'},
 
   -- Delete
-  {'n', 'x', 'd'},
-  {'v', 'x', 'd'},
-  {'n', 'X', 'D'},
-  {'v', 'X', 'D'},
+  {'nx', 'x', 'd'},
+  {'nx', 'X', 'D'},
   {'n', 'xx', 'dd'},
 
   -- 'til
-  {'nvo', 'l', 't'},
-  {'nvo', 'L', 'T'},
+  {'nxo', 'l', 't'},
+  {'nxo', 'L', 'T'},
 
   -- Macros (replay the macro recorded by qq)
   {'n', 'Q', '@q'},
 
   -- Cursor to bottom of screen
-  {'n', '<C-s>', 'L'},
-  {'v', '<C-s>', 'L'},
+  {'nx', '<C-s>', 'L'},
 
   -- Cursor to top of screen
-  {'n', '<C-f>', 'H'},
-  {'v', '<C-f>', 'H'},
+  {'nx', '<C-f>', 'H'},
 
   -- Go to mark / switch case
-  {'n', 'b', '`'},
-  {'v', 'b', '`'},
-  {'n', 'B', '~'},
-  {'v', 'B', '~'},
+  {'nx', 'b', '`'},
+  {'nx', 'B', '~'},
 
   -- Move lines
   {'n', '<A-f>', ':m .-2<CR>=='},
   {'n', '<A-s>', ':m .+1<CR>=='},
   {'i', '<A-f>', '<Esc>:m .-2<CR>==gi'},
   {'i', '<A-s>', '<Esc>:m .+1<CR>==gi'},
-  {'v', '<A-f>', ':m \'<-2<CR>gv=gv'},
-  {'v', '<A-s>', ':m \'>+1<CR>gv=gv'},
+  {'x', '<A-f>', ':m \'<-2<CR>gv=gv'},
+  {'x', '<A-s>', ':m \'>+1<CR>gv=gv'},
 
   -- Navigate back/forward
-  {'nvo', '<A-r>', '<C-o>'},
-  {'nvo', '<A-t>', '<C-i>'},
+  {'nxo', '<A-r>', '<C-o>'},
+  {'nxo', '<A-t>', '<C-i>'},
 
 
   -- Enable enter and backspace in normal mode
@@ -154,8 +125,8 @@ local keymaps = {
   {'n', '<Backspace>', 'X'},
 
   -- Enable repeating change of selection
-  {'v', 'gu', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>Ncgn'},
-  {'v', 'gU', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>NcgN'},
+  {'x', 'gu', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>Ncgn'},
+  {'x', 'gU', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>NcgN'},
 
   -- Paste in insert mode
   {'i', '<C-v>', '<C-r>"'},
@@ -184,3 +155,17 @@ map K <Plug>(easymotion-bd-f)
 " Close quickfix by q
 au FileType qf nmap <buffer><silent> q :ccl<CR>
 ]]
+
+  -- PageUp/PageDown
+  --     nnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
+  --     nnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
+  --     xnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
+  --     xnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
+  --     nnoremap <silent> <expr> <PageUp> (winheight(0)-1) . "\<C-u>"
+  --     nnoremap <silent> <expr> <PageDown> (winheight(0)-1) . "\<C-d>"
+  --     vnoremap <silent> <expr> <PageUp> (winheight(0)-1) . "\<C-u>"
+  --     vnoremap <silent> <expr> <PageDown> (winheight(0)-1) . "\<C-d>"
+  --     vnoremap <silent> <expr> <S-PageUp> (winheight(0)-1) . "\<C-u>"
+  --     vnoremap <silent> <expr> <S-PageDown> (winheight(0)-1) . "\<C-d>"
+
+
