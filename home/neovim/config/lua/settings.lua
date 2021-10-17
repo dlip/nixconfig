@@ -34,6 +34,7 @@ opt.ignorecase = true         -- ignore case letters when search
 opt.smartcase = true          -- ignore lowercase for the whole pattern
 opt.wrap = false              -- No wrap
 opt.scrolloff = 5             -- keep cursor away from top/bottom edge of the screen
+opt.cursorline = true         -- highlight current line
 -- remove whitespace on save
 -- cmd [[au BufWritePre * :%s/\s\+$//e]]
 

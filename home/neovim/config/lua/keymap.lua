@@ -17,14 +17,12 @@ local keymaps = {
   {'nxo', '<C-S-down>', '<C-w>J'},
   {'nxo', '<C-S-left>', '<C-w>H'},
   {'nxo', '<C-S-right>', '<C-w>L'},
-  -- {'t', '<C-up>', '<C-\\><C-n><C-w>k'},
-  -- {'t', '<C-down>', '<C-\\><C-n><C-w>j'},
-  -- {'t', '<C-left>', '<C-\\><C-n><C-w>h'},
-  -- {'t', '<C-right>', '<C-\\><C-n><C-w>l'},
-  -- {'t', '<C-S-up>', '<C-\\><C-n><C-w>K'},
-  -- {'t', '<C-S-down>', '<C-\\><C-n><C-w>J'},
-  -- {'t', '<C-S-left>', '<C-\\><C-n><C-w>H'},
-  -- {'t', '<C-S-right>', '<C-\\><C-n><C-w>L'},
+
+  -- Bufferline
+  {'nxo', '<M-w>', ':BufferLineCyclePrev<CR>'},
+  {'nxo', '<M-p>', ':BufferLineCycleNext<CR>'},
+  {'nxo', '<M-W>', ':BufferLineMovePrev<CR>'},
+  {'nxo', '<M-P>', ':BufferLineMoveNext<CR>'},
 
   -- arrows
   {'nxo', 'f', 'k'},
@@ -66,10 +64,6 @@ local keymaps = {
   {'n', 'h', 'v'},
   {'n', 'H', 'V'},
 
-  -- Jumplist navigation
-  -- {'nx', '<C-f>', '<C-i>'},
-  -- {'nx', '<C-s>', '<C-o>'},
-
   -- Quicker word change
   {'n', 'u<space>', 'ciw'},
 
@@ -97,12 +91,6 @@ local keymaps = {
   -- Macros (replay the macro recorded by qq)
   {'n', 'Q', '@q'},
 
-  -- Cursor to bottom of screen
-  -- {'nx', '<C-s>', 'L'},
-
-  -- Cursor to top of screen
-  -- {'nx', '<C-f>', 'H'},
-
   -- Go to mark / switch case
   {'nx', 'b', '`'},
   {'nx', 'B', '~'},
@@ -115,7 +103,7 @@ local keymaps = {
   {'x', '<A-f>', ':m \'<-2<CR>gv=gv'},
   {'x', '<A-s>', ':m \'>+1<CR>gv=gv'},
 
-  -- Navigate back/forward
+  -- Navigate back/forward in jumplist
   {'nxo', '<A-r>', '<C-o>'},
   {'nxo', '<A-t>', '<C-i>'},
 

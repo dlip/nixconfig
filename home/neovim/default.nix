@@ -121,6 +121,7 @@ in
           luasnip
           lspkind-nvim # Icons for lsp popup
           neogit
+          neoscroll-nvim
           nvim-cmp
           nvim-dap
           nvim-dap-go
