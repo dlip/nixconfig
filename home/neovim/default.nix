@@ -80,8 +80,7 @@ in
         fd
         ripgrep
 
-        # For nvim-dap
-        lldb
+        lldb # For nvim-dap
 
         # Various language servers
         #fenix.rust-analyzer
@@ -113,18 +112,19 @@ in
         [
           autosave-nvim
           bufferline-nvim
-          dashboard-nvim
-          cmp_luasnip
           cmp-buffer
           cmp-nvim-lsp
           cmp-nvim-lua
           cmp-path
+          cmp_luasnip
+          dashboard-nvim
+          editorconfig-vim
           firenvim
           friendly-snippets
           hop-nvim
           indent-blankline-nvim
-          luasnip
           lspkind-nvim # Icons for lsp popup
+          luasnip
           neogit
           neoscroll-nvim
           nvim-autopairs
@@ -140,10 +140,13 @@ in
           telescope-dap-nvim
           tokyonight-nvim
           trouble-nvim
+          undotree
           vim-bbye
           vim-commentary
           vim-delve
           vim-eunuch
+          vim-fugitive
+          vim-surround
           vim-test
           vim-tmux-navigator
           vim-which-key # spacemacs-like leader key menu
@@ -160,7 +163,6 @@ in
               (
                 grammars:
                 [
-                  # TODO: package tree-sitt
                   grammars.tree-sitter-c
                   grammars.tree-sitter-cpp
                   grammars.tree-sitter-css
@@ -186,18 +188,6 @@ in
           )
 
 
-          # editorconfig-vim
-
-          # undotree
-          # vim-easy-align
-          # vim-fugitive
-          # vim-surround
-          # nvim-web-devicons
-          # lsp-status-nvim
-          # friendly-snippets
-          # vim-polyglot
-          # vim-jsonnet
-          # goyo-vim
         ];
     };
   };

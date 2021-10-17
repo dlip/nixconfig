@@ -70,11 +70,11 @@ cmd [[
 -- Tabs, indent
 -----------------------------------------------------------
 opt.expandtab = true      -- use spaces instead of tabs
-opt.shiftwidth = 4        -- shift 4 spaces when tab
+opt.shiftwidth = 2        -- shift 4 spaces when tab
 opt.tabstop = 4           -- 1 tab == 4 spaces
 opt.smartindent = true    -- autoindent new lines
 
--- don't auto commenting new lines
+-- don't auto comment new lines
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 
 -- remove line length marker for selected filetypes
@@ -82,7 +82,7 @@ cmd [[autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0]]
 
 -- 2 spaces for selected filetypes
 cmd [[
-  autocmd FileType xml,html,xhtml,css,scss,javascript,lua,yaml setlocal shiftwidth=2 tabstop=2
+  autocmd FileType python setlocal shiftwidth=4 tabstop=4
 ]]
 
 -- IndentLine

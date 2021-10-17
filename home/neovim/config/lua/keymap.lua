@@ -29,8 +29,6 @@ local keymaps = {
   {'nxo', 's', 'j'},
   {'nxo', 'r', 'h'},
   {'nxo', 't', 'l'},
-  {'nxo', 'F', '<C-u>'},
-  {'nxo', 'S', '<C-d>'},
 
   -- Word left/right
   {'nxo', 'w', 'b'},
@@ -40,7 +38,7 @@ local keymaps = {
 
   -- Beginning/end of line
   {'nxo', 'R', '^'},
-  {'nxo', 'T', '$'},
+  {'no', 'T', '$'},
   {'x', 'T', 'g_'},
 
   -- Copy/paste
