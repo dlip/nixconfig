@@ -65,6 +65,8 @@ cmp.setup({
     -- { name = 'ultisnips' },
 
     { name = 'buffer' },
+    { name = 'path' },
+    { name = 'lua' },
   },
   formatting = {
     format = lspkind.cmp_format({with_text = false, maxwidth = 50})

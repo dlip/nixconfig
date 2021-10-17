@@ -113,9 +113,12 @@ in
         [
           autosave-nvim
           bufferline-nvim
+          dashboard-nvim
           cmp_luasnip
           cmp-buffer
           cmp-nvim-lsp
+          cmp-nvim-lua
+          cmp-path
           firenvim
           friendly-snippets
           hop-nvim
