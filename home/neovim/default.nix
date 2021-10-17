@@ -118,6 +118,7 @@ in
           cmp-nvim-lsp
           firenvim
           friendly-snippets
+          hop-nvim
           luasnip
           lspkind-nvim # Icons for lsp popup
           neogit
@@ -137,7 +138,6 @@ in
           vim-bbye
           vim-commentary
           vim-delve
-          vim-easymotion
           vim-eunuch
           vim-test
           vim-tmux-navigator
