@@ -12,47 +12,48 @@ require("whichkey_setup").config {
 
 local keymap = {
     ['<Tab>'] = {'<C-^>', 'Previous Buffer'},
-    b = {':Telescope buffers<CR>', 'Find Buffers'},
+    b = {'<cmd>Telescope buffers<CR>', 'Find Buffers'},
     d = {
         name = '+Debug',
-        c = {':lua require"dap".continue()<CR>', 'Continue'},
-        o = {':lua require"dap".step_over()<CR>', 'Step Over'},
-        i = {':lua require"dap".step_into()<CR>', 'Step Into'},
-        t = {':lua require"dap".step_out()<CR>', 'Step Out'},
-        b = {':lua require"dap".toggle_breakpoint()<CR>', 'Toggle Breakpoint'},
-        B = {':lua require"dap".set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', 'Toggle Breakpoint Condition'},
-        l = {':lua require"dap".set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', 'Toggle Breakpoint Log'},
-        r = {':lua require"dap".repl.open()<CR>', 'Open REPL'},
-        e = {':lua require"dap".run_last()<CR>', 'Run Last'},
-        u = {':lua require"dapui".toggle()<CR>', 'Toggle DAP UI'}
+        c = {'<cmd>lua require"dap".continue()<CR>', 'Continue'},
+        o = {'<cmd>lua require"dap".step_over()<CR>', 'Step Over'},
+        i = {'<cmd>lua require"dap".step_into()<CR>', 'Step Into'},
+        t = {'<cmd>lua require"dap".step_out()<CR>', 'Step Out'},
+        b = {'<cmd>lua require"dap".toggle_breakpoint()<CR>', 'Toggle Breakpoint'},
+        B = {'<cmd>lua require"dap".set_breakpoint(vim.fn.input(\'Breakpoint condition: \'))<CR>', 'Toggle Breakpoint Condition'},
+        l = {'<cmd>lua require"dap".set_breakpoint(nil, nil, vim.fn.input(\'Log point message: \'))<CR>', 'Toggle Breakpoint Log'},
+        r = {'<cmd>lua require"dap".repl.open()<CR>', 'Open REPL'},
+        e = {'<cmd>lua require"dap".run_last()<CR>', 'Run Last'},
+        u = {'<cmd>lua require"dapui".toggle()<CR>', 'Toggle DAP UI'}
     },
     f = {
         name = '+Find',
-        b = {':Telescope buffers<CR>', 'Buffers'},
+        b = {'<cmd>Telescope buffers<CR>', 'Buffers'},
         c = {
             name = '+Commands',
-            c = {':Telescope commands<CR>', 'commands'},
-            h = {':Telescope command_history<CR>', 'history'}
+            c = {'<cmd>Telescope commands<CR>', 'commands'},
+            h = {'<cmd>Telescope command_history<CR>', 'history'}
         },
-        f = {':Telescope fd<CR>', 'Find Files'},
-        g = {':Telescope live_grep<CR>', 'grep'},
-        h = {':Telescope help_tags<CR>', 'help tags'},
-        m = {':Telescope man_pages<CR>', 'man pages'},
-        p = {':Telescope frecency frecency default_text=:CWD:<CR>', 'Find Recent Files'},
-        q = {':Telescope quickfix<CR>', 'quickfix'},
+        f = {'<cmd>Telescope fd<CR>', 'Find Files'},
+        g = {'<cmd>Telescope live_grep<CR>', 'grep'},
+        h = {'<cmd>Telescope help_tags<CR>', 'help tags'},
+        m = {'<cmd>Telescope man_pages<CR>', 'man pages'},
+        p = {'<cmd>Telescope frecency frecency default_text=:CWD:<CR>', 'Find Recent Files'},
+        q = {'<cmd>Telescope quickfix<CR>', 'quickfix'},
         v = {
             name = '+VCS',
-            b = {':Telescope git_branches<CR>', 'branches'},
-            c = {':Telescope git_bcommits<CR>', 'bcommits'},
-            g = {':Telescope git_commits<CR>', 'commits'},
-            s = {':Telescope git_status<CR>', 'status'}
+            b = {'<cmd>Telescope git_branches<CR>', 'branches'},
+            c = {'<cmd>Telescope git_bcommits<CR>', 'bcommits'},
+            g = {'<cmd>Telescope git_commits<CR>', 'commits'},
+            s = {'<cmd>Telescope git_status<CR>', 'status'}
         },
     },
     g = {
         name = '+Git',
-        s = {':Neogit<CR>', 'status'},
-        p = {':Neogit push<CR>', 'push'},
-        l = {':Neogit pull<CR>', 'pull'},
+        f = {'<cmd>G<CR>', 'Fugutive Status'},
+        s = {'<cmd>Neogit<CR>', 'status'},
+        p = {'<cmd>Neogit push<CR>', 'push'},
+        l = {'<cmd>Neogit pull<CR>', 'pull'},
         g = {
           name = '+Git Signs',
           s = {'<cmd>lua require"gitsigns".stage_hunk()<CR>', 'Stage Hunk'},
@@ -88,24 +89,24 @@ local keymap = {
         W = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'List Workspace Folders'},
         x = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'Remove Workspace Folder'},
     },
-    n = {':NvimTreeToggle<CR>', 'NvimTreeToggle'},
-    p = {':Telescope frecency frecency default_text=:CWD:<CR>', 'Find Recent Files'},
-    s = {':w!<CR>', 'save file'}, -- set a single command and text
+    n = {'<cmd>NvimTreeToggle<CR>', 'NvimTreeToggle'},
+    p = {'<cmd>Telescope frecency frecency default_text=:CWD:<CR>', 'Find Recent Files'},
+    s = {'<cmd>w!<CR>', 'save file'}, -- set a single command and text
     w = {
         name = '+Window',
-        h = {':sp<CR>', 'horizontal split window'},
+        h = {'<cmd>sp<CR>', 'horizontal split window'},
         o = {'<C-W>o', 'other'},
         q = {'<C-W>q', 'close'},
-        v = {':vsplit<CR>', 'vertical split window'}
+        v = {'<cmd>vsplit<CR>', 'vertical split window'}
     },
     q = {
         name = '+Quickfix',
-        o = {':copen<CR>', 'Open'},
-        c = {':ccl<CR>', 'Close'},
-        n = {':cn<CR>', 'Next'},
-        p = {':cp<CR>', 'Previous'},
+        o = {'<cmd>copen<CR>', 'Open'},
+        c = {'<cmd>ccl<CR>', 'Close'},
+        n = {'<cmd>cn<CR>', 'Next'},
+        p = {'<cmd>cp<CR>', 'Previous'},
     },
-    x = {':Bdelete<CR>', 'Close Buffer'},
+    x = {'<cmd>Bdelete<CR>', 'Close Buffer'},
 }
 
 wk.register_keymap('leader', keymap)

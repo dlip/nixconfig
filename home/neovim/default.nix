@@ -118,6 +118,7 @@ in
           cmp-path
           cmp_luasnip
           dashboard-nvim
+          diffview-nvim
           editorconfig-vim
           firenvim
           friendly-snippets
