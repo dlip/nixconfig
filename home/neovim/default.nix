@@ -119,10 +119,12 @@ in
           firenvim
           friendly-snippets
           hop-nvim
+          indent-blankline-nvim
           luasnip
           lspkind-nvim # Icons for lsp popup
           neogit
           neoscroll-nvim
+          nvim-autopairs
           nvim-cmp
           nvim-dap
           nvim-dap-go
