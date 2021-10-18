@@ -49,10 +49,6 @@ easyocr(){
 }
 
 
-nvimterm(){
-    nvim -c 'Term' -c 'res 10' -c 'wincmd k' -c 'Telescope frecency frecency default_text=:CWD:' "$@"
-}
-
 # Open project
 local projectdir="$HOME/code"
 local projectfile="$projectdir/projects.txt"
@@ -67,7 +63,7 @@ p(){
         cd "$projectdir/$repo_path"
         tmux split-window -p 20
         tmux select-pane -U
-        nvim -c 'Telescope frecency frecency default_text=:CWD:'
+        nvim
     fi
 }
 

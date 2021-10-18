@@ -66,7 +66,7 @@
       bind-key -T copy-mode-vi 'C-Down' select-pane -D
       bind-key -T copy-mode-vi 'C-Up' select-pane -U
       bind-key -T copy-mode-vi 'C-Right' select-pane -R
-      bind-key -T copy-mode-vi 'C-\\' select-pane -l
+      bind-key -T copy-mode-vi 'C-\' select-pane -l
     '';
   };
 }

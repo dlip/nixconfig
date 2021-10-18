@@ -28,6 +28,7 @@
     gnupg
     gnuplot
     go
+    gobang
     gotop
     gopls
     graphviz
