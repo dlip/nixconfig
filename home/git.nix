@@ -25,8 +25,12 @@
       merge = {
         conflictstyle = "diff3";
         summary = true;
-        tool = "vimdiff";
+        tool = "nvim";
       };
+      mergetool = {
+        keepBackup = false;
+      };
+      "mergetool \"nvim\"".cmd = ''nvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"'';
       branch = { autoSetupMerge = "always"; };
       instaweb = { port = 1234; };
       ui = { color = true; };

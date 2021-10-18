@@ -146,8 +146,7 @@ in
           vim-commentary
           vim-delve
           vim-eunuch
-          #vim-fugitive
-          #vim-surround
+          vim-mergetool
           vim-test
           vim-tmux-navigator
           vim-which-key # spacemacs-like leader key menu
