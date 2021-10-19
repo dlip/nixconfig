@@ -59,6 +59,15 @@ let
         sha256 = "Cz20X1ICBjGXI2g170/oTdfSELOWc2BYjCQ5q0pDWj8=";
       };
     };
+    neuron-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "neuron-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "oberblastmeister";
+        repo = "neuron.nvim";
+        rev = "10b189437c3e080502ca14ed0e7bc041274e0610";
+        sha256 = "iG5HXsqqqSf4862mC38dbVznPgtHCZkQNl8Qw8aw5oY=";
+      };
+    };
   };
 in
 {
@@ -128,6 +137,7 @@ in
           luasnip
           neogit
           neoscroll-nvim
+          neuron-nvim
           nvim-autopairs
           nvim-cmp
           nvim-dap
