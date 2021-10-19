@@ -133,8 +133,13 @@ local keymaps = {
   {'n', '<A-8>', '<cmd>BufferGoto 8<CR>'},
   {'n', '<A-9>', '<cmd>BufferGoto 9<CR>'},
   {'n', '<A-0>', '<cmd>BufferLast<CR>'},
-  {'n', '<A-c>', '<cmd>BufferClose<CR>'},
+  {'n', '<A-x>', '<cmd>BufferClose<CR>'},
   {'n', '<A-a>', '<cmd>BufferPick<CR>'},
+  
+  -- Tabs
+  {'n', '<A-c>', '<cmd>tabprevious<CR>'},
+  {'n', '<A-d>', '<cmd>tabnext<CR>'},
+  {'n', '<A-z>', '<cmd>tabclose<CR>'},
 }
 
 for i = 1, #keymaps do
