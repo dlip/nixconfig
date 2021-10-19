@@ -18,17 +18,12 @@ local keymaps = {
   {'nxo', '<C-S-left>', '<C-w>H'},
   {'nxo', '<C-S-right>', '<C-w>L'},
 
-  -- Bufferline
-  {'nxo', '<M-w>', '<cmd>BufferLineCyclePrev<CR>'},
-  {'nxo', '<M-p>', '<cmd>BufferLineCycleNext<CR>'},
-  {'nxo', '<M-W>', '<cmd>BufferLineMovePrev<CR>'},
-  {'nxo', '<M-P>', '<cmd>BufferLineMoveNext<CR>'},
-
   -- arrows
   {'nxo', 'f', 'k'},
   {'nxo', 's', 'j'},
   {'nxo', 'r', 'h'},
   {'nxo', 't', 'l'},
+
 
   -- Word left/right
   {'nxo', 'w', 'b'},
@@ -116,10 +111,30 @@ local keymaps = {
 
   -- Paste in insert mode
   {'i', '<C-v>', '<C-r>"'},
-  
+
   -- Hop
   {'nxo', 'k', '<cmd>HopChar1AC<CR>'},
   {'nxo', 'K', '<cmd>HopChar1BC<CR>'},
+
+  -- Barbar
+  {'n', '<A-w>', '<cmd>BufferPrevious<CR>'},
+  {'n', '<A-p>', '<cmd>BufferNext<CR>'},
+-- Re-order to previous/next
+  {'n', '<A-W>', '<cmd>BufferMovePrevious<CR>'},
+  {'n', '<A-P>', ' <cmd>BufferMoveNext<CR>'},
+-- Goto buffer in position...
+  {'n', '<A-1>', '<cmd>BufferGoto 1<CR>'},
+  {'n', '<A-2>', '<cmd>BufferGoto 2<CR>'},
+  {'n', '<A-3>', '<cmd>BufferGoto 3<CR>'},
+  {'n', '<A-4>', '<cmd>BufferGoto 4<CR>'},
+  {'n', '<A-5>', '<cmd>BufferGoto 5<CR>'},
+  {'n', '<A-6>', '<cmd>BufferGoto 6<CR>'},
+  {'n', '<A-7>', '<cmd>BufferGoto 7<CR>'},
+  {'n', '<A-8>', '<cmd>BufferGoto 8<CR>'},
+  {'n', '<A-9>', '<cmd>BufferGoto 9<CR>'},
+  {'n', '<A-0>', '<cmd>BufferLast<CR>'},
+  {'n', '<A-c>', '<cmd>BufferClose<CR>'},
+  {'n', '<A-a>', '<cmd>BufferPick<CR>'},
 }
 
 for i = 1, #keymaps do

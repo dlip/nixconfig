@@ -111,7 +111,7 @@ in
         in
         [
           autosave-nvim
-          bufferline-nvim
+          barbar-nvim
           cmp-buffer
           cmp-nvim-lsp
           cmp-nvim-lua
@@ -142,7 +142,6 @@ in
           tokyonight-nvim
           trouble-nvim
           undotree
-          vim-bbye
           vim-commentary
           vim-delve
           vim-eunuch
