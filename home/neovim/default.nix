@@ -146,6 +146,7 @@ in
           vim-commentary
           vim-delve
           vim-eunuch
+          vim-fugitive
           vim-mergetool
           vim-test
           vim-tmux-navigator
