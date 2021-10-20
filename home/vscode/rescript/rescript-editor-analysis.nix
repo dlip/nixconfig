@@ -9,17 +9,21 @@ stdenv.mkDerivation {
     repo = "rescript-vscode";
     rev = "8d0412a72307b220b7f5774e2612760a2d429059";
     sha256 = "rHQtfuIiEWlSPuZvNpEafsvlXCj2Uv1YRR1IfvKfC2s=";
-  }) + "/analysis";
+  });
+
+  /* sourceRoot = "analysis"; */
 
   nativeBuildInputs = [ ocaml ];
 
   postPatch = ''
-    sed -i 's|/bin/bash|${bash}/bin/bash|g' Makefile
+    cd analysis
+    substituteInPlace Makefile --replace "/bin/bash" "${bash}/bin/bash"
   '';
 
   installPhase = ''
     mkdir -p $out/bin
     cp ./rescript-editor-analysis.exe $out/bin
+    #install -D -m 644 -t "$out/bin" "./rescript-editor-analysis.exe"
   '';
 
   meta = with lib; {

@@ -157,6 +157,7 @@
           nativeBuildInputs = with pkgs; [ (callPackage sops-nix { }).sops-pgp-hook ];
         };
         packages = {
+          rescript = (pkgs.callPackage ./home/vscode/rescript {});
           pushNixStoreDockerImage = with pkgs; dockerTools.buildLayeredImage {
             name = "push-nix-store-docker-image";
             tag = "latest";
