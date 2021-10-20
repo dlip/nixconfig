@@ -142,3 +142,10 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
    g["loaded_" .. plugin] = 1
 end
+
+-- Fugitive
+cmd[[
+let g:nremap = {'s': 'e', 'r': 'b'}
+let g:xremap = {'s': 'e', 'r': 'b'}
+let g:oremap = {'s': 'e', 'r': 'b'}
+]]
