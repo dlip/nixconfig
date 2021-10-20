@@ -3,6 +3,7 @@
 stdenv.mkDerivation {
   pname = "rescript-editor-analysis";
   version = "1.1.3";
+
   src = (fetchFromGitHub {
     owner = "rescript-lang";
     repo = "rescript-vscode";
@@ -12,7 +13,7 @@ stdenv.mkDerivation {
 
   nativeBuildInputs = [ ocaml ];
 
-  preBuildPhase = ''
+  postPatch = ''
     sed -i 's|/bin/bash|${bash}/bin/bash|g' Makefile
   '';
 

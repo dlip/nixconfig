@@ -4,9 +4,10 @@ let
   arch =
     if stdenv.isLinux then "linux"
     else if stdenv.isDarwin then "darwin"
-    else throw "Only Linux and Darwin are supported.";
+    else throw "Unsupported platform";
   analysisDir = "server/analysis_binaries/${arch}";
-in vscode-utils.buildVscodeMarketplaceExtension rec {
+in
+vscode-utils.buildVscodeMarketplaceExtension rec {
   mktplcRef = {
     name = "rescript-vscode";
     publisher = "chenglou92";
