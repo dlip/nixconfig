@@ -49,7 +49,7 @@ cmp.setup({
     { name = 'buffer', keyword_length = 5 },
   },
   formatting = {
-    format = lspkind.cmp_format({with_text = false, maxwidth = 50})
+    format = lspkind.cmp_format({with_text = true, maxwidth = 50})
   },
 })
 
