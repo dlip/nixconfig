@@ -52,7 +52,6 @@
     my.nodePackages.unified-language-server
     ncdu
     neofetch
-    neuron-notes
     niv
     nix-du
     nixfmt
