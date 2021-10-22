@@ -138,6 +138,7 @@ in
           nvim-ts-rainbow
           nvim-whichkey-setup-lua
           rust-tools-nvim
+          tabular
           telescope
           telescope-dap-nvim
           tokyonight-nvim
@@ -147,6 +148,7 @@ in
           vim-delve
           vim-eunuch
           vim-fugitive
+          vim-markdown
           vim-mergetool
           vim-test
           vim-tmux-navigator

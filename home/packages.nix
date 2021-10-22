@@ -44,6 +44,7 @@
     kubectl
     kubernetes-helm
     kubetail
+    lazygit
     ledger
     ledger-autosync
     lua
