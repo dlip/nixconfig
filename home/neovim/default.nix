@@ -133,6 +133,7 @@ in
           nvim-dap
           nvim-dap-go
           nvim-dap-ui
+          nvim-lspconfig
           nvim-treesitter-textobjects
           nvim-ts-rainbow
           nvim-whichkey-setup-lua
@@ -157,37 +158,7 @@ in
           (pluginWithDeps rust-tools-nvim [ telescope nvim-lspconfig ])
           (pluginWithDeps telescope-symbols-nvim [ telescope ])
 
-          nvim-lspconfig
-          (
-            nvim-treesitter.withPlugins
-              (
-                grammars:
-                [
-                  grammars.tree-sitter-c
-                  grammars.tree-sitter-cpp
-                  grammars.tree-sitter-css
-                  grammars.tree-sitter-go
-                  grammars.tree-sitter-html
-                  grammars.tree-sitter-java
-                  grammars.tree-sitter-javascript
-                  grammars.tree-sitter-jsdoc
-                  grammars.tree-sitter-json
-                  grammars.tree-sitter-lua
-                  grammars.tree-sitter-markdown
-                  grammars.tree-sitter-nix
-                  grammars.tree-sitter-php
-                  grammars.tree-sitter-python
-                  grammars.tree-sitter-regex
-                  grammars.tree-sitter-ruby
-                  grammars.tree-sitter-rust
-                  grammars.tree-sitter-tsx
-                  grammars.tree-sitter-typescript
-                  grammars.tree-sitter-yaml
-                ]
-              )
-          )
-
-
+          (nvim-treesitter.withPlugins builtins.attrValues)
         ];
     };
   };
