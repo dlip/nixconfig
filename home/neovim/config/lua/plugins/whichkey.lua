@@ -51,6 +51,7 @@ local keymap = {
     },
     g = {
         name = '+Git',
+        c = {'<cmd>Neogit commit<CR>', 'Commit'},
         d = {'<cmd>DiffviewOpen<CR>', 'Diffview Open'},
         D = {'<cmd>DiffviewClose<CR>', 'Diffview Close'},
         f = {'<cmd>!git fetch --all --prune --jobs=10<CR>', 'Fetch'},
