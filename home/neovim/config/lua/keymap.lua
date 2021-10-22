@@ -1,5 +1,4 @@
 local map = vim.api.nvim_set_keymap
-local cmd = vim.cmd 	-- using cmd to execute vim script
 
 local keymaps = {
   -- clear search highlighting
@@ -119,10 +118,10 @@ local keymaps = {
   -- Barbar
   {'n', '<A-w>', '<cmd>BufferPrevious<CR>'},
   {'n', '<A-p>', '<cmd>BufferNext<CR>'},
--- Re-order to previous/next
+  -- Re-order to previous/next
   {'n', '<A-W>', '<cmd>BufferMovePrevious<CR>'},
   {'n', '<A-P>', ' <cmd>BufferMoveNext<CR>'},
--- Goto buffer in position...
+  -- Goto buffer in position...
   {'n', '<A-1>', '<cmd>BufferGoto 1<CR>'},
   {'n', '<A-2>', '<cmd>BufferGoto 2<CR>'},
   {'n', '<A-3>', '<cmd>BufferGoto 3<CR>'},
@@ -135,7 +134,7 @@ local keymaps = {
   {'n', '<A-0>', '<cmd>BufferLast<CR>'},
   {'n', '<A-x>', '<cmd>BufferClose<CR>'},
   {'n', '<A-a>', '<cmd>BufferPick<CR>'},
-  
+
   -- Tabs
   {'n', '<A-c>', '<cmd>tabprevious<CR>'},
   {'n', '<A-d>', '<cmd>tabnext<CR>'},
@@ -151,28 +150,5 @@ for i = 1, #keymaps do
     map(mode, keymap[2], keymap[3], opts)
   end
 end
-
--- Restore enter functionality in quickfix window
-cmd[[
-au FileType qf nmap <buffer> <CR> <CR>
-]]
-
--- Plugins
-cmd[[
-" Close quickfix by q
-au FileType qf nmap <buffer><silent> q :ccl<CR>
-]]
-
-  -- PageUp/PageDown
-  --     nnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
-  --     nnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
-  --     xnoremap <silent> <expr> j (winheight(0)-1) . "\<C-u>"
-  --     xnoremap <silent> <expr> h (winheight(0)-1) . "\<C-d>"
-  --     nnoremap <silent> <expr> <PageUp> (winheight(0)-1) . "\<C-u>"
-  --     nnoremap <silent> <expr> <PageDown> (winheight(0)-1) . "\<C-d>"
-  --     vnoremap <silent> <expr> <PageUp> (winheight(0)-1) . "\<C-u>"
-  --     vnoremap <silent> <expr> <PageDown> (winheight(0)-1) . "\<C-d>"
-  --     vnoremap <silent> <expr> <S-PageUp> (winheight(0)-1) . "\<C-u>"
-  --     vnoremap <silent> <expr> <S-PageDown> (winheight(0)-1) . "\<C-d>"
 
 

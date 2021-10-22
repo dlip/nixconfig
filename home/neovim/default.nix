@@ -99,10 +99,7 @@ in
       ];
 
       extraConfig = ''
-        set undodir=${nvimHome}/undo
-        set shadafile=${nvimHome}/viminfo
-        let test#go#runner = 'gotest'
-        lua require'init'
+        source ${nvimHome}/myinit.vim
       '';
 
       plugins = with pkgs.vimPlugins // extraPlugins;
@@ -122,6 +119,7 @@ in
           editorconfig-vim
           firenvim
           friendly-snippets
+          gv-vim
           hop-nvim
           indent-blankline-nvim
           lspkind-nvim # Icons for lsp popup

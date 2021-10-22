@@ -1,6 +1,9 @@
+-- https://github.com/lukas-reineke/indent-blankline.nvim
+
 require("indent_blankline").setup {
     char = "|",
     buftype_exclude = {"terminal"},
+    show_current_context = true,
     filetype_exclude = {
       "help",
       "terminal",
@@ -14,3 +17,4 @@ require("indent_blankline").setup {
     show_trailing_blankline_indent = false,
     show_first_indent_level = false,
 }
+

@@ -36,7 +36,7 @@ require'diffview'.setup {
     },
   },
   key_bindings = {
-    disable_defaults = false,                   -- Disable the default key bindings
+    disable_defaults = true,                   -- Disable the default key bindings
     -- The `view` bindings are active in the diff buffers, only when the current
     -- tabpage is a Diffview.
     view = {

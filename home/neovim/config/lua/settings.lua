@@ -1,8 +1,6 @@
 -----------------------------------------------------------
 -- Neovim API aliases
 -----------------------------------------------------------
-local cmd = vim.cmd             -- execute Vim commands
-local exec = vim.api.nvim_exec  -- execute Vimscript
 local g = vim.g                 -- global variables
 local opt = vim.opt             -- global/buffer/windows-scoped options
 
@@ -17,6 +15,7 @@ opt.swapfile = false          -- don't use swapfile
 opt.backup = false            -- don't create backups
 opt.undofile = true           -- enable undofile for persistent undo
 opt.undodir = vim.fn.expand('~/.config/nvim/undo') -- set undofile dir
+opt.shadafile = vim.fn.expand('~/.config/nvim/viminfo') -- set shadafile dir
 opt.timeoutlen = 500          -- timeout for key sequences
 
 -----------------------------------------------------------
@@ -35,16 +34,7 @@ opt.smartcase = true          -- ignore lowercase for the whole pattern
 opt.wrap = false              -- No wrap
 opt.scrolloff = 5             -- keep cursor away from top/bottom edge of the screen
 opt.cursorline = true         -- highlight current line
--- remove whitespace on save
--- cmd [[au BufWritePre * :%s/\s\+$//e]]
-
--- highlight on yank
-exec([[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
-  augroup end
-]], false)
+opt.termguicolors = true      -- enable 24-bit RGB colors
 
 -----------------------------------------------------------
 -- Memory, CPU
@@ -55,18 +45,6 @@ opt.lazyredraw = true     -- faster scrolling
 opt.synmaxcol = 240       -- max column for syntax highlight
 
 -----------------------------------------------------------
--- Colorscheme
------------------------------------------------------------
-opt.termguicolors = true      -- enable 24-bit RGB colors
-cmd [[
-  autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-  autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
-  autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
-  autocmd ColorScheme * highlight NvimTreeNormal ctermbg=NONE guibg=NONE
-  colorscheme tokyonight
-]]
-
------------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
 opt.expandtab = true      -- use spaces instead of tabs
@@ -74,78 +52,9 @@ opt.shiftwidth = 2        -- shift 4 spaces when tab
 opt.tabstop = 4           -- 1 tab == 4 spaces
 opt.smartindent = true    -- autoindent new lines
 
--- don't auto comment new lines
-cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
-
--- remove line length marker for selected filetypes
-cmd [[autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0]]
-
--- 2 spaces for selected filetypes
-cmd [[
-  autocmd FileType python setlocal shiftwidth=4 tabstop=4
-]]
-
--- IndentLine
---g.indentLine_setColors = 0  -- set indentLine color
-g.indentLine_char = '|'       -- set indentLine character
-
--- disable IndentLine for markdown files (avoid concealing)
-cmd [[autocmd FileType markdown let g:indentLine_enabled=0]]
-
 -----------------------------------------------------------
 -- Autocompletion
 -----------------------------------------------------------
 opt.completeopt = 'menu,menuone,noselect' -- completion options
 --opt.shortmess = 'c'   -- don't show completion messages
 
------------------------------------------------------------
--- Terminal
------------------------------------------------------------
--- open a terminal pane on the right using :Term
-cmd [[command Term :botright split term://$SHELL]]
-
--- Terminal visual tweaks
---- enter insert mode when switching to terminal
---- close terminal buffer on process exit
-cmd [[
-    autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
-    autocmd TermOpen * startinsert
-    autocmd TermOpen * setlocal winfixheight
-    autocmd BufWinEnter,WinEnter term://* startinsert
-    autocmd BufLeave term://* stopinsert
-]]
-
-g.tmux_navigator_no_mappings = 1
-
--- disable some builtin vim plugins
-local disabled_built_ins = {
-   "2html_plugin",
-   "getscript",
-   "getscriptPlugin",
-   "gzip",
-   "logipat",
-   "netrw",
-   "netrwPlugin",
-   "netrwSettings",
-   "netrwFileHandlers",
-   "matchit",
-   "tar",
-   "tarPlugin",
-   "rrhelper",
-   "spellfile_plugin",
-   "vimball",
-   "vimballPlugin",
-   "zip",
-   "zipPlugin",
-}
-
-for _, plugin in pairs(disabled_built_ins) do
-   g["loaded_" .. plugin] = 1
-end
-
--- Fugitive
-cmd[[
-let g:nremap = {'s': 'e', 'r': 'b'}
-let g:xremap = {'s': 'e', 'r': 'b'}
-let g:oremap = {'s': 'e', 'r': 'b'}
-]]
