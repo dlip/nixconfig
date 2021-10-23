@@ -8,7 +8,7 @@
 
   home.packages = with pkgs; [
     alttab
-    anki
+    # anki /build/anki-2.1.15/tests/test_addons.py:83: DeprecationWarning: Please use assertEqual instead.
     audacity
     blender
     calibre

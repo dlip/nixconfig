@@ -50,15 +50,6 @@ let
         sha256 = "fTIqhgDhQ3U7Kuqf/jMAAV2we6v7m0QbIHybji7tYUo=";
       };
     };
-    nvim-cmp = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "nvim-cmp";
-      src = pkgs.fetchFromGitHub {
-        owner = "hrsh7th";
-        repo = "nvim-cmp";
-        rev = "f5393d5bd934428a469f03f5bc225922f8c48367";
-        sha256 = "Cz20X1ICBjGXI2g170/oTdfSELOWc2BYjCQ5q0pDWj8=";
-      };
-    };
   };
 in
 {
@@ -114,6 +105,7 @@ in
           cmp-nvim-lua
           cmp-path
           cmp_luasnip
+          comment-nvim
           dashboard-nvim
           diffview-nvim
           editorconfig-vim
@@ -125,6 +117,7 @@ in
           lspkind-nvim # Icons for lsp popup
           luasnip
           neogit
+          neorg
           neoscroll-nvim
           nvim-autopairs
           nvim-cmp
@@ -142,7 +135,6 @@ in
           tokyonight-nvim
           trouble-nvim
           undotree
-          vim-commentary
           vim-delve
           vim-eunuch
           vim-fugitive

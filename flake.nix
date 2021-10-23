@@ -18,7 +18,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     envy-sh.url = "github:dlip/envy.sh";
-    sops-nix.url = "github:Mic92/sops-nix";
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
@@ -58,7 +57,6 @@
     , nixpkgs
     , home-manager
     , envy-sh
-    , sops-nix
     , flake-compat
     , flake-utils
     , emacs-overlay
@@ -152,10 +150,6 @@
             };
           homeConfigurations = builtins.mapAttrs createHomeConfig configs;
         };
-        devShell = pkgs.mkShell {
-          sopsPGPKeyDirs = [ "./keys/hosts" "./keys/users" ];
-          nativeBuildInputs = with pkgs; [ (callPackage sops-nix { }).sops-pgp-hook ];
-        };
         packages = {
           rescript = (pkgs.callPackage ./home/vscode/rescript {});
           pushNixStoreDockerImage = with pkgs; dockerTools.buildLayeredImage {
@@ -190,7 +184,7 @@
               inherit system;
               pkgs = pkgsUnstable;
               modules =
-                [ ./systems/metabox/configuration.nix sops-nix.nixosModules.sops ];
+                [ ./systems/metabox/configuration.nix ];
             };
             dex = nixpkgs.lib.nixosSystem {
               inherit system;

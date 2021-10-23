@@ -4,6 +4,7 @@ require 'settings'
 require 'plugins/autosave'
 require 'plugins/barbar'
 require 'plugins/cmp'
+require 'plugins/comment'
 require 'plugins/dap'
 require 'plugins/dashboard'
 require 'plugins/diffview'
@@ -19,6 +20,7 @@ require 'plugins/nvim-tree'
 require 'plugins/telescope'
 require 'plugins/trouble'
 require 'plugins/treesitter'
+require 'plugins/neorg' -- requires treesitter
 require 'plugins/whichkey'
 
 -- disable some builtin vim plugins
