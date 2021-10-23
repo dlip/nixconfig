@@ -51,6 +51,13 @@ let
       };
     };
   };
+  
+  awesomeSrc = pkgs.fetchFromGitHub {
+    owner = "awesomewm";
+    repo = "awesome";
+    rev = "v4.3";
+    sha256 = "1i7ajmgbsax4lzpgnmkyv35x8vxqi0j84a14k6zys4blx94m9yjf";
+  };
 in
 {
   programs = {
@@ -176,6 +183,7 @@ in
       "${nvimHome}/undo/.keep".text = "";
       "${nvimHome}/lua/env.lua".text = ''
         sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
+        awesome_root_path = "${awesomeSrc}"
         friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"
       '';
     };

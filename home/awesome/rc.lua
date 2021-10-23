@@ -370,7 +370,43 @@ clientkeys = gears.table.join(
             c.maximized_horizontal = not c.maximized_horizontal
             c:raise()
         end ,
-        {description = "(un)maximize horizontally", group = "client"})
+        {description = "(un)maximize horizontally", group = "client"}),
+    awful.key({ }, "XF86AudioPlay",
+      function ()
+        awful.util.spawn_with_shell("playerctl play-pause")
+      end),
+    awful.key({ }, "XF86AudioNext",
+      function ()
+        awful.util.spawn_with_shell("playerctl next")
+      end),
+    awful.key({ }, "XF86AudioPrev",
+      function ()
+        awful.util.spawn_with_shell("playerctl previous")
+      end),
+    awful.key({ }, "XF86AudioStop",
+      function ()
+        awful.util.spawn_with_shell("playerctl stop")
+      end),
+    awful.key({ }, "XF86AudioLowerVolume",
+      function ()
+        awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5% && volnoti-show $(pamixer --get-volume)")
+      end),
+    awful.key({ }, "XF86AudioRaiseVolume",
+      function ()
+        awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5% && volnoti-show $(pamixer --get-volume)")
+      end),
+    awful.key({ }, "XF86AudioMute",
+      function ()
+        awful.util.spawn_with_shell("pactl set-sink-mute @DEFAULT_SINK@ && volnoti-show $(pamixer --get-volume)")
+      end),
+    awful.key({ }, "XF86MonBrightnessUp",
+      function ()
+        awful.util.spawn_with_shell("brightnessctl set +5%")
+      end),
+    awful.key({ }, "XF86MonBrightnessDown",
+      function ()
+        awful.util.spawn_with_shell("brightnessctl set 5%-")
+      end)
 )
 
 -- Bind all key numbers to tags.

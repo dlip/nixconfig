@@ -117,7 +117,7 @@
   services.screen-locker = {
     enable = true;
     inactiveInterval = 5;
-    lockCmd = "${lock-screen}/bin/lock-screen";
+    lockCmd = "lock-screen";
     xautolock.extraOptions = [
       "Xautolock.killer: systemctl suspend"
     ];

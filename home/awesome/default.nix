@@ -26,11 +26,21 @@
     notify-desktop
   ];
   
+  services.screen-locker = {
+    enable = true;
+    inactiveInterval = 5;
+    lockCmd = "lock-screen";
+    xautolock.extraOptions = [
+      "Xautolock.killer: systemctl suspend"
+    ];
+  };
+
   services.blueman-applet.enable = true;
   services.pasystray.enable = true;
   services.clipmenu.enable = true;
   services.dropbox.enable = true;
   services.flameshot.enable = true;
+  services.volnoti.enable = true;
 
   services.picom = {
     enable = true;
