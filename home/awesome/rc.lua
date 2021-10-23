@@ -278,7 +278,7 @@ globalkeys = gears.table.join(
               {description = "open a terminal", group = "launcher"}),
     awful.key({ modkey,           }, "q", awesome.restart,
               {description = "reload awesome", group = "awesome"}),
-    awful.key({ modkey, "Shift"   }, "q", awesome.quit,
+    awful.key({ modkey, "Control"   }, "q", awesome.quit,
               {description = "quit awesome", group = "awesome"}),
 
     awful.key({ modkey,           }, "s",     function () awful.tag.incmwfact( 0.05)          end,
@@ -326,7 +326,23 @@ globalkeys = gears.table.join(
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
     awful.key({ modkey, "Shift" }, "e", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"})
+              {description = "show the menubar", group = "launcher"}),
+    awful.key({ modkey }, "l", function () awful.util.spawn_with_shell("lock-screen") end,
+              {description = "Lock screen", group = "awesome"}),
+    awful.key({ modkey, "Shift" }, ";", function () awful.util.spawn_with_shell("launch-default-programs") end,
+      {description = "Launch default programs", group = "launcher"}),
+    awful.key({ modkey }, ".", function () awful.util.spawn_with_shell("emoji-menu") end,
+      {description = "Emoji menu", group = "launcher"}),
+    awful.key({ modkey }, "c", function () awful.util.spawn_with_shell("CM_LAUNCHER=rofi clipmenu") end,
+      {description = "Clip menu", group = "launcher"}),
+    awful.key({ modkey }, "w", function () awful.util.spawn_with_shell("rofi -show-icons -modi windowcd -show windowcd") end,
+      {description = "Select window", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "w", function () awful.util.spawn_with_shell("rofi -show-icons -modi window -show window") end,
+      {description = "Select window global", group = "launcher"}),
+    awful.key({ modkey }, "p", function () awful.util.spawn_with_shell("rofi -show-icons -show combi -combi-modi 'drun,run' -modi combi") end,
+      {description = "Launch program", group = "launcher"}),
+    awful.key({ modkey, "Shift" }, "q", function () awful.util.spawn_with_shell("rofi -show power-menu -modi power-menu:power-menu") end,
+      {description = "Power menu", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
@@ -371,42 +387,16 @@ clientkeys = gears.table.join(
             c:raise()
         end ,
         {description = "(un)maximize horizontally", group = "client"}),
-    awful.key({ }, "XF86AudioPlay",
-      function ()
-        awful.util.spawn_with_shell("playerctl play-pause")
-      end),
-    awful.key({ }, "XF86AudioNext",
-      function ()
-        awful.util.spawn_with_shell("playerctl next")
-      end),
-    awful.key({ }, "XF86AudioPrev",
-      function ()
-        awful.util.spawn_with_shell("playerctl previous")
-      end),
-    awful.key({ }, "XF86AudioStop",
-      function ()
-        awful.util.spawn_with_shell("playerctl stop")
-      end),
-    awful.key({ }, "XF86AudioLowerVolume",
-      function ()
-        awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5% && volnoti-show $(pamixer --get-volume)")
-      end),
-    awful.key({ }, "XF86AudioRaiseVolume",
-      function ()
-        awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5% && volnoti-show $(pamixer --get-volume)")
-      end),
-    awful.key({ }, "XF86AudioMute",
-      function ()
-        awful.util.spawn_with_shell("pactl set-sink-mute @DEFAULT_SINK@ && volnoti-show $(pamixer --get-volume)")
-      end),
-    awful.key({ }, "XF86MonBrightnessUp",
-      function ()
-        awful.util.spawn_with_shell("brightnessctl set +5%")
-      end),
-    awful.key({ }, "XF86MonBrightnessDown",
-      function ()
-        awful.util.spawn_with_shell("brightnessctl set 5%-")
-      end)
+    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn_with_shell("playerctl play-pause") end),
+    awful.key({ }, "XF86AudioNext", function () awful.util.spawn_with_shell("playerctl next") end),
+    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn_with_shell("playerctl previous") end),
+    awful.key({ }, "XF86AudioStop", function () awful.util.spawn_with_shell("playerctl stop") end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5% && volnoti-show $(pamixer --get-volume)") end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5% && volnoti-show $(pamixer --get-volume)") end),
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn_with_shell("pactl set-sink-mute @DEFAULT_SINK@ && volnoti-show $(pamixer --get-volume)") end),
+    awful.key({ }, "XF86MonBrightnessUp", function () awful.util.spawn_with_shell("brightnessctl set +5%") end),
+    awful.key({ }, "XF86MonBrightnessDown", function () awful.util.spawn_with_shell("brightnessctl set 5%-") end),
+    awful.key({ }, "Print", function () awful.util.spawn_with_shell("flameshot gui") end)
 )
 
 -- Bind all key numbers to tags.
