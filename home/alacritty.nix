@@ -12,8 +12,8 @@
       };
       colors = {
         primary = {
-          background = "#040404";
-          foreground = "#c5c8c6";
+          background = "#24283b";
+          foreground = "#c0caf5";
         };
       };
       env = {

@@ -35,10 +35,22 @@
     ];
   };
 
+  systemd.user.services.ibus = {
+      Unit = {
+        Description = "IBus Daemon";
+        Requires = [ "tray.target" ];
+        After = [ "graphical-session-pre.target" "tray.target" ];
+        PartOf = [ "graphical-session.target" ];
+      };
+
+      Install = { WantedBy = [ "graphical-session.target" ]; };
+
+      Service = { ExecStart = "${pkgs.ibus}/bin/ibus-daemon"; };
+    };
+    
   services.blueman-applet.enable = true;
   services.pasystray.enable = true;
   services.clipmenu.enable = true;
-  services.dropbox.enable = true;
   services.flameshot.enable = true;
   services.volnoti.enable = true;
 

@@ -516,7 +516,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+      }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
@@ -589,5 +589,9 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- Gaps
+beautiful.useless_gap = 3
+beautiful.gap_single_client = false
+
 -- Autostart Applications
-awful.spawn.with_shell("ibus-daemon")
+--awful.spawn.with_shell("ibus-daemon")
