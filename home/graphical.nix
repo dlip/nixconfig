@@ -2,6 +2,7 @@
   imports = [
     ./alacritty.nix
     ./rofi.nix
+    ./scripts.nix
     ./vscode
     ./awesome
   ];
