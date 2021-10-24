@@ -608,4 +608,4 @@ beautiful.useless_gap = 3
 beautiful.gap_single_client = false
 
 -- Autostart Applications
---awful.spawn.with_shell("ibus-daemon")
+awful.spawn.with_shell("update-wallpaper")
