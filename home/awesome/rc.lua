@@ -311,10 +311,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey },            "e",     function () awful.screen.focused().mypromptbox:run() end,
-              {description = "run prompt", group = "launcher"}),
-
-    awful.key({ modkey }, "x",
+    awful.key({ modkey }, ";",
               function ()
                   awful.prompt.run {
                     prompt       = "Run Lua code: ",
@@ -325,8 +322,6 @@ globalkeys = gears.table.join(
               end,
               {description = "lua execute prompt", group = "awesome"}),
     -- Menubar
-    awful.key({ modkey, "Shift" }, "e", function() menubar.show() end,
-              {description = "show the menubar", group = "launcher"}),
     awful.key({ modkey }, "l", function () awful.util.spawn_with_shell("lock-screen") end,
               {description = "Lock screen", group = "awesome"}),
     awful.key({ modkey, "Shift" }, ";", function () awful.util.spawn_with_shell("launch-default-programs") end,
@@ -335,24 +330,24 @@ globalkeys = gears.table.join(
       {description = "Emoji menu", group = "launcher"}),
     awful.key({ modkey }, "c", function () awful.util.spawn_with_shell("CM_LAUNCHER=rofi clipmenu") end,
       {description = "Clip menu", group = "launcher"}),
-    awful.key({ modkey }, "w", function () awful.util.spawn_with_shell("rofi -show-icons -modi windowcd -show windowcd") end,
+    awful.key({ modkey }, "p", function () awful.util.spawn_with_shell("rofi -show-icons -modi windowcd -show windowcd") end,
       {description = "Select window", group = "launcher"}),
-    awful.key({ modkey, "Shift" }, "w", function () awful.util.spawn_with_shell("rofi -show-icons -modi window -show window") end,
+    awful.key({ modkey, "Shift" }, "p", function () awful.util.spawn_with_shell("rofi -show-icons -modi window -show window") end,
       {description = "Select window global", group = "launcher"}),
-    awful.key({ modkey }, "p", function () awful.util.spawn_with_shell("rofi -show-icons -show combi -combi-modi 'drun,run' -modi combi") end,
+    awful.key({ modkey }, "e", function () awful.util.spawn_with_shell("rofi -show-icons -show combi -combi-modi 'drun,run' -modi combi") end,
       {description = "Launch program", group = "launcher"}),
     awful.key({ modkey, "Shift" }, "q", function () awful.util.spawn_with_shell("rofi -show power-menu -modi power-menu:power-menu") end,
       {description = "Power menu", group = "launcher"})
 )
 
 clientkeys = gears.table.join(
-    awful.key({ modkey,           }, "z",
+    awful.key({ modkey, "Shift" }, "Return",
         function (c)
             cfullscreen = not c.fullscreen
             c:raise()
         end,
         {description = "toggle fullscreen", group = "client"}),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end,
+    awful.key({ modkey,           }, "w",      function (c) c:kill()                         end,
               {description = "close", group = "client"}),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
               {description = "toggle floating", group = "client"}),
@@ -519,9 +514,17 @@ awful.rules.rules = {
       }, properties = { titlebars_enabled = false }
     },
 
-    -- Set Firefox to always map on the tag named "2" on screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { screen = 1, tag = "2" } },
+    { rule = { class = "Slack" },
+      properties = { screen = 1, tag = "2" } },
+
+    { rule = { class = "Spotify" },
+      properties = { screen = 1, tag = "3" } },
+
+    { rule = { class = "Firefox" },
+      properties = { screen = 1, tag = "4" } },
+
+    { rule = { class = "Alacritty" },
+      properties = { screen = 1, tag = "5" } },
 }
 -- }}}
 
@@ -538,7 +541,18 @@ client.connect_signal("manage", function (c)
         -- Prevent clients from being unreachable after screen count changes.
         awful.placement.no_offscreen(c)
     end
+
+    -- handle apps like spotify which take some time to ge a class assigned
+    if c.class == nil then
+      c.minimized = true
+      c:connect_signal("property::class", function ()
+        c.minimized = false
+        awful.rules.apply(c)
+      end)
+    end
 end)
+
+
 
 -- Add a titlebar if titlebars_enabled is set to true in the rules.
 client.connect_signal("request::titlebars", function(c)
