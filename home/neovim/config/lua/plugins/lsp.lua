@@ -9,6 +9,7 @@ local servers = {
   'dockerls',
   'gopls',
   'html',
+  'solang',
   'pyright',
   'rnix',
   'terraformls',

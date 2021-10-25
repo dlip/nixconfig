@@ -147,6 +147,7 @@ in
           vim-fugitive
           vim-markdown
           vim-mergetool
+          vim-solidity
           vim-test
           vim-tmux-navigator
           vim-which-key # spacemacs-like leader key menu

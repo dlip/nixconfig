@@ -50,7 +50,6 @@
     lua
     luaformatter
     mdl
-    my.nodePackages.unified-language-server
     ncdu
     neofetch
     niv
@@ -87,6 +86,7 @@
     rnix-lsp
     rustup
     skopeo
+    solang
     sops
     sqlite
     sumneko-lua-language-server

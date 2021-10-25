@@ -72,4 +72,7 @@ autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
 "     vnoremap <silent> <expr> <S-PageUp> (winheight(-1)-1) . "\<C-u>"
 "     vnoremap <silent> <expr> <S-PageDown> (winheight(-1)-1) . "\<C-d>"
 
+" Set filetypes
+autocmd BufEnter *.sol :setlocal filetype=solidity
+
 lua require'init'

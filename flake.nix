@@ -72,12 +72,12 @@
         config.allowUnfree = true;
         overlays = [
           (final: prev: {
-            my = final.callPackage ./pkgs { };
             envy-sh = envy-sh.defaultPackage.${system};
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
             wally-cli = wally-cli.defaultPackage.${system};
           })
+          (import ./pkgs)
           emacs-overlay.overlay
           neovim.overlay
           kmonad.overlay
@@ -151,8 +151,8 @@
           homeConfigurations = builtins.mapAttrs createHomeConfig configs;
         };
         packages = {
-          rescript = (pkgs.callPackage ./home/vscode/rescript {});
-          solang = (pkgs.callPackage ./pkgs/solang {});
+          rescript = (pkgs.callPackage ./home/vscode/rescript { });
+          solang = (pkgs.callPackage ./pkgs/solang { });
           pushNixStoreDockerImage = with pkgs; dockerTools.buildLayeredImage {
             name = "push-nix-store-docker-image";
             tag = "latest";

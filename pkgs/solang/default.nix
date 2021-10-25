@@ -1,19 +1,18 @@
-{ stdenv, fetchurl, autoPatchelfHook }:
+{ stdenv, fetchurl, autoPatchelfHook, pkgs, zlib }:
 stdenv.mkDerivation {
-  name = "kexpand";
+  name = "solang";
   src = fetchurl {
     url = "https://github.com/hyperledger-labs/solang/releases/download/v0.1.8/solang-linux";
     sha256 = "sha256-+qezaj8+s/oYR0VaHntW3RucMth5IfOQ6tcwhBw4qKE=";
   };
   nativeBuildInputs = [
     autoPatchelfHook
+    stdenv.cc.cc.lib
+    zlib
   ];
-  
-  dontBuild = true;
+  unpackPhase = "true";
   installPhase = ''
-    mkdir -p $out/bin
-    cp $src $out/bin/solang
-    # install -m755 -D solang-linux $out/bin/solang
+    install -m755 -D $src $out/bin/solang
   '';
 }
 #
