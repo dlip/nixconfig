@@ -603,6 +603,12 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
+-- Auto jump to urgent windows
+client.connect_signal("property::urgent", function(c)
+    c.minimized = false
+    c:jump_to()
+end)
+
 -- Gaps
 beautiful.useless_gap = 3
 beautiful.gap_single_client = false

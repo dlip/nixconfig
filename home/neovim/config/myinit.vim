@@ -57,6 +57,7 @@ autocmd FileType qf nmap <buffer> <CR> <CR>
 
 " Close quickfix by q
 autocmd FileType qf nmap <buffer><silent> q :ccl<CR>
+autocmd FileType help nmap <buffer><silent> q :q<CR>
 autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
 
 " PageUp/PageDown

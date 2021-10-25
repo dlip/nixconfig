@@ -152,6 +152,7 @@
         };
         packages = {
           rescript = (pkgs.callPackage ./home/vscode/rescript {});
+          solang = (pkgs.callPackage ./pkgs/solang {});
           pushNixStoreDockerImage = with pkgs; dockerTools.buildLayeredImage {
             name = "push-nix-store-docker-image";
             tag = "latest";
