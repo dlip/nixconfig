@@ -24,6 +24,7 @@
     betterlockscreen
     brightnessctl
     notify-desktop
+    i3lock
   ];
 
   services.betterlockscreen = {
