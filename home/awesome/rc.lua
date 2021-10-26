@@ -123,32 +123,6 @@ local tasklist_buttons = gears.table.join(
     awful.client.focus.byidx(-1)
   end))
 
-function scandir(directory)
-	local num_files, t, popen = 0, {}, io.popen
-	for filename in popen('ls -a "'..directory..'"'):lines() do
-		-- If case to disregard "." and ".."
-		if(not(filename == "." or filename == "..")) then
-			num_files = num_files + 1
-			t[num_files] = filename
-		end
-	end
-	return t
-end
-
-local function set_random_wallpaper()
-  local wallpaper_dir = os.getenv("HOME") .. "/wallpapers/"
-  local wallpapers = scandir(wallpaper_dir)
-  local wallpaper = wallpapers[ math.random( #wallpapers ) ]
-  if wallpaper then
-    gears.wallpaper.maximized(wallpaper_dir .. wallpaper, nil, false)
-  end
-end
-
-gears.timer {timeout = 60 * 10, call_now = true, autostart = true, callback = set_random_wallpaper}
-
-screen.connect_signal("request::wallpaper", set_random_wallpaper)
--- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
-screen.connect_signal("property::geometry", set_random_wallpaper)
 
 awful.screen.connect_for_each_screen(function(s)
 
@@ -593,5 +567,11 @@ end)
 beautiful.useless_gap = 3
 beautiful.gap_single_client = false
 
--- Autostart Applications
--- awful.spawn.with_shell("update-wallpaper")
+-- set wallpaper
+function set_wallpaper()
+  awful.spawn.with_shell("update-wallpaper")
+end
+gears.timer {timeout = 60 * 60, call_now = true, autostart = true, callback = set_wallpaper}
+screen.connect_signal("request::wallpaper", set_wallpaper)
+-- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
+screen.connect_signal("property::geometry", set_wallpaper)
