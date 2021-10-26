@@ -51,7 +51,7 @@ let
       };
     };
   };
-  
+
   awesomeSrc = pkgs.fetchFromGitHub {
     owner = "awesomewm";
     repo = "awesome";
@@ -163,29 +163,16 @@ in
     };
   };
 
-  home.file =
-    let
-      # Symlink everything in ./config to ~/.config/nvim/
-      cfg = builtins.listToAttrs (
-        map
-          (
-            file: {
-              name = "${nvimHome}/${file}";
-              value = {
-                source = ./config + "/${file}";
-                recursive = true;
-              };
-            }
-          )
-          (builtins.attrNames (builtins.readDir ./config))
-      );
-    in
-    cfg // {
-      "${nvimHome}/undo/.keep".text = "";
-      "${nvimHome}/lua/env.lua".text = ''
-        sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
-        awesome_root_path = "${awesomeSrc}"
-        friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"
-      '';
+  home.file = {
+    "${nvimHome}" = {
+      recursive = true;
+      source = ./config;
     };
+    "${nvimHome}/undo/.keep".text = "";
+    "${nvimHome}/lua/env.lua".text = ''
+      sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
+      awesome_root_path = "${awesomeSrc}"
+      friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"
+    '';
+  };
 }
