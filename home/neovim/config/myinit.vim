@@ -9,8 +9,15 @@ let g:nremap = {'s': 'e', 'r': 'b'}
 let g:xremap = {'s': 'e', 'r': 'b'}
 let g:oremap = {'s': 'e', 'r': 'b'}
 
+" https://github.com/plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+
 " https://github.com/christoomey/vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
+
+" https://github.com/vimwiki/vimwiki
+let g:vimwiki_list = [{'path': '~/notes/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " Colors
 autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE

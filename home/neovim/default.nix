@@ -123,6 +123,7 @@ in
           indent-blankline-nvim
           lspkind-nvim # Icons for lsp popup
           luasnip
+          markdown-preview-nvim
           neogit
           neorg
           neoscroll-nvim
@@ -151,6 +152,7 @@ in
           vim-test
           vim-tmux-navigator
           vim-which-key # spacemacs-like leader key menu
+          vimwiki 
 
           (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
           (pluginWithDeps lualine-nvim [ lsp-status-nvim ])
