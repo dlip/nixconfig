@@ -16,6 +16,7 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
+require("env")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -575,3 +576,6 @@ gears.timer {timeout = 60 * 60, call_now = true, autostart = true, callback = se
 screen.connect_signal("request::wallpaper", set_wallpaper)
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
+
+-- Startup Commands
+awful.spawn.with_shell(xrandr_command)

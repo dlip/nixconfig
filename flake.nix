@@ -114,7 +114,7 @@
             nixConfigPath = homeDirectory + "/code/nixconfig";
           };
 
-          personal-nixos = personal // { extraImports = [ ./home/graphical.nix ./home/gaming.nix ]; };
+          personal-nixos = personal // { extraImports = [ (import ./home/graphical.nix { }) ./home/gaming.nix ]; };
 
           tv = rec {
             username = "tv";
@@ -127,7 +127,7 @@
 
           immutable = personal // { email = "dane.lipscombe@immutable.com"; };
 
-          immutable-nixos = immutable // { extraImports = [ ./home/graphical.nix ./home/gaming.nix ]; };
+          immutable-nixos = immutable // { extraImports = [ (import ./home/graphical.nix { xrandrCommand = "xrandr --auto --output HDMI-0 --mode 1920x1080 --right-of eDP-1-1"; }) ./home/gaming.nix ]; };
 
           root = personal // {
             username = "root";

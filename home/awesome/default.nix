@@ -1,5 +1,8 @@
+{ xrandrCommand ? "" }:
 { pkgs, config, ... }:
-{
+let
+  awesomeConfig = "${config.xdg.configHome}/awesome";
+in {
   xsession = {
     enable = true;
 
@@ -12,7 +15,15 @@
     };
   };
 
-  home.file.".config/awesome/rc.lua".source = ./rc.lua;
+  home.file = {
+    "${awesomeConfig}" = {
+      recursive = true;
+      source = ./config;
+    };
+    "${awesomeConfig}/env.lua".text = ''
+      xrandr_command = "${xrandrCommand}"
+    '';
+  };
   home.packages = with pkgs; [
     feh
     alttab

@@ -1,10 +1,12 @@
-{ pkgs, ... }: {
+config:
+{ pkgs, ... }: 
+{
   imports = [
     ./alacritty.nix
     ./rofi.nix
     ./scripts.nix
     ./vscode
-    ./awesome
+    (import ./awesome config)
   ];
 
   home.packages = with pkgs; [
