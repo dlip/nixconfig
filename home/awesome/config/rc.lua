@@ -579,3 +579,6 @@ screen.connect_signal("property::geometry", set_wallpaper)
 
 -- Startup Commands
 awful.spawn.with_shell(xrandr_command)
+-- Enable dpms
+awful.spawn.with_shell("xset s on && xset s 1200")
+awful.screen.set_auto_dpi_enabled( true )

@@ -43,7 +43,7 @@ in {
     arguments = [
       "-l dim"
     ];
-    inactiveInterval = 5;
+    inactiveInterval = 60;
   };
 
   systemd.user.services.ibus = {
