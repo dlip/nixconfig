@@ -50,6 +50,7 @@
     lua
     luaformatter
     mdl
+    myNodePackages.markserv
     ncdu
     neofetch
     niv
