@@ -111,13 +111,6 @@ local keymap = {
     s = {'<cmd>TestSuite<CR>', 'Test Suite'},
     v = {'<cmd>TestVisit<CR>', 'Test Visit'},
   },
-  w = {
-    name = '+Window',
-    h = {'<cmd>sp<CR>', 'horizontal split window'},
-    o = {'<C-W>o', 'other'},
-    q = {'<C-W>q', 'close'},
-    v = {'<cmd>vsplit<CR>', 'vertical split window'}
-  },
   q = {
     name = '+Quickfix',
     o = {'<cmd>copen<CR>', 'Open'},
@@ -128,4 +121,20 @@ local keymap = {
   x = {'<cmd>Bdelete<CR>', 'Close Buffer'},
 }
 
+local plug = {
+  w = {
+    name = '+VimWiki',
+    w = {'<Plug>VimwikiIndex', 'Wiki Index'},
+    i = {'<Plug>VimwikiDiaryIndex', 'Diary Index'},
+    s = {'<Plug>VimwikiUISelect', 'Select Wiki'},
+    t = {'<Plug>VimwikiTabIndex', 'Index in New Tab'},
+    g = {'<Plug>VimwikiDiaryGenerateLinks', 'Generate Diary Links'},
+    o = {'<Plug>VimwikiMakeTomorrowDiaryNote', 'Diary Tomorrow'},
+    D = {'<Plug>VimwikiTabMakeDiaryNote', 'Diary Today in New Tab'},
+    d = {'<Plug>VimwikiMakeDiaryNote', 'Diary Today'},
+    y = {'<Plug>VimwikiMakeYesterdayDiaryNote', 'Diary Yesterday'},
+  },
+}
+
 wk.register_keymap('leader', keymap)
+wk.register_keymap('leader', plug, {silent = true, noremap = false})

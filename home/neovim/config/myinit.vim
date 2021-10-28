@@ -19,6 +19,7 @@ let g:tmux_navigator_no_mappings = 1
 let g:vimwiki_list = [{'path': '~/notes/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+
 " Colors
 autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
@@ -26,7 +27,7 @@ autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
 autocmd ColorScheme * highlight NvimTreeNormal ctermbg=NONE guibg=NONE
 colorscheme tokyonight
 
-" open a terminal pane on the right using :Term
+" open a terminal pane on the bottom using :Term
 command Term :botright split term://$SHELL
 
 " highlight on yank
