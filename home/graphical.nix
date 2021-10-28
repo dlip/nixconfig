@@ -5,7 +5,6 @@ config:
     ./alacritty.nix
     ./rofi.nix
     ./scripts.nix
-    ./termite.nix
     ./vscode
     (import ./awesome config)
   ];
