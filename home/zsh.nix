@@ -18,6 +18,7 @@ in
       c = "clear";
       g = "git";
       clip = "xclip -sel c";
+      j = "joshuto";
     };
 
     initExtra = ''

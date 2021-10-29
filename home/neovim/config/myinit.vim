@@ -88,4 +88,17 @@ autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
 " Set filetypes
 autocmd BufEnter *.sol :setlocal filetype=solidity
 
+" remap Netrw
+augroup netrw_maps
+  autocmd!
+  autocmd filetype netrw call ApplyNetrwMaps()
+augroup END
+
+function ApplyNetrwMaps()
+  nnoremap <buffer> f k
+  nnoremap <buffer> s j
+  nnoremap <buffer> r h
+  nnoremap <buffer> t l
+endfunction
+
 lua require'init'

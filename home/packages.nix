@@ -1,4 +1,7 @@
 { pkgs, ... }: {
+  imports = [
+    ./joshuto
+  ];
   home.packages = with pkgs; [
     appimage-run
     autoreconfHook
@@ -38,6 +41,7 @@
     hledger
     htop
     iotop
+    joshuto
     jq
     k9s
     killall
