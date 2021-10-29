@@ -38,6 +38,7 @@ config:
     # nyxt
     obs-studio
     obsidian
+    postman
     # plexamp # sha incorrect
     qalculate-gtk
     slack

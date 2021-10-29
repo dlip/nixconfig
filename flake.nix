@@ -2,33 +2,31 @@
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
-      "https://emacsng.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
-      "emacsng.cachix.org-1:i7wOr4YpdRpWWtShI8bT6V7lOTnPeI7Ho6HaZegFWMI="
     ];
   };
 
   inputs = {
-    nixos.url = "github:NixOS/nixpkgs/nixos-21.05";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    envy-sh.url = "github:dlip/envy.sh";
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
+    envy-sh = {
+      url = "github:dlip/envy.sh";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-utils.url = "github:numtide/flake-utils";
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
+
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
+
     kmonad = {
       url = "github:kmonad/kmonad?dir=nix";
-      inputs.nixpkgs.follows = "nixos";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
     emoji-menu = {
@@ -53,13 +51,10 @@
 
   outputs =
     { self
-    , nixos
     , nixpkgs
     , home-manager
     , envy-sh
-    , flake-compat
     , flake-utils
-    , emacs-overlay
     , kmonad
     , emoji-menu
     , power-menu
@@ -78,7 +73,6 @@
             wally-cli = wally-cli.defaultPackage.${system};
           })
           (import ./pkgs)
-          emacs-overlay.overlay
           neovim.overlay
           kmonad.overlay
         ];
@@ -153,48 +147,30 @@
         packages = {
           rescript = (pkgs.callPackage ./home/vscode/rescript { });
           solang = (pkgs.callPackage ./pkgs/solang { });
-          pushNixStoreDockerImage = with pkgs; dockerTools.buildLayeredImage {
-            name = "push-nix-store-docker-image";
-            tag = "latest";
-            contents = [
-              coreutils
-              skopeo
-              cacert
-              nixUnstable
-              (writeScriptBin "entrypoint" ''
-                #!${runtimeShell}
-                set -euo pipefail
-                mkdir -p /var/tmp
-                nix --experimental-features nix-command store cat --store $1 $2 | skopeo --insecure-policy copy docker-archive:/dev/stdin docker://$3
-              '')
-            ];
-            config.Entrypoint = [ "entrypoint" ];
-          };
-
+          pushNixStoreDockerImage = (pkgs.callPackage ./pkgs/pushNixStoreDockerImage { });
         };
       }) // (
       let
         system = "x86_64-linux";
-        pkgs = getPkgs nixos system;
-        pkgsUnstable = getPkgs nixpkgs system;
+        pkgs = getPkgs nixpkgs system;
       in
       {
         nixosConfigurations =
           {
             metabox = nixpkgs.lib.nixosSystem {
               inherit system;
-              pkgs = pkgsUnstable;
+              inherit pkgs;
               modules =
                 [ ./systems/metabox/configuration.nix ];
             };
             dex = nixpkgs.lib.nixosSystem {
               inherit system;
-              pkgs = pkgsUnstable;
+              inherit pkgs;
               modules = [ ./systems/dex/configuration.nix ];
             };
             g = nixpkgs.lib.nixosSystem {
               inherit system;
-              pkgs = pkgsUnstable;
+              inherit pkgs;
               modules = [ ./systems/g/configuration.nix kmonad.nixosModule ];
             };
           };

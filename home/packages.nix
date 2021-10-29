@@ -66,7 +66,6 @@
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.eslint_d
     nodePackages.node2nix
-    nodePackages.pnpm
     nodePackages.prettier
     nodePackages.quicktype
     nodePackages.typescript
@@ -77,7 +76,6 @@
     pandoc
     pinentry
     postgresql
-    postman
     proselint
     python
     python3
