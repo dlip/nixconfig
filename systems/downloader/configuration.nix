@@ -5,6 +5,16 @@ in
   imports = [
     ../common/services/qbittorrent.nix
   ];
+  
+  nixpkgs.config.allowUnfree = true;
+
+  nix = {
+    package = pkgs.nixUnstable;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
+
   environment.systemPackages = with pkgs; [ traceroute ];
 
   networking = {
