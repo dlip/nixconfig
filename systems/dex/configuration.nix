@@ -27,9 +27,9 @@ rec {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    ../cachix.nix
-    ../../services/notify-problems.nix
-    ../../services/ssmtp.nix
+    ../common/cachix.nix
+    ../common/services/notify-problems.nix
+    ../common/services/ssmtp.nix
   ];
 
   nixpkgs.config.allowUnfree = true;

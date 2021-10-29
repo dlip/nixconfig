@@ -3,7 +3,7 @@ let downloader-services = import ./services.nix;
 in
 {
   imports = [
-    ../../services/qbittorrent.nix
+    ../common/services/qbittorrent.nix
   ];
   environment.systemPackages = with pkgs; [ traceroute ];
 
