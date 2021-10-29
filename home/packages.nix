@@ -9,6 +9,7 @@
     binutils
     cheat
     circleci-cli
+    delve
     deno
     dig
     direnv
@@ -24,6 +25,7 @@
     gcc
     gh
     ghc
+    glow
     gnumake
     gnupg
     gnuplot

@@ -50,6 +50,15 @@ let
         sha256 = "fTIqhgDhQ3U7Kuqf/jMAAV2we6v7m0QbIHybji7tYUo=";
       };
     };
+    rest-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
+      name = "rest-nvim";
+      src = pkgs.fetchFromGitHub {
+        owner = "NTBBloodbath";
+        repo = "rest.nvim";
+        rev = "5130e59f680df56f22bd8cc41da422f9a05580c5";
+        sha256 = "s3jxCKxlCqovQ8GTbVo57CyEePJAWIgIGfgBrE3IGr0=";
+      };
+    };
   };
 
   awesomeSrc = pkgs.fetchFromGitHub {
@@ -118,6 +127,7 @@ in
           editorconfig-vim
           firenvim
           friendly-snippets
+          glow-nvim
           gv-vim
           hop-nvim
           indent-blankline-nvim
@@ -136,6 +146,7 @@ in
           nvim-treesitter-textobjects
           nvim-ts-rainbow
           nvim-whichkey-setup-lua
+          rest-nvim 
           rust-tools-nvim
           tabular
           telescope
@@ -148,6 +159,7 @@ in
           vim-fugitive
           vim-markdown
           vim-mergetool
+          vim-rhubarb
           vim-solidity
           vim-test
           vim-tmux-navigator

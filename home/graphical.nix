@@ -14,6 +14,7 @@ config:
     # anki /build/anki-2.1.15/tests/test_addons.py:83: DeprecationWarning: Please use assertEqual instead.
     audacity
     blender
+    brave
     calibre
     chromium
     cozy

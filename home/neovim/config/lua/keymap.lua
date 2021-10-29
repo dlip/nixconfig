@@ -139,9 +139,6 @@ local keymaps = {
   {'n', '<A-c>', '<cmd>tabprevious<CR>'},
   {'n', '<A-d>', '<cmd>tabnext<CR>'},
   {'n', '<A-z>', '<cmd>tabclose<CR>'},
-  
-  -- Open url
-  {'n', 'gx', '<cmd>execute "silent! !xdg-open " . shellescape(expand("<cWORD>"), 1)<cr>'},
 }
 
 for i = 1, #keymaps do

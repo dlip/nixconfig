@@ -105,6 +105,7 @@ local keymap = {
   s = {'<cmd>w!<CR>', 'save file'}, -- set a single command and text
   t = {
     name = '+Test',
+    d = {'<cmd>call DebugNearest()<CR>', 'Debug Nearest'},
     f = {'<cmd>TestFile<CR>', 'Test File'},
     l = {'<cmd>TestLast<CR>', 'Test Last'},
     n = {'<cmd>TestNearest<CR>', 'Test Nearest'},
@@ -122,6 +123,12 @@ local keymap = {
 }
 
 local plug = {
+  r = {
+    name = '+Rest',
+    e = {'<Plug>RestNvim', 'Execute'},
+    p = {'<Plug>RestNvimPreview', 'Preview'},
+    l = {'<Plug>RestNvimLast', 'Re-run last'},
+  },
   w = {
     name = '+VimWiki',
     w = {'<Plug>VimwikiIndex', 'Wiki Index'},

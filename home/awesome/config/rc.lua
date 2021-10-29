@@ -480,6 +480,9 @@ awful.rules.rules = {
 
   { rule = { class = "Alacritty" },
     properties = { screen = 1, tag = "5" } },
+
+  { rule = { class = "obsidian" },
+    properties = { screen = 1, tag = "6" } },
 }
 -- }}}
 

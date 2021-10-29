@@ -1,6 +1,22 @@
+local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
+parser_configs.http = {
+  install_info = {
+    url = "https://github.com/NTBBloodbath/tree-sitter-http",
+    files = { "src/parser.c" },
+    branch = "main",
+  },
+}
+-- require "nvim-treesitter.parsers".get_parser_configs().Solidity = {
+--   install_info = {
+--     url = "https://github.com/JoranHonig/tree-sitter-solidity",
+--     files = {"src/parser.c"},
+--     requires_generate_from_grammar = true,
+--   },
+--   filetype = 'solidity'
+-- }
+
 require'nvim-treesitter.configs'.setup {
-  -- Don't think i need this with nix
-  -- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = "http", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true, -- false will disable the whole extension
   },
@@ -87,11 +103,3 @@ require'nvim-treesitter.configs'.setup {
   },
 }
 
--- require "nvim-treesitter.parsers".get_parser_configs().Solidity = {
---   install_info = {
---     url = "https://github.com/JoranHonig/tree-sitter-solidity",
---     files = {"src/parser.c"},
---     requires_generate_from_grammar = true,
---   },
---   filetype = 'solidity'
--- }

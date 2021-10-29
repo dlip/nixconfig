@@ -1,8 +1,13 @@
 
-" gx not working https://github.com/vim/vim/issues/4737
 let g:netrw_browsex_viewer = "xdg-open"
 
-let test#go#runner = 'gotest'
+" https://github.com/vim-test/vim-test
+let g:test#go#runner = 'gotest'
+function! DebugNearest()
+  let g:test#go#runner = 'delve'
+  TestNearest
+  let g:test#go#runner = 'gotest'
+endfunction
 
 " Fugitive
 let g:nremap = {'s': 'e', 'r': 'b'}
