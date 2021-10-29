@@ -15,7 +15,6 @@ let
         sha256 = "1cGFjvF9lZyVZySajEBc2BKMy99BJfVx4XojrjiqgEM=";
       };
     };
-
     # https://github.com/onsails/lspkind-nvim 
     lspkind-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
       name = "lspkind-nvim";

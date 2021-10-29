@@ -11,12 +11,12 @@ config:
 
   home.packages = with pkgs; [
     alttab
-    # anki /build/anki-2.1.15/tests/test_addons.py:83: DeprecationWarning: Please use assertEqual instead.
+    anki
     audacity
-    blender
+    # blender
     brave
     calibre
-    chromium
+    # chromium
     cozy
     dbeaver
     discord
@@ -27,16 +27,15 @@ config:
     gimp
     gnome.file-roller
     gnome.seahorse
-    godot
+    # godot
     gramps
-    gwenview
     kdenlive
-    krita
+    # krita
     koreader
     lens
     libreoffice
     mpv
-    nyxt
+    # nyxt
     obs-studio
     obsidian
     # plexamp # sha incorrect
@@ -44,11 +43,10 @@ config:
     slack
     spotify
     tdesktop
-    via
     vial
     vlc
     xclip
-    xfce.thunar
+    # xfce.thunar
     yacreader
     yubikey-manager-qt
     yubioath-desktop

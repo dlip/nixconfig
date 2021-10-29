@@ -2,7 +2,7 @@
 let
   myscripts = {
     launch-default-programs = pkgs.writeShellScriptBin "launch-default-programs" ''
-      firefox&
+      brave&
       alacritty&
       slack&
       spotify&

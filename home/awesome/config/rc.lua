@@ -478,6 +478,9 @@ awful.rules.rules = {
   { rule = { class = "Firefox" },
     properties = { screen = 1, tag = "4" } },
 
+  { rule = { class = "Brave" },
+    properties = { screen = 1, tag = "4" } },
+    
   { rule = { class = "Alacritty" },
     properties = { screen = 1, tag = "5" } },
 
