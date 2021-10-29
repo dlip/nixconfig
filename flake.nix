@@ -18,12 +18,10 @@
       url = "github:dlip/envy.sh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     kmonad = {
       url = "github:kmonad/kmonad?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -62,7 +60,7 @@
     , neovim
     }:
     let
-      getPkgs = pkgs: system: import pkgs {
+      pkgsForSystem = system: import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         overlays = [
@@ -77,12 +75,11 @@
           kmonad.overlay
         ];
       };
-
     in
     flake-utils.lib.eachDefaultSystem
       (system:
       let
-        pkgs = getPkgs nixpkgs system;
+        pkgs = pkgsForSystem system;
 
         createHomeConfig = configName: config@{ extraImports ? [ ], ... }:
           flake-utils.lib.mkApp
@@ -150,27 +147,23 @@
           pushNixStoreDockerImage = (pkgs.callPackage ./pkgs/pushNixStoreDockerImage { });
         };
       }) // (
-      let
-        system = "x86_64-linux";
-        pkgs = getPkgs nixpkgs system;
-      in
       {
         nixosConfigurations =
           {
             metabox = nixpkgs.lib.nixosSystem {
-              inherit system;
-              inherit pkgs;
+              system = "x86_64-linux";
+              pkgs = pkgsForSystem "x86_64-linux";
               modules =
                 [ ./systems/metabox/configuration.nix ];
             };
             dex = nixpkgs.lib.nixosSystem {
-              inherit system;
-              inherit pkgs;
+              system = "x86_64-linux";
+              pkgs = pkgsForSystem "x86_64-linux";
               modules = [ ./systems/dex/configuration.nix ];
             };
             g = nixpkgs.lib.nixosSystem {
-              inherit system;
-              inherit pkgs;
+              system = "x86_64-linux";
+              pkgs = pkgsForSystem "x86_64-linux";
               modules = [ ./systems/g/configuration.nix kmonad.nixosModule ];
             };
           };
