@@ -48,6 +48,38 @@
         "type": "github"
       }
     },
+    "comex": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1625455211,
+        "narHash": "sha256-0L84GhmrANTkHA7aTEvObhQ0Alkm5+pUsk62eX2Hekw=",
+        "owner": "sayanarijit",
+        "repo": "comex.xplr",
+        "rev": "52aca5d0e0b24b6df57c77e01e64c7987348f7cf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sayanarijit",
+        "repo": "comex.xplr",
+        "type": "github"
+      }
+    },
+    "command-mode": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1631184919,
+        "narHash": "sha256-Npr+vX3a1zn9Z5STZt/21Gb2BNXrbvtKtfNxTP6VvuI=",
+        "owner": "sayanarijit",
+        "repo": "command-mode.xplr",
+        "rev": "ad8b1e05acea429d460c99bd31273859860dd2c0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sayanarijit",
+        "repo": "command-mode.xplr",
+        "type": "github"
+      }
+    },
     "emoji-menu": {
       "flake": false,
       "locked": {
@@ -209,6 +241,8 @@
     },
     "root": {
       "inputs": {
+        "comex": "comex",
+        "command-mode": "command-mode",
         "emoji-menu": "emoji-menu",
         "envy-sh": "envy-sh",
         "flake-utils": "flake-utils",

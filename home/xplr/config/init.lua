@@ -4,7 +4,7 @@
 version = "0.15.2"
 
 local xplr = xplr
-
+package.path = os.getenv("HOME") .. '/.config/xplr/plugins/?/src/init.lua'
 -- Config
 ---- General
 ------ Show hidden
@@ -2457,3 +2457,20 @@ end
 
 ---- Custom
 xplr.fn.custom = {}
+
+require("comex").setup()
+require("command-mode").setup()
+local cmd = xplr.fn.custom.command_mode.cmd
+
+-- Type `:hello-lua` and press enter to know your location
+cmd("hello-lua", "Enter name and know location")(function(app)
+  print("What's your name?")
+
+  local name = io.read()
+  local greeting = "Hello " .. name .. "!"
+  local message = greeting .. " You are inside " .. app.pwd
+
+  return {
+    { LogSuccess = message },
+  }
+end)
