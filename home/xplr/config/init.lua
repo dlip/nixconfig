@@ -885,9 +885,13 @@ xplr.config.modes.builtin.default = {
         messages = { "FocusNext" },
       },
       enter = {
-        help = "quit with result",
-        messages = { "PrintResultAndQuit" },
+        help = "enter",
+        messages = { "Enter" },
       },
+      -- enter = {
+      --   help = "quit with result",
+      --   messages = { "PrintResultAndQuit" },
+      -- },
       esc = {
         help = nil,
         messages = {},
@@ -1037,6 +1041,14 @@ xplr.config.modes.builtin.selection_ops = {
   extra_help = nil,
   key_bindings = {
     on_key = {
+      ["r"] = {
+        help = "mass rename",
+        messages = {
+          { BashExec = [[cat "${XPLR_PIPE_SELECTION_OUT:?}" | xargs -o massren]] },
+          "ClearSelection",
+          "PopMode",
+        },
+      },
       ["c"] = {
         help = "copy here",
         messages = {
@@ -1386,14 +1398,6 @@ xplr.config.modes.builtin.go_to = {
             ]===],
           },
           "ClearScreen",
-          "PopMode",
-        },
-      },
-      ["m"] = {
-        help = "mass rename",
-        messages = {
-          { BashExec = [[cat "${XPLR_PIPE_SELECTION_OUT:?}" | xargs -o massren]] },
-          "ClearSelection",
           "PopMode",
         },
       },

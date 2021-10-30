@@ -19,6 +19,7 @@ in
       g = "git";
       clip = "xclip -sel c";
       j = "joshuto";
+      x = "xplr";
     };
 
     initExtra = ''
