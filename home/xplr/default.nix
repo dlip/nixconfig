@@ -1,12 +1,11 @@
-{ pkgs, ... }: 
+{ pkgs, config, ... }: 
 let
   xplrConfig = "${config.xdg.configHome}/xplr";
 in
 {
   home.file = {
     "${xplrConfig}" = {
-      recursive = true;
-      source = ./config;
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/xplr/config";
     };
   };
 
