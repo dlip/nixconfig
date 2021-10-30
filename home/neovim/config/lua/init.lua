@@ -1,4 +1,3 @@
-require 'env'
 require 'keymap'
 require 'settings'
 require 'plugins/autosave'

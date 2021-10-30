@@ -3,6 +3,19 @@
 let
   pluginWithDeps = plugin: deps: plugin.overrideAttrs (_: { dependencies = deps; });
   nvimHome = "${config.xdg.configHome}/nvim";
+  symlinkedFiles = builtins.listToAttrs (
+    map
+      (
+        file: {
+          name = "${nvimHome}/${file}";
+          value = {
+            source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/neovim/config/${file}";
+          };
+        }
+      )
+      (builtins.attrNames (builtins.readDir ./config))
+  );
+
   # Test sha 0000000000000000000000000000000000000000000000000000
   extraPlugins = {
     # https://github.com/Pocco81/AutoSave.nvim
@@ -112,6 +125,9 @@ in
       ];
 
       extraConfig = ''
+        let g:sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
+        let g:awesome_root_path = "${awesomeSrc}"
+        let g:friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"
         source ${nvimHome}/myinit.vim
       '';
 
@@ -183,16 +199,5 @@ in
     };
   };
 
-  home.file = {
-    "${nvimHome}" = {
-      recursive = true;
-      source = ./config;
-    };
-    "${nvimHome}/undo/.keep".text = "";
-    "${nvimHome}/lua/env.lua".text = ''
-      sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
-      awesome_root_path = "${awesomeSrc}"
-      friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"
-    '';
-  };
+  home.file = symlinkedFiles;
 }

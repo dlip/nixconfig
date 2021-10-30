@@ -1,2 +1,3 @@
+local g = vim.g
 
-require("luasnip/loaders/from_vscode").lazy_load({ paths = { friendly_snippets_path } })
+require("luasnip/loaders/from_vscode").lazy_load({ paths = { g.friendly_snippets_path } })
