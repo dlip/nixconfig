@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./joshuto
+    ./xplr
   ];
   home.packages = with pkgs; [
     appimage-run
@@ -55,6 +56,7 @@
     ledger-autosync
     lua
     luaformatter
+    massren
     mdl
     myNodePackages.markserv
     ncdu

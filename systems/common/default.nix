@@ -240,6 +240,8 @@ in
     yubikey-personalization
     pulseaudio
   ];
+  
+  hardware.ledger.enable = true;
   services.udev.packages = with pkgs; [ yubikey-personalization via vial ];
   # To use the smart card mode (CCID) of Yubikey, you will need the PCSC-Lite daemon:
   services.pcscd.enable = true;

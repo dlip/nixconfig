@@ -32,6 +32,7 @@ config:
     kdenlive
     # krita
     koreader
+    ledger-live-desktop
     lens
     libreoffice
     mpv
