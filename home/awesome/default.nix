@@ -1,7 +1,19 @@
 { xrandrCommand ? "" }:
 { pkgs, config, ... }:
 let
-  awesomeConfig = "${config.xdg.configHome}/awesome";
+  awesomeHome = "${config.xdg.configHome}/awesome";
+    symlinkedFiles = builtins.listToAttrs (
+    map
+      (
+        file: {
+          name = "${awesomeHome}/${file}";
+          value = {
+            source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/awesome/config/${file}";
+          };
+        }
+      )
+      (builtins.attrNames (builtins.readDir ./config))
+  );
 in {
   xsession = {
     enable = true;
@@ -15,12 +27,8 @@ in {
     };
   };
 
-  home.file = {
-    "${awesomeConfig}" = {
-      recursive = true;
-      source = ./config;
-    };
-    "${awesomeConfig}/env.lua".text = ''
+  home.file = symlinkedFiles // {
+    "${awesomeHome}/env.lua".text = ''
       xrandr_command = "${xrandrCommand}"
     '';
   };

@@ -5,8 +5,7 @@ in
 {
   home.file = {
     "${joshutoConfig}" = {
-      recursive = true;
-      source = ./config;
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/joshuto/config";
     };
   };
 }
