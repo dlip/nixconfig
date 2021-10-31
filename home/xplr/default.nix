@@ -15,14 +15,14 @@ let
   );
 in
 {
-  home.file = symlinkedFiles // {
-    "${xplrConfig}/plugins/comex" = {
-      source = pkgs.xplr-plugins.comex;
-    };
-    "${xplrConfig}/plugins/command-mode" = {
-      source = pkgs.xplr-plugins.command-mode;
-    };
-  };
+  home.file = symlinkedFiles // builtins.listToAttrs (map
+    (plugin: {
+      name = "${xplrConfig}/plugins/${plugin}";
+      value = {
+        source = (builtins.getAttr plugin pkgs.xplrPlugins);
+      };
+    })
+    (builtins.attrNames pkgs.xplrPlugins));
 
   home.packages = with pkgs; [
     xplr

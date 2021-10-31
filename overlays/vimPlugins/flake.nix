@@ -37,7 +37,7 @@
               src = (builtins.getAttr input inputs);
             });
           })
-          (builtins.attrNames inputs));
+          (builtins.attrNames (self.lib.filterAttrs (n: v: n != "self") inputs)));
       };
     };
 }

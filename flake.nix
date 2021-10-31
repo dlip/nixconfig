@@ -16,7 +16,9 @@
     };
     vimPlugins = {
       url = "./overlays/vimPlugins";
-      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    xplrPlugins = {
+      url = "./overlays/xplrPlugins";
     };
     envy-sh = {
       url = "github:dlip/envy.sh";
@@ -50,14 +52,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    comex = {
-      url = "github:sayanarijit/comex.xplr";
-      flake = false;
-    };
-    command-mode = {
-      url = "github:sayanarijit/command-mode.xplr";
-      flake = false;
-    };
   };
 
   outputs =
@@ -71,9 +65,8 @@
     , power-menu
     , wally-cli
     , neovim
-    , comex
-    , command-mode
     , vimPlugins
+    , xplrPlugins
     }:
     let
       pkgsForSystem = system: import nixpkgs {
@@ -85,14 +78,11 @@
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
             wally-cli = wally-cli.defaultPackage.${system};
-            xplr-plugins = {
-              inherit comex;
-              inherit command-mode;
-            };
           })
           (import ./pkgs)
           neovim.overlay
           vimPlugins.overlay
+          xplrPlugins.overlay
           kmonad.overlay
         ];
       };

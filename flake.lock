@@ -321,8 +321,6 @@
     },
     "root": {
       "inputs": {
-        "comex": "comex",
-        "command-mode": "command-mode",
         "emoji-menu": "emoji-menu",
         "envy-sh": "envy-sh",
         "flake-utils": "flake-utils",
@@ -332,7 +330,8 @@
         "nixpkgs": "nixpkgs",
         "power-menu": "power-menu",
         "vimPlugins": "vimPlugins",
-        "wally-cli": "wally-cli"
+        "wally-cli": "wally-cli",
+        "xplrPlugins": "xplrPlugins"
       }
     },
     "vim-delve": {
@@ -361,12 +360,12 @@
         "vim-delve": "vim-delve"
       },
       "locked": {
-        "narHash": "sha256-w4yk6A57S+XsTVaRzlhmtse4KC2imlartZkLHvxizhM=",
-        "path": "/nix/store/3rjc6lbyrsvsbyaj6khfj1lhl5w01qr1-source/overlays/vimPlugins",
+        "narHash": "sha256-NHp/yWcIZC47E/9gtmcZbslQESDvwX5DTd8hyok7ceo=",
+        "path": "/nix/store/fk6vqrzwfdcsj60x7a6w9lf7lj03nrm5-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/3rjc6lbyrsvsbyaj6khfj1lhl5w01qr1-source/overlays/vimPlugins",
+        "path": "/nix/store/fk6vqrzwfdcsj60x7a6w9lf7lj03nrm5-source/overlays/vimPlugins",
         "type": "path"
       }
     },
@@ -391,6 +390,21 @@
         "owner": "zsa",
         "repo": "wally-cli",
         "type": "github"
+      }
+    },
+    "xplrPlugins": {
+      "inputs": {
+        "comex": "comex",
+        "command-mode": "command-mode"
+      },
+      "locked": {
+        "narHash": "sha256-U5qJRcWz2tsOsafRDeFrl/zbCUT1hNUViDVEf70jLZg=",
+        "path": "/nix/store/fk6vqrzwfdcsj60x7a6w9lf7lj03nrm5-source/overlays/xplrPlugins",
+        "type": "path"
+      },
+      "original": {
+        "path": "/nix/store/fk6vqrzwfdcsj60x7a6w9lf7lj03nrm5-source/overlays/xplrPlugins",
+        "type": "path"
       }
     }
   },
