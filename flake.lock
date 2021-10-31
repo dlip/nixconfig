@@ -176,11 +176,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1635629446,
-        "narHash": "sha256-rx7fVVjEdq/Be5uUw7CHwInGTZxPcCw2q/Ag31w56+4=",
+        "lastModified": 1635666655,
+        "narHash": "sha256-UT/ZPsDI5eO+7dnmz12CsgjLw/Q3R+XiTL73bzL2NEg=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "71902bc913ccc36baa9ac18dd9b84117a34a36b0",
+        "rev": "e3775568184899969115114e72031d226c188934",
         "type": "github"
       },
       "original": {
@@ -240,12 +240,12 @@
         "vim-delve": "vim-delve"
       },
       "locked": {
-        "narHash": "sha256-JQxSKEL1FYhJ7Qqks0daftzzRhc7lyjo9UFDIi6eOkQ=",
-        "path": "/nix/store/2aj0hz68x9hvlwfd6xlpxl5wxzx372ls-source/home/neovim/plugins",
+        "narHash": "sha256-xZrp3+QEIsdPsl5rxUJqF49q/WZbZvxFd+56hEdbSuA=",
+        "path": "/nix/store/rvxpgh22pdg1qda4hk04yh0nvw6s1awn-source/home/neovim/plugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/2aj0hz68x9hvlwfd6xlpxl5wxzx372ls-source/home/neovim/plugins",
+        "path": "/nix/store/rvxpgh22pdg1qda4hk04yh0nvw6s1awn-source/home/neovim/plugins",
         "type": "path"
       }
     },

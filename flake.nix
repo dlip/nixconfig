@@ -16,6 +16,7 @@
     };
     myVimPlugins = {
       url = "./home/neovim/plugins";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     envy-sh = {
       url = "github:dlip/envy.sh";
