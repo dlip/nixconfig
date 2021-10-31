@@ -28,15 +28,16 @@
 
   outputs =
     inputs: {
-    overlay = final: prev: {
-      vimPlugins = prev.vimPlugins // builtins.listToAttrs (map (input: {
-         name = input;
-         value = (final.vimUtils.buildVimPluginFrom2Nix {
+      overlay = self: super: {
+        vimPlugins = super.vimPlugins // builtins.listToAttrs (map
+          (input: {
             name = input;
-            src = (builtins.getAttr input inputs);
-        });
-      })
-         (builtins.attrNames inputs));
+            value = (self.vimUtils.buildVimPluginFrom2Nix {
+              name = input;
+              src = (builtins.getAttr input inputs);
+            });
+          })
+          (builtins.attrNames inputs));
+      };
     };
-  };
 }

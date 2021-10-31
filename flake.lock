@@ -361,12 +361,12 @@
         "vim-delve": "vim-delve"
       },
       "locked": {
-        "narHash": "sha256-F4tJGc6fpoLverLqnm3Lx9H6umWRmonlwAzczBa9+bc=",
-        "path": "/nix/store/0q2m73sd2j0n1yirb086kgqddl2y3x00-source/overlays/vimPlugins",
+        "narHash": "sha256-w4yk6A57S+XsTVaRzlhmtse4KC2imlartZkLHvxizhM=",
+        "path": "/nix/store/3rjc6lbyrsvsbyaj6khfj1lhl5w01qr1-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/0q2m73sd2j0n1yirb086kgqddl2y3x00-source/overlays/vimPlugins",
+        "path": "/nix/store/3rjc6lbyrsvsbyaj6khfj1lhl5w01qr1-source/overlays/vimPlugins",
         "type": "path"
       }
     },
