@@ -1,0 +1,154 @@
+{
+  "nodes": {
+    "autosave-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1634598840,
+        "narHash": "sha256-1cGFjvF9lZyVZySajEBc2BKMy99BJfVx4XojrjiqgEM=",
+        "owner": "Pocco81",
+        "repo": "AutoSave.nvim",
+        "rev": "e4cdc5bbfbfa57aa0e1a61d716cbe6697b1f3868",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Pocco81",
+        "repo": "AutoSave.nvim",
+        "type": "github"
+      }
+    },
+    "fire-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1635611773,
+        "narHash": "sha256-RtzVK8TzEQFe7Tlc81zg1WR7jlt7Mm5RDqBSN+AtaTM=",
+        "owner": "glacambre",
+        "repo": "firenvim",
+        "rev": "553c913db02952f305e71e76aa0a8f6c71eb83ff",
+        "type": "github"
+      },
+      "original": {
+        "owner": "glacambre",
+        "repo": "firenvim",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1634851050,
+        "narHash": "sha256-N83GlSGPJJdcqhUxSCS/WwW5pksYf3VP1M13cDRTSVA=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "c91f3de5adaf1de973b797ef7485e441a65b8935",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "lspkind-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1635177472,
+        "narHash": "sha256-e82PbisrgQvk/ZG6XY7JajbRwpNOzlslDGH8ehrPLmM=",
+        "owner": "onsails",
+        "repo": "lspkind-nvim",
+        "rev": "1557ce5b3b8e497c1cb1d0b9d967a873136b0c23",
+        "type": "github"
+      },
+      "original": {
+        "owner": "onsails",
+        "repo": "lspkind-nvim",
+        "type": "github"
+      }
+    },
+    "neovim": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "contrib",
+        "lastModified": 1635627110,
+        "narHash": "sha256-sjgo3gUbjuaXF1rlOpkEaEsvuqbnh+a3pLmIhCG5wBs=",
+        "owner": "neovim",
+        "repo": "neovim",
+        "rev": "653d96329306d52a4c143a71acd59e2a5b8c63cc",
+        "type": "github"
+      },
+      "original": {
+        "dir": "contrib",
+        "owner": "neovim",
+        "repo": "neovim",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1635403963,
+        "narHash": "sha256-0actzfzBAXvvDJ/EvPSGbtCPXUwSObQrcq0RpsPWZgA=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "2deb07f3ac4eeb5de1c12c4ba2911a2eb1f6ed61",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nvim-dap-go": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1632750863,
+        "narHash": "sha256-5FOEBf0+Gi+pnEqDeFT++XXFqIFVDjhTGsY37uHx+Rk=",
+        "owner": "leoluz",
+        "repo": "nvim-dap-go",
+        "rev": "624a8b610083f8206cd3988cefb9549b8ffe2799",
+        "type": "github"
+      },
+      "original": {
+        "owner": "leoluz",
+        "repo": "nvim-dap-go",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "autosave-nvim": "autosave-nvim",
+        "fire-nvim": "fire-nvim",
+        "flake-utils": "flake-utils",
+        "lspkind-nvim": "lspkind-nvim",
+        "neovim": "neovim",
+        "nixpkgs": "nixpkgs",
+        "nvim-dap-go": "nvim-dap-go",
+        "vim-delve": "vim-delve"
+      }
+    },
+    "vim-delve": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1605260362,
+        "narHash": "sha256-udfWUTQj3aNLi/OcDjdSNcXP6/MVVqNnq3xmjQffGoc=",
+        "owner": "sebdah",
+        "repo": "vim-delve",
+        "rev": "554b7997caba5d2b38bc4a092e3a468e4abb7f18",
+        "type": "github"
+      },
+      "original": {
+        "owner": "sebdah",
+        "repo": "vim-delve",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

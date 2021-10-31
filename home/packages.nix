@@ -105,7 +105,6 @@
     tshark
     unzip
     usbutils
-    vim
     wally-cli
     wget
     xdotool

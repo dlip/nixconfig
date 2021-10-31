@@ -16,70 +16,6 @@ let
       (builtins.attrNames (builtins.readDir ./config))
   );
 
-  # Test sha 0000000000000000000000000000000000000000000000000000
-  extraPlugins = {
-    # https://github.com/Pocco81/AutoSave.nvim
-    autosave-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "autosave-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "Pocco81";
-        repo = "AutoSave.nvim";
-        rev = "e4cdc5bbfbfa57aa0e1a61d716cbe6697b1f3868";
-        sha256 = "1cGFjvF9lZyVZySajEBc2BKMy99BJfVx4XojrjiqgEM=";
-      };
-    };
-    # https://github.com/onsails/lspkind-nvim 
-    lspkind-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "lspkind-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "onsails";
-        repo = "lspkind-nvim";
-        rev = "1557ce5b3b8e497c1cb1d0b9d967a873136b0c23";
-        sha256 = "e82PbisrgQvk/ZG6XY7JajbRwpNOzlslDGH8ehrPLmM=";
-      };
-    };
-    # https://github.com/NTBBloodbath/rest.nvim
-    rest-nvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "rest-nvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "NTBBloodbath";
-        repo = "rest.nvim";
-        rev = "5130e59f680df56f22bd8cc41da422f9a05580c5";
-        sha256 = "s3jxCKxlCqovQ8GTbVo57CyEePJAWIgIGfgBrE3IGr0=";
-      };
-    };
-    # https://github.com/glacambre/firenvim
-    firenvim = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "firenvim";
-      src = pkgs.fetchFromGitHub {
-        owner = "glacambre";
-        repo = "firenvim";
-        rev = "eb3abef4520d17dbd9957f5d23ada74b853133e4";
-        sha256 = "xXVWK13aKpGA0JNyOY+sPE8aiZlUsXwojiL3CwdsVGo=";
-      };
-    };
-    # https://github.com/sebdah/vim-delve
-    vim-delve = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "vim-delve";
-      src = pkgs.fetchFromGitHub {
-        owner = "sebdah";
-        repo = "vim-delve";
-        rev = "554b7997caba5d2b38bc4a092e3a468e4abb7f18";
-        sha256 = "udfWUTQj3aNLi/OcDjdSNcXP6/MVVqNnq3xmjQffGoc=";
-      };
-    };
-    # https://github.com/leoluz/nvim-dap-go
-    nvim-dap-go = pkgs.vimUtils.buildVimPluginFrom2Nix {
-      name = "dap-go";
-      src = pkgs.fetchFromGitHub {
-        owner = "leoluz";
-        repo = "nvim-dap-go";
-        rev = "624a8b610083f8206cd3988cefb9549b8ffe2799";
-        sha256 = "5FOEBf0+Gi+pnEqDeFT++XXFqIFVDjhTGsY37uHx+Rk=";
-      };
-    };
-  };
-
   awesomeSrc = pkgs.fetchFromGitHub {
     owner = "awesomewm";
     repo = "awesome";
@@ -131,7 +67,7 @@ in
         source ${nvimHome}/myinit.vim
       '';
 
-      plugins = with pkgs.vimPlugins // extraPlugins;
+      plugins = with pkgs.vimPlugins // pkgs.myVimPlugins;
         let
           telescope = (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim telescope-frecency-nvim ]);
         in
@@ -147,7 +83,7 @@ in
           dashboard-nvim
           diffview-nvim
           editorconfig-vim
-          firenvim
+          fire-nvim
           friendly-snippets
           glow-nvim
           gv-vim
