@@ -32,21 +32,6 @@
         "type": "github"
       }
     },
-    "flake-utils": {
-      "locked": {
-        "lastModified": 1634851050,
-        "narHash": "sha256-N83GlSGPJJdcqhUxSCS/WwW5pksYf3VP1M13cDRTSVA=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "c91f3de5adaf1de973b797ef7485e441a65b8935",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "lspkind-nvim": {
       "flake": false,
       "locked": {
@@ -60,47 +45,6 @@
       "original": {
         "owner": "onsails",
         "repo": "lspkind-nvim",
-        "type": "github"
-      }
-    },
-    "neovim": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "dir": "contrib",
-        "lastModified": 1635627110,
-        "narHash": "sha256-sjgo3gUbjuaXF1rlOpkEaEsvuqbnh+a3pLmIhCG5wBs=",
-        "owner": "neovim",
-        "repo": "neovim",
-        "rev": "653d96329306d52a4c143a71acd59e2a5b8c63cc",
-        "type": "github"
-      },
-      "original": {
-        "dir": "contrib",
-        "owner": "neovim",
-        "repo": "neovim",
-        "type": "github"
-      }
-    },
-    "nixpkgs": {
-      "locked": {
-        "lastModified": 1635403963,
-        "narHash": "sha256-0actzfzBAXvvDJ/EvPSGbtCPXUwSObQrcq0RpsPWZgA=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "2deb07f3ac4eeb5de1c12c4ba2911a2eb1f6ed61",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "nixos-unstable",
-        "repo": "nixpkgs",
         "type": "github"
       }
     },
@@ -120,15 +64,29 @@
         "type": "github"
       }
     },
+    "rest-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1634250934,
+        "narHash": "sha256-s3jxCKxlCqovQ8GTbVo57CyEePJAWIgIGfgBrE3IGr0=",
+        "owner": "NTBBloodbath",
+        "repo": "rest.nvim",
+        "rev": "5130e59f680df56f22bd8cc41da422f9a05580c5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NTBBloodbath",
+        "repo": "rest.nvim",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "autosave-nvim": "autosave-nvim",
         "fire-nvim": "fire-nvim",
-        "flake-utils": "flake-utils",
         "lspkind-nvim": "lspkind-nvim",
-        "neovim": "neovim",
-        "nixpkgs": "nixpkgs",
         "nvim-dap-go": "nvim-dap-go",
+        "rest-nvim": "rest-nvim",
         "vim-delve": "vim-delve"
       }
     },

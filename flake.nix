@@ -14,8 +14,8 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    myVimPlugins = {
-      url = "./overlays/vimplugins";
+    vimPlugins = {
+      url = "./overlays/vimPlugins";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     envy-sh = {
@@ -73,7 +73,7 @@
     , neovim
     , comex
     , command-mode
-    , myVimPlugins
+    , vimPlugins
     }:
     let
       pkgsForSystem = system: import nixpkgs {
@@ -92,7 +92,7 @@
           })
           (import ./pkgs)
           neovim.overlay
-          myVimPlugins.overlay
+          vimPlugins.overlay
           kmonad.overlay
         ];
       };

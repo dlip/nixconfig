@@ -230,25 +230,6 @@
         "type": "github"
       }
     },
-    "myVimPlugins": {
-      "inputs": {
-        "autosave-nvim": "autosave-nvim",
-        "fire-nvim": "fire-nvim",
-        "lspkind-nvim": "lspkind-nvim",
-        "nvim-dap-go": "nvim-dap-go",
-        "rest-nvim": "rest-nvim",
-        "vim-delve": "vim-delve"
-      },
-      "locked": {
-        "narHash": "sha256-xZrp3+QEIsdPsl5rxUJqF49q/WZbZvxFd+56hEdbSuA=",
-        "path": "/nix/store/444a1b592h25sr2vzhqzbxq02gzqzg74-source/overlays/vimplugins",
-        "type": "path"
-      },
-      "original": {
-        "path": "/nix/store/444a1b592h25sr2vzhqzbxq02gzqzg74-source/overlays/vimplugins",
-        "type": "path"
-      }
-    },
     "neovim": {
       "inputs": {
         "flake-utils": [
@@ -347,10 +328,10 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "kmonad": "kmonad",
-        "myVimPlugins": "myVimPlugins",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
         "power-menu": "power-menu",
+        "vimPlugins": "vimPlugins",
         "wally-cli": "wally-cli"
       }
     },
@@ -368,6 +349,25 @@
         "owner": "sebdah",
         "repo": "vim-delve",
         "type": "github"
+      }
+    },
+    "vimPlugins": {
+      "inputs": {
+        "autosave-nvim": "autosave-nvim",
+        "fire-nvim": "fire-nvim",
+        "lspkind-nvim": "lspkind-nvim",
+        "nvim-dap-go": "nvim-dap-go",
+        "rest-nvim": "rest-nvim",
+        "vim-delve": "vim-delve"
+      },
+      "locked": {
+        "narHash": "sha256-OOMUIzpVcQOjKO07V1Yjla80ndSjL5iuLWrkGJKYUKw=",
+        "path": "/nix/store/rqwm2rpk6ygxg9jb6sqpdx2xqhf0nqs2-source/overlays/vimPlugins",
+        "type": "path"
+      },
+      "original": {
+        "path": "/nix/store/rqwm2rpk6ygxg9jb6sqpdx2xqhf0nqs2-source/overlays/vimPlugins",
+        "type": "path"
       }
     },
     "wally-cli": {

@@ -29,7 +29,7 @@
   outputs =
     inputs: {
     overlay = final: prev: {
-      myVimPlugins = builtins.listToAttrs (map (input: {
+      vimPlugins = prev.vimPlugins // builtins.listToAttrs (map (input: {
          name = input;
          value = (final.vimUtils.buildVimPluginFrom2Nix {
             name = input;
