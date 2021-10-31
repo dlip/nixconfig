@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     myVimPlugins = {
-      url = "./home/neovim/plugins";
+      url = "./overlays/vimplugins";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     envy-sh = {
