@@ -105,7 +105,7 @@ local taglist_buttons = gears.table.join(
 local tasklist_buttons = gears.table.join(
   awful.button({ }, 1, function (c)
     if c == client.focus then
-      c.minimized = true
+      -- c.minimized = true
     else
       c:emit_signal(
         "request::activate",
@@ -312,13 +312,6 @@ clientkeys = gears.table.join(
     {description = "move to screen", group = "client"}),
   awful.key({ modkey,           }, "g",      function (c) c.ontop = not c.ontop            end,
     {description = "toggle keep on top", group = "client"}),
-  awful.key({ modkey,           }, "n",
-    function (c)
-      -- The client currently has the input focus, so it cannot be
-      -- minimized, since minimized clients can't have the focus.
-      c.minimized = true
-    end ,
-    {description = "minimize", group = "client"}),
   awful.key({ modkey,           }, "m",
     function (c)
       c.maximized = not c.maximized
