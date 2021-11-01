@@ -4,7 +4,7 @@
 version = "0.15.2"
 
 local xplr = xplr
-package.path = os.getenv("HOME") .. '/.config/xplr/plugins/?/src/init.lua'
+
 -- Config
 ---- General
 ------ Show hidden
@@ -885,18 +885,14 @@ xplr.config.modes.builtin.default = {
         messages = { "FocusNext" },
       },
       enter = {
-        help = "enter",
-        messages = { "Enter" },
+        help = "quit with result",
+        messages = { "PrintResultAndQuit" },
       },
-      -- enter = {
-      --   help = "quit with result",
-      --   messages = { "PrintResultAndQuit" },
-      -- },
       esc = {
         help = nil,
         messages = {},
       },
-      ["l"] = {
+      ["f"] = {
         help = "filter",
         messages = {
           "PopMode",
@@ -918,7 +914,7 @@ xplr.config.modes.builtin.default = {
         help = "quit",
         messages = { "Quit" },
       },
-      ["u"] = {
+      ["r"] = {
         help = "rename",
         messages = {
           "PopMode",
@@ -934,7 +930,7 @@ xplr.config.modes.builtin.default = {
         help = "enter",
         messages = { "Enter" },
       },
-      ["o"] = {
+      ["s"] = {
         help = "sort",
         messages = {
           "PopMode",
@@ -986,16 +982,16 @@ xplr.config.modes.builtin.default.key_bindings.on_key["V"] =
 xplr.config.modes.builtin.default.key_bindings.on_key["/"] =
   xplr.config.modes.builtin.default.key_bindings.on_key["ctrl-f"]
 
-xplr.config.modes.builtin.default.key_bindings.on_key["r"] =
+xplr.config.modes.builtin.default.key_bindings.on_key["h"] =
   xplr.config.modes.builtin.default.key_bindings.on_key.left
 
-xplr.config.modes.builtin.default.key_bindings.on_key["s"] =
+xplr.config.modes.builtin.default.key_bindings.on_key["j"] =
   xplr.config.modes.builtin.default.key_bindings.on_key.down
 
-xplr.config.modes.builtin.default.key_bindings.on_key["f"] =
+xplr.config.modes.builtin.default.key_bindings.on_key["k"] =
   xplr.config.modes.builtin.default.key_bindings.on_key.up
 
-xplr.config.modes.builtin.default.key_bindings.on_key["t"] =
+xplr.config.modes.builtin.default.key_bindings.on_key["l"] =
   xplr.config.modes.builtin.default.key_bindings.on_key.right
 
 ------ Recover
@@ -2462,6 +2458,9 @@ end
 ---- Custom
 xplr.fn.custom = {}
 
+-- Plugins
+
+package.path = os.getenv("HOME") .. '/.config/xplr/plugins/?/src/init.lua'
 require("comex").setup()
 require("command-mode").setup()
 local cmd = xplr.fn.custom.command_mode.cmd
