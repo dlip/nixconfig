@@ -24,6 +24,21 @@ let g:tmux_navigator_no_mappings = 1
 let g:vimwiki_list = [{'path': '~/notes/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" https://github.com/glacambre/firenvim
+let g:firenvim_config = { 
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'content': 'markdown',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'never',
+        \ },
+    \ }
+\ }
 
 " Colors
 autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE

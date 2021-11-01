@@ -105,6 +105,7 @@
     tshark
     unzip
     usbutils
+    visidata
     wally-cli
     wget
     xdotool
