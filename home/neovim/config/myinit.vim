@@ -1,4 +1,16 @@
 
+lua <<EOF
+reloadMyConfig = function()
+  require('plenary.reload').reload_module('my', true)
+  require('plenary.reload').reload_module('plugins', true)
+  vim.cmd('source $MYVIMRC')
+  print('Config Reloaded!')
+end
+EOF
+
+" reload config
+nnoremap <c-q> <cmd>lua reloadMyConfig()<CR>
+
 let g:netrw_browsex_viewer = "xdg-open"
 
 " https://github.com/vim-test/vim-test
@@ -98,4 +110,4 @@ autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
 " Set filetypes
 autocmd BufEnter *.sol :setlocal filetype=solidity
 
-lua require'init'
+lua require'my.init'

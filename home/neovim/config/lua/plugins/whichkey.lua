@@ -99,7 +99,7 @@ local keymap = {
     w = {'<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', 'Add Workspace Folder'},
     W = {'<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', 'List Workspace Folders'},
     x = {'<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', 'Remove Workspace Folder'},
-  },
+ },
   n = {'<cmd>NvimTreeToggle<CR>', 'NvimTreeToggle'},
   p = {'<cmd>Telescope fd<CR>', 'Find Files'},
   s = {'<cmd>w!<CR>', 'save file'}, -- set a single command and text

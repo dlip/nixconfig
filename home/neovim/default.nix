@@ -73,7 +73,6 @@ in
         in
         [
           autosave-nvim
-          barbar-nvim
           cmp-buffer
           cmp-nvim-lsp
           cmp-nvim-lua
