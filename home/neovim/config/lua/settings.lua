@@ -16,7 +16,7 @@ opt.backup = false            -- don't create backups
 opt.undofile = true           -- enable undofile for persistent undo
 opt.undodir = vim.fn.expand('~/.config/nvim/undo') -- set undofile dir
 opt.shadafile = vim.fn.expand('~/.config/nvim/viminfo') -- set shadafile dir
-opt.timeoutlen = 500          -- timeout for key sequences
+-- opt.timeoutlen = 500          -- timeout for key sequences
 
 -----------------------------------------------------------
 -- Neovim UI
