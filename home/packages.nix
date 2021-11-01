@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   imports = [
-    ./joshuto
     ./xplr
   ];
   home.packages = with pkgs; [
@@ -42,7 +41,6 @@
     hledger
     htop
     iotop
-    joshuto
     jq
     k9s
     killall

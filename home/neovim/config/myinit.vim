@@ -9,11 +9,6 @@ function! DebugNearest()
   let g:test#go#runner = 'gotest'
 endfunction
 
-" Fugitive
-let g:nremap = {'s': 'e', 'r': 'b'}
-let g:xremap = {'s': 'e', 'r': 'b'}
-let g:oremap = {'s': 'e', 'r': 'b'}
-
 " https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
@@ -102,18 +97,5 @@ autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
 
 " Set filetypes
 autocmd BufEnter *.sol :setlocal filetype=solidity
-
-" remap Netrw
-augroup netrw_maps
-  autocmd!
-  autocmd filetype netrw call ApplyNetrwMaps()
-augroup END
-
-function ApplyNetrwMaps()
-  nnoremap <buffer> f k
-  nnoremap <buffer> s j
-  nnoremap <buffer> r h
-  nnoremap <buffer> t l
-endfunction
 
 lua require'init'

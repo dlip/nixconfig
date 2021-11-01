@@ -23,14 +23,10 @@ neogit.setup {
   mappings = {
     -- modify status buffer mappings
     status = {
-      ["l"] = "PullPopup",
-      ["p"] = "PushPopup",
-      ["t"] = "StashPopup",
-      ["g"] = "LogPopup",
-      ["s"] = "",
-      ["S"] = "",
-      ["e"] = "Stage",
-      ["E"] = "StageUnstaged",
+      -- Adds a mapping with "B" as key that does the "BranchPopup" command
+      -- ["B"] = "BranchPopup",
+      -- Removes the default mapping of "s"
+      -- ["s"] = "",
     }
   }
 }
