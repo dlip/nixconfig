@@ -12,8 +12,8 @@ require('neoscroll').setup({
 
 local t = {}
 -- Syntax: t[keys] = {function, {function arguments}}
-t['F'] = {'scroll', {'-vim.wo.scroll', 'true', '250'}}
-t['S'] = {'scroll', { 'vim.wo.scroll', 'true', '250'}}
+t['<S-Up>'] = {'scroll', {'-vim.wo.scroll', 'true', '250'}}
+t['<S-Down>'] = {'scroll', { 'vim.wo.scroll', 'true', '250'}}
 -- t['<C-F>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '450'}}
 -- t['<C-S>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '450'}}
 t['<C-y>'] = {'scroll', {'-0.10', 'false', '100'}}
