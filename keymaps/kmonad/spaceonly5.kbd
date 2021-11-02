@@ -1,3 +1,6 @@
+;; Moving shift off the space and reducing home row mods by one
+;; The alt keys are still not that comfortable to press
+
 (defcfg
   ;; ** For Linux **
   input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
@@ -28,58 +31,54 @@
 
 (defalias
 
-  q (tap-hold 400 q A-f4)
-  w (tap-hold 400 w C-w)
-  f (tap-hold-next-release 200 f (layer-toggle fn))
-  p (tap-hold 200 p M-p)
+  r (tap-hold-next-release 200 r lmet)
+  s (tap-hold-next-release 200 s lctl)
+  t (tap-hold-next-release 200 t lalt)
 
-  u (tap-hold-next-release 200 u (layer-toggle media))
-
-  a (tap-hold-next-release 200 a lmet)
-  r (tap-hold-next-release 200 r lalt)
-  s (tap-hold-next-release 200 s (layer-toggle num))
-  t (tap-hold-next-release 200 t lctl)
-  g (tap-hold 200 g C-A-M-S)
-
-  m (tap-hold 200 m C-A-M-S)
-  n (tap-hold-next-release 200 n rctl)
-  e (tap-hold-next-release 200 e (layer-toggle nav))
-  i (tap-hold-next-release 200 i lalt)
-  o (tap-hold-next-release 200 o rmet)
+  n (tap-hold-next-release 200 n lalt)
+  e (tap-hold-next-release 200 e rctl)
+  i (tap-hold-next-release 200 i rmet)
 
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
   c (tap-hold 200 c C-c)
   d (tap-hold 200 d C-v)
 
-  spc (tap-hold-next-release 200 spc lsft)
+  med (layer-toggle media)
+  fn (layer-toggle fn)
+
+  spc (tap-hold-next-release 200 spc (layer-toggle navnum))
+  lsf (tap-hold-next-release 200 esc lsft)
+  rsf (tap-hold-next-release 200 ret rsft)
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  tab  @q   @w   @f   @p   b    j    l    @u   y    ;    \    _    _
-  bspc @a   @r   @s   @t   @g   @m   @n   @e   @i   @o   ret  _
-  esc  @z   @x   @c   @d   v    k    h    ,    .    '    /
-  _    _    _              @spc            _    _    _    _
+  tab  q    w    f    p    b    j    l    u    y    ;    \    _    _
+  bspc a    @r   @s   @t   g    m    @n   @e   @i   o   ret  _
+  grv  @z   @x   @c   @d   v    k    h    ,    .    '    /
+  _    @fn  @lsf           @spc           @rsf @med @med _
 )
 
-(deflayer num
+(defalias
+
+  lft (tap-hold-next-release 200 lft lmet)
+  dwn (tap-hold-next-release 200 down lctl)
+  rgt (tap-hold-next-release 200 rght lalt)
+
+  4 (tap-hold-next-release 200 4 lalt)
+  5 (tap-hold-next-release 200 5 rctl)
+  6 (tap-hold-next-release 200 6 rmet)
+)
+
+(deflayer navnum
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    [    7    8    9    ]    _    _    _
-  _    _    _    _    _    _    =    4    5    6    0    _    _
-  _    _    _    _    _    _    -    1    2    3    grv  _
+  _    prnt home up   end  _    [    7    8    9    ]    _    _    _
+  _    del  @lft @dwn @rgt _    =    @4   @5   @6   0    _    _
+  _    _    _    pgup pgdn _    -    1    2    3    grv  _
   _    _    _              _              _    _    _    _
-)
-
-(deflayer nav
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    prnt home up   end  _    _    _    _    _    _    _    _    _
-  _    del  lft  down rght _    _    _    _    _    _    _    _
-  _    _    _    pgup pgdn _    _    _    _    _    _    _
-  _    _    -              _              _    _    _    _
 )
 
 (defalias
