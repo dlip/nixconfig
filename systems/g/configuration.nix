@@ -24,7 +24,7 @@ in
   services.kmonad = {
     enable = true;
     configfiles = [
-      ../../keymaps/kmonad/spaceonly4.kbd
+      ../../keymaps/kmonad/spaceonly6.kbd
     ];
   };
 }

@@ -30,15 +30,15 @@
 
 (defalias
 
-  a (tap-hold-next-release 200 a lalt)
-  r (tap-hold-next-release 200 r lmet)
+  a (tap-hold-next-release 200 a lmet)
+  r (tap-hold-next-release 200 r lalt)
   s (tap-hold-next-release 200 s lsft)
   t (tap-hold-next-release 200 t lctl)
 
   n (tap-hold-next-release 200 n rctl)
   e (tap-hold-next-release 200 e rsft)
-  i (tap-hold-next-release 200 i rmet)
-  o (tap-hold-next-release 200 o lalt)
+  i (tap-hold-next-release 200 i lalt)
+  o (tap-hold-next-release 200 o rmet)
 
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
@@ -62,15 +62,15 @@
 
 (defalias
 
-  del (tap-hold-next-release 200 del lalt)
-  lft (tap-hold-next-release 200 lft lmet)
+  del (tap-hold-next-release 200 del lmet)
+  lft (tap-hold-next-release 200 lft lalt)
   dwn (tap-hold-next-release 200 down lsft)
   rgt (tap-hold-next-release 200 rght lctrl)
 
   4 (tap-hold-next-release 200 4 lctrl)
   5 (tap-hold-next-release 200 5 lsft)
-  6 (tap-hold-next-release 200 6 lmet)
-  0 (tap-hold-next-release 200 0 lalt)
+  6 (tap-hold-next-release 200 6 lalt)
+  0 (tap-hold-next-release 200 0 lmet)
 )
 
 (deflayer navnum
