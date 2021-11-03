@@ -361,11 +361,11 @@
       },
       "locked": {
         "narHash": "sha256-NHp/yWcIZC47E/9gtmcZbslQESDvwX5DTd8hyok7ceo=",
-        "path": "/nix/store/dqh91fk3118vx983xphvwrk467k8f8qs-source/overlays/vimPlugins",
+        "path": "/nix/store/avv29ymc272np6zvbv066xhq5x8kqsry-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/dqh91fk3118vx983xphvwrk467k8f8qs-source/overlays/vimPlugins",
+        "path": "/nix/store/avv29ymc272np6zvbv066xhq5x8kqsry-source/overlays/vimPlugins",
         "type": "path"
       }
     },
@@ -399,11 +399,11 @@
       },
       "locked": {
         "narHash": "sha256-U5qJRcWz2tsOsafRDeFrl/zbCUT1hNUViDVEf70jLZg=",
-        "path": "/nix/store/dqh91fk3118vx983xphvwrk467k8f8qs-source/overlays/xplrPlugins",
+        "path": "/nix/store/avv29ymc272np6zvbv066xhq5x8kqsry-source/overlays/xplrPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/dqh91fk3118vx983xphvwrk467k8f8qs-source/overlays/xplrPlugins",
+        "path": "/nix/store/avv29ymc272np6zvbv066xhq5x8kqsry-source/overlays/xplrPlugins",
         "type": "path"
       }
     }

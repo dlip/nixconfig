@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   myscripts = {
     launch-default-programs = pkgs.writeShellScriptBin "launch-default-programs" ''
@@ -21,7 +21,20 @@ let
       systemctl suspend
     '';
   };
+  symlinkedFiles = builtins.listToAttrs (
+    map
+      (
+        file: {
+          name = "${config.home.homeDirectory}/bin/${file}";
+          value = {
+            source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/scripts/${file}";
+          };
+        }
+      )
+      (builtins.attrNames (builtins.readDir ./scripts))
+  );
 in
 {
   home.packages = builtins.attrValues myscripts;
+  home.file = symlinkedFiles;
 }

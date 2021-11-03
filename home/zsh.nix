@@ -19,6 +19,7 @@ in
       g = "git";
       clip = "xclip -sel c";
       x = "xplr";
+      ren = "qmv -f do";
     };
 
     initExtra = ''

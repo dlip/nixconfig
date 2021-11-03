@@ -86,6 +86,7 @@
     python39Packages.grip
     python39Packages.pip
     python39Packages.setuptools
+    renameutils
     ripgrep
     ripgrep-all
     rnix-lsp
