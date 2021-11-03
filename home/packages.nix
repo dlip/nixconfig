@@ -86,6 +86,7 @@
     python39Packages.grip
     python39Packages.pip
     python39Packages.setuptools
+    rclone
     renameutils
     ripgrep
     ripgrep-all
