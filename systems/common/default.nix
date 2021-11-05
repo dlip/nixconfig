@@ -83,10 +83,17 @@ in
       enable = true;
       packages = [ pkgs.gnome3.dconf ];
     };
-
     xserver = {
       enable = true;
+
       layout = "us";
+
+      displayManager = {
+        lightdm.enable = true;
+        defaultSession = "xfce+awesome";
+        autoLogin.enable = true;
+        autoLogin.user = "dane";
+      };
       desktopManager = {
         xterm.enable = false;
         xfce = {
@@ -96,31 +103,19 @@ in
           thunarPlugins = [ pkgs.xfce.thunar-archive-plugin ];
         };
       };
-      windowManager = {
-        xmonad = {
-          enable = true;
-          enableContribAndExtras = true;
-          extraPackages = haskellPackages: [
-            haskellPackages.xmonad-contrib
-            haskellPackages.xmonad-extras
-            haskellPackages.xmonad
-          ];
-        };
+      windowManager.awesome = {
+        enable = true;
+        luaModules = with pkgs.luaPackages; [
+          luarocks # is the package manager for Lua modules
+          luadbi-mysql # Database abstraction layer
+        ];
       };
-
-      displayManager = {
-        lightdm.enable = true;
-        defaultSession = "xfce+xmonad";
-        autoLogin.enable = true;
-        autoLogin.user = "dane";
-      };
-
       # Enable touchpad support (enabled default in most desktopManager).
       libinput.enable = true;
       libinput.touchpad.disableWhileTyping = true;
-
     };
   };
+
 
   services.gvfs = {
     enable = true;
@@ -240,7 +235,7 @@ in
     yubikey-personalization
     pulseaudio
   ];
-  
+
   hardware.ledger.enable = true;
   services.udev.packages = with pkgs; [ yubikey-personalization via vial ];
   # To use the smart card mode (CCID) of Yubikey, you will need the PCSC-Lite daemon:

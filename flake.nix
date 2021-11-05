@@ -1,4 +1,5 @@
 {
+  
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
