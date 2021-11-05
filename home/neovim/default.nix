@@ -94,6 +94,7 @@ in
           neogit
           neorg
           neoscroll-nvim
+          nnn-nvim
           nvim-autopairs
           nvim-cmp
           nvim-dap

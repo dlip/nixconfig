@@ -1,0 +1,1 @@
+require("nnn").setup()

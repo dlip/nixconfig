@@ -16,6 +16,10 @@
       url = "github:sebdah/vim-delve";
       flake = false;
     };
+    nnn-nvim = {
+      url = "github:luukvbaal/nnn.nvim";
+      flake = false;
+    };
     nvim-dap-go = {
       url = "github:leoluz/nvim-dap-go";
       flake = false;
