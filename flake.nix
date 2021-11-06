@@ -1,5 +1,5 @@
 {
-  
+
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
@@ -53,6 +53,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    nnn-git = {
+      url = "github:jarun/nnn";
+      flake = false;
+    };
   };
 
   outputs =
@@ -68,6 +72,7 @@
     , neovim
     , vimPlugins
     , xplrPlugins
+    , nnn-git
     }:
     let
       pkgsForSystem = system: import nixpkgs {
@@ -79,6 +84,10 @@
             emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
             power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
             wally-cli = wally-cli.defaultPackage.${system};
+            nnn = prev.nnn.overrideAttrs (oldAttrs: {
+              makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
+            });
+            inherit nnn-git;
           })
           (import ./pkgs)
           neovim.overlay

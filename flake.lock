@@ -241,11 +241,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1636079776,
-        "narHash": "sha256-D7wYTG/rlqNTpOHX0A9tqpz7Urf77trc4hLKbIegqRU=",
+        "lastModified": 1636128627,
+        "narHash": "sha256-JC+eldJw7g5iTPjToUBx0ICYiJEt15tSgxzHrmNroBM=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "3ba800f1538e083f8172655c6bab096cd604a0b5",
+        "rev": "1fdbd29dfa6366f8346693d0bf67f4f782ab0f32",
         "type": "github"
       },
       "original": {
@@ -268,6 +268,38 @@
         "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nnn-git": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1636159333,
+        "narHash": "sha256-336L/WSMcOysY8F9GcyqEJkczgScdM7m/A3XduuhKGQ=",
+        "owner": "jarun",
+        "repo": "nnn",
+        "rev": "f854b3c7482dc31d10844391aa9e23f2d266ce44",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jarun",
+        "repo": "nnn",
+        "type": "github"
+      }
+    },
+    "nnn-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1636166757,
+        "narHash": "sha256-YvgMD4t56AExxdGPvmQrZb9f6034Ix30VVRWCFNmHFs=",
+        "owner": "luukvbaal",
+        "repo": "nnn.nvim",
+        "rev": "142d44828bf70276bb3ee45466db472cf611196a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "luukvbaal",
+        "repo": "nnn.nvim",
         "type": "github"
       }
     },
@@ -328,6 +360,7 @@
         "kmonad": "kmonad",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
+        "nnn-git": "nnn-git",
         "power-menu": "power-menu",
         "vimPlugins": "vimPlugins",
         "wally-cli": "wally-cli",
@@ -355,17 +388,18 @@
         "autosave-nvim": "autosave-nvim",
         "fire-nvim": "fire-nvim",
         "lspkind-nvim": "lspkind-nvim",
+        "nnn-nvim": "nnn-nvim",
         "nvim-dap-go": "nvim-dap-go",
         "rest-nvim": "rest-nvim",
         "vim-delve": "vim-delve"
       },
       "locked": {
-        "narHash": "sha256-NHp/yWcIZC47E/9gtmcZbslQESDvwX5DTd8hyok7ceo=",
-        "path": "/nix/store/ialg8npwd64lsdh6c4w111c71xnkrx0b-source/overlays/vimPlugins",
+        "narHash": "sha256-9UE8yMdVXcMP+VZpuVf8f0CVcvcznPkNcXPhz9qMfUk=",
+        "path": "/nix/store/47gf6p3rb20c9xyqbgy3lyipsj12wm36-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/ialg8npwd64lsdh6c4w111c71xnkrx0b-source/overlays/vimPlugins",
+        "path": "/nix/store/47gf6p3rb20c9xyqbgy3lyipsj12wm36-source/overlays/vimPlugins",
         "type": "path"
       }
     },
@@ -379,11 +413,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1626652908,
-        "narHash": "sha256-287w+gq5vUOPNoLOpOaMqaQUCffGgPsQJAnk/y4sdZU=",
+        "lastModified": 1636133611,
+        "narHash": "sha256-tK4v0TTpWlfVsml4wh0PXzqh03/8wOBEtPaBRrAtWuw=",
         "owner": "zsa",
         "repo": "wally-cli",
-        "rev": "96db616ef6d5b5cb85b2f2c16e426497b2366e06",
+        "rev": "8cc5a18796b208fff9f48414400ca703ccac9455",
         "type": "github"
       },
       "original": {
@@ -399,11 +433,11 @@
       },
       "locked": {
         "narHash": "sha256-U5qJRcWz2tsOsafRDeFrl/zbCUT1hNUViDVEf70jLZg=",
-        "path": "/nix/store/ialg8npwd64lsdh6c4w111c71xnkrx0b-source/overlays/xplrPlugins",
+        "path": "/nix/store/47gf6p3rb20c9xyqbgy3lyipsj12wm36-source/overlays/xplrPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/ialg8npwd64lsdh6c4w111c71xnkrx0b-source/overlays/xplrPlugins",
+        "path": "/nix/store/47gf6p3rb20c9xyqbgy3lyipsj12wm36-source/overlays/xplrPlugins",
         "type": "path"
       }
     }

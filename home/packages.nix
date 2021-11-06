@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   imports = [
     ./xplr
+    ./nnn
   ];
   home.packages = with pkgs; [
     appimage-run
@@ -64,7 +65,6 @@
     nixfmt
     nixpkgs-fmt
     nmap
-    nnn
     nodejs
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
@@ -75,6 +75,7 @@
     nodePackages.typescript
     nodePackages.typescript-language-server
     nodePackages.yaml-language-server
+    nvimpager
     openvpn
     p7zip
     pandoc
