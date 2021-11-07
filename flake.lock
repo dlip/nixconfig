@@ -176,11 +176,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1636044164,
-        "narHash": "sha256-RI9QjS8NBrfVTp6dzmcEVKNNjxYGBf26+/7ihDA/USc=",
+        "lastModified": 1636215015,
+        "narHash": "sha256-OZYgfAmVh/1VqSsKa13ZKTB/gg0E+zufO792OLvawRs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "70c5b268e10025c70823767f4fb49e240b40151d",
+        "rev": "f6f013f7642437b0b613aec17f331fe5700fcb35",
         "type": "github"
       },
       "original": {
@@ -241,11 +241,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1636128627,
-        "narHash": "sha256-JC+eldJw7g5iTPjToUBx0ICYiJEt15tSgxzHrmNroBM=",
+        "lastModified": 1636236352,
+        "narHash": "sha256-6Pq0hReAPdBMMdp/wI9G8YlZT/bjHu9NLRPqX5iWJpo=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "1fdbd29dfa6366f8346693d0bf67f4f782ab0f32",
+        "rev": "b74916cfd21fc307ad4898a519e1407411a01ba5",
         "type": "github"
       },
       "original": {
@@ -395,11 +395,11 @@
       },
       "locked": {
         "narHash": "sha256-9UE8yMdVXcMP+VZpuVf8f0CVcvcznPkNcXPhz9qMfUk=",
-        "path": "/nix/store/47gf6p3rb20c9xyqbgy3lyipsj12wm36-source/overlays/vimPlugins",
+        "path": "/nix/store/0acyirzg61gqa0jn0z546b40zv1wslhh-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/47gf6p3rb20c9xyqbgy3lyipsj12wm36-source/overlays/vimPlugins",
+        "path": "/nix/store/0acyirzg61gqa0jn0z546b40zv1wslhh-source/overlays/vimPlugins",
         "type": "path"
       }
     },
@@ -433,11 +433,11 @@
       },
       "locked": {
         "narHash": "sha256-U5qJRcWz2tsOsafRDeFrl/zbCUT1hNUViDVEf70jLZg=",
-        "path": "/nix/store/47gf6p3rb20c9xyqbgy3lyipsj12wm36-source/overlays/xplrPlugins",
+        "path": "/nix/store/0acyirzg61gqa0jn0z546b40zv1wslhh-source/overlays/xplrPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/47gf6p3rb20c9xyqbgy3lyipsj12wm36-source/overlays/xplrPlugins",
+        "path": "/nix/store/0acyirzg61gqa0jn0z546b40zv1wslhh-source/overlays/xplrPlugins",
         "type": "path"
       }
     }

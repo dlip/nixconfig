@@ -122,6 +122,9 @@ in
     package = lib.mkForce pkgs.gnome3.gvfs;
   };
 
+  services.printing.enable = true;
+  services.printing.drivers = with pkgs; [ brgenml1lpr brgenml1cupswrapper ];
+
   programs.nm-applet.enable = true;
   hardware.opengl.driSupport32Bit = true;
 

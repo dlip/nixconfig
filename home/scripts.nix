@@ -6,6 +6,7 @@ let
       alacritty&
       slack&
       spotify&
+      obsidian&
     '';
 
     update-wallpaper = pkgs.writeShellScriptBin "update-wallpaper" ''
