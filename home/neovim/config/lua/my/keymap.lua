@@ -17,6 +17,13 @@ local keymaps = {
   {'nxo', '<C-S-left>', '<C-w>H'},
   {'nxo', '<C-S-right>', '<C-w>L'},
 
+  -- fix movement in visual mode for behave mswin
+  {'x', '<up>', 'k'},
+  {'x', '<down>', 'j'},
+  {'x', '<left>', 'h'},
+  {'x', '<right>', 'l'},
+  {'x', '<home>', '0'},
+
   -- Don't includ line feed
   {'x', '<End>', 'g_'},
   {'n', 'Y', 'yg_'},

@@ -8,8 +8,11 @@ reloadMyConfig = function()
 end
 EOF
 
+source $VIMRUNTIME/mswin.vim
+behave mswin
+
 " reload config
-nnoremap <c-q> <cmd>lua reloadMyConfig()<CR>
+nnoremap <c-\> <cmd>lua reloadMyConfig()<CR>
 
 let g:netrw_browsex_viewer = "xdg-open"
 
