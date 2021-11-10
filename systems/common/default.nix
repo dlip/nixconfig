@@ -121,6 +121,10 @@ in
     enable = true;
     package = lib.mkForce pkgs.gnome3.gvfs;
   };
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+  };
 
   services.printing.enable = true;
   services.printing.drivers = with pkgs; [ brgenml1lpr brgenml1cupswrapper ];
