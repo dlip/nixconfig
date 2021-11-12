@@ -9,6 +9,7 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       (import ../common params)
+      ../common/desktop/awesome.nix
     ];
 
   networking.interfaces.enp3s0.useDHCP = true;
@@ -27,5 +28,10 @@ in
       ../../keymaps/kmonad/spaceonly6.kbd
     ];
   };
+  
+  
+  xdg.portal.enable = true;
+  services.flatpak.enable = true;
+
 }
 

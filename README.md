@@ -44,3 +44,8 @@ sudo nixos-rebuild switch --flake .
 ```sh
 nix run .
 ```
+
+
+### Test sha for packages
+
+0000000000000000000000000000000000000000000000000000

@@ -9,6 +9,7 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       (import ../common params)
+      ../common/desktop/awesome.nix
     ];
 
   networking.interfaces.enp8s0.useDHCP = true;
