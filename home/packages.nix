@@ -1,6 +1,5 @@
 { pkgs, ... }: {
   imports = [
-    ./xplr
     ./nnn
   ];
   home.packages = with pkgs; [

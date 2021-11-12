@@ -18,9 +18,6 @@
     vimPlugins = {
       url = "./overlays/vimPlugins";
     };
-    xplrPlugins = {
-      url = "./overlays/xplrPlugins";
-    };
     envy-sh = {
       url = "github:dlip/envy.sh";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -71,7 +68,6 @@
     , wally-cli
     , neovim
     , vimPlugins
-    , xplrPlugins
     , nnn-git
     }:
     let
@@ -92,7 +88,6 @@
           (import ./pkgs)
           neovim.overlay
           vimPlugins.overlay
-          xplrPlugins.overlay
           kmonad.overlay
         ];
       };
