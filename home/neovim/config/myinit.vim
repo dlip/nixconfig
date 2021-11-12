@@ -8,9 +8,6 @@ reloadMyConfig = function()
 end
 EOF
 
-source $VIMRUNTIME/mswin.vim
-behave mswin
-
 " reload config
 nnoremap <c-\> <cmd>lua reloadMyConfig()<CR>
 

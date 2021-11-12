@@ -17,14 +17,7 @@ local keymaps = {
   {'nxo', '<C-S-left>', '<C-w>H'},
   {'nxo', '<C-S-right>', '<C-w>L'},
 
-  -- fix movement in visual mode for behave mswin
-  {'x', '<up>', 'k'},
-  {'x', '<down>', 'j'},
-  {'x', '<left>', 'h'},
-  {'x', '<right>', 'l'},
-  {'x', '<home>', '0'},
-
-  -- Don't includ line feed
+  -- Don't include line feed
   {'x', '<End>', 'g_'},
   {'n', 'Y', 'yg_'},
 
@@ -45,16 +38,16 @@ local keymaps = {
   {'n', 'Q', '@q'},
 
   -- Move lines
-  {'n', '<A-f>', '<cmd>m .-2<CR>=='},
-  {'n', '<A-s>', '<cmd>m .+1<CR>=='},
-  {'i', '<A-f>', '<Esc>:m .-2<CR>==gi'},
-  {'i', '<A-s>', '<Esc>:m .+1<CR>==gi'},
-  {'x', '<A-f>', '<cmd>m \'<-2<CR>gv=gv'},
-  {'x', '<A-s>', '<cmd>m \'>+1<CR>gv=gv'},
+  {'n', '<A-up>', '<cmd>m .-2<CR>=='},
+  {'n', '<A-down>', '<cmd>m .+1<CR>=='},
+  {'i', '<A-up>', '<Esc>:m .-2<CR>==gi'},
+  {'i', '<A-down>', '<Esc>:m .+1<CR>==gi'},
+  {'x', '<A-up>', '<cmd>m \'<-2<CR>gv=gv'},
+  {'x', '<A-down>', '<cmd>m \'>+1<CR>gv=gv'},
 
   -- Navigate back/forward in jumplist
-  {'nxo', '<A-r>', '<C-o>'},
-  {'nxo', '<A-t>', '<C-i>'},
+  {'nxo', '<A-left>', '<C-o>'},
+  {'nxo', '<A-right>', '<C-i>'},
 
   -- Enable enter and backspace in normal mode
   {'n', '<CR>', 'o<Space><Backspace><Esc>'},

@@ -11,7 +11,6 @@ config:
 
   home.packages = with pkgs; [
     alttab
-    anki
     audacity
     # blender
     brave
