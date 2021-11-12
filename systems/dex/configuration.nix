@@ -20,16 +20,6 @@ rec {
     ../common/desktop/kde.nix
   ];
 
-  nixpkgs.config.allowUnfree = true;
-
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
-
-
   networking.interfaces.enp0s31f6.useDHCP = true;
 
   # Open ports in the firewall.
