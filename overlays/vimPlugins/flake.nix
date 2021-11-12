@@ -28,6 +28,10 @@
       url = "github:NTBBloodbath/rest.nvim";
       flake = false;
     };
+    telescope-nvim = {
+      url = "github:nvim-telescope/telescope.nvim";
+      flake = false;
+    };
   };
 
   outputs =

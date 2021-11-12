@@ -105,7 +105,6 @@ in
           nvim-ts-rainbow
           nvim-whichkey-setup-lua
           rest-nvim
-          rust-tools-nvim
           tabular
           telescope
           telescope-dap-nvim

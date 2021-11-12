@@ -334,6 +334,22 @@
         "wally-cli": "wally-cli"
       }
     },
+    "telescope-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1636550282,
+        "narHash": "sha256-r6JVhE+ZBfCjEWc5uF9kFoKIuSjl5YtnDF9DStD9DLY=",
+        "owner": "nvim-telescope",
+        "repo": "telescope.nvim",
+        "rev": "f3ef5920725d719ed23195a457a86015826d3e1d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nvim-telescope",
+        "repo": "telescope.nvim",
+        "type": "github"
+      }
+    },
     "vim-delve": {
       "flake": false,
       "locked": {
@@ -358,15 +374,16 @@
         "nnn-nvim": "nnn-nvim",
         "nvim-dap-go": "nvim-dap-go",
         "rest-nvim": "rest-nvim",
+        "telescope-nvim": "telescope-nvim",
         "vim-delve": "vim-delve"
       },
       "locked": {
-        "narHash": "sha256-9UE8yMdVXcMP+VZpuVf8f0CVcvcznPkNcXPhz9qMfUk=",
-        "path": "/nix/store/zdjnh7ji18l9dz71fkhbywjm5nlw3nhr-source/overlays/vimPlugins",
+        "narHash": "sha256-xsh629ao+ZvejEQsM+0qxZeY8xUH6fAcL1CkUw9wokY=",
+        "path": "/nix/store/kqww0zxb6657lkx5lkl204mjrii8hgjz-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/zdjnh7ji18l9dz71fkhbywjm5nlw3nhr-source/overlays/vimPlugins",
+        "path": "/nix/store/kqww0zxb6657lkx5lkl204mjrii8hgjz-source/overlays/vimPlugins",
         "type": "path"
       }
     },
