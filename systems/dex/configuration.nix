@@ -176,8 +176,8 @@ rec {
     securityType = "user";
     extraConfig = ''
       workgroup = WORKGROUP
-      server string = ${networking.hostName}
-      netbios name = ${networking.hostName}
+      server string = ${params.hostName}
+      netbios name = ${params.hostName}
       security = user
       #use sendfile = yes
       #max protocol = smb2
