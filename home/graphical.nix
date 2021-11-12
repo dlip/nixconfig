@@ -42,7 +42,7 @@ config:
     # plexamp # sha incorrect
     qalculate-gtk
     slack
-    spotify
+    # spotify
     tdesktop
     vial
     vlc

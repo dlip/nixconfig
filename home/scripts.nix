@@ -5,7 +5,6 @@ let
       brave&
       alacritty&
       slack&
-      spotify&
       obsidian&
     '';
 
