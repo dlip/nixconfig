@@ -150,17 +150,6 @@ rec {
         "/mnt/downloader"
         "/var/lib"
       ];
-      repository = "/media/backup/restic/dex";
-      passwordFile = "/root/backup/restic-password";
-      pruneOpts = [
-        "--keep-daily 7"
-        "--keep-weekly 4"
-      ];
-      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" "2" ];
-      timerConfig = {
-        OnCalendar = "daily";
-        Persistent = true;
-      };
     };
   };
   
