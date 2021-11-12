@@ -12,6 +12,7 @@
     binutils
     cheat
     circleci-cli
+    clang-tools
     delve
     deno
     dig
@@ -21,7 +22,7 @@
     eksctl
     envy-sh
     exa
-    fd # Better find
+    fd
     file
     fluxcd
     fzf
@@ -34,8 +35,8 @@
     gnuplot
     go
     gobang
-    gotop
     gopls
+    gotop
     graphviz
     haskellPackages.haskell-language-server
     hledger
@@ -52,6 +53,7 @@
     lazygit
     ledger
     ledger-autosync
+    lldb
     lua
     luaformatter
     massren
@@ -64,16 +66,19 @@
     nixfmt
     nixpkgs-fmt
     nmap
-    nodejs
     nodePackages.bash-language-server
-    nodePackages.dockerfile-language-server-nodejs
+    # nodePackages.dockerfile-language-server-nodejs
     nodePackages.eslint_d
     nodePackages.node2nix
     nodePackages.prettier
+    nodePackages.pyright
     nodePackages.quicktype
     nodePackages.typescript
     nodePackages.typescript-language-server
+    nodePackages.vscode-css-languageserver-bin
+    nodePackages.vscode-html-languageserver-bin
     nodePackages.yaml-language-server
+    nodejs
     nvimpager
     openvpn
     p7zip
@@ -96,12 +101,13 @@
     solang
     sops
     sqlite
-    sumneko-lua-language-server
     stack
+    sumneko-lua-language-server
     tcpdump
-    tektoncd-cli
+    terraform-ls
     tesseract4
     tldr
+    tree-sitter
     tshark
     unzip
     usbutils

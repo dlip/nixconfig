@@ -379,11 +379,11 @@
       },
       "locked": {
         "narHash": "sha256-xsh629ao+ZvejEQsM+0qxZeY8xUH6fAcL1CkUw9wokY=",
-        "path": "/nix/store/kqww0zxb6657lkx5lkl204mjrii8hgjz-source/overlays/vimPlugins",
+        "path": "/nix/store/jyq3q1vwyv1a8dc14hgfklwx7d1yrwcg-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/kqww0zxb6657lkx5lkl204mjrii8hgjz-source/overlays/vimPlugins",
+        "path": "/nix/store/jyq3q1vwyv1a8dc14hgfklwx7d1yrwcg-source/overlays/vimPlugins",
         "type": "path"
       }
     },

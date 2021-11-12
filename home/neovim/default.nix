@@ -33,33 +33,6 @@ in
 
       package = pkgs.neovim;
 
-      extraPackages = with pkgs; [
-        gcc
-        tree-sitter
-
-        # Needed by Telescope
-        bat
-        fd
-        ripgrep
-
-        lldb # For nvim-dap
-
-        # Various language servers
-        #fenix.rust-analyzer
-        nodePackages.bash-language-server
-        clang-tools
-        nodePackages.vscode-css-languageserver-bin
-        nodePackages.dockerfile-language-server-nodejs
-        gopls
-        nodePackages.vscode-html-languageserver-bin
-        nodePackages.pyright
-        rnix-lsp
-        terraform-ls
-        nodePackages.typescript
-        nodePackages.typescript-language-server
-        sumneko-lua-language-server
-      ];
-
       extraConfig = ''
         let g:sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
         let g:awesome_root_path = "${awesomeSrc}"
