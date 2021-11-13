@@ -60,8 +60,8 @@ in
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = { LC_ALL = "en_US.UTF-8"; };
     inputMethod = {
-      enabled = "ibus";
-      ibus.engines = with pkgs.ibus-engines; [ anthy ];
+      enabled = "fcitx5";
+      fcitx5.addons = [ pkgs.fcitx5-mozc ];
     };
   };
 
@@ -97,12 +97,12 @@ in
     enable = true;
     package = lib.mkForce pkgs.gnome3.gvfs;
   };
-  
+
   services.avahi = {
     enable = true;
     nssmdns = true;
   };
-  
+
   services.printing.enable = true;
   services.printing.drivers = with pkgs; [ brgenml1lpr brgenml1cupswrapper ];
 
