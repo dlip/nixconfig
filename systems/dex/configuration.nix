@@ -9,7 +9,7 @@ let
   domain = "home.lipscombe.com.au";
 
   params = {
-    hostname = "metabox";
+    hostname = "dex";
   };
 in
 rec {
