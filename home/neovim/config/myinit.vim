@@ -15,11 +15,16 @@ let g:netrw_browsex_viewer = "xdg-open"
 
 " https://github.com/vim-test/vim-test
 let g:test#go#runner = 'gotest'
+let g:test#strategy = 'asyncrun_background'
+
 function! DebugNearest()
   let g:test#go#runner = 'delve'
   TestNearest
   let g:test#go#runner = 'gotest'
 endfunction
+
+" https://github.com/skywind3000/asyncrun.vim
+let g:asyncrun_open = 8
 
 " https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
@@ -30,6 +35,8 @@ let g:tmux_navigator_no_mappings = 1
 " https://github.com/vimwiki/vimwiki
 let g:vimwiki_list = [{'path': '~/notes/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+
+let g:vimwiki_key_mappings = { 'all_maps': 0, }
 
 " https://github.com/glacambre/firenvim
 let g:firenvim_config = { 

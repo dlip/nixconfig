@@ -1,5 +1,9 @@
 {
   inputs = {
+    asyncrun-vim = {
+      url = "github:skywind3000/asyncrun.vim";
+      flake = false;
+    };
     autosave-nvim = {
       url = "github:Pocco81/AutoSave.nvim";
       flake = false;

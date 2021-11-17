@@ -19,6 +19,7 @@
     direnv
     dive
     docker-compose
+    easyeffects
     eksctl
     envy-sh
     exa

@@ -45,6 +45,7 @@ in
           telescope = (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim telescope-frecency-nvim ]);
         in
         [
+          asyncrun-vim
           autosave-nvim
           cmp-buffer
           cmp-nvim-lsp
@@ -85,6 +86,7 @@ in
           trouble-nvim
           undotree
           vim-delve
+          vim-dispatch
           vim-eunuch
           vim-fugitive
           vim-markdown

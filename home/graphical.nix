@@ -39,7 +39,7 @@ config:
     obs-studio
     obsidian
     postman
-    # plexamp # sha incorrect
+    plexamp
     qalculate-gtk
     slack
     # spotify
