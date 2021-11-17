@@ -69,6 +69,7 @@ in
           neorg
           neoscroll-nvim
           nnn-nvim
+          null-ls-nvim
           nvim-autopairs
           nvim-cmp
           nvim-dap

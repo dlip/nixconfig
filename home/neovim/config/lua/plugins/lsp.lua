@@ -1,5 +1,13 @@
 local nvim_lsp = require('lspconfig')
+local null_ls = require("null-ls")
 local g = vim.g
+
+null_ls.config({
+    sources = {
+        null_ls.builtins.code_actions.gitsigns,
+        null_ls.builtins.formatting.eslint_d,
+    },
+})
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
@@ -8,8 +16,10 @@ local servers = {
   'clangd',
   'cssls',
   'dockerls',
+  'eslint',
   'gopls',
   'html',
+  'null-ls',
   'solang',
   'pyright',
   'rnix',
@@ -68,3 +78,5 @@ require'lspconfig'.sumneko_lua.setup {
     },
   },
 }
+
+

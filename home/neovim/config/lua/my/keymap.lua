@@ -45,10 +45,6 @@ local keymaps = {
   {'x', '<A-up>', '<cmd>m \'<-2<CR>gv=gv'},
   {'x', '<A-down>', '<cmd>m \'>+1<CR>gv=gv'},
 
-  -- Navigate back/forward in jumplist
-  {'nxo', '<A-left>', '<C-o>'},
-  {'nxo', '<A-right>', '<C-i>'},
-
   -- Enable enter and backspace in normal mode
   {'n', '<CR>', 'o<Space><Backspace><Esc>'},
   {'n', '<Backspace>', 'X'},
@@ -88,6 +84,10 @@ local keymaps = {
   -- {'n', '<A-c>', '<cmd>tabprevious<CR>'},
   -- {'n', '<A-d>', '<cmd>tabnext<CR>'},
   -- {'n', '<A-z>', '<cmd>tabclose<CR>'},
+
+  -- LSP
+    {'n', 'gd', '<cmd>Telescope lsp_definitions<CR>'},
+    {'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>'},
 }
 
 for i = 1, #keymaps do
