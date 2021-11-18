@@ -1,7 +1,4 @@
 { pkgs, ... }: {
-  imports = [
-    ./nnn
-  ];
   home.packages = with pkgs; [
     appimage-run
     autoreconfHook
@@ -39,7 +36,6 @@
     gopls
     gotop
     graphviz
-    haskellPackages.haskell-language-server
     hledger
     htop
     iotop
@@ -56,10 +52,8 @@
     ledger-autosync
     lldb
     lua
-    luaformatter
     massren
     mdl
-    myNodePackages.markserv
     ncdu
     neofetch
     niv
@@ -67,19 +61,9 @@
     nixfmt
     nixpkgs-fmt
     nmap
-    nodePackages.bash-language-server
-    # nodePackages.dockerfile-language-server-nodejs
-    nodePackages.eslint_d
     nodePackages.node2nix
-    nodePackages.prettier
-    nodePackages.pyright
     nodePackages.quicktype
     nodePackages.typescript
-    nodePackages.typescript-language-server
-    nodePackages.vscode-css-languageserver-bin
-    nodePackages.vscode-html-languageserver-bin
-    nodePackages.vscode-langservers-extracted
-    nodePackages.yaml-language-server
     nodejs
     nvimpager
     openvpn
@@ -87,7 +71,6 @@
     pandoc
     pinentry
     postgresql
-    proselint
     python
     python3
     python39Packages.grip
@@ -97,19 +80,14 @@
     renameutils
     ripgrep
     ripgrep-all
-    rnix-lsp
     rustup
     skopeo
-    solang
     sops
     sqlite
     stack
-    sumneko-lua-language-server
     tcpdump
-    terraform-ls
     tesseract4
     tldr
-    tree-sitter
     tshark
     unzip
     usbutils
