@@ -54,7 +54,7 @@ rec {
     isNormalUser = true;
     initialPassword = "password";
     extraGroups = [ ]; # Enable ‘sudo’ for the user.
-    shell = "/home/tv/.nix-profile/bin/zsh";
+    shell = "/etc/profiles/per-user/tv/bin/zsh";
   };
 
   environment.systemPackages = with pkgs; [

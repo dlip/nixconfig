@@ -167,7 +167,7 @@ in
   users.users.dane = {
     isNormalUser = true;
     extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
-    shell = "/home/dane/.nix-profile/bin/zsh";
+    shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 
   virtualisation.docker.enable = true;

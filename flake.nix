@@ -92,13 +92,50 @@
           kmonad.overlay
         ];
       };
+
+      createHomeConfig = configName: config@{ extraImports ? [ ], ... }:
+        {
+          imports = (import ./home { inherit config; inherit configName; }) ++ extraImports;
+        };
+
+      configs = rec {
+        personal = rec {
+          username = "dane";
+          homeDirectory = "/home/dane";
+          name = "Dane Lipscombe";
+          email = "dane@lipscombe.com.au";
+          nixConfigPath = homeDirectory + "/code/nixconfig";
+        };
+
+        personal-nixos = personal // { extraImports = [ (import ./home/graphical.nix { }) ./home/gaming.nix ]; };
+
+        tv = rec {
+          username = "tv";
+          homeDirectory = "/home/tv";
+          name = "TV Lipscombe";
+          email = "tv@lipscombe.com.au";
+          nixConfigPath = homeDirectory + "/code/nixconfig";
+          extraImports = [ ./home/media.nix ./home/emulation.nix ];
+        };
+
+        immutable = personal // { email = "dane.lipscombe@immutable.com"; };
+
+        immutable-nixos = immutable // { extraImports = [ (import ./home/graphical.nix { xrandrCommand = "xrandr --auto --output HDMI-0 --mode 1920x1080 --right-of eDP-1-1"; }) ./home/gaming.nix ]; };
+
+        root = personal // {
+          username = "root";
+          homeDirectory = "/root";
+        };
+      };
+
+      homeConfigs = builtins.mapAttrs createHomeConfig configs;
     in
     flake-utils.lib.eachDefaultSystem
       (system:
       let
         pkgs = pkgsForSystem system;
 
-        createHomeConfig = configName: config@{ extraImports ? [ ], ... }:
+        createHomeConfiguration = configName: config@{ extraImports ? [ ], ... }:
           flake-utils.lib.mkApp
             {
               drv =
@@ -106,42 +143,11 @@
                   {
                     inherit pkgs;
                     inherit (config) system homeDirectory username;
-                    configuration = {
-                      imports = (import ./home { inherit config; inherit configName; }) ++ extraImports;
-                    };
+                    configuration = createHomeConfig configName config;
                   }
                 ).activationPackage;
             };
 
-        configs = rec {
-          personal = rec {
-            username = "dane";
-            homeDirectory = "/home/dane";
-            name = "Dane Lipscombe";
-            email = "dane@lipscombe.com.au";
-            nixConfigPath = homeDirectory + "/code/nixconfig";
-          };
-
-          personal-nixos = personal // { extraImports = [ (import ./home/graphical.nix { }) ./home/gaming.nix ]; };
-
-          tv = rec {
-            username = "tv";
-            homeDirectory = "/home/tv";
-            name = "TV Lipscombe";
-            email = "tv@lipscombe.com.au";
-            nixConfigPath = homeDirectory + "/code/nixconfig";
-            extraImports = [ ./home/media.nix ./home/emulation.nix ];
-          };
-
-          immutable = personal // { email = "dane.lipscombe@immutable.com"; };
-
-          immutable-nixos = immutable // { extraImports = [ (import ./home/graphical.nix { xrandrCommand = "xrandr --auto --output HDMI-0 --mode 1920x1080 --right-of eDP-1-1"; }) ./home/gaming.nix ]; };
-
-          root = personal // {
-            username = "root";
-            homeDirectory = "/root";
-          };
-        };
       in
       rec {
         inherit pkgs;
@@ -156,7 +162,7 @@
                 nix repl $confnix
               '';
             };
-          homeConfigurations = builtins.mapAttrs createHomeConfig configs;
+          homeConfigurations = builtins.mapAttrs createHomeConfiguration configs;
         };
         packages = {
           rescript = (pkgs.callPackage ./home/vscode/rescript { });
@@ -181,7 +187,16 @@
             g = nixpkgs.lib.nixosSystem {
               system = "x86_64-linux";
               pkgs = pkgsForSystem "x86_64-linux";
-              modules = [ ./systems/g/configuration.nix kmonad.nixosModule ];
+              modules = [
+                ./systems/g/configuration.nix
+                kmonad.nixosModule
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager.useGlobalPkgs = true;
+                  home-manager.useUserPackages = true;
+                  home-manager.users.dane = homeConfigs.personal-nixos;
+                }
+              ];
             };
           };
       }
