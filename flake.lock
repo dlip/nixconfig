@@ -430,11 +430,11 @@
       },
       "locked": {
         "narHash": "sha256-KTquYfvLC6cYxddqLrSJ6Xw+ksMTywC42Dp53ln++3E=",
-        "path": "./overlays/vimPlugins",
+        "path": "overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "./overlays/vimPlugins",
+        "path": "overlays/vimPlugins",
         "type": "path"
       }
     },
