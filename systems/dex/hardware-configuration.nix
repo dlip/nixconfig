@@ -4,54 +4,28 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
+  imports =
+    [ (modulesPath + "/installer/scan/not-detected.nix")
+    ];
 
-  boot.initrd.availableKernelModules = [
-    "vfat"
-    "nls_cp437"
-    "nls_iso8859-1"
-    "xhci_hcd"
-    "xhci_pci"
-    "ahci"
-    "usbhid"
-    "usb_storage"
-    "sd_mod"
-  ];
-  boot.initrd.luks.yubikeySupport = true;
-  boot.initrd.kernelModules = [ "dm-snapshot" ];
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "uas" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  boot.initrd.luks.devices = {
-    "nixos-enc" = {
-      device = "/dev/sda2";
-      preLVM =
-        true; # You may want to set this to false if you need to start a network service first
-      yubikey = {
-        slot = 2;
-        twoFactor = true; # Set to false if you did not set up a user password.
-        storage = { device = "/dev/sda1"; };
-      };
+  fileSystems."/" =
+    { device = "/dev/disk/by-uuid/3c17bc3c-872a-4483-a6ec-29cb1b5a14d1";
+      fsType = "ext4";
     };
-  };
+
+  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/6b9e61d0-b58c-475b-a9fd-d1e2ed0217f5";
+
+  fileSystems."/boot" =
+    { device = "/dev/disk/by-uuid/0B69-96D6";
+      fsType = "vfat";
+    };
 
   boot.initrd.secrets = { "lukskey" = "/root/lukskey"; };
-
-  fileSystems."/" = {
-    device = "/dev/disk/by-uuid/0ce174dc-b00d-4285-ab07-797a67519093";
-    fsType = "btrfs";
-  };
-
-  fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/0ce174dc-b00d-4285-ab07-797a67519093";
-    fsType = "btrfs";
-    options = [ "subvol=home" ];
-  };
-
-  fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/F102-2386";
-    fsType = "vfat";
-  };
 
   fileSystems."/media/media" = {
     device = "/dev/disk/by-uuid/ffea1765-0616-4311-ac3b-fde6e83ef011"; # UUID for /dev/mapper/media
@@ -108,7 +82,10 @@
   };
 
   swapDevices =
-    [{ device = "/dev/disk/by-uuid/718617a6-3335-48cf-a7ae-e985664a6e64"; }];
+    [{ device = "/.swapfile"; }];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  # high-resolution display
+  hardware.video.hidpi.enable = lib.mkDefault true;
 }
+
