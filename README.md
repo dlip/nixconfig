@@ -12,7 +12,6 @@ https://nixos.org/guides/install-nix.html
 
 https://nixos.wiki/wiki/Flakes
 
-thir
 ### Clone repo
 
 ```sh

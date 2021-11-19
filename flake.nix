@@ -93,57 +93,30 @@
         ];
       };
 
-      createHomeConfig = configName: config@{ extraImports ? [ ], ... }:
-        {
-          imports = (import ./home { inherit config; inherit configName; }) ++ extraImports;
-        };
-
       configs = rec {
-        personal = rec {
+        dane = {
           username = "dane";
           homeDirectory = "/home/dane";
-          name = "Dane Lipscombe";
-          email = "dane@lipscombe.com.au";
-          nixConfigPath = homeDirectory + "/code/nixconfig";
-        };
-
-        personal-nixos = personal // { extraImports = [ (import ./home/graphical.nix { }) ./home/gaming.nix ]; };
-
-        tv = rec {
-          username = "tv";
-          homeDirectory = "/home/tv";
-          name = "TV Lipscombe";
-          email = "tv@lipscombe.com.au";
-          nixConfigPath = homeDirectory + "/code/nixconfig";
-          extraImports = [ ./home/media.nix ./home/emulation.nix ];
-        };
-
-        immutable = personal // { email = "dane.lipscombe@immutable.com"; };
-
-        immutable-nixos = immutable // { extraImports = [ (import ./home/graphical.nix { xrandrCommand = "xrandr --auto --output HDMI-0 --mode 1920x1080 --right-of eDP-1-1"; }) ./home/gaming.nix ]; };
-
-        root = personal // {
-          username = "root";
-          homeDirectory = "/root";
+          imports = [
+            ./home
+          ];
         };
       };
-
-      homeConfigs = builtins.mapAttrs createHomeConfig configs;
     in
     flake-utils.lib.eachDefaultSystem
       (system:
       let
         pkgs = pkgsForSystem system;
 
-        createHomeConfiguration = configName: config@{ extraImports ? [ ], ... }:
+        createHomeConfiguration = name: config:
           flake-utils.lib.mkApp
             {
               drv =
                 (home-manager.lib.homeManagerConfiguration
                   {
-                    inherit pkgs;
-                    inherit (config) system homeDirectory username;
-                    configuration = createHomeConfig configName config;
+                    inherit pkgs system;
+                    inherit (config) homeDirectory username;
+                    configuration = { imports = config.imports; };
                   }
                 ).activationPackage;
             };
@@ -176,12 +149,57 @@
               system = "x86_64-linux";
               pkgs = pkgsForSystem "x86_64-linux";
               modules =
-                [ ./systems/metabox/configuration.nix ];
+                [
+                  ./systems/metabox/configuration.nix
+                  home-manager.nixosModules.home-manager
+                  {
+                    home-manager = {
+                      useGlobalPkgs = true;
+                      useUserPackages = true;
+                      users = {
+                        dane = {
+                          home.email = "dane@immutable.com.au";
+                          home.xrandrCommand = "xrandr --auto --output HDMI-0 --mode 1920x1080 --right-of eDP-1-1";
+                          imports = [
+                            ./home
+                            ./home/graphical.nix
+                            ./home/gaming.nix
+                          ];
+                        };
+                      };
+                    };
+                  }
+                ];
             };
             dex = nixpkgs.lib.nixosSystem {
               system = "x86_64-linux";
               pkgs = pkgsForSystem "x86_64-linux";
-              modules = [ ./systems/dex/configuration.nix ];
+              modules = [
+                ./systems/dex/configuration.nix
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager = {
+                    useGlobalPkgs = true;
+                    useUserPackages = true;
+                    users = {
+                      dane = {
+                        imports = [
+                          ./home
+                        ];
+                      };
+                      tv = {
+                        home.name = "TV Lipscombe";
+                        home.email = "tv@lipscombe.com.au";
+                        imports = [
+                          ./home
+                          ./home/media.nix
+                          ./home/emulation.nix
+                        ];
+                      };
+                    };
+                  };
+                }
+              ];
             };
             g = nixpkgs.lib.nixosSystem {
               system = "x86_64-linux";
@@ -191,14 +209,18 @@
                 kmonad.nixosModule
                 home-manager.nixosModules.home-manager
                 {
-                  home-manager.useGlobalPkgs = true;
-                  home-manager.useUserPackages = true;
-                  home-manager.users.dane = {
-                    imports = [
-                      ./home
-                      ./home/graphical.nix
-                      ./home/gaming.nix
-                    ];
+                  home-manager = {
+                    useGlobalPkgs = true;
+                    useUserPackages = true;
+                    users = {
+                      dane = {
+                        imports = [
+                          ./home
+                          ./home/graphical.nix
+                          ./home/gaming.nix
+                        ];
+                      };
+                    };
                   };
                 }
               ];
