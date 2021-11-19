@@ -145,3 +145,16 @@ local plug = {
 
 wk.register_keymap('leader', keymap)
 wk.register_keymap('leader', plug, {silent = true, noremap = false})
+
+function _G.package_json_mappings()
+  local buffKeymap = {
+    s = {'<cmd>lua require"package-info".show()<CR>', 'Show package versions'},
+    c = {'<cmd>lua require"package-info".hide()<CR>', 'Hide package versions'},
+    u = {'<cmd>lua require"package-info".update()<CR>', 'Update package on line'},
+    d = {'<cmd>lua require"package-info".delete()<CR>', 'Delete package on line'},
+    i = {'<cmd>lua require"package-info".install()<CR>', 'Install a new package'},
+    r = {'<cmd>lua require"package-info".reinstall()<CR>', 'Reinstall dependencies'},
+    p = {'<cmd>lua require"package-info".change_version()<CR>', 'Install a different package version'},
+  }
+  wk.register_keymap(',', buffKeymap, {buffer = vim.api.nvim_get_current_buf()})
+end

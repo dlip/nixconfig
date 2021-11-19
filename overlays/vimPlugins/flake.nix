@@ -8,24 +8,28 @@
       url = "github:Pocco81/AutoSave.nvim";
       flake = false;
     };
-    lspkind-nvim = {
-      url = "github:onsails/lspkind-nvim";
-      flake = false;
-    };
     fire-nvim = {
       url = "github:glacambre/firenvim";
       flake = false;
     };
-    vim-delve = {
-      url = "github:sebdah/vim-delve";
+    lspkind-nvim = {
+      url = "github:onsails/lspkind-nvim";
       flake = false;
     };
     nnn-nvim = {
       url = "github:luukvbaal/nnn.nvim";
       flake = false;
     };
+    nui-nvim = {
+      url = "github:MunifTanjim/nui.nvim";
+      flake = false;
+    };
     nvim-dap-go = {
       url = "github:leoluz/nvim-dap-go";
+      flake = false;
+    };
+    package-info-nvim = {
+      url = "github:vuki656/package-info.nvim";
       flake = false;
     };
     rest-nvim = {
@@ -34,6 +38,10 @@
     };
     telescope-nvim = {
       url = "github:nvim-telescope/telescope.nvim";
+      flake = false;
+    };
+    vim-delve = {
+      url = "github:sebdah/vim-delve";
       flake = false;
     };
   };

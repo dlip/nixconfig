@@ -73,6 +73,9 @@ augroup end
 " don't auto comment new lines
 autocmd BufEnter * set fo-=c fo-=r fo-=o
 
+" auto write new files
+autocmd BufNewFile * :write
+
 "remove line length marker for selected filetypes
 autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0
 
@@ -116,5 +119,8 @@ autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
 
 " Set filetypes
 autocmd BufEnter *.sol :setlocal filetype=solidity
+
+" Set package.json local key mappings
+autocmd BufEnter package.json :lua package_json_mappings()
 
 lua require'my.init'

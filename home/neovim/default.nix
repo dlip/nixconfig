@@ -69,6 +69,7 @@ in
           neorg
           neoscroll-nvim
           nnn-nvim
+          nui-nvim
           null-ls-nvim
           nvim-autopairs
           nvim-cmp
@@ -79,6 +80,7 @@ in
           nvim-treesitter-textobjects
           nvim-ts-rainbow
           nvim-whichkey-setup-lua
+          package-info-nvim
           rest-nvim
           tabular
           telescope
