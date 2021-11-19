@@ -112,6 +112,7 @@ Add to nixosConfigurations, replace HOST with name above
 Install system
 
 ```
+nix-env -iA nixos.nixUnstable
 nixos-install --flake .#$HOST
 ```
 
