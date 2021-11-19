@@ -1,4 +1,3 @@
-{ xrandrCommand ? "" }:
 { pkgs, config, ... }:
 let
   awesomeHome = "${config.xdg.configHome}/awesome";
@@ -29,9 +28,10 @@ in {
 
   home.file = symlinkedFiles // {
     "${awesomeHome}/env.lua".text = ''
-      xrandr_command = "${xrandrCommand}"
+      xrandr_command = "${config.home.xrandrCommand}"
     '';
   };
+
   home.packages = with pkgs; [
     feh
     alttab

@@ -1,5 +1,4 @@
-{ configName, nixConfigPath, ... }:
-{ pkgs, lib, ... }:
+{ config, pkgs, lib, ... }:
 let aliases = builtins.readFile ./aliases.sh;
 in
 {
@@ -33,7 +32,6 @@ in
       export MANPAGER='nvim +Man!'
       export MANWIDTH=999
 
-      export NIXCONFIG=${configName}
       export FZF_DEFAULT_COMMAND='fd'
       export GPG_TTY="$(tty)"
       gpg-connect-agent /bye

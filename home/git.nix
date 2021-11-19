@@ -1,10 +1,9 @@
-{ email, name, ... }:
-{ ... }: {
+{ config, ... }: {
   programs.git = {
     enable = true;
 
-    userEmail = email;
-    userName = name;
+    userEmail = config.home.email;
+    userName = config.home.name;
 
     extraConfig = {
       init.defaultBranch = "main";

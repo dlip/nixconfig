@@ -147,7 +147,6 @@
                   }
                 ).activationPackage;
             };
-
       in
       rec {
         inherit pkgs;
@@ -194,7 +193,13 @@
                 {
                   home-manager.useGlobalPkgs = true;
                   home-manager.useUserPackages = true;
-                  home-manager.users.dane = homeConfigs.personal-nixos;
+                  home-manager.users.dane = {
+                    imports = [
+                      ./home
+                      ./home/graphical.nix
+                      ./home/gaming.nix
+                    ];
+                  };
                 }
               ];
             };
