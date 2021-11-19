@@ -48,9 +48,10 @@ in
   networking.hostName = hostname; # Define your hostname.
   networking.useDHCP = false;
   networking.networkmanager.enable = true;
-  networking.extraHosts = ''
-    10.10.0.1 dex
-  '';
+  # networking.extraHosts = ''
+  #   10.10.0.123 dex
+  # '';
+
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
@@ -215,7 +216,7 @@ in
   services.restic.backups = {
     dex = {
       paths = [ "/home" "/root" "/var/lib" ];
-      repository = "rest:http://dex:8000/${hostname}";
+      repository = "rest:http://dex.local:8000/${hostname}";
       passwordFile = "/root/restic-password";
       pruneOpts = [
         "--keep-daily 7"
