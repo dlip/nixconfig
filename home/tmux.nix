@@ -34,10 +34,10 @@
       set-option -g status-interval 5
       set-option -g automatic-rename on
       set-option -g automatic-rename-format '#{b:pane_current_path}'
-      bind -n M-Left  previous-window
-      bind -n M-Right next-window
-      bind-key -n M-S-Left swap-window -t -1\; select-window -t -1
-      bind-key -n M-S-Right swap-window -t +1\; select-window -t +1
+      bind -n C-M-Left  previous-window
+      bind -n C-M-Right next-window
+      bind-key -n C-M-S-Left swap-window -t -1\; select-window -t -1
+      bind-key -n C-M-S-Right swap-window -t +1\; select-window -t +1
       bind -n M-0 select-window -t 0
       bind -n M-1 select-window -t 1
       bind -n M-2 select-window -t 2

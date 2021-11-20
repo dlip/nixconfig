@@ -31,6 +31,10 @@ local keymaps = {
   -- Redo
   {'n', 'l', '<C-r>'},
 
+  -- Navigate back/forward
+  {'n', '<A-left>', '<C-o>'},
+  {'n', '<A-right>', '<C-i>'},
+
   -- Quicker word change
   -- {'n', 'u<space>', 'ciw'},
 
