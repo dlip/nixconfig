@@ -10,7 +10,7 @@ let
     exec -a "$0" "$@"
   '';
   restic-dex = pkgs.writeShellScriptBin "restic-dex" ''
-    export RESTIC_REPOSITORY="rest:http://10.10.0.123:8000/metabox"
+    export RESTIC_REPOSITORY="rest:http://dex.local:8000/${hostname}"
     export RESTIC_PASSWORD="$(cat /root/restic-password)"
 
     ${pkgs.restic}/bin/restic $@
