@@ -4,6 +4,9 @@ local keymaps = {
   -- clear search highlighting
   {'n', '<esc>', '<cmd>nohl<CR>'},
 
+  -- easier colon
+  {'n', ';', ':', {noremap = true}},
+
   -- Escape sequence in terminal
   {'t', '<Esc><Esc>', '<C-\\><C-n>'},
 
@@ -24,19 +27,16 @@ local keymaps = {
   -- Paste without yank
   {'x', 'p', 'pgvy'},
 
-  -- Join with lowercase
+  -- Join with lowercase j
   {'n', 'j', 'J'},
   {'n', 'J', 'gJ'},
 
   -- Redo
-  {'n', 'l', '<C-r>'},
-
-  -- Navigate back/forward
-  {'n', '<A-left>', '<C-o>'},
-  {'n', '<A-right>', '<C-i>'},
+  {'n', 'U', '<C-r>'},
 
   -- Quicker word change
-  -- {'n', 'u<space>', 'ciw'},
+  {'n', 'c<space>', 'ciw'},
+  {'x', '<space>', 'iw'},
 
   -- Macros (replay the macro recorded by qq)
   {'n', 'Q', '@q'},
@@ -54,49 +54,26 @@ local keymaps = {
   {'n', '<Backspace>', 'X'},
 
   -- Enable repeating change of selection
-  {'x', 'gu', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>Ncgn'},
-  {'x', 'gU', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>NcgN'},
+  {'x', 'gl', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>Ncgn'},
+  {'x', 'gL', 'y/\\V<C-R>=escape(@",\'/\\\')<CR><CR>NcgN'},
 
   -- Paste in insert mode
   {'i', '<C-v>', '<C-r>"'},
 
   -- Hop
-  {'nxo', 'h', '<cmd>HopChar1AC<CR>'},
-  {'nxo', 'k', '<cmd>HopChar1BC<CR>'},
-
-  -- -- Barbar
-  -- {'n', '<A-w>', '<cmd>BufferPrevious<CR>'},
-  -- {'n', '<A-p>', '<cmd>BufferNext<CR>'},
-  -- -- Re-order to previous/next
-  -- {'n', '<A-W>', '<cmd>BufferMovePrevious<CR>'},
-  -- {'n', '<A-P>', ' <cmd>BufferMoveNext<CR>'},
-  -- -- Goto buffer in position...
-  -- {'n', '<A-1>', '<cmd>BufferGoto 1<CR>'},
-  -- {'n', '<A-2>', '<cmd>BufferGoto 2<CR>'},
-  -- {'n', '<A-3>', '<cmd>BufferGoto 3<CR>'},
-  -- {'n', '<A-4>', '<cmd>BufferGoto 4<CR>'},
-  -- {'n', '<A-5>', '<cmd>BufferGoto 5<CR>'},
-  -- {'n', '<A-6>', '<cmd>BufferGoto 6<CR>'},
-  -- {'n', '<A-7>', '<cmd>BufferGoto 7<CR>'},
-  -- {'n', '<A-8>', '<cmd>BufferGoto 8<CR>'},
-  -- {'n', '<A-9>', '<cmd>BufferGoto 9<CR>'},
-  -- {'n', '<A-0>', '<cmd>BufferLast<CR>'},
-  -- {'n', '<A-x>', '<cmd>BufferClose<CR>'},
-  -- {'n', '<A-a>', '<cmd>BufferPick<CR>'},
-
-  -- Tabs
-  -- {'n', '<A-c>', '<cmd>tabprevious<CR>'},
-  -- {'n', '<A-d>', '<cmd>tabnext<CR>'},
-  -- {'n', '<A-z>', '<cmd>tabclose<CR>'},
+  {'nxo', 'f', '<cmd>HopChar1AC<CR>'},
+  {'nxo', 'F', '<cmd>HopChar1BC<CR>'},
 
   -- LSP
-    {'n', 'gd', '<cmd>Telescope lsp_definitions<CR>'},
-    {'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>'},
+  {'n', 'gd', '<cmd>Telescope lsp_definitions<CR>'},
+  {'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>'},
 }
 
 for i = 1, #keymaps do
-  local opts = {noremap = true, silent = true}
   local keymap = keymaps[i]
+  local opts = {noremap = true, silent = true}
+  if keymap[4] then opts = keymap[4] end
+
   local modes = keymap[1]
   for j = 1, #modes do
     local mode = modes:sub(j,j)
