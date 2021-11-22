@@ -84,6 +84,7 @@
     skopeo
     sops
     sqlite
+    sshfs
     stack
     tcpdump
     tesseract4

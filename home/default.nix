@@ -26,13 +26,14 @@ in
       ./files
       ./fonts.nix
       ./git.nix
+      ./gpg-agent.nix
       ./lsp.nix
       ./neovim
       ./nnn
       ./packages.nix
       ./readline.nix
       ./starship.nix
-      ./services.nix
+      ./syncthing.nix
       ./tmux.nix
       ./zsh.nix
   ];
