@@ -48,6 +48,9 @@ easyocr(){
     nvidia-docker run -it --rm -v $HOME/.EasyOCR:/root/.EasyOCR -v $PWD:/workspace challisa/easyocr easyocr -l en --detail 0 --gpu true -f "$1"
 }
 
+jsontoyaml() {
+   xclip -o -selection clipboard | sed 's/\t//g' | yq -y | xclip -sel c
+}
 
 # Open project
 local projectdir="$HOME/code"

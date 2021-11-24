@@ -63,6 +63,7 @@
     nmap
     nodePackages.node2nix
     nodePackages.quicktype
+    nodePackages.reveal-md
     nodePackages.typescript
     nodejs
     nvimpager
@@ -97,6 +98,7 @@
     wget
     xdotool
     yarn
+    yq
     youtube-dl
     yubikey-manager
   ];

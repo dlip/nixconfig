@@ -13,10 +13,19 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local dpi   = require("beautiful.xresources").apply_dpi
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 require("env")
+
+theme = {}
+theme.font_name  = "FiraCode Nerd Font"
+theme.font_size  = dpi(15)
+theme.font       = theme.font_name .. " " .. theme.font_size
+
+-- awful.screen.set_auto_dpi_enabled( true )
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -143,6 +152,9 @@ awful.screen.connect_for_each_screen(function(s)
   -- Create a taglist widget
   s.mytaglist = awful.widget.taglist {
     screen  = s,
+    style = {
+      font = theme.font,
+    },
     filter  = awful.widget.taglist.filter.all,
     buttons = taglist_buttons
   }
@@ -150,27 +162,46 @@ awful.screen.connect_for_each_screen(function(s)
   -- Create a tasklist widget
   s.mytasklist = awful.widget.tasklist {
     screen  = s,
+    style = {
+      font = theme.font,
+    },
     filter  = awful.widget.tasklist.filter.currenttags,
     buttons = tasklist_buttons
   }
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ position = "top", screen = s })
+  s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(20) })
+
+  s.myspacer = wibox.widget {
+    spacing        = dpi(15),
+    spacing_widget = wibox.widget.separator,
+    layout         = wibox.layout.fixed.horizontal
+  }
+
+  s.mylogo = wibox.widget {
+    font = theme.font_name .. " " .. dpi(20),
+    markup = "  ",
+    align  = "center",
+    valign = "center",
+    widget = wibox.widget.textbox,
+  }
 
   -- Add widgets to the wibox
   s.mywibox:setup {
     layout = wibox.layout.align.horizontal,
     { -- Left widgets
       layout = wibox.layout.fixed.horizontal,
+      s.mylogo,
       s.mytaglist,
       s.mypromptbox,
+      s.mylayoutbox,
     },
     s.mytasklist, -- Middle widget
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
       wibox.widget.systray(),
       mytextclock,
-      s.mylayoutbox,
+      s.mylogo,
     },
   }
 end)
@@ -564,7 +595,8 @@ client.connect_signal("property::urgent", function(c)
 end)
 
 -- Gaps
-beautiful.useless_gap = 3
+beautiful.useless_gap = dpi(6)
+beautiful.systray_icon_spacing = dpi(3)
 beautiful.gap_single_client = false
 
 -- set wallpaper
@@ -577,19 +609,18 @@ screen.connect_signal("request::wallpaper", set_wallpaper)
 screen.connect_signal("property::geometry", set_wallpaper)
 -- remove borders on max
 screen.connect_signal("arrange", function (s)
-    local max = s.selected_tag.layout.name == "max"
-    local only_one = #s.tiled_clients == 1 -- use tiled_clients so that other floating windows don't affect the count
-    -- but iterate over clients instead of tiled_clients as tiled_clients doesn't include maximized windows
-    for _, c in pairs(s.clients) do
-        if (max or only_one) and not c.floating or c.maximized then
-            c.border_width = 0
-        else
-            c.border_width = beautiful.border_width
-        end
+  local max = s.selected_tag.layout.name == "max"
+  local only_one = #s.tiled_clients == 1 -- use tiled_clients so that other floating windows don't affect the count
+  -- but iterate over clients instead of tiled_clients as tiled_clients doesn't include maximized windows
+  for _, c in pairs(s.clients) do
+    if (max or only_one) and not c.floating or c.maximized then
+      c.border_width = 0
+    else
+      c.border_width = beautiful.border_width
     end
+  end
 end)
 -- Startup Commands
 awful.spawn.with_shell(xrandr_command)
 -- Enable dpms
 awful.spawn.with_shell("xset s on && xset s 1200")
-awful.screen.set_auto_dpi_enabled( true )
