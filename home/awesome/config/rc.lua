@@ -14,6 +14,7 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local hotkeys_popup = require("awful.hotkeys_popup")
 local dpi   = require("beautiful.xresources").apply_dpi
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -186,6 +187,11 @@ awful.screen.connect_for_each_screen(function(s)
     widget = wibox.widget.textbox,
   }
 
+  s.battery_widget = battery_widget({
+    path_to_icons = arc_icon_theme .. "/Arc/status/symbolic",
+    show_current_level = true,
+  })
+
   -- Add widgets to the wibox
   s.mywibox:setup {
     layout = wibox.layout.align.horizontal,
@@ -199,6 +205,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist, -- Middle widget
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
+      s.battery_widget,
       wibox.widget.systray(),
       mytextclock,
       s.mylogo,

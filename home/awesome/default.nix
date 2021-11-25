@@ -29,7 +29,9 @@ in {
   home.file = symlinkedFiles // {
     "${awesomeHome}/env.lua".text = ''
       xrandr_command = "${config.home.xrandrCommand}"
+      arc_icon_theme = "${pkgs.arc-icon-theme}"
     '';
+    "${awesomeHome}/awesome-wm-widgets".source = pkgs.awesome-wm-widgets;
   };
 
   home.packages = with pkgs; [
@@ -59,6 +61,10 @@ in {
   services.clipmenu.enable = true;
   services.flameshot.enable = true;
   services.volnoti.enable = true;
+  services.udiskie = {
+    enable = true;
+    tray = "always";
+  };
 
   services.picom = {
     enable = true;

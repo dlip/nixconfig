@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "arc-icon-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1479849780,
+        "narHash": "sha256-TfYtzwo69AC5hHbzEqB4r5Muqvn/eghCGSlmjMCFA7I=",
+        "owner": "horst3180",
+        "repo": "arc-icon-theme",
+        "rev": "55a575386a412544c3ed2b5617a61f842ee4ec15",
+        "type": "github"
+      },
+      "original": {
+        "owner": "horst3180",
+        "repo": "arc-icon-theme",
+        "type": "github"
+      }
+    },
     "asyncrun-vim": {
       "flake": false,
       "locked": {
@@ -29,6 +45,22 @@
       "original": {
         "owner": "Pocco81",
         "repo": "AutoSave.nvim",
+        "type": "github"
+      }
+    },
+    "awesome-wm-widgets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1637434800,
+        "narHash": "sha256-4m5sAI9DO04g5zAGzbxKy+p1eVO4DdMQvvqfF/J0zKU=",
+        "owner": "streetturtle",
+        "repo": "awesome-wm-widgets",
+        "rev": "d5308d3c7463d2a0915221103ca093727ee81f2e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "streetturtle",
+        "repo": "awesome-wm-widgets",
         "type": "github"
       }
     },
@@ -369,6 +401,8 @@
     },
     "root": {
       "inputs": {
+        "arc-icon-theme": "arc-icon-theme",
+        "awesome-wm-widgets": "awesome-wm-widgets",
         "emoji-menu": "emoji-menu",
         "envy-sh": "envy-sh",
         "flake-utils": "flake-utils",

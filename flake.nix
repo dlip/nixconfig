@@ -55,6 +55,14 @@
       url = "github:jarun/nnn";
       flake = false;
     };
+    awesome-wm-widgets = {
+      url = "github:streetturtle/awesome-wm-widgets";
+      flake = false;
+    };
+    arc-icon-theme = {
+      url = "github:horst3180/arc-icon-theme";
+      flake = false;
+    };
   };
 
   outputs =
@@ -70,6 +78,8 @@
     , neovim
     , vimPlugins
     , nnn-git
+    , awesome-wm-widgets
+    , arc-icon-theme
     }:
     let
       pkgsForSystem = system: import nixpkgs {
@@ -85,6 +95,8 @@
               makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
             });
             inherit nnn-git;
+            inherit awesome-wm-widgets;
+            inherit arc-icon-theme;
           })
           (import ./pkgs)
           neovim.overlay
@@ -151,6 +163,7 @@
               modules =
                 [
                   ./systems/metabox/configuration.nix
+                  kmonad.nixosModule
                   home-manager.nixosModules.home-manager
                   {
                     home-manager = {

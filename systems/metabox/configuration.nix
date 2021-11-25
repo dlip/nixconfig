@@ -21,6 +21,13 @@ in
     extraFlags = "--no-deploy traefik";
   };
 
+  services.kmonad = {
+    enable = true;
+    configfiles = [
+      ../../keymaps/kmonad/spaceonly7.kbd
+    ];
+  };
+
   services.xserver.screenSection = ''
     Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
     Option         "AllowIndirectGLXProtocol" "off"
