@@ -1,5 +1,4 @@
 {
-
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
@@ -17,7 +16,9 @@
     };
     vimPlugins = {
       url = "path:overlays/vimPlugins";
-      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    other = {
+      url = "path:overlays/other";
     };
     envy-sh = {
       url = "github:dlip/envy.sh";
@@ -51,18 +52,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    nnn-git = {
-      url = "github:jarun/nnn";
-      flake = false;
-    };
-    awesome-wm-widgets = {
-      url = "github:streetturtle/awesome-wm-widgets";
-      flake = false;
-    };
-    arc-icon-theme = {
-      url = "github:horst3180/arc-icon-theme";
-      flake = false;
-    };
   };
 
   outputs =
@@ -77,9 +66,7 @@
     , wally-cli
     , neovim
     , vimPlugins
-    , nnn-git
-    , awesome-wm-widgets
-    , arc-icon-theme
+    , other
     }:
     let
       pkgsForSystem = system: import nixpkgs {
@@ -94,13 +81,11 @@
             nnn = prev.nnn.overrideAttrs (oldAttrs: {
               makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
             });
-            inherit nnn-git;
-            inherit awesome-wm-widgets;
-            inherit arc-icon-theme;
           })
           (import ./pkgs)
           neovim.overlay
           vimPlugins.overlay
+          other.overlay
           kmonad.overlay
         ];
       };

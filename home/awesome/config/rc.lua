@@ -17,6 +17,9 @@ local dpi   = require("beautiful.xresources").apply_dpi
 local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
 local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
 local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
+local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -95,6 +98,19 @@ awful.layout.layouts = {
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+local cw = calendar_widget({
+    theme = 'nord',
+    placement = 'top_right',
+    start_sunday = true,
+    radius = 8,
+-- with customized next/previous (see table above)
+    previous_month_button = 1,
+    next_month_button = 3,
+})
+mytextclock:connect_signal("button::press",
+    function(_, _, _, button)
+        if button == 1 then cw.toggle() end
+    end)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -173,16 +189,16 @@ awful.screen.connect_for_each_screen(function(s)
   }
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(20) })
+  s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(25) })
 
   s.myspacer = wibox.widget {
-    spacing        = dpi(15),
+    spacing        = dpi(115),
     spacing_widget = wibox.widget.separator,
     layout         = wibox.layout.fixed.horizontal
   }
 
   s.mylogo = wibox.widget {
-    font = theme.font_name .. " " .. dpi(20),
+    font = theme.font_name .. " " .. dpi(16),
     markup = "  ",
     align  = "center",
     valign = "center",
@@ -203,6 +219,7 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist, -- Middle widget
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
+      fs_widget(),
       cpu_widget({
         width = 70,
         step_width = 2,
@@ -218,7 +235,10 @@ awful.screen.connect_for_each_screen(function(s)
       s.battery_widget,
       wibox.widget.systray(),
       mytextclock,
-      s.mylogo,
+      weather_widget({
+        coordinates = {-33.92842728967005, 150.9185241383851},
+        api_key = "476b81fdcd2cc9ab8d99967ea1c39fee",
+      }),
     },
   }
 end)
