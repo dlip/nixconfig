@@ -236,6 +236,7 @@ awful.screen.connect_for_each_screen(function(s)
       batteryarc_widget(),
       s.spacer,
       wibox.widget.systray(),
+      s.spacer,
       mytextclock,
       weather_widget{
         coordinates = {-33.92842728967005, 150.9185241383851},
