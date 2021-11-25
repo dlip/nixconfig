@@ -32,6 +32,7 @@ in {
       arc_icon_theme = "${pkgs.arc-icon-theme}"
     '';
     "${awesomeHome}/awesome-wm-widgets".source = pkgs.awesome-wm-widgets;
+    "${awesomeHome}/json.lua".source = "${pkgs.json-lua}/json.lua";
   };
 
   home.packages = with pkgs; [
