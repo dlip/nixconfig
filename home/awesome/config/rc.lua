@@ -208,7 +208,7 @@ awful.screen.connect_for_each_screen(function(s)
       wibox.widget.systray(),
       mytextclock,
       weather_widget({
-        coordinates = {46.204400, 6.143200},
+        coordinates = {-33.92842728967005, 150.9185241383851},
         api_key = "476b81fdcd2cc9ab8d99967ea1c39fee",
       }),
     },
