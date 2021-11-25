@@ -20,6 +20,8 @@ local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -191,12 +193,6 @@ awful.screen.connect_for_each_screen(function(s)
   -- Create the wibox
   s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(25) })
 
-  s.myspacer = wibox.widget {
-    spacing        = dpi(115),
-    spacing_widget = wibox.widget.separator,
-    layout         = wibox.layout.fixed.horizontal
-  }
-
   s.mylogo = wibox.widget {
     font = theme.font_name .. " " .. dpi(16),
     markup = "  ",
@@ -205,6 +201,7 @@ awful.screen.connect_for_each_screen(function(s)
     widget = wibox.widget.textbox,
   }
 
+  s.spacer = wibox.widget.textbox("  ")
 
   -- Add widgets to the wibox
   s.mywibox:setup {
@@ -219,26 +216,31 @@ awful.screen.connect_for_each_screen(function(s)
     s.mytasklist, -- Middle widget
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
-      fs_widget(),
-      cpu_widget({
-        width = 70,
+      cpu_widget{
+        width = dpi(70),
         step_width = 2,
         step_spacing = 0,
         color = '#434c5e'
-      }),
+      },
       ram_widget(),
-      battery_widget({
-        path_to_icons = arc_icon_theme .. "/Arc/status/symbolic/",
-        font = theme.font,
-        show_current_level = true,
-      }),
+      fs_widget(),
       s.battery_widget,
+      -- battery_widget({
+      --   path_to_icons = arc_icon_theme .. "/Arc/status/symbolic/",
+      --   font = theme.font,
+      --   -- show_current_level = true,
+      -- }),
+      batteryarc_widget(),
+      s.spacer,
       wibox.widget.systray(),
       mytextclock,
-      weather_widget({
+      weather_widget{
         coordinates = {-33.92842728967005, 150.9185241383851},
         api_key = "476b81fdcd2cc9ab8d99967ea1c39fee",
-      }),
+      },
+      logout_menu_widget{
+        onlock = function() awful.spawn.with_shell('lock-screen') end
+      }
     },
   }
 end)
