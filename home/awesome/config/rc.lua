@@ -20,7 +20,6 @@ local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
 local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
 local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
 local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
-local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
 local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
 
 -- Enable hotkeys help widget for VIM and other apps
@@ -214,11 +213,11 @@ awful.screen.connect_for_each_screen(function(s)
       s.spacer,
       s.mylayoutbox,
       s.spacer,
-
     },
     s.mytasklist, -- Middle widget
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
+      s.spacer,
       cpu_widget{
         width = dpi(70),
         step_width = 2,
@@ -227,13 +226,10 @@ awful.screen.connect_for_each_screen(function(s)
       },
       ram_widget(),
       fs_widget(),
-      s.battery_widget,
-      -- battery_widget({
-      --   path_to_icons = arc_icon_theme .. "/Arc/status/symbolic/",
-      --   font = theme.font,
-      --   -- show_current_level = true,
-      -- }),
-      batteryarc_widget(),
+      battery_widget({
+        path_to_icons = arc_icon_theme .. "/Arc/status/symbolic/",
+        show_current_level = true,
+      }),
       s.spacer,
       wibox.widget.systray(),
       s.spacer,
