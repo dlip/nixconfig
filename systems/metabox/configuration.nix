@@ -36,18 +36,18 @@ in
 
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.prime = {
-    # sync.enable = true;
-    offload.enable = true;
+    sync.enable = true;
+    # offload.enable = true;
     nvidiaBusId = "PCI:1:0:0";
     intelBusId = "PCI:0:2:0";
   };
 
-  specialisation = {
-    external-display.configuration = {
-      system.nixos.tags = [ "external-display" ];
-      hardware.nvidia.prime.offload.enable = lib.mkForce false;
-      hardware.nvidia.powerManagement.enable = lib.mkForce false;
-    };
-  };
+  # specialisation = {
+  #   external-display.configuration = {
+  #     system.nixos.tags = [ "external-display" ];
+  #     hardware.nvidia.prime.offload.enable = lib.mkForce false;
+  #     hardware.nvidia.powerManagement.enable = lib.mkForce false;
+  #   };
+  # };
 
 }
