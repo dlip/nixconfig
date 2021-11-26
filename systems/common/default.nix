@@ -230,12 +230,6 @@ in
     };
   };
 
-  services.syncthing = {
-    enable = true;
-    user = "dane";
-    group = "users";
-  };
-
   services.espanso.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are

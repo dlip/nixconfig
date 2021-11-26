@@ -13,10 +13,27 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local hotkeys_popup = require("awful.hotkeys_popup")
+local dpi   = require("beautiful.xresources").apply_dpi
+local battery_widget = require("awesome-wm-widgets.battery-widget.battery")
+local cpu_widget = require("awesome-wm-widgets.cpu-widget.cpu-widget")
+local ram_widget = require("awesome-wm-widgets.ram-widget.ram-widget")
+local weather_widget = require("awesome-wm-widgets.weather-widget.weather")
+local fs_widget = require("awesome-wm-widgets.fs-widget.fs-widget")
+local calendar_widget = require("awesome-wm-widgets.calendar-widget.calendar")
+local batteryarc_widget = require("awesome-wm-widgets.batteryarc-widget.batteryarc")
+local logout_menu_widget = require("awesome-wm-widgets.logout-menu-widget.logout-menu")
+
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
 require("env")
+
+theme = {}
+theme.font_name  = "FiraCode Nerd Font"
+theme.font_size  = dpi(15)
+theme.font       = theme.font_name .. " " .. theme.font_size
+
+-- awful.screen.set_auto_dpi_enabled( true )
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -83,6 +100,19 @@ awful.layout.layouts = {
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
+local cw = calendar_widget({
+    theme = 'nord',
+    placement = 'top_right',
+    start_sunday = true,
+    radius = 8,
+-- with customized next/previous (see table above)
+    previous_month_button = 1,
+    next_month_button = 3,
+})
+mytextclock:connect_signal("button::press",
+    function(_, _, _, button)
+        if button == 1 then cw.toggle() end
+    end)
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -143,6 +173,9 @@ awful.screen.connect_for_each_screen(function(s)
   -- Create a taglist widget
   s.mytaglist = awful.widget.taglist {
     screen  = s,
+    style = {
+      font = theme.font,
+    },
     filter  = awful.widget.taglist.filter.all,
     buttons = taglist_buttons
   }
@@ -150,27 +183,68 @@ awful.screen.connect_for_each_screen(function(s)
   -- Create a tasklist widget
   s.mytasklist = awful.widget.tasklist {
     screen  = s,
+    style = {
+      font = theme.font,
+    },
     filter  = awful.widget.tasklist.filter.currenttags,
     buttons = tasklist_buttons
   }
 
   -- Create the wibox
-  s.mywibox = awful.wibar({ position = "top", screen = s })
+  s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(25) })
+
+  s.mylogo = wibox.widget {
+    font = theme.font_name .. " " .. dpi(16),
+    markup = "  ",
+    align  = "center",
+    valign = "center",
+    widget = wibox.widget.textbox,
+  }
+
+  s.spacer = wibox.widget.textbox("  ")
 
   -- Add widgets to the wibox
   s.mywibox:setup {
     layout = wibox.layout.align.horizontal,
     { -- Left widgets
       layout = wibox.layout.fixed.horizontal,
+      s.mylogo,
       s.mytaglist,
       s.mypromptbox,
+      s.spacer,
+      s.mylayoutbox,
+      s.spacer,
+
     },
     s.mytasklist, -- Middle widget
     { -- Right widgets
       layout = wibox.layout.fixed.horizontal,
+      cpu_widget{
+        width = dpi(70),
+        step_width = 2,
+        step_spacing = 0,
+        color = '#434c5e'
+      },
+      ram_widget(),
+      fs_widget(),
+      s.battery_widget,
+      -- battery_widget({
+      --   path_to_icons = arc_icon_theme .. "/Arc/status/symbolic/",
+      --   font = theme.font,
+      --   -- show_current_level = true,
+      -- }),
+      batteryarc_widget(),
+      s.spacer,
       wibox.widget.systray(),
+      s.spacer,
       mytextclock,
-      s.mylayoutbox,
+      weather_widget{
+        coordinates = {-33.92842728967005, 150.9185241383851},
+        api_key = "476b81fdcd2cc9ab8d99967ea1c39fee",
+      },
+      logout_menu_widget{
+        onlock = function() awful.spawn.with_shell('lock-screen') end
+      }
     },
   }
 end)
@@ -564,7 +638,8 @@ client.connect_signal("property::urgent", function(c)
 end)
 
 -- Gaps
-beautiful.useless_gap = 3
+beautiful.useless_gap = dpi(6)
+beautiful.systray_icon_spacing = dpi(3)
 beautiful.gap_single_client = false
 
 -- set wallpaper
@@ -577,19 +652,18 @@ screen.connect_signal("request::wallpaper", set_wallpaper)
 screen.connect_signal("property::geometry", set_wallpaper)
 -- remove borders on max
 screen.connect_signal("arrange", function (s)
-    local max = s.selected_tag.layout.name == "max"
-    local only_one = #s.tiled_clients == 1 -- use tiled_clients so that other floating windows don't affect the count
-    -- but iterate over clients instead of tiled_clients as tiled_clients doesn't include maximized windows
-    for _, c in pairs(s.clients) do
-        if (max or only_one) and not c.floating or c.maximized then
-            c.border_width = 0
-        else
-            c.border_width = beautiful.border_width
-        end
+  local max = s.selected_tag.layout.name == "max"
+  local only_one = #s.tiled_clients == 1 -- use tiled_clients so that other floating windows don't affect the count
+  -- but iterate over clients instead of tiled_clients as tiled_clients doesn't include maximized windows
+  for _, c in pairs(s.clients) do
+    if (max or only_one) and not c.floating or c.maximized then
+      c.border_width = 0
+    else
+      c.border_width = beautiful.border_width
     end
+  end
 end)
 -- Startup Commands
 awful.spawn.with_shell(xrandr_command)
 -- Enable dpms
 awful.spawn.with_shell("xset s on && xset s 1200")
-awful.screen.set_auto_dpi_enabled( true )

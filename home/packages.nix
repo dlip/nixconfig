@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    acpi
     appimage-run
     autoreconfHook
     avrdude
@@ -63,6 +64,7 @@
     nmap
     nodePackages.node2nix
     nodePackages.quicktype
+    nodePackages.reveal-md
     nodePackages.typescript
     nodejs
     nvimpager
@@ -84,6 +86,7 @@
     skopeo
     sops
     sqlite
+    sshfs
     stack
     tcpdump
     tesseract4
@@ -96,6 +99,7 @@
     wget
     xdotool
     yarn
+    yq
     youtube-dl
     yubikey-manager
   ];

@@ -50,6 +50,12 @@ rec {
     '';
   };
 
+  services.syncthing = {
+    enable = true;
+    user = "dane";
+    group = "users";
+  };
+
   users.users.tv = {
     isNormalUser = true;
     initialPassword = "password";
