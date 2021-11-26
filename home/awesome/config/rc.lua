@@ -28,8 +28,8 @@ require("awful.hotkeys_popup.keys")
 require("env")
 
 theme = {}
-theme.font_name  = "FiraCode Nerd Font"
-theme.font_size  = dpi(15)
+theme.font_name  = "Noto Sans"
+theme.font_size  = dpi(18)
 theme.font       = theme.font_name .. " " .. theme.font_size
 
 -- awful.screen.set_auto_dpi_enabled( true )
@@ -193,7 +193,7 @@ awful.screen.connect_for_each_screen(function(s)
   s.mywibox = awful.wibar({ position = "top", screen = s, height = dpi(25) })
 
   s.mylogo = wibox.widget {
-    font = theme.font_name .. " " .. dpi(16),
+    font  = "FiraCode Nerd Font " .. dpi(18),
     markup = "  ",
     align  = "center",
     valign = "center",
@@ -226,10 +226,6 @@ awful.screen.connect_for_each_screen(function(s)
       },
       ram_widget(),
       fs_widget(),
-      battery_widget({
-        path_to_icons = arc_icon_theme .. "/Arc/status/symbolic/",
-        show_current_level = true,
-      }),
       s.spacer,
       wibox.widget.systray(),
       s.spacer,
@@ -238,6 +234,10 @@ awful.screen.connect_for_each_screen(function(s)
         coordinates = {-33.92842728967005, 150.9185241383851},
         api_key = "476b81fdcd2cc9ab8d99967ea1c39fee",
       },
+      battery_widget({
+        path_to_icons = arc_icon_theme .. "/Arc/status/symbolic/",
+        show_current_level = true,
+      }),
       logout_menu_widget{
         onlock = function() awful.spawn.with_shell('lock-screen') end
       }
