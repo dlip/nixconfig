@@ -233,6 +233,8 @@ awful.screen.connect_for_each_screen(function(s)
       weather_widget{
         coordinates = {-33.92842728967005, 150.9185241383851},
         api_key = "476b81fdcd2cc9ab8d99967ea1c39fee",
+        show_hourly_forecast = true,
+        show_daily_forecast = true,
       },
       battery_widget({
         path_to_icons = arc_icon_theme .. "/Arc/status/symbolic/",
