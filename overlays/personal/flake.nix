@@ -36,14 +36,15 @@
     }:
     {
       overlay = final: prev: {
-        envy-sh = envy-sh.defaultPackage.${final.stdenv.system};
+        envy-sh = envy-sh.defaultPackage.${final.system};
         emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
         power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
-        wally-cli = wally-cli.defaultPackage.${final.stdenv.system};
+        wally-cli = wally-cli.defaultPackage.${final.system};
         nnn = prev.nnn.overrideAttrs (oldAttrs: {
           makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
         });
         myNodePackages = final.callPackage ./nodePackages { };
+        scripts = final.callPackage ./scripts { };
         skyscraper = final.callPackage ./skyscraper { };
         solang = final.callPackage ./solang { };
       };

@@ -21,20 +21,20 @@ in
   };
 
   imports = [
-      #./emacs.nix
-      ./espanso.nix
-      ./files
-      ./fonts.nix
-      ./git.nix
-      ./gpg-agent.nix
-      ./lsp.nix
-      ./neovim
-      ./nnn
-      ./packages.nix
-      ./readline.nix
-      ./starship.nix
-      ./syncthing.nix
-      ./tmux.nix
-      ./zsh.nix
+    #./emacs.nix
+    ./espanso.nix
+    ./files
+    ./fonts.nix
+    ./git.nix
+    ./gpg-agent.nix
+    ./lsp.nix
+    ./neovim
+    ./nnn
+    ./packages.nix
+    ./readline.nix
+    ./starship.nix
+    ./syncthing.nix
+    ./tmux.nix
+    ./zsh.nix
   ];
 }
