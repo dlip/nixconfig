@@ -134,9 +134,11 @@
         "bats-file": "bats-file",
         "bats-support": "bats-support",
         "flake-utils": [
+          "personal",
           "flake-utils"
         ],
         "nixpkgs": [
+          "personal",
           "nixpkgs"
         ]
       },
@@ -192,11 +194,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1637875789,
-        "narHash": "sha256-kwW26kGhqNsWpTz+prw/pAfqz673GojbxZuB0boc1eM=",
+        "lastModified": 1637915295,
+        "narHash": "sha256-jWW2Q83O4O/TV3PDsZkEo0bhKzlLBhJ5CGqQFMM05lE=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "579f2e8bebb954a103a96b905c27b10f15ef38c7",
+        "rev": "a28cf79a78040b4e6d8d50a39760a296d5e95dd6",
         "type": "github"
       },
       "original": {
@@ -273,11 +275,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1637867202,
-        "narHash": "sha256-x/ZYx/yd07GfjUIO/976m9GDTCZMU6Bq9XfV3XfQNN4=",
+        "lastModified": 1637944485,
+        "narHash": "sha256-78FOxFL8UonKZbueovs3Qc55KkTjc5mbqwcKYI/lOqw=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "72d62aa6aa274835aebee9e78dd9b05eef4e5039",
+        "rev": "afbf89dc0120b1db5782a0bf807dc7c8db70ccf6",
         "type": "github"
       },
       "original": {
@@ -367,23 +369,6 @@
         "type": "github"
       }
     },
-    "other": {
-      "inputs": {
-        "arc-icon-theme": "arc-icon-theme",
-        "awesome-wm-widgets": "awesome-wm-widgets",
-        "json-lua": "json-lua",
-        "nnn-git": "nnn-git"
-      },
-      "locked": {
-        "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "overlays/other",
-        "type": "path"
-      },
-      "original": {
-        "path": "overlays/other",
-        "type": "path"
-      }
-    },
     "package-info-nvim": {
       "flake": false,
       "locked": {
@@ -400,6 +385,29 @@
         "type": "github"
       }
     },
+    "personal": {
+      "inputs": {
+        "emoji-menu": "emoji-menu",
+        "envy-sh": "envy-sh",
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "power-menu": "power-menu",
+        "wally-cli": "wally-cli"
+      },
+      "locked": {
+        "narHash": "sha256-FJ9qa9Hh808voz9b5K0jWJW/05MgwaHr/3vwsOHue9k=",
+        "path": "overlays/personal",
+        "type": "path"
+      },
+      "original": {
+        "path": "overlays/personal",
+        "type": "path"
+      }
+    },
     "power-menu": {
       "flake": false,
       "locked": {
@@ -414,6 +422,23 @@
         "owner": "jluttine",
         "repo": "rofi-power-menu",
         "type": "github"
+      }
+    },
+    "repos": {
+      "inputs": {
+        "arc-icon-theme": "arc-icon-theme",
+        "awesome-wm-widgets": "awesome-wm-widgets",
+        "json-lua": "json-lua",
+        "nnn-git": "nnn-git"
+      },
+      "locked": {
+        "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
+        "path": "overlays/repos",
+        "type": "path"
+      },
+      "original": {
+        "path": "overlays/repos",
+        "type": "path"
       }
     },
     "rest-nvim": {
@@ -434,27 +459,24 @@
     },
     "root": {
       "inputs": {
-        "emoji-menu": "emoji-menu",
-        "envy-sh": "envy-sh",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "kmonad": "kmonad",
         "neovim": "neovim",
         "nixpkgs": "nixpkgs",
-        "other": "other",
-        "power-menu": "power-menu",
-        "vimPlugins": "vimPlugins",
-        "wally-cli": "wally-cli"
+        "personal": "personal",
+        "repos": "repos",
+        "vimPlugins": "vimPlugins"
       }
     },
     "telescope-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1637707885,
-        "narHash": "sha256-sYh4ORqKtdohytBc4/y0SXxm1/fcwPMlSKQi3pk+9mI=",
+        "lastModified": 1637963031,
+        "narHash": "sha256-N0sa8Y9vn/2P8B7O4P/5DBlDYKDyz9uORmATg/WQewY=",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",
-        "rev": "1c57cc6140644695f0d9bd71b63de45feeca6ae7",
+        "rev": "b415e862bf248d66c40e242de4a0c76c68e278f1",
         "type": "github"
       },
       "original": {
@@ -494,7 +516,7 @@
         "vim-delve": "vim-delve"
       },
       "locked": {
-        "narHash": "sha256-KTquYfvLC6cYxddqLrSJ6Xw+ksMTywC42Dp53ln++3E=",
+        "narHash": "sha256-ay+so6dl389xtneJ7E1EFwOk+bKC++y8YCN1ZwEwS4Y=",
         "path": "overlays/vimPlugins",
         "type": "path"
       },
@@ -506,9 +528,11 @@
     "wally-cli": {
       "inputs": {
         "flake-utils": [
+          "personal",
           "flake-utils"
         ],
         "nixpkgs": [
+          "personal",
           "nixpkgs"
         ]
       },

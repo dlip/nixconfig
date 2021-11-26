@@ -10,6 +10,10 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -17,33 +21,16 @@
     vimPlugins = {
       url = "path:overlays/vimPlugins";
     };
-    other = {
-      url = "path:overlays/other";
+    repos = {
+      url = "path:overlays/repos";
     };
-    envy-sh = {
-      url = "github:dlip/envy.sh";
+    personal = {
+      url = "path:overlays/personal";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
-    };
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     kmonad = {
       url = "github:kmonad/kmonad?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
-    emoji-menu = {
-      url = "github:jchook/emoji-menu";
-      flake = false;
-    };
-    power-menu = {
-      url = "github:jluttine/rofi-power-menu";
-      flake = false;
-    };
-    wally-cli = {
-      url = "github:zsa/wally-cli";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
@@ -58,34 +45,22 @@
     { self
     , nixpkgs
     , home-manager
-    , envy-sh
     , flake-utils
     , kmonad
-    , emoji-menu
-    , power-menu
-    , wally-cli
     , neovim
     , vimPlugins
-    , other
+    , repos
+    , personal
     }:
     let
       pkgsForSystem = system: import nixpkgs {
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          (final: prev: {
-            envy-sh = envy-sh.defaultPackage.${system};
-            emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
-            power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
-            wally-cli = wally-cli.defaultPackage.${system};
-            nnn = prev.nnn.overrideAttrs (oldAttrs: {
-              makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
-            });
-          })
-          (import ./pkgs)
+          personal.overlay
           neovim.overlay
           vimPlugins.overlay
-          other.overlay
+          repos.overlay
           kmonad.overlay
         ];
       };

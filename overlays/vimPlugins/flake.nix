@@ -48,16 +48,16 @@
 
   outputs =
     inputs: {
-      overlay = self: super: {
-        vimPlugins = super.vimPlugins // builtins.listToAttrs (map
+      overlay = final: prev: {
+        vimPlugins = prev.vimPlugins // builtins.listToAttrs (map
           (input: {
             name = input;
-            value = (self.vimUtils.buildVimPluginFrom2Nix {
+            value = (final.vimUtils.buildVimPluginFrom2Nix {
               name = input;
               src = (builtins.getAttr input inputs);
             });
           })
-          (builtins.attrNames (self.lib.filterAttrs (n: v: n != "self") inputs)));
+          (builtins.attrNames (final.lib.filterAttrs (n: v: n != "self") inputs)));
       };
     };
 }
