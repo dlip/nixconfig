@@ -1,6 +1,4 @@
 { config, pkgs, lib, ... }:
-let aliases = builtins.readFile ./aliases.sh;
-in
 {
   programs.zsh = {
     enable = true;
@@ -36,7 +34,7 @@ in
       export GPG_TTY="$(tty)"
       gpg-connect-agent /bye
       export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
-    '' + aliases;
+    '';
 
     oh-my-zsh = {
       enable = true;
