@@ -324,11 +324,11 @@
     "nnn-git": {
       "flake": false,
       "locked": {
-        "lastModified": 1637774282,
-        "narHash": "sha256-t1Sub/6V7qqoaiCJctLbmJXusjWWZcvsU6ripWl1OsA=",
+        "lastModified": 1638008007,
+        "narHash": "sha256-c2hKDICOrIP+zRK2kDuAQ074yYiaPSgTLCLZEh3fpHM=",
         "owner": "jarun",
         "repo": "nnn",
-        "rev": "1bc234b0eba9d9b385962a8c74a6e3a94397f67e",
+        "rev": "eb6277585201971ace5d038619ee901aaba44bfc",
         "type": "github"
       },
       "original": {
