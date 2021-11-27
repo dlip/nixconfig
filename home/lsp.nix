@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    codespell
     haskellPackages.haskell-language-server
     myNodePackages.markserv
     nixfmt
@@ -16,6 +17,7 @@
     nodePackages.yaml-language-server
     proselint
     rnix-lsp
+    shfmt
     solang
     stylua
     sumneko-lua-language-server
