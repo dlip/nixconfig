@@ -1,4 +1,3 @@
-
 local g = vim.g                 -- global variables
 
 g.which_key_timeout = 100

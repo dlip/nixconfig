@@ -57,6 +57,7 @@ in
           diffview-nvim
           editorconfig-vim
           fire-nvim
+          format-nvim
           friendly-snippets
           glow-nvim
           gv-vim

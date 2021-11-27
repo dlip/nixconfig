@@ -12,6 +12,10 @@
       url = "github:glacambre/firenvim";
       flake = false;
     };
+    format-nvim = {
+      url = "github:lukas-reineke/format.nvim";
+      flake = false;
+    };
     lspkind-nvim = {
       url = "github:onsails/lspkind-nvim";
       flake = false;

@@ -55,12 +55,12 @@ let
     # Open project
     p = ''
       filter_params=""
-      if [ -n "$1" ]; then
+      if [ -n "''${1:-}" ]; then
           filter_params="-q $1"
       fi
       repo_path=$(cat ${projectfile} | fzf $filter_params --select-1)
       if [ -n "$repo_path" ]; then
-          cd "${projectdir}/$repo_path"
+          cd ${projectdir}/$repo_path
           tmux split-window -p 20
           tmux select-pane -U
           nvim
@@ -79,5 +79,8 @@ let
   };
 in
 {
-  scripts = builtins.mapAttrs (name: val: writeShellScriptBin name val) scripts;
+  scripts = builtins.mapAttrs (name: val: writeShellScriptBin name ''
+    set -euo pipefail
+    ${val}
+  '') scripts;
 }

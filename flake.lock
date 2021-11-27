@@ -187,6 +187,22 @@
         "type": "github"
       }
     },
+    "format-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1625986390,
+        "narHash": "sha256-fYyUStur+cCKx2uDdrsCBct1/xDTIOaxAkm8RwZMuFg=",
+        "owner": "lukas-reineke",
+        "repo": "format.nvim",
+        "rev": "c46ab8b46100e26fce4d6ce69a94d4cea8b9f4d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lukas-reineke",
+        "repo": "format.nvim",
+        "type": "github"
+      }
+    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -340,11 +356,11 @@
     "nui-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1636662099,
-        "narHash": "sha256-VaDSWpfk98BexsZpVoNlfNh+CpvuP3SSfmAu/PQfb1s=",
+        "lastModified": 1638004677,
+        "narHash": "sha256-VENI/DjhcTSBW2yN8+Fa5YQ+z8nIeKnj8+UKzuwHSWw=",
         "owner": "MunifTanjim",
         "repo": "nui.nvim",
-        "rev": "e940b57f30f6035df690fb24b1e5c93ae6aafcd6",
+        "rev": "a37e38b6801ccdbffb4b69507aa234b8d0509977",
         "type": "github"
       },
       "original": {
@@ -399,7 +415,7 @@
         "wally-cli": "wally-cli"
       },
       "locked": {
-        "narHash": "sha256-SUofgc2HAGiLShMNFDGf3NwJUNphS+y2AFnrJLvc71g=",
+        "narHash": "sha256-8KrU0SXB+U7tIruTdLKueCDpOikBbSsLtB5DLwMsZL8=",
         "path": "overlays/personal",
         "type": "path"
       },
@@ -466,7 +482,7 @@
         "nixpkgs": "nixpkgs",
         "personal": "personal",
         "repos": "repos",
-        "vimPlugins": "vimPlugins"
+        "vim-plugins": "vim-plugins"
       }
     },
     "telescope-nvim": {
@@ -501,11 +517,12 @@
         "type": "github"
       }
     },
-    "vimPlugins": {
+    "vim-plugins": {
       "inputs": {
         "asyncrun-vim": "asyncrun-vim",
         "autosave-nvim": "autosave-nvim",
         "fire-nvim": "fire-nvim",
+        "format-nvim": "format-nvim",
         "lspkind-nvim": "lspkind-nvim",
         "nnn-nvim": "nnn-nvim",
         "nui-nvim": "nui-nvim",
@@ -516,7 +533,7 @@
         "vim-delve": "vim-delve"
       },
       "locked": {
-        "narHash": "sha256-ay+so6dl389xtneJ7E1EFwOk+bKC++y8YCN1ZwEwS4Y=",
+        "narHash": "sha256-JTKiBpfvt/hHt9GIjKr1nMcTUlCx77dhYuKRrjEeO70=",
         "path": "overlays/vimPlugins",
         "type": "path"
       },

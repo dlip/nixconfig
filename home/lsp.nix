@@ -1,13 +1,13 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     haskellPackages.haskell-language-server
-    luaformatter
     myNodePackages.markserv
     nixfmt
     nixpkgs-fmt
     nodePackages.bash-language-server
     # nodePackages.dockerfile-language-server-nodejs
     nodePackages.eslint_d
+    nodePackages.lua-fmt
     nodePackages.prettier
     nodePackages.pyright
     nodePackages.typescript-language-server

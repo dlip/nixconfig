@@ -39,7 +39,7 @@ let g:vimwiki_list = [{'path': '~/notes/vimwiki/',
 let g:vimwiki_key_mappings = { 'all_maps': 0, }
 
 " https://github.com/glacambre/firenvim
-let g:firenvim_config = { 
+let g:firenvim_config = {
     \ 'globalSettings': {
         \ 'alt': 'all',
     \  },
@@ -97,6 +97,12 @@ autocmd BufLeave term://* stopinsert
 " remove whitespace on save
 " autocmd BufWritePre * :%s/\s\+$//e
 
+" autoformat
+" augroup Format
+"     autocmd!
+"     autocmd BufWritePost * FormatWrite
+" augroup END
+
 " Restore enter functionality in quickfix window
 autocmd FileType qf nmap <buffer> <CR> <CR>
 
@@ -122,5 +128,6 @@ autocmd BufEnter *.sol :setlocal filetype=solidity
 
 " Set package.json local key mappings
 autocmd BufEnter package.json :lua package_json_mappings()
+
 
 lua require'my.init'

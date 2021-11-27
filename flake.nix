@@ -18,7 +18,7 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vimPlugins = {
+    vim-plugins = {
       url = "path:overlays/vimPlugins";
     };
     repos = {
@@ -48,7 +48,7 @@
     , flake-utils
     , kmonad
     , neovim
-    , vimPlugins
+    , vim-plugins
     , repos
     , personal
     }:
@@ -59,7 +59,7 @@
         overlays = [
           personal.overlay
           neovim.overlay
-          vimPlugins.overlay
+          vim-plugins.overlay
           repos.overlay
           kmonad.overlay
         ];
