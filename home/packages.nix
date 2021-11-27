@@ -52,7 +52,7 @@
     ledger
     ledger-autosync
     lldb
-    lua
+    (lua.withPackages(ps: with ps; [ luacheck ]))
     massren
     mdl
     ncdu

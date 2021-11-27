@@ -7,7 +7,6 @@
     nodePackages.bash-language-server
     # nodePackages.dockerfile-language-server-nodejs
     nodePackages.eslint_d
-    nodePackages.lua-fmt
     nodePackages.prettier
     nodePackages.pyright
     nodePackages.typescript-language-server
@@ -18,6 +17,7 @@
     proselint
     rnix-lsp
     solang
+    stylua
     sumneko-lua-language-server
     terraform-ls
     tree-sitter

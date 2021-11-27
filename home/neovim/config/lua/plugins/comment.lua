@@ -1,6 +1,6 @@
 -- https://github.com/numtostr/comment.nvim/
 
-require('Comment').setup({
+require("Comment").setup({
   ---@type boolean
   ---Add a space b/w comment and the line
   padding = true,
@@ -34,18 +34,18 @@ require('Comment').setup({
   ---@type table
   toggler = {
     ---line-comment keymap
-    line = 'gcc',
+    line = "gcc",
     ---block-comment keymap
-    block = 'gbc',
+    block = "gbc",
   },
 
   ---LHS of operator-pending mapping in NORMAL + VISUAL mode
   ---@type table
   opleader = {
     ---line-comment keymap
-    line = 'gc',
+    line = "gc",
     ---block-comment keymap
-    block = 'gb',
+    block = "gb",
   },
 
   ---Pre-hook, called before commenting the line

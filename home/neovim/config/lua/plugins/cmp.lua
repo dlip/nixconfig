@@ -1,5 +1,5 @@
-local cmp = require'cmp'
-local lspkind = require('lspkind')
+local cmp = require("cmp")
+local lspkind = require("lspkind")
 local luasnip = require("luasnip")
 
 local has_words_before = function()
@@ -10,15 +10,15 @@ end
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      require("luasnip").lsp_expand(args.body)
     end,
   },
   mapping = {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<C-e>"] = cmp.mapping.close(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -42,16 +42,16 @@ cmp.setup({
     end, { "i", "s" }),
   },
   sources = {
-    { name = 'luasnip' },
-    { name = 'nvim_lsp' },
-    { name = 'lua' },
-    { name = 'path' },
+    { name = "luasnip" },
+    { name = "nvim_lsp" },
+    { name = "lua" },
+    { name = "path" },
     { name = "neorg" },
-    { name = 'buffer', keyword_length = 5 },
+    { name = "buffer", keyword_length = 5 },
   },
   formatting = {
-    format = lspkind.cmp_format({with_text = true, maxwidth = 50})
+    format = lspkind.cmp_format({ with_text = true, maxwidth = 50 }),
   },
 })
 
-require('nvim-autopairs').setup{}
+require("nvim-autopairs").setup({})
