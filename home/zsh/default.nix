@@ -13,10 +13,12 @@
 
     shellAliases = {
       c = "clear";
-      g = "git";
       clip = "xclip -sel c";
-      x = "xplr";
+      g = "git";
+      n = "nnn";
       ren = "qmv -f do";
+      v = "nvim";
+      x = "xplr";
     };
 
     initExtra = ''

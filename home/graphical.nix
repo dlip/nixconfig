@@ -1,8 +1,8 @@
 { pkgs, ... }: 
 {
   imports = [
-    ./alacritty.nix
-    ./rofi.nix
+    ./alacritty
+    ./rofi
     # ./vscode
     ./awesome
   ];

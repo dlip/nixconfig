@@ -2,7 +2,7 @@
 
   home.file = {
     ".emacs.d" = {
-      source = ./emacs;
+      source = ./config;
       recursive = true;
     };
   };

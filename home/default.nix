@@ -21,20 +21,20 @@ in
   };
 
   imports = [
-    #./emacs.nix
-    ./espanso.nix
+    #./emacs
+    ./espanso
     ./files
     ./fonts.nix
-    ./git.nix
-    ./gpg-agent.nix
+    ./git
+    ./gpg-agent
     ./lsp.nix
     ./neovim
     ./nnn
     ./packages.nix
-    ./readline.nix
-    ./starship.nix
-    ./syncthing.nix
-    ./tmux.nix
-    ./zsh.nix
+    ./readline
+    ./starship
+    ./syncthing
+    ./tmux
+    ./zsh
   ];
 }
