@@ -7,6 +7,7 @@ null_ls.config({
     null_ls.builtins.code_actions.gitsigns,
     null_ls.builtins.formatting.codespell,
     null_ls.builtins.formatting.eslint_d,
+    null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.trim_whitespace,
