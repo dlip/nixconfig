@@ -7,15 +7,6 @@
  *
  */
 
-configuration {
-	font:							"FiraCode Nerd Font 10";
-    show-icons:                     true;
-	icon-theme: 					"Papirus";
-    display-drun: 					"";
-    disable-history:                false;
-	sidebar-mode: 					false;
-}
-
 * {
   al:  #00000000;
   bg:  #313846FF;
