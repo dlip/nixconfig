@@ -11,6 +11,9 @@ null_ls.config({
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,
     null_ls.builtins.formatting.trim_whitespace,
+    null_ls.builtins.formatting.gofmt.with({
+      args = { "-s" },
+    }),
   },
 })
 

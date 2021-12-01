@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     codespell
+    gopls
     haskellPackages.haskell-language-server
     myNodePackages.markserv
     nixfmt

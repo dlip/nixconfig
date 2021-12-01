@@ -25,6 +25,7 @@
       set -g mouse on
       bind s split-window -h
       bind v split-window -v
+      bind S choose-tree
       TMUX_FZF_LAUNCH_KEY="f" # Key Prefix + f
   
       TMUX_FZF_OPTIONS="-p -w 62% -h 38%"

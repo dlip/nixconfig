@@ -34,7 +34,6 @@
     gnuplot
     go
     gobang
-    gopls
     gotop
     graphviz
     hledger
