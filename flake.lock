@@ -412,11 +412,11 @@
     "nui-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1638660903,
-        "narHash": "sha256-Tthsfe4vnX6gIQqa1gaM8A40X7oNHi4dv+1wDUBfLZo=",
+        "lastModified": 1638912820,
+        "narHash": "sha256-4/bhIzuuBDHl3SMbPBFmbHDwxgWzz8gIYHbPE/gwvuc=",
         "owner": "MunifTanjim",
         "repo": "nui.nvim",
-        "rev": "5db390110bf9944b678c84cd7bcd2a28af712481",
+        "rev": "1248c674a4a632ea7d45a76b1255df997379e116",
         "type": "github"
       },
       "original": {
@@ -471,7 +471,7 @@
         "wally-cli": "wally-cli"
       },
       "locked": {
-        "narHash": "sha256-8KrU0SXB+U7tIruTdLKueCDpOikBbSsLtB5DLwMsZL8=",
+        "narHash": "sha256-+RDZUHlE1bh2OX1rLiL82JP3HPKci2jEy1gDoxeE7jM=",
         "path": "overlays/personal",
         "type": "path"
       },

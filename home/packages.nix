@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    air
     acpi
     appimage-run
     autoreconfHook

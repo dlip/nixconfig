@@ -540,6 +540,9 @@ awful.rules.rules = {
   { rule = { class = "Spotify" },
     properties = { screen = 1, tag = "3" } },
 
+  { rule = { class = "Plexamp" },
+    properties = { screen = 1, tag = "3" } },
+
   { rule = { class = "Firefox" },
     properties = { screen = 1, tag = "4" } },
 
@@ -548,9 +551,6 @@ awful.rules.rules = {
 
   { rule = { class = "Alacritty" },
     properties = { screen = 1, tag = "5" } },
-
-  { rule = { class = "obsidian" },
-    properties = { screen = 1, tag = "6" } },
 }
 -- }}}
 

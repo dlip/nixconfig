@@ -8,9 +8,19 @@ let
   scripts = {
     launch-default-programs = ''
       brave&
-      alacritty&
+      alacritty -e work&
       slack&
-      obsidian&
+      plexamp&
+    '';
+
+    work = ''
+      session="work"
+      tmux new-session -d -s $session
+      tmux new-window -t $session:1 -n 'wiki'
+      tmux send-keys -t $session 'cd ~/notes/vimwiki && nvim index.md' C-m
+      tmux new-window -t $session:1 -n 'nixconfig'
+      tmux send-keys -t $session 'p nixconfig' C-m
+      tmux attach -t $session
     '';
 
     update-wallpaper = ''
@@ -79,8 +89,10 @@ let
   };
 in
 {
-  scripts = builtins.mapAttrs (name: val: writeShellScriptBin name ''
-    set -euo pipefail
-    ${val}
-  '') scripts;
+  scripts = builtins.mapAttrs
+    (name: val: writeShellScriptBin name ''
+      set -euo pipefail
+      ${val}
+    '')
+    scripts;
 }
