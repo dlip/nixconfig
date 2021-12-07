@@ -24,5 +24,6 @@
     sumneko-lua-language-server
     terraform-ls
     tree-sitter
+    vale
   ];
 }

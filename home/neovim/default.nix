@@ -77,6 +77,7 @@ in
           nvim-dap
           nvim-dap-go
           nvim-dap-ui
+          nvim-lint
           nvim-lspconfig
           nvim-treesitter-textobjects
           nvim-ts-rainbow
