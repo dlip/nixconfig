@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     codespell
     gopls
+    golangci-lint
     haskellPackages.haskell-language-server
     myNodePackages.markserv
     nixfmt
