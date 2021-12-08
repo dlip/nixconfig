@@ -31,9 +31,6 @@ local keymaps = {
   { "n", "j", "J" },
   { "n", "J", "gJ" },
 
-  -- Redo
-  { "n", "U", "<C-r>" },
-
   -- Quicker word change
   { "n", "c<space>", "ciw" },
   { "x", "<space>", "iw" },
@@ -61,12 +58,8 @@ local keymaps = {
   { "i", "<C-v>", '<C-r>"' },
 
   -- Hop
-  { "nxo", "f", "<cmd>HopChar1AC<CR>" },
-  { "nxo", "F", "<cmd>HopChar1BC<CR>" },
-
-  -- LSP
-  { "n", "gd", "<cmd>Telescope lsp_definitions<CR>" },
-  { "n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>" },
+  { "nxo", "h", "<cmd>HopChar1AC<CR>" },
+  { "nxo", "k", "<cmd>HopChar1BC<CR>" },
 }
 
 for i = 1, #keymaps do

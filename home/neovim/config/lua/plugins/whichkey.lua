@@ -82,29 +82,6 @@ local keymap = {
     [","] = { "[c", "Previous change" },
     ["."] = { "]c", "Next change" },
   },
-  l = {
-    name = "+LSP",
-    a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
-    d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
-    D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
-    e = { "<cmd>!eslint_d --fix %<CR>", "ESLint Fix Current File" },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Buffer" },
-    h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Trigger Hover" },
-    H = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-    i = { "<cmd>Telescope lsp_implementations<CR>", "Go to Implementations" },
-    l = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics" },
-    m = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-    n = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Go to Next Error" },
-    N = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "Go to Previous Error" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Set Loclist" },
-    r = { "<cmd>Telescope lsp_references<CR>", "References" },
-    s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
-    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Dynamic Workspace Symbols" },
-    t = { "<cmd>Telescope lsp_type_definitions<CR>", "Type Definitions" },
-    w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Workspace Folder" },
-    W = { "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List Workspace Folders" },
-    x = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove Workspace Folder" },
-  },
   n = { "<cmd>NvimTreeToggle<CR>", "NvimTreeToggle" },
   p = { "<cmd>Telescope fd<CR>", "Find Files" },
   s = { "<cmd>w!<CR>", "save file" }, -- set a single command and text
@@ -148,6 +125,31 @@ local plug = {
   },
 }
 
+local lsp = {
+  name = "+LSP",
+  a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
+  d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
+  D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
+  e = { "<cmd>!eslint_d --fix %<CR>", "ESLint Fix Current File" },
+  f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Buffer" },
+  h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Trigger Hover" },
+  H = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+  i = { "<cmd>Telescope lsp_implementations<CR>", "Go to Implementations" },
+  l = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics" },
+  m = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+  n = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Go to Next Error" },
+  N = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "Go to Previous Error" },
+  q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Set Loclist" },
+  r = { "<cmd>Telescope lsp_references<CR>", "References" },
+  s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
+  S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Dynamic Workspace Symbols" },
+  t = { "<cmd>Telescope lsp_type_definitions<CR>", "Type Definitions" },
+  w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Workspace Folder" },
+  W = { "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List Workspace Folders" },
+  x = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove Workspace Folder" },
+}
+
+wk.register_keymap("l", lsp)
 wk.register_keymap("leader", keymap)
 wk.register_keymap("leader", plug, { silent = true, noremap = false })
 
