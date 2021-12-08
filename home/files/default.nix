@@ -25,9 +25,11 @@
       no_call_parentheses = false
     '';
 
-    #  "${config.xdg.configHome}/starship.toml".text = ''
-    #   [nix_shell]
-    #   use_name = false
-    # '';
+    "${config.xdg.configHome}/vale/vale.ini".text = ''
+      StylesPath = styles
+   
+      [*.md]
+      BasedOnStyles = Google
+    '';
   };
 }
