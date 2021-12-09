@@ -64,70 +64,61 @@ colorscheme tokyonight
 " open a terminal pane on the bottom using :Term
 command Term :botright split term://$SHELL
 
-" highlight on yank
-augroup YankHighlight
+augroup vimrc
   autocmd!
+  " highlight on yank
   autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
+
+  " don't auto comment new lines
+  autocmd BufEnter * set fo-=c fo-=r fo-=o
+
+  " auto write new files
+  autocmd BufNewFile * :write
+
+  "remove line length marker for selected filetypes
+  autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0
+
+  " 2 spaces for selected filetypes
+  autocmd FileType python setlocal shiftwidth=4 tabstop=4
+
+  " disable IndentLine for markdown files (avoid concealing)
+  autocmd FileType markdown let g:indentLine_enabled=0
+
+  " Terminal visual tweaks
+  "- enter insert mode when switching to terminal
+  "- close terminal buffer on process exit
+  autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
+  autocmd TermOpen * startinsert
+  autocmd TermOpen * setlocal winfixheight
+  autocmd BufWinEnter,WinEnter term://* startinsert
+  autocmd BufLeave term://* stopinsert
+
+  " remove whitespace on save
+  " autocmd BufWritePre * :%s/\s\+$//e
+
+  " autoformat
+  " augroup Format
+  "     autocmd!
+  "     autocmd BufWritePost * FormatWrite
+  " augroup END
+
+  " Restore enter functionality in quickfix window
+  autocmd FileType qf nmap <buffer> <CR> <CR>
+
+  " Close quickfix by q
+  autocmd FileType qf nmap <buffer><silent> q :ccl<CR>
+  autocmd FileType help nmap <buffer><silent> q :q<CR>
+  autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
+
+  " Set filetypes
+  autocmd BufEnter *.sol :setlocal filetype=solidity
+
+  " Set package.json local key mappings
+  autocmd BufEnter package.json :lua package_json_mappings()
+
+  " Use tabs for golang
+  autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+
 augroup end
-
-" don't auto comment new lines
-autocmd BufEnter * set fo-=c fo-=r fo-=o
-
-" auto write new files
-autocmd BufNewFile * :write
-
-"remove line length marker for selected filetypes
-autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0
-
-" 2 spaces for selected filetypes
-autocmd FileType python setlocal shiftwidth=4 tabstop=4
-
-" disable IndentLine for markdown files (avoid concealing)
-autocmd FileType markdown let g:indentLine_enabled=0
-
-" Terminal visual tweaks
-"- enter insert mode when switching to terminal
-"- close terminal buffer on process exit
-autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
-autocmd TermOpen * startinsert
-autocmd TermOpen * setlocal winfixheight
-autocmd BufWinEnter,WinEnter term://* startinsert
-autocmd BufLeave term://* stopinsert
-
-" remove whitespace on save
-" autocmd BufWritePre * :%s/\s\+$//e
-
-" autoformat
-" augroup Format
-"     autocmd!
-"     autocmd BufWritePost * FormatWrite
-" augroup END
-
-" Restore enter functionality in quickfix window
-autocmd FileType qf nmap <buffer> <CR> <CR>
-
-" Close quickfix by q
-autocmd FileType qf nmap <buffer><silent> q :ccl<CR>
-autocmd FileType help nmap <buffer><silent> q :q<CR>
-autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
-
-" PageUp/PageDown
-"     nnoremap <silent> <expr> j (winheight(-1)-1) . "\<C-u>"
-"     nnoremap <silent> <expr> h (winheight(-1)-1) . "\<C-d>"
-"     xnoremap <silent> <expr> j (winheight(-1)-1) . "\<C-u>"
-"     xnoremap <silent> <expr> h (winheight(-1)-1) . "\<C-d>"
-"     nnoremap <silent> <expr> <PageUp> (winheight(-1)-1) . "\<C-u>"
-"     nnoremap <silent> <expr> <PageDown> (winheight(-1)-1) . "\<C-d>"
-"     vnoremap <silent> <expr> <PageUp> (winheight(-1)-1) . "\<C-u>"
-"     vnoremap <silent> <expr> <PageDown> (winheight(-1)-1) . "\<C-d>"
-"     vnoremap <silent> <expr> <S-PageUp> (winheight(-1)-1) . "\<C-u>"
-"     vnoremap <silent> <expr> <S-PageDown> (winheight(-1)-1) . "\<C-d>"
-
-" Set filetypes
-autocmd BufEnter *.sol :setlocal filetype=solidity
-
-" Set package.json local key mappings
-autocmd BufEnter package.json :lua package_json_mappings()
-
 
 lua require'my.init'
