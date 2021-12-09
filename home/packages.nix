@@ -102,5 +102,6 @@
     yq
     youtube-dl
     yubikey-manager
+    zip
   ] ++ (builtins.attrValues scripts.scripts);
 }

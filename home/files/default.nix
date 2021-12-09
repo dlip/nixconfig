@@ -1,4 +1,4 @@
-{ config, ... }: {
+{ config, pkgs, ... }: {
   home.file = {
 
     "${config.xdg.configHome}/networkmanager-dmenu".source = ./networkmanager-dmenu;
@@ -26,10 +26,11 @@
     '';
 
     "${config.xdg.configHome}/vale/vale.ini".text = ''
-      StylesPath = styles
+      StylesPath = ${pkgs.vale.data}/share/vale/styles
    
       [*.md]
-      BasedOnStyles = Google
+      BasedOnStyles = proselint, write-good, Joblint
+      MinAlertLevel = suggestion
     '';
   };
 }

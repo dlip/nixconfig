@@ -8,12 +8,20 @@
       url = "github:Pocco81/AutoSave.nvim";
       flake = false;
     };
+    cmp_luasnip = {
+      url = "github:saadparwaiz1/cmp_luasnip";
+      flake = false;
+    };
     fire-nvim = {
       url = "github:glacambre/firenvim";
       flake = false;
     };
     format-nvim = {
       url = "github:lukas-reineke/format.nvim";
+      flake = false;
+    };
+    luasnip = {
+      url = "github:L3MON4D3/LuaSnip";
       flake = false;
     };
     lspkind-nvim = {

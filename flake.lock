@@ -112,6 +112,22 @@
         "type": "github"
       }
     },
+    "cmp_luasnip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1638624211,
+        "narHash": "sha256-j26ufCjpIAaoaK2Dp9fI0oaEW05tC0a89omz6k3lpis=",
+        "owner": "saadparwaiz1",
+        "repo": "cmp_luasnip",
+        "rev": "75bf6434f175206cd219f9d2bbcae154a009346c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "saadparwaiz1",
+        "repo": "cmp_luasnip",
+        "type": "github"
+      }
+    },
     "emoji-menu": {
       "flake": false,
       "locked": {
@@ -234,11 +250,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1638571010,
-        "narHash": "sha256-KSO7u13VRLdklQTKYJaBSfVcurEvw+HifAsHR7V2i5E=",
+        "lastModified": 1638959036,
+        "narHash": "sha256-d75Ow/rV3nq4penfTJz9H3/OlIHttoKoJUDEfink/8k=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "781d25b315def05cd7ede3765226c54216f0b1fe",
+        "rev": "829e89a16f4f96428d1b94e68d4c06107b5491c0",
         "type": "github"
       },
       "original": {
@@ -274,11 +290,11 @@
       },
       "locked": {
         "dir": "nix",
-        "lastModified": 1637155594,
-        "narHash": "sha256-IoY4RPZfFp/BbQvKt/8D4GFV1KTUP5/LLEyk4bf5LdE=",
+        "lastModified": 1638969287,
+        "narHash": "sha256-ISTHv1kq/9sUslLi6S9sVyblA9QJs5yu9Lb4ikoNMWs=",
         "owner": "kmonad",
         "repo": "kmonad",
-        "rev": "a782710585cbeeadfd82d85e7fa93694993cc9b7",
+        "rev": "98084e100f6475b90e95dc97f04e8360e15af343",
         "type": "github"
       },
       "original": {
@@ -304,6 +320,22 @@
         "type": "github"
       }
     },
+    "luasnip": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1638658958,
+        "narHash": "sha256-rA6c/Yq3Vk9Pqrm38vIJJLufPNB1uHkuu5wATlkcBD0=",
+        "owner": "L3MON4D3",
+        "repo": "LuaSnip",
+        "rev": "052807223ba4d9babb412f12f08da0b34bc083cf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "L3MON4D3",
+        "repo": "LuaSnip",
+        "type": "github"
+      }
+    },
     "neovim": {
       "inputs": {
         "flake-utils": [
@@ -315,16 +347,17 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1638898877,
-        "narHash": "sha256-cWK0Msoiz2INHDfhdxe9M//qWCh/HFpA6cPfo143nAg=",
+        "lastModified": 1632694530,
+        "narHash": "sha256-07PrR7KElLJhzS/4Z8lLiWuOehx4npyh4puSAJNqTyw=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "be768be6b7ee896277971593e9287a86bc41efb2",
+        "rev": "0159e4daaed1347db8719c27946fcfdc4e49e92d",
         "type": "github"
       },
       "original": {
         "dir": "contrib",
         "owner": "neovim",
+        "ref": "v0.5.1",
         "repo": "neovim",
         "type": "github"
       }
@@ -544,11 +577,11 @@
     "telescope-nvim": {
       "flake": false,
       "locked": {
-        "lastModified": 1638822037,
-        "narHash": "sha256-rD9/8QdWkhf/KHNhW3D1YSv6CMRQzJpDums2J5hkyOg=",
+        "lastModified": 1638988135,
+        "narHash": "sha256-fJvou1jy+aLyhzd3AUTz9/Zb10cPoedM5IFmiNY1hww=",
         "owner": "nvim-telescope",
         "repo": "telescope.nvim",
-        "rev": "6b1579741a0e8f1e0e63d0c6c364b968c157338e",
+        "rev": "914da77bb7528e72be602c0de7dbb0952839f06f",
         "type": "github"
       },
       "original": {
@@ -577,9 +610,11 @@
       "inputs": {
         "asyncrun-vim": "asyncrun-vim",
         "autosave-nvim": "autosave-nvim",
+        "cmp_luasnip": "cmp_luasnip",
         "fire-nvim": "fire-nvim",
         "format-nvim": "format-nvim",
         "lspkind-nvim": "lspkind-nvim",
+        "luasnip": "luasnip",
         "nnn-nvim": "nnn-nvim",
         "nui-nvim": "nui-nvim",
         "nvim-dap-go": "nvim-dap-go",
@@ -589,7 +624,7 @@
         "vim-delve": "vim-delve"
       },
       "locked": {
-        "narHash": "sha256-JTKiBpfvt/hHt9GIjKr1nMcTUlCx77dhYuKRrjEeO70=",
+        "narHash": "sha256-OuIlVUF90PFXgD8kt8IK+WryO4QyV7ZphuO/ozNCc5k=",
         "path": "overlays/vimPlugins",
         "type": "path"
       },

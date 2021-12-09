@@ -8,7 +8,7 @@
     nixfmt
     nixpkgs-fmt
     nodePackages.bash-language-server
-    # nodePackages.dockerfile-language-server-nodejs
+    nodePackages.dockerfile-language-server-nodejs
     nodePackages.eslint_d
     nodePackages.prettier
     nodePackages.pyright
@@ -19,6 +19,7 @@
     nodePackages.yaml-language-server
     proselint
     rnix-lsp
+    rust-analyzer
     shfmt
     solang
     stylua

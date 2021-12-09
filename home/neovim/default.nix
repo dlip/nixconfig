@@ -109,7 +109,30 @@ in
           (pluginWithDeps rust-tools-nvim [ telescope nvim-lspconfig ])
           (pluginWithDeps telescope-symbols-nvim [ telescope ])
 
-          (nvim-treesitter.withPlugins builtins.attrValues)
+          (nvim-treesitter.withPlugins (plugins: with plugins; [
+            tree-sitter-bash
+            tree-sitter-c
+            tree-sitter-comment
+            tree-sitter-cpp
+            tree-sitter-css
+            tree-sitter-dot
+            tree-sitter-go
+            tree-sitter-haskell
+            tree-sitter-html
+            tree-sitter-javascript
+            tree-sitter-jsdoc
+            tree-sitter-json
+            tree-sitter-lua
+            tree-sitter-nix
+            tree-sitter-python
+            tree-sitter-regex
+            tree-sitter-rust
+            tree-sitter-toml
+            tree-sitter-tsx
+            tree-sitter-typescript
+            tree-sitter-vim
+            tree-sitter-yaml
+          ]))
         ];
     };
   };
