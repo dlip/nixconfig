@@ -323,42 +323,16 @@
     "luasnip": {
       "flake": false,
       "locked": {
-        "lastModified": 1638658958,
-        "narHash": "sha256-rA6c/Yq3Vk9Pqrm38vIJJLufPNB1uHkuu5wATlkcBD0=",
+        "lastModified": 1639068537,
+        "narHash": "sha256-R+OlhmAHvDlB2pzcg457yy3EAWhjaRmEdhxrUZ2IGow=",
         "owner": "L3MON4D3",
         "repo": "LuaSnip",
-        "rev": "052807223ba4d9babb412f12f08da0b34bc083cf",
+        "rev": "577045e9adf325e58f690f4d4b4a293f3dcec1b3",
         "type": "github"
       },
       "original": {
         "owner": "L3MON4D3",
         "repo": "LuaSnip",
-        "type": "github"
-      }
-    },
-    "neovim": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "dir": "contrib",
-        "lastModified": 1632694530,
-        "narHash": "sha256-07PrR7KElLJhzS/4Z8lLiWuOehx4npyh4puSAJNqTyw=",
-        "owner": "neovim",
-        "repo": "neovim",
-        "rev": "0159e4daaed1347db8719c27946fcfdc4e49e92d",
-        "type": "github"
-      },
-      "original": {
-        "dir": "contrib",
-        "owner": "neovim",
-        "ref": "v0.5.1",
-        "repo": "neovim",
         "type": "github"
       }
     },
@@ -378,13 +352,29 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
+    "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1638798756,
-        "narHash": "sha256-VFuVwQ4YjPNnclRh6vcy5pR0AgPxlGeanVYBLVCr9ZI=",
+        "lastModified": 1638887115,
+        "narHash": "sha256-emjtIeqyJ84Eb3X7APJruTrwcfnHQKs55XGljj62prs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "4a8751d694b46340072d95409804f59b98326f44",
+        "rev": "1bd4bbd49bef217a3d1adea43498270d6e779d65",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-21.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1638922083,
+        "narHash": "sha256-IlQm69UmCfQBwccn+zZULwun0KRtdWFNYQ4jEA3VwW0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "fe56507bd3063a30f3a741a45bf3ba74a91cfac2",
         "type": "github"
       },
       "original": {
@@ -567,8 +557,8 @@
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "kmonad": "kmonad",
-        "neovim": "neovim",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-stable": "nixpkgs-stable",
         "personal": "personal",
         "repos": "repos",
         "vim-plugins": "vim-plugins"

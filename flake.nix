@@ -10,6 +10,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-21.11";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,31 +35,33 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    neovim = {
-      url = "github:neovim/neovim/v0.5.1?dir=contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    # neovim = {
+    #   url = "github:neovim/neovim/v0.5.1?dir=contrib";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-utils.follows = "flake-utils";
+    # };
   };
 
   outputs =
     { self
     , nixpkgs
+    , nixpkgs-stable
     , home-manager
     , flake-utils
     , kmonad
-    , neovim
     , vim-plugins
     , repos
     , personal
     }:
     let
-      pkgsForSystem = system: import nixpkgs {
+      pkgsForSystem = { system, pkgs ? nixpkgs }: import pkgs {
         inherit system;
         config.allowUnfree = true;
         overlays = [
+          (final: prev: {
+            stable = pkgsForSystem { inherit system; pkgs = nixpkgs-stable; };
+          })
           personal.overlay
-          neovim.overlay
           vim-plugins.overlay
           repos.overlay
           kmonad.overlay
@@ -78,7 +81,7 @@
     flake-utils.lib.eachDefaultSystem
       (system:
       let
-        pkgs = pkgsForSystem system;
+        pkgs = pkgsForSystem { inherit system; };
 
         createHomeConfiguration = name: config:
           flake-utils.lib.mkApp
@@ -119,7 +122,7 @@
           {
             metabox = nixpkgs.lib.nixosSystem {
               system = "x86_64-linux";
-              pkgs = pkgsForSystem "x86_64-linux";
+              pkgs = pkgsForSystem { system = "x86_64-linux"; };
               modules =
                 [
                   ./systems/metabox/configuration.nix
@@ -146,7 +149,7 @@
             };
             dex = nixpkgs.lib.nixosSystem {
               system = "x86_64-linux";
-              pkgs = pkgsForSystem "x86_64-linux";
+              pkgs = pkgsForSystem { system = "x86_64-linux"; };
               modules = [
                 ./systems/dex/configuration.nix
                 home-manager.nixosModules.home-manager
@@ -176,7 +179,7 @@
             };
             g = nixpkgs.lib.nixosSystem {
               system = "x86_64-linux";
-              pkgs = pkgsForSystem "x86_64-linux";
+              pkgs = pkgsForSystem { system = "x86_64-linux"; };
               modules = [
                 ./systems/g/configuration.nix
                 kmonad.nixosModule
