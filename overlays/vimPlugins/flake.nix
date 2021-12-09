@@ -20,6 +20,10 @@
       url = "github:lukas-reineke/format.nvim";
       flake = false;
     };
+    neogit = {
+      url = "github:TimUntersberger/neogit";
+      flake = false;
+    };
     luasnip = {
       url = "github:L3MON4D3/LuaSnip";
       flake = false;
@@ -72,4 +76,12 @@
           (builtins.attrNames (final.lib.filterAttrs (n: v: n != "self") inputs)));
       };
     };
+}         })
+(builtins.attrNames (final.lib.filterAttrs (n: v: n != "self") inputs)));
+};
+};
+}         })
+(builtins.attrNames (final.lib.filterAttrs (n: v: n != "self") inputs)));
+};
+};
 }

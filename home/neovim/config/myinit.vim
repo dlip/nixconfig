@@ -119,6 +119,9 @@ augroup vimrc
   " Use tabs for golang
   autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 
+  " autoformat
+  autocmd BufWritePre *.nix lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
+  
 augroup end
 
 lua require'my.init'
