@@ -121,6 +121,7 @@ augroup vimrc
 
   " autoformat
   autocmd BufWritePre *.nix lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
+  autocmd BufWritePre *.go lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
   
 augroup end
 
