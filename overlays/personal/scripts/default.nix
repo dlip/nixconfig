@@ -16,11 +16,11 @@ let
     work = ''
       session="work"
       tmux new-session -d -s $session
-      tmux new-window -t $session:1 -n 'wiki'
-      tmux send-keys -t $session 'cd ~/notes/vimwiki && nvim index.md' C-m
-      tmux new-window -t $session:1 -n 'nixconfig'
       tmux send-keys -t $session 'p nixconfig' C-m
+      tmux new-window -t $session:1
+      tmux send-keys -t $session 'cd ~/notes/vimwiki && nvim index.md' C-m
       tmux attach -t $session
+      zsh
     '';
 
     update-wallpaper = ''
