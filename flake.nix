@@ -10,7 +10,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-21.11";
     flake-utils = {
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -35,38 +34,32 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    neovim = {
-      url = "github:neovim/neovim/v0.6.0?dir=contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
+    # neovim = {
+    #   url = "github:neovim/neovim/v0.6.0?dir=contrib";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-utils.follows = "flake-utils";
+    # };
   };
 
   outputs =
     { self
     , nixpkgs
-    , nixpkgs-stable
     , home-manager
     , flake-utils
     , kmonad
     , vim-plugins
     , repos
     , personal
-    , neovim
     }:
     let
       pkgsForSystem = { system, pkgs ? nixpkgs }: import pkgs {
         inherit system;
         config.allowUnfree = true;
         overlays = [
-          (final: prev: {
-            stable = pkgsForSystem { inherit system; pkgs = nixpkgs-stable; };
-          })
           personal.overlay
           vim-plugins.overlay
           repos.overlay
           kmonad.overlay
-          neovim.overlay
         ];
       };
 
