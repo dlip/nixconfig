@@ -14,6 +14,9 @@ null_ls.config({
     null_ls.builtins.formatting.gofmt.with({
       args = { "-s" },
     }),
+    null_ls.builtins.diagnostics.vale.with({
+      args = { "--config", "~/.config/vale/vale.ini", "--no-exit", "--output=JSON", "$FILENAME" },
+    }),
   },
 })
 

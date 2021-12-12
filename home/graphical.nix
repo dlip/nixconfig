@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
   imports = [
     ./alacritty
@@ -8,6 +8,7 @@
   ];
 
   home.packages = with pkgs; [
+    arandr
     alttab
     audacity
     # blender

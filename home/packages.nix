@@ -29,6 +29,7 @@
     gcc
     gh
     ghc
+    ghostscript
     glow
     gnumake
     gnupg
@@ -52,7 +53,7 @@
     ledger
     ledger-autosync
     lldb
-    (lua.withPackages(ps: with ps; [ luacheck ]))
+    (lua.withPackages (ps: with ps; [ luacheck ]))
     massren
     mdl
     ncdu

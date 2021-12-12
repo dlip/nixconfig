@@ -31,7 +31,7 @@ in
       vimAlias = true;
       vimdiffAlias = true;
 
-      package = pkgs.stable.neovim-unwrapped;
+      package = pkgs.neovim;
 
       extraConfig = ''
         let g:sumneko_root_path = "${pkgs.sumneko-lua-language-server}"

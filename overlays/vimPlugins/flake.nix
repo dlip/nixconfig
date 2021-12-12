@@ -76,12 +76,4 @@
           (builtins.attrNames (final.lib.filterAttrs (n: v: n != "self") inputs)));
       };
     };
-}         })
-(builtins.attrNames (final.lib.filterAttrs (n: v: n != "self") inputs)));
-};
-};
-}         })
-(builtins.attrNames (final.lib.filterAttrs (n: v: n != "self") inputs)));
-};
-};
 }

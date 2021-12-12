@@ -35,11 +35,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    # neovim = {
-    #   url = "github:neovim/neovim/v0.5.1?dir=contrib";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.flake-utils.follows = "flake-utils";
-    # };
+    neovim = {
+      url = "github:neovim/neovim/v0.6.0?dir=contrib";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
   outputs =
@@ -52,6 +52,7 @@
     , vim-plugins
     , repos
     , personal
+    , neovim
     }:
     let
       pkgsForSystem = { system, pkgs ? nixpkgs }: import pkgs {
@@ -65,6 +66,7 @@
           vim-plugins.overlay
           repos.overlay
           kmonad.overlay
+          neovim.overlay
         ];
       };
 
