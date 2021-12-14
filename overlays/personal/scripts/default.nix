@@ -1,9 +1,9 @@
 { config, writeShellScriptBin, betterlockscreen }:
 let
 
-  projectdir = "~/code";
-  nixconfigpath = "${projectdir}/nixconfig";
-  projectfile = "${projectdir}/projects.txt";
+  codedir = "~/code";
+  nixconfigpath = "${codedir}/nixconfig";
+  projectfile = "${codedir}/projects.txt";
 
   scripts = {
     launch-default-programs = ''
@@ -70,7 +70,7 @@ let
       fi
       repo_path=$(cat ${projectfile} | fzf $filter_params --select-1)
       if [ -n "$repo_path" ]; then
-          cd ${projectdir}/$repo_path
+          cd ${config.home.homeDirectory}/$repo_path
           tmux split-window -p 20
           tmux select-pane -U
           nvim
@@ -79,12 +79,12 @@ let
 
     # Project add current dir
     pa = ''
-      pwd | sed "s|${projectdir}/||" >> ${projectfile}
+      pwd | sed "s|${config.home.homeDirectory}/||" >> ${projectfile}
     '';
 
     # Project add git folders
     pag = ''
-      find ~+ -maxdepth 4 -name .git -prune | sed 's|/.git$||' | sed "s|${projectdir}/||" >> ${projectfile}
+      find ~+ -maxdepth 4 -name .git -prune | sed 's|/.git$||' | sed "s|${config.home.homeDirectory}/||" >> ${projectfile}
     '';
   };
 in
