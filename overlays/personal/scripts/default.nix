@@ -86,6 +86,17 @@ let
     pag = ''
       find ~+ -maxdepth 4 -name .git -prune | sed 's|/.git$||' | sed "s|${home}/||" >> ${projectfile}
     '';
+
+    # Git new feature
+    gn = ''
+      branch=$1
+      remote=origin
+      main=$(git remote show $remote | awk '/HEAD branch/ {print $NF}')
+      git fetch $remote $main
+      git checkout $remote/$main
+      git checkout -b $branch
+      git push -u $remote $branch
+    '';
   };
 in
 {

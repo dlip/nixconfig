@@ -370,11 +370,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1639130158,
-        "narHash": "sha256-/5a/7J3AE5ATzB3HdFZ9C9VlPbUK5bIGsRX7veSujXA=",
+        "lastModified": 1639430792,
+        "narHash": "sha256-a2KnsqjkygIiqDWYuQOMq4ujxgsAzHU/Lt14+WBg63M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "3b422991781220853035dbe353ba8b7cb279b6b3",
+        "rev": "c5f1ee982246d09ae7f119c13aafcce90286221d",
         "type": "github"
       },
       "original": {
@@ -494,7 +494,7 @@
         "wally-cli": "wally-cli"
       },
       "locked": {
-        "narHash": "sha256-nAfhvHN0ehZ6XyZnBgg4CK2FhKOE+n/9p4N4KKU+yL0=",
+        "narHash": "sha256-4nLzwXB1+5LnwDtlmCZ4CTMe9VdhiWCDedCbS6vgh/c=",
         "path": "overlays/personal",
         "type": "path"
       },
