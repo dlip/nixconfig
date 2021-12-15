@@ -494,7 +494,7 @@
         "wally-cli": "wally-cli"
       },
       "locked": {
-        "narHash": "sha256-4nLzwXB1+5LnwDtlmCZ4CTMe9VdhiWCDedCbS6vgh/c=",
+        "narHash": "sha256-xBoS5ZvlzdqC/sH9aw7s1tOI1k5wVlnTwmib0WCrbgI=",
         "path": "overlays/personal",
         "type": "path"
       },

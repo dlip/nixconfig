@@ -91,11 +91,14 @@ let
     gn = ''
       branch=$1
       remote=origin
-      main=$(git remote show $remote | awk '/HEAD branch/ {print $NF}')
+      main=$(git rev-parse --abbrev-ref $remote/HEAD | sed "s|$remote/||")
+      GIT_STASH_MESSAGE="$RANDOM"
+      git stash -m "$GIT_STASH_MESSAGE"
       git fetch $remote $main
       git checkout $remote/$main
       git checkout -b $branch
       git push -u $remote $branch
+      git stash list | grep "$GIT_STASH_MESSAGE" && git stash pop --index
     '';
   };
 in
