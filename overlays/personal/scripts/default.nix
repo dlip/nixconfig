@@ -89,16 +89,17 @@ let
 
     # Git new feature
     gn = ''
+      if [ -z "''${1:-}" ]; then
+        echo "Error: gn <branch>"
+        exit 1
+      fi
       branch=$1
       remote=origin
-      main=$(git rev-parse --abbrev-ref $remote/HEAD | sed "s|$remote/||")
-      GIT_STASH_MESSAGE="$RANDOM"
-      git stash -m "$GIT_STASH_MESSAGE"
+      main=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
       git fetch $remote $main
       git checkout $remote/$main
       git checkout -b $branch
       git push -u $remote $branch
-      git stash list | grep "$GIT_STASH_MESSAGE" && git stash pop --index
     '';
   };
 in
@@ -106,7 +107,6 @@ in
   scripts = builtins.mapAttrs
     (name: val: writeShellScriptBin name ''
       set -euo pipefail
-      ${val}
-    '')
+      ${val}'')
     scripts;
 }
