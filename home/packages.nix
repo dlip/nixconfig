@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
+    age
     air
     acpi
     appimage-run
@@ -70,6 +71,7 @@
     nodejs
     nvimpager
     openvpn
+    openssl
     p7zip
     pandoc
     pinentry
@@ -84,6 +86,7 @@
     ripgrep
     ripgrep-all
     rustup
+    ssh-to-age
     skopeo
     sops
     sqlite

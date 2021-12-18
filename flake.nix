@@ -34,6 +34,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # neovim = {
     #   url = "github:neovim/neovim/v0.6.0?dir=contrib";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -46,10 +50,11 @@
     , nixpkgs
     , home-manager
     , flake-utils
-    , kmonad
     , vim-plugins
     , repos
     , personal
+    , kmonad
+    , sops-nix
     }:
     let
       pkgsForSystem = { system, pkgs ? nixpkgs }: import pkgs {
@@ -178,6 +183,7 @@
               modules = [
                 ./systems/g/configuration.nix
                 kmonad.nixosModule
+                sops-nix.nixosModules.sops
                 home-manager.nixosModules.home-manager
                 {
                   home-manager = {
