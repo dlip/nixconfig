@@ -62,28 +62,29 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @na  q    w    @f   p    b    j    l    @u   y    bspc @na  _    _
-  @na  @a   @r   @s   @t   g    m    @n   @e   @i   @o   @na  _
+  @na  q    w    @f   p    b    j    l    @u   y    ;    @na  _    _
+  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o   ret  _
   @na  @z   @x   @c   @d   v    k    h    ,    .    '    @na
-  _    _    esc            @spc           ret  _    _    _
+  _    _    bspc           @spc           ret  _    _    _
 )
+
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    prnt home up   end  pgup _    _    _    _    _    _    _    _
-  _    del  lft  down rght pgdn _    _    _    _    _    _    _
-  _    grv  [    ]    tab _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+  _    prnt home up   end  _    _    _    _    _    _    _    _    _
+  _    esc  lft  down rght _    _    _    _    _    _    _    _
+  _    grv  pgup del  pgdn _    _    _    _    _    _    _
+  _    _    tab            _              _    _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    \    7    8    9    ;    _    _    _
-  _    _    _    _    _    _    =    4    5    6    0    _    _
+  _    _    _    _    _    _    [    7    8    9    ]    _    _    _
+  _    _    _    _    _    _    =    4    5    6    \    _    _
   _    _    _    _    _    _    -    1    2    3    /    _
-  _    _    _              _              _    _    _    _
+  _    _    tab            _              0    _    _    _
 )
 
 (defalias

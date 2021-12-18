@@ -25,11 +25,11 @@ in
   services.kmonad = {
     enable = true;
     configfiles = [
-      ../../keymaps/kmonad/spaceonly7.kbd
+      ../../keymaps/kmonad/sweep.kbd
     ];
   };
-  
-  
+
+
   xdg.portal.enable = true;
   services.flatpak.enable = true;
 
