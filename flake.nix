@@ -38,6 +38,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-on-droid = {
+      url = "github:t184256/nix-on-droid";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # neovim = {
     #   url = "github:neovim/neovim/v0.6.0?dir=contrib";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -55,6 +59,7 @@
     , personal
     , kmonad
     , sops-nix
+    , nix-on-droid
     }:
     let
       pkgsForSystem = { system, pkgs ? nixpkgs }: import pkgs {
@@ -204,5 +209,12 @@
             };
           };
       }
-    );
+    ) // ({
+nixOnDroidConfigurations = {
+      device = nix-on-droid.lib.nixOnDroidConfiguration {
+        config = ./systems/nix-on-droid/configuration.nix;
+        system = "aarch64-linux";
+      };
+    };
+});
 }
