@@ -7,6 +7,7 @@
 
     extraConfig = {
       init.defaultBranch = "main";
+      advice.detachedHead = false;
       core = {
         pager = "less -R";
         autocrlf = "input";

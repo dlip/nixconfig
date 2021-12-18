@@ -1,9 +1,9 @@
 { config, writeShellScriptBin, betterlockscreen }:
 let
-
-  projectdir = "~/code";
-  nixconfigpath = "${projectdir}/nixconfig";
-  projectfile = "${projectdir}/projects.txt";
+  home = "/home/dane";
+  codepath = "${home}/code";
+  nixconfigpath = "${codepath}/nixconfig";
+  projectfile = "${codepath}/projects.txt";
 
   scripts = {
     launch-default-programs = ''
@@ -70,21 +70,35 @@ let
       fi
       repo_path=$(cat ${projectfile} | fzf $filter_params --select-1)
       if [ -n "$repo_path" ]; then
-          cd ${projectdir}/$repo_path
+          cd ${home}/$repo_path
           tmux split-window -p 20
           tmux select-pane -U
           nvim
       fi
     '';
-
     # Project add current dir
+
     pa = ''
-      pwd | sed "s|${projectdir}/||" >> ${projectfile}
+      pwd | sed "s|${home}/||" >> ${projectfile}
     '';
 
     # Project add git folders
     pag = ''
-      find ~+ -maxdepth 4 -name .git -prune | sed 's|/.git$||' | sed "s|${projectdir}/||" >> ${projectfile}
+      find ~+ -maxdepth 4 -name .git -prune | sed 's|/.git$||' | sed "s|${home}/||" >> ${projectfile}
+    '';
+
+    # Git new feature
+    gn = ''
+      branch=$1
+      remote=origin
+      main=$(git rev-parse --abbrev-ref $remote/HEAD | sed "s|$remote/||")
+      GIT_STASH_MESSAGE="$RANDOM"
+      git stash -m "$GIT_STASH_MESSAGE"
+      git fetch $remote $main
+      git checkout $remote/$main
+      git checkout -b $branch
+      git push -u $remote $branch
+      git stash list | grep "$GIT_STASH_MESSAGE" && git stash pop --index
     '';
   };
 in
