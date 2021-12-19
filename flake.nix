@@ -210,12 +210,12 @@
           };
       }
     ) // ({
-nixOnDroidConfigurations = {
-      device = nix-on-droid.lib.nixOnDroidConfiguration {
-        config = ./systems/nix-on-droid/configuration.nix;
-        system = "aarch64-linux";
-        pkgs = pkgsForSystem { system = "aarch64-linux"; };
+      nixOnDroidConfigurations = {
+        device = nix-on-droid.lib.nixOnDroidConfiguration {
+          config = ./systems/nix-on-droid/configuration.nix;
+          system = "aarch64-linux";
+          pkgs = pkgsForSystem { system = "aarch64-linux"; };
+        };
       };
-    };
-});
+    });
 }
