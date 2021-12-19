@@ -41,6 +41,7 @@
     nix-on-droid = {
       url = "github:t184256/nix-on-droid";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
     # neovim = {
     #   url = "github:neovim/neovim/v0.6.0?dir=contrib";

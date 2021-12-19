@@ -31,23 +31,19 @@
   # Read the changelog before changing this value
   system.stateVersion = "21.11";
 
-  # After installing home-manager channel like
-  #   nix-channel --add https://github.com/rycee/home-manager/archive/release-21.11.tar.gz home-manager
-  #   nix-channel --update
-  # you can configure home-manager in here like
-  #home-manager.config =
-  #  { pkgs, lib, ... }:
-  #  {
-  #    # Read the changelog before changing this value
-  #    home.stateVersion = "21.11";
-  #
-  #    # Use the same overlays as the system packages
-  #    nixpkgs = { inherit (config.nixpkgs) overlays; };
-  #
-  #    # insert home-manager config
-  #  };
+  home-manager.config =
+    { pkgs, lib, ... }:
+    {
+      # Read the changelog before changing this value
+      home.stateVersion = "21.11";
+
+      # Use the same overlays as the system packages
+      nixpkgs = { inherit (config.nixpkgs) overlays; };
+      home.packages = with pkgs; [
+        unzip
+      ];
+    };
   # If you want the same pkgs instance to be used for nix-on-droid and home-manager
-  #home-manager.useGlobalPkgs = true;
+  home-manager.useGlobalPkgs = true;
 }
 
-# vim: ft=nix
