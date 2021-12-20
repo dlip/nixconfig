@@ -6,6 +6,7 @@
     exa
     fd
     fzf
+    gcc
     gnumake
     gotop
     htop

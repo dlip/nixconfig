@@ -2,7 +2,7 @@ local nvim_lsp = require("lspconfig")
 local null_ls = require("null-ls")
 local g = vim.g
 
-null_ls.config({
+null_ls.setup({
   sources = {
     null_ls.builtins.code_actions.gitsigns,
     null_ls.builtins.formatting.codespell,
@@ -30,7 +30,6 @@ local servers = {
   "eslint",
   "gopls",
   "html",
-  "null-ls",
   "solang",
   "pyright",
   "rnix",

@@ -1,8 +1,4 @@
 { pkgs, lib, ... }: {
-  imports = [
-    ./lsp.nix
-  ];
-
   home.packages = with pkgs;
     [
       acpi
@@ -24,7 +20,6 @@
       eksctl
       file
       fluxcd
-      gcc
       gh
       ghc
       ghostscript

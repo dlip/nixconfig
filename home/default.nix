@@ -27,6 +27,7 @@ in
     ./fonts.nix
     ./git
     ./gpg-agent
+    ./lsp.nix
     ./neovim
     ./nnn
     ./packages.nix
