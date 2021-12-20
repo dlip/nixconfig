@@ -19,6 +19,7 @@
     p7zip
     ripgrep
     ripgrep-all
+    sqlite
     sshfs
     stack
     tcpdump

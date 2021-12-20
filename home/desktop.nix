@@ -69,7 +69,6 @@
       rustup
       skopeo
       sops
-      sqlite
       ssh-to-age
       tesseract4
       tldr
