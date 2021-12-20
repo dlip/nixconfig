@@ -25,7 +25,5 @@
     unzip
     wget
     zip
-  ] ++ (if !pkgs.stdenv.hostPlatform.isAarch64 then [
-    delve
-  ] else [ ]) ++ (builtins.attrValues scripts.scripts);
+  ] ++ (builtins.attrValues scripts.scripts);
 }

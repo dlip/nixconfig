@@ -144,6 +144,7 @@
                           home.xrandrCommand = "xrandr --auto --output HDMI-0 --mode 1920x1080 --right-of eDP-1-1";
                           imports = [
                             ./home
+                            ./home/desktop.nix
                             ./home/graphical.nix
                             ./home/gaming.nix
                           ];
@@ -167,6 +168,7 @@
                       dane = {
                         imports = [
                           ./home
+                          ./home/desktop.nix
                         ];
                       };
                       tv = {
@@ -199,6 +201,7 @@
                       dane = {
                         imports = [
                           ./home
+                          ./home/desktop.nix
                           ./home/graphical.nix
                           ./home/gaming.nix
                         ];

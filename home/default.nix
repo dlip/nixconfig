@@ -35,8 +35,5 @@ in
     ./syncthing
     ./tmux
     ./zsh
-  ] ++ (if !pkgs.stdenv.hostPlatform.isAarch64 then [
-    ./desktop.nix
-    ./lsp.nix
-  ] else [ ]);
+  ];
 }
