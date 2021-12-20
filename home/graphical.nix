@@ -19,6 +19,7 @@
     dbeaver
     discord
     drawio
+    easyeffects
     emoji-menu
     power-menu
     firefox
