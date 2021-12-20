@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   home.packages = with pkgs; [
     age
     air
@@ -13,7 +13,6 @@
     cheat
     circleci-cli
     clang-tools
-    delve
     deno
     dig
     direnv
@@ -107,5 +106,7 @@
     youtube-dl
     yubikey-manager
     zip
-  ] ++ (builtins.attrValues scripts.scripts);
+  ] ++ (if !pkgs.stdenv.hostPlatform.isAarch64 then [
+    delve
+  ] else [ ]) ++ (builtins.attrValues scripts.scripts);
 }
