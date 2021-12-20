@@ -27,7 +27,6 @@ in
     ./fonts.nix
     ./git
     ./gpg-agent
-    ./lsp.nix
     ./neovim
     ./nnn
     ./packages.nix
@@ -36,5 +35,8 @@ in
     ./syncthing
     ./tmux
     ./zsh
-  ];
+  ] ++ (if !pkgs.stdenv.hostPlatform.isAarch64 then [
+    ./desktop.nix
+    ./lsp.nix
+  ] else [ ]);
 }

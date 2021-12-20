@@ -1,109 +1,29 @@
 { pkgs, lib, ... }: {
   home.packages = with pkgs; [
-    age
-    air
-    acpi
-    appimage-run
-    autoreconfHook
-    avrdude
-    aws-google-auth
-    awscli2
-    bat
-    binutils
-    cheat
-    circleci-cli
-    clang-tools
-    deno
     dig
     direnv
-    dive
-    docker-compose
-    eksctl
     envy-sh
     exa
     fd
-    file
-    fluxcd
     fzf
-    gcc
-    gh
-    ghc
-    ghostscript
-    glow
     gnumake
-    gnupg
-    gnuplot
-    go
-    gobang
     gotop
-    graphviz
-    hledger
     htop
     iotop
     jq
-    k9s
     killall
-    kind
-    kmonad
-    kubectl
-    kubernetes-helm
-    kubetail
-    lazygit
-    ledger
-    ledger-autosync
-    lldb
-    (lua.withPackages (ps: with ps; [ luacheck ]))
-    massren
-    mdl
     ncdu
     neofetch
-    niv
-    nix-du
-    nixfmt
-    nixpkgs-fmt
     nmap
-    nodePackages.node2nix
-    nodePackages.quicktype
-    nodePackages.reveal-md
-    nodePackages.typescript
-    nodejs
     nvimpager
-    openvpn
-    openssl
     p7zip
-    pandoc
-    pinentry
-    postgresql
-    python
-    python3
-    python39Packages.grip
-    python39Packages.pip
-    python39Packages.setuptools
-    rclone
-    renameutils
     ripgrep
     ripgrep-all
-    rustup
-    ssh-to-age
-    skopeo
-    sops
-    sqlite
     sshfs
     stack
     tcpdump
-    tesseract4
-    tldr
-    tshark
     unzip
-    usbutils
-    visidata
-    wally-cli
     wget
-    xdotool
-    yarn
-    yq
-    youtube-dl
-    yubikey-manager
     zip
   ] ++ (if !pkgs.stdenv.hostPlatform.isAarch64 then [
     delve
