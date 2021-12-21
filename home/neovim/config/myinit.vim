@@ -114,8 +114,9 @@ augroup vimrc
   autocmd BufEnter *.sol :setlocal filetype=solidity
 
   " Buffer local mappings
+  autocmd FileType json :lua json_mappings()
   autocmd BufEnter package.json :lua package_json_mappings()
-  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript :lua coding_mappings()
+  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript,vim :lua coding_mappings()
   autocmd FileType http :lua http_mappings()
 
   " Use tabs for golang
@@ -124,7 +125,6 @@ augroup vimrc
   " autoformat
   autocmd BufWritePre *.nix lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
   autocmd BufWritePre *.go lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
-  
 augroup end
 
 lua require'my.init'

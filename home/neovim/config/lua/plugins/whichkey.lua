@@ -147,6 +147,13 @@ local keymap = {
 wk.register(keymap, { prefix = "<leader>" })
 
 function _G.coding_mappings()
+  local formatCommand = "<cmd>lua vim.lsp.buf.formatting()<CR>"
+  if vim.o.filetype == "nix" then
+    formatCommand = '<cmd>lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })<CR>'
+  elseif vim.o.filetype == "go" then
+    formatCommand = '<cmd>lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })<CR>'
+  end
+
   local buffKeymap = {
     a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
     b = {
@@ -171,7 +178,7 @@ function _G.coding_mappings()
     d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
     D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
     e = { "<cmd>!eslint_d --fix %<CR>", "ESLint Fix Current File" },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Buffer" },
+    f = { formatCommand, "Format Buffer" },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Trigger Hover" },
     H = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
     i = { "<cmd>Telescope lsp_implementations<CR>", "Go to Implementations" },
@@ -201,11 +208,17 @@ function _G.coding_mappings()
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end
 
+function _G.json_mappings()
+  local buffKeymap = {
+    f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Buffer" },
+  }
+  wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
+end
+
 function _G.package_json_mappings()
   local buffKeymap = {
     c = { '<cmd>lua require"package-info".hide()<CR>', "Hide package versions" },
     d = { '<cmd>lua require"package-info".delete()<CR>', "Delete package on line" },
-    f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Buffer" },
     i = { '<cmd>lua require"package-info".install()<CR>', "Install a new package" },
     p = { '<cmd>lua require"package-info".change_version()<CR>', "Install a different package version" },
     r = { '<cmd>lua require"package-info".reinstall()<CR>', "Reinstall dependencies" },
