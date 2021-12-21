@@ -44,6 +44,10 @@
       url = "github:leoluz/nvim-dap-go";
       flake = false;
     };
+    octo-nvim = {
+      url = "github:pwntester/octo.nvim";
+      flake = false;
+    };
     package-info-nvim = {
       url = "github:vuki656/package-info.nvim";
       flake = false;

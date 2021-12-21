@@ -447,6 +447,22 @@
         "type": "github"
       }
     },
+    "octo-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1640038976,
+        "narHash": "sha256-DHqtIzJuzLZgK4D/Pd1aqRJ7CK28+pyuFs07ePctEk8=",
+        "owner": "pwntester",
+        "repo": "octo.nvim",
+        "rev": "7ef537dcb71da89f24494b82a0a4a8348e632614",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pwntester",
+        "repo": "octo.nvim",
+        "type": "github"
+      }
+    },
     "package-info-nvim": {
       "flake": false,
       "locked": {
@@ -478,11 +494,11 @@
       },
       "locked": {
         "narHash": "sha256-6HqF8MUg9vKyRxRgIdT6aXgjlddGOU5eqLR7k8mfP5k=",
-        "path": "/nix/store/7ybp9jlrr25dkyz7nx407rd86ycjdp78-source/overlays/personal",
+        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/personal",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/7ybp9jlrr25dkyz7nx407rd86ycjdp78-source/overlays/personal",
+        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/personal",
         "type": "path"
       }
     },
@@ -511,11 +527,11 @@
       },
       "locked": {
         "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "/nix/store/7ybp9jlrr25dkyz7nx407rd86ycjdp78-source/overlays/repos",
+        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/repos",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/7ybp9jlrr25dkyz7nx407rd86ycjdp78-source/overlays/repos",
+        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/repos",
         "type": "path"
       }
     },
@@ -613,18 +629,19 @@
         "nnn-nvim": "nnn-nvim",
         "nui-nvim": "nui-nvim",
         "nvim-dap-go": "nvim-dap-go",
+        "octo-nvim": "octo-nvim",
         "package-info-nvim": "package-info-nvim",
         "rest-nvim": "rest-nvim",
         "telescope-nvim": "telescope-nvim",
         "vim-delve": "vim-delve"
       },
       "locked": {
-        "narHash": "sha256-cGH0d7Zyu+2McJ++CfRaJpd+Yieb8wC6M0/MUhQkXfE=",
-        "path": "/nix/store/7ybp9jlrr25dkyz7nx407rd86ycjdp78-source/overlays/vimPlugins",
+        "narHash": "sha256-o9NHB7ifxh1/OE1/+F5pElUd1M6UMVctNM9E6pcCu00=",
+        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/7ybp9jlrr25dkyz7nx407rd86ycjdp78-source/overlays/vimPlugins",
+        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/vimPlugins",
         "type": "path"
       }
     },

@@ -82,6 +82,7 @@ in
           nvim-treesitter-textobjects
           nvim-ts-rainbow
           nvim-whichkey-setup-lua
+          octo-nvim
           package-info-nvim
           rest-nvim
           tabular
