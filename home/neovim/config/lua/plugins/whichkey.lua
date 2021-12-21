@@ -1,12 +1,71 @@
 local g = vim.g -- global variables
 
 g.which_key_timeout = 100
-local wk = require("whichkey_setup")
-
-require("whichkey_setup").config({
-  hide_statusline = false,
-  default_keymap_settings = { silent = true, noremap = true },
-  default_mode = "n",
+local wk = require("which-key")
+require("which-key").setup({
+  plugins = {
+    marks = true, -- shows a list of your marks on ' and `
+    registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+    spelling = {
+      enabled = false, -- enabling this will show WhichKey when pressing z= to select spelling suggestions
+      suggestions = 20, -- how many suggestions should be shown in the list?
+    },
+    -- the presets plugin, adds help for a bunch of default keybindings in Neovim
+    -- No actual key bindings are created
+    presets = {
+      operators = true, -- adds help for operators like d, y, ... and registers them for motion / text object completion
+      motions = true, -- adds help for motions
+      text_objects = true, -- help for text objects triggered after entering an operator
+      windows = true, -- default bindings on <c-w>
+      nav = true, -- misc bindings to work with windows
+      z = true, -- bindings for folds, spelling and others prefixed with z
+      g = true, -- bindings for prefixed with g
+    },
+  },
+  -- add operators that will trigger motion and text object completion
+  -- to enable all native operators, set the preset / operators plugin above
+  operators = { gc = "Comments" },
+  key_labels = {
+    -- override the label used to display some keys. It doesn't effect WK in any other way.
+    -- For example:
+    -- ["<space>"] = "SPC",
+    -- ["<cr>"] = "RET",
+    -- ["<tab>"] = "TAB",
+  },
+  icons = {
+    breadcrumb = "»", -- symbol used in the command line area that shows your active key combo
+    separator = "➜", -- symbol used between a key and it's label
+    group = "+", -- symbol prepended to a group
+  },
+  popup_mappings = {
+    scroll_down = "<c-d>", -- binding to scroll down inside the popup
+    scroll_up = "<c-u>", -- binding to scroll up inside the popup
+  },
+  window = {
+    border = "none", -- none, single, double, shadow
+    position = "bottom", -- bottom, top
+    margin = { 1, 0, 1, 0 }, -- extra window margin [top, right, bottom, left]
+    padding = { 2, 2, 2, 2 }, -- extra window padding [top, right, bottom, left]
+    winblend = 0,
+  },
+  layout = {
+    height = { min = 4, max = 25 }, -- min and max height of the columns
+    width = { min = 20, max = 50 }, -- min and max width of the columns
+    spacing = 3, -- spacing between columns
+    align = "left", -- align columns left, center or right
+  },
+  ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
+  hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
+  show_help = true, -- show help message on the command line when the popup is visible
+  triggers = "auto", -- automatically setup triggers
+  -- triggers = {"<leader>"} -- or specify a list manually
+  triggers_blacklist = {
+    -- list of mode / prefixes that should never be hooked by WhichKey
+    -- this is mostly relevant for key maps that start with a native binding
+    -- most people should not need to change this
+    i = { "j", "k" },
+    v = { "j", "k" },
+  },
 })
 
 local keymap = {
@@ -98,16 +157,6 @@ local keymap = {
     n = { "<cmd>cn<CR>", "Next" },
     p = { "<cmd>cp<CR>", "Previous" },
   },
-  x = { "<cmd>Bdelete<CR>", "Close Buffer" },
-}
-
-local plug = {
-  r = {
-    name = "+Rest",
-    e = { "<Plug>RestNvim", "Execute" },
-    p = { "<Plug>RestNvimPreview", "Preview" },
-    l = { "<Plug>RestNvimLast", "Re-run last" },
-  },
   w = {
     name = "+VimWiki",
     w = { "<Plug>VimwikiIndex", "Wiki Index" },
@@ -120,36 +169,37 @@ local plug = {
     d = { "<Plug>VimwikiMakeDiaryNote", "Diary Today" },
     y = { "<Plug>VimwikiMakeYesterdayDiaryNote", "Diary Yesterday" },
   },
+  x = { "<cmd>Bdelete<CR>", "Close Buffer" },
 }
 
-local lsp = {
-  name = "+LSP",
-  a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
-  d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
-  D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
-  e = { "<cmd>!eslint_d --fix %<CR>", "ESLint Fix Current File" },
-  f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Buffer" },
-  h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Trigger Hover" },
-  H = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
-  i = { "<cmd>Telescope lsp_implementations<CR>", "Go to Implementations" },
-  l = { "<cmd>lua require('lint').try_lint()<CR>", "Lint" },
-  m = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-  n = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Go to Next Error" },
-  N = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "Go to Previous Error" },
-  o = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics" },
-  q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Set Loclist" },
-  r = { "<cmd>Telescope lsp_references<CR>", "References" },
-  s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
-  S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Dynamic Workspace Symbols" },
-  t = { "<cmd>Telescope lsp_type_definitions<CR>", "Type Definitions" },
-  w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Workspace Folder" },
-  W = { "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List Workspace Folders" },
-  x = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove Workspace Folder" },
-}
+wk.register(keymap, { prefix = "<leader>" })
 
-wk.register_keymap("l", lsp)
-wk.register_keymap("leader", keymap)
-wk.register_keymap("leader", plug, { silent = true, noremap = false })
+function _G.coding_mappings()
+  local buffKeymap = {
+    a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
+    d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
+    D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
+    e = { "<cmd>!eslint_d --fix %<CR>", "ESLint Fix Current File" },
+    f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Buffer" },
+    h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Trigger Hover" },
+    H = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+    i = { "<cmd>Telescope lsp_implementations<CR>", "Go to Implementations" },
+    l = { "<cmd>lua require('lint').try_lint()<CR>", "Lint" },
+    m = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
+    n = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Go to Next Error" },
+    N = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "Go to Previous Error" },
+    o = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics" },
+    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Set Loclist" },
+    r = { "<cmd>Telescope lsp_references<CR>", "References" },
+    s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
+    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Dynamic Workspace Symbols" },
+    t = { "<cmd>Telescope lsp_type_definitions<CR>", "Type Definitions" },
+    w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Workspace Folder" },
+    W = { "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List Workspace Folders" },
+    x = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove Workspace Folder" },
+  }
+  wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
+end
 
 function _G.package_json_mappings()
   local buffKeymap = {
@@ -161,5 +211,5 @@ function _G.package_json_mappings()
     r = { '<cmd>lua require"package-info".reinstall()<CR>', "Reinstall dependencies" },
     p = { '<cmd>lua require"package-info".change_version()<CR>', "Install a different package version" },
   }
-  wk.register_keymap(",", buffKeymap, { buffer = vim.api.nvim_get_current_buf() })
+  wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end

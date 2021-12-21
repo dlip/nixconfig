@@ -8,7 +8,7 @@ local opt = vim.opt -- global/buffer/windows-scoped options
 -- General
 -----------------------------------------------------------
 g.mapleader = " " -- change leader to a space
-g.maplocalleader = "," -- change local leader to a comma
+g.maplocalleader = "l" -- change local leader to l
 opt.mouse = "a" -- enable mouse support
 opt.clipboard = "unnamedplus" -- copy/paste to system clipboard
 opt.swapfile = false -- don't use swapfile

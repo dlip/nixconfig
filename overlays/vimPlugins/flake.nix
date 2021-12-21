@@ -20,16 +20,16 @@
       url = "github:lukas-reineke/format.nvim";
       flake = false;
     };
-    neogit = {
-      url = "github:TimUntersberger/neogit";
-      flake = false;
-    };
     luasnip = {
       url = "github:L3MON4D3/LuaSnip";
       flake = false;
     };
     lspkind-nvim = {
       url = "github:onsails/lspkind-nvim";
+      flake = false;
+    };
+    neogit = {
+      url = "github:TimUntersberger/neogit";
       flake = false;
     };
     nnn-nvim = {
@@ -62,6 +62,10 @@
     };
     vim-delve = {
       url = "github:sebdah/vim-delve";
+      flake = false;
+    };
+    whichkey-nvim = {
+      url = "github:folke/which-key.nvim";
       flake = false;
     };
   };

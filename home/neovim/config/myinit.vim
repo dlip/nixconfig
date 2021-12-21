@@ -116,6 +116,8 @@ augroup vimrc
   " Set package.json local key mappings
   autocmd BufEnter package.json :lua package_json_mappings()
 
+  autocmd FileType nix :lua coding_mappings()
+
   " Use tabs for golang
   autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 

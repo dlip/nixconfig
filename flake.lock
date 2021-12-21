@@ -494,11 +494,11 @@
       },
       "locked": {
         "narHash": "sha256-6HqF8MUg9vKyRxRgIdT6aXgjlddGOU5eqLR7k8mfP5k=",
-        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/personal",
+        "path": "/nix/store/g311y8sdd8055kicxcs2krz32h532krd-source/overlays/personal",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/personal",
+        "path": "/nix/store/g311y8sdd8055kicxcs2krz32h532krd-source/overlays/personal",
         "type": "path"
       }
     },
@@ -527,11 +527,11 @@
       },
       "locked": {
         "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/repos",
+        "path": "/nix/store/g311y8sdd8055kicxcs2krz32h532krd-source/overlays/repos",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/repos",
+        "path": "/nix/store/g311y8sdd8055kicxcs2krz32h532krd-source/overlays/repos",
         "type": "path"
       }
     },
@@ -633,15 +633,16 @@
         "package-info-nvim": "package-info-nvim",
         "rest-nvim": "rest-nvim",
         "telescope-nvim": "telescope-nvim",
-        "vim-delve": "vim-delve"
+        "vim-delve": "vim-delve",
+        "whichkey-nvim": "whichkey-nvim"
       },
       "locked": {
-        "narHash": "sha256-o9NHB7ifxh1/OE1/+F5pElUd1M6UMVctNM9E6pcCu00=",
-        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/vimPlugins",
+        "narHash": "sha256-ECi52s7Qg4xHu03yCk0PBQ6iyhdBeLcKTRhuLJmgjwo=",
+        "path": "/nix/store/g311y8sdd8055kicxcs2krz32h532krd-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/vqiddab2lnqgg3q92x003qnrhvmb5hr9-source/overlays/vimPlugins",
+        "path": "/nix/store/g311y8sdd8055kicxcs2krz32h532krd-source/overlays/vimPlugins",
         "type": "path"
       }
     },
@@ -667,6 +668,22 @@
       "original": {
         "owner": "zsa",
         "repo": "wally-cli",
+        "type": "github"
+      }
+    },
+    "whichkey-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1639755215,
+        "narHash": "sha256-T9Chtv1ITHItYGKFu+bIufzTmckEGsiqO8peuI7KtGw=",
+        "owner": "folke",
+        "repo": "which-key.nvim",
+        "rev": "312c386ee0eafc925c27869d2be9c11ebdb807eb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "folke",
+        "repo": "which-key.nvim",
         "type": "github"
       }
     }

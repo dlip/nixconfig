@@ -81,7 +81,6 @@ in
           nvim-lspconfig
           nvim-treesitter-textobjects
           nvim-ts-rainbow
-          nvim-whichkey-setup-lua
           octo-nvim
           package-info-nvim
           rest-nvim
@@ -101,8 +100,8 @@ in
           vim-solidity
           vim-test
           vim-tmux-navigator
-          vim-which-key # spacemacs-like leader key menu
           vimwiki
+          whichkey-nvim
 
           (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
           (pluginWithDeps lualine-nvim [ lsp-status-nvim ])
