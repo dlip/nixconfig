@@ -52,7 +52,7 @@ require("which-key").setup({
     height = { min = 4, max = 25 }, -- min and max height of the columns
     width = { min = 20, max = 50 }, -- min and max width of the columns
     spacing = 3, -- spacing between columns
-    align = "left", -- align columns left, center or right
+    align = "center", -- align columns left, center or right
   },
   ignore_missing = false, -- enable this to hide mappings for which you didn't specify a label
   hidden = { "<silent>", "<cmd>", "<Cmd>", "<CR>", "call", "lua", "^:", "^ " }, -- hide mapping boilerplate
@@ -71,25 +71,6 @@ require("which-key").setup({
 local keymap = {
   ["<Tab>"] = { "<C-^>", "Previous Buffer" },
   b = { "<cmd>Telescope buffers<CR>", "Find Buffers" },
-  d = {
-    name = "+Debug",
-    c = { '<cmd>lua require"dap".continue()<CR>', "Continue" },
-    o = { '<cmd>lua require"dap".step_over()<CR>', "Step Over" },
-    i = { '<cmd>lua require"dap".step_into()<CR>', "Step Into" },
-    t = { '<cmd>lua require"dap".step_out()<CR>', "Step Out" },
-    b = { '<cmd>lua require"dap".toggle_breakpoint()<CR>', "Toggle Breakpoint" },
-    B = {
-      "<cmd>lua require\"dap\".set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
-      "Toggle Breakpoint Condition",
-    },
-    l = {
-      "<cmd>lua require\"dap\".set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
-      "Toggle Breakpoint Log",
-    },
-    r = { '<cmd>lua require"dap".repl.open()<CR>', "Open REPL" },
-    e = { '<cmd>lua require"dap".run_last()<CR>', "Run Last" },
-    u = { '<cmd>lua require"dapui".toggle()<CR>', "Toggle DAP UI" },
-  },
   f = {
     name = "+Find",
     b = { "<cmd>Telescope buffers<CR>", "Buffers" },
@@ -141,15 +122,6 @@ local keymap = {
   n = { "<cmd>NvimTreeToggle<CR>", "NvimTreeToggle" },
   p = { "<cmd>Telescope fd<CR>", "Find Files" },
   s = { "<cmd>w!<CR>", "save file" }, -- set a single command and text
-  t = {
-    name = "+Test",
-    d = { "<cmd>call DebugNearest()<CR>", "Debug Nearest" },
-    f = { "<cmd>TestFile<CR>", "Test File" },
-    l = { "<cmd>TestLast<CR>", "Test Last" },
-    n = { "<cmd>TestNearest<CR>", "Test Nearest" },
-    s = { "<cmd>TestSuite<CR>", "Test Suite" },
-    v = { "<cmd>TestVisit<CR>", "Test Visit" },
-  },
   q = {
     name = "+Quickfix",
     o = { "<cmd>copen<CR>", "Open" },
@@ -177,6 +149,25 @@ wk.register(keymap, { prefix = "<leader>" })
 function _G.coding_mappings()
   local buffKeymap = {
     a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
+    b = {
+      name = "+Debug",
+      c = { '<cmd>lua require"dap".continue()<CR>', "Continue" },
+      o = { '<cmd>lua require"dap".step_over()<CR>', "Step Over" },
+      i = { '<cmd>lua require"dap".step_into()<CR>', "Step Into" },
+      t = { '<cmd>lua require"dap".step_out()<CR>', "Step Out" },
+      b = { '<cmd>lua require"dap".toggle_breakpoint()<CR>', "Toggle Breakpoint" },
+      B = {
+        "<cmd>lua require\"dap\".set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+        "Toggle Breakpoint Condition",
+      },
+      l = {
+        "<cmd>lua require\"dap\".set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+        "Toggle Breakpoint Log",
+      },
+      r = { '<cmd>lua require"dap".repl.open()<CR>', "Open REPL" },
+      e = { '<cmd>lua require"dap".run_last()<CR>', "Run Last" },
+      u = { '<cmd>lua require"dapui".toggle()<CR>', "Toggle DAP UI" },
+    },
     d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
     D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
     e = { "<cmd>!eslint_d --fix %<CR>", "ESLint Fix Current File" },
@@ -193,23 +184,42 @@ function _G.coding_mappings()
     r = { "<cmd>Telescope lsp_references<CR>", "References" },
     s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Dynamic Workspace Symbols" },
-    t = { "<cmd>Telescope lsp_type_definitions<CR>", "Type Definitions" },
+    t = {
+      name = "+Test",
+      d = { "<cmd>call DebugNearest()<CR>", "Debug Nearest" },
+      f = { "<cmd>TestFile<CR>", "Test File" },
+      l = { "<cmd>TestLast<CR>", "Test Last" },
+      n = { "<cmd>TestNearest<CR>", "Test Nearest" },
+      s = { "<cmd>TestSuite<CR>", "Test Suite" },
+      v = { "<cmd>TestVisit<CR>", "Test Visit" },
+    },
     w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Workspace Folder" },
     W = { "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List Workspace Folders" },
     x = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove Workspace Folder" },
+    y = { "<cmd>Telescope lsp_type_definitions<CR>", "Type Definitions" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end
 
 function _G.package_json_mappings()
   local buffKeymap = {
-    s = { '<cmd>lua require"package-info".show()<CR>', "Show package versions" },
     c = { '<cmd>lua require"package-info".hide()<CR>', "Hide package versions" },
-    u = { '<cmd>lua require"package-info".update()<CR>', "Update package on line" },
     d = { '<cmd>lua require"package-info".delete()<CR>', "Delete package on line" },
+    f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Buffer" },
     i = { '<cmd>lua require"package-info".install()<CR>', "Install a new package" },
-    r = { '<cmd>lua require"package-info".reinstall()<CR>', "Reinstall dependencies" },
     p = { '<cmd>lua require"package-info".change_version()<CR>', "Install a different package version" },
+    r = { '<cmd>lua require"package-info".reinstall()<CR>', "Reinstall dependencies" },
+    s = { '<cmd>lua require"package-info".show()<CR>', "Show package versions" },
+    u = { '<cmd>lua require"package-info".update()<CR>', "Update package on line" },
+  }
+  wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
+end
+
+function _G.http_mappings()
+  local buffKeymap = {
+    e = { "<Plug>RestNvim", "Execute" },
+    p = { "<Plug>RestNvimPreview", "Preview" },
+    l = { "<Plug>RestNvimLast", "Re-run last" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end

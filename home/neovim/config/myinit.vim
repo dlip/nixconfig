@@ -113,10 +113,10 @@ augroup vimrc
   " Set filetypes
   autocmd BufEnter *.sol :setlocal filetype=solidity
 
-  " Set package.json local key mappings
+  " Buffer local mappings
   autocmd BufEnter package.json :lua package_json_mappings()
-
-  autocmd FileType nix :lua coding_mappings()
+  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript :lua coding_mappings()
+  autocmd FileType http :lua http_mappings()
 
   " Use tabs for golang
   autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
