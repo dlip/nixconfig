@@ -110,11 +110,12 @@ local keymap = {
     },
     h = { "<cmd>DiffviewFileHistory<CR>", "Diffview File History" },
     m = { "<cmd>MergetoolToggle<CR>", "Mergetool Toggle" },
+    l = { "<cmd>Octo pr list<CR>", "List PR" },
+    n = { "<cmd>Octo pr create<CR>", "Create PR" },
     s = { "<cmd>Neogit<CR>", "Neogit Status" },
     t = { "<cmd>G<CR>", "Status" },
     p = { "<cmd>Neogit pull<CR>", "Pull" },
     P = { "<cmd>Neogit push<CR>", "Push" },
-    o = { "<cmd><CR>", "Pull" },
     q = { "<cmd>Git mergetool<CR>", "Merge List Quickfix" },
     [","] = { "[c", "Previous change" },
     ["."] = { "]c", "Next change" },
@@ -233,6 +234,40 @@ function _G.http_mappings()
     e = { "<Plug>RestNvim", "Execute" },
     p = { "<Plug>RestNvimPreview", "Preview" },
     l = { "<Plug>RestNvimLast", "Re-run last" },
+  }
+  wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
+end
+
+function _G.octo_pr_mappings()
+  local buffKeymap = {
+    a = { "<cmd>Octo assignee add <CR>", "Add Assignee" },
+    A = { "<cmd>Octo assignee remove <CR>", "Remove Assignee" },
+    B = {
+      name = "+Label",
+      a = { "<cmd>Octo label add<CR>", "Add Label" },
+      r = { "<cmd>Octo label remove <CR>", "Remove Label" },
+      c = { "<cmd>Octo label create <CR>", "Create Label" },
+    },
+    b = { "<cmd>Octo pr browser<CR>", "Open in browser" },
+    c = {
+      name = "+Comment",
+      a = { "<cmd>Octo comment add<CR>", "Add Comment" },
+      d = { "<cmd>Octo comment delete<CR>", "Delete Comment" },
+    },
+    u = { "<cmd>Octo pr reopen<CR>", "Reopen" },
+    d = { "<cmd>Octo pr diff<CR>", "Diff" },
+    l = { "<cmd>Octo pr list<CR>", "List" },
+    m = { "<cmd>Octo pr merge<CR>", "Merge" },
+    o = { "<cmd>Octo pr checkout<CR>", "Checkout" },
+    r = { "<cmd>Octo pr reload<CR>", "Reload" },
+    s = { "<cmd>Octo pr search<CR>", "Search" },
+    v = {
+      name = "+Reviewer",
+      a = { "<cmd>Octo reviewer add<CR>", "Add Reviewer" },
+      r = { "<cmd>Octo reviewer remove<CR>", "Remove Reviewer" },
+    },
+    X = { "<cmd>Octo pr close<CR>", "Close" },
+    y = { "<cmd>Octo pr url<CR>", "Copy URL" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end

@@ -118,6 +118,7 @@ augroup vimrc
   autocmd BufEnter package.json :lua package_json_mappings()
   autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript,vim :lua coding_mappings()
   autocmd FileType http :lua http_mappings()
+  autocmd BufEnter octo://*/pull/* :lua octo_pr_mappings()
 
   " Use tabs for golang
   autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
