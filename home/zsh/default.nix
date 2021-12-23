@@ -28,14 +28,14 @@
       export PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
       export LANG=en_US.UTF-8
       export LC_ALL=en_US.UTF-8
-      
       export MANPAGER='nvim +Man!'
       export MANWIDTH=999
-
       export FZF_DEFAULT_COMMAND='fd'
       export GPG_TTY="$(tty)"
       gpg-connect-agent /bye
       export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+      # Needed for go debugging
+      export CGO_CFLAGS=-O
     '';
 
     oh-my-zsh = {

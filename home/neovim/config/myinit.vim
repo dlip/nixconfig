@@ -19,8 +19,11 @@ let g:test#strategy = 'asyncrun_background'
 
 function! DebugNearest()
   let g:test#go#runner = 'delve'
+  let defaultStrategy = g:test#strategy
+  let g:test#strategy = 'neovim'
   TestNearest
   let g:test#go#runner = 'gotest'
+  let g:test#strategy = defaultStrategy
 endfunction
 
 " https://github.com/skywind3000/asyncrun.vim

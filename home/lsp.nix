@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
     codespell
+    delve
     gopls
     golangci-lint
     haskellPackages.haskell-language-server
