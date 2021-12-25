@@ -148,13 +148,6 @@ local keymap = {
 wk.register(keymap, { prefix = "<leader>" })
 
 function _G.coding_mappings()
-  local formatCommand = "<cmd>lua vim.lsp.buf.formatting()<CR>"
-  if vim.o.filetype == "nix" then
-    formatCommand = '<cmd>lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })<CR>'
-  elseif vim.o.filetype == "go" then
-    formatCommand = '<cmd>lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })<CR>'
-  end
-
   local buffKeymap = {
     a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
     b = {
@@ -179,7 +172,7 @@ function _G.coding_mappings()
     d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
     D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
     e = { "<cmd>!eslint_d --fix %<CR>", "ESLint Fix Current File" },
-    f = { formatCommand, "Format Buffer" },
+    f = { "<cmd>lua format_buffer()<CR>", "Format Buffer" },
     h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Trigger Hover" },
     H = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
     i = { "<cmd>Telescope lsp_implementations<CR>", "Go to Implementations" },
@@ -279,6 +272,13 @@ function _G.octo_pr_mappings()
     },
     X = { "<cmd>Octo pr close<CR>", "Close" },
     y = { "<cmd>Octo pr url<CR>", "Copy URL" },
+  }
+  wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
+end
+
+function _G.quickfix_mappings()
+  local buffKeymap = {
+    f = { "<cmd>cfdo lua format_buffer()<CR><cmd>wa<CR>", "Format All" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end

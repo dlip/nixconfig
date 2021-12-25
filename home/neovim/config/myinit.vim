@@ -96,15 +96,6 @@ augroup vimrc
   autocmd BufWinEnter,WinEnter term://* startinsert
   autocmd BufLeave term://* stopinsert
 
-  " remove whitespace on save
-  " autocmd BufWritePre * :%s/\s\+$//e
-
-  " autoformat
-  " augroup Format
-  "     autocmd!
-  "     autocmd BufWritePost * FormatWrite
-  " augroup END
-
   " Restore enter functionality in quickfix window
   autocmd FileType qf nmap <buffer> <CR> <CR>
 
@@ -114,21 +105,18 @@ augroup vimrc
   autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
 
   " Set filetypes
-  autocmd BufEnter *.sol :setlocal filetype=solidity
+  autocmd BufEnter *.sol setlocal filetype=solidity
 
   " Buffer local mappings
-  autocmd FileType json :lua json_mappings()
-  autocmd BufEnter package.json :lua package_json_mappings()
-  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript,vim :lua coding_mappings()
-  autocmd FileType http :lua http_mappings()
-  autocmd BufEnter octo://*/pull/* :lua octo_pr_mappings()
+  autocmd FileType json lua json_mappings()
+  autocmd BufEnter package.json lua package_json_mappings()
+  autocmd FileType qf lua quickfix_mappings()
+  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript,vim lua coding_mappings()
+  autocmd FileType http lua http_mappings()
+  autocmd BufEnter octo://*/pull/* lua octo_pr_mappings()
 
   " Use tabs for golang
   autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
-
-  " autoformat
-  autocmd BufWritePre *.nix lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
-  autocmd BufWritePre *.go lua vim.lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
 augroup end
 
 lua require'my.init'

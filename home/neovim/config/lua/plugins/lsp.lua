@@ -88,3 +88,13 @@ require("lspconfig").sumneko_lua.setup({
     },
   },
 })
+
+function _G.format_buffer()
+  if vim.o.filetype == "nix" then
+    vim.lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
+  elseif vim.o.filetype == "go" then
+    vim.lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
+  else
+    vim.lsp.buf.formatting()
+  end
+end
