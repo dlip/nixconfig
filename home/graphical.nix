@@ -35,6 +35,7 @@
     lens
     libreoffice
     mpv
+    neovide
     # nyxt
     obs-studio
     obsidian
