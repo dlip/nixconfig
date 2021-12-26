@@ -17,7 +17,7 @@ let
       session="work"
       tmux new-session -d -s $session
       tmux send-keys -t $session 'p nixconfig' C-m
-      sleep 0.5
+      tmux wait project_opened
       tmux new-window -t $session:1
       tmux send-keys -t $session 'cd ~/notes/vimwiki && nvim index.md' C-m
       tmux attach -t $session
@@ -73,6 +73,7 @@ let
       if [ -n "$repo_path" ]; then
           cd ${home}/$repo_path
           tmux split-window -p 20
+          tmux wait -S project_opened
           tmux select-pane -U
           nvim
       fi
