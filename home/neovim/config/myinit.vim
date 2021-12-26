@@ -57,6 +57,11 @@ let g:firenvim_config = {
     \ }
 \ }
 
+" https://github.com/neovide/neovide
+let g:neovide_cursor_vfx_mode = "railgun"
+" let g:neovide_transparency=0.8
+" let g:neovide_window_floating_opacity=1
+
 " Colors
 autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
 autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
