@@ -1,6 +1,7 @@
 local nvim_lsp = require("lspconfig")
 local null_ls = require("null-ls")
 local g = vim.g
+local lsp = vim.lsp
 
 null_ls.setup({
   sources = {
@@ -39,9 +40,9 @@ local servers = {
   "vimls",
 }
 
-for _, lsp in ipairs(servers) do
-  nvim_lsp[lsp].setup({
-    capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+for _, server in ipairs(servers) do
+  nvim_lsp[server].setup({
+    capabilities = require("cmp_nvim_lsp").update_capabilities(lsp.protocol.make_client_capabilities()),
     flags = {
       debounce_text_changes = 150,
     },
@@ -59,7 +60,7 @@ lib[g.awesome_root_path .. "/lib"] = true
 
 require("lspconfig").sumneko_lua.setup({
   cmd = { g.sumneko_root_path .. "/bin/lua-language-server", "-E", g.sumneko_root_path .. "/extras/main.lua" },
-  capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  capabilities = require("cmp_nvim_lsp").update_capabilities(lsp.protocol.make_client_capabilities()),
   settings = {
     Lua = {
       runtime = {
@@ -92,10 +93,12 @@ require("lspconfig").sumneko_lua.setup({
 
 function _G.format_buffer()
   if vim.o.filetype == "nix" then
-    vim.lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
+    lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
   elseif vim.o.filetype == "go" then
-    vim.lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
+    lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
+  elseif vim.o.filetype == "vim" then
+    vim.fn.feedkeys("gg=G<C-o><C-o>")
   else
-    vim.lsp.buf.formatting()
+    lsp.buf.formatting()
   end
 end
