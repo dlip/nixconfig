@@ -200,6 +200,8 @@ rec {
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.secrets.test = { };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
