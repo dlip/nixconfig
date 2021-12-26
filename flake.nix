@@ -160,6 +160,7 @@
               modules = [
                 ./systems/dex/configuration.nix
                 home-manager.nixosModules.home-manager
+                sops-nix.nixosModules.sops
                 {
                   home-manager = {
                     useGlobalPkgs = true;
