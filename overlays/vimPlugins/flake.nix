@@ -20,6 +20,10 @@
       url = "github:lukas-reineke/format.nvim";
       flake = false;
     };
+    kanagawa-nvim = {
+      url = "github:rebelot/kanagawa.nvim";
+      flake = false;
+    };
     luasnip = {
       url = "github:L3MON4D3/LuaSnip";
       flake = false;

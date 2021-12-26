@@ -63,6 +63,7 @@ in
           gv-vim
           hop-nvim
           indent-blankline-nvim
+          kanagawa-nvim
           lspkind-nvim # Icons for lsp popup
           luasnip
           markdown-preview-nvim

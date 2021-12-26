@@ -36,9 +36,6 @@ in
       experimental-features = nix-command flakes
     '';
   };
-  # sops.defaultSopsFile = ../../secrets/example.yaml;
-  # sops.age.keyFile = "/home/dane/.config/sops/age/keys.txt";
-  # sops.secrets.test = { };
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
