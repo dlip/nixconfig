@@ -17,6 +17,7 @@
     nodePackages.vscode-css-languageserver-bin
     nodePackages.vscode-html-languageserver-bin
     nodePackages.vscode-langservers-extracted
+    nodePackages.vim-language-server
     nodePackages.yaml-language-server
     proselint
     rnix-lsp

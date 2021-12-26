@@ -47,6 +47,7 @@
         scripts = final.callPackage ./scripts { };
         skyscraper = final.callPackage ./skyscraper { };
         solang = final.callPackage ./solang { };
+        # dhcp = prev.dhcpcd.override { enablePrivSep = false; };
       };
     };
 }

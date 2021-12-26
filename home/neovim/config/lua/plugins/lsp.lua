@@ -30,12 +30,13 @@ local servers = {
   "eslint",
   "gopls",
   "html",
-  "solang",
   "pyright",
   "rnix",
-  "terraformls",
   "rust_analyzer",
+  "solang",
+  "terraformls",
   "tsserver",
+  "vimls",
 }
 
 for _, lsp in ipairs(servers) do
