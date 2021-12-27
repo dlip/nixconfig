@@ -29,5 +29,6 @@
     terraform-ls
     tree-sitter
     vale
+    vim-vint
   ];
 }

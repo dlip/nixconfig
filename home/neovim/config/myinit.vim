@@ -11,7 +11,7 @@ EOF
 " reload config
 nnoremap <c-\> <cmd>lua reloadMyConfig()<CR>
 
-let g:netrw_browsex_viewer = "xdg-open"
+let g:netrw_browsex_viewer = 'xdg-open'
 
 " https://github.com/vim-test/vim-test
 let g:test#go#runner = 'gotest'
@@ -58,15 +58,11 @@ let g:firenvim_config = {
 \ }
 
 " https://github.com/neovide/neovide
-let g:neovide_cursor_vfx_mode = "railgun"
-" let g:neovide_transparency=0.8
+let g:neovide_cursor_vfx_mode = 'railgun'
+let g:neovide_transparency=0.8
 " let g:neovide_window_floating_opacity=1
 
-" Colors
-autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
-autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
-autocmd ColorScheme * highlight NvimTreeNormal ctermbg=NONE guibg=NONE
+" Colorscheme
 colorscheme tokyonight
 
 " open a terminal pane on the bottom using :Term
@@ -74,6 +70,13 @@ command Term :botright split term://$SHELL
 
 augroup vimrc
   autocmd!
+
+  " Set transparent background
+  autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+  autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
+  autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
+  autocmd ColorScheme * highlight NvimTreeNormal ctermbg=NONE guibg=NONE
+
   " highlight on yank
   autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
 
@@ -116,12 +119,16 @@ augroup vimrc
   autocmd FileType json lua json_mappings()
   autocmd BufEnter package.json lua package_json_mappings()
   autocmd FileType qf lua quickfix_mappings()
-  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript,vim lua coding_mappings()
+  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript,vim,yaml lua coding_mappings()
   autocmd FileType http lua http_mappings()
   autocmd BufEnter octo://*/pull/* lua octo_pr_mappings()
 
   " Use tabs for golang
   autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 augroup end
+
+
+" Colorscheme
+colorscheme tokyonight
 
 lua require'my.init'

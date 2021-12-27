@@ -35,8 +35,8 @@ opt.wrap = false -- No wrap
 opt.scrolloff = 5 -- keep cursor away from top/bottom edge of the screen
 opt.cursorline = true -- highlight current line
 opt.termguicolors = true -- enable 24-bit RGB colors
-opt.guifont = "FiraCode Nerd Font Mono:h10"
-opt.title = true
+opt.guifont = "FiraCode Nerd Font Mono:h10" -- set GUI font
+opt.title = true -- show filename in gui window
 
 -----------------------------------------------------------
 -- Memory, CPU

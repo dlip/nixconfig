@@ -205,7 +205,7 @@ end
 
 function _G.json_mappings()
   local buffKeymap = {
-    f = { "<cmd>lua vim.lsp.buf.formatting()<CR>", "Format Buffer" },
+    f = { "<cmd>lua format_buffer()<CR>", "Format Buffer" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end

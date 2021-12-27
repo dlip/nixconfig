@@ -6,6 +6,7 @@ local lsp = vim.lsp
 null_ls.setup({
   sources = {
     null_ls.builtins.code_actions.gitsigns,
+    null_ls.builtins.diagnostics.vint,
     null_ls.builtins.formatting.codespell,
     null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.formatting.prettier,
@@ -96,8 +97,6 @@ function _G.format_buffer()
     lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
   elseif vim.o.filetype == "go" then
     lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
-  elseif vim.o.filetype == "vim" then
-    vim.fn.feedkeys("gg=G<C-o><C-o>")
   else
     lsp.buf.formatting()
   end
