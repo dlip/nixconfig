@@ -16,6 +16,9 @@ in
   };
 
   config = {
+    sops.secrets.ssmtpPassword = {
+      sopsFile = ../secrets/secrets.yaml;
+    };
     services.ssmtp = {
       enable = true;
       # The user that gets all the mails (UID < 1000, usually the admin)
@@ -27,7 +30,7 @@ in
       domain = "lipscombe.com.au";
       # Username/Password File
       authUser = cfg.adminEmail;
-      authPassFile = "/mnt/services/ssmtp/pass";
+      authPassFile = config.sops.secrets.ssmtpPassword.path;
     };
   };
 
