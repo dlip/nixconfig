@@ -27,7 +27,7 @@
 
     "${config.xdg.configHome}/vale/vale.ini".text = ''
       StylesPath = ${pkgs.vale.data}/share/vale/styles
-   
+
       [*.md]
       BasedOnStyles = proselint, write-good, Joblint
       MinAlertLevel = suggestion

@@ -7,7 +7,7 @@ in
     ../common/services/ssmtp.nix
     pkgs.sops-nix.nixosModule
   ];
-  
+
   nixpkgs.config.allowUnfree = true;
 
   nix = {

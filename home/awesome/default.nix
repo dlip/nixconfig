@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 let
   awesomeHome = "${config.xdg.configHome}/awesome";
-    symlinkedFiles = builtins.listToAttrs (
+  symlinkedFiles = builtins.listToAttrs (
     map
       (
         file: {
@@ -13,7 +13,8 @@ let
       )
       (builtins.attrNames (builtins.readDir ./config))
   );
-in {
+in
+{
   xsession = {
     enable = true;
 

@@ -60,7 +60,7 @@ vim systems/$HOST/hardware-configuration.nix
 ```
 
 Add
- 
+
 ```
 swapDevices = [{ device = "/.swapfile"; }];
 ```

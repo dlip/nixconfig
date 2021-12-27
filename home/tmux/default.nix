@@ -27,7 +27,7 @@
       bind v split-window -v
       bind S choose-tree
       TMUX_FZF_LAUNCH_KEY="f" # Key Prefix + f
-  
+
       TMUX_FZF_OPTIONS="-p -w 62% -h 38%"
       TMUX_FZF_PANE_FORMAT="[#{window_name}] #{pane_current_command}  [#{pane_width}x#{pane_height}] [history #{history_size}/#{history_limit}, #{history_bytes} bytes] #{?pane_active,[active],[inactive]}"
       TMUX_FZF_POPUP=0
@@ -49,7 +49,7 @@
       bind -n M-7 select-window -t 7
       bind -n M-8 select-window -t 8
       bind -n M-9 select-window -t 9
-  
+
       # Smart pane switching with awareness of Vim splits.
       # See: https://github.com/christoomey/vim-tmux-navigator
       is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
@@ -63,7 +63,7 @@
         "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
       if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
         "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
-  
+
       bind-key -T copy-mode-vi 'C-Left' select-pane -L
       bind-key -T copy-mode-vi 'C-Down' select-pane -D
       bind-key -T copy-mode-vi 'C-Up' select-pane -U

@@ -150,7 +150,7 @@ rec {
       ];
     };
   };
-  
+
   services.restic.server = {
     enable = true;
     listenAddress = "0.0.0.0:8000";
