@@ -12,9 +12,6 @@ in
       ../common/desktop/awesome.nix
     ];
 
-  networking.interfaces.enp3s0.useDHCP = true;
-  networking.interfaces.wlp0s20f3.useDHCP = true;
-
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.prime = {
     sync.enable = true;

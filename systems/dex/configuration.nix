@@ -20,8 +20,6 @@ rec {
     ../common/desktop/kde.nix
   ];
 
-  networking.interfaces.enp0s31f6.useDHCP = true;
-
   # Open ports in the firewall.
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
