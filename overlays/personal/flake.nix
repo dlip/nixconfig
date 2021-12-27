@@ -18,6 +18,10 @@
       url = "github:jluttine/rofi-power-menu";
       flake = false;
     };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     wally-cli = {
       url = "github:zsa/wally-cli";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,6 +37,7 @@
     , emoji-menu
     , power-menu
     , wally-cli
+    , sops-nix
     }:
     {
       overlay = final: prev: {
@@ -47,7 +52,7 @@
         scripts = final.callPackage ./scripts { };
         skyscraper = final.callPackage ./skyscraper { };
         solang = final.callPackage ./solang { };
-        # dhcp = prev.dhcpcd.override { enablePrivSep = false; };
+        inherit sops-nix;
       };
     };
 }

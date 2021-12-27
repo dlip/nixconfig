@@ -4,6 +4,7 @@ in
 {
   imports = [
     ../common/services/qbittorrent.nix
+    pkgs.sops-nix.nixosModule
   ];
   
   nixpkgs.config.allowUnfree = true;

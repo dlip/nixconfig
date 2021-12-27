@@ -34,10 +34,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nix-on-droid = {
       url = "github:t184256/nix-on-droid";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -59,7 +55,6 @@
     , repos
     , personal
     , kmonad
-    , sops-nix
     , nix-on-droid
     }:
     let
@@ -126,7 +121,7 @@
       {
         nixosConfigurations =
           {
-            metabox = nixpkgs.lib.nixosSystem {
+            metabox = nixpkgs.lib.nixosSystem rec {
               system = "x86_64-linux";
               pkgs = pkgsForSystem { system = "x86_64-linux"; };
               modules =
@@ -134,6 +129,7 @@
                   ./systems/metabox/configuration.nix
                   kmonad.nixosModule
                   home-manager.nixosModules.home-manager
+                  pkgs.sops-nix.nixosModule
                   {
                     home-manager = {
                       useGlobalPkgs = true;
@@ -154,13 +150,13 @@
                   }
                 ];
             };
-            dex = nixpkgs.lib.nixosSystem {
+            dex = nixpkgs.lib.nixosSystem rec {
               system = "x86_64-linux";
               pkgs = pkgsForSystem { system = "x86_64-linux"; };
               modules = [
                 ./systems/dex/configuration.nix
                 home-manager.nixosModules.home-manager
-                sops-nix.nixosModules.sops
+                pkgs.sops-nix.nixosModule
                 {
                   home-manager = {
                     useGlobalPkgs = true;
@@ -186,13 +182,13 @@
                 }
               ];
             };
-            g = nixpkgs.lib.nixosSystem {
+            g = nixpkgs.lib.nixosSystem rec {
               system = "x86_64-linux";
               pkgs = pkgsForSystem { system = "x86_64-linux"; };
               modules = [
                 ./systems/g/configuration.nix
                 kmonad.nixosModule
-                sops-nix.nixosModules.sops
+                pkgs.sops-nix.nixosModule
                 home-manager.nixosModules.home-manager
                 {
                   home-manager = {
