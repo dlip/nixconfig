@@ -109,10 +109,29 @@ Add to nixosConfigurations, replace HOST with name above
           };
 ```
 
+If not using sshd generate keyfile
+
+```sh
+ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N ""
+```
+
+Add public key to .sops.yaml
+
+```sh
+sudo ssh-to-age -private-key -i /etc/ssh/ssh_host_ed25519_key | age-keygen -y
+```
+
+Create secrets
+
+```sh
+sops systems/<HOSTNAME>/secrets/secrets.yaml
+```
+
 Install system
 
 ```
 nix-env -iA nixos.nixUnstable
 nixos-install --flake .#$HOST
 ```
+
 
