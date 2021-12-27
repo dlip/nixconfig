@@ -1,6 +1,7 @@
 keys:
   - &dane age1xrjdk3f9433yjke8zfaetxfra9h06pcfmj8kdwmmnw9szrd06sfsd68upw
   - &dex age1e0sxdpqg20nwypjh9pecastjn2w50ju0qw997muen0j6cctnvcgsr3k494
+  - &downloader age1xv0f3x672rlpsv90wyh75gvz5g6r6fnfgg5ptg9thggl0k3hufeqlqr0y0
   - &g age1kw9dz9ze7a32wj6zt84cctrwg9q95udqv0u07vgmj0ltkq0dha0spptqzu
 creation_rules:
   - path_regex: systems/dex/secrets/[^/]+\.yaml$
@@ -13,3 +14,8 @@ creation_rules:
     - age:
       - *dane
       - *g
+  - path_regex: systems/downloader/secrets/[^/]+\.yaml$
+    key_groups:
+    - age:
+      - *dane
+      - *downloader
