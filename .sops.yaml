@@ -1,9 +1,15 @@
 keys:
   - &dane age1xrjdk3f9433yjke8zfaetxfra9h06pcfmj8kdwmmnw9szrd06sfsd68upw
   - &dex age1e0sxdpqg20nwypjh9pecastjn2w50ju0qw997muen0j6cctnvcgsr3k494
+  - &g age1kw9dz9ze7a32wj6zt84cctrwg9q95udqv0u07vgmj0ltkq0dha0spptqzu
 creation_rules:
   - path_regex: systems/dex/secrets/[^/]+\.yaml$
     key_groups:
     - age:
       - *dane
       - *dex
+  - path_regex: systems/g/secrets/[^/]+\.yaml$
+    key_groups:
+    - age:
+      - *dane
+      - *g

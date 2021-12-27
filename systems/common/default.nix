@@ -77,6 +77,17 @@ in
     keyMap = "us";
   };
 
+
+  sops.defaultSopsFile = ./.. + builtins.toPath "/${hostname}/secrets/secrets.yaml";
+  # This will automatically import SSH keys as age keys
+  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  # This is using an age key that is expected to already be in the filesystem
+  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+  # This will generate a new key if the key specified above does not exist
+  sops.age.generateKey = true;
+
+  sops.secrets.restic-encryption = { };
+
   services = {
     gnome.gnome-keyring.enable = true;
     upower.enable = true;
@@ -217,7 +228,7 @@ in
     dex = {
       paths = [ "/home" "/root" "/var/lib" ];
       repository = "rest:http://dex.local:8000/${hostname}";
-      passwordFile = "/root/restic-password";
+      passwordFile = config.sops.secrets.restic-encryption.path;
       pruneOpts = [
         "--keep-daily 7"
         "--keep-weekly 4"

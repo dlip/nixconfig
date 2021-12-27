@@ -197,8 +197,4 @@ rec {
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
-
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
-  sops.secrets.test = { };
-
 }
