@@ -33,9 +33,11 @@ in
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
   # This will generate a new key if the key specified above does not exist
   sops.age.generateKey = true;
-  # qbittorrent stops downloading when vpn gets reconnected
+  # Secrets
   sops.secrets.restic-encryption = { };
+  sops.secrets.nordvpnLogin = { };
 
+  # qbittorrent stops downloading when vpn gets reconnected
   systemd.services.restart-qbittorrent = {
     enable = true;
     description = "Restart qbittorrent";
