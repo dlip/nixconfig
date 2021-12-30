@@ -5,7 +5,6 @@
     gopls
     golangci-lint
     haskellPackages.haskell-language-server
-    myNodePackages.markserv
     nixfmt
     nixpkgs-fmt
     nodePackages.bash-language-server
