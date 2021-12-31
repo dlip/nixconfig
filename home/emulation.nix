@@ -410,7 +410,10 @@ let
   '';
 in
 {
-  home.packages = with pkgs; [ retroarch emulationstation ];
+  home.packages = with pkgs; [
+    retroarch
+    # emulationstation # Issue building
+  ];
 
   home.file.".emulationstation/es_systems.cfg".text = ''
     <systemList>
