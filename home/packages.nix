@@ -22,6 +22,7 @@
     ripgrep-all
     sqlite
     sshfs
+    openssh
     stack
     tcpdump
     unzip
