@@ -39,6 +39,9 @@
 
       # Use the same overlays as the system packages
       nixpkgs = { inherit (config.nixpkgs) overlays; };
+      imports = [
+        ../../home
+      ];
       home.packages = with pkgs; [
         unzip
       ];
