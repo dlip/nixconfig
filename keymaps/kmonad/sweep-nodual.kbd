@@ -1,0 +1,117 @@
+;; No dual keys
+;; sticky layers
+
+(defcfg
+  ;; ** For Linux **
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne_vial:f64c2b3c-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
+  output (uinput-sink "KMonad output")
+
+  ;; ** For Windows **
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; ** For MacOS **
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  fallthrough true
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl cmp  rctl
+)
+
+(defalias
+  na reserved
+
+  med (sticky-key 500 (layer-toggle media))
+  fn (sticky-key 500 (layer-toggle fn))
+  nav (sticky-key 500 (layer-toggle nav))
+  num (sticky-key 500 (layer-toggle num))
+)
+
+(deflayer colemak-dh
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @na  q    w    f    p    b    j    l    u    y    ;    @na  _    _
+  bspc a    r    s    t    g    m    n    e    i    o    ret  _
+  @na  z    x    c    d    v    k    h    ,    .    '    @na
+  _    _    @num           spc            @nav _    _    _
+)
+
+
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    prnt home up   end  _    _    _    _    _    _    _    _    _
+  _    esc  lft  down rght _    _    lctl lsft lalt lmet _    _
+  _    grv  pgup del  pgdn _    _    _    _    _    _    _
+  _    _    bspc            _             @med _    _    _
+)
+
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    [    7    8    9    ]    _    _    _
+  _    lmet lalt lsft lctl _    =    4    5    6    \    _    _
+  _    _    _    _    _    _    -    1    2    3    /    _
+  _    _    @fn            _              0    _    _    _
+)
+
+(defalias
+  rw rewind
+  ff fastforward
+)
+
+(deflayer media
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    @rw  volu @ff  brup _    _    _    _    _    _    _    _
+  _    lmet prev pp   next brdn _    lctl lsft lalt lmet _    _
+  _    _    mute vold stop _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(defalias
+  pau pause
+  gam (layer-switch gaming)
+)
+
+(deflayer fn
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    f7   f8   f9   f10  _    _    _
+  _    lmet lalt lsft lctl _    @gam f4   f5   f6   f11  _    _
+  _    _    _    _    _    _    _    f1   f2   f3   f12  _
+  _    _    _              _              _    _    _    _
+)
+
+(defalias
+  col (layer-switch colemak-dh)
+)
+
+(deflayer gaming
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  tab  q    w    e    r    t    _    _    up   _    _    _    _    _
+  lsft a    s    d    f    g    @col lft  down rght _    _    _
+  lctl z    x    c    v    b    _    _    _    _    _    _
+  _    lalt esc            spc            _    _    _    _
+)
+
+(deflayer empty
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
