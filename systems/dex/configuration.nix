@@ -29,8 +29,6 @@ rec {
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  sops.secrets.wireguard-key = { };
-
   systemd.services.mount-backup = {
     enable = true;
     description = "Mount backup";
