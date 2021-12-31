@@ -36,6 +36,11 @@
   fn (sticky-key 500 (layer-toggle fn))
   nav (sticky-key 500 (layer-toggle nav))
   num (sticky-key 500 (layer-toggle num))
+
+  met (sticky-key 1500 lmet)
+  sft (sticky-key 1500 lsft)
+  ctl (sticky-key 1500 lctl)
+  alt (sticky-key 1500 lalt)
 )
 
 (deflayer colemak-dh
@@ -52,7 +57,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    prnt home up   end  _    _    _    _    _    _    _    _    _
-  _    esc  lft  down rght _    _    lctl lsft lalt lmet _    _
+  _    esc  lft  down rght _    _    @ctl @sft @alt @met _    _
   _    grv  pgup del  pgdn _    _    _    _    _    _    _
   _    _    bspc            _             @med _    _    _
 )
@@ -61,7 +66,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    [    7    8    9    ]    _    _    _
-  _    lmet lalt lsft lctl _    =    4    5    6    \    _    _
+  _    @met @alt @sft @ctl _    =    4    5    6    \    _    _
   _    _    _    _    _    _    -    1    2    3    /    _
   _    _    @fn            _              0    _    _    _
 )
@@ -75,7 +80,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    @rw  volu @ff  brup _    _    _    _    _    _    _    _
-  _    lmet prev pp   next brdn _    lctl lsft lalt lmet _    _
+  _    lmet prev pp   next brdn _    @ctl @sft @alt @met _    _
   _    _    mute vold stop _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
@@ -89,7 +94,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    f7   f8   f9   f10  _    _    _
-  _    lmet lalt lsft lctl _    @gam f4   f5   f6   f11  _    _
+  _    @met @alt @sft @ctl _    @gam f4   f5   f6   f11  _    _
   _    _    _    _    _    _    _    f1   f2   f3   f12  _
   _    _    _              _              _    _    _    _
 )
