@@ -56,10 +56,10 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    prnt home up   end  _    _    _    _    _    _    _    _    _
-  _    esc  lft  down rght _    _    @ctl @sft @alt @met _    _
-  _    grv  pgup del  pgdn _    _    _    _    _    _    _
-  _    _    bspc            _             @med _    _    _
+  _    prnt home up   end  pgup _    _    _    _    _    _    _    _
+  _    bspc lft  down rght pgdn _    @ctl @sft @alt @met _    _
+  _    grv  del  esc  ret  _    _    _    _    _    _    _
+  _    _    tab            _              @med _    _    _
 )
 
 (deflayer num
