@@ -27,6 +27,7 @@
     tcpdump
     unzip
     wget
+    wireguard
     zip
   ] ++ (builtins.attrValues scripts.scripts);
 }

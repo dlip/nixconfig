@@ -24,6 +24,10 @@
       url = "github:rebelot/kanagawa.nvim";
       flake = false;
     };
+    kmonad-vim = {
+      url = "github:kmonad/kmonad-vim";
+      flake = false;
+    };
     luasnip = {
       url = "github:L3MON4D3/LuaSnip";
       flake = false;
