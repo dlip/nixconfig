@@ -37,5 +37,14 @@ in
   xdg.portal.enable = true;
   services.flatpak.enable = true;
 
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = [ "10.100.0.3/24" ];
+
+      peers = [
+        (import ../common/wireguard/dex-peer.nix)
+      ];
+    };
+  };
 }
 

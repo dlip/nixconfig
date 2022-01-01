@@ -1,4 +1,3 @@
-;; Move shift back to the space
 
 (defcfg
   ;; ** For Linux **
@@ -55,7 +54,6 @@
   d (tap-hold 200 d C-v)
 
 
-
   spc (tap-hold-next-release 200 spc lsft)
 )
 
@@ -63,28 +61,28 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @na  q    w    @f   p    b    j    l    @u   y    ;    @na  _    _
-  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o   ret  _
+  @na  @a   @r   @s   @t   g    m    @n   @e   @i   @o   @na  _
   @na  @z   @x   @c   @d   v    k    h    ,    .    '    @na
-  _    _    bspc           @spc           ret  _    _    _
+  _    _    @na            @spc           @na  _    _    _
 )
 
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    prnt home up   end  _    _    _    _    _    _    _    _    _
-  _    esc  lft  down rght _    _    _    _    _    _    _    _
-  _    grv  pgup del  pgdn _    _    _    _    _    _    _
-  _    _    tab            _              _    _    _    _
+  _    \    home up   end  pgup _    _    _    _    _    _    _    _
+  _    bspc lft  down rght tab  _    _    _    _    _    _    _
+  _    grv  del  esc  ret  pgdn _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    [    7    8    9    ]    _    _    _
-  _    _    _    _    _    _    =    4    5    6    \    _    _
+  _    _    _    _    _    tab  =    4    5    6    0    _    _
   _    _    _    _    _    _    -    1    2    3    /    _
-  _    _    tab            _              0    _    _    _
+  _    _    _              _              _    _    _    _
 )
 
 (defalias
@@ -95,8 +93,8 @@
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    @rw  volu @ff  brup _    _    _    _    _    _    _    _
-  _    lmet prev pp   next brdn _    _    _    _    _    _    _
+  _    _    brdn volu brup _    _    _    _    _    _    _    _    _
+  _    prnt prev pp   next _    _    _    _    _    _    _    _
   _    _    mute vold stop _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )

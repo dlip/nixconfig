@@ -29,8 +29,6 @@ rec {
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
-  sops.secrets.wireguard-key = { };
-
   systemd.services.mount-backup = {
     enable = true;
     description = "Mount backup";
@@ -94,18 +92,16 @@ rec {
       # +YVMX+HXcyFsfxGWdWC+WdI6nUMkyMdtxsohVDJavlQ=
       privateKeyFile = config.sops.secrets.wireguard-key.path;
 
+      # List of allowed peers.
       peers = [
-        # List of allowed peers.
+        # S10
         {
-          # Feel free to give a meaning full name
-          # Public key of the peer (not a file path).
-          publicKey = "{client public key}";
-          # List of IPs assigned to this peer within the tunnel subnet. Used to configure routing.
+          publicKey = "KSLRFB50RRSHh3I+yXxI5xB9Aibogrf2o/1xN/tm/jw=";
           allowedIPs = [ "10.100.0.2/32" ];
         }
+        # g
         {
-          # John Doe
-          publicKey = "{john doe's public key}";
+          publicKey = "AyT/WKTrPwaiCFLRx68Jz/isw4Rv/4PQ+y3qlNJ32HA=";
           allowedIPs = [ "10.100.0.3/32" ];
         }
       ];

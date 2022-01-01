@@ -28,6 +28,7 @@
       go
       gobang
       graphviz
+      helix
       hledger
       k9s
       kind
