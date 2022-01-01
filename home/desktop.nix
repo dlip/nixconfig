@@ -20,7 +20,6 @@
       eksctl
       file
       fluxcd
-      gh
       ghc
       ghostscript
       glow
