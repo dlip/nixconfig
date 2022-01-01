@@ -88,7 +88,6 @@ in
   sops.age.generateKey = true;
 
   sops.secrets.restic-encryption = { };
-
   sops.secrets.wireguard-key = { };
 
   services = {
@@ -125,6 +124,13 @@ in
 
   networking.firewall = {
     allowedUDPPorts = [ 51820 ]; # wireguard
+  };
+
+  networking.wireguard.interfaces = {
+    wg0 = {
+      listenPort = 51820; # to match firewall allowedUDPPorts (without this wg uses random port numbers)
+      privateKeyFile = config.sops.secrets.wireguard-key.path;
+    };
   };
 
   services.printing.enable = true;
