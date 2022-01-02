@@ -32,6 +32,17 @@ let g:asyncrun_open = 8
 " https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 
+" https://github.com/SidOfc/mkdx
+let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
+                        \ 'enter': { 'shift': 1 },
+                        \ 'links': { 'external': { 'enable': 1 } },
+                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 1 },
+                        \ 'fold': { 'enable': 1 },
+                        \ 'checkbox': { 'toggles': [' ', 'x'] }
+                        \}
+
+let g:polyglot_disabled = ['markdown'] " for vim-polyglot users, it loads Plasticboy's markdown
+                                       " plugin which unfortunately interferes with mkdx list indentation.
 " https://github.com/christoomey/vim-tmux-navigator
 let g:tmux_navigator_no_mappings = 1
 
@@ -116,6 +127,7 @@ augroup vimrc
   autocmd BufEnter *.sol setlocal filetype=solidity
 
   " Buffer local mappings
+  autocmd FileType markdown lua markdowm_mappings()
   autocmd FileType json lua json_mappings()
   autocmd BufEnter package.json lua package_json_mappings()
   autocmd FileType qf lua quickfix_mappings()

@@ -277,6 +277,48 @@ function _G.octo_pr_mappings()
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end
 
+function _G.markdowm_mappings()
+  local buffKeymap = {
+    x = { "<Plug>(mkdx-checkbox-prev-n)", "Prev checkbox state" },
+    X = { "<Plug>(mkdx-checkbox-next-n)", "Next checkbox state" },
+    ["<Tab>"] = { "<Plug>(mkdx-promote-header)", "Promote header" },
+    ["<S-Tab>"] = { "<Plug>(mkdx-demote-header)", "Demote header" },
+    q = { "<Plug>(mkdx-toggle-quote-n)", "Toggle quote" },
+    c = { "<Plug>(mkdx-toggle-checkbox-n)", "Toggle checkbox item" },
+    C = { "<Plug>(mkdx-toggle-checklist-n)", "Toggle checklist item" },
+    t = { "<Plug>(mkdx-toggle-list-n)", "Toggle list item" },
+    l = { "<Plug>(mkdx-wrap-link-n)", "Wrap link" },
+    i = { "<Plug>(mkdx-text-italic-n)", "Italicize text" },
+    b = { "<Plug>(mkdx-text-bold-n))", "Bolden text" },
+    w = { "<Plug>(mkdx-text-inline-code-n)", "Wrap with inline code" },
+    s = { "<Plug>(mkdx-text-strike-n)", "Wrap with strikethrough" },
+    v = { "<Plug>(mkdx-tableize)", "CSV to table" },
+    h = { "<Plug>(mkdx-jump-to-header)", "Jump to header" },
+    g = { "<Plug>(mkdx-gen-or-upd-toc)", "Generate / Update TOC" },
+    G = { "<Plug>(mkdx-quickfix-toc)", "Quickfix TOC" },
+    f = { "<Plug>(mkdx-quickfix-links)", "Quickfix dead fragment links" },
+    -- x = { "<Plug>(mkdx-o)", "<kbd>o</kbd> handler" },
+    -- x = { "<Plug>(mkdx-shift-o)", "<kbd>O</kbd> handler" },
+    -- x = { "<Plug>(mkdx-fence-backtick)", "Insert fenced code block" },
+    -- x = { "<Plug>(mkdx-fence-tilde)", "Insert fenced code block" },
+    -- x = { "<Plug>(mkdx-insert-kbd)", "Insert kbd shortcut" },
+    -- x = { "<Plug>(mkdx-enter)", "<kbd>enter</kbd> handler" },
+    -- x = { "<Plug>(mkdx-shift-enter)", "<kbd>shift</kbd>+<kbd>enter</kbd> handler" },
+    -- x = { "<Plug>(mkdx-ctrl-n-compl)", "<kbd>ctrl</kbd>+<kbd>n</kbd> handler" },
+    -- x = { "<Plug>(mkdx-ctrl-p-compl)", "<kbd>ctrl</kbd>+<kbd>p</kbd> handler" },
+    -- x = { "<Plug>(mkdx-link-compl)", "<kbd>#</kbd> handler" },
+    -- x = { "<Plug>(mkdx-gf)", "Jump to file" },
+    -- x = { "<Plug>(mkdx-gf-visual)", "Jump to file" },
+    -- x = { "<Plug>(mkdx-gx)", "Open external file" },
+    -- x = { "<Plug>(mkdx-gx-visual)", "Open external file" },
+    -- x = { "<Plug>(mkdx-indent)", "Indent numbered list item" },
+    -- x = { "<Plug>(mkdx-unindent)", "Unindent numbered list item" },
+    -- x = { "<Plug>(mkdx-jump-to-next-section)", "Jump to next header" },
+    -- x = { "<Plug>(mkdx-jump-to-prev-section)", "Jump to prev header" },
+  }
+  wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
+end
+
 function _G.quickfix_mappings()
   local buffKeymap = {
     f = { "<cmd>cfdo lua format_buffer()<CR><cmd>wa<CR>", "Format All" },

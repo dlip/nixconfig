@@ -68,6 +68,7 @@ in
           lspkind-nvim # Icons for lsp popup
           luasnip
           markdown-preview-nvim
+          mkdx
           neogit
           neorg
           neoscroll-nvim
@@ -96,13 +97,11 @@ in
           vim-dispatch
           vim-eunuch
           vim-fugitive
-          vim-markdown
           vim-mergetool
           vim-rhubarb
           vim-solidity
           vim-test
           vim-tmux-navigator
-          vimwiki
           whichkey-nvim
 
           (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
