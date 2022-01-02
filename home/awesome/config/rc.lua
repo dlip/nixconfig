@@ -549,8 +549,11 @@ awful.rules.rules = {
   { rule = { class = "Brave" },
     properties = { screen = 1, tag = "4" } },
 
-  { rule = { class = "Alacritty" },
+  { rule = { class = "Work" },
     properties = { screen = 1, tag = "5" } },
+
+  { rule = { class = "Notes" },
+    properties = { screen = 1, tag = "6" } },
 }
 -- }}}
 

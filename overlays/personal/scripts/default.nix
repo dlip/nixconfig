@@ -8,7 +8,8 @@ let
   scripts = {
     launch-default-programs = ''
       brave&
-      alacritty -e work&
+      alacritty --class Alacritty,Work -e work&
+      alacritty --class Alacritty,Notes -e notes&
       slack&
       plexamp&
     '';
@@ -18,11 +19,19 @@ let
       tmux new-session -d -s $session
       tmux send-keys -t $session 'p nixconfig' C-m
       tmux wait project_opened
-      tmux new-window -t $session:1
-      tmux send-keys -t $session 'cd ~/notes/vimwiki && nvim index.md' C-m
       tmux attach -t $session
       zsh
     '';
+
+    notes = ''
+      session="notes"
+      tmux new-session -d -s $session
+      tmux send-keys -t $session 'cd ~/notes/personal && nvim index.md' C-m
+      sleep 1
+      tmux new-window -t $session:1
+      tmux send-keys -t $session 'cd ~/notes/immutable && nvim index.md' C-m
+      tmux attach -t $session
+      '';
 
     update-wallpaper = ''
       nice -19 ${betterlockscreen}/bin/betterlockscreen -u ~/wallpapers --fx dim --dim 20
