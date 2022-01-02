@@ -5,16 +5,21 @@
     envy-sh
     exa
     fd
+    findutils
     fzf
     gcc
+    gh
+    gnugrep
     gnumake
     gotop
     htop
     iotop
+    iputils
     jq
     killall
     ncdu
     neofetch
+    nettools
     nmap
     nvimpager
     p7zip
