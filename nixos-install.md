@@ -112,7 +112,7 @@ Add to nixosConfigurations, replace HOST with name above
 If not using sshd generate keyfile
 
 ```sh
-ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N ""
+sudo ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N ""
 ```
 
 Add public key to .sops.yaml
