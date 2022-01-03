@@ -20,6 +20,7 @@
     proselint
     rnix-lsp
     rust-analyzer
+    rustfmt
     shfmt
     solang
     stylua

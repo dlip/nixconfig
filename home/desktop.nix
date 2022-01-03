@@ -11,6 +11,7 @@
       awscli2
       bat
       binutils
+      cargo
       cheat
       clang-tools
       delve
@@ -61,7 +62,7 @@
       python39Packages.setuptools
       rclone
       renameutils
-      rustup
+      rustc
       skopeo
       sops
       ssh-to-age

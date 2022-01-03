@@ -19,6 +19,8 @@
       ren = "qmv -f do";
       v = "nvim";
       x = "xplr";
+      ls = "exa";
+      find = "fd";
     };
 
     initExtra = ''

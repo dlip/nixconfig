@@ -97,6 +97,8 @@ function _G.format_buffer()
     lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
   elseif vim.o.filetype == "go" then
     lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
+  elseif vim.o.filetype == "rust" then
+    lsp.buf.formatting_seq_sync(nil, 1000, { "rust_analyzer" })
   else
     lsp.buf.formatting()
   end
