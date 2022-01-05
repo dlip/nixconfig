@@ -25,6 +25,7 @@
     p7zip
     ripgrep
     ripgrep-all
+    speedread
     sqlite
     sshfs
     openssh

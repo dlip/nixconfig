@@ -30,7 +30,6 @@
     gramps
     kdenlive
     # krita
-    koreader
     ledger-live-desktop
     lens
     libreoffice

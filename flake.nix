@@ -39,6 +39,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
+    poetry2nix = {
+      url = "github:nix-community/poetry2nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     # neovim = {
     #   url = "github:neovim/neovim/v0.6.0?dir=contrib";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -56,6 +61,7 @@
     , personal
     , kmonad
     , nix-on-droid
+    , poetry2nix
     }:
     let
       pkgsForSystem = { system, pkgs ? nixpkgs }: import pkgs {
@@ -66,6 +72,8 @@
           vim-plugins.overlay
           repos.overlay
           kmonad.overlay
+          poetry2nix.overlay
+          # (import ./overlays/personal/pythonPackages)
         ];
       };
 

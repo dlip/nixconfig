@@ -43,6 +43,7 @@
       (lua.withPackages (ps: with ps; [ luacheck ]))
       massren
       mdl
+      myPythonPackages.shirah-reader
       niv
       nix-du
       nodePackages.node2nix
@@ -54,6 +55,7 @@
       openvpn
       pandoc
       pinentry
+      poetry
       postgresql
       python
       python3

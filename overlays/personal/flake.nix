@@ -49,6 +49,7 @@
           makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
         });
         myNodePackages = final.callPackage ./nodePackages { };
+        myPythonPackages = final.callPackage ./pythonPackages { };
         scripts = final.callPackage ./scripts { };
         skyscraper = final.callPackage ./skyscraper { };
         solang = final.callPackage ./solang { };
