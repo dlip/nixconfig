@@ -33,7 +33,7 @@ substitute-path:
   # - {from: path, to: path}
 
 # Maximum number of elements loaded from an array.
-# max-array-values: 64
+max-array-values: 1000
 
 # Maximum loaded string length.
 max-string-len: 1000
