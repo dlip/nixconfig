@@ -2,6 +2,8 @@
   home.file = {
 
     "${config.xdg.configHome}/networkmanager-dmenu".source = ./networkmanager-dmenu;
+    "${config.xdg.configHome}/.dlv/config.yaml".source = ./delve.yaml;
+
     "${config.xdg.configHome}/feh/themes".text = ''
       feh --reverse --auto-rotate --fullscreen
     '';
@@ -33,5 +35,4 @@
       MinAlertLevel = suggestion
     '';
   };
-  "${config.xdg.configHome}/.dlv/config.yaml".source = ./delve.yaml;
 }
