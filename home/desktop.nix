@@ -43,7 +43,7 @@
       (lua.withPackages (ps: with ps; [ luacheck ]))
       massren
       mdl
-      myPythonPackages.shirah-reader
+      # myPythonPackages.shirah-reader
       niv
       nix-du
       nodePackages.node2nix

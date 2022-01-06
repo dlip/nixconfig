@@ -33,4 +33,5 @@
       MinAlertLevel = suggestion
     '';
   };
+  "${config.xdg.configHome}/.dlv/config.yaml".source = ./delve.yaml;
 }
