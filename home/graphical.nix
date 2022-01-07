@@ -2,6 +2,7 @@
 {
   imports = [
     ./alacritty
+    ./kitty
     ./rofi
     # ./vscode
     ./awesome
