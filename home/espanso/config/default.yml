@@ -31,7 +31,6 @@ matches:
         type: date
         params:
           format: "%Y-%m-%d"
-
   - trigger: ".,dh"
     replace: "{{mydate}}"
     vars:
@@ -39,7 +38,6 @@ matches:
         type: date
         params:
           format: "# %d %a"
-
   - trigger: ".,tt"
     replace: "{{mytime}}"
     vars:
