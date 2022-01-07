@@ -8,8 +8,8 @@ let
   scripts = {
     launch-default-programs = ''
       brave&
-      alacritty --class Alacritty,Work -e work&
-      alacritty --class Alacritty,Notes -e notes&
+      kitty --class Work work&
+      kitty --class Notes notes&
       slack&
       plexamp&
     '';

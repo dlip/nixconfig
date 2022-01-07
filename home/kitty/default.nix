@@ -79,9 +79,6 @@
       inactive_tab_background = "#16161e";
       inactive_tab_font_style = "bold";
       tab_bar_background = "#101014";
-
-      # Title bar
-      macos_titlebar_color = "#16161e";
     };
 
     # keybindings = {
