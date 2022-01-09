@@ -27,7 +27,7 @@
       [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
       export EDITOR=nvim
       export GOPATH=$HOME/go
-      export PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$PATH
+      export PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
       export LANG=en_US.UTF-8
       export LC_ALL=en_US.UTF-8
       export MANPAGER='nvim +Man!'
