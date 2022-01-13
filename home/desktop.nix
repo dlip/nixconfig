@@ -44,6 +44,7 @@
       massren
       mdl
       # myPythonPackages.shirah-reader
+      myPythonPackages.adafruit-nrfutil
       niv
       nix-du
       nodePackages.node2nix
@@ -78,6 +79,6 @@
       yarn
       youtube-dl
       yq
-      yubikey-manager
+      # yubikey-manager #broken
     ];
 }

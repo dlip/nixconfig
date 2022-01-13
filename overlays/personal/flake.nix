@@ -24,8 +24,6 @@
     };
     wally-cli = {
       url = "github:zsa/wally-cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
   };
 

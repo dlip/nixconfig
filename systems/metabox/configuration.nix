@@ -21,7 +21,7 @@ in
   services.kmonad = {
     enable = true;
     configfiles = [
-      ../../keymaps/kmonad/spaceonly7.kbd
+      ../../keymaps/kmonad/sweep.kbd
     ];
   };
 

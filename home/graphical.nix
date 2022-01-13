@@ -50,8 +50,8 @@
     xclip
     # xfce.thunar
     yacreader
-    yubikey-manager-qt
-    yubioath-desktop
+    # yubikey-manager-qt #broken
+    # yubioath-desktop #broken
     zathura
     zoom-us
   ];

@@ -131,7 +131,7 @@ augroup vimrc
   autocmd FileType json lua json_mappings()
   autocmd BufEnter package.json lua package_json_mappings()
   autocmd FileType qf lua quickfix_mappings()
-  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript,vim,yaml lua coding_mappings()
+  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript,typescriptreact,vim,yaml lua coding_mappings()
   autocmd FileType http lua http_mappings()
   autocmd BufEnter octo://*/pull/* lua octo_pr_mappings()
 

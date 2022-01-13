@@ -7,6 +7,7 @@ authors = ["Dane Lipscombe <dane@lipscombe.com.au>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 shirah-reader = "^1.0.0"
+adafruit-nrfutil = "^0.5.3"
 
 [tool.poetry.dev-dependencies]
 

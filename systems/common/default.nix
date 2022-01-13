@@ -213,7 +213,7 @@ in
     pavucontrol
     restic
     restic-dex
-    yubikey-personalization
+    # yubikey-personalization #broken
     pulseaudio
   ];
 
