@@ -74,7 +74,6 @@
       tshark
       usbutils
       visidata
-      # wally-cli
       xdotool
       yarn
       youtube-dl

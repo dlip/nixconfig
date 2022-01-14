@@ -22,9 +22,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    wally-cli = {
-      url = "github:zsa/wally-cli";
-    };
   };
 
   outputs =
@@ -34,7 +31,6 @@
     , envy-sh
     , emoji-menu
     , power-menu
-    , wally-cli
     , sops-nix
     }:
     {
@@ -42,7 +38,6 @@
         envy-sh = envy-sh.defaultPackage.${final.system};
         emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
         power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
-        wally-cli = wally-cli.defaultPackage.${final.system};
         nnn = prev.nnn.overrideAttrs (oldAttrs: {
           makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
         });

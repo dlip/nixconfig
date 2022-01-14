@@ -218,21 +218,6 @@
         "type": "github"
       }
     },
-    "flake-utils_3": {
-      "locked": {
-        "lastModified": 1638122382,
-        "narHash": "sha256-sQzZzAbvKEqN9s0bzWuYmRaA03v40gaJ4+iL1LXjaeI=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "74f7e4319258e287b0f9cb95426c9853b282730b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "format-nvim": {
       "flake": false,
       "locked": {
@@ -414,22 +399,6 @@
         "type": "github"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1636935165,
-        "narHash": "sha256-J4smKTYTp8wJ57znUerWlS/QRgp0jcm/StcfIhsa5eA=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "f7949198dcff52265b322ca8abf7450610e7e49e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "release-20.09",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "nnn-git": {
       "flake": false,
       "locked": {
@@ -537,16 +506,15 @@
           "nixpkgs"
         ],
         "power-menu": "power-menu",
-        "sops-nix": "sops-nix",
-        "wally-cli": "wally-cli"
+        "sops-nix": "sops-nix"
       },
       "locked": {
-        "narHash": "sha256-+I0AYU7qMxebitho0aWUI8nvFlh12p5SlOU8shJr24U=",
-        "path": "/nix/store/5ak5y9cdcn4pdva1w171rm5mpsv1hgqa-source/overlays/personal",
+        "narHash": "sha256-2rl0t36y/Ja/9/mCGK8cPfS0hj/tGbSEsqa5yww46eY=",
+        "path": "/nix/store/yzfsf6ghrz9bxymp4gm3sdkw6vvd6wyl-source/overlays/personal",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/5ak5y9cdcn4pdva1w171rm5mpsv1hgqa-source/overlays/personal",
+        "path": "/nix/store/yzfsf6ghrz9bxymp4gm3sdkw6vvd6wyl-source/overlays/personal",
         "type": "path"
       }
     },
@@ -598,11 +566,11 @@
       },
       "locked": {
         "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "/nix/store/5ak5y9cdcn4pdva1w171rm5mpsv1hgqa-source/overlays/repos",
+        "path": "/nix/store/yzfsf6ghrz9bxymp4gm3sdkw6vvd6wyl-source/overlays/repos",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/5ak5y9cdcn4pdva1w171rm5mpsv1hgqa-source/overlays/repos",
+        "path": "/nix/store/yzfsf6ghrz9bxymp4gm3sdkw6vvd6wyl-source/overlays/repos",
         "type": "path"
       }
     },
@@ -711,31 +679,12 @@
       },
       "locked": {
         "narHash": "sha256-FoNQ3NIlHF/6FMxhveRpLLJbF0gy4qpjrSaJDxxOhfU=",
-        "path": "/nix/store/5ak5y9cdcn4pdva1w171rm5mpsv1hgqa-source/overlays/vimPlugins",
+        "path": "/nix/store/yzfsf6ghrz9bxymp4gm3sdkw6vvd6wyl-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/5ak5y9cdcn4pdva1w171rm5mpsv1hgqa-source/overlays/vimPlugins",
+        "path": "/nix/store/yzfsf6ghrz9bxymp4gm3sdkw6vvd6wyl-source/overlays/vimPlugins",
         "type": "path"
-      }
-    },
-    "wally-cli": {
-      "inputs": {
-        "flake-utils": "flake-utils_3",
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1640741106,
-        "narHash": "sha256-wur0viQp5at9+h8WY+zjdCuRqrTK7ugBx9kEwi2+PZs=",
-        "owner": "zsa",
-        "repo": "wally-cli",
-        "rev": "6d65e2fac8c0b0ce6b582d4b5f3e572d2b531d16",
-        "type": "github"
-      },
-      "original": {
-        "owner": "zsa",
-        "repo": "wally-cli",
-        "type": "github"
       }
     },
     "whichkey-nvim": {
