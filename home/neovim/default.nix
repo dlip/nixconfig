@@ -123,6 +123,7 @@ in
             tree-sitter-jsdoc
             tree-sitter-json
             tree-sitter-lua
+            tree-sitter-markdown
             tree-sitter-nix
             tree-sitter-python
             tree-sitter-regex
