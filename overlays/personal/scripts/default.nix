@@ -85,6 +85,7 @@ let
           tmux wait -S project_opened
           tmux select-pane -U
           nvim
+          $SHELL
       fi
     '';
     # Project add current dir
