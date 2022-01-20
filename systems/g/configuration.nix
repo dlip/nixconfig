@@ -29,7 +29,7 @@ in
   services.kmonad = {
     enable = true;
     configfiles = [
-      ../../keymaps/kmonad/sweep.kbd
+      ../../keymaps/kmonad/sweep2.kbd
     ];
   };
 
