@@ -1,22 +1,32 @@
 local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
-parser_configs.http = {
-  install_info = {
-    url = "https://github.com/NTBBloodbath/tree-sitter-http",
-    files = { "src/parser.c" },
-    branch = "main",
-  },
-}
--- require "nvim-treesitter.parsers".get_parser_configs().Solidity = {
---   install_info = {
---     url = "https://github.com/JoranHonig/tree-sitter-solidity",
---     files = {"src/parser.c"},
---     requires_generate_from_grammar = true,
---   },
---   filetype = 'solidity'
--- }
 
 require("nvim-treesitter.configs").setup({
-  ensure_installed = {"http", "markdown"}, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  ensure_installed = {
+    "bash",
+    "c",
+    "comment",
+    "cpp",
+    "css",
+    "dot",
+    "go",
+    "haskell",
+    "html",
+    "http",
+    "javascript",
+    "jsdoc",
+    "json",
+    "lua",
+    "markdown",
+    "nix",
+    "python",
+    "regex",
+    "rust",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "yaml",
+  },
   highlight = {
     enable = true, -- false will disable the whole extension
   },
