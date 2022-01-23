@@ -96,7 +96,7 @@ in
 
     dbus = {
       enable = true;
-      packages = [ pkgs.gnome3.dconf ];
+      packages = [ pkgs.dconf ];
     };
     xserver = {
       enable = true;
