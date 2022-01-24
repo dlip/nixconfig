@@ -50,7 +50,9 @@
   d (tap-hold 200 d C-v)
 
 
+  tab (tap-hold-next-release 200 tab @fn)
   spc (tap-hold-next-release 200 spc @navnum)
+  bs (tap-hold-next-release 200 bspc @med)
 )
 
 (deflayer colemak-dh
@@ -59,7 +61,7 @@
   @na  q    w    f    p    b    j    l    u    y    ;    @na  _    _
   @na  @a   @r   @s   @t   g    m    @n   @e   @i   @o   @na  _
   @na  @z   @x   @c   @d   v    k    h    ,    .    '    @na
-  _    _    @fn            @spc           @med  _    _    _
+  _    _    @tab            @spc           @bs  _    _    _
 )
 
 (defalias
@@ -80,7 +82,7 @@
   _    \    home up   end  pgup [    7    8    9    ]    _    _    _
   _    @bsp @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
   _    grv  del  esc  ret  pgdn -    1    2    3    /    _
-  _    _    _              _              _    _    _    _
+  _    _    esc            _              ret   _    _    _
 )
 
 (defalias

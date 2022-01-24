@@ -12,6 +12,12 @@ matches:
   - trigger: ".,ee"
     replace: "dane@lipscombe.com.au"
 
+  - trigger: ".,en"
+    replace: "danelipscombe@gmail.com"
+
+  - trigger: ".,ep"
+    replace: "dlip1@protonmail.com"
+    
   - trigger: ".,ew"
     replace: "dane.lipscombe@immutable.com"
 
