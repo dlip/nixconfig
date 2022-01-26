@@ -6,7 +6,7 @@
 let
   dex-services = import ./services.nix;
   downloader-services = import ../downloader/services.nix;
-  domain = "home.lipscombe.com.au";
+  domain = "dex-lips.duckdns.org";
 
   params = {
     hostname = "dex";
