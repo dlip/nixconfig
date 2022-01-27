@@ -38,6 +38,10 @@
       export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
       # Needed for go debugging
       export CGO_CFLAGS=-O
+
+      if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        export TERM="xterm-256color"
+      fi
     '';
 
     oh-my-zsh = {
