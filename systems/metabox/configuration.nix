@@ -10,6 +10,7 @@ in
       ./hardware-configuration.nix
       (import ../common params)
       ../common/desktop/awesome.nix
+      ../common/services/kmonad.nix
     ];
 
   # services.k3s = {
@@ -17,13 +18,6 @@ in
   #   docker = true;
   #   extraFlags = "--no-deploy traefik";
   # };
-
-  services.kmonad = {
-    enable = true;
-    configfiles = [
-      ../../keymaps/kmonad/sweep.kbd
-    ];
-  };
 
   services.xserver.screenSection = ''
     Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"

@@ -10,6 +10,7 @@ in
       ./hardware-configuration.nix
       (import ../common params)
       ../common/desktop/awesome.nix
+      ../common/services/kmonad.nix
     ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
@@ -25,14 +26,6 @@ in
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
-
-  services.kmonad = {
-    enable = true;
-    configfiles = [
-      ../../keymaps/kmonad/sweep2.kbd
-    ];
-  };
-
 
   xdg.portal.enable = true;
   services.flatpak.enable = true;
