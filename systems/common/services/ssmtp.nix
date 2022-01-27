@@ -7,7 +7,7 @@ in
   options.my.services.ssmtp = {
     adminEmail = mkOption {
       type = types.str;
-      default = "dane@lipscombe.com.au";
+      default = "danelipscombe@gmail.com";
       example = "user@example.com";
       description = ''
         Admin email address
@@ -27,7 +27,7 @@ in
       useSTARTTLS = true;
       hostName = "smtp.gmail.com:587";
       # The address where the mail appears to come from for user authentication.
-      domain = "lipscombe.com.au";
+      domain = "gmail.com";
       # Username/Password File
       authUser = cfg.adminEmail;
       authPassFile = config.sops.secrets.ssmtpPassword.path;
