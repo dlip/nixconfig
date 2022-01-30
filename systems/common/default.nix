@@ -32,7 +32,7 @@ in
   nixpkgs.config.allowUnfree = true;
   nix = {
     package = pkgs.nixUnstable;
-    autoOptimiseStore = true;
+    settings.auto-optimise-store = true;
     extraOptions = ''
       experimental-features = nix-command flakes
     '';
@@ -284,4 +284,3 @@ in
   system.stateVersion = "21.11"; # Did you read the comment?
 
 }
-
