@@ -92,6 +92,8 @@ require("lspconfig").sumneko_lua.setup({
   },
 })
 
+require("lsp_signature").setup{}
+
 function _G.format_buffer()
   if vim.o.filetype == "nix" then
     lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })

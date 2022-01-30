@@ -65,6 +65,7 @@ in
           indent-blankline-nvim
           kmonad-vim
           lspkind-nvim # Icons for lsp popup
+          lsp_signature-nvim
           luasnip
           markdown-preview-nvim
           mkdx
