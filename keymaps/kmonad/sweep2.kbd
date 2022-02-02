@@ -65,7 +65,7 @@
 )
 
 (defalias
-  bsp (tap-hold-next-release 200 bspc lmet)
+  esc (tap-hold-next-release 200 esc lmet)
   lft (tap-hold-next-release 200 lft lalt)
   dwn (tap-hold-next-release 200 down lsft)
   rgt (tap-hold-next-release 200 rght lctl)
@@ -80,8 +80,8 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    \    home up   end  pgup [    7    8    9    ]    _    _    _
-  _    @bsp @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
-  _    grv  del  esc  ret  pgdn -    1    2    3    /    _
+  _    @esc @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
+  _    grv  del  bspc  ret pgdn -    1    2    3    /    _
   _    _    esc            _              ret   _    _    _
 )
 

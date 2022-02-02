@@ -71,8 +71,8 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    \    home up   end  pgup _    _    _    _    _    _    _    _
-  _    bspc lft  down rght tab  _    _    _    _    _    _    _
-  _    grv  del  esc  ret  pgdn _    _    _    _    _    _
+  _    esc  lft  down rght tab  _    _    _    _    _    _    _
+  _    grv  del  bspc ret  pgdn _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
 
