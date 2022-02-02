@@ -12,7 +12,7 @@ in
     };
     email = mkOption {
       type = types.str;
-      default = "dane@lipscombe.com.au";
+      default = "danelipscombe@gmail.com";
     };
     xrandrCommand = mkOption {
       type = types.str;

@@ -95,12 +95,16 @@ require("lspconfig").sumneko_lua.setup({
 require("lsp_signature").setup{}
 
 function _G.format_buffer()
-  if vim.o.filetype == "nix" then
+  local ft = vim.o.filetype
+  if ft == "nix" then
     lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
-  elseif vim.o.filetype == "go" then
+  elseif ft == "go" then
     lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
-  elseif vim.o.filetype == "rust" then
+  elseif ft == "rust" then
     lsp.buf.formatting_seq_sync(nil, 1000, { "rust_analyzer" })
+  elseif ft == "typescript" or ft == "typscriptreact" or ft == "javascript" then
+    -- lsp.buf.formatting_seq_sync(nil, 5000, { "null-ls" })
+    vim.cmd("!eslint_d --fix %")
   else
     lsp.buf.formatting()
   end

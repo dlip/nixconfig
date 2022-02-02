@@ -1,4 +1,5 @@
 local g = vim.g -- global variables
+local gs = require"gitsigns"
 
 g.which_key_timeout = 100
 local wk = require("which-key")
@@ -93,20 +94,20 @@ local keymap = {
   },
   g = {
     name = "Git",
-    b = { '<cmd>lua require"gitsigns".blame_line(true)<CR>', "Blame Line" },
+    b = { function() gs.blame_line{full=true} end, "Blame Line" },
     c = { "<cmd>Neogit commit<CR>", "Commit" },
     d = { "<cmd>DiffviewOpen<CR>", "Diffview Open" },
     D = { "<cmd>DiffviewClose<CR>", "Diffview Close" },
     f = { "<cmd>!git fetch --all --prune --jobs=10<CR>", "Fetch" },
     g = {
       name = "Git Signs",
-      s = { '<cmd>lua require"gitsigns".stage_hunk()<CR>', "Stage Hunk" },
-      u = { '<cmd>lua require"gitsigns".undo_stage_hunk()<CR>', "Undo Stage Hunk" },
-      r = { '<cmd>lua require"gitsigns".reset_hunk()<CR>', "Reset Hunk" },
-      R = { '<cmd>lua require"gitsigns".reset_buffer()<CR>', "Reset Buffer" },
-      p = { '<cmd>lua require"gitsigns".preview_hunk()<CR>', "Preview Hunk" },
-      S = { '<cmd>lua require"gitsigns".stage_buffer()<CR>', "Stage Buffer" },
-      U = { '<cmd>lua require"gitsigns".reset_buffer_index()<CR>', "Reset Buffer Index" },
+      s = { function() gs.stage_hunk() end, "Stage Hunk" },
+      u = { function() gs.undo_stage_hunk() end, "Undo Stage Hunk" },
+      r = { function() gs.reset_hunk() end, "Reset Hunk" },
+      R = { function() gs.reset_buffer() end, "Reset Buffer" },
+      p = { function() gs.preview_hunk() end, "Preview Hunk" },
+      S = { function() gs.stage_buffer() end, "Stage Buffer" },
+      U = { function() gs.reset_buffer_index() end, "Reset Buffer Index" },
     },
     h = { "<cmd>DiffviewFileHistory<CR>", "Diffview File History" },
     m = { "<cmd>MergetoolToggle<CR>", "Mergetool Toggle" },
@@ -149,40 +150,41 @@ local keymap = {
 wk.register(keymap, { prefix = "<leader>" })
 
 function _G.coding_mappings()
+  local dap = require"dap"
+  local dapui = require"dapui"
   local buffKeymap = {
     a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
     b = {
       name = "Debug",
-      c = { '<cmd>lua require"dap".continue()<CR>', "Continue" },
-      o = { '<cmd>lua require"dap".step_over()<CR>', "Step Over" },
-      i = { '<cmd>lua require"dap".step_into()<CR>', "Step Into" },
-      t = { '<cmd>lua require"dap".step_out()<CR>', "Step Out" },
-      b = { '<cmd>lua require"dap".toggle_breakpoint()<CR>', "Toggle Breakpoint" },
+      c = { function() dap.continue() end, "Continue" },
+      o = { function() dap.step_over() end, "Step Over" },
+      i = { function() dap.step_into() end, "Step Into" },
+      t = { function() dap.step_out() end, "Step Out" },
+      b = { function() dap.toggle_breakpoint() end, "Toggle Breakpoint" },
       B = {
-        "<cmd>lua require\"dap\".set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>",
+        function() dap.set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
         "Toggle Breakpoint Condition",
       },
       l = {
-        "<cmd>lua require\"dap\".set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>",
+        function() dap.set_breakpoint(nil, nil, vim.fn.input('Log point message: ')) end,
         "Toggle Breakpoint Log",
       },
-      r = { '<cmd>lua require"dap".repl.open()<CR>', "Open REPL" },
-      e = { '<cmd>lua require"dap".run_last()<CR>', "Run Last" },
-      u = { '<cmd>lua require"dapui".toggle()<CR>', "Toggle DAP UI" },
+      r = { function() dap.repl.open() end, "Open REPL" },
+      e = { function() dap.run_last() end, "Run Last" },
+      u = { function() dapui.toggle() end, "Toggle DAP UI" },
     },
     d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
-    D = { "<cmd>lua vim.lsp.buf.declaration()<CR>", "Go to Declaration" },
-    e = { "<cmd>!eslint_d --fix %<CR>", "ESLint Fix Current File" },
-    f = { "<cmd>lua format_buffer()<CR>", "Format Buffer" },
-    h = { "<cmd>lua vim.lsp.buf.hover()<CR>", "Trigger Hover" },
-    H = { "<cmd>lua vim.lsp.buf.signature_help()<CR>", "Signature Help" },
+    D = { function() vim.lsp.buf.declaration() end, "Go to Declaration" },
+    f = { function() format_buffer() end, "Format Buffer" },
+    h = { function() vim.lsp.buf.hover() end, "Trigger Hover" },
+    H = { function() vim.lsp.buf.signature_help() end, "Signature Help" },
     i = { "<cmd>Telescope lsp_implementations<CR>", "Go to Implementations" },
-    l = { "<cmd>lua require('lint').try_lint()<CR>", "Lint" },
-    m = { "<cmd>lua vim.lsp.buf.rename()<CR>", "Rename" },
-    n = { "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", "Go to Next Error" },
-    N = { "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", "Go to Previous Error" },
-    o = { "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>", "Show Line Diagnostics" },
-    q = { "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", "Set Loclist" },
+    l = { function() require('lint').try_lint() end, "Lint" },
+    m = { function() vim.lsp.buf.rename() end, "Rename" },
+    n = { function() vim.lsp.diagnostic.goto_next() end, "Go to Next Error" },
+    N = { function() vim.lsp.diagnostic.goto_prev() end, "Go to Previous Error" },
+    o = { function() vim.lsp.diagnostic.show_line_diagnostics() end, "Show Line Diagnostics" },
+    q = { function() vim.lsp.diagnostic.set_loclist() end, "Set Loclist" },
     r = { "<cmd>Telescope lsp_references<CR>", "References" },
     s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Dynamic Workspace Symbols" },
@@ -195,9 +197,9 @@ function _G.coding_mappings()
       s = { "<cmd>TestSuite<CR>", "Test Suite" },
       v = { "<cmd>TestVisit<CR>", "Test Visit" },
     },
-    w = { "<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>", "Add Workspace Folder" },
-    W = { "<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>", "List Workspace Folders" },
-    x = { "<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>", "Remove Workspace Folder" },
+    w = { function() vim.lsp.buf.add_workspace_folder() end, "Add Workspace Folder" },
+    W = { function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, "List Workspace Folders" },
+    x = { function() vim.lsp.buf.remove_workspace_folder() end, "Remove Workspace Folder" },
     y = { "<cmd>Telescope lsp_type_definitions<CR>", "Type Definitions" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
@@ -205,20 +207,21 @@ end
 
 function _G.json_mappings()
   local buffKeymap = {
-    f = { "<cmd>lua format_buffer()<CR>", "Format Buffer" },
+    f = { function() format_buffer() end, "Format Buffer" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end
 
 function _G.package_json_mappings()
+  local pi = require"package-info"
   local buffKeymap = {
-    c = { '<cmd>lua require"package-info".hide()<CR>', "Hide package versions" },
-    d = { '<cmd>lua require"package-info".delete()<CR>', "Delete package on line" },
-    i = { '<cmd>lua require"package-info".install()<CR>', "Install a new package" },
-    p = { '<cmd>lua require"package-info".change_version()<CR>', "Install a different package version" },
-    r = { '<cmd>lua require"package-info".reinstall()<CR>', "Reinstall dependencies" },
-    s = { '<cmd>lua require"package-info".show()<CR>', "Show package versions" },
-    u = { '<cmd>lua require"package-info".update()<CR>', "Update package on line" },
+    c = { function() pi.hide() end, "Hide package versions" },
+    d = { function() pi.delete() end, "Delete package on line" },
+    i = { function() pi.install() end, "Install a new package" },
+    p = { function() pi.change_version() end, "Install a different package version" },
+    r = { function() pi.reinstall() end, "Reinstall dependencies" },
+    s = { function() pi.show() end, "Show package versions" },
+    u = { function() pi.update() end, "Update package on line" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end
