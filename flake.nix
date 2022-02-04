@@ -184,7 +184,6 @@
                           ./home/media.nix
                           ./home/desktop.nix
                           ./home/emulation.nix
-                          ./home/gaming.nix
                         ];
                       };
                     };

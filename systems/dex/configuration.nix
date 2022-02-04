@@ -43,7 +43,7 @@ rec {
 
     script = ''
       if ! /run/wrappers/bin/mount | grep -q -wi "/media/backup"; then
-         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/sdf backup
+         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/sdc backup
          /run/wrappers/bin/mount /dev/mapper/backup /media/backup
       fi
     '';
@@ -56,9 +56,23 @@ rec {
     shell = "/etc/profiles/per-user/tv/bin/zsh";
   };
 
+  programs.steam.enable = true;
+  hardware.steam-hardware.enable = true;
   environment.systemPackages = with pkgs; [
     google-chrome
+    xboxdrv
   ];
+
+
+  systemd.services.xboxdrv = {
+     wantedBy = [ "multi-user.target" ]; 
+     after = [ "network.target" ];
+     serviceConfig = {
+       Type = "forking";
+       User = "root";
+       ExecStart = ''${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach --pid-file /var/run/xboxdrv.pid --dbus disabled --silent --deadzone 4000 --deadzone-trigger 10% --mimic-xpad-wireless'';
+     };
+   };
 
   networking.nat.enable = true;
   networking.nat.internalInterfaces = [ "wg0" "ve-+" ];
