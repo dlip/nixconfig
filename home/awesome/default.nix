@@ -51,7 +51,7 @@ in
   ];
 
   services.betterlockscreen = {
-    enable = false;
+    enable = true;
     arguments = [
       "-l dim"
     ];
