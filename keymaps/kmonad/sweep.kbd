@@ -61,9 +61,9 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @na  q    w    @f   p    b    j    l    @u   y    ;    @na  _    _
-  @na  @a   @r   @s   @t   g    m    @n   @e   @i   @o   @na  _
+  bspc @a   @r   @s   @t   g    m    @n   @e   @i   @o   ret  _
   @na  @z   @x   @c   @d   v    k    h    ,    .    '    @na
-  _    _    @na            @spc           @na  _    _    _
+  _    _    tab            @spc           @na  _    _    _
 )
 
 
