@@ -209,6 +209,7 @@ in
     pciutils
     nvidia-offload
     wine
+    winetricks
     dropbox
     pavucontrol
     restic

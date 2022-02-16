@@ -9,7 +9,7 @@ let
     launch-default-programs = ''
       brave&
       kitty --class Work work&
-      kitty --class Notes notes&
+      obsidian&
       slack&
       plexamp&
     '';

@@ -554,6 +554,9 @@ awful.rules.rules = {
 
   { rule = { class = "Notes" },
     properties = { screen = 1, tag = "6" } },
+
+  { rule = { class = "obsidian" },
+    properties = { screen = 1, tag = "6" } },
 }
 -- }}}
 
