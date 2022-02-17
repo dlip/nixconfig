@@ -1,0 +1,269 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+// GENERAL KEYS
+#define GEN_NONE &none
+#define GEN_TRAN &trans
+
+// DEFAULT LAYER
+
+#define L_DEF 0
+
+#define DEF_Q &kp Q
+#define DEF_W &kp W
+#define DEF_F &kp F
+#define DEF_P &kp P
+#define DEF_B &kp B
+                        
+#define DEF_A &kp A 
+#define DEF_R &kp R 
+#define DEF_S &kp S
+#define DEF_T &kp T 
+#define DEF_G &kp G
+        
+#define DEF_Z &kp Z
+#define DEF_X &kp X
+#define DEF_C &kp C
+#define DEF_D &kp D
+#define DEF_V &kp V
+                        
+
+#define DEF_J &kp J
+#define DEF_L &kp L
+#define DEF_U &kp U
+#define DEF_Y &kp Y
+#define DEF_SEMI &kp SEMI
+
+#define DEF_K &kp K
+#define DEF_H &kp H
+#define DEF_COMA &kp COMMA
+#define DEF_DOT &kp DOT
+#define DEF_QUOT &kp SQT
+
+#define DEF_M &kp M
+#define DEF_N &kp N 
+#define DEF_E &kp E
+#define DEF_I &kp I 
+#define DEF_O &kp O
+
+
+#define DEF_NUM &mo L_NUM
+#define DEF_SPC &kp SPC
+#define DEF_BSPC &kp BSPC
+#define DEF_NAV &mo L_NAV
+
+// NAVIGATION LAYER
+#define L_NAV 1
+
+#define NAV_BSLH &kp BSLH
+#define NAV_HOME &kp HOME
+#define NAV_UP &kp UP
+#define NAV_END &kp END
+#define NAV_PGUP &kp PG_UP
+
+#define NAV_BSPC &kp BSPC
+#define NAV_LEFT &kp LEFT
+#define NAV_DOWN &kp DOWN
+#define NAV_RGHT &kp RIGHT
+#define NAV_TAB &kp TAB
+
+#define NAV_GRV &kp GRAVE
+#define NAV_DEL &kp DEL
+#define NAV_ESC &kp ESC
+#define NAV_RET &kp RET
+#define NAV_PGDN &kp PG_DN
+
+
+#define NAV_BCLR &bt BT_CLR
+#define NAV_F7 &kp F7
+#define NAV_F8 &kp F8
+#define NAV_F9 &kp F9
+#define NAV_F10 &kp F10
+
+#define NAV_GAME &to L_GAM
+#define NAV_F4 &kp F4
+#define NAV_F5 &kp F5
+#define NAV_F6 &kp F6
+#define NAV_F11 &kp F11
+
+#define NAV_BOOT &bootloader
+#define NAV_F1 &kp F1
+#define NAV_F2 &kp F2
+#define NAV_F3 &kp F3
+#define NAV_F13 &kp F12
+
+// NUM LAYER
+#define L_NUM 2
+
+#define NUM_LBKT &kp LBKT
+#define NUM_N7 &kp N7 
+#define NUM_N8 &kp N8
+#define NUM_N9 &kp N9
+#define NUM_RBKT &kp RBKT 
+
+#define NUM_EQUL &kp EQUAL
+#define NUM_N4 &kp N4
+#define NUM_N5 &kp N5
+#define NUM_N6 &kp N6
+#define NUM_N0 &kp N0
+
+#define NUM_MIN &kp MINUS
+#define NUM_N1 &kp N1
+#define NUM_N2 &kp N2
+#define NUM_N3 &kp N3
+#define NUM_FSLH &kp FSLH
+
+#define NUM_BRID &kp C_BRI_DN
+#define NUM_VOLU &kp C_VOL_UP
+#define NUM_BRIU &kp C_BRI_UP
+
+#define NUM_PRNT &kp PSCRN
+#define NUM_PREV &kp C_PREV
+#define NUM_PLAY &kp K_PP
+#define NUM_NEXT &kp C_NEXT
+
+#define NUM_MUTE &kp C_MUTE
+#define NUM_VOLD &kp C_VOL_DN
+#define NUM_STOP &kp C_STOP
+
+
+// GAMING LAYER
+#define L_GAM 4
+
+#define GAM_TAB &kp TAB
+#define GAM_Q &kp Q
+#define GAM_W &kp W
+#define GAM_E &kp E
+#define GAM_R &kp R
+
+#define GAM_LSFT &kp LSHIFT
+#define GAM_A &kp A
+#define GAM_S &kp S
+#define GAM_D &kp D
+#define GAM_F &kp F
+
+#define GAM_LCTL &kp LCTRL
+#define GAM_Z &kp Z
+#define GAM_X &kp X
+#define GAM_C &kp C
+#define GAM_V &kp V
+
+
+#define GAM_UP &kp UP
+
+#define GAM_DEF &to L_DEF
+#define GAM_LEFT &kp LEFT
+#define GAM_DOWN &kp DOWN
+#define GAM_RGHT &kp RIGHT
+
+#define GAM_ESC &kp ESC
+#define GAM_SPC &kp SPACE
+
+&sk {
+    release-after-ms = <2000>;
+};
+
+/ {
+  behaviors {
+    combos {
+        compatible = "zmk,combos";
+        combo_lgui {
+            timeout-ms = <50>;
+            key-positions = <10 20>;
+            bindings = <&sk LGUI>;
+        };
+        combo_lalt {
+            timeout-ms = <50>;
+            key-positions = <11 21>;
+            bindings = <&sk LALT>;
+        };
+        combo_lshift {
+            timeout-ms = <50>;
+            key-positions = <12 22>;
+            bindings = <&sk LSHIFT>;
+        };
+        combo_lctl {
+            timeout-ms = <50>;
+            key-positions = <13 23>;
+            bindings = <&sk LCTRL>;
+        };
+        combo_rctl {
+            timeout-ms = <50>;
+            key-positions = <16 26>;
+            bindings = <&sk RCTRL>;
+        };
+        combo_rshift {
+            timeout-ms = <50>;
+            key-positions = <17 27>;
+            bindings = <&sk RSHIFT>;
+        };
+        combo_ralt {
+            timeout-ms = <50>;
+            key-positions = <18 28>;
+            bindings = <&sk LALT>;
+        };
+        combo_rgui {
+            timeout-ms = <50>;
+            key-positions = <19 29>;
+            bindings = <&sk RGUI>;
+        };
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+      bindings = <
+        DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
+        DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
+        DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
+                                   DEF_NUM  DEF_SPC        DEF_BSPC DEF_NAV
+      >;
+    };
+
+    nav_layer {
+      bindings = <
+        NAV_BSLH NAV_HOME NAV_UP   NAV_END  NAV_PGUP       NAV_BCLR NAV_F7   NAV_F8   NAV_F9   NAV_F10
+        NAV_BSPC NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        NAV_GAME NAV_F4   NAV_F5   NAV_F6   NAV_F11
+        NAV_GRV  NAV_DEL  NAV_ESC  NAV_RET  NAV_PGDN       NAV_BOOT NAV_F1   NAV_F2   NAV_F3   NAV_F13
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+      >;
+    };
+
+    num_layer {
+      bindings = <
+        GEN_TRAN NUM_BRID NUM_VOLU NUM_BRIU GEN_TRAN       NUM_LBKT NUM_N7    NUM_N8    NUM_N9    NUM_RBKT
+        NUM_PRNT NUM_PREV NUM_PLAY NUM_NEXT GEN_TRAN       NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        GEN_TRAN NUM_MUTE NUM_VOLD NUM_STOP GEN_TRAN       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+      >;
+    };
+
+    gaming_layer {
+      bindings = <
+        GAM_TAB  GAM_Q    GAM_W    GAM_E    GAM_R       GEN_NONE GEN_NONE GAM_UP   GEN_NONE GEN_NONE
+        GAM_LSFT GAM_A    GAM_S    GAM_D    GAM_F       GAM_DEF  GAM_LEFT GAM_DOWN GAM_RGHT GEN_NONE
+        GAM_LCTL GAM_Z    GAM_X    GAM_C    GAM_V       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+                                   GEN_TRAN GAM_SPC     GEN_TRAN GEN_TRAN
+      >;
+    };
+
+    // empty_layer {
+    //   bindings = <
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //                                GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+    //   >;
+    // };
+
+  };
+};

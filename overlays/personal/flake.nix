@@ -46,7 +46,7 @@
         scripts = final.callPackage ./scripts { };
         skyscraper = final.callPackage ./skyscraper { };
         solang = final.callPackage ./solang { };
-        electron_13 = final.electron_14; # electron 13 is EOL
+        # electron_13 = final.electron_14; # electron 13 is EOL
         inherit sops-nix;
       };
     };
