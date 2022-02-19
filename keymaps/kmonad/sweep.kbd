@@ -31,18 +31,17 @@
   na reserved
   med (layer-toggle media)
   fn (layer-toggle fn)
-  nav (layer-toggle nav)
-  num (layer-toggle num)
+  navnum (layer-toggle navnum)
 
   a (tap-hold-next-release 200 a lmet)
   r (tap-hold-next-release 200 r lalt)
-  s (tap-hold-next-release 200 s @num)
+  s (tap-hold-next-release 200 s lshift)
   t (tap-hold-next-release 200 t lctl)
   
   f (tap-hold-next-release 200 f @fn)
 
   n (tap-hold-next-release 200 n rctl)
-  e (tap-hold-next-release 200 e @nav)
+  e (tap-hold-next-release 200 e rshift)
   i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o rmet)
   
@@ -54,7 +53,7 @@
   d (tap-hold 200 d C-v)
 
 
-  spc (tap-hold-next-release 200 spc lsft)
+  spc (tap-hold-next-release 200 spc @navnum)
 )
 
 (deflayer colemak-dh
@@ -67,22 +66,25 @@
 )
 
 
-(deflayer nav
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    \    home up   end  pgup _    _    _    _    _    _    _    _
-  _    esc  lft  down rght tab  _    _    _    _    _    _    _
-  _    grv  del  bspc ret  pgdn _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+(defalias
+  esc (tap-hold-next-release 200 esc lmet)
+  lft (tap-hold-next-release 200 lft lalt)
+  dwn (tap-hold-next-release 200 down lsft)
+  rgt (tap-hold-next-release 200 rght lctl)
+  
+  4 (tap-hold-next-release 200 4 rctl)
+  5 (tap-hold-next-release 200 5 rsft)
+  6 (tap-hold-next-release 200 6 lalt)
+  0 (tap-hold-next-release 200 0 rmet)
 )
 
-(deflayer num
+(deflayer navnum
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    [    7    8    9    ]    _    _    _
-  _    _    _    _    _    tab  =    4    5    6    0    _    _
-  _    _    _    _    _    _    -    1    2    3    /    _
-  _    _    _              _              _    _    _    _
+  _    \    home up   end  pgup [    7    8    9    ]    _    _    _
+  _    @esc @lft @dwn @rgt tab  =    @4   @5   @6   @0   _    _
+  _    grv  del  bspc  ret pgdn -    1    2    3    /    _
+  _    _    _              _              _   _    _    _
 )
 
 (defalias
