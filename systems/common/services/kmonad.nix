@@ -3,7 +3,7 @@
   services.kmonad = {
     enable = true;
     configfiles = [
-      ../../../keymaps/kmonad/sweep.kbd
+      ../../../keymaps/kmonad/sweep6.kbd
     ];
   };
 }
