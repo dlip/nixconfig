@@ -31,7 +31,7 @@
     gramps
     kdenlive
     # krita
-    kicad
+    # kicad
     ledger-live-desktop
     lens
     libreoffice

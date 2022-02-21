@@ -44,7 +44,7 @@
       massren
       mdl
       # myPythonPackages.shirah-reader
-      myPythonPackages.adafruit-nrfutil
+      # myPythonPackages.adafruit-nrfutil
       niv
       nix-du
       nodePackages.node2nix

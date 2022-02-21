@@ -18,13 +18,13 @@
 
 #define DEF_Q &kp Q
 #define DEF_W &kp W
-#define DEF_F &kp F
+#define DEF_F &lt L_FUN F
 #define DEF_P &kp P
 #define DEF_B &kp B
                         
 #define DEF_A &mt LGUI A 
 #define DEF_R &mt LALT R 
-#define DEF_S &mt LSHIFT S
+#define DEF_S &lt L_NUM S
 #define DEF_T &mt LCTRL T 
 #define DEF_G &kp G
         
@@ -37,7 +37,7 @@
 
 #define DEF_J &kp J
 #define DEF_L &kp L
-#define DEF_U &kp U
+#define DEF_U &lt L_MED U
 #define DEF_Y &kp Y
 #define DEF_SEMI &kp SEMI
 
@@ -49,14 +49,14 @@
 
 #define DEF_M &kp M
 #define DEF_N &mt RCTL N
-#define DEF_E &mt RSHIFT E
+#define DEF_E &lt L_NAV E
 #define DEF_I &mt LALT I 
 #define DEF_O &mt RGUI O
 
-#define DEF_TAB &lt L_FUN TAB
-#define DEF_SPC &lt L_NUM SPC
-#define DEF_BSPC &lt L_NAV BSPC
-#define DEF_RET &lt L_MED RET
+#define DEF_TAB &kp TAB
+#define DEF_SPC &mt LSHIFT SPC
+#define DEF_BSPC &mt RSHIFT BSPC
+#define DEF_RET &kp RET
 
 // NAVIGATION LAYER
 #define L_NAV 1
@@ -180,20 +180,9 @@
   tapping_term_ms = <200>;
 };
 
-&caps_word {
-    continue-list = <UNDERSCORE MINUS>;
-};
-
 / {
   combos {
     compatible = "zmk,combos";
-
-    combo_caps {
-      timeout-ms = <50>;
-      key-positions = <3 4>;
-      bindings = <&caps_word>;
-    };
-
     combo_bspc {
       timeout-ms = <50>;
       key-positions = <15 16>;
@@ -228,18 +217,6 @@
       timeout-ms = <50>;
       key-positions = <2 22>;
       bindings = <&bt BT_CLR>;
-    };
-
-    combo_fn {
-      timeout-ms = <50>;
-      key-positions = <30 31>;
-      bindings = <&mo L_FUN>;
-    };
-
-    combo_media {
-      timeout-ms = <50>;
-      key-positions = <32 33>;
-      bindings = <&mo L_MED>;
     };
   };
 
