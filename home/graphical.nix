@@ -29,6 +29,7 @@
     gnome.seahorse
     # godot
     gramps
+    juliusSpeech
     kdenlive
     # krita
     # kicad

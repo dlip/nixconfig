@@ -120,8 +120,9 @@
             };
           homeConfigurations = builtins.mapAttrs createHomeConfiguration configs;
         };
-        packages = {
+        packages = with pkgs; {
           rescript = (pkgs.callPackage ./home/vscode/rescript { });
+          inherit juliusSpeech;
           solang = (pkgs.callPackage ./pkgs/solang { });
           pushNixStoreDockerImage = (pkgs.callPackage ./pkgs/pushNixStoreDockerImage { });
         };
