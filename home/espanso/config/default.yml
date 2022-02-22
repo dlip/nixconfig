@@ -10,9 +10,6 @@
 matches:
   # Simple text replacement
   - trigger: ".,ee"
-    replace: "dane@lipscombe.com.au"
-
-  - trigger: ".,en"
     replace: "danelipscombe@gmail.com"
 
   - trigger: ".,ep"
@@ -54,13 +51,14 @@ matches:
           format: "%H:%M"
 
   # Shell commands
-  - trigger: ",.ip"
+  - trigger: ".,ip"
     replace: "{{output}}"
     vars:
       - name: output
         type: shell
         params:
-          cmd: "curl 'https://api.ipify.org'"
+          cmd: "curl ifconfig.co"
+
   # Vim
   - trigger: ".,."
     replace: "\\(.*\\)"
