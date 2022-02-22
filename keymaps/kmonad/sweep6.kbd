@@ -36,13 +36,17 @@
 
   a (tap-hold-next-release 200 a lmet)
   r (tap-hold-next-release 200 r lalt)
-  s (tap-hold-next-release 200 s lshift)
+  s (tap-hold-next-release 200 s @num)
   t (tap-hold-next-release 200 t lctl)
   
+  f (tap-hold-next-release 200 f @fn)
+
   n (tap-hold-next-release 200 n rctl)
-  e (tap-hold-next-release 200 e rshift)
+  e (tap-hold-next-release 200 e @nav)
   i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o rmet)
+  
+  u (tap-hold-next-release 200 u @med)
 
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
@@ -50,10 +54,8 @@
   d (tap-hold 200 d C-v)
 
 
-  tab (tap-hold-next-release 200 tab @fn)
-  spc (tap-hold-next-release 200 spc @num)
-  bsp (tap-hold-next-release 200 bspc @nav)
-  ret (tap-hold-next-release 200 ret @med)
+  spc (tap-hold-next-release 200 spc lsft)
+  bsp (tap-hold-next-release 200 bspc rsft)
 )
 
 (deflayer colemak-dh
@@ -62,21 +64,9 @@
   @na  q    w    f    p    b    @na  j    l    u    y    ;    _    _
   @na  @a   @r   @s   @t   g    @na  m    @n   @e   @i   @o   _
   @na  @z   @x   @c   @d   v    @na  k    h    ,    .    ' 
-  _    _    @tab           @spc           @bsp @ret @ret _
+  _    _    tab            @spc           @bsp ret  ret  _
 )
 
-
-(defalias
-  esc (tap-hold-next-release 200 esc lmet)
-  lft (tap-hold-next-release 200 lft lalt)
-  dwn (tap-hold-next-release 200 down lsft)
-  rgt (tap-hold-next-release 200 rght lctl)
-  
-  4 (tap-hold-next-release 200 4 rctl)
-  5 (tap-hold-next-release 200 5 rsft)
-  6 (tap-hold-next-release 200 6 lalt)
-  0 (tap-hold-next-release 200 0 rmet)
-)
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
