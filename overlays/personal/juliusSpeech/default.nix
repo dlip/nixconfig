@@ -1,6 +1,7 @@
 { lib
 , stdenv
 , perl
+, libpulseaudio
 , fetchFromGitHub
 }:
 
@@ -10,13 +11,15 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "julius-speech";
     repo = pname;
-    rev = "3b7174d0d4091f5e6ebb917769822032d079996f";
-    sha256 = "1zf0y2v7h507gf1b3r8qqjapis1kkhjzd5msnzj3js17bwbx43cg";
+    rev = "4ba475bd430faa5919e13e2020d6edda1491fb66";
+    sha256 = "CHRTz0ijikml9IinNHelhNpL6YwN3RAKuqJzH+iU5vw=";
   };
   enableParallelBuilding = true;
   buildInputs = [
     perl
+    libpulseaudio
   ];
+  configureFlags = [ "--enable-words-int" "--with-mictype=pulseaudio" ];
   cmake = true;
 
 }
