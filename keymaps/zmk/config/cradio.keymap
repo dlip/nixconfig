@@ -91,7 +91,7 @@
 #define SYM_CAR &kp CARET
 
 #define SYM_GRV &kp GRAVE
-// #define SYM_TLDE &kp TILDE
+#define SYM_TLDE &kp TILDE
 #define SYM_LBKT &kp LBKT
 #define SYM_LPAR &kp LPAR
 #define SYM_LBRC &kp LBRC
@@ -276,10 +276,10 @@
 
     number_layer {
       bindings = <
-        SYM_PIPE SYM_LBKT SYM_RBKT SYM_AND  SYM_HASH       NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
-        SYM_GRV  SYM_LPAR SYM_RPAR SYM_UNDR SYM_AT         NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
-        SYM_BSLH SYM_RBRC SYM_LBRC SYM_QUES SYM_PER        NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
-                                   SYM_CAR  SYM_DOL        GEN_TRAN SYM_EXCL 
+        SYM_PIPE SYM_LBKT SYM_RBKT SYM_TLDE GEN_TRAN       NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
+        SYM_GRV  SYM_LPAR SYM_RPAR SYM_QUES SYM_EXCL       NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        SYM_BSLH SYM_LBRC SYM_RBRC SYM_UNDR GEN_TRAN       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN 
       >;
     };
     media_layer {
