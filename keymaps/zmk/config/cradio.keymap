@@ -54,9 +54,9 @@
 #define DEF_O &mt RGUI O
 
 #define DEF_TAB &kp TAB
-#define DEF_SPC &mt LSHIFT SPC
-#define DEF_BSPC &mt RSHIFT BSPC
-#define DEF_RET &kp RET
+#define DEF_SPC &kp SPC
+#define DEF_SHFT &sk LSHIFT
+#define DEF_BSPC &kp BSPC
 
 // NAVIGATION LAYER
 #define L_NAV 1
@@ -170,6 +170,13 @@
 #define GAM_SPC &kp SPACE
 
 
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
+};
+&sl {
+    release-after-ms = <1000>;
+};
 &mt {
   flavor = "tap-preferred";
   tapping_term_ms = <200>;
@@ -228,7 +235,7 @@
         DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
         DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
         DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
-                                   DEF_TAB  DEF_SPC        DEF_BSPC  DEF_RET
+                                   DEF_TAB  DEF_SPC        DEF_SHFT DEF_BSPC
       >;
     };
 

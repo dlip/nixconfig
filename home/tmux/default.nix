@@ -23,8 +23,8 @@
       bind-key C-t send-prefix
       bind-key C-a last-window
       set -g mouse on
-      bind s split-window -h
-      bind v split-window -v
+      bind s split-window -v
+      bind v split-window -h
       bind S choose-tree
       TMUX_FZF_LAUNCH_KEY="f" # Key Prefix + f
 
