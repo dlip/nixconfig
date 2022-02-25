@@ -53,7 +53,7 @@
 #define DEF_I &mt LALT I 
 #define DEF_O &mt RGUI O
 
-#define DEF_TAB &kp TAB
+#define DEF_NUM &sl L_NUM
 #define DEF_SPC &kp SPC
 #define DEF_SHFT &sk LSHIFT
 #define DEF_BSPC &kp BSPC
@@ -82,11 +82,37 @@
 // NUMBER LAYER
 #define L_NUM 2
 
-#define NUM_LBKT &kp LBKT
+// ()_{}&?[]!\#|@%^$`~
+
+#define SYM_PIPE &kp PIPE
+#define SYM_RBKT &kp RBKT
+#define SYM_RPAR &kp RPAR
+#define SYM_RBRC &kp RBRC
+#define SYM_CAR &kp CARET
+
+#define SYM_GRV &kp GRAVE
+// #define SYM_TLDE &kp TILDE
+#define SYM_LBKT &kp LBKT
+#define SYM_LPAR &kp LPAR
+#define SYM_LBRC &kp LBRC
+#define SYM_AND &kp AMPERSAND
+ 
+
+#define SYM_BSLH &kp BSLH
+#define SYM_DOL &kp DOLLAR
+#define SYM_HASH &kp HASH
+#define SYM_AT &kp AT
+
+#define SYM_EXCL &kp EXCLAMATION
+#define SYM_PER &kp PERCENT
+#define SYM_UNDR &kp UNDER
+#define SYM_QUES &kp QUESTION
+
+#define NUM_PLUS &kp PLUS
 #define NUM_N7 &kp N7 
 #define NUM_N8 &kp N8
 #define NUM_N9 &kp N9
-#define NUM_RBKT &kp RBKT 
+#define NUM_AST &kp ASTERISK 
 
 #define NUM_EQUL &kp EQUAL
 #define NUM_N4 &kp N4
@@ -235,7 +261,7 @@
         DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
         DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
         DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
-                                   DEF_TAB  DEF_SPC        DEF_SHFT DEF_BSPC
+                                   DEF_NUM  DEF_SPC        DEF_SHFT DEF_BSPC
       >;
     };
 
@@ -250,10 +276,10 @@
 
     number_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_LBKT NUM_N7    NUM_N8    NUM_N9    NUM_RBKT
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+        SYM_PIPE SYM_LBKT SYM_RBKT SYM_AND  SYM_HASH       NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
+        SYM_GRV  SYM_LPAR SYM_RPAR SYM_UNDR SYM_AT         NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        SYM_BSLH SYM_RBRC SYM_LBRC SYM_QUES SYM_PER        NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+                                   SYM_CAR  SYM_DOL        GEN_TRAN SYM_EXCL 
       >;
     };
     media_layer {
