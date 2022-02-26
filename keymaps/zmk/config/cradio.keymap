@@ -64,9 +64,9 @@
 #define NAV_VRD  &kp LC(R)
 
 #define NAV_ESC  &kp ESC
-#define NAV_DEL  &mt LCTRL DEL
+#define NAV_DEL  &mt LALT DEL
 #define NAV_BSPC &mt LGUI BSPC
-#define NAV_RET  &mt LALT RET
+#define NAV_RET  &mt LCTRL RET
 #define NAV_TAB  &kp TAB
 
 #define NUM_UNDO &kp LC(Z)
