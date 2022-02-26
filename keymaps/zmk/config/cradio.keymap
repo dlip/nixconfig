@@ -91,14 +91,14 @@
 #define SYM_RBKT &kp RBKT
 
 #define SYM_GRV &kp GRAVE
-#define SYM_EXCL &mt LALT EXCLAMATION
+#define SYM_QUES &mt LALT EXCLAMATION
 #define SYM_UNDR &mt LGUI UNDER
 #define SYM_LPAR &mt LCTRL LPAR
 #define SYM_RPAR &kp RPAR
 
 #define SYM_BSLH &kp BSLH
+#define SYM_EXCL &kp QUESTION
 #define SYM_AND &kp AMPERSAND
-#define SYM_QUES &kp QUESTION
 #define SYM_LBRC &kp LBRC
 #define SYM_RBRC &kp RBRC
 
@@ -138,9 +138,6 @@
 #define MED_VOLD &kp C_VOL_DN
 #define MED_STOP &kp C_STOP
 
-// FUNCTION LAYER
-#define L_FUN 4
-
 #define FUN_F7 &kp F7
 #define FUN_F8 &kp F8
 #define FUN_F9 &kp F9
@@ -159,7 +156,7 @@
 #define FUN_F13 &kp F12
 
 // GAMING LAYER
-#define L_GAM 5
+#define L_GAM 4
 
 #define GAM_TAB &kp TAB
 #define GAM_Q &kp Q
@@ -272,8 +269,8 @@
     number_layer {
       bindings = <
         SYM_HASH SYM_PIPE SYM_TLDE SYM_LBKT SYM_RBKT      NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
-        SYM_GRV  SYM_EXCL SYM_UNDR SYM_LPAR SYM_RPAR      NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
-        SYM_BSLH SYM_AND  SYM_QUES SYM_LBRC SYM_RBRC      NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+        SYM_GRV  SYM_QUES SYM_UNDR SYM_LPAR SYM_RPAR      NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        SYM_BSLH SYM_EXCL SYM_AND  SYM_LBRC SYM_RBRC      NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
                                    GEN_TRAN GEN_TRAN      GEN_TRAN GEN_TRAN 
       >;
     };
@@ -282,15 +279,6 @@
         GEN_TRAN MED_BRID MED_VOLU MED_BRIU GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
         MED_PRNT MED_PREV MED_PLAY MED_NEXT GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
         GEN_TRAN MED_MUTE MED_VOLD MED_STOP GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
-      >;
-    };
-
-    function_layer {
-      bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
