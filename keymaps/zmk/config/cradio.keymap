@@ -18,13 +18,13 @@
 
 #define DEF_Q &kp Q
 #define DEF_W &kp W
-#define DEF_F &lt L_FUN F
+#define DEF_F &kp F
 #define DEF_P &kp P
 #define DEF_B &kp B
                         
-#define DEF_A &mt LGUI A 
+#define DEF_A &kp A 
 #define DEF_R &mt LALT R 
-#define DEF_S &lt L_NUM S
+#define DEF_S &mt LGUI S
 #define DEF_T &mt LCTRL T 
 #define DEF_G &kp G
         
@@ -37,7 +37,7 @@
 
 #define DEF_J &kp J
 #define DEF_L &kp L
-#define DEF_U &lt L_MED U
+#define DEF_U &kp U
 #define DEF_Y &kp Y
 #define DEF_SEMI &kp SEMI
 
@@ -49,14 +49,14 @@
 
 #define DEF_M &kp M
 #define DEF_N &mt RCTL N
-#define DEF_E &lt L_NAV E
+#define DEF_E &mt RGUI E
 #define DEF_I &mt LALT I 
-#define DEF_O &mt RGUI O
+#define DEF_O &kp O
 
 #define DEF_NUM &sl L_NUM
-#define DEF_SPC &kp SPC
+#define DEF_SPC &lt L_NAV SPC
 #define DEF_SHFT &sk LSHIFT
-#define DEF_BSPC &kp BSPC
+#define DEF_BSPC &lt L_MED BSPC
 
 // NAVIGATION LAYER
 #define L_NAV 1
@@ -68,9 +68,9 @@
 #define NAV_PGUP &kp PG_UP
 
 #define NAV_ESC &kp ESC
-#define NAV_LEFT &kp LEFT
-#define NAV_DOWN &kp DOWN
-#define NAV_RGHT &kp RIGHT
+#define NAV_LEFT &mt LALT LEFT
+#define NAV_DOWN &mt LGUI DOWN
+#define NAV_RGHT &mt LCTRL RIGHT
 #define NAV_TAB &kp TAB
 
 #define NAV_GRV &kp GRAVE
@@ -84,29 +84,24 @@
 
 // ()_{}&?[]!\#|@%^$`~
 
+#define SYM_HASH &kp HASH
 #define SYM_PIPE &kp PIPE
-#define SYM_RBKT &kp RBKT
-#define SYM_RPAR &kp RPAR
-#define SYM_RBRC &kp RBRC
-#define SYM_CAR &kp CARET
-
-#define SYM_GRV &kp GRAVE
 #define SYM_TLDE &kp TILDE
 #define SYM_LBKT &kp LBKT
-#define SYM_LPAR &kp LPAR
-#define SYM_LBRC &kp LBRC
-#define SYM_AND &kp AMPERSAND
- 
+#define SYM_RBKT &kp RBKT
+
+#define SYM_GRV &kp GRAVE
+#define SYM_EXCL &mt LALT EXCLAMATION
+#define SYM_UNDR &mt LGUI UNDER
+#define SYM_LPAR &mt LCTRL LPAR
+#define SYM_RPAR &kp RPAR
 
 #define SYM_BSLH &kp BSLH
-#define SYM_DOL &kp DOLLAR
-#define SYM_HASH &kp HASH
-#define SYM_AT &kp AT
-
-#define SYM_EXCL &kp EXCLAMATION
-#define SYM_PER &kp PERCENT
-#define SYM_UNDR &kp UNDER
+#define SYM_AND &kp AMPERSAND
 #define SYM_QUES &kp QUESTION
+#define SYM_LBRC &kp LBRC
+#define SYM_RBRC &kp RBRC
+
 
 #define NUM_PLUS &kp PLUS
 #define NUM_N7 &kp N7 
@@ -115,9 +110,9 @@
 #define NUM_AST &kp ASTERISK 
 
 #define NUM_EQUL &kp EQUAL
-#define NUM_N4 &kp N4
-#define NUM_N5 &kp N5
-#define NUM_N6 &kp N6
+#define NUM_N4 &mt LCTRL N4
+#define NUM_N5 &mt LGUI N5
+#define NUM_N6 &mt LALT N6
 #define NUM_N0 &kp N0
 
 #define NUM_MIN &kp MINUS
@@ -152,9 +147,9 @@
 #define FUN_F10 &kp F10
 
 #define FUN_GAME &to L_GAM
-#define FUN_F4 &kp F4
-#define FUN_F5 &kp F5
-#define FUN_F6 &kp F6
+#define FUN_F4 &mt LCTRL F4
+#define FUN_F5 &mt LGUI F5
+#define FUN_F6 &mt LALT F6
 #define FUN_F11 &kp F11
 
 #define FUN_BOOT &bootloader
@@ -267,19 +262,19 @@
 
     navigation_layer {
       bindings = <
-        NAV_BSLH NAV_HOME NAV_UP   NAV_END  NAV_PGUP       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        NAV_GRV  NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        NAV_BSLH NAV_HOME NAV_UP   NAV_END  NAV_PGUP       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
+        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
+        NAV_GRV  NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
 
     number_layer {
       bindings = <
-        SYM_PIPE SYM_LBKT SYM_RBKT SYM_TLDE GEN_TRAN       NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
-        SYM_GRV  SYM_LPAR SYM_RPAR SYM_QUES SYM_EXCL       NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
-        SYM_BSLH SYM_LBRC SYM_RBRC SYM_UNDR GEN_TRAN       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN 
+        SYM_HASH SYM_PIPE SYM_TLDE SYM_LBKT SYM_RBKT      NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
+        SYM_GRV  SYM_EXCL SYM_UNDR SYM_LPAR SYM_RPAR      NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        SYM_BSLH SYM_AND  SYM_QUES SYM_LBRC SYM_RBRC      NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+                                   GEN_TRAN GEN_TRAN      GEN_TRAN GEN_TRAN 
       >;
     };
     media_layer {
