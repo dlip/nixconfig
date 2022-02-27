@@ -56,7 +56,7 @@
 #define DEF_NAV  &sl L_NAV
 #define DEF_SPC  &kp SPC
 #define DEF_SHFT &sk LSHIFT
-#define DEF_BSPC &kp BSPC
+#define DEF_RGHT &sl L_RGHT
 
 #define GEN_SHFT &sk LSHIFT
 // NAVIGATION LAYER
@@ -93,8 +93,11 @@
 #define NAV_BSPC &kp BSPC
 #define NAV_DEL  &kp DEL
 
+// RIGHT LAYER
+#define L_RGHT 2
+
 // NUMBER LAYER
-#define L_NUM 2
+#define L_NUM 3
 
 #define NUM_PLUS &kp PLUS
 #define NUM_N7   &kp N7 
@@ -116,7 +119,7 @@
 
 // SYMBOL LAYER
 
-#define L_SYM 3
+#define L_SYM 4
 // ()_{}&?[]!\#|@%^$`~
 
 #define SYM_HASH &kp HASH
@@ -138,7 +141,7 @@
 #define SYM_RBRC &kp RBRC
 
 // MEDIA LAYER
-#define L_MED 4
+#define L_MED 5
 
 #define MED_BRID &kp C_BRI_DN
 #define MED_VOLU &kp C_VOL_UP
@@ -155,7 +158,7 @@
 #define MED_STOP &kp C_STOP
 
 // FUNCTION LAYER
-#define L_FUN 5
+#define L_FUN 6
 #define FUN_F7   &kp F7
 #define FUN_F8   &kp F8
 #define FUN_F9   &kp F9
@@ -174,7 +177,7 @@
 #define FUN_F13  &kp F12
 
 // GAMING LAYER
-#define L_GAM 6
+#define L_GAM 7
 
 #define GAM_TAB  &kp TAB
 #define GAM_Q    &kp Q
@@ -240,7 +243,7 @@
         DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
         DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
         DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
-                                   DEF_NAV  DEF_SPC        DEF_SHFT DEF_BSPC
+                                   DEF_NAV  DEF_SPC        DEF_SHFT DEF_RGHT
       >;
     };
 
@@ -252,7 +255,14 @@
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
-    
+    navigation2_layer {
+      bindings = <
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NAV_PGDN NAV_LEFT NAV_LCTL NAV_LALT NAV_LGUI
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+      >;
+    }; 
     number_layer {
       bindings = <
         GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_PLUS NUM_N7   NUM_N8   NUM_N9   NUM_AST
