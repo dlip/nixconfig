@@ -54,15 +54,15 @@
 #define DEF_O    &kp O
 
 #define DEF_NAV  &sl L_NAV
-#define DEF_SPC  &kp SPC
+#define DEF_SPC  &lt L_LFT SPC
 #define DEF_SHFT &sk LSHIFT
-#define DEF_RGHT &sl L_RGHT
 
 #define GEN_SHFT &sk LSHIFT
 // NAVIGATION LAYER
 #define L_NAV 1
 
 #define NAV_SYM &sl L_SYM
+#define NAV_SY2 &sl L_SY2
 #define NAV_MED &sl L_MED
 
 #define NAV_LGUI &sk LGUI
@@ -93,8 +93,8 @@
 #define NAV_BSPC &kp BSPC
 #define NAV_DEL  &kp DEL
 
-// RIGHT LAYER
-#define L_RGHT 2
+// LEFT LAYER
+#define L_LFT 2
 
 // NUMBER LAYER
 #define L_NUM 3
@@ -106,9 +106,9 @@
 #define NUM_AST  &kp ASTERISK 
 
 #define NUM_EQUL &kp EQUAL
-#define NUM_N4   &mt LCTRL N4
-#define NUM_N5   &mt LGUI N5
-#define NUM_N6   &mt LALT N6
+#define NUM_N4   &kp N4
+#define NUM_N5   &kp N5
+#define NUM_N6   &kp N6
 #define NUM_N0   &kp N0
 
 #define NUM_MIN  &kp MINUS
@@ -120,7 +120,16 @@
 // SYMBOL LAYER
 
 #define L_SYM 4
-// ()_{}&?[]!\#|@%^$`~
+
+#define SYM_AT &kp AT
+#define SYM_DOLR &kp DOLLAR
+#define SYM_PER &kp PERCENT
+#define SYM_CAR &kp CARET
+#define SYM_SEMI &kp SEMICOLON
+#define SYM_COL &kp COLON
+#define SYM_LT &kp LT
+#define SYM_GT &kp GT
+
 
 #define SYM_HASH &kp HASH
 #define SYM_PIPE &kp PIPE
@@ -129,19 +138,19 @@
 #define SYM_RBKT &kp RBKT
 
 #define SYM_GRV  &kp GRAVE
-#define SYM_QUES &kp EXCLAMATION
+#define SYM_QUES &kp QUESTION
 #define SYM_UNDR &kp UNDER
 #define SYM_LPAR &kp LPAR
 #define SYM_RPAR &kp RPAR
 
 #define SYM_BSLH &kp BSLH
-#define SYM_EXCL &kp QUESTION
+#define SYM_EXCL &kp EXCLAMATION
 #define SYM_AND  &kp AMPERSAND
 #define SYM_LBRC &kp LBRC
 #define SYM_RBRC &kp RBRC
-
+#define L_SY2 5
 // MEDIA LAYER
-#define L_MED 5
+#define L_MED 6
 
 #define MED_BRID &kp C_BRI_DN
 #define MED_VOLU &kp C_VOL_UP
@@ -158,16 +167,16 @@
 #define MED_STOP &kp C_STOP
 
 // FUNCTION LAYER
-#define L_FUN 6
+#define L_FUN 7
 #define FUN_F7   &kp F7
 #define FUN_F8   &kp F8
 #define FUN_F9   &kp F9
 #define FUN_F10  &kp F10
 
 #define FUN_GAME &to L_GAM
-#define FUN_F4   &mt LCTRL F4
-#define FUN_F5   &mt LGUI F5
-#define FUN_F6   &mt LALT F6
+#define FUN_F4   &kp F4
+#define FUN_F5   &kp F5
+#define FUN_F6   &kp F6
 #define FUN_F11  &kp F11
 
 #define FUN_BOOT &bootloader
@@ -177,7 +186,7 @@
 #define FUN_F13  &kp F12
 
 // GAMING LAYER
-#define L_GAM 7
+#define L_GAM 8
 
 #define GAM_TAB  &kp TAB
 #define GAM_Q    &kp Q
@@ -216,7 +225,15 @@
 &sl {
     release-after-ms = <1000>;
 };
+&mt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
 
+&lt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
 
 / {
   combos {
@@ -243,57 +260,66 @@
         DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
         DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
         DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
-                                   DEF_NAV  DEF_SPC        DEF_SHFT DEF_RGHT
+                                   GEN_NONE DEF_SPC        DEF_NAV  GEN_NONE
       >;
     };
 
     navigation_layer {
       bindings = <
-        NAV_ESC  GEN_TRAN NAV_MED  NAV_SYM  NAV_MED        NAV_PGUP NAV_HOME NAV_UP   NAV_END  GEN_TRAN
-        NAV_LGUI NAV_LALT NAV_LCTL NAV_NUM  NAV_FUN        NAV_PGDN NAV_LEFT NAV_DOWN NAV_RGHT NAV_RET
-        NUM_UNDO NUM_CUT  NUM_COPY NAV_TAB  NUM_PST        GEN_TRAN NAV_ESC  NAV_BSPC NAV_DEL  GEN_TRAN
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+        NAV_PGUP NAV_HOME NAV_UP   NAV_END  GEN_TRAN       GEN_TRAN NAV_SY2  GEN_TRAN GEN_TRAN GEN_TRAN
+        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_RET        NAV_FUN  NAV_NUM  NAV_LCTL NAV_LALT NAV_LGUI
+        NAV_PGDN NAV_DEL  NAV_BSPC NAV_TAB  NUM_PST        GEN_TRAN NAV_SYM  NAV_MED  GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN
       >;
     };
-    navigation2_layer {
+
+    left_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NAV_PGDN NAV_LEFT NAV_LCTL NAV_LALT NAV_LGUI
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        NAV_ESC  NAV_DEL  NAV_BSPC GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        NAV_LGUI NAV_LALT NAV_LCTL DEF_SHFT NAV_RET        NAV_PGDN NAV_LEFT NAV_LCTL NAV_LALT NAV_LGUI
+        NUM_UNDO NUM_CUT  NUM_COPY NAV_TAB  NUM_PST        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     }; 
     number_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_PLUS NUM_N7   NUM_N8   NUM_N9   NUM_AST
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_EQUL NUM_N4   NUM_N5   NUM_N6   NUM_N0
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_MIN  NUM_N1   NUM_N2   NUM_N3   NUM_FSLH
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN 
+        NUM_AST  NUM_N7   NUM_N8   NUM_N9   NUM_PLUS       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        NUM_N0   NUM_N4   NUM_N5   NUM_N6   NUM_EQUL       GEN_TRAN GEN_TRAN NAV_LCTL NAV_LALT NAV_LGUI
+        NUM_FSLH NUM_N1   NUM_N2   NUM_N3   NUM_MIN        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN 
       >;
     };
 
     symbol_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_RBKT SYM_LBKT  SYM_TLDE SYM_PIPE SYM_HASH
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_RPAR SYM_LPAR  SYM_UNDR SYM_QUES SYM_GRV 
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_RBRC SYM_LBRC  SYM_AND  SYM_EXCL SYM_BSLH
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN 
+        SYM_EXCL SYM_AT   SYM_HASH SYM_DOLR SYM_PER        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        SYM_QUES SYM_UNDR SYM_LPAR SYM_LPAR SYM_RPAR       GEN_TRAN GEN_TRAN NAV_LCTL NAV_LALT NAV_LGUI
+        SYM_CAR  SYM_AND  SYM_GRV  SYM_TLDE GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN 
+      >;
+    };
+    symbol2_layer {
+      bindings = <
+        GEN_TRAN GEN_TRAN SYM_COL  SYM_SEMI GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        SYM_LBKT SYM_RBKT SYM_LBRC SYM_RBRC GEN_TRAN       GEN_TRAN GEN_TRAN NAV_LCTL NAV_LALT NAV_LGUI
+        SYM_BSLH SYM_PIPE SYM_LT   SYM_GT   GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN 
       >;
     };
     media_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN MED_BRID MED_VOLU MED_BRIU GEN_TRAN
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN MED_PREV MED_PLAY MED_NEXT MED_PRNT
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN MED_MUTE MED_VOLD MED_STOP GEN_TRAN
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+        GEN_TRAN MED_BRID MED_VOLU MED_BRIU GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        MED_PRNT MED_PREV MED_PLAY MED_NEXT GEN_TRAN       GEN_TRAN GEN_TRAN NAV_LCTL NAV_LALT NAV_LGUI
+        GEN_TRAN MED_MUTE MED_VOLD MED_STOP GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN
       >;
     };
     function_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+       FUN_F10  FUN_F7   FUN_F8    FUN_F9   GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+       FUN_F11  FUN_F4   FUN_F5    FUN_F6   FUN_GAME       GEN_TRAN GEN_TRAN NAV_LCTL NAV_LALT NAV_LGUI
+       FUN_F13  FUN_F1   FUN_F2    FUN_F3   GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN
       >;
     };
     gaming_layer {
