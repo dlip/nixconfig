@@ -1,0 +1,155 @@
+
+(defcfg
+  ;; ** For Linux **
+  input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
+  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne_vial:f64c2b3c-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
+  output (uinput-sink "KMonad output")
+
+  ;; ** For Windows **
+  ;; input  (low-level-hook)
+  ;; output (send-event-sink)
+
+  ;; ** For MacOS **
+  ;; input  (iokit-name "my-keyboard-product-string")
+  ;; output (kext)
+
+  fallthrough true
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rctl cmp  rctl
+)
+
+(defalias
+  na reserved
+  med (layer-toggle media)
+  fn (layer-toggle fn)
+  nav (layer-toggle nav)
+  num (layer-toggle num)
+  sym (layer-toggle sym)
+  llt (layer-toggle left)
+
+  sct (sticky-key 1000 lctl)
+  sal (sticky-key 1000 lalt)
+  sme (sticky-key 1000 lmet)
+  ssf (sticky-key 1000 lsft)
+  snv (sticky-key 1000 @nav)
+  snm (sticky-key 1000 @num)
+  sfn (sticky-key 1000 @fn)
+  smd (sticky-key 1000 @med)
+  ssm (sticky-key 1000 @sym)
+
+  spc (tap-hold-next-release 200 spc @llt)
+)
+
+(deflayer colemak-dh
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @na  q    w    f    p    b    @na  j    l    u    y    ;    _    _
+  @na  a    r    s    t    g    @na  m    n    e    i    o    _
+  @na  z    x    c    d    v    @na  k    h    ,    .    ' 
+  _    _    @snm           @spc           @snv @snv @snv _
+  
+)
+
+
+(defalias
+  und C-z
+  cut C-x
+  cp C-c
+  pst C-v
+)
+
+(deflayer left
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    esc  del  bspc ret  _    _    _    _    _    _    _    _    _
+  _    @sme @sal @sct @ssf _    _    _    _    _    _    _    _
+  _    @und @cut @cp  tab  @pst _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    pgup home up   end  pgup _    _    _    _    _    _    _    _
+  _    esc  lft  down rght ret  _    @sfn @snm @sct @sal @sme _
+  _    grv  del  bspc tab  pgdn _    _    @ssm @smd _    _
+  _    _    _              @ssf           _    _    _    _
+)
+
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    *    7    8    9    +    _    _    _    _    _    _    _    _
+  _    0    4    5    6    =    _    _    _    _    _    _    _
+  _    /    1    2    3    -    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+
+(deflayer sym
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    #    |    ~    [    ]    _    _    _    _    _    _    _    _
+  _    `    ?    \_   \(   \)   _    _    _    _    _    _    _
+  _    \    !    &    {    }    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(defalias
+  rw rewind
+  ff fastforward
+)
+
+(deflayer media
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    brdn volu brup _    _    _    _    _    _    _    _    _
+  _    prnt prev pp   next _    _    _    _    _    _    _    _
+  _    _    mute vold stop _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(defalias
+  pau pause
+  gam (layer-switch gaming)
+)
+
+(deflayer fn
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    f7   f8   f9   f10  _    _    _    _    _    _    _    _    _
+  _    f4   f5   f6   f11  @gam _    _    _    _    _    _    _
+  _    f1   f2   f3   f12  _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(defalias
+  col (layer-switch colemak-dh)
+)
+
+(deflayer gaming
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  tab  q    w    e    r    t    _    _    _    up   _    _    _    _
+  lsft a    s    d    f    g    _    @col lft  down rght _    _
+  lctl z    x    c    v    b    _    _    _    _    _    _
+  _    lalt esc            spc            _    _    _    _
+)
+
+(deflayer empty
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
