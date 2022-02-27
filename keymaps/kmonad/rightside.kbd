@@ -54,10 +54,10 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @na  q    w    f    p    b    @na  j    l    u    y    "    _    _
-  @na  a    r    s    t    g    @na  m    n    e    i    o    _
-  @na  z    x    c    d    v    @na  k    h    ,    .    ' 
-  _    _    @snm           @spc           @snv @snv @snv _
+  q    w    f    p    b    @na  @na  j    l    u    y    "    _    _
+  a    r    s    t    g    @na  @na  m    n    e    i    o    _
+  z    x    c    d    v    @na  @na  k    h    ,    .    ' 
+  _    _    @snv           @spc           @ssf bspc bspc _
   
 )
 
@@ -81,18 +81,18 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    home up   end  pgup _    _    @ss2 _    _    _    _    _
-  _    esc  left down rght ret  _    @sfn @snm @sct @sal @sme _
-  _    _    del  bspc tab  _    _    _    @ssm @smd _    _
-  _    _    _              @ssf           _    _    _    _
+  _    @smd @sfn @ssm _    _    _    _    home up   end  _    _    _
+  @sme @sal @sct @snm @ss2 _    _    esc  lft  down rght ret  _
+  _    _    _    tab  _    _    _    _    del  bspc _    _
+  _    _    _              _              _    _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    *    7    8    9    +    _    _    _    _    _    _    _    _
-  _    0    4    5    6    =    _    _    _    _    _    _    _
-  _    /    1    2    3    -    _    _    _    _    _    _
+  _    _    _    _    _    _    _    +    7    8    9    *    _    _
+  _    _    _    _    _    _    _    =    4    5    6    0    _
+  _    _    _    _    _    _    _    -    1    2    3    /
   _    _    _              _              _    _    _    _
 )
 
@@ -100,18 +100,18 @@
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    !    @    #    $    %    _    _    _    _    _    _    _    _
-  _    ?    \_   \(   \)   _    _    _    _    _    _    _    _
-  _    ^    &    `    ~    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    !    @    #    $    %    _    _
+  _    _    _    _    _    _    _    _    \(   \)   _    _    _
+  _    _    _    _    _    _    _    ^    &    `    ~    _
   _    _    _              _              _    _    _    _
 )
 
 (deflayer sy2
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    ;    :    _    _    _    _    _    _    _    _    _
-  _    [    ]    {    }    _    _    _    _    _    _    _    _
-  _    \\   |    <    >    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    :    ;    _    _
+  _    _    _    _    _    _    _    _    {    }    [    ]    _
+  _    _    _    _    _    _    _    _    <    >    |    \\
   _    _    _              _              _    _    _    _
 )
 
@@ -123,9 +123,9 @@
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    brdn volu brup _    _    _    _    _    _    _    _    _
-  _    prnt prev pp   next _    _    _    _    _    _    _    _
-  _    _    mute vold stop _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    brdn volu brup _    _    _
+  _    _    _    _    _    _    _    _    prev pp   next prnt _
+  _    _    _    _    _    _    _    _    stop vold mute _
   _    _    _              _              _    _    _    _
 )
 
@@ -137,9 +137,9 @@
 (deflayer fn
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    f7   f8   f9   f10  _    _    _    _    _    _    _    _    _
-  _    f4   f5   f6   f11  @gam _    _    _    _    _    _    _
-  _    f1   f2   f3   f12  _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    f7   f8   f9   f10  _    _
+  _    _    _    _    _    _    _    @gam f4   f5   f6   f11  _
+  _    _    _    _    _    _    _    _    f1   f2   f3   f12
   _    _    _              _              _    _    _    _
 )
 
