@@ -62,37 +62,36 @@
 // NAVIGATION LAYER
 #define L_NAV 1
 
-#define NAV_ESC  &kp ESC
-#define NAV_DEL  &kp DEL
-#define NAV_BSPC &kp BSPC
-#define NAV_RET  &kp RET
-#define NAV_TAB  &kp TAB
-
-#define NAV_LCTL &sk LCTL
-#define NAV_LGUI &sk LGUI
-#define NAV_LALT &sk LALT
-#define NAV_NUM &sl L_NUM
-#define NAV_FUN &sl L_FUN
 #define NAV_SYM &sl L_SYM
 #define NAV_MED &sl L_MED
+
+#define NAV_LGUI &sk LGUI
+#define NAV_LALT &sk LALT
+#define NAV_LCTL &sk LCTL
+#define NAV_NUM &sl L_NUM
+#define NAV_FUN &sl L_FUN
 
 #define NUM_UNDO &kp LC(Z)
 #define NUM_CUT  &kp LC(X)
 #define NUM_COPY &kp LC(C)
+#define NAV_TAB  &kp TAB
 #define NUM_PST  &kp LC(V)
-#define NUM_REDO &kp LC(Y)
 
 
+#define NAV_PGUP &kp PG_UP
 #define NAV_HOME &kp HOME
 #define NAV_UP   &kp UP
 #define NAV_END  &kp END
 
+#define NAV_PGDN &kp PG_DN
 #define NAV_LEFT &kp LEFT
 #define NAV_DOWN &kp DOWN
 #define NAV_RGHT &kp RIGHT
+#define NAV_RET  &kp RET
 
-#define NAV_PGDN &kp PG_DN
-#define NAV_PGUP &kp PG_UP
+#define NAV_ESC  &kp ESC
+#define NAV_BSPC &kp BSPC
+#define NAV_DEL  &kp DEL
 
 // NUMBER LAYER
 #define L_NUM 2
@@ -214,42 +213,11 @@
 &sl {
     release-after-ms = <1000>;
 };
-&mt {
-  flavor = "tap-preferred";
-  tapping_term_ms = <200>;
-};
 
-&lt {
-  flavor = "tap-preferred";
-  tapping_term_ms = <200>;
-};
 
 / {
   combos {
     compatible = "zmk,combos";
-    combo_bspc {
-      timeout-ms = <50>;
-      key-positions = <15 16>;
-      bindings = <&kp BSPC>;
-    };
-
-    combo_ret {
-      timeout-ms = <50>;
-      key-positions = <13 14>;
-      bindings = <&kp RET>;
-    };
-
-    combo_esc {
-      timeout-ms = <50>;
-      key-positions = <23 24>;
-      bindings = <&kp ESC>;
-    };
-
-    combo_del {
-      timeout-ms = <50>;
-      key-positions = <25 26>;
-      bindings = <&kp DEL>;
-    };
 
     combo_bootloader {
       timeout-ms = <50>;
@@ -278,35 +246,35 @@
 
     navigation_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN NAV_SYM  NAV_MED        GEN_TRAN NAV_HOME NAV_UP   NAV_END  NAV_PGUP
-        NAV_LGUI NAV_LALT NAV_LCTL NAV_NUM  NAV_FUN        GEN_TRAN NAV_LEFT NAV_DOWN NAV_RGHT NAV_PGDN
-        NUM_UNDO NUM_CUT  NUM_COPY NAV_TAB  NUM_PST        GEN_TRAN NAV_ESC  NAV_RET  NAV_DEL GEN_TRAN
+        NAV_ESC  GEN_TRAN NAV_MED  NAV_SYM  NAV_MED        NAV_PGUP NAV_HOME NAV_UP   NAV_END  GEN_TRAN
+        NAV_LGUI NAV_LALT NAV_LCTL NAV_NUM  NAV_FUN        NAV_PGDN NAV_LEFT NAV_DOWN NAV_RGHT NAV_RET
+        NUM_UNDO NUM_CUT  NUM_COPY NAV_TAB  NUM_PST        GEN_TRAN NAV_ESC  NAV_BSPC NAV_DEL  GEN_TRAN
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
     
     number_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_PLUS NUM_N7   NUM_N8   NUM_N9   NUM_AST
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_EQUL NUM_N4   NUM_N5   NUM_N6   NUM_N0
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_MIN  NUM_N1   NUM_N2   NUM_N3   NUM_FSLH
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN 
       >;
     };
 
     symbol_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_RBKT SYM_LBKT  SYM_TLDE SYM_PIPE  SYM_HASH
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_RPAR SYM_LPAR  SYM_UNDR SYM_QUES  SYM_GRV 
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_RBRC SYM_LBRC  SYM_AND  SYM_EXCL  SYM_BSLH
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_RBKT SYM_LBKT  SYM_TLDE SYM_PIPE SYM_HASH
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_RPAR SYM_LPAR  SYM_UNDR SYM_QUES SYM_GRV 
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_RBRC SYM_LBRC  SYM_AND  SYM_EXCL SYM_BSLH
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN 
       >;
     };
     media_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN MED_BRID MED_VOLU MED_BRIU   GEN_TRAN
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN MED_PREV MED_PLAY MED_NEXT   MED_PRNT
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN MED_MUTE MED_VOLD MED_STOP   GEN_TRAN
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN MED_BRID MED_VOLU MED_BRIU GEN_TRAN
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN MED_PREV MED_PLAY MED_NEXT MED_PRNT
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN MED_MUTE MED_VOLD MED_STOP GEN_TRAN
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
