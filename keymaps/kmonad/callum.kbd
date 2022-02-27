@@ -57,7 +57,7 @@
   @na  q    w    f    p    b    @na  j    l    u    y    ;    _    _
   @na  a    r    s    t    g    @na  m    n    e    i    o   _
   @na  z    x    c    d    v    @na  k    h    ,    .    ' 
-  _    _    @snm           spc            bspc @snv @snv _
+  _    _    @snm           spc            @ssf @snv @snv _
 )
 
 (deflayer nav
@@ -75,7 +75,7 @@
   _    _    _    _    _    _    _    [    7    8    9    ]    _    _
   _    _    @sal @sme @sct tab  _    =    4    5    6    0    _
   _    C-z  C-x  C-c  C-v  _    _    -    1    2    3    / 
-  _    _    _              _              @ssf @sfn _    _
+  _    _    _              _              _    @sfn _    _
 )
 
 (defalias

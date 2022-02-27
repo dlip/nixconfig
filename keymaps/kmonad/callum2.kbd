@@ -33,71 +33,60 @@
   fn (layer-toggle fn)
   nav (layer-toggle nav)
   num (layer-toggle num)
+  mod (layer-toggle mod)
 
-  a (tap-hold-next-release 200 a lmet)
-  r (tap-hold-next-release 200 r lalt)
-  s (tap-hold-next-release 200 s @num)
-  t (tap-hold-next-release 200 t lctl)
-  
-  f (tap-hold-next-release 200 f @fn)
+  snv (sticky-key 1000 @nav)
+  snm (sticky-key 1000 @num)
+  smd (sticky-key 1000 @med)
+  sfn (sticky-key 1000 @fn)
+  smo (sticky-key 1000 @mod)
 
-  n (tap-hold-next-release 200 n rctl)
-  e (tap-hold-next-release 200 e @nav)
-  i (tap-hold-next-release 200 i lalt)
-  o (tap-hold-next-release 200 o rmet)
-  
-  u (tap-hold-next-release 200 u @med)
+  sct (sticky-key 1000 lctl)
+  ssf (sticky-key 1000 lsft)
+  sal (sticky-key 1000 lalt)
+  sme (sticky-key 1000 lmet)
 
-  z (tap-hold 200 z C-z)
-  x (tap-hold 200 x C-x)
-  c (tap-hold 200 c C-c)
-  d (tap-hold 200 d C-v)
+  und (tap-hold 200 z C-z)
+  cut (tap-hold 200 x C-x)
+  cpy (tap-hold 200 c C-c)
+  pst (tap-hold 200 d C-v)
 
-
-  snv (sticky-key 1500 @num)
-  spc (tap-hold-next-release 200 spc @nav)
-  ssf (sticky-key 1500 lsft)
-  bsp (tap-hold-next-release 200 bspc @med)
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @na  q    w    f    p    b    @na  j    l    u    y    ;    _    _
-  @na  @a   @r   @s   @t   g    @na  m    @n   @e   @i   @o   _
-  @na  @z   @x   @c   @d   v    @na  k    h    ,    .    ' 
-  _    _    @snv           @spc           @ssf @bsp @bsp _
-  
+  @na  a    r    s    t    g    @na  m    n    e    i    o   _
+  @na  z    x    c    d    v    @na  k    h    ,    .    ' 
+  _    _    tab            spc            @smo bspc bspc _
 )
 
-
-(defalias
-  und C-z
-  cut C-x
-  cp C-c
-  pst C-v
-  rdo C-y
-  esc (tap-hold-next-release 200 esc lmet)
-  del (tap-hold-next-release 200 del lalt)
-  ret (tap-hold-next-release 200 ret lctl)
+(deflayer mod
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    esc  del  bspc ret  _    _    _    @snv @sct @sal @sme  _
+  _    _    _    _    _    _    _    _    @snm _    _    _
+  _    _    _              @ssf           _    _    _    _
 )
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    u    d    y    p    C-r  _    _    home up   end  _    _    _
-  _    @esc @del bspc @ret tab  _    _    left down right _    _
-  _    @und @cut @cp  @pst @rdo _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
+  _    \    home up   end  pgup _    _    _    _    _    _    _    _
+  _    esc  lft  down rght tab  _    _    _    @sct @sal @sme _
+  _    grv  del  bspc ret  pgdn _    _    _    _    _    _
+  _    _    @smd           @ssf           _    _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    #    |    ~    [    ]    _    +    7    8    9    *    _    _
-  _    `    ?    \_   \(   \)   _    =    4    5    6    0    _
-  _    \    !    &    {    }    _    -    1    2    3    / 
-  _    _    _              _              _    _    _    _
+  _    [    7    8    9    ]    _    _    _    _    _    _    _    _
+  _    =    4    5    6    0    _    _    _    @sct @sal @sme _
+  _    -    1    2    3    /    _    _    _    _    _    _ 
+  _    _    _              @ssf           _    _    _    _
 )
 
 (defalias
@@ -122,8 +111,8 @@
 (deflayer fn
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    f7   f8   f9   f10  _    _
-  _    _    _    _    _    _    _    @gam f4   f5   f6   f11  _
+  _    _    _    _    _    _    _    _   f7   f8   f9   f10  _    _
+  _    _    @sal @sme @sct _    _    @gam f4   f5   f6   f11  _
   _    _    _    _    _    _    _    _    f1   f2   f3   f12
   _    _    _              _              _    _    _    _
 )
