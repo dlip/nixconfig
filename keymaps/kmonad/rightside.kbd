@@ -46,17 +46,15 @@
   smd (sticky-key 1000 @med)
   ssm (sticky-key 1000 @sym)
   ss2 (sticky-key 1000 @sy2)
-
-  spc (tap-hold-next-release 200 spc @llt)
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  q    w    f    p    b    @na  @na  j    l    u    y    :    _    _
-  a    r    s    t    g    @na  @na  m    n    e    i    o    _
-  z    x    c    d    v    @na  @na  k    h    ,    .    ' 
-  _    _    @snv           @spc           @ssf bspc bspc _
+  @na  q    w    f    p    b    @na  j    l    u    y    :    _    _
+  @na  a    r    s    t    g    @na  m    n    e    i    o    _
+  @na  z    x    c    d    v    @na  k    h    ,    .    ' 
+  _    _    @snv           spc            @ssf bspc bspc _
   
 )
 
@@ -72,9 +70,9 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    @smd @sfn @ss2 _    _    _    pgup home up   end  prnt _    _
-  @sme @sal @sct @snm @ssm _    _    pgdn lft  down rght ret  _
-  @und @cut @cp  tab  @pst _    _    _    esc  bspc del  ins
+  _    _    @smd @sfn @ss2 _    _    pgup home up   end  prnt _    _
+  _    @sme @sal @sct @snm @ssm _    pgdn lft  down rght ret  _
+  _    @und @cut @cp  tab  @pst _    _    esc  bspc del  ins
   _    _    _              _              _    _    _    _
 )
 
