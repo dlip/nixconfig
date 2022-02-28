@@ -34,6 +34,7 @@
   nav (layer-toggle nav)
   num (layer-toggle num)
   sym (layer-toggle sym)
+  sy2 (layer-toggle sy2)
 
   sct (sticky-key 1000 lctl)
   sal (sticky-key 1000 lalt)
@@ -44,13 +45,14 @@
   sfn (sticky-key 1000 @fn)
   smd (sticky-key 1000 @med)
   ssm (sticky-key 1000 @sym)
+  ss2 (sticky-key 1000 @sy2)
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @na  q    w    f    p    b    @na  j    l    u    y    ;    _    _
-  @na  a    r    s    t    g    @na  m    n    e    i    o   _
+  @na  q    w    f    p    b    @na  j    l    u    y    :    _    _
+  @na  a    r    s    t    g    @na  m    n    e    i    o    _
   @na  z    x    c    d    v    @na  k    h    ,    .    ' 
   _    _    @snm           spc            @ssf @snv @snv _
   
@@ -62,34 +64,43 @@
   cut C-x
   cp C-c
   pst C-v
-  rdo C-y
+  stb S-tab
 )
+
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    \    home up   end  pgup _    _    _    _    _    _    _    _
-  _    esc  lft  down rght tab  _    _    left @sct @sal @sme _
-  _    grv  del  bspc ret  pgdn _    _    esc  ret  del  _
+  _    prnt home up   end  pgup _    _    _    _    _    _    _    _
+  _    esc  lft  down rght pgdn _    _    @smd @sct @sal @sme _
+  _    ins  del  bspc ret  _    _    _    _    _    _    _
   _    _    _              @ssf           _    _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    @ssm _    _    +    7    8    9    *    _    _
-  _    @sme @sal @sct @snm @sfn _    =    4    5    6    0    _
-  _    @und @cut @cp  tab  @pst _    -    1    2    3    /
-  _    _    _              _              _    _    _    _
+  _    _    _    _    @ss2 _    _    +    7    8    9    *    _    _
+  _    @sme @sal @sct tab  @sfn _    =    4    5    6    0    _
+  _    @und @cut @cp  @stb @pst _    -    1    2    3    /
+  _    _    _              _              @ssm _    _    _
 )
-
 
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    #    |    ~    [    ]    _    _
-  _    _    _    _    _    _    _    `    ?    \_   \(   \)   _
-  _    _    _    _    _    _    _    \    !    &    {    } 
+  _    _    _    _    _    _    _    _    &    *    \(   _    _    _
+  _    _    _    _    _    _    _    _    $    %    ^    \)   _
+  _    _    _    _    _    _    _    \_   !    @    #    ?
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer sy2
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    `    ~    _    _    _    _
+  _    _    _    _    _    _    _    _    {    }    [    ]    _
+  _    _    _    _    _    _    _    _    \\   |    _    _ 
   _    _    _              _              _    _    _    _
 )
 
@@ -102,8 +113,8 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    brdn volu brup _    _    _    _    _    _    _    _    _
-  _    prnt prev pp   next _    _    _    _    _    _    _    _
-  _    _    mute vold stop _    _    _    _    _    _    _
+  _    _    prev pp   next _    _    _    _    _    _    _    _
+  _    _    stop vold mute _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )
 
