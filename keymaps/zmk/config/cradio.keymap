@@ -93,11 +93,8 @@
 #define NAV_BSPC &kp BSPC
 #define NAV_DEL  &kp DEL
 
-// LEFT LAYER
-#define L_LFT 2
-
 // NUMBER LAYER
-#define L_NUM 3
+#define L_NUM 2
 
 #define NUM_PLUS &kp PLUS
 #define NUM_N7   &kp N7 
@@ -119,7 +116,7 @@
 
 // SYMBOL LAYER
 
-#define L_SYM 4
+#define L_SYM 3
 
 #define SYM_EXCL &kp EXCLAMATION
 #define SYM_AT   &kp AT
@@ -139,7 +136,7 @@
 #define SYM_TLDE &kp TILDE
 
 // SYMBOLS 2 LAYER
-#define L_SY2 5
+#define L_SY2 4
 
 #define SYM_COL  &kp COLON
 #define SYM_SEMI &kp SEMICOLON
@@ -156,7 +153,7 @@
 
 
 // MEDIA LAYER
-#define L_MED 6
+#define L_MED 5
 
 #define MED_BRID &kp C_BRI_DN
 #define MED_VOLU &kp C_VOL_UP
@@ -173,7 +170,7 @@
 #define MED_STOP &kp C_STOP
 
 // FUNCTION LAYER
-#define L_FUN 7
+#define L_FUN 6
 #define FUN_F7   &kp F7
 #define FUN_F8   &kp F8
 #define FUN_F9   &kp F9
@@ -192,7 +189,7 @@
 #define FUN_F13  &kp F12
 
 // GAMING LAYER
-#define L_GAM 8
+#define L_GAM 7
 
 #define GAM_TAB  &kp TAB
 #define GAM_Q    &kp Q
@@ -262,21 +259,13 @@
 
     navigation_layer {
       bindings = <
-        NAV_ESC  GEN_TRAN NAV_MED  NAV_SYM  NAV_MED        NAV_PGUP NAV_HOME NAV_UP   NAV_END  GEN_TRAN
-        NAV_LGUI NAV_LALT NAV_LCTL NAV_NUM  NAV_FUN        NAV_PGDN NAV_LEFT NAV_DOWN NAV_RGHT NAV_RET
+        NAV_ESC  NAV_MED  NAV_FUN  NAV_SY2  NAV_MED        NAV_PGUP NAV_HOME NAV_UP   NAV_END  GEN_TRAN
+        NAV_LGUI NAV_LALT NAV_LCTL NAV_NUM  NAV_SYM        NAV_PGDN NAV_LEFT NAV_DOWN NAV_RGHT NAV_RET
         NUM_UNDO NUM_CUT  NUM_COPY NAV_TAB  NUM_PST        GEN_TRAN NAV_ESC  NAV_BSPC NAV_DEL  GEN_TRAN
-                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
 
-    left_layer {
-      bindings = <
-        NAV_ESC  NAV_DEL  NAV_BSPC GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        NAV_LGUI NAV_LALT NAV_LCTL DEF_SHFT NAV_RET        NAV_PGDN NAV_LEFT NAV_LCTL NAV_LALT NAV_LGUI
-        NUM_UNDO NUM_CUT  NUM_COPY NAV_TAB  NUM_PST        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
-      >;
-    }; 
     number_layer {
       bindings = <
         GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_PLUS NUM_N7   NUM_N8   NUM_N9   NUM_AST
