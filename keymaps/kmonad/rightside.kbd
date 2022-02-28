@@ -35,7 +35,6 @@
   num (layer-toggle num)
   sym (layer-toggle sym)
   sy2 (layer-toggle sy2)
-  llt (layer-toggle left)
 
   sct (sticky-key 1000 lctl)
   sal (sticky-key 1000 lalt)
@@ -54,7 +53,7 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  q    w    f    p    b    @na  @na  j    l    u    y    "    _    _
+  q    w    f    p    b    @na  @na  j    l    u    y    :    _    _
   a    r    s    t    g    @na  @na  m    n    e    i    o    _
   z    x    c    d    v    @na  @na  k    h    ,    .    ' 
   _    _    @snv           @spc           @ssf bspc bspc _
@@ -69,21 +68,13 @@
   pst C-v
 )
 
-(deflayer left
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    esc  del  bspc ret  pgup _    _    _    _    _    _    _    _
-  _    @sme @sal @sct @ssf pgdn _    _    _    _    _    _    _
-  _    @und @cut @cp  tab  @pst _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-)
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    @smd @sfn @ss2 _    _    _    _    home up   end  _    _    _
-  @sme @sal @sct @snm @ssm _    _    _    lft  down rght ret  _
-  @und @cut @cp  tab  @pst _    _    _    esc  bspc del  _
+  _    @smd @sfn @ss2 _    _    _    pgup home up   end  prnt _    _
+  @sme @sal @sct @snm @ssm _    _    pgdn lft  down rght ret  _
+  @und @cut @cp  tab  @pst _    _    _    esc  bspc del  ins
   _    _    _              _              _    _    _    _
 )
 
@@ -111,7 +102,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    [    ]    |    \\   _    _
   _    _    _    _    _    _    _    _    \(   \)   {    }    _
-  _    _    _    _    _    _    _    _    \_   `    ~    _
+  _    _    _    _    _    _    _    _    \_   ?    ~    `
   _    _    _              _              _    _    _    _
 )
 
