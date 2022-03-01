@@ -120,39 +120,36 @@
 
 #define L_SYM 3
 
+#define SYM_AND  &kp AMPERSAND
+#define SYM_AST  &kp ASTERISK
+#define SYM_LPAR &kp LPAR
+
+#define SYM_PLUS &kp PLUS
+#define SYM_DOLR &kp DOLLAR
+#define SYM_PER  &kp PERCENT
+#define SYM_CAR  &kp CARET
+#define SYM_RPAR &kp RPAR
+
+#define SYM_UNDR &kp UNDER
 #define SYM_EXCL &kp EXCLAMATION
 #define SYM_AT   &kp AT
 #define SYM_HASH &kp HASH
-#define SYM_DOLR &kp DOLLAR
-#define SYM_PER  &kp PERCENT
-
 #define SYM_QUES &kp QUESTION
-#define SYM_UNDR &kp UNDER
-#define SYM_LPAR &kp LPAR
-#define SYM_RPAR &kp RPAR
 
-#define SYM_CAR  &kp CARET
-#define SYM_AND  &kp AMPERSAND
-#define SYM_AST  &kp ASTERISK
-#define SYM_GRV  &kp GRAVE
-#define SYM_TLDE &kp TILDE
 
 // SYMBOLS 2 LAYER
 #define L_SY2 4
 
-#define SYM_COL  &kp COLON
-#define SYM_SEMI &kp SEMICOLON
-
-#define SYM_LBKT &kp LBKT
-#define SYM_RBKT &kp RBKT
-#define SYM_LBRC &kp LBRC
-#define SYM_RBRC &kp RBRC
-
 #define SYM_BSLH &kp BSLH
 #define SYM_PIPE &kp PIPE
-#define SYM_LT   &kp LT
-#define SYM_GT   &kp GT
 
+#define SYM_LBRC &kp LBRC
+#define SYM_RBRC &kp RBRC
+#define SYM_LBKT &kp LBKT
+#define SYM_RBKT &kp RBKT
+
+#define SYM_GRV  &kp GRAVE
+#define SYM_TLDE &kp TILDE
 
 // MEDIA LAYER
 #define L_MED 5
@@ -273,15 +270,15 @@
         GEN_TRAN GEN_TRAN GEN_TRAN NAV_SY2  NAV_MED        NUM_PLUS NUM_N7   NUM_N8   NUM_N9   NUM_AST
         NAV_LGUI NAV_LALT NAV_LCTL NAV_TAB  NAV_FUN        NUM_EQUL NUM_N4   NUM_N5   NUM_N6   NUM_N0
         NUM_UNDO NUM_CUT  NUM_COPY NAV_STAB NUM_PST        NUM_MIN  NUM_N1   NUM_N2   NUM_N3   NUM_FSLH
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN 
+                                   GEN_TRAN GEN_TRAN       NAV_SYM  GEN_TRAN 
       >;
     };
 
     symbol_layer {
       bindings = <
         GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN SYM_AND  SYM_AST SYM_LPAR GEN_TRAN
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN SYM_DOLR SYM_PER SYM_CAR  SYM_RPAR
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN SYM_EXCL SYM_AT  SYM_HASH GEN_TRAN
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_PLUS SYM_DOLR SYM_PER SYM_CAR  SYM_RPAR
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       SYM_UNDR SYM_EXCL SYM_AT  SYM_HASH SYM_QUES
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
