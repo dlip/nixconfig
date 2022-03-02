@@ -53,7 +53,8 @@
       nodePackages.typescript
       nodejs
       openssl
-      openvpn
+      # openvpn
+      openvpn_aws
       pandoc
       pinentry
       poetry

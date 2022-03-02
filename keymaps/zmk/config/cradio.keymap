@@ -62,41 +62,54 @@
 #define L_NAV 1
 
 #define NAV_SYM  &sl L_SYM
-#define NAV_SY2  &sl L_SY2
-#define NAV_MED  &sl L_MED
-
-#define NAV_LGUI &sk LGUI
-#define NAV_LALT &sk LALT
-#define NAV_LCTL &sk LCTL
 #define NAV_NUM  &sl L_NUM
 #define NAV_FUN  &sl L_FUN
+
+#define MED_PRNT &kp PSCRN
+#define NAV_HOME &kp HOME
+#define NAV_UP   &kp UP
+#define NAV_END  &kp END
+#define NAV_PGUP &kp PG_UP
+
+#define NAV_ESC  &kp ESC
+#define NAV_LEFT &kp LEFT
+#define NAV_DOWN &kp DOWN
+#define NAV_RGHT &kp RIGHT
+#define NAV_PGDN &kp PG_DN
+
+#define NAV_INS  &kp INSERT
+#define NAV_DEL  &kp DEL
+#define NAV_BSPC &kp BSPC
+#define NAV_RET  &kp RET
+
+#define MED_VOLU &kp C_VOL_UP
+#define MED_PREV &kp C_PREV
+#define MED_PLAY &kp K_PP
+#define MED_NEXT &kp C_NEXT
+#define MED_STOP &kp C_STOP
+
+#define MED_VOLD &kp C_VOL_DN
+#define NAV_LCTL &sk LCTL
+#define NAV_LGUI &sk LGUI
+#define NAV_LALT &sk LALT
+
+#define MED_MUTE &kp C_MUTE
+
+#define NAV_SY2  &sl L_SY2
+
+#define MED_BRID &kp C_BRI_DN
+#define MED_BRIU &kp C_BRI_UP
+
+// NUMBER LAYER
+#define L_NUM 2
+
+#define NAV_STAB &kp LS(TAB)
 
 #define NUM_UNDO &kp LC(Z)
 #define NUM_CUT  &kp LC(X)
 #define NUM_COPY &kp LC(C)
 #define NAV_TAB  &kp TAB
-#define NAV_STAB &kp LS(TAB)
 #define NUM_PST  &kp LC(V)
-
-
-#define NAV_INS  &kp INSERT
-#define NAV_PGUP &kp PG_UP
-#define NAV_HOME &kp HOME
-#define NAV_UP   &kp UP
-#define NAV_END  &kp END
-
-#define NAV_PGDN &kp PG_DN
-#define NAV_LEFT &kp LEFT
-#define NAV_DOWN &kp DOWN
-#define NAV_RGHT &kp RIGHT
-#define NAV_RET  &kp RET
-
-#define NAV_ESC  &kp ESC
-#define NAV_BSPC &kp BSPC
-#define NAV_DEL  &kp DEL
-
-// NUMBER LAYER
-#define L_NUM 2
 
 #define NUM_PLUS &kp PLUS
 #define NUM_N7   &kp N7 
@@ -151,25 +164,8 @@
 #define SYM_GRV  &kp GRAVE
 #define SYM_TLDE &kp TILDE
 
-// MEDIA LAYER
-#define L_MED 5
-
-#define MED_BRID &kp C_BRI_DN
-#define MED_VOLU &kp C_VOL_UP
-#define MED_BRIU &kp C_BRI_UP
-
-
-#define MED_PRNT &kp PSCRN
-#define MED_PREV &kp C_PREV
-#define MED_PLAY &kp K_PP
-#define MED_NEXT &kp C_NEXT
-
-#define MED_MUTE &kp C_MUTE
-#define MED_VOLD &kp C_VOL_DN
-#define MED_STOP &kp C_STOP
-
 // FUNCTION LAYER
-#define L_FUN 6
+#define L_FUN 5
 #define FUN_F7   &kp F7
 #define FUN_F8   &kp F8
 #define FUN_F9   &kp F9
@@ -188,7 +184,7 @@
 #define FUN_F13  &kp F12
 
 // GAMING LAYER
-#define L_GAM 7
+#define L_GAM 6
 
 #define GAM_TAB  &kp TAB
 #define GAM_Q    &kp Q
@@ -258,19 +254,19 @@
 
     navigation_layer {
       bindings = <
-        MED_PRNT NAV_HOME NAV_UP   NAV_END  NAV_MED        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_SYM        GEN_TRAN NAV_MED  NAV_LCTL NAV_LALT NAV_LGUI
-        NAV_INS  NAV_DEL  NAV_BSPC NAV_RET  NUM_PST        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-                                   GEN_TRAN GEN_SHFT       GEN_TRAN GEN_TRAN
+        MED_PRNT NAV_HOME NAV_UP   NAV_END  NAV_PGUP       MED_VOLU MED_PREV MED_PLAY MED_NEXT MED_STOP
+        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_PGDN       MED_VOLD NAV_LCTL NAV_LGUI NAV_LALT GEN_TRAN
+        NAV_INS  NAV_DEL  NAV_BSPC NAV_RET  GEN_TRAN       MED_MUTE GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   NAV_SY2  GEN_SHFT       GEN_TRAN GEN_TRAN
       >;
     };
 
     number_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN NAV_SY2  NAV_MED        NUM_PLUS NUM_N7   NUM_N8   NUM_N9   NUM_AST
-        NAV_LGUI NAV_LALT NAV_LCTL NAV_TAB  NAV_FUN        NUM_EQUL NUM_N4   NUM_N5   NUM_N6   NUM_N0
-        NUM_UNDO NUM_CUT  NUM_COPY NAV_STAB NUM_PST        NUM_MIN  NUM_N1   NUM_N2   NUM_N3   NUM_FSLH
-                                   GEN_TRAN GEN_TRAN       NAV_SYM  GEN_TRAN 
+        NAV_STAB GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       NUM_PLUS NUM_N7   NUM_N8   NUM_N9   NUM_AST
+        NAV_TAB  NAV_LALT NAV_LGUI NAV_LCTL GEN_TRAN       NUM_EQUL NUM_N4   NUM_N5   NUM_N6   NUM_N0
+        NUM_UNDO NUM_CUT  NUM_COPY NUM_PST  GEN_TRAN       NUM_MIN  NUM_N1   NUM_N2   NUM_N3   NUM_FSLH
+                                   GEN_TRAN GEN_TRAN       NAV_SYM  NAV_FUN 
       >;
     };
 
@@ -284,17 +280,9 @@
     };
     symbol2_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN SYM_BSLH SYM_PIPE GEN_TRAN GEN_TRAN
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN SYM_LBRC SYM_RBRC SYM_LBKT SYM_RBKT
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN SYM_GRV  SYM_TLDE GEN_TRAN GEN_TRAN 
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
-      >;
-    };
-    media_layer {
-      bindings = <
-        GEN_TRAN MED_BRID MED_VOLU MED_BRIU GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        GEN_TRAN MED_PREV MED_PLAY MED_NEXT GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        GEN_TRAN MED_MUTE MED_VOLD MED_STOP GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN GEN_TRAN SYM_BSLH SYM_PIPE GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        SYM_GRV  SYM_TLDE SYM_LBRC SYM_RBRC GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN GEN_TRAN SYM_LBKT SYM_RBKT GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };

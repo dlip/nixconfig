@@ -22,6 +22,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    openvpn-aws = {
+      url = "github:abhibansal530/dotfiles";
+      flake = false;
+    };
   };
 
   outputs =
@@ -32,6 +36,7 @@
     , emoji-menu
     , power-menu
     , sops-nix
+    , openvpn-aws
     }:
     {
       overlay = final: prev: {
@@ -48,6 +53,7 @@
         solang = final.callPackage ./solang { };
         juliusSpeech = final.callPackage ./juliusSpeech { };
         inherit sops-nix;
+        inherit (final.callPackages "${openvpn-aws}/derivations/openvpn.nix" { }) openvpn_aws;
       };
     };
 }
