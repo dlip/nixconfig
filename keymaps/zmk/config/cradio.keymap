@@ -136,6 +136,8 @@
 #define FUN_F3 &kp F3
 #define FUN_F13 &kp F12
 
+#define FUN_SPC &kp LC(SPC)
+
 // GAMING LAYER
 #define L_GAM 5
 
@@ -266,7 +268,7 @@
         GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
         GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
         GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+                                   GEN_TRAN FUN_SPC        GEN_TRAN GEN_TRAN
       >;
     };
 

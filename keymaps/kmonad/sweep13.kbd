@@ -125,6 +125,7 @@
 (defalias
   pau pause
   gam (layer-switch gaming)
+  csp C-spc
 )
 
 (deflayer fn
@@ -133,7 +134,7 @@
   _    _    _    _    _    _    _    _    f7   f8   f9   f10  _    _
   _    _    _    _    _    _    _    @gam f4   f5   f6   f11  _
   _    _    _    _    _    _    _    _    f1   f2   f3   f12
-  _    _    _              _              @ssf _    _    _
+  _    _    _              @csp           @ssf _    _    _
 )
 
 (defalias
