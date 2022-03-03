@@ -28,6 +28,7 @@
       gnuplot
       go
       gobang
+      gotypist
       graphviz
       helix
       hledger
@@ -43,6 +44,7 @@
       (lua.withPackages (ps: with ps; [ luacheck ]))
       massren
       mdl
+      musikcube
       # myPythonPackages.shirah-reader
       # myPythonPackages.adafruit-nrfutil
       niv
@@ -73,6 +75,8 @@
       tesseract4
       tldr
       tshark
+      ttyper
+      typespeed
       usbutils
       visidata
       xdotool

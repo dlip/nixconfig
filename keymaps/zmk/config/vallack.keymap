@@ -33,22 +33,22 @@
         compatible = "zmk,combos";
         combo_game {
             timeout-ms = <30>;
-	    key-positions = <2 3 6 7>;
+	    key-positions = <2 3 4 5>;
             bindings = <&to GM>;
         };
         combo_sys {
             timeout-ms = <30>;
-	    key-positions = <6 7 8>;
+	    key-positions = <4 5 6>;
             bindings = <&to SYS>;
         };
         combo_caps {
             timeout-ms = <30>;
-	    key-positions = <16 17 18>;
+	    key-positions = <12 13 14>;
             bindings = <&caps_word>;
         };
         combo_bt  {
             timeout-ms = <10>;
-            key-positions = <17 18>;
+            key-positions = <13 14>;
             bindings = <&to BT>;
 	    layers = <SM1>; 
         };
@@ -141,7 +141,7 @@
           };
        	  alpha2 {
             bindings = <
-              &trans 	 	&kp V 		&kp W		&kp M    &trans         &trans &kp F    	&kp SQT		&kp Z 		&trans
+              &trans 	 	&kp V 		&kp W		&kp M    &trans          &kp F    	&kp SQT		&kp Z 		&trans
               &kp Q	 	&kp J 		&kp P		&kp K    &trans          &trans    &kp B 		&kp DOT		&kp X		&kp Y
               &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans
                                             &trans    &sk LSHIFT 		&sl AL2U    &trans
@@ -176,7 +176,7 @@
           bindings = <
             &trans		 	&kp ESC		&kp LC(LS(TAB)) 	&kp  RC(TAB)    &trans          &trans    &td LG(V) LG(C) 	&kp UP 		&td Q BKSP 			&trans
             &td LG(GRAVE) TAB	&td HOME DEL	&td END LG(LBKT) 	&kp LG(RBKT)    &trans          &trans    &td TAB LEFT  		&kp DOWN 	&td  LC(LG(LS(N4))) RIGHT 	&kp RET
-            &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans
+            &td LG(GRAVE) TAB	&td HOME DEL	&td END LG(LBKT) 	&kp LG(RBKT)    &trans          &trans    &trans    &trans    &trans    &trans
                                           &trans    &trans          &sr LSHIFT AL1    &trans
           >;
         };
