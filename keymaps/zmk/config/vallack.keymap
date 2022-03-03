@@ -33,40 +33,40 @@
         compatible = "zmk,combos";
         combo_game {
             timeout-ms = <30>;
-	    key-positions = <2 3 4 5>;
+	    key-positions = <2 3 6 7>;
             bindings = <&to GM>;
         };
         combo_sys {
             timeout-ms = <30>;
-	    key-positions = <4 5 6>;
+	    key-positions = <6 7 8>;
             bindings = <&to SYS>;
         };
         combo_caps {
             timeout-ms = <30>;
-	    key-positions = <12 13 14>;
+	    key-positions = <16 17 18>;
             bindings = <&caps_word>;
         };
         combo_bt  {
             timeout-ms = <10>;
-            key-positions = <13 14>;
+            key-positions = <17 18>;
             bindings = <&to BT>;
 	    layers = <SM1>; 
         };
         lalt {
             timeout-ms = <20>;
-	    key-positions = <10 11>;
+	    key-positions = <12 13>;
             bindings = <&kp LALT>; 
 	    layers = <SYS>; 
         };
         lclk {
             timeout-ms = <20>;
-	    key-positions = <12	13>;
+	    key-positions = <13 16>;
             bindings = <&kp LC(LS(LA(N1)))>;
 	    layers = <SYS>;
         };
         rclk {
             timeout-ms = <20>;
-	    key-positions = <4 5>;
+	    key-positions = <6 7>;
             bindings = <&kp LC(LS(LA(N2)))>;
 	    layers = <SYS>;
         };
@@ -112,7 +112,7 @@
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
         };
-	alpha2macro: behavior_macro_1 {
+alpha2macro: behavior_macro_1 {
 		compatible = "zmk,behavior-macro";
 		label = "MACRO1";
 		#binding-cells = <0>;
@@ -127,7 +127,7 @@
               &trans 		&hm LCTL L 	&hm LALT G 	&hm LGUI D    &trans          &trans    &hm RGUI H 	&hm RALT U    		&hm RCTL O	&trans
               &hl NM1 I	&hl SM2 S	&hl SM1 R	&hl SYS T    &trans          &trans    &hl SYS N    	&hl SM1 E   		&hl SM2 A 	&hl NM1 C
               &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans
-                                            &trans    &mt LC(LS(LALT)) SPC 	&sl AL2    &trans
+                                            &trans    &mt LC(LS(LALT)) SPC 	&alpha2macro    &trans
             >;
           };
 
@@ -141,7 +141,7 @@
           };
        	  alpha2 {
             bindings = <
-              &trans 	 	&kp V 		&kp W		&kp M    &trans          &kp F    	&kp SQT		&kp Z 		&trans
+              &trans 	 	&kp V 		&kp W		&kp M    &trans         &trans &kp F    	&kp SQT		&kp Z 		&trans
               &kp Q	 	&kp J 		&kp P		&kp K    &trans          &trans    &kp B 		&kp DOT		&kp X		&kp Y
               &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans
                                             &trans    &sk LSHIFT 		&sl AL2U    &trans
@@ -176,8 +176,8 @@
           bindings = <
             &trans		 	&kp ESC		&kp LC(LS(TAB)) 	&kp  RC(TAB)    &trans          &trans    &td LG(V) LG(C) 	&kp UP 		&td Q BKSP 			&trans
             &td LG(GRAVE) TAB	&td HOME DEL	&td END LG(LBKT) 	&kp LG(RBKT)    &trans          &trans    &td TAB LEFT  		&kp DOWN 	&td  LC(LG(LS(N4))) RIGHT 	&kp RET
-            &td LG(GRAVE) TAB	&td HOME DEL	&td END LG(LBKT) 	&kp LG(RBKT)    &trans          &trans    &trans    &trans    &trans    &trans
-                                          &trans    &trans          &sr LSHIFT AL1    &trans
+            &trans    &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans
+                                          &trans    &sr LSHIFT AL1 		&kp RGUI    &trans
           >;
         };
 
