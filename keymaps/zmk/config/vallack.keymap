@@ -199,4 +199,12 @@ alpha2macro: behavior_macro_1 {
           };
         
 	};
+      //  empty_layer {
+      //      bindings = <
+      //        &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans
+      //        &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans
+      //        &trans    &trans    &trans    &trans    &trans          &trans    &trans    &trans    &trans    &trans
+      //                                      &trans    &trans          &trans    &trans
+      //      >;
+      //    };     
 };
