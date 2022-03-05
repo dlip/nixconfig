@@ -194,30 +194,6 @@
 / {
   combos {
     compatible = "zmk,combos";
-    combo_bspc {
-      timeout-ms = <50>;
-      key-positions = <15 16>;
-      bindings = <&kp BSPC>;
-    };
-
-    combo_ret {
-      timeout-ms = <50>;
-      key-positions = <13 14>;
-      bindings = <&kp RET>;
-    };
-
-    combo_esc {
-      timeout-ms = <50>;
-      key-positions = <23 24>;
-      bindings = <&kp ESC>;
-    };
-
-    combo_del {
-      timeout-ms = <50>;
-      key-positions = <25 26>;
-      bindings = <&kp DEL>;
-    };
-
     combo_bootloader {
       timeout-ms = <50>;
       key-positions = <0 20>;
