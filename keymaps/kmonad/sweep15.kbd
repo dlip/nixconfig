@@ -31,6 +31,8 @@
   na reserved
   med (layer-toggle media)
   nav (layer-toggle nav)
+  num (layer-toggle num)
+  fn (layer-toggle fn)
 
   r (tap-hold-next-release 200 r lalt)
   s (tap-hold-next-release 200 s lmet)
@@ -40,8 +42,6 @@
   e (tap-hold-next-release 200 e rmet)
   i (tap-hold-next-release 200 i lalt)
   
-  u (tap-hold-next-release 200 u @med)
-
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
   c (tap-hold 200 c C-c)
@@ -50,6 +50,9 @@
 
   spc (tap-hold-next-release 200 spc @med)
   snv (sticky-key 1000 @nav)
+  snm (sticky-key 1000 @num)
+  sme (sticky-key 1000 @med)
+  sfn (sticky-key 1000 @fn)
   ssf (sticky-key 1000 lsft)
 )
 
@@ -59,48 +62,53 @@
   @na  q    w    f    p    b    @na  j    l    u    y    ;    _    _
   @na  a    @r   @s   @t   g    @na  m    @n   @e   @i   o   _
   @na  @z   @x   @c   @d   v    @na  k    h    ,    .    ' 
-  _    _    @na           @spc           @snv  @na _    _
+  _    _    @snm           @spc           @ssf  @snv @snv @snv
 )
 
-(defalias
-  lft (tap-hold-next-release 200 lft lalt)
-  dwn (tap-hold-next-release 200 down lmet)
-  rgt (tap-hold-next-release 200 rght lctl)
-
-  4 (tap-hold-next-release 200 4 rctl)
-  5 (tap-hold-next-release 200 5 rmet)
-  6 (tap-hold-next-release 200 6 lalt)
-)
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    \    home up   end  pgup _    [    7    8    9    ]    _    _
-  _    esc  @lft @dwn @rgt tab  _    =    @4   @5   @6   0    _
-  _    grv  del  bspc ret  pgdn _    -    1    2    3    /
-  _    _    _              @ssf           _    _    _    _
+  _    \    home up   end  pgup _    _    _    _    _    _    _    _
+  _    esc  lft  down rght tab  _    _    _    _    _    _    _
+  _    grv  del  bspc ret  pgdn _    _    _    _    _    _
+  _    _    _              @ssf           _    @sme @sme @sme
+)
+
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    [    7    8    9    ]    _    _
+  _    _    _    _    _    tab  _    =    4    5    6    0    _
+  _    _    _    _    _    _    _    -    1    2    3    / 
+  _    _    @sfn           _              _    _    _    _
 )
 
 (defalias
   rw rewind
   ff fastforward
-
-  pre (tap-hold-next-release 200 prev lalt)
-  pp (tap-hold-next-release 200 pp lmet)
-  nxt (tap-hold-next-release 200 next lctl)
 )
 
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    brdn volu brup _    _    _    f7   f8   f9   f10  _    _
-  _    prnt @pre @pp  @nxt tab  _    @gam f4   f5   f6   f11  _
-  _    _    mute vold stop _    _    _    f1   f2   f3   f12
-  _    _    _              _              @ssf _    _    _
+  _    _    brdn volu brup _    _    _    _    _    _    _    _    _
+  _    prnt prev pp   next _    _    _    _    _    _    _    _
+  _    _    mute vold stop _    _    _    _    _    _    _
+  _    _    _              @ssf           _    _    _    _
 )
 
 (defalias
   pau pause
   gam (layer-switch gaming)
+)
+
+(deflayer fn
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    f7   f8   f9   f10  _    _
+  _    _    _    _    _    _    _    @gam f4   f5   f6   f11  _
+  _    _    _    _    _    _    _    _    f1   f2   f3   f12
+  _    _    _              _              _    _    _    _
 )
 
 (defalias
