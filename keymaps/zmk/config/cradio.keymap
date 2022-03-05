@@ -20,13 +20,13 @@
 #define DEF_Q &kp Q
 #define DEF_W &kp W
 #define DEF_F &kp F
-#define DEF_P &lt L_FUN P
+#define DEF_P &kp P
 #define DEF_B &kp B
                         
 #define DEF_A &kp A 
 #define DEF_R &mt LALT R 
 #define DEF_S &mt LGUI S
-#define DEF_T &lt L_NUM T 
+#define DEF_T &mt LCTRL T 
 #define DEF_G &kp G
         
 #define DEF_Z &kp Z
@@ -37,7 +37,7 @@
                         
 
 #define DEF_J &kp J
-#define DEF_L &lt L_MED L
+#define DEF_L &kp L
 #define DEF_U &kp U
 #define DEF_Y &kp Y
 #define DEF_SEMI &kp SEMI
@@ -49,12 +49,15 @@
 #define DEF_QUOT &kp SQT
 
 #define DEF_M &kp M
-#define DEF_N &lt L_NAV N
+#define DEF_N &mt LCTRL N
 #define DEF_E &mt RGUI E
 #define DEF_I &mt LALT I 
 #define DEF_O &kp O
 
+#define DEF_TAB &lt L_FUN TAB
 #define DEF_SPC &mt LCTL SPC
+#define DEF_NAV &sl L_NAV
+#define DEF_MED &mt L_MED RET
 #define DEF_SHFT &sk LSHIFT
 
 // NAVIGATION LAYER
@@ -67,9 +70,9 @@
 #define NAV_PGUP &kp PG_UP
 
 #define NAV_ESC &kp ESC
-#define NAV_LEFT &kp LEFT
-#define NAV_DOWN &kp DOWN
-#define NAV_RGHT &kp RIGHT
+#define NAV_LEFT &mt LALT LEFT
+#define NAV_DOWN &mt LGUI DOWN
+#define NAV_RGHT &mt LCTRL RIGHT
 #define NAV_TAB &kp TAB
 
 #define NAV_GRV &kp GRAVE
@@ -88,9 +91,9 @@
 #define NUM_RBKT &kp RBKT 
 
 #define NUM_EQUL &kp EQUAL
-#define NUM_N4 &kp N4
-#define NUM_N5 &kp N5
-#define NUM_N6 &kp N6
+#define NUM_N4 &mt LCTRL N4
+#define NUM_N5 &mt RGUI N5
+#define NUM_N6 &mt LALT N6
 #define NUM_N0 &kp N0
 
 #define NUM_MIN &kp MINUS
@@ -180,7 +183,9 @@
   flavor = "tap-preferred";
   tapping_term_ms = <200>;
 };
-
+&sl {
+    release-after-ms = <1000>;
+};
 &sk {
     release-after-ms = <1000>;
     quick-release;
@@ -233,16 +238,16 @@
         DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
         DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
         DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
-                                   GEN_NONE DEF_SPC        DEF_SHFT GEN_NONE
+                                   DEF_TAB  DEF_SPC        DEF_NAV  DEF_MED
       >;
     };
 
     navigation_layer {
       bindings = <
-        NAV_BSLH NAV_HOME NAV_UP   NAV_END  NAV_PGUP       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        NAV_GRV  NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+        NAV_BSLH NAV_HOME NAV_UP   NAV_END  NAV_PGUP       NUM_LBKT NUM_N7    NUM_N8    NUM_N9    NUM_RBKT
+        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        NAV_GRV  NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN
       >;
     };
 

@@ -74,7 +74,7 @@
       ssh-to-age
       tesseract4
       tldr
-      tshark
+      wireshark-cli
       ttyper
       typespeed
       usbutils

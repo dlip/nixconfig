@@ -68,7 +68,7 @@ in
           lsp_signature-nvim
           luasnip
           markdown-preview-nvim
-          mkdx
+          # mkdx # E154: Duplicate tag "mkdx-setting-links-fragment-pumheight" in file /nix/store/n4fzja4lna666fym6w6jlnmsjfl5dj12-vimplugin-mkdx/./doc/mkdx.txtFailed to build help tags!
           neogit
           neorg
           neoscroll-nvim

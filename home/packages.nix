@@ -33,7 +33,7 @@
     tcpdump
     unzip
     wget
-    wireguard
+    wireguard-tools
     zip
   ] ++ (builtins.attrValues scripts.scripts);
 }

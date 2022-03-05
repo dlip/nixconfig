@@ -48,12 +48,6 @@
     sha256 = "08lhzhrn6p0xwi0hcyp6lj9bvpfj87vr99klzsiy8ji7621dzql3";
   }
   {
-    name = "rescript-vscode";
-    publisher = "chenglou92";
-    version = "1.2.1";
-    sha256 = "0n2xd2rm5i5slnn9sh9rsd73ij5bdddncaqy05h6iqa9mf81mxpg";
-  }
-  {
     name = "gitignore";
     publisher = "codezombiech";
     version = "0.7.0";
@@ -228,22 +222,10 @@
     sha256 = "0vn0z4f2hsp95c06w9gl53j3f553xigy1kpm8q834rf927c0bajz";
   }
   {
-    name = "cpptools";
-    publisher = "ms-vscode";
-    version = "1.9.2";
-    sha256 = "06cqq6mn0hkqrw0l8mbblrkn2f0sjr4zkdz05wwy6fllgjcv5ak2";
-  }
-  {
     name = "test-adapter-converter";
     publisher = "ms-vscode";
     version = "0.1.5";
     sha256 = "11x29njy746mjbv58s7cis2fj6xnmjqc0vn3nb4vv53skxcbhn4y";
-  }
-  {
-    name = "vsliveshare";
-    publisher = "ms-vsliveshare";
-    version = "1.0.5418";
-    sha256 = "1is4ks84v1d4nj35qysfmsz6xk0p7cjp215ahpp56h9rpp1hmagl";
   }
   {
     name = "vscode-paste-image";
