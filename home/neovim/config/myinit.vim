@@ -74,7 +74,7 @@ let g:neovide_transparency=0.8
 " let g:neovide_window_floating_opacity=1
 
 " Colorscheme
-colorscheme tokyonight
+colorscheme nord
 
 " open a terminal pane on the bottom using :Term
 command Term :botright split term://$SHELL
@@ -139,8 +139,5 @@ augroup vimrc
   autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
 augroup end
 
-
-" Colorscheme
-colorscheme tokyonight
 
 lua require'my.init'

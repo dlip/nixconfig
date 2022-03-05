@@ -73,6 +73,7 @@ in
           neorg
           neoscroll-nvim
           nnn-nvim
+          nord-nvim
           nui-nvim
           null-ls-nvim
           nvim-autopairs
