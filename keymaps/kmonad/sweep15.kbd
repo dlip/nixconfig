@@ -2,8 +2,10 @@
 (defcfg
   ;; ** For Linux **
   input  (device-file "/dev/input/by-path/platform-i8042-serio-0-event-kbd")
-  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
-  ;;input  (device-file "/dev/input/by-id/usb-foostan_Corne_vial:f64c2b3c-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-Microsoft_Microsoft®_2.4GHz_Transceiver_v9.0-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-Microsoft_Comfort_Curve_Keyboard_3000-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-foostan_Corne-event-kbd")
+  ;; input  (device-file "/dev/input/by-id/usb-foostan_Corne_vial:f64c2b3c-event-kbd")
   ;; input  (device-file "/dev/input/by-id/usb-Matias_Ergo_Pro_Keyboard-event-kbd")
   output (uinput-sink "KMonad output")
 
@@ -16,12 +18,6 @@
   ;; output (kext)
 
   fallthrough true
-)
-
-(defalias
-  mhk muhenkan
-  hk henkan
-  kh katakanahiragana
 )
 
 (defsrc
