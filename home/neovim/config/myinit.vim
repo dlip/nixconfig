@@ -74,6 +74,10 @@ let g:neovide_transparency=0.8
 " let g:neovide_window_floating_opacity=1
 
 " Colorscheme
+let g:nord_contrast = v:true
+let g:nord_borders = v:false
+let g:nord_disable_background = v:true
+let g:nord_italic = v:false
 colorscheme nord
 
 " open a terminal pane on the bottom using :Term
