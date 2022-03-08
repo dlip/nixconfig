@@ -101,14 +101,19 @@
   pp (tap-hold-next-release 200 pp lmet)
   nxt (tap-hold-next-release 200 next lctl)
   gam (layer-switch gaming)
+
+  cpy C-c
+  pst C-v
+  cut C-x
+  udo C-z
 )
 
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    brdn volu brup _    _    _    f7   f8   f9   f10  _    _
-  _    prnt @pre @pp  @nxt tab  _    @gam f4   f5   f6   f11  _
-  _    _    mute vold stop _    _    _    f1   f2   f3   f12
+  _    stop vold mute volu brup _    _    f7   f8   f9   f10  _    _
+  _    prnt @pre @pp  @nxt brdn _    @gam f4   f5   f6   f11  _
+  _    @udo @cut @cpy @pst y    _    _    f1   f2   f3   f12
   _    _    _    _         _         @ssf @ssf _    _    _
 )
 
