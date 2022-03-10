@@ -110,12 +110,17 @@
 
 #define MED_PRNT &kp PSCRN
 #define MED_PREV &mt LALT C_PREV
-#define MED_PLAY &mt LGUI K_PP
+#define MED_PLAY &mt LGUI C_PP
 #define MED_NEXT &mt LCTRL C_NEXT
 
 #define MED_MUTE &kp C_MUTE
 #define MED_VOLD &kp C_VOL_DN
 #define MED_STOP &kp C_STOP
+
+#define MED_UNDO &kp LC(Z)
+#define MED_CUT  &kp LC(X)
+#define MED_COPY &kp LC(C)
+#define NUM_PST  &kp LC(V)
 
 // FUNCTION LAYER
 
@@ -211,7 +216,7 @@
         DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
         DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
         DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
-                                   DEF_SHFT DEF_SPC        DEF_NAV DEF_MED
+                                   DEF_MED  DEF_SPC        DEF_NAV  DEF_SHFT
       >;
     };
 
@@ -226,19 +231,19 @@
 
     media_layer {
       bindings = <
-        GEN_TRAN MED_BRID MED_VOLU MED_BRIU GEN_TRAN       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
-        MED_PRNT MED_PREV MED_PLAY MED_NEXT GEN_TRAN       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
-        GEN_TRAN MED_MUTE MED_VOLD MED_STOP GEN_TRAN       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
+        MED_STOP MED_VOLD MED_MUTE MED_VOLU MED_BRIU       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
+        MED_PRNT MED_PREV MED_PLAY MED_NEXT MED_BRID       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
+        MED_UNDO MED_CUT  MED_COPY NUM_PST  DEF_Y          GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
                                    GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN
       >;
     };
 
     gaming_layer {
       bindings = <
-        GAM_TAB  GAM_Q    GAM_W    GAM_E    GAM_R       GEN_NONE GEN_NONE GAM_UP   GEN_NONE GEN_NONE
-        GAM_LSFT GAM_A    GAM_S    GAM_D    GAM_F       GAM_DEF  GAM_LEFT GAM_DOWN GAM_RGHT GEN_NONE
-        GAM_LCTL GAM_Z    GAM_X    GAM_C    GAM_V       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
-                                   GEN_TRAN GAM_SPC     GEN_TRAN GEN_TRAN
+        GAM_TAB  GAM_Q    GAM_W    GAM_E    GAM_R          GEN_NONE GEN_NONE GAM_UP   GEN_NONE GEN_NONE
+        GAM_LSFT GAM_A    GAM_S    GAM_D    GAM_F          GAM_DEF  GAM_LEFT GAM_DOWN GAM_RGHT GEN_NONE
+        GAM_LCTL GAM_Z    GAM_X    GAM_C    GAM_V          GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+                                   GEN_TRAN GAM_SPC        GEN_TRAN GEN_TRAN
       >;
     };
 
