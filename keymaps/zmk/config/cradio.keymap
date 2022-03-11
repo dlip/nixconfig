@@ -54,10 +54,9 @@
 #define DEF_I &mt LALT I 
 #define DEF_O &kp O
 
-#define DEF_SPC  &kp SPC
-#define DEF_NAV  &sl L_NAV
-#define DEF_MED  &sl L_MED
 #define DEF_SHFT &sk LSHIFT
+#define DEF_SPC  &lt L_MED SPC
+#define DEF_NAV  &sl L_NAV
 
 // NAVIGATION LAYER
 #define L_NAV 1
@@ -216,7 +215,7 @@
         DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
         DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
         DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
-                                   DEF_MED  DEF_SPC        DEF_NAV  DEF_SHFT
+                                   DEF_SHFT DEF_SPC        DEF_NAV  DEF_SHFT
       >;
     };
 
@@ -225,7 +224,7 @@
         NAV_BSLH NAV_HOME NAV_UP   NAV_END  NAV_PGUP       NUM_LBKT NUM_N7    NUM_N8    NUM_N9    NUM_RBKT
         NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
         NAV_GRV  NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
-                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
 
@@ -234,7 +233,7 @@
         MED_STOP MED_VOLD MED_MUTE MED_VOLU MED_BRIU       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
         MED_PRNT MED_PREV MED_PLAY MED_NEXT MED_BRID       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
         MED_UNDO MED_CUT  MED_COPY NUM_PST  DEF_Y          GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
-                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
 
