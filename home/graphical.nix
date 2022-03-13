@@ -51,6 +51,7 @@
     vlc
     xclip
     # xfce.thunar
+    xournalpp
     yacreader
     # yubikey-manager-qt #broken
     # yubioath-desktop #broken

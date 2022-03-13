@@ -49,7 +49,7 @@
       # myPythonPackages.shirah-reader
       # myPythonPackages.adafruit-nrfutil
       niv
-      nix-du
+      # nix-du broken
       nodePackages.node2nix
       nodePackages.quicktype
       nodePackages.reveal-md

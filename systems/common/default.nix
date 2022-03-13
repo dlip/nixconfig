@@ -127,6 +127,7 @@ in
 
   networking.firewall = {
     allowedUDPPorts = [ 51820 ]; # wireguard
+    allowedTCPPorts = [ 1701 9001 ]; # weylus
   };
 
   networking.wireguard.interfaces = {
