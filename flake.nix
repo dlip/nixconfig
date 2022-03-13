@@ -122,7 +122,6 @@
         };
         packages = with pkgs; {
           inherit juliusSpeech;
-          solang = (pkgs.callPackage ./pkgs/solang { });
           pushNixStoreDockerImage = (pkgs.callPackage ./pkgs/pushNixStoreDockerImage { });
         };
       }) // (

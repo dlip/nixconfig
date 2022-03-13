@@ -33,6 +33,7 @@ in
     intelBusId = "PCI:0:2:0";
   };
 
+  programs.weylus.enable = true;
   # specialisation = {
   #   external-display.configuration = {
   #     system.nixos.tags = [ "external-display" ];
