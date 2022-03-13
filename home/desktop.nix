@@ -19,6 +19,7 @@
       dive
       docker-compose
       eksctl
+      evtest
       file
       fluxcd
       ghc

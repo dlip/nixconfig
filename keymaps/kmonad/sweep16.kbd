@@ -51,7 +51,6 @@
 
   spc (tap-hold-next-release 200 spc @med)
   snv (sticky-key 1000 @nav)
-  sme (sticky-key 1000 @med)
   scp (sticky-key 1000 @cap)
   ssf (sticky-key 1000 lsft)
 )
@@ -62,7 +61,7 @@
   @na  q    w    f    p    b    @na  j    l    u    y    ;    _    _
   @na  a    @r   @s   @t   g    @na  m    @n   @e   @i   o    _
   @na  @z   @x   @c   @d   v    @na  k    h    ,    .    ' 
-  _    _    @sme @sme      @spc      @snv @snv @scp @scp @scp
+  _    _    @ssf @ssf      @spc      @snv @snv @scp @scp @scp
 )
 
 (deflayer cap
