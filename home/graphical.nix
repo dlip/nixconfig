@@ -46,6 +46,7 @@
     qalculate-gtk
     slack
     # spotify
+    talon
     tdesktop
     vial
     vlc
