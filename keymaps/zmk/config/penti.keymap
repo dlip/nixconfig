@@ -1,0 +1,290 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+#define VAR_TOUT 40
+
+// GENERAL KEYS
+#define GEN_NONE &none
+#define GEN_TRAN &trans
+#define GEN_BSPC &kp BSPC
+
+// DEFAULT LAYER
+
+#define L_DEF 0
+
+
+#define DEF_S &lt L_IND S
+#define DEF_E &lt L_MID E
+#define DEF_I &kp I 
+#define DEF_N &kp N
+
+#define DEF_SPC  &kp SPC
+#define DEF_SHFT &sk LSHIFT
+#define DEF_REP  &key_repeat
+
+// INDEX_LAYER
+#define L_IND 1
+
+#define NAV_BSLH &kp BSLH
+#define NAV_HOME &kp HOME
+#define NAV_UP &kp UP
+#define NAV_END &kp END
+#define NAV_PGUP &kp PG_UP
+
+#define NAV_ESC &kp ESC
+#define NAV_LEFT &kp LEFT
+#define NAV_DOWN &kp DOWN
+#define NAV_RGHT &kp RIGHT
+#define NAV_TAB &kp TAB
+
+#define NAV_GRV &kp GRAVE
+#define NAV_DEL &kp DEL
+#define NAV_RET &kp RET
+#define NAV_PGDN &kp PG_DN
+
+// MID LAYER
+#define L_MID 2
+
+#define NAV_BSPC &kp BSPC
+// POSITIONS
+
+#define LFT_LTL 10
+#define LFT_RIN 11
+#define LFT_MID 12
+#define LFT_IND 13
+#define LFT_TMB 31
+
+&mt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+
+&lt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+&sl {
+    release-after-ms = <1000>;
+};
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
+};
+/ {
+  combos {
+    compatible = "zmk,combos";
+    bootloader {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <0 20>;
+      bindings = <&bootloader>;
+    };
+
+    btclr {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <2 22>;
+      bindings = <&bt BT_CLR>;
+    };
+
+    left_a {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_RIN>;
+      bindings = <&kp A>;
+      layers = <L_DEF>;
+    };
+
+    left_b {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_MID LFT_RIN>;
+      bindings = <&kp B>;
+      layers = <L_DEF>;
+    };
+
+    left_c {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_IND LFT_RIN>;
+      bindings = <&kp C>;
+      layers = <L_DEF>;
+    };
+
+    left_d {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_LTL>;
+      bindings = <&kp D>;
+      layers = <L_DEF>;
+    };
+
+    left_f {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_IND>;
+      bindings = <&kp F>;
+      layers = <L_DEF>;
+    };
+
+    left_g {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_RIN LFT_LTL>;
+      bindings = <&kp G>;
+      layers = <L_DEF>;
+    };
+
+    left_h {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_IND LFT_LTL>;
+      bindings = <&kp H>;
+      layers = <L_DEF>;
+    };
+
+    left_j {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_IND LFT_LTL>;
+      bindings = <&kp J>;
+      layers = <L_DEF>;
+    };
+
+    left_k {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_IND LFT_MID LFT_RIN LFT_LTL>;
+      bindings = <&kp K>;
+      layers = <L_DEF>;
+    };
+
+    left_l {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_IND LFT_MID>;
+      bindings = <&kp L>;
+      layers = <L_DEF>;
+    };
+
+    left_m {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_MID LFT_RIN LFT_LTL>;
+      bindings = <&kp M>;
+      layers = <L_DEF>;
+    };
+
+    left_o {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_MID LFT_RIN>;
+      bindings = <&kp O>;
+      layers = <L_DEF>;
+    };
+
+    left_p {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_IND LFT_MID LFT_RIN>;
+      bindings = <&kp P>;
+      layers = <L_DEF>;
+    };
+
+    left_q {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_IND LFT_RIN>;
+      bindings = <&kp Q>;
+      layers = <L_DEF>;
+    };
+
+    left_r {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_MID>;
+      bindings = <&kp R>;
+      layers = <L_DEF>;
+    };
+
+    left_t {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_MID LFT_RIN LFT_LTL>;
+      bindings = <&kp T>;
+      layers = <L_DEF>;
+    };
+
+    left_u {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_IND LFT_MID LFT_RIN>;
+      bindings = <&kp U>;
+      layers = <L_DEF>;
+    };
+
+    left_v {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_IND LFT_RIN LFT_LTL>;
+      bindings = <&kp V>;
+      layers = <L_DEF>;
+    };
+
+    left_w {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_IND LFT_MID LFT_RIN LFT_LTL>;
+      bindings = <&kp W>;
+      layers = <L_DEF>;
+    };
+
+    left_x {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_IND LFT_RIN LFT_LTL>;
+      bindings = <&kp X>;
+      layers = <L_DEF>;
+    };
+
+    left_y {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_RIN LFT_LTL>;
+      bindings = <&kp Y>;
+      layers = <L_DEF>;
+    };
+
+    left_z {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <LFT_TMB LFT_IND LFT_MID>;
+      bindings = <&kp Z>;
+      layers = <L_DEF>;
+    };
+
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+      bindings = <
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        DEF_N    DEF_I    DEF_E    DEF_S    GEN_TRAN       GEN_TRAN DEF_S    DEF_E    DEF_I    DEF_N
+        GEN_TRAN GEN_TRAN DEF_REP  GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN DEF_REP  GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SPC        DEF_SPC GEN_TRAN
+      >;
+    };
+
+    index_layer {
+      bindings = <
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN NAV_RET  NAV_TAB  GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN NAV_TAB  NAV_RET  GEN_TRAN
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SPC        DEF_SPC GEN_TRAN
+      >;
+    };
+
+    mid_layer {
+      bindings = <
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN GEN_TRAN GEN_TRAN NAV_BSPC GEN_TRAN       GEN_TRAN NAV_BSPC GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SPC        DEF_SPC GEN_TRAN
+      >;
+    };
+    // empty_layer {
+    //   bindings = <
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //                                GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+    //   >;
+    // };
+
+  };
+};
