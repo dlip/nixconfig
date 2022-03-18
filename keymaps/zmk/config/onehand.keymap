@@ -1,0 +1,299 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+
+// GENERAL KEYS
+#define GEN_NONE &none
+#define GEN_TRAN &trans
+#define GEN_BSPC &kp BSPC
+
+// DEFAULT LAYER
+
+#define L_DEF 0
+
+#define DEF_Q &kp Q
+#define DEF_W &kp W
+#define DEF_F &kp F
+#define DEF_P &kp P
+#define DEF_B &kp B
+                        
+#define DEF_A &lt L_NAV A
+#define DEF_R &kp R 
+#define DEF_S &kp S
+#define DEF_T &lt L_NUM T 
+#define DEF_G &kp G
+        
+#define DEF_Z &lt L_MOD Z
+#define DEF_X &kp X
+#define DEF_C &kp C
+#define DEF_D &kp D
+#define DEF_V &kp V
+                        
+
+#define DEF_J &kp J
+#define DEF_L &kp L
+#define DEF_U &kp U
+#define DEF_Y &kp Y
+#define DEF_SEMI &kp SEMI
+
+#define DEF_K &kp K
+#define DEF_H &kp H
+#define DEF_COMA &kp COMMA
+#define DEF_DOT &kp DOT
+#define DEF_QUOT &kp SQT
+
+#define DEF_M &kp M
+#define DEF_N &mt LCTRL N
+#define DEF_E &mt RGUI E
+#define DEF_I &mt LALT I 
+#define DEF_O &kp O
+
+#define DEF_SPC  &mt LSHIFT SPC
+#define DEF_FLP  &sl L_FLP
+#define DEF_NAV  &sl L_NAV
+#define DEF_NUM  &sl L_NUM
+#define DEF_MED  &mo L_MED
+#define DEF_SHFT &sk LSHIFT
+#define DEF_ALT  &sk LALT
+#define DEF_GUI  &sk LGUI
+#define DEF_CTRL &sk LCTRL
+#define DEF_TAP  &td0
+
+
+#define L_FLP 1
+
+#define L_MOD 2
+
+// NAVIGATION LAYER
+#define L_NAV 3
+
+#define NAV_BSLH &kp BSLH
+#define NAV_HOME &kp HOME
+#define NAV_UP &kp UP
+#define NAV_END &kp END
+#define NAV_PGUP &kp PG_UP
+
+#define NAV_ESC &kp ESC
+#define NAV_LEFT &kp LEFT
+#define NAV_DOWN &kp DOWN
+#define NAV_RGHT &kp RIGHT
+#define NAV_TAB &kp TAB
+
+#define NAV_GRV &kp GRAVE
+#define NAV_DEL &kp DEL
+#define NAV_BSPC &kp BSPC
+#define NAV_RET &kp RET
+#define NAV_PGDN &kp PG_DN
+
+
+// NUM LAYER
+#define L_NUM 4
+
+#define NUM_LBKT &kp LBKT
+#define NUM_N7 &kp N7 
+#define NUM_N8 &kp N8
+#define NUM_N9 &kp N9
+#define NUM_RBKT &kp RBKT 
+
+#define NUM_EQUL &kp EQUAL
+#define NUM_N4 &kp N4
+#define NUM_N5 &mt LS(N5) N5
+#define NUM_N6 &kp N6
+#define NUM_N0 &kp N0
+
+#define NUM_MIN &kp MINUS
+#define NUM_N1 &kp N1
+#define NUM_N2 &kp N2
+#define NUM_N3 &kp N3
+#define NUM_FSLH &kp FSLH
+
+// MEDIA LAYER
+#define L_MED 5
+
+#define MED_BRID &kp C_BRI_DN
+#define MED_VOLU &kp C_VOL_UP
+#define MED_BRIU &kp C_BRI_UP
+
+
+#define MED_PRNT &kp PSCRN
+#define MED_PREV &kp C_PREV
+#define MED_PLAY &kp C_PP
+#define MED_NEXT &kp C_NEXT
+
+#define MED_MUTE &kp C_MUTE
+#define MED_VOLD &kp C_VOL_DN
+#define MED_STOP &kp C_STOP
+
+#define MED_UNDO &kp LC(Z)
+#define MED_CUT  &kp LC(X)
+#define MED_COPY &kp LC(C)
+#define NUM_PST  &kp LC(V)
+#define NUM_STAB &kp LS(TAB)
+
+#define FUN_F7 &kp F7
+#define FUN_F8 &kp F8
+#define FUN_F9 &kp F9
+#define FUN_F10 &kp F10
+
+#define FUN_GAME &to L_GAM
+#define FUN_F4 &kp F4
+#define FUN_F5 &kp F5
+#define FUN_F6 &kp F6
+#define FUN_F11 &kp F11
+
+#define FUN_BOOT &bootloader
+#define FUN_F1 &kp F1
+#define FUN_F2 &kp F2
+#define FUN_F3 &kp F3
+#define FUN_F13 &kp F12
+
+#define FUN_SPC &kp LC(SPC)
+
+// GAMING LAYER
+#define L_GAM 6
+
+#define GAM_TAB &kp TAB
+#define GAM_Q &kp Q
+#define GAM_W &kp W
+#define GAM_E &kp E
+#define GAM_R &kp R
+
+#define GAM_LSFT &kp LSHIFT
+#define GAM_A &kp A
+#define GAM_S &kp S
+#define GAM_D &kp D
+#define GAM_F &kp F
+
+#define GAM_LCTL &kp LCTRL
+#define GAM_Z &kp Z
+#define GAM_X &kp X
+#define GAM_C &kp C
+#define GAM_V &kp V
+
+
+#define GAM_UP &kp UP
+
+#define GAM_DEF &to L_DEF
+#define GAM_LEFT &kp LEFT
+#define GAM_DOWN &kp DOWN
+#define GAM_RGHT &kp RIGHT
+
+#define GAM_ESC &kp ESC
+#define GAM_SPC &kp SPACE
+
+
+&mt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+
+&lt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+&sl {
+    release-after-ms = <1000>;
+};
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
+};
+/ {
+  combos {
+    compatible = "zmk,combos";
+    combo_bootloader {
+      timeout-ms = <50>;
+      key-positions = <0 20>;
+      bindings = <&bootloader>;
+    };
+
+    combo_btclr {
+      timeout-ms = <50>;
+      key-positions = <2 22>;
+      bindings = <&bt BT_CLR>;
+    };
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+      bindings = <
+        DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
+        DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
+        DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
+                                   DEF_FLP  DEF_SPC        DEF_SHFT DEF_NAV
+      >;
+    };
+
+    flip_layer {
+      bindings = <
+        DEF_SEMI DEF_Y    DEF_U    DEF_L    DEF_J          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
+        DEF_O    DEF_I    DEF_E    DEF_N    DEF_M          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
+        DEF_QUOT DEF_DOT  DEF_COMA DEF_H    DEF_K          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
+                                   GEN_TRAN DEF_SHFT       DEF_SHFT DEF_NAV
+      >;
+    };
+
+    mod_layer {
+      bindings = <
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN DEF_ALT  DEF_GUI  DEF_CTRL GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+      >;
+    };
+
+    navigation_layer {
+      bindings = <
+        GEN_TRAN NAV_HOME NAV_UP   NAV_END  NAV_PGUP       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   NAV_ESC  DEF_SHFT       DEF_SHFT GEN_TRAN
+      >;
+    };
+
+    number_layer {
+      bindings = <
+        NUM_N7    NUM_N8    NUM_N9 NUM_LBKT NUM_RBKT      NUM_LBKT NUM_N7    NUM_N8    NUM_N9    NUM_RBKT
+        NUM_N4    NUM_N5    NUM_N6 NUM_EQUL NUM_N0        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        NUM_N1    NUM_N2    NUM_N3 NUM_MIN  NUM_FSLH      NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+                                   NUM_N0   DEF_SHFT     DEF_SHFT DEF_MED
+      >;
+    };
+
+    media_layer {
+      bindings = <
+        MED_STOP MED_VOLD MED_MUTE MED_VOLU MED_BRIU       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
+        MED_PRNT MED_PREV MED_PLAY MED_NEXT NAV_TAB        FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
+        MED_UNDO MED_CUT  MED_COPY NUM_PST  MED_BRID       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
+                                   GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
+      >;
+    };
+
+    gaming_layer {
+      bindings = <
+        GAM_TAB  GAM_Q    GAM_W    GAM_E    GAM_R       GEN_NONE GEN_NONE GAM_UP   GEN_NONE GEN_NONE
+        GAM_LSFT GAM_A    GAM_S    GAM_D    GAM_F       GAM_DEF  GAM_LEFT GAM_DOWN GAM_RGHT GEN_NONE
+        GAM_LCTL GAM_Z    GAM_X    GAM_C    GAM_V       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+                                   GEN_TRAN GAM_SPC     GEN_TRAN GEN_TRAN
+      >;
+    };
+
+    // empty_layer {
+    //   bindings = <
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //                                GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+    //   >;
+    // };
+
+  };
+};
