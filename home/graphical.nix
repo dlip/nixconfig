@@ -44,6 +44,7 @@
     postman
     plexamp
     qalculate-gtk
+    remote-touchpad
     slack
     # spotify
     talon

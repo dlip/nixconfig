@@ -127,7 +127,11 @@ in
 
   networking.firewall = {
     allowedUDPPorts = [ 51820 ]; # wireguard
-    allowedTCPPorts = [ 1701 9001 ]; # weylus
+    allowedTCPPorts = [
+      1701
+      9001 # weylus
+      33455 # remote-touchpad
+    ];
   };
 
   networking.wireguard.interfaces = {

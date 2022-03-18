@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define VAR_TOUT 40
 
@@ -153,13 +154,21 @@
       key-positions = <0 20>;
       bindings = <&bootloader>;
     };
-
+    ble {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <1 21>;
+      bindings = <&out OUT_BLE>;
+    };
     btclr {
       timeout-ms = <VAR_TOUT>;
       key-positions = <2 22>;
       bindings = <&bt BT_CLR>;
     };
-
+    usb {
+      timeout-ms = <VAR_TOUT>;
+      key-positions = <3 23>;
+      bindings = <&out OUT_USB>;
+    };
     left_a {
       timeout-ms = <VAR_TOUT>;
       key-positions = <LFT_TMB LFT_RIN>;
@@ -474,9 +483,9 @@
 
     default_layer {
       bindings = <
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
         DEF_N    DEF_I    DEF_E    DEF_S    GEN_TRAN       GEN_TRAN DEF_S    DEF_E    DEF_I    DEF_N
-        GEN_TRAN GEN_TRAN DEF_REP  GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN DEF_REP  GEN_TRAN GEN_TRAN
+        &bt BT_CLR &out OUT_BLE DEF_REP  &out OUT_USB GEN_TRAN       GEN_TRAN GEN_TRAN DEF_REP  GEN_TRAN GEN_TRAN
                                    GEN_TRAN DEF_SPC        DEF_SPC GEN_TRAN
       >;
     };
