@@ -13,6 +13,10 @@
 #define GEN_TRAN &trans
 #define GEN_BSPC &kp BSPC
 
+#define GEN_ALT &sk LALT
+#define GEN_GUI &sk LGUI
+#define GEN_CTRL &sk LCTRL
+
 // DEFAULT LAYER
 
 #define L_DEF 0
@@ -24,9 +28,9 @@
 #define DEF_B &kp B
                         
 #define DEF_A &kp A 
-#define DEF_R &mt LALT R 
-#define DEF_S &mt LGUI S
-#define DEF_T &mt LCTRL T 
+#define DEF_R &kp R 
+#define DEF_S &kp S
+#define DEF_T &kp T 
 #define DEF_G &kp G
         
 #define DEF_Z &kp Z
@@ -49,14 +53,15 @@
 #define DEF_QUOT &kp SQT
 
 #define DEF_M &kp M
-#define DEF_N &mt LCTRL N
-#define DEF_E &mt RGUI E
-#define DEF_I &mt LALT I 
+#define DEF_N &kp N
+#define DEF_E &kp E
+#define DEF_I &kp I 
 #define DEF_O &kp O
 
 #define DEF_SPC  &kp SPC
 #define DEF_NAV  &mo L_NAV
 #define DEF_NUM  &mo L_NUM
+#define DEF_FN   &mo L_FN
 #define DEF_MED  &mo L_MED
 #define DEF_SHFT &sk LSHIFT
 
@@ -125,6 +130,9 @@
 #define NUM_PST  &kp LC(V)
 #define NUM_STAB &kp LS(TAB)
 
+// FUNCTION LAYER
+#define L_FN 4
+
 #define FUN_F7 &kp F7
 #define FUN_F8 &kp F8
 #define FUN_F9 &kp F9
@@ -145,7 +153,7 @@
 #define FUN_SPC &kp LC(SPC)
 
 // GAMING LAYER
-#define L_GAM 4
+#define L_GAM 5
 
 #define GAM_TAB &kp TAB
 #define GAM_Q &kp Q
@@ -207,6 +215,57 @@
       key-positions = <2 22>;
       bindings = <&bt BT_CLR>;
     };
+
+/*
+    combo_fn {
+      timeout-ms = <50>;
+      key-positions = <10 30>;
+      bindings = <&mo L_FN>;
+    };
+
+    combo_lalt {
+      timeout-ms = <50>;
+      key-positions = <11 30>;
+      bindings = <&sk LALT>;
+    };
+
+    combo_lgui {
+      timeout-ms = <50>;
+      key-positions = <12 30>;
+      bindings = <&sk LGUI>;
+    };
+
+    combo_lctrl {
+      timeout-ms = <50>;
+      key-positions = <13 30>;
+      bindings = <&sk LCTRL>;
+    };
+
+
+    combo_rctrl {
+      timeout-ms = <50>;
+      key-positions = <16 33>;
+      bindings = <&sk RCTRL>;
+    };
+
+    combo_rgui {
+      timeout-ms = <50>;
+      key-positions = <17 33>;
+      bindings = <&sk RGUI>;
+    };
+
+    combo_ralt {
+      timeout-ms = <50>;
+      key-positions = <18 33>;
+      bindings = <&sk RALT>;
+    };
+
+    combo_med {
+      timeout-ms = <50>;
+      key-positions = <19 33>;
+      bindings = <&mo L_FN>;
+    };
+    */
   };
 
   keymap {
@@ -224,30 +283,38 @@
     navigation_layer {
       bindings = <
         GEN_TRAN NAV_HOME NAV_UP   NAV_END  NAV_PGUP       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_CTRL GEN_GUI  GEN_ALT  DEF_MED
         GEN_TRAN NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-                                   DEF_MED  DEF_SHFT       DEF_SHFT GEN_TRAN
+                                   GEN_TRAN  DEF_SHFT       GEN_TRAN GEN_TRAN
       >;
     };
 
     number_layer {
       bindings = <
         NAV_GRV  NAV_BSLH NUM_LBKT NUM_RBKT GEN_TRAN       NUM_LBKT NUM_N7    NUM_N8    NUM_N9    NUM_RBKT
-        NUM_STAB GEN_TRAN GEN_TRAN GEN_TRAN NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
-        MED_UNDO MED_CUT  MED_COPY NUM_PST  GEN_TRAN       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
-                                   GEN_TRAN DEF_SHFT       DEF_SHFT DEF_MED
+        DEF_FN   GEN_ALT  GEN_GUI  GEN_CTRL NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        MED_UNDO MED_CUT  MED_COPY NUM_PST  NUM_STAB       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
 
     media_layer {
       bindings = <
-        MED_STOP MED_VOLD MED_MUTE MED_VOLU MED_BRIU       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
-        MED_PRNT MED_PREV MED_PLAY MED_NEXT NAV_TAB        FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
-        MED_UNDO MED_CUT  MED_COPY NUM_PST  MED_BRID       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
-                                   GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
+        MED_STOP MED_VOLD MED_MUTE MED_VOLU MED_BRIU       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        MED_PRNT MED_PREV MED_PLAY MED_NEXT NAV_TAB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        MED_UNDO MED_CUT  MED_COPY NUM_PST  MED_BRID       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN DEF_SHFT       GEN_TRAN GEN_TRAN
       >;
     };
 
+    function_layer {
+      bindings = <
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+      >;
+    };
     gaming_layer {
       bindings = <
         GAM_TAB  GAM_Q    GAM_W    GAM_E    GAM_R       GEN_NONE GEN_NONE GAM_UP   GEN_NONE GEN_NONE
