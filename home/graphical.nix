@@ -33,7 +33,7 @@
     juliusSpeech
     kdenlive
     # krita
-    # kicad
+    kicad
     ledger-live-desktop
     lens
     libreoffice
@@ -44,6 +44,7 @@
     obsidian
     postman
     plexamp
+    plover.dev
     qalculate-gtk
     remote-touchpad
     slack

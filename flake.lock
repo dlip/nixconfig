@@ -241,11 +241,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1647807776,
-        "narHash": "sha256-cdURsjVEAFD23Na6mhzCM/6YUyA0F6CZAO/6fqV05Y4=",
+        "lastModified": 1647903177,
+        "narHash": "sha256-9aWSpW/F8POA/7cuVpoqhVGfjAgcGRIinwxUaXmUpkk=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "46dc2e5d9f55164d28705facd0f9a3b4c0d2807a",
+        "rev": "80b4360678fa7890964ba8e40a722985bf8d107e",
         "type": "github"
       },
       "original": {
@@ -281,11 +281,11 @@
       },
       "locked": {
         "dir": "nix",
-        "lastModified": 1647790716,
-        "narHash": "sha256-ZeYN9qlr73QedSq9Go/5pe/wh92vIcgbSdzw2g/6xRw=",
+        "lastModified": 1647852712,
+        "narHash": "sha256-glteo+r5qz/O9BirpK/ziigpYbGjZIY5UFuxsADC4qY=",
         "owner": "kmonad",
         "repo": "kmonad",
-        "rev": "20a794992826f9c1b0d371bff4899120e9b3be1d",
+        "rev": "65b501defdd0049563752f8af8c8c57f5a1ae38b",
         "type": "github"
       },
       "original": {
@@ -330,11 +330,11 @@
     "luasnip": {
       "flake": false,
       "locked": {
-        "lastModified": 1647804492,
-        "narHash": "sha256-AjDBlQUgQ0mSqaob9T3dOtTdVN67+d21BELtZaSm2sU=",
+        "lastModified": 1647858145,
+        "narHash": "sha256-/NQT1hiudpwH/354Cb4U2dejmbHyyHrxSZWqFset0BE=",
         "owner": "L3MON4D3",
         "repo": "LuaSnip",
-        "rev": "1c82128a6f67ec1c14f889476b4205099ad3199f",
+        "rev": "680d42a49e2e798cbbc0ea5dc96f298b3039dfff",
         "type": "github"
       },
       "original": {
@@ -346,11 +346,11 @@
     "neogit": {
       "flake": false,
       "locked": {
-        "lastModified": 1646486476,
-        "narHash": "sha256-KP34tdI+hHYUEmFYhLb996zQl51aoTVhUnaexNwv1a0=",
+        "lastModified": 1647890579,
+        "narHash": "sha256-rtIFaAFYj77Qd5BJptozIwCcD2gazqLh8iQRNGBcS5M=",
         "owner": "TimUntersberger",
         "repo": "neogit",
-        "rev": "f30879799f7c19d0047c6f3d3a86b818eaf0f201",
+        "rev": "9987421e0724ce704d0035f50a7080c677a85d71",
         "type": "github"
       },
       "original": {
@@ -385,11 +385,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1647297614,
-        "narHash": "sha256-ulGq3W5XsrBMU/u5k9d4oPy65pQTkunR4HKKtTq0RwY=",
+        "lastModified": 1647800324,
+        "narHash": "sha256-rjwoxrk16zfrcO5Torh6CbAd5GHsHrXw+EwxOvh9AUI=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "73ad5f9e147c0d2a2061f1d4bd91e05078dc0b58",
+        "rev": "9bc841fec1c0e8b9772afa29f934d2c7ce57da8e",
         "type": "github"
       },
       "original": {
@@ -527,11 +527,11 @@
       },
       "locked": {
         "narHash": "sha256-RO8jSrxj/8nJfOEdiY+tBD7w1OfQwF003HeeRoMtiEg=",
-        "path": "/nix/store/84hm5lmn8ha3sawm59lf9f6c8y4lk0pf-source/overlays/personal",
+        "path": "/nix/store/i57kzkbswa3l7i1qczf93gbrw73m69mk-source/overlays/personal",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/84hm5lmn8ha3sawm59lf9f6c8y4lk0pf-source/overlays/personal",
+        "path": "/nix/store/i57kzkbswa3l7i1qczf93gbrw73m69mk-source/overlays/personal",
         "type": "path"
       }
     },
@@ -583,11 +583,11 @@
       },
       "locked": {
         "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "/nix/store/84hm5lmn8ha3sawm59lf9f6c8y4lk0pf-source/overlays/repos",
+        "path": "/nix/store/i57kzkbswa3l7i1qczf93gbrw73m69mk-source/overlays/repos",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/84hm5lmn8ha3sawm59lf9f6c8y4lk0pf-source/overlays/repos",
+        "path": "/nix/store/i57kzkbswa3l7i1qczf93gbrw73m69mk-source/overlays/repos",
         "type": "path"
       }
     },
@@ -696,11 +696,11 @@
       },
       "locked": {
         "narHash": "sha256-FoNQ3NIlHF/6FMxhveRpLLJbF0gy4qpjrSaJDxxOhfU=",
-        "path": "/nix/store/84hm5lmn8ha3sawm59lf9f6c8y4lk0pf-source/overlays/vimPlugins",
+        "path": "/nix/store/i57kzkbswa3l7i1qczf93gbrw73m69mk-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/84hm5lmn8ha3sawm59lf9f6c8y4lk0pf-source/overlays/vimPlugins",
+        "path": "/nix/store/i57kzkbswa3l7i1qczf93gbrw73m69mk-source/overlays/vimPlugins",
         "type": "path"
       }
     },
