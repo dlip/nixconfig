@@ -4,7 +4,7 @@
     ./alacritty
     ./kitty
     ./rofi
-    ./vscode
+    # ./vscode
     ./awesome
   ];
 
@@ -33,7 +33,7 @@
     juliusSpeech
     kdenlive
     # krita
-    kicad
+    # kicad broken due to https://github.com/NixOS/nixpkgs/issues/165444
     ledger-live-desktop
     lens
     libreoffice
