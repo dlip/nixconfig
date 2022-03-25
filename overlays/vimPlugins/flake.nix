@@ -20,6 +20,10 @@
       url = "github:lukas-reineke/format.nvim";
       flake = false;
     };
+    hop-nvim = {
+      url = "github:phaazon/hop.nvim";
+      flake = false;
+    };
     kmonad-vim = {
       url = "github:kmonad/kmonad-vim";
       flake = false;
