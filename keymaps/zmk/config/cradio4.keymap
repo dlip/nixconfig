@@ -91,9 +91,6 @@
 #define NUM_RBKT &kp RBKT 
 
 #define NUM_EQUL &kp EQUAL
-#define NUM_PLUS &kp PLUS
-#define NUM_AST  &kp ASTERISK 
-
 #define NUM_N4 &kp N4
 #define NUM_N5 &kp N5
 #define NUM_N6 &kp N6
@@ -235,9 +232,9 @@
 
     number_layer {
       bindings = <
-        NAV_GRV  NAV_BSLH NUM_LBKT NUM_RBKT DEF_Y          NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
-        MED_PRNT GEN_TRAN GEN_TRAN GEN_TRAN NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
-        MED_UNDO MED_CUT  MED_COPY NUM_PST  NUM_STAB       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+        NAV_GRV  NAV_BSLH NUM_LBKT NUM_RBKT GEN_TRAN       NUM_LBKT NUM_N7    NUM_N8    NUM_N9    NUM_RBKT
+        NUM_STAB GEN_TRAN GEN_TRAN GEN_TRAN NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        MED_UNDO MED_CUT  MED_COPY NUM_PST  GEN_TRAN       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
                                    GEN_TRAN DEF_SHFT       DEF_SHFT DEF_MED
       >;
     };
@@ -245,8 +242,8 @@
     media_layer {
       bindings = <
         MED_STOP MED_VOLD MED_MUTE MED_VOLU MED_BRIU       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
-        MED_PRNT MED_PREV MED_PLAY MED_NEXT MED_BRID       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
+        MED_PRNT MED_PREV MED_PLAY MED_NEXT NAV_TAB        FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
+        MED_UNDO MED_CUT  MED_COPY NUM_PST  MED_BRID       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
                                    GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
       >;
     };

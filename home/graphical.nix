@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    antimicrox
     arandr
     alttab
     audacity
@@ -32,7 +33,7 @@
     juliusSpeech
     kdenlive
     # krita
-    # kicad
+    kicad
     ledger-live-desktop
     lens
     libreoffice
@@ -43,9 +44,12 @@
     obsidian
     postman
     plexamp
+    plover.dev
     qalculate-gtk
+    remote-touchpad
     slack
     # spotify
+    talon
     tdesktop
     vial
     vlc

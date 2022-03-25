@@ -52,6 +52,7 @@
         skyscraper = final.callPackage ./skyscraper { };
         solang = final.callPackage ./solang { };
         juliusSpeech = final.callPackage ./juliusSpeech { };
+        talon = final.callPackage ./talon { };
         inherit sops-nix;
         inherit (final.callPackages "${openvpn-aws}/derivations/openvpn.nix" { }) openvpn_aws;
       };

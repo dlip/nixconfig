@@ -6,8 +6,8 @@ manifest:
       url-base: https://github.com/okke-formsma
   projects:
     - name: zmk
-      remote: okke-formsma
-      revision: sticky-fix
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config

@@ -23,13 +23,13 @@
 #define DEF_P &kp P
 #define DEF_B &kp B
                         
-#define DEF_A &kp A 
-#define DEF_R &mt LALT R 
-#define DEF_S &mt LGUI S
-#define DEF_T &mt LCTRL T 
+#define DEF_A &lt L_NAV A
+#define DEF_R &kp R 
+#define DEF_S &kp S
+#define DEF_T &lt L_NUM T 
 #define DEF_G &kp G
         
-#define DEF_Z &kp Z
+#define DEF_Z &lt L_MOD Z
 #define DEF_X &kp X
 #define DEF_C &kp C
 #define DEF_D &kp D
@@ -54,14 +54,24 @@
 #define DEF_I &mt LALT I 
 #define DEF_O &kp O
 
-#define DEF_SPC  &kp SPC
-#define DEF_NAV  &mo L_NAV
-#define DEF_NUM  &mo L_NUM
+#define DEF_SPC  &mt LSHIFT SPC
+#define DEF_FLP  &sl L_FLP
+#define DEF_NAV  &sl L_NAV
+#define DEF_NUM  &sl L_NUM
 #define DEF_MED  &mo L_MED
 #define DEF_SHFT &sk LSHIFT
+#define DEF_ALT  &sk LALT
+#define DEF_GUI  &sk LGUI
+#define DEF_CTRL &sk LCTRL
+#define DEF_TAP  &td0
+
+
+#define L_FLP 1
+
+#define L_MOD 2
 
 // NAVIGATION LAYER
-#define L_NAV 1
+#define L_NAV 3
 
 #define NAV_BSLH &kp BSLH
 #define NAV_HOME &kp HOME
@@ -81,8 +91,9 @@
 #define NAV_RET &kp RET
 #define NAV_PGDN &kp PG_DN
 
+
 // NUM LAYER
-#define L_NUM 2
+#define L_NUM 4
 
 #define NUM_LBKT &kp LBKT
 #define NUM_N7 &kp N7 
@@ -91,11 +102,8 @@
 #define NUM_RBKT &kp RBKT 
 
 #define NUM_EQUL &kp EQUAL
-#define NUM_PLUS &kp PLUS
-#define NUM_AST  &kp ASTERISK 
-
 #define NUM_N4 &kp N4
-#define NUM_N5 &kp N5
+#define NUM_N5 &mt LS(N5) N5
 #define NUM_N6 &kp N6
 #define NUM_N0 &kp N0
 
@@ -106,7 +114,7 @@
 #define NUM_FSLH &kp FSLH
 
 // MEDIA LAYER
-#define L_MED 3
+#define L_MED 5
 
 #define MED_BRID &kp C_BRI_DN
 #define MED_VOLU &kp C_VOL_UP
@@ -148,7 +156,7 @@
 #define FUN_SPC &kp LC(SPC)
 
 // GAMING LAYER
-#define L_GAM 4
+#define L_GAM 6
 
 #define GAM_TAB &kp TAB
 #define GAM_Q &kp Q
@@ -220,33 +228,51 @@
         DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
         DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
         DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
-                                   DEF_NUM  DEF_SPC        DEF_SHFT DEF_NAV
+                                   DEF_FLP  DEF_SPC        DEF_SHFT DEF_NAV
+      >;
+    };
+
+    flip_layer {
+      bindings = <
+        DEF_SEMI DEF_Y    DEF_U    DEF_L    DEF_J          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
+        DEF_O    DEF_I    DEF_E    DEF_N    DEF_M          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
+        DEF_QUOT DEF_DOT  DEF_COMA DEF_H    DEF_K          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
+                                   GEN_TRAN DEF_SHFT       DEF_SHFT DEF_NAV
+      >;
+    };
+
+    mod_layer {
+      bindings = <
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN DEF_ALT  DEF_GUI  DEF_CTRL GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
 
     navigation_layer {
       bindings = <
         GEN_TRAN NAV_HOME NAV_UP   NAV_END  NAV_PGUP       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
         GEN_TRAN NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-                                   DEF_MED  DEF_SHFT       DEF_SHFT GEN_TRAN
+                                   NAV_ESC  DEF_SHFT       DEF_SHFT GEN_TRAN
       >;
     };
 
     number_layer {
       bindings = <
-        NAV_GRV  NAV_BSLH NUM_LBKT NUM_RBKT DEF_Y          NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
-        MED_PRNT GEN_TRAN GEN_TRAN GEN_TRAN NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
-        MED_UNDO MED_CUT  MED_COPY NUM_PST  NUM_STAB       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
-                                   GEN_TRAN DEF_SHFT       DEF_SHFT DEF_MED
+        NUM_N7    NUM_N8    NUM_N9 NUM_LBKT NUM_RBKT      NUM_LBKT NUM_N7    NUM_N8    NUM_N9    NUM_RBKT
+        NUM_N4    NUM_N5    NUM_N6 NUM_EQUL NUM_N0        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        NUM_N1    NUM_N2    NUM_N3 NUM_MIN  NUM_FSLH      NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+                                   NUM_N0   DEF_SHFT     DEF_SHFT DEF_MED
       >;
     };
 
     media_layer {
       bindings = <
         MED_STOP MED_VOLD MED_MUTE MED_VOLU MED_BRIU       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
-        MED_PRNT MED_PREV MED_PLAY MED_NEXT MED_BRID       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
-        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
+        MED_PRNT MED_PREV MED_PLAY MED_NEXT NAV_TAB        FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
+        MED_UNDO MED_CUT  MED_COPY NUM_PST  MED_BRID       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
                                    GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
       >;
     };

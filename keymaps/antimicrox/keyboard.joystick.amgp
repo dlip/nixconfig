@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<joystick configversion="19" appversion="3.2.2">
+    <!--The SDL name for a joystick is included for informational purposes only.-->
+    <sdlname>WiseGroup.,Ltd JC-AS01 series</sdlname>
+    <!--The Unique ID for a joystick is included for informational purposes only.-->
+    <uniqueID>03000000250900000128000000010000</uniqueID>
+    <sets>
+        <set index="5">
+            <axis index="1">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <axis index="2">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <dpad index="1">
+                <dpadbutton index="1">
+                    <setselect>1</setselect>
+                    <setselectcondition>while-held</setselectcondition>
+                </dpadbutton>
+            </dpad>
+            <button index="7">
+                <slots>
+                    <slot>
+                        <code>0x59</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="8">
+                <slots>
+                    <slot>
+                        <code>0x3b</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="5">
+                <slots>
+                    <slot>
+                        <code>0x4c</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="6">
+                <slots>
+                    <slot>
+                        <code>0x4c</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="3">
+                <slots>
+                    <slot>
+                        <code>0x57</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="4">
+                <slots>
+                    <slot>
+                        <code>0x51</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="1">
+                <slots>
+                    <slot>
+                        <code>0x50</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="2">
+                <slots>
+                    <slot>
+                        <code>0x46</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+        </set>
+        <set index="3">
+            <axis index="1">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <axis index="2">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <dpad index="1">
+                <dpadbutton index="8">
+                    <setselect>1</setselect>
+                    <setselectcondition>while-held</setselectcondition>
+                </dpadbutton>
+            </dpad>
+        </set>
+        <set index="4">
+            <axis index="1">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <axis index="2">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <dpad index="1">
+                <dpadbutton index="4">
+                    <setselect>1</setselect>
+                    <setselectcondition>while-held</setselectcondition>
+                </dpadbutton>
+            </dpad>
+            <button index="7">
+                <slots>
+                    <slot>
+                        <code>0x2e</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="8">
+                <slots>
+                    <slot>
+                        <code>0x27</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="5">
+                <slots>
+                    <slot>
+                        <code>0x48</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="6">
+                <slots>
+                    <slot>
+                        <code>0x2c</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="3">
+                <slots>
+                    <slot>
+                        <code>0x58</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="4">
+                <slots>
+                    <slot>
+                        <code>0x5a</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="1">
+                <slots>
+                    <slot>
+                        <code>0x44</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="2">
+                <slots>
+                    <slot>
+                        <code>0x43</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+        </set>
+        <set index="1">
+            <axis index="1">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <axis index="2">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <dpad index="1">
+                <dpadbutton index="4">
+                    <setselect>4</setselect>
+                    <setselectcondition>while-held</setselectcondition>
+                </dpadbutton>
+                <dpadbutton index="2">
+                    <setselect>2</setselect>
+                    <setselectcondition>while-held</setselectcondition>
+                </dpadbutton>
+                <dpadbutton index="1">
+                    <setselect>5</setselect>
+                    <setselectcondition>while-held</setselectcondition>
+                </dpadbutton>
+                <dpadbutton index="8">
+                    <setselect>3</setselect>
+                    <setselectcondition>while-held</setselectcondition>
+                </dpadbutton>
+            </dpad>
+            <button index="7">
+                <slots>
+                    <slot>
+                        <code>0x49</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="8">
+                <slots>
+                    <slot>
+                        <code>0x4f</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="5">
+                <slots>
+                    <slot>
+                        <code>0x4e</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="6">
+                <slots>
+                    <slot>
+                        <code>0x45</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="3">
+                <slots>
+                    <slot>
+                        <code>0x52</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="4">
+                <slots>
+                    <slot>
+                        <code>0x41</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="1">
+                <slots>
+                    <slot>
+                        <code>0x54</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="2">
+                <slots>
+                    <slot>
+                        <code>0x53</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+        </set>
+        <set index="2">
+            <axis index="1">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <axis index="2">
+                <center_value>0</center_value>
+                <min_value>-32767</min_value>
+                <max_value>32767</max_value>
+                <throttle>normal</throttle>
+            </axis>
+            <dpad index="1">
+                <dpadbutton index="2">
+                    <setselect>1</setselect>
+                    <setselectcondition>while-held</setselectcondition>
+                </dpadbutton>
+            </dpad>
+            <button index="7">
+                <slots>
+                    <slot>
+                        <code>0x4a</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="5">
+                <slots>
+                    <slot>
+                        <code>0x4b</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="6">
+                <slots>
+                    <slot>
+                        <code>0x4d</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="3">
+                <slots>
+                    <slot>
+                        <code>0x42</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="1">
+                <slots>
+                    <slot>
+                        <code>0x56</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+            <button index="2">
+                <slots>
+                    <slot>
+                        <code>0x47</code>
+                        <mode>keyboard</mode>
+                    </slot>
+                </slots>
+            </button>
+        </set>
+    </sets>
+</joystick>
