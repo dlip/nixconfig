@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 
 // GENERAL KEYS
 #define GEN_NONE &none
@@ -186,6 +187,9 @@
 #define SYS_BTCL &bt BT_CLR
 #define SYS_BTNX &bt BT_NXT
 #define SYS_BTPR &bt BT_PRV
+#define SYS_BLE &out OUT_BLE
+#define SYS_USB &out OUT_USB
+#define SYS_OTG &out OUT_TOG
 #define SYS_BT0 &bt BT_SEL 0
 #define SYS_BT1 &bt BT_SEL 1
 #define SYS_BT2 &bt BT_SEL 2
@@ -265,18 +269,18 @@
 
     gaming_layer {
       bindings = <
-        GAM_TAB  GAM_Q    GAM_W    GAM_E    GAM_R       GEN_NONE GEN_NONE GAM_UP   GEN_NONE GEN_NONE
-        GAM_LSFT GAM_A    GAM_S    GAM_D    GAM_F       GAM_DEF  GAM_LEFT GAM_DOWN GAM_RGHT GEN_NONE
-        GAM_LCTL GAM_Z    GAM_X    GAM_C    GAM_V       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
-                                   GEN_TRAN GAM_SPC     GEN_TRAN GEN_TRAN
+        GAM_TAB  GAM_Q    GAM_W    GAM_E    GAM_R          GEN_NONE GEN_NONE GAM_UP   GEN_NONE GEN_NONE
+        GAM_LSFT GAM_A    GAM_S    GAM_D    GAM_F          GAM_DEF  GAM_LEFT GAM_DOWN GAM_RGHT GEN_NONE
+        GAM_LCTL GAM_Z    GAM_X    GAM_C    GAM_V          GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+                                   GEN_TRAN GAM_SPC        GEN_TRAN GEN_TRAN
       >;
     };
 
     system_layer {
       bindings = <
-        GEN_TRAN SYS_BTPR SYS_BTCL SYS_BTNX GEN_TRAN       GEN_TRAN SYS_BTPR SYS_BTCL SYS_BTNX GEN_TRAN
-        SYS_BOOT SYS_BT3  SYS_BT4  GEN_TRAN GEN_TRAN       GEN_TRAN SYS_BT3  SYS_BT4  GEN_TRAN SYS_BOOT
-        GEN_TRAN SYS_BT0  SYS_BT1  SYS_BT2  GEN_TRAN       GEN_TRAN SYS_BT0  SYS_BT1  SYS_BT2  GEN_TRAN
+        GEN_TRAN SYS_BTPR SYS_BTCL SYS_BTNX SYS_BLE        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        SYS_BOOT SYS_BT3  SYS_BT4  GEN_TRAN SYS_OTG        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN SYS_BT0  SYS_BT1  SYS_BT2  SYS_USB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };

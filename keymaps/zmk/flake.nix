@@ -84,6 +84,9 @@
         buildright = pkgs.writeShellScriptBin "buildright" ''
           ${(build {side = "right";})}/bin/build
         '';
+        buildreset = pkgs.writeShellScriptBin "buildreset" ''
+          ${(build {shield = "settings"; side = "reset";})}/bin/build
+        '';
         init = pkgs.writeShellScriptBin "init" ''
           	west init -l config
         '';
@@ -94,7 +97,7 @@
       in
       rec {
         devShell = pkgs.mkShell {
-          buildInputs = buildInputs ++ [ (build { }) buildright init update ];
+          buildInputs = buildInputs ++ [ (build { }) buildright buildreset init update ];
           nativeBuildInputs = [ pkgs.bashInteractive ];
           ZEPHYR_TOOLCHAIN_VARIANT = "gnuarmemb";
           GNUARMEMB_TOOLCHAIN_PATH = pkgs.gcc-arm-embedded;
