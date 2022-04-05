@@ -179,6 +179,19 @@
 #define GAM_ESC &kp ESC
 #define GAM_SPC &kp SPACE
 
+// SYSTEM LAYER
+#define L_SYS 5
+
+#define SYS_BOOT &bootloader
+#define SYS_BTCL &bt BT_CLR
+#define SYS_BTNX &bt BT_NXT
+#define SYS_BTPR &bt BT_PRV
+#define SYS_BT0 &bt BT_SEL 0
+#define SYS_BT1 &bt BT_SEL 1
+#define SYS_BT2 &bt BT_SEL 2
+#define SYS_BT3 &bt BT_SEL 3
+#define SYS_BT4 &bt BT_SEL 4
+
 
 &mt {
   flavor = "tap-preferred";
@@ -199,16 +212,15 @@
 / {
   combos {
     compatible = "zmk,combos";
-    combo_bootloader {
+    combo_systeml {
       timeout-ms = <50>;
       key-positions = <0 20>;
-      bindings = <&bootloader>;
+      bindings = <&tog L_SYS>;
     };
-
-    combo_btclr {
+    combo_systemr {
       timeout-ms = <50>;
-      key-positions = <2 22>;
-      bindings = <&bt BT_CLR>;
+      key-positions = <9 29>;
+      bindings = <&tog L_SYS>;
     };
   };
 
@@ -257,6 +269,15 @@
         GAM_LSFT GAM_A    GAM_S    GAM_D    GAM_F       GAM_DEF  GAM_LEFT GAM_DOWN GAM_RGHT GEN_NONE
         GAM_LCTL GAM_Z    GAM_X    GAM_C    GAM_V       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
                                    GEN_TRAN GAM_SPC     GEN_TRAN GEN_TRAN
+      >;
+    };
+
+    system_layer {
+      bindings = <
+        GEN_TRAN SYS_BTPR SYS_BTCL SYS_BTNX GEN_TRAN       GEN_TRAN SYS_BTPR SYS_BTCL SYS_BTNX GEN_TRAN
+        SYS_BOOT SYS_BT3  SYS_BT4  GEN_TRAN GEN_TRAN       GEN_TRAN SYS_BT3  SYS_BT4  GEN_TRAN SYS_BOOT
+        GEN_TRAN SYS_BT0  SYS_BT1  SYS_BT2  GEN_TRAN       GEN_TRAN SYS_BT0  SYS_BT1  SYS_BT2  GEN_TRAN
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
       >;
     };
 
