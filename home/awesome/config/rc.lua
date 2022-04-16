@@ -308,13 +308,13 @@ globalkeys = gears.table.join(
   awful.key({ modkey, "Control"   }, "q", awesome.quit,
     {description = "quit awesome", group = "awesome"}),
 
-  awful.key({ modkey,           }, "t",     function () awful.tag.incmwfact( 0.05)          end,
+  awful.key({ modkey,           }, "+",     function () awful.tag.incmwfact( 0.05)          end,
     {description = "increase master width factor", group = "layout"}),
-  awful.key({ modkey,           }, "r",     function () awful.tag.incmwfact(-0.05)          end,
+  awful.key({ modkey,           }, "_",     function () awful.tag.incmwfact(-0.05)          end,
     {description = "decrease master width factor", group = "layout"}),
-  awful.key({ modkey,           }, "f",     function () awful.tag.incnmaster( 1, nil, true) end,
+  awful.key({ modkey, "Control" }, "=",     function () awful.tag.incnmaster( 1, nil, true) end,
     {description = "increase the number of master clients", group = "layout"}),
-  awful.key({ modkey,           }, "s",     function () awful.tag.incnmaster(-1, nil, true) end,
+  awful.key({ modkey, "Control" }, "-",     function () awful.tag.incnmaster(-1, nil, true) end,
     {description = "decrease the number of master clients", group = "layout"}),
   awful.key({ modkey,           }, "=",     function () awful.tag.incncol( 1, nil, true)    end,
     {description = "increase the number of columns", group = "layout"}),
@@ -378,13 +378,25 @@ clientkeys = gears.table.join(
     {description = "close", group = "client"}),
   awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ,
     {description = "toggle floating", group = "client"}),
+  awful.key({ modkey,           }, "s",  function (c) c.sticky = not c.sticky             end ,
+    {description = "toggle sticky", group = "client"}),
   awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
     {description = "move to master", group = "client"}),
   awful.key({ modkey,           }, "o",      function (c) c:move_to_screen()               end,
     {description = "move to screen", group = "client"}),
   awful.key({ modkey,           }, "g",      function (c) c.ontop = not c.ontop            end,
     {description = "toggle keep on top", group = "client"}),
-  awful.key({ modkey,           }, "m",
+  awful.key({ modkey,           }, "a",      function (c) c.above = not c.above            end,
+    {description = "toggle keep above", group = "client"}),
+  awful.key({ modkey,           }, "x",
+    function (c)
+      local state = not c.floating
+      c.floating = state
+      c.sticky = state
+      c.above = state
+    end ,
+    {description = "toggle sticky floating above", group = "client"}),
+  awful.key({ modkey,           }, "t",
     function (c)
       c.maximized = not c.maximized
       c:raise()

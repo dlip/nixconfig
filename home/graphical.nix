@@ -30,7 +30,6 @@
     gnome.seahorse
     # godot
     gramps
-    juliusSpeech
     kdenlive
     # krita
     # kicad broken due to https://github.com/NixOS/nixpkgs/issues/165444
