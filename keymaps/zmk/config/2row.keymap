@@ -196,37 +196,6 @@
 #define SYS_BT3 &bt BT_SEL 3
 #define SYS_BT4 &bt BT_SEL 4
 
-#define P_Q 0
-#define P_W 1
-#define P_F 2
-#define P_P 3
-#define P_B 4
-#define P_J 5
-#define P_L 6
-#define P_U 7
-#define P_Y 8
-#define P_SEMI 9
-#define P_A 10
-#define P_R 11
-#define P_S 12
-#define P_T 13
-#define P_G 14
-#define P_M 15
-#define P_N 16
-#define P_E 17
-#define P_I 18
-#define P_O 19
-#define P_Z 20
-#define P_X 21
-#define P_C 22
-#define P_D 23
-#define P_V 24
-#define P_K 25
-#define P_H 26
-#define P_COMA 27
-#define P_DOT 28
-#define P_QUOT 29
-#define P_COMBO 31 32
 
 &mt {
   flavor = "tap-preferred";
@@ -245,13 +214,6 @@
     quick-release;
 };
 / {
-  macros {
-    ZMK_MACRO(the,
-        wait-ms = <0>;
-        tap-ms = <0>;
-        bindings = <&kp T &kp H &kp E &kp SPACE>;
-    )
-  };
   combos {
     compatible = "zmk,combos";
     combo_systeml {
@@ -264,10 +226,55 @@
       key-positions = <9 29>;
       bindings = <&tog L_SYS>;
     };
-    combo_zmk {
+    combo_q {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_T>;
-      bindings = <&the>;
+      key-positions = <10 20>;
+      bindings = <&kp Q>;
+    };
+    combo_w {
+      timeout-ms = <50>;
+      key-positions = <11 21>;
+      bindings = <&kp W>;
+    };
+    combo_f {
+      timeout-ms = <50>;
+      key-positions = <12 22>;
+      bindings = <&kp F>;
+    };
+    combo_p {
+      timeout-ms = <50>;
+      key-positions = <13 23>;
+      bindings = <&kp P>;
+    };
+    combo_b {
+      timeout-ms = <50>;
+      key-positions = <14 24>;
+      bindings = <&kp B>;
+    };
+    combo_j {
+      timeout-ms = <50>;
+      key-positions = <15 25>;
+      bindings = <&kp J>;
+    };
+    combo_l {
+      timeout-ms = <50>;
+      key-positions = <16 26>;
+      bindings = <&kp L>;
+    };
+    combo_u {
+      timeout-ms = <50>;
+      key-positions = <17 27>;
+      bindings = <&kp U>;
+    };
+    combo_y {
+      timeout-ms = <50>;
+      key-positions = <18 28>;
+      bindings = <&kp Y>;
+    };
+    combo_semi {
+      timeout-ms = <50>;
+      key-positions = <19 29>;
+      bindings = <&kp Q>;
     };
   };
 

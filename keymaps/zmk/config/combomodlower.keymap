@@ -25,9 +25,9 @@
 #define DEF_B &kp B
                         
 #define DEF_A &kp A 
-#define DEF_R &mt LALT R 
-#define DEF_S &mt LGUI S
-#define DEF_T &mt LCTRL T 
+#define DEF_R &kp R 
+#define DEF_S &kp S
+#define DEF_T &kp T 
 #define DEF_G &kp G
         
 #define DEF_Z &kp Z
@@ -50,9 +50,9 @@
 #define DEF_QUOT &kp SQT
 
 #define DEF_M &kp M
-#define DEF_N &mt LCTRL N
-#define DEF_E &mt RGUI E
-#define DEF_I &mt LALT I 
+#define DEF_N &kp N
+#define DEF_E &kp E
+#define DEF_I &kp I 
 #define DEF_O &kp O
 
 #define DEF_SPC  &kp SPC
@@ -196,37 +196,6 @@
 #define SYS_BT3 &bt BT_SEL 3
 #define SYS_BT4 &bt BT_SEL 4
 
-#define P_Q 0
-#define P_W 1
-#define P_F 2
-#define P_P 3
-#define P_B 4
-#define P_J 5
-#define P_L 6
-#define P_U 7
-#define P_Y 8
-#define P_SEMI 9
-#define P_A 10
-#define P_R 11
-#define P_S 12
-#define P_T 13
-#define P_G 14
-#define P_M 15
-#define P_N 16
-#define P_E 17
-#define P_I 18
-#define P_O 19
-#define P_Z 20
-#define P_X 21
-#define P_C 22
-#define P_D 23
-#define P_V 24
-#define P_K 25
-#define P_H 26
-#define P_COMA 27
-#define P_DOT 28
-#define P_QUOT 29
-#define P_COMBO 31 32
 
 &mt {
   flavor = "tap-preferred";
@@ -245,13 +214,6 @@
     quick-release;
 };
 / {
-  macros {
-    ZMK_MACRO(the,
-        wait-ms = <0>;
-        tap-ms = <0>;
-        bindings = <&kp T &kp H &kp E &kp SPACE>;
-    )
-  };
   combos {
     compatible = "zmk,combos";
     combo_systeml {
@@ -264,10 +226,87 @@
       key-positions = <9 29>;
       bindings = <&tog L_SYS>;
     };
-    combo_zmk {
+    combo_lesc {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_T>;
-      bindings = <&the>;
+      key-positions = <1 11>;
+      bindings = <&kp ESC>;
+    };
+    combo_lbspc {
+      timeout-ms = <50>;
+      key-positions = <2 12>;
+      bindings = <&kp BSPC>;
+    };
+    combo_lret {
+      timeout-ms = <50>;
+      key-positions = <3 13>;
+      bindings = <&kp RET>;
+    };
+    combo_ldel {
+      timeout-ms = <50>;
+      key-positions = <4 14>;
+      bindings = <&kp DEL>;
+    };
+    combo_lalt {
+      timeout-ms = <50>;
+      key-positions = <11 21>;
+      bindings = <&kp LALT>;
+    };
+    combo_lgui {
+      timeout-ms = <50>;
+      key-positions = <12 22>;
+      bindings = <&kp LGUI>;
+    };
+    combo_lctrl {
+      timeout-ms = <50>;
+      key-positions = <13 23>;
+      bindings = <&kp LCTRL>;
+    };
+    combo_ltab {
+      timeout-ms = <50>;
+      key-positions = <14 24>;
+      bindings = <&kp TAB>;
+    };
+
+
+    combo_rdel {
+      timeout-ms = <50>;
+      key-positions = <5 15>;
+      bindings = <&kp DEL>;
+    };
+    combo_rret {
+      timeout-ms = <50>;
+      key-positions = <6 16>;
+      bindings = <&kp RET>;
+    };
+    combo_rbspc {
+      timeout-ms = <50>;
+      key-positions = <7 17>;
+      bindings = <&kp BSPC>;
+    };
+    combo_resc {
+      timeout-ms = <50>;
+      key-positions = <8 18>;
+      bindings = <&kp ESC>;
+    };
+    combo_rtab {
+      timeout-ms = <50>;
+      key-positions = <15 25>;
+      bindings = <&kp TAB>;
+    };
+    combo_rctrl {
+      timeout-ms = <50>;
+      key-positions = <16 26>;
+      bindings = <&kp RCTRL>;
+    };
+    combo_rgui {
+      timeout-ms = <50>;
+      key-positions = <17 27>;
+      bindings = <&kp RGUI>;
+    };
+    combo_ralt {
+      timeout-ms = <50>;
+      key-positions = <18 28>;
+      bindings = <&kp RALT>;
     };
   };
 
