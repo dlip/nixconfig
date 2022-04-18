@@ -266,11 +266,6 @@
         tap-ms = <0>;
         bindings = <&kp A &kp N &kp D &kp SPACE>;
     )
-    ZMK_MACRO(m_a,
-        wait-ms = <0>;
-        tap-ms = <0>;
-        bindings = <&kp A &kp SPACE>;
-    )
     ZMK_MACRO(m_in,
         wait-ms = <0>;
         tap-ms = <0>;
@@ -330,11 +325,6 @@
         wait-ms = <0>;
         tap-ms = <0>;
         bindings = <&kp A &kp S &kp SPACE>;
-    )
-    ZMK_MACRO(m_I,
-        wait-ms = <0>;
-        tap-ms = <0>;
-        bindings = <&kp I &kp SPACE>;
     )
     ZMK_MACRO(m_his,
         wait-ms = <0>;
@@ -2746,19 +2736,9 @@
         tap-ms = <0>;
         bindings = <&kp A &kp M &kp O &kp N &kp G &kp SPACE>;
     )
-  };
+  }; // macros end
+
   combos {
-    compatible = "zmk,combos";
-    combo_systeml {
-      timeout-ms = <50>;
-      key-positions = <0 20>;
-      bindings = <&tog L_SYS>;
-    };
-    combo_systemr {
-      timeout-ms = <50>;
-      key-positions = <9 29>;
-      bindings = <&tog L_SYS>;
-    };
     combo_m_the {
       timeout-ms = <50>;
       key-positions = <P_COMBO P_T P_H P_E>;
@@ -2778,11 +2758,6 @@
       timeout-ms = <50>;
       key-positions = <P_COMBO P_A P_N P_D>;
       bindings = <&m_and>;
-    };
-    combo_m_a {
-      timeout-ms = <50>;
-      key-positions = <P_COMBO P_A>;
-      bindings = <&m_a>;
     };
     combo_m_in {
       timeout-ms = <50>;
@@ -2843,11 +2818,6 @@
       timeout-ms = <50>;
       key-positions = <P_COMBO P_A P_S>;
       bindings = <&m_as>;
-    };
-    combo_m_I {
-      timeout-ms = <50>;
-      key-positions = <P_COMBO P_I>;
-      bindings = <&m_I>;
     };
     combo_m_his {
       timeout-ms = <50>;
@@ -3966,7 +3936,7 @@
     };
     combo_m_dont {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_D P_O P_N P_SQT P_T>;
+      key-positions = <P_COMBO P_D P_O P_N P_T>;
       bindings = <&m_dont>;
     };
     combo_m_while {
@@ -5259,7 +5229,7 @@
       key-positions = <P_COMBO P_A P_M P_O P_N P_G>;
       bindings = <&m_among>;
     };
-  };
+  }; // combos end
 
   keymap {
     compatible = "zmk,keymap";

@@ -13,8 +13,11 @@ const readline = require('readline');
     let combos = '';
 
     rl.on('line', (line) => {
-      const macro='m_' + line;
-      const bindings = '&kp ' + line.toUpperCase().split('').join(' &kp ') + ' &kp SPACE';
+      let [word, keys] = line.split(' ');
+      const macro=('m_' + word).replace("'", '');
+      const inputs = keys.toUpperCase().split('')
+      const outputs = word.toUpperCase().split('').map(x => x.replace("'", 'SQT'));
+      const bindings = '&kp ' + outputs.join(' &kp ') + ' &kp SPACE';
       macros += `
     ZMK_MACRO(${macro},
         wait-ms = <0>;
@@ -22,8 +25,7 @@ const readline = require('readline');
         bindings = <${bindings}>;
     )`
 
-
-      const positions = 'P_' + line.toUpperCase().split('').join(' P_');
+      const positions = 'P_' + inputs.join(' P_');
     combos += `
     combo_${macro} {
       timeout-ms = <50>;
