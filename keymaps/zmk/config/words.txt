@@ -82,7 +82,7 @@ sound sound
 no no
 most most
 number number
-who who
+who wh'
 over over
 know know
 water water
@@ -248,7 +248,7 @@ few few
 stop stop
 open open
 seem seem
-together together
+together tg
 next next
 white white
 children children
@@ -338,7 +338,7 @@ fire fire
 south south
 problem problem
 piece piece
-told told
+told td
 knew knew
 pass pass
 farm farm
@@ -482,17 +482,14 @@ check check
 game game
 shape shape
 yes yes
-hot hot
 miss miss
 brought brought
 heat heat
 snow snow
 bed bed
 bring bring
-sit sit
 perhaps perhaps
 fill fill
-east east
 weight weight
 language language
 among among
