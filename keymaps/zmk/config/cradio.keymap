@@ -2898,7 +2898,7 @@
     };
     combo_m_look {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_L P_O P_O>;
+      key-positions = <P_COMBO P_L P_O P_K>;
       bindings = <&m_look>;
     };
     combo_m_more {
@@ -3348,7 +3348,7 @@
     };
     combo_m_even {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_E P_V P_E>;
+      key-positions = <P_COMBO P_E P_V P_N>;
       bindings = <&m_even>;
     };
     combo_m_land {
@@ -3433,7 +3433,7 @@
     };
     combo_m_need {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_N P_E P_E>;
+      key-positions = <P_COMBO P_N P_E P_D>;
       bindings = <&m_need>;
     };
     combo_m_house {
@@ -3568,7 +3568,7 @@
     };
     combo_m_plant {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_P P_L P_A P_N>;
+      key-positions = <P_COMBO P_P P_L P_T>;
       bindings = <&m_plant>;
     };
     combo_m_cover {
@@ -3578,7 +3578,7 @@
     };
     combo_m_food {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_F P_O P_O>;
+      key-positions = <P_COMBO P_F P_O P_D>;
       bindings = <&m_food>;
     };
     combo_m_sun {
@@ -3623,7 +3623,7 @@
     };
     combo_m_door {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_D P_O P_O>;
+      key-positions = <P_COMBO P_D P_O P_R>;
       bindings = <&m_door>;
     };
     combo_m_between {
@@ -3758,7 +3758,7 @@
     };
     combo_m_seem {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_S P_E P_E>;
+      key-positions = <P_COMBO P_S P_E P_M>;
       bindings = <&m_seem>;
     };
     combo_m_together {
@@ -3808,7 +3808,7 @@
     };
     combo_m_paper {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_P P_A P_P>;
+      key-positions = <P_COMBO P_P P_A P_E>;
       bindings = <&m_paper>;
     };
     combo_m_often {
@@ -3843,12 +3843,12 @@
     };
     combo_m_book {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_B P_O P_O>;
+      key-positions = <P_COMBO P_B P_O P_K>;
       bindings = <&m_book>;
     };
     combo_m_letter {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_L P_E P_T P_T>;
+      key-positions = <P_COMBO P_L P_E P_T P_R>;
       bindings = <&m_letter>;
     };
     combo_m_until {
@@ -3873,7 +3873,7 @@
     };
     combo_m_feet {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_F P_E P_E>;
+      key-positions = <P_COMBO P_F P_E P_T>;
       bindings = <&m_feet>;
     };
     combo_m_care {
@@ -3893,12 +3893,12 @@
     };
     combo_m_carry {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_C P_A P_R P_R>;
+      key-positions = <P_COMBO P_C P_A P_R P_Y>;
       bindings = <&m_carry>;
     };
     combo_m_took {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_T P_O P_O>;
+      key-positions = <P_COMBO P_T P_O P_K>;
       bindings = <&m_took>;
     };
     combo_m_rain {
@@ -3993,7 +3993,7 @@
     };
     combo_m_wood {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_W P_O P_O>;
+      key-positions = <P_COMBO P_W P_O P_D>;
       bindings = <&m_wood>;
     };
     combo_m_main {
@@ -4038,7 +4038,7 @@
     };
     combo_m_ever {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_E P_V P_E P_R>;
+      key-positions = <P_COMBO P_E P_V P_R>;
       bindings = <&m_ever>;
     };
     combo_m_red {
@@ -4058,7 +4058,7 @@
     };
     combo_m_feel {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_F P_E P_E P_L>;
+      key-positions = <P_COMBO P_F P_E P_L>;
       bindings = <&m_feel>;
     };
     combo_m_talk {
@@ -4073,7 +4073,7 @@
     };
     combo_m_soon {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_S P_O P_O>;
+      key-positions = <P_COMBO P_S P_O P_N>;
       bindings = <&m_soon>;
     };
     combo_m_body {
@@ -4108,7 +4108,7 @@
     };
     combo_m_song {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_S P_O P_N>;
+      key-positions = <P_COMBO P_S P_O P_N P_G>;
       bindings = <&m_song>;
     };
     combo_m_measure {
@@ -4118,7 +4118,7 @@
     };
     combo_m_state {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_S P_T P_A P_T>;
+      key-positions = <P_COMBO P_S P_T P_A P_E>;
       bindings = <&m_state>;
     };
     combo_m_product {
@@ -4268,7 +4268,7 @@
     };
     combo_m_better {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_B P_E P_T P_T>;
+      key-positions = <P_COMBO P_B P_E P_T P_R>;
       bindings = <&m_better>;
     };
     combo_m_true {
@@ -4408,7 +4408,7 @@
     };
     combo_m_against {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_A P_G P_A>;
+      key-positions = <P_COMBO P_A P_G P_I>;
       bindings = <&m_against>;
     };
     combo_m_pattern {
@@ -4628,7 +4628,7 @@
     };
     combo_m_stood {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_S P_T P_O P_O>;
+      key-positions = <P_COMBO P_S P_T P_O P_D>;
       bindings = <&m_stood>;
     };
     combo_m_contain {
@@ -4648,7 +4648,7 @@
     };
     combo_m_week {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_W P_E P_E>;
+      key-positions = <P_COMBO P_W P_E P_K>;
       bindings = <&m_week>;
     };
     combo_m_final {
@@ -4768,7 +4768,7 @@
     };
     combo_m_wheel {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_W P_H P_E P_E>;
+      key-positions = <P_COMBO P_W P_H P_E P_L>;
       bindings = <&m_wheel>;
     };
     combo_m_full {
@@ -4803,12 +4803,12 @@
     };
     combo_m_deep {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_D P_E P_E>;
+      key-positions = <P_COMBO P_D P_E P_P>;
       bindings = <&m_deep>;
     };
     combo_m_moon {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_M P_O P_O>;
+      key-positions = <P_COMBO P_M P_O P_O P_N>;
       bindings = <&m_moon>;
     };
     combo_m_island {
@@ -4818,7 +4818,7 @@
     };
     combo_m_foot {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_F P_O P_O P_T>;
+      key-positions = <P_COMBO P_F P_O P_T>;
       bindings = <&m_foot>;
     };
     combo_m_yet {
@@ -4848,7 +4848,7 @@
     };
     combo_m_common {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_C P_O P_M P_M>;
+      key-positions = <P_COMBO P_C P_O P_M P_N>;
       bindings = <&m_common>;
     };
     combo_m_gold {
@@ -4858,7 +4858,7 @@
     };
     combo_m_possible {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_P P_O P_S P_S>;
+      key-positions = <P_COMBO P_P P_O P_S P_I>;
       bindings = <&m_possible>;
     };
     combo_m_plane {
