@@ -10,12 +10,42 @@ const readline = require('readline');
     });
 
     let macros = '';
-    let combos = '';
+    let combos = `
+    compatible = "zmk,combos";
+    combo_systeml {
+      timeout-ms = <50>;
+      key-positions = <0 20>;
+      bindings = <&tog L_SYS>;
+    };
+    combo_systemr {
+      timeout-ms = <50>;
+      key-positions = <9 29>;
+      bindings = <&tog L_SYS>;
+    };
+      `;
 
+    let used = {};
     rl.on('line', (line) => {
       let [word, keys] = line.split(' ');
-      const macro=('m_' + word).replace("'", '');
+      /*
+      const cs = keys.split('')
+      if (word.length > 2) {
+        combo = "";
+        for (let x = 0; x < cs.length; x++) {
+          combo += cs[x];
+          keys = keys[0];
+          if (!used[combo]) {
+            break;
+          }
+        }
+        used[combo] = true;
+
+        console.log(word, combo);
+      }
+      return;
+      */
       const inputs = keys.toUpperCase().split('')
+      const macro=('m_' + word).replace("'", '');
       const outputs = word.toUpperCase().split('').map(x => x.replace("'", 'SQT'));
       const bindings = '&kp ' + outputs.join(' &kp ') + ' &kp SPACE';
       macros += `
