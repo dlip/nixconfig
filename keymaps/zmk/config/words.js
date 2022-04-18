@@ -26,8 +26,8 @@ const readline = require('readline');
 
     rl.on('line', (line) => {
       let [word, keys] = line.split(' ');
-      const inputs = keys.toUpperCase().split('')
       const macro=('m_' + word).replace("'", '');
+      const inputs = keys.toUpperCase().split('').map(x => x.replace("'", 'SQT'));
       const outputs = word.toUpperCase().split('').map(x => x.replace("'", 'SQT'));
       const bindings = '&kp ' + outputs.join(' &kp ') + ' &kp SPACE';
       macros += `
