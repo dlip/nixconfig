@@ -1,495 +1,473 @@
-the the
-of of
-to to
-and and
-in in
-is is
-it it
-you you
-that that
-he he
-was was
-for for
-on on
-are are
-with with
-as as
-his his
-they they
-be be
-at at
-one one
-have have
-this this
-from from
-or or
-had had
-by by
-hot hot
-but but
-some some
-what what
-there there
-we we
-can can
-out out
-other other
-were were
-all all
-your your
-when when
-up up
-use use
-word word
-how how
-said said
-an an
-each each
-she she
-which which
-do do
-their their
-time time
-if if
-will will
-way way
-about about
-many many
-then then
-them them
-would would
-write write
-like like
-so so
-these these
-her her
-long long
-make make
-thing thing
-see see
-him him
-two two
-has has
-look look
-more more
-day day
-could could
-go go
-come come
-did did
-my my
-sound sound
-no no
-most most
-number number
-who wh'
-over over
-know know
-water water
-than than
-call call
-first first
-people people
-may may
-down down
-side side
-been been
-now now
-find find
-any any
-new new
-work work
-part part
-take take
-get get
-place place
-made made
-live live
-where where
-after after
-back back
-little little
-only only
-round round
-man man
-year year
-came came
-show show
-every every
-good good
-me me
-give give
-our our
-under under
-name name
-very very
-through through
-just just
-form form
-much much
-great great
-think think
-say say
-help help
-low low
-line line
-before before
-turn turn
-cause cause
-same same
-mean mean
-differ differ
-move move
-right right
-boy boy
-old old
-too too
-does does
-tell tell
-sentence sentence
-set set
-three three
-want want
-air air
-well well
-also also
-play play
-small small
-end end
-put put
-home home
-read read
-hand hand
-port port
-large large
-spell spell
-add add
-even even
-land land
-here here
-must must
-big big
-high high
-such such
-follow follow
-act act
-why why
-ask ask
-men men
-change change
-went went
-light light
-kind kind
-off off
-need need
-house house
-picture picture
-try try
-us us
-again again
-animal animal
-point point
-mother mother
-world world
-near near
-build build
-self self
-earth earth
-father father
-head head
-stand stand
-own own
-page page
-should should
-country country
-found found
-answer answer
-school school
-grow grow
-study study
-still still
-learn learn
-plant plt
-cover cover
-food food
-sun sun
-four four
-thought thought
-let let
-keep keep
-eye eye
-never never
-last last
-door door
-between between
-city city
-tree tree
-cross cross
-since since
-hard hard
-start start
-might might
-story story
-saw saw
-far far
-sea sea
-draw draw
-left left
-late late
-run run
-don't dont
-while while
-press press
-close close
-night night
-real real
-life life
-few few
-stop stop
-open open
-seem seem
-together tg
-next next
-white white
-children children
-begin begin
-got got
-walk walk
-example example
-ease ease
-paper paper
-often often
-always always
-music music
-those those
-both both
-mark mark
-book book
-letter letter
-until until
-mile mile
-river river
-car car
-feet feet
-care care
-second second
-group group
-carry carry
-took took
-rain rain
-eat eat
-room room
-friend friend
-began began
-idea idea
-fish fish
-mountain mountain
-north north
-once once
-base base
-hear hear
-horse horse
-cut cut
-sure sure
-watch watch
-color color
-face face
-wood wood
-main main
-enough enough
-plain plain
-girl girl
-usual usual
-young young
-ready ready
-above above
-ever ever
-red red
-list list
-though though
-feel feel
-talk talk
-bird bird
-soon soon
-body body
-dog dog
-family family
-direct direct
-pose pose
-leave leave
-song song
-measure measure
-state state
-product product
-black black
-short short
-numeral numeral
-class class
-wind wind
-question question
-happen happen
-complete complete
-ship ship
-area area
-half half
-rock rock
-order order
-fire fire
-south south
-problem problem
-piece piece
-told td
-knew knew
-pass pass
-farm farm
-top top
-whole whole
-king king
-size size
-heard heard
-best best
-hour hour
-better better
-true true
-during during
-hundred hundred
-am am
-remember remember
-step step
-early early
-hold hold
-west west
-ground ground
-interest interest
-reach reach
-fast fast
-five five
-sing sing
-listen listen
-six six
-table table
-travel travel
-less less
-morning morning
-ten ten
-simple simple
-several several
-vowel vowel
-toward toward
-war war
-lay lay
-against against
-pattern pattern
-slow slow
-center center
-love love
-person person
-money money
-serve serve
-appear appear
-road road
-map map
-science science
-rule rule
-govern govern
-pull pull
-cold cold
-notice notice
-voice voice
-fall fall
-power power
-town town
-fine fine
-certain certain
-fly fly
-unit unit
-lead lead
-cry cri
-dark dark
-machine machine
-note note
-wait wait
-plan plan
-figure figure
-star star
-box box
-noun noun
-field field
-rest rest
-correct correct
-able able
-pound pound
-done done
-beauty beauty
-drive drive
-stood stood
-contain contain
-front front
-teach teach
-week week
-final final
-gave gave
-green green
-oh oh
-quick quick
-develop develop
-sleep sleep
-warm warm
-free free
-minute minute
-strong strong
-special special
-mind mind
-behind behind
-clear clear
-tail tail
-produce produce
-fact fact
-street street
-inch inch
-lot lot
-nothing nothing
-course course
-stay stay
-wheel wheel
-full full
-force force
-blue blue
-object object
-decide decide
-surface surface
-deep deep
-moon moon
-island island
-foot foot
-yet yet
-busy busy
-test test
-record record
-boat boat
-common common
-gold gold
-possible possible
-plane plane
-age age
-dry dryz
-wonder wonder
-laugh laugh
-thousand thousand
-ago ago
-ran ran
-check check
-game game
-shape shape
-yes yes
-miss miss
-brought brought
-heat heat
-snow snow
-bed bed
-bring bring
-perhaps perhaps
-fill fill
-weight weight
-language language
-among among
+the t
+and a
+you y
+that
+was w
+for f
+are
+with
+his h
+they
+one o
+have
+this
+from
+had
+hot
+but b
+some s
+what
+there
+can c
+out
+other
+were
+all
+your
+when
+use u
+word
+how
+said
+each e
+she
+which
+their
+time
+will
+way
+about
+many m
+then
+them
+would
+write
+like l
+these
+her
+long
+make
+thing
+see
+him
+two
+has
+look
+more
+day d
+could
+come
+did
+sound
+most
+number n
+who
+over
+know k
+water
+than
+call
+first
+people p
+may
+down
+side
+been
+now
+find
+any
+new
+work
+part
+take
+get g
+place
+made
+live
+where
+after
+back
+little
+only
+round r
+man
+year
+came
+show
+every
+good
+give
+our
+under
+name
+very v
+through
+just j
+form
+much
+great
+think
+say
+help
+low
+line
+before
+turn
+cause
+same
+mean
+differ
+move
+right
+boy
+old
+too
+does
+tell
+sentence
+set
+three
+want
+air
+well
+also
+play
+small
+end
+put
+home
+read
+hand
+port
+large
+spell
+add
+even
+land
+here
+must
+big
+high
+such
+follow
+act
+why
+ask
+men
+change
+went
+light
+kind
+off
+need
+house
+picture
+try
+again
+animal
+point
+mother
+world
+near
+build
+self
+earth
+father
+head
+stand
+own
+page
+should
+country
+found
+answer
+school
+grow
+study
+still
+learn
+plant
+cover
+food
+sun
+four
+thought
+let
+keep
+eye
+never
+last
+door
+between
+city
+tree
+cross
+since
+hard
+start
+might
+story
+saw
+far
+sea
+draw
+left
+late
+run
+don't
+while
+press
+close
+night
+real
+life
+few
+stop
+open
+seem
+together
+next
+white
+children
+begin
+got
+walk
+example
+ease
+paper
+often
+always
+music
+those
+both
+mark
+book
+letter
+until
+mile
+river
+car
+feet
+care
+second
+group
+carry
+took
+rain
+eat
+room
+friend
+began
+idea i
+fish
+mountain
+north
+once
+base
+hear
+horse
+cut
+sure
+watch
+color
+face
+wood
+main
+enough
+plain
+girl
+usual
+young
+ready
+above
+ever
+red
+list
+though
+feel
+talk
+bird
+soon
+body
+dog
+family
+direct
+pose
+leave
+song
+measure
+state
+product
+black
+short
+numeral
+class
+wind
+question q
+happen
+complete
+ship
+area
+half
+rock
+order
+fire
+south
+problem
+piece
+told
+knew
+pass
+farm
+top
+whole
+king
+size
+heard
+best
+hour
+better
+TRUE T
+during
+hundred
+remember
+step
+early
+hold
+west
+ground
+interest
+reach
+fast
+five
+sing
+listen
+six
+table
+travel
+less
+morning
+ten
+simple
+several
+vowel
+toward
+war
+lay
+against
+pattern
+slow
+center
+love
+person
+money
+serve
+appear
+road
+map
+science
+rule
+govern
+pull
+cold
+notice
+voice
+fall
+power
+town
+fine
+certain
+fly
+unit
+lead
+cry
+dark
+machine
+note
+wait
+plan
+figure
+star
+box
+noun
+field
+rest
+correct
+able
+pound
+done
+beauty
+drive
+stood
+contain
+front
+teach
+week
+final
+gave
+green
+quick
+develop
+sleep
+warm
+free
+minute
+strong
+special
+mind
+behind
+clear
+tail
+produce
+fact
+street
+inch
+lot
+nothing
+course
+stay
+wheel
+full
+force
+blue
+object
+decide
+surface
+deep
+moon
+island
+foot
+yet
+busy
+test
+record
+boat
+common
+gold
+possible
+plane
+age
+dry
+wonder
+laugh
+thousand
+ago
+ran
+check
+game
+shape
+yes
+hot
+miss
+brought
+heat
+snow
+bed
+bring
+sit
+perhaps
+fill
+east
+weight
+language
+among
