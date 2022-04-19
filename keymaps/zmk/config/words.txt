@@ -404,7 +404,7 @@ certain certain
 fly fly
 unit unit
 lead lead
-cry cry
+cry cri
 dark dark
 machine machine
 note note
@@ -472,7 +472,7 @@ gold gold
 possible possible
 plane plane
 age age
-dry dry
+dry dryz
 wonder wonder
 laugh laugh
 thousand thousand
