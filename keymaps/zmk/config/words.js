@@ -41,9 +41,15 @@ function mapBindings(x) {
 
     let macros = '';
     let combos = '';
+    let used = {};
 
     rl.on('line', (line) => {
       let [word, keys] = line.split(' ');
+      let index = keys.split('').sort().join('');
+      if (used[index]) {
+        throw new Error(`Can't use combo '${keys}' for word '${word}' already used by ${used[index]}`)
+      }
+      used[index] = word;
       const macro='m_' + word.split('').map(translateKeys).join('');
       const inputs = keys.toUpperCase().split('').map(translateKeys);
       const bindings = word.split('').map(mapBindings).join(' ') + ' &kp SPACE';

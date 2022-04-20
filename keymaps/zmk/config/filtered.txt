@@ -1,6 +1,7 @@
 `. .
 `ing 'g
 ``ing 'v
+`n't 'n
 `s 's
 `'s 'c
 danelipscombe@gmail.com ze
@@ -116,7 +117,7 @@ just j
 form fm
 much mu
 great gr
-think thnk
+think tk
 say sy
 help hl
 low low
@@ -261,7 +262,7 @@ care care
 second sec
 group grp
 carry cary
-took tk
+took tok
 rain rai
 eat eat
 room rom

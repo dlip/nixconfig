@@ -262,6 +262,11 @@
         tap-ms = <10>;
         bindings = <&kp BSPC &kp BSPC &kp I &kp N &kp G &kp SPACE>;
     )
+    ZMK_MACRO(m_BSPCnSQTt,
+        wait-ms = <0>;
+        tap-ms = <10>;
+        bindings = <&kp BSPC &kp N &kp SQT &kp T &kp SPACE>;
+    )
     ZMK_MACRO(m_BSPCs,
         wait-ms = <0>;
         tap-ms = <10>;
@@ -2659,6 +2664,11 @@
       key-positions = <P_COMBO P_SQT P_V>;
       bindings = <&m_BSPCBSPCing>;
     };
+    combo_m_BSPCnSQTt {
+      timeout-ms = <50>;
+      key-positions = <P_COMBO P_SQT P_N>;
+      bindings = <&m_BSPCnSQTt>;
+    };
     combo_m_BSPCs {
       timeout-ms = <50>;
       key-positions = <P_COMBO P_SQT P_S>;
@@ -3236,7 +3246,7 @@
     };
     combo_m_think {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_T P_H P_N P_K>;
+      key-positions = <P_COMBO P_T P_K>;
       bindings = <&m_think>;
     };
     combo_m_say {
@@ -3961,7 +3971,7 @@
     };
     combo_m_took {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_T P_K>;
+      key-positions = <P_COMBO P_T P_O P_K>;
       bindings = <&m_took>;
     };
     combo_m_rain {
