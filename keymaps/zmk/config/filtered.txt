@@ -49,8 +49,8 @@ will wl
 way wa
 about ab
 many m
-then thn
-them thm
+then tn
+them tm
 would wo
 write wr
 like l
@@ -58,7 +58,7 @@ these ths
 her he
 long lo
 make ma
-thing thin
+thing tin
 see se
 him hi
 two two
@@ -177,7 +177,7 @@ try tr
 again ag
 animal ani
 point pn
-mother mt
+mother mtr
 world wrl
 near nr
 build bu
@@ -346,7 +346,7 @@ early earl
 hold hol
 west wes
 ground grn
-interest int
+interest intr
 reach rch
 fast fas
 five fv
@@ -357,7 +357,7 @@ table tab
 travel tra
 less les
 morning mrn
-ten tn
+ten ten
 simple sim
 several sv
 vowel vw
