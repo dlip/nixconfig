@@ -16,18 +16,18 @@ had
 hot
 but b
 some s
-what
+what wt
 there
 can c
 out
-other
+other otr
 were
 all
 your
-when
+when wn
 use u
-word
-how
+word wd
+how hw
 said
 each e
 she
@@ -91,7 +91,7 @@ little
 only
 round r
 man
-year
+year yr
 came
 show
 every
@@ -103,7 +103,7 @@ name
 very v
 through
 just j
-form
+form fm
 much
 great
 think
@@ -149,7 +149,7 @@ must
 big
 high
 such
-follow
+follow fw
 act
 why
 ask
@@ -209,7 +209,6 @@ might
 story
 saw
 far
-sea
 draw
 left
 late
@@ -219,7 +218,7 @@ while
 press
 close
 night
-real
+real rel
 life
 few
 stop
@@ -251,7 +250,7 @@ feet
 care
 second
 group
-carry
+carry cary
 took
 rain
 eat
@@ -278,7 +277,7 @@ plain
 girl
 usual
 young
-ready
+ready rdy
 above
 ever
 red
@@ -391,7 +390,6 @@ star
 box
 noun
 field
-rest
 correct
 able
 pound
@@ -420,9 +418,7 @@ clear
 tail
 produce
 fact
-street
 inch
-lot
 nothing
 course
 stay
@@ -434,12 +430,9 @@ object
 decide
 surface
 deep
-moon
 island
-foot
 yet
 busy
-test
 record
 boat
 common
@@ -447,7 +440,6 @@ gold
 possible
 plane
 age
-dry
 wonder
 laugh
 thousand
@@ -457,17 +449,12 @@ check
 game
 shape
 yes
-hot
-miss
 brought
 heat
 snow
 bed
 bring
-sit
 perhaps
-fill
-east
 weight
 language
 among

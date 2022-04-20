@@ -40,7 +40,12 @@ const readline = require('readline');
         // consonants strategy
         if (combo.length > 2) {
           let ccombo = "";
-          const ccs = keys.replace(/[aeiou]/g, '').split('');
+          let ccs = keys.replace(/[aeiou]/g, '').split('');
+          //ensure first char is not stripped if vowel
+          if (keys.charAt(0) !== ccs[0]) {
+            ccs = [ keys.charAt(0), ...ccs];
+          }
+
           for (let x = 0; x < ccs.length; x++) {
             // ignore letters occuring multiple letters
             if (ccombo.split('').includes(ccs[x])) {

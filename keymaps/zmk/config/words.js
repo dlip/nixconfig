@@ -4,25 +4,13 @@ const readline = require('readline');
 
 (async function processLineByLine() {
   try {
-    const rl = readline.createInterface({
+    let rl = readline.createInterface({
       input: fs.createReadStream('filtered.txt'),
       crlfDelay: Infinity
     });
 
     let macros = '';
-    let combos = `
-    compatible = "zmk,combos";
-    combo_systeml {
-      timeout-ms = <50>;
-      key-positions = <0 20>;
-      bindings = <&tog L_SYS>;
-    };
-    combo_systemr {
-      timeout-ms = <50>;
-      key-positions = <9 29>;
-      bindings = <&tog L_SYS>;
-    };
-      `;
+    let combos = '';
 
     rl.on('line', (line) => {
       let [word, keys] = line.split(' ');
@@ -47,9 +35,38 @@ const readline = require('readline');
     });
 
     await events.once(rl, 'close');
-    console.log(macros);
-    console.log(combos);
 
+    rl = readline.createInterface({
+      input: fs.createReadStream('cradio.keymap'),
+      crlfDelay: Infinity
+    });
+
+    let output = '';
+    let mode = 'normal';
+    rl.on('line', (line) => {
+      if (mode === 'normal') {
+        output += line + '\n';
+        if (line.includes('MACROS START')) {
+          mode = 'macros';
+        } else if (line.includes('COMBOS START')) {
+          mode = 'combos';
+        }
+      } else if (mode === 'macros') {
+        if (line.includes('MACROS END')) {
+          output += macros + '\n' + line + '\n';
+          mode = 'normal';
+        }
+      } else if (mode === 'combos') {
+        if (line.includes('COMBOS END')) {
+          output += combos + '\n' + line + '\n';
+          mode = 'normal';
+        }
+      }
+    });
+
+    await events.once(rl, 'close');
+    // console.log(output);
+    fs.writeFileSync("cradio.keymap", output, { encoding: "utf8", flag: "w", mode: 0o644 });
   } catch (err) {
     console.error(err);
   }
