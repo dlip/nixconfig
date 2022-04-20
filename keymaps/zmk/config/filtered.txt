@@ -46,7 +46,7 @@ which whi
 their thei
 time ti
 will wl
-way wa
+way wy
 about ab
 many m
 then tn
@@ -56,14 +56,14 @@ write wr
 like l
 these ths
 her he
-long lo
+long lg
 make ma
 thing tin
 see se
 him hi
 two two
 has has
-look lk
+look lo
 more mo
 day d
 could co
@@ -75,7 +75,7 @@ number n
 who who
 over ov
 know k
-water wat
+water wte
 than tha
 call ca
 first fi
@@ -88,7 +88,7 @@ now no
 find fn
 any an
 new ne
-work wor
+work wk
 part pa
 take ta
 get g
@@ -97,7 +97,7 @@ made md
 live li
 where whe
 after af
-back bc
+back bk
 little lt
 only onl
 round r
@@ -119,7 +119,7 @@ much mu
 great gr
 think tk
 say sy
-help hl
+help hp
 low low
 line ln
 before bf
@@ -138,7 +138,7 @@ tell te
 sentence sn
 set st
 three thre
-want wan
+want wnt
 air ai
 well wel
 also als
@@ -167,7 +167,7 @@ ask ask
 men men
 change ch
 went wen
-light lg
+light lgt
 kind ki
 off of
 need nd
@@ -251,7 +251,7 @@ music msc
 those thos
 both bot
 mark mr
-book bk
+book bok
 letter ltr
 until unt
 mile ml
@@ -314,7 +314,7 @@ numeral num
 class cla
 wind win
 question q
-happen hp
+happen hap
 complete com
 ship shi
 area are
@@ -380,11 +380,11 @@ rule rul
 govern gv
 pull pul
 cold cld
-notice not
+notice ntc
 voice voi
 fall fal
 power pw
-town twn
+town ton
 fine fin
 certain cer
 fly fly
@@ -408,12 +408,12 @@ done done
 beauty bea
 drive drv
 stood std
-contain cnt
+contain cont
 front fro
 teach tc
-week wk
+week wek
 final fnl
-gave gav
+gave gve
 green gre
 quick qu
 develop de
