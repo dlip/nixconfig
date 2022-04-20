@@ -18,20 +18,20 @@ const readline = require('readline');
       const inputs = keys.toUpperCase().split('').map(x => x.replace("'", 'SQT'));
       const outputs = word.toUpperCase().split('').map(x => x.replace("'", 'SQT'));
       const bindings = '&kp ' + outputs.join(' &kp ') + ' &kp SPACE';
-      macros += `
-    ZMK_MACRO(${macro},
+      macros += `    ZMK_MACRO(${macro},
         wait-ms = <0>;
         tap-ms = <0>;
         bindings = <${bindings}>;
-    )`
+    )
+`
 
       const positions = 'P_' + inputs.join(' P_');
-    combos += `
-    combo_${macro} {
+    combos += `    combo_${macro} {
       timeout-ms = <50>;
       key-positions = <P_COMBO ${positions}>;
       bindings = <&${macro}>;
-    };`
+    };
+`
     });
 
     await events.once(rl, 'close');
