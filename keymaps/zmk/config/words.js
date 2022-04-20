@@ -16,10 +16,22 @@ function translateKeys(x) {
     case '.':
       return 'DOT';
       break;
+    case '@':
+      return 'AT';
+      break;
     default:
       return x;
   }
 }
+
+function mapBindings(x) {
+  if (x.match(/[A-Z]/)) {
+    return `&sk LSHIFT &kp ${x.toUpperCase()}`
+  }
+
+  return `&kp ${translateKeys(x).toUpperCase()}`
+}
+
 (async function processLineByLine() {
   try {
     let rl = readline.createInterface({
@@ -34,11 +46,10 @@ function translateKeys(x) {
       let [word, keys] = line.split(' ');
       const macro='m_' + word.split('').map(translateKeys).join('');
       const inputs = keys.toUpperCase().split('').map(translateKeys);
-      const outputs = word.toUpperCase().split('').map(translateKeys);
-      const bindings = '&kp ' + outputs.join(' &kp ') + ' &kp SPACE';
+      const bindings = word.split('').map(mapBindings).join(' ') + ' &kp SPACE';
       macros += `    ZMK_MACRO(${macro},
         wait-ms = <0>;
-        tap-ms = <0>;
+        tap-ms = <10>;
         bindings = <${bindings}>;
     )
 `
