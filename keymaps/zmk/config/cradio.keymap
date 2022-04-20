@@ -247,6 +247,21 @@
 / {
   macros {
     // MACROS START
+    ZMK_MACRO(m_BSPCDOT,
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings = <&kp BSPC &kp DOT &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCing,
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings = <&kp BSPC &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCBSPCing,
+        wait-ms = <0>;
+        tap-ms = <0>;
+        bindings = <&kp BSPC &kp BSPC &kp I &kp N &kp G &kp SPACE>;
+    )
     ZMK_MACRO(m_the,
         wait-ms = <0>;
         tap-ms = <0>;
@@ -1322,7 +1337,7 @@
         tap-ms = <0>;
         bindings = <&kp R &kp U &kp N &kp SPACE>;
     )
-    ZMK_MACRO(m_dont,
+    ZMK_MACRO(m_donSQTt,
         wait-ms = <0>;
         tap-ms = <0>;
         bindings = <&kp D &kp O &kp N &kp SQT &kp T &kp SPACE>;
@@ -1887,7 +1902,7 @@
         tap-ms = <0>;
         bindings = <&kp B &kp E &kp T &kp T &kp E &kp R &kp SPACE>;
     )
-    ZMK_MACRO(m_TRUE,
+    ZMK_MACRO(m_true,
         wait-ms = <0>;
         tap-ms = <0>;
         bindings = <&kp T &kp R &kp U &kp E &kp SPACE>;
@@ -2594,6 +2609,21 @@
       bindings = <&kp CAPS>;
     };
     // COMBOS START
+    combo_m_BSPCDOT {
+      timeout-ms = <50>;
+      key-positions = <P_COMBO P_DOT>;
+      bindings = <&m_BSPCDOT>;
+    };
+    combo_m_BSPCing {
+      timeout-ms = <50>;
+      key-positions = <P_COMBO P_SQT P_G>;
+      bindings = <&m_BSPCing>;
+    };
+    combo_m_BSPCBSPCing {
+      timeout-ms = <50>;
+      key-positions = <P_COMBO P_SQT P_V>;
+      bindings = <&m_BSPCBSPCing>;
+    };
     combo_m_the {
       timeout-ms = <50>;
       key-positions = <P_COMBO P_T>;
@@ -3669,10 +3699,10 @@
       key-positions = <P_COMBO P_R P_U>;
       bindings = <&m_run>;
     };
-    combo_m_dont {
+    combo_m_donSQTt {
       timeout-ms = <50>;
       key-positions = <P_COMBO P_D P_O P_N>;
-      bindings = <&m_dont>;
+      bindings = <&m_donSQTt>;
     };
     combo_m_while {
       timeout-ms = <50>;
@@ -4234,10 +4264,10 @@
       key-positions = <P_COMBO P_B P_E P_T>;
       bindings = <&m_better>;
     };
-    combo_m_TRUE {
+    combo_m_true {
       timeout-ms = <50>;
-      key-positions = <P_COMBO P_T>;
-      bindings = <&m_TRUE>;
+      key-positions = <P_COMBO P_T P_R P_U>;
+      bindings = <&m_true>;
     };
     combo_m_during {
       timeout-ms = <50>;

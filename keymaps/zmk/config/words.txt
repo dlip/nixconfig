@@ -326,7 +326,7 @@ heard
 best
 hour
 better
-TRUE T
+true
 during
 hundred
 remember

@@ -1,3 +1,6 @@
+`. .
+`ing 'g
+``ing 'v
 the t
 and a
 you y
@@ -326,7 +329,7 @@ heard hrd
 best bes
 hour hour
 better bet
-TRUE T
+true tru
 during du
 hundred hu
 remember rem

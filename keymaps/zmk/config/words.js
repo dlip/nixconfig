@@ -2,6 +2,24 @@ const events = require('events');
 const fs = require('fs');
 const readline = require('readline');
 
+function translateKeys(x) {
+  switch(x) {
+    case "'":
+      return 'SQT';
+      break;
+    case '`':
+      return 'BSPC';
+      break;
+    case '_':
+      return 'SPC';
+      break;
+    case '.':
+      return 'DOT';
+      break;
+    default:
+      return x;
+  }
+}
 (async function processLineByLine() {
   try {
     let rl = readline.createInterface({
@@ -14,9 +32,9 @@ const readline = require('readline');
 
     rl.on('line', (line) => {
       let [word, keys] = line.split(' ');
-      const macro=('m_' + word).replace("'", '');
-      const inputs = keys.toUpperCase().split('').map(x => x.replace("'", 'SQT'));
-      const outputs = word.toUpperCase().split('').map(x => x.replace("'", 'SQT'));
+      const macro='m_' + word.split('').map(translateKeys).join('');
+      const inputs = keys.toUpperCase().split('').map(translateKeys);
+      const outputs = word.toUpperCase().split('').map(translateKeys);
       const bindings = '&kp ' + outputs.join(' &kp ') + ' &kp SPACE';
       macros += `    ZMK_MACRO(${macro},
         wait-ms = <0>;
