@@ -75,7 +75,7 @@ number n
 who who
 over ov
 know k
-water wtr
+water wte
 than tha
 call ca
 first fi
@@ -237,7 +237,7 @@ open ope
 seem sem
 together tg
 next nx
-white wte
+white wht
 children chi
 begin bg
 got got
@@ -278,7 +278,7 @@ hear hear
 horse hor
 cut cu
 sure sr
-watch wth
+watch tch
 color col
 face fae
 wood wod

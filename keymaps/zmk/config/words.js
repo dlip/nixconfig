@@ -54,15 +54,15 @@ function mapBindings(x) {
       const inputs = keys.toUpperCase().split('').map(translateKeys);
       const bindings = word.split('').map(mapBindings).join(' ') + ' &kp SPACE';
       macros += `    ZMK_MACRO(${macro},
-        wait-ms = <0>;
-        tap-ms = <10>;
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
         bindings = <${bindings}>;
     )
 `
 
       const positions = 'P_' + inputs.join(' P_');
     combos += `    combo_${macro} {
-      timeout-ms = <50>;
+      timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_COMBO ${positions}>;
       bindings = <&${macro}>;
     };
