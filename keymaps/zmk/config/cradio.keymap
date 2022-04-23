@@ -77,6 +77,7 @@
 #define NAV_TAB &kp TAB
 
 #define NAV_GRV &kp GRAVE
+#define NAV_BSPW &kp LC(BSPC)
 #define NAV_DEL &kp DEL
 #define NAV_BSPC &kp BSPC
 #define NAV_RET &kp RET
@@ -230,7 +231,7 @@
 
 #define COMBO_TIMEOUT 200
 #define MACRO_TAP 10
-#define MACRO_WAIT 10
+#define MACRO_WAIT 0
 
 &mt {
   flavor = "tap-preferred";
@@ -2617,41 +2618,6 @@
       key-positions = <0 20>;
       bindings = <&tog L_SYS>;
     };
-    combo_bspc {
-      timeout-ms = <100>;
-      key-positions = <P_P P_T>;
-      bindings = <&kp BSPC>;
-    };
-    combo_bspc_word {
-      timeout-ms = <100>;
-      key-positions = <P_T P_G>;
-      bindings = <&kp LC(BSPC)>;
-    };
-    combo_tab {
-      timeout-ms = <100>;
-      key-positions = <P_T P_D>;
-      bindings = <&kp TAB>;
-    };
-    combo_tab2 {
-      timeout-ms = <100>;
-      key-positions = <P_G P_V>;
-      bindings = <&kp TAB>;
-    };
-    combo_del {
-      timeout-ms = <100>;
-      key-positions = <P_M P_N>;
-      bindings = <&kp DEL>;
-    };
-    combo_ret {
-      timeout-ms = <100>;
-      key-positions = <P_N P_H>;
-      bindings = <&kp RET>;
-    };
-    combo_esc {
-      timeout-ms = <100>;
-      key-positions = <P_N P_L>;
-      bindings = <&kp ESC>;
-    };
     // COMBOS START
     combo_m_BSPCDOT {
       timeout-ms = <COMBO_TIMEOUT>;
@@ -5028,7 +4994,7 @@
       bindings = <
         GEN_TRAN NAV_HOME NAV_UP   NAV_END  NAV_PGUP       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
         NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
-        GEN_TRAN NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        NAV_BSPW NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
                                    DEF_MED  DEF_SHFT       DEF_SHFT GEN_TRAN
       >;
     };
