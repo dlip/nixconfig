@@ -9,6 +9,7 @@
   ];
 
   home.packages = with pkgs; [
+    anki
     antimicrox
     arandr
     alttab
@@ -16,7 +17,7 @@
     # blender
     brave
     calibre
-    # chromium
+    chromium
     cozy
     dbeaver
     discord
