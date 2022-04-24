@@ -48,11 +48,11 @@ let
     '';
 
     nixosconfig = ''
-      sudo nixos-rebuild switch --flake ${nixconfigpath} "$@"
+      nixos-rebuild --use-remote-sudo switch --flake .# --flake ${nixconfigpath} "$@"
     '';
 
     nixosconfigboot = ''
-      sudo nixos-rebuild boot --flake ${nixconfigpath} "$@"
+      nixos-rebuild --use-remote-sudo boot --flake .# boot --flake ${nixconfigpath} "$@"
     '';
 
     reset-k3s = ''
