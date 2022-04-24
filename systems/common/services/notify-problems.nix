@@ -27,7 +27,8 @@ in
 
       environment.SERVICE = "%i";
       script = ''
-        ${pkgs.ssmtp}/bin/sendmail -t <<ERRMAIL
+        # TODO fix
+        sendmail -t <<ERRMAIL
         To: ${cfg.adminEmail}
         From: ${cfg.adminEmail}
         Subject: $HOSTNAME: $SERVICE Error

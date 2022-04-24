@@ -19,19 +19,19 @@ in
     sops.secrets.ssmtpPassword = {
       sopsFile = ../secrets/secrets.yaml;
     };
-    services.ssmtp = {
-      enable = true;
-      # The user that gets all the mails (UID < 1000, usually the admin)
-      root = cfg.adminEmail;
-      useTLS = true;
-      useSTARTTLS = true;
-      hostName = "smtp.gmail.com:587";
-      # The address where the mail appears to come from for user authentication.
-      domain = "gmail.com";
-      # Username/Password File
-      authUser = cfg.adminEmail;
-      authPassFile = config.sops.secrets.ssmtpPassword.path;
-    };
+    # services.ssmtp = {
+    #   enable = true;
+    #   # The user that gets all the mails (UID < 1000, usually the admin)
+    #   root = cfg.adminEmail;
+    #   useTLS = true;
+    #   useSTARTTLS = true;
+    #   hostName = "smtp.gmail.com:587";
+    #   # The address where the mail appears to come from for user authentication.
+    #   domain = "gmail.com";
+    #   # Username/Password File
+    #   authUser = cfg.adminEmail;
+    #   authPassFile = config.sops.secrets.ssmtpPassword.path;
+    # };
   };
 
 }
