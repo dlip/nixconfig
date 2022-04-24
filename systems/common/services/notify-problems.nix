@@ -14,10 +14,13 @@
 
     environment.SERVICE = "%i";
     script = ''
-      echo "
-      $HOSTNAME: $SERVICE Error
-      $(systemctl status --full "$SERVICE")
-      " | ${pkgs.notify}/bin/notify -provider-config ${config.sops.secrets.notify.path}
-    '';
-  };
-}
+        tmpfile=$(mktemp /tmp/notify.XXXXXX)
+        echo "
+        $HOSTNAME: $SERVICE Error:
+        $(systemctl status --full "$SERVICE")
+        " > "$tmpfile"
+        ${pkgs.notify}/bin/notify -bulk -data "$tmpfile" -provider-config ${config.sops.secrets.notify.path}
+        rm "$tmpfile"
+      '';
+    };
+  }
