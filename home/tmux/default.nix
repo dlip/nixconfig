@@ -23,8 +23,6 @@
       bind-key C-t send-prefix
       bind-key C-a last-window
       set -g mouse on
-      bind s split-window -v
-      bind v split-window -h
       bind S choose-tree
       TMUX_FZF_LAUNCH_KEY="f" # Key Prefix + f
 
@@ -69,6 +67,11 @@
       bind-key -T copy-mode-vi 'C-Up' select-pane -U
       bind-key -T copy-mode-vi 'C-Right' select-pane -R
       bind-key -T copy-mode-vi 'C-\' select-pane -l
+      
+      # Ensure path is maintained
+      bind c new-window -c "#{pane_current_path}"
+      bind s split-window -c "#{pane_current_path}"
+      bind v split-window -h -c "#{pane_current_path}"
     '';
   };
 }
