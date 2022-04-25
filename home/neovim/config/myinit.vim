@@ -1,15 +1,22 @@
 
 lua <<EOF
-reloadMyConfig = function()
+vim.api.nvim_create_user_command("Reload", function(args)
   require('plenary.reload').reload_module('my', true)
   require('plenary.reload').reload_module('plugins', true)
   vim.cmd('source $MYVIMRC')
   print('Config Reloaded!')
-end
+end, {
+    nargs = "*",
+    desc = "Reload Config",
+})
 EOF
 
 " reload config
-nnoremap <c-\> <cmd>lua reloadMyConfig()<CR>
+nnoremap <C-M-R> <cmd>Reload<CR>
+
+" use new lua filetype detection
+let g:do_filetype_lua = 1
+let g:did_load_filetypes = 0
 
 let g:netrw_browsex_viewer = 'xdg-open'
 
@@ -129,15 +136,6 @@ augroup vimrc
 
   " Set filetypes
   autocmd BufEnter *.sol setlocal filetype=solidity
-
-  " Buffer local mappings
-  autocmd FileType markdown lua markdowm_mappings()
-  autocmd FileType json lua json_mappings()
-  autocmd BufEnter package.json lua package_json_mappings()
-  autocmd FileType qf lua quickfix_mappings()
-  autocmd FileType sh,c,go,javascript,lua,nix,python,rust,typescript,typescriptreact,vim,yaml lua coding_mappings()
-  autocmd FileType http lua http_mappings()
-  autocmd BufEnter octo://*/pull/* lua octo_pr_mappings()
 
   " Use tabs for golang
   autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4

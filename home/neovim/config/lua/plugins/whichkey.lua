@@ -279,7 +279,7 @@ function _G.octo_pr_mappings()
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end
 
-function _G.markdowm_mappings()
+function _G.markdown_mappings()
   local buffKeymap = {
     x = { "<Plug>(mkdx-checkbox-prev-n)", "Prev checkbox state" },
     X = { "<Plug>(mkdx-checkbox-next-n)", "Next checkbox state" },

@@ -27,3 +27,5 @@ require("plugins.trouble")
 require("plugins.treesitter")
 require("plugins.neorg")
 require("plugins.whichkey")
+
+require("my.autocommands")
