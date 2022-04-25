@@ -34,8 +34,15 @@ function mapBindings(x) {
 
 (async function processLineByLine() {
   try {
+    const keymap = process.argv[2];
+    if (!keymap) {
+      throw new Error(`Missing keymap filename, please pass as first argument`);
+    }
+    if (!fs.existsSync(keymap)) {
+      throw new Error(`Unable to find keymap file ${keymap}`);
+    }
     let rl = readline.createInterface({
-      input: fs.createReadStream('filtered.txt'),
+      input: fs.createReadStream('chords.txt'),
       crlfDelay: Infinity
     });
 
@@ -72,12 +79,14 @@ function mapBindings(x) {
     await events.once(rl, 'close');
 
     rl = readline.createInterface({
-      input: fs.createReadStream('cradio.keymap'),
+      input: fs.createReadStream(keymap),
       crlfDelay: Infinity
     });
 
     let output = '';
     let mode = 'normal';
+    let foundMacros = false;
+    let foundCombos = false;
     rl.on('line', (line) => {
       if (mode === 'normal') {
         output += line + '\n';
@@ -88,11 +97,13 @@ function mapBindings(x) {
         }
       } else if (mode === 'macros') {
         if (line.includes('MACROS END')) {
+          foundMacros = true;
           output += macros + '\n' + line + '\n';
           mode = 'normal';
         }
       } else if (mode === 'combos') {
         if (line.includes('COMBOS END')) {
+          foundCombos = true;
           output += combos + '\n' + line + '\n';
           mode = 'normal';
         }
@@ -100,7 +111,23 @@ function mapBindings(x) {
     });
 
     await events.once(rl, 'close');
-    // console.log(output);
+
+    if (!foundMacros) {
+      throw new Error(`Unable to find MACROS START/END, please add the comments to your keymap:
+        macros {
+          // MACROS START
+          // MACROS END
+        }
+      `)
+    }
+    if (!foundCombos) {
+      throw new Error(`Unable to find MACROS START/END, please add the comments to your keymap:
+        combos {
+          // COMBOS START
+          // COMBOS END
+        }
+      `)
+    }
     fs.writeFileSync("cradio.keymap", output, { encoding: "utf8", flag: "w", mode: 0o644 });
   } catch (err) {
     console.error(err);
