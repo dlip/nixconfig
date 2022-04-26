@@ -43,14 +43,14 @@ when
 up
 use
 word
-how
+how haw
 said
 an
 each
 she
 which
 do
-their
+their thir
 time
 if
 will
@@ -96,7 +96,7 @@ may
 down
 side
 been
-now
+now naw
 find
 any
 new
@@ -117,7 +117,7 @@ man
 year
 came
 show
-every
+every evy
 good
 me
 give
@@ -139,7 +139,7 @@ before
 turn
 cause
 same
-mean
+mean mea
 differ
 move
 right
@@ -160,7 +160,7 @@ small
 end
 put
 home
-read
+read read
 hand
 port
 large
@@ -168,7 +168,7 @@ spell
 add
 even
 land
-here
+here hia
 must
 big
 high
@@ -183,7 +183,7 @@ went
 light
 kind
 off
-need
+need nead
 house
 picture
 try
@@ -217,7 +217,7 @@ food
 sun
 four
 thought
-let
+let lat
 keep
 eye
 never
@@ -225,27 +225,27 @@ last
 door
 between
 city
-tree
+tree tri
 cross
 since
 hard
 start
 might
 story
-saw
+saw sor
 far
 sea
 draw
 left
 late
 run
-don't
+don't don
 while
 press
 close
 night
 real
-life
+life life
 few
 stop
 open
@@ -258,9 +258,9 @@ begin
 got
 walk
 example
-ease
+ease eaz
 paper
-often
+often oftn
 always
 music
 those
@@ -276,11 +276,11 @@ feet
 care
 second
 group
-carry
+carry cary
 took
-rain
+rain rain
 eat
-room
+room rewm
 friend
 began
 idea
@@ -299,11 +299,11 @@ face
 wood
 main
 enough
-plain
+plain plai
 girl
 usual
 young
-ready
+ready rady
 above
 ever
 red
@@ -314,7 +314,7 @@ talk
 bird
 soon
 body
-dog
+dog daw
 family
 direct
 pose
@@ -332,7 +332,7 @@ question
 happen
 complete
 ship
-area
+area aire
 half
 rock
 order
@@ -447,7 +447,7 @@ clear
 tail
 produce
 fact
-street
+street stri
 inch
 lot
 nothing
@@ -466,7 +466,7 @@ island
 foot
 yet
 busy
-test
+test tast
 record
 boat
 common
@@ -484,7 +484,6 @@ check
 game
 shape
 yes
-hot
 miss
 brought
 heat

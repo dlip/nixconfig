@@ -35,6 +35,10 @@ function removeDuplicateCharacters(string) {
         if (keys.length < 3) {
           return;
         }
+      } else {
+        addWord(word, keys);
+        console.log(word, keys);
+        return;
       }
 
       let options = [keys];
@@ -74,10 +78,15 @@ function removeDuplicateCharacters(string) {
       }
 
       if (!option) {
-        throw new Error(`No available option for word ${word}. Options: ${options}`);
+        for (let x = 0; x < options.length; x++) {
+          index = options[x].split('').sort().join('');
+          let existing = used[index];
+          console.error(`Option ${options[x]} taken by ${used[index]}`);
+        }
+        throw new Error(`No available option for word ${word}`);
       }
 
-      console.log(word, keys);
+      console.log(word, option);
     });
 
     await events.once(rl, 'close');
