@@ -1,5 +1,14 @@
 require("lualine").setup({
   extensions = { "nvim-tree", "quickfix" },
+  options = {
+    icons_enabled = true,
+    theme = 'auto',
+    component_separators = { left = '', right = ''},
+    section_separators = { left = '', right = ''},
+    disabled_filetypes = {},
+    always_divide_middle = true,
+    globalstatus = true,
+  },
   sections = {
     lualine_a = { "mode" },
     lualine_b = { "branch" },
