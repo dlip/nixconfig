@@ -231,7 +231,7 @@
 #define P_COMBO 31 32
 
 #define COMBO_TIMEOUT 200
-#define MACRO_TAP 10
+#define MACRO_TAP 1
 #define MACRO_WAIT 0
 
 &mt {
@@ -253,6 +253,61 @@
 / {
   macros {
     // MACROS START
+    ZMK_MACRO(m_BSPCDOT,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp DOT &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCing,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCBSPCing,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp BSPC &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCnSQTt,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp N &kp SQT &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCs,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCSQTs,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp SQT &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_danelipscombeATgmailDOTcom,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp A &kp N &kp E &kp L &kp I &kp P &kp S &kp C &kp O &kp M &kp B &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_DaneSPCLipscombe,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT &kp D &kp A &kp N &kp E &kp SPC &sk LSHIFT &kp L &kp I &kp P &kp S &kp C &kp O &kp M &kp B &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_Dane,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT &kp D &kp A &kp N &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_Paul,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT &kp P &kp A &kp U &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_Lipscombe,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT &kp L &kp I &kp P &kp S &kp C &kp O &kp M &kp B &kp E &kp SPACE>;
+    )
     ZMK_MACRO(m_the,
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
@@ -2525,6 +2580,61 @@
       bindings = <&tog L_SYS>;
     };
     // COMBOS START
+    combo_m_BSPCDOT {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_DOT>;
+      bindings = <&m_BSPCDOT>;
+    };
+    combo_m_BSPCing {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_G>;
+      bindings = <&m_BSPCing>;
+    };
+    combo_m_BSPCBSPCing {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_V>;
+      bindings = <&m_BSPCBSPCing>;
+    };
+    combo_m_BSPCnSQTt {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_N>;
+      bindings = <&m_BSPCnSQTt>;
+    };
+    combo_m_BSPCs {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_S>;
+      bindings = <&m_BSPCs>;
+    };
+    combo_m_BSPCSQTs {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_C>;
+      bindings = <&m_BSPCSQTs>;
+    };
+    combo_m_danelipscombeATgmailDOTcom {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Z P_E>;
+      bindings = <&m_danelipscombeATgmailDOTcom>;
+    };
+    combo_m_DaneSPCLipscombe {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Z P_D>;
+      bindings = <&m_DaneSPCLipscombe>;
+    };
+    combo_m_Dane {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Z P_N>;
+      bindings = <&m_Dane>;
+    };
+    combo_m_Paul {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Z P_M>;
+      bindings = <&m_Paul>;
+    };
+    combo_m_Lipscombe {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Z P_L>;
+      bindings = <&m_Lipscombe>;
+    };
     combo_m_the {
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_COMBO P_T>;
