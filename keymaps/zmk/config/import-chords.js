@@ -42,7 +42,7 @@ function mapBindings(x) {
       throw new Error(`Unable to find keymap file ${keymap}`);
     }
     let rl = readline.createInterface({
-      input: fs.createReadStream('chords.txt'),
+      input: fs.createReadStream('chords3.txt'),
       crlfDelay: Infinity
     });
 

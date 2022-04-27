@@ -57,22 +57,22 @@ will
 way
 about
 many
-then
-them
+then tn
+them tm
 would
 write
 like
 so
 these
 her
-long
+long lg
 make
-thing
+thing tin
 see
 him
 two
 has
-look
+look lo
 more
 day
 could
@@ -87,7 +87,7 @@ number
 who
 over
 know
-water
+water wte
 than
 call
 first
@@ -109,7 +109,7 @@ made
 live
 where
 after
-back
+back bk
 little
 only
 round
@@ -130,15 +130,15 @@ just
 form
 much
 great
-think
+think tik
 say
-help
+help hp
 low
 line
 before
 turn
 cause
-same
+same same
 mean
 differ
 move
@@ -156,10 +156,10 @@ air
 well
 also
 play
-small
+small sma
 end
 put
-home
+home hoe
 read
 hand
 port
@@ -175,7 +175,7 @@ high
 such
 follow fw
 act
-why
+why wy
 ask
 men
 change
@@ -184,7 +184,7 @@ light
 kind
 off
 need
-house
+house hse
 picture
 try
 us
@@ -201,8 +201,8 @@ father
 head
 stand
 own
-page
-should
+page pae
+should shd
 country
 found
 answer
@@ -223,7 +223,7 @@ eye
 never
 last
 door
-between
+between bn
 city
 tree
 cross crs
@@ -240,7 +240,7 @@ left
 late
 run
 don't
-while
+while wil
 press
 close
 night
@@ -261,21 +261,21 @@ example
 ease
 paper
 often
-always
+always aly
 music
 those
-both
+both boh
 mark
 book
 letter
 until
-mile
+mile mie
 river
 car car
 feet
 care
 second
-group
+group grou
 carry cary
 took
 rain
@@ -290,12 +290,12 @@ north
 once
 base
 hear
-horse
+horse hrse
 cut
 sure
 watch
 color
-face
+face fae
 wood
 main
 enough
@@ -310,11 +310,11 @@ red
 list
 though
 feel
-talk
+talk tak
 bird
 soon
-body
-dog
+body boy
+dog daw
 family
 direct
 pose
@@ -333,25 +333,25 @@ happen
 complete
 ship
 area
-half
+half hf
 rock
 order
 fire
 south
-problem
-piece
+problem prm
+piece pie
 told
-knew
+knew kew
 pass
 farm
 top
-whole
-king
+whole woe
+king kig
 size
 heard
 best
-hour
-better
+hour hor
+better ber
 true
 during
 hundred
@@ -359,7 +359,7 @@ am
 remember
 step
 early
-hold
+hold hod
 west
 ground
 interest
@@ -369,7 +369,7 @@ five
 sing
 listen
 six
-table
+table tale
 travel
 less
 morning
@@ -408,7 +408,7 @@ unit
 lead
 cry
 dark
-machine
+machine mci
 note
 wait
 plan
@@ -422,8 +422,8 @@ correct
 able
 pound
 done
-beauty
-drive
+beauty bea
+drive drie
 stood
 contain
 front
@@ -445,25 +445,21 @@ mind
 behind
 clear
 tail
-produce
-fact
+produce pru
+fact fat
 inch
 nothing
 course
 stay
-wheel
 full
-force
 blue
 object
 decide
 surface
-deep
-island
+island isa
 yet
 busy
 record
-boat
 common
 gold
 possible
@@ -481,7 +477,6 @@ yes
 brought
 heat
 snow
-bed
 bring
 perhaps
 weight
