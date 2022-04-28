@@ -55,6 +55,7 @@
       nodePackages.reveal-md
       nodePackages.typescript
       nodejs
+      notify
       openssl
       # openvpn
       openvpn_aws
@@ -73,6 +74,7 @@
       skopeo
       sops
       ssh-to-age
+      teams
       tesseract4
       tldr
       wireshark-cli

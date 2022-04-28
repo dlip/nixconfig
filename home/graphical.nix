@@ -55,6 +55,7 @@
     vlc
     xclip
     # xfce.thunar
+    xorg.xmodmap
     xournalpp
     yacreader
     # yubikey-manager-qt #broken
