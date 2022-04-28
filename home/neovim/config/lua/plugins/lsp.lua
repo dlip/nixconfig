@@ -98,6 +98,8 @@ function _G.format_buffer()
   local ft = vim.o.filetype
   if ft == "nix" then
     lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
+  elseif ft == "lua" then
+    lsp.buf.formatting_seq_sync(nil, 1000, { "sumneko" })
   elseif ft == "go" then
     lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
   elseif ft == "rust" then
