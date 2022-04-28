@@ -16,6 +16,9 @@ function translateKeys(x) {
     case '.':
       return 'DOT';
       break;
+    case ',':
+      return 'COMMA';
+      break;
     case '@':
       return 'AT';
       break;
