@@ -5,6 +5,7 @@
       lightdm.enable = true;
       defaultSession = "xfce+awesome";
       autoLogin.enable = true;
+      job.preStart = "sleep 2"; # Hack to ensure X is ready for autoLogin
       autoLogin.user = "dane";
     };
     desktopManager = {
