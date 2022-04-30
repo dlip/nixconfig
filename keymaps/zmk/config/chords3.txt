@@ -31,7 +31,8 @@ what wt
 there thr
 can c
 out ou
-other ot
+other otr
+all al
 were we
 your yo
 when wn
@@ -58,6 +59,7 @@ her he
 long lg
 make ma
 thing tin
+see se
 him hi
 two two
 has has
@@ -66,6 +68,7 @@ more mo
 day d
 could co
 come cm
+did di
 sound so
 most ms
 number n
@@ -99,7 +102,7 @@ little lt
 only onl
 round r
 man mn
-year ye
+year yr
 came cam
 show sho
 every ev
@@ -111,7 +114,7 @@ name nam
 very v
 through thro
 just j
-form fo
+form frm
 much mu
 great gr
 think tik
@@ -124,20 +127,21 @@ turn tu
 cause cs
 same same
 mean me
-differ di
+differ die
 move mv
 right ri
 boy bo
 old old
+too to
 does ds
 tell te
-sentence se
+sentence sen
 set st
 three thre
 want wan
 air ai
 well wel
-also al
+also ao
 play pla
 small sma
 end end
@@ -148,6 +152,7 @@ hand hn
 port po
 large lr
 spell sp
+add ad
 even evn
 land lan
 here hr
@@ -164,6 +169,7 @@ change ch
 went wen
 light lig
 kind ki
+off of
 need nd
 house hse
 picture pi
@@ -199,6 +205,7 @@ four for
 thought tho
 let let
 keep ke
+eye ey
 never nv
 last las
 door dr
@@ -322,7 +329,7 @@ piece pie
 told tol
 knew kew
 pass pas
-farm frm
+farm farm
 top tp
 whole woe
 king kig
@@ -385,7 +392,7 @@ fly fly
 unit uni
 lead ld
 cry cry
-dark da
+dark dk
 machine mci
 note note
 wait wai

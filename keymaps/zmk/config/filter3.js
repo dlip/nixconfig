@@ -32,7 +32,7 @@ function removeDuplicateCharacters(string) {
       let [word, keys] = line.split(' ');
       if(!keys) {
         keys = removeDuplicateCharacters(word);
-        if (keys.length < 3) {
+        if (word.length < 3) {
           return;
         }
       } else {

@@ -423,6 +423,11 @@
         tap-ms = <MACRO_TAP>;
         bindings = <&kp O &kp T &kp H &kp E &kp R &kp SPACE>;
     )
+    ZMK_MACRO(m_all,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp L &kp L &kp SPACE>;
+    )
     ZMK_MACRO(m_were,
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
@@ -553,6 +558,11 @@
         tap-ms = <MACRO_TAP>;
         bindings = <&kp T &kp H &kp I &kp N &kp G &kp SPACE>;
     )
+    ZMK_MACRO(m_see,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp E &kp SPACE>;
+    )
     ZMK_MACRO(m_him,
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
@@ -592,6 +602,11 @@
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
         bindings = <&kp C &kp O &kp M &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_did,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp I &kp D &kp SPACE>;
     )
     ZMK_MACRO(m_sound,
         wait-ms = <MACRO_WAIT>;
@@ -908,6 +923,11 @@
         tap-ms = <MACRO_TAP>;
         bindings = <&kp O &kp L &kp D &kp SPACE>;
     )
+    ZMK_MACRO(m_too,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp O &kp O &kp SPACE>;
+    )
     ZMK_MACRO(m_does,
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
@@ -1003,6 +1023,11 @@
         tap-ms = <MACRO_TAP>;
         bindings = <&kp S &kp P &kp E &kp L &kp L &kp SPACE>;
     )
+    ZMK_MACRO(m_add,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp D &kp D &kp SPACE>;
+    )
     ZMK_MACRO(m_even,
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
@@ -1082,6 +1107,11 @@
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
         bindings = <&kp K &kp I &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_off,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp F &kp F &kp SPACE>;
     )
     ZMK_MACRO(m_need,
         wait-ms = <MACRO_WAIT>;
@@ -1257,6 +1287,11 @@
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
         bindings = <&kp K &kp E &kp E &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_eye,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp Y &kp E &kp SPACE>;
     )
     ZMK_MACRO(m_never,
         wait-ms = <MACRO_WAIT>;
@@ -2747,8 +2782,13 @@
     };
     combo_m_other {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_O P_T>;
+      key-positions = <P_COMBO P_O P_T P_R>;
       bindings = <&m_other>;
+    };
+    combo_m_all {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_L>;
+      bindings = <&m_all>;
     };
     combo_m_were {
       timeout-ms = <COMBO_TIMEOUT>;
@@ -2880,6 +2920,11 @@
       key-positions = <P_COMBO P_T P_I P_N>;
       bindings = <&m_thing>;
     };
+    combo_m_see {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_E>;
+      bindings = <&m_see>;
+    };
     combo_m_him {
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_COMBO P_H P_I>;
@@ -2919,6 +2964,11 @@
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_COMBO P_C P_M>;
       bindings = <&m_come>;
+    };
+    combo_m_did {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_I>;
+      bindings = <&m_did>;
     };
     combo_m_sound {
       timeout-ms = <COMBO_TIMEOUT>;
@@ -3087,7 +3137,7 @@
     };
     combo_m_year {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_Y P_E>;
+      key-positions = <P_COMBO P_Y P_R>;
       bindings = <&m_year>;
     };
     combo_m_came {
@@ -3147,7 +3197,7 @@
     };
     combo_m_form {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_F P_O>;
+      key-positions = <P_COMBO P_F P_R P_M>;
       bindings = <&m_form>;
     };
     combo_m_much {
@@ -3212,7 +3262,7 @@
     };
     combo_m_differ {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_D P_I>;
+      key-positions = <P_COMBO P_D P_I P_E>;
       bindings = <&m_differ>;
     };
     combo_m_move {
@@ -3235,6 +3285,11 @@
       key-positions = <P_COMBO P_O P_L P_D>;
       bindings = <&m_old>;
     };
+    combo_m_too {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_O>;
+      bindings = <&m_too>;
+    };
     combo_m_does {
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_COMBO P_D P_S>;
@@ -3247,7 +3302,7 @@
     };
     combo_m_sentence {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_S P_E>;
+      key-positions = <P_COMBO P_S P_E P_N>;
       bindings = <&m_sentence>;
     };
     combo_m_set {
@@ -3277,7 +3332,7 @@
     };
     combo_m_also {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_A P_L>;
+      key-positions = <P_COMBO P_A P_O>;
       bindings = <&m_also>;
     };
     combo_m_play {
@@ -3329,6 +3384,11 @@
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_COMBO P_S P_P>;
       bindings = <&m_spell>;
+    };
+    combo_m_add {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_D>;
+      bindings = <&m_add>;
     };
     combo_m_even {
       timeout-ms = <COMBO_TIMEOUT>;
@@ -3409,6 +3469,11 @@
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_COMBO P_K P_I>;
       bindings = <&m_kind>;
+    };
+    combo_m_off {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_F>;
+      bindings = <&m_off>;
     };
     combo_m_need {
       timeout-ms = <COMBO_TIMEOUT>;
@@ -3584,6 +3649,11 @@
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_COMBO P_K P_E>;
       bindings = <&m_keep>;
+    };
+    combo_m_eye {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_Y>;
+      bindings = <&m_eye>;
     };
     combo_m_never {
       timeout-ms = <COMBO_TIMEOUT>;
@@ -4202,7 +4272,7 @@
     };
     combo_m_farm {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_F P_R P_M>;
+      key-positions = <P_COMBO P_F P_A P_R P_M>;
       bindings = <&m_farm>;
     };
     combo_m_top {
@@ -4517,7 +4587,7 @@
     };
     combo_m_dark {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_D P_A>;
+      key-positions = <P_COMBO P_D P_K>;
       bindings = <&m_dark>;
     };
     combo_m_machine {
