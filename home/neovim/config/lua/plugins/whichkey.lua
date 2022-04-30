@@ -173,6 +173,7 @@ function _G.coding_mappings()
     d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
     D = { function() vim.lsp.buf.declaration() end, "Go to Declaration" },
     f = { function() format_buffer() end, "Format Buffer" },
+    F = { function() vim.lsp.buf.formatting() end, "LSP Format Buffer" },
     h = { function() vim.lsp.buf.hover() end, "Trigger Hover" },
     H = { function() vim.lsp.buf.signature_help() end, "Signature Help" },
     i = { "<cmd>Telescope lsp_implementations<CR>", "Go to Implementations" },
