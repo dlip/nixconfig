@@ -544,11 +544,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-iqx5Ggrzt9C9AbX/iFMfnePdt5pi11hZnz88y2vaEes=",
-        "path": "/nix/store/j8am02hs9m9r2wz279mh871k2h6l7pss-source/overlays/personal",
+        "path": "/nix/store/c1ml5ziz46raxsyx19j745k076ga2g12-source/overlays/personal",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/j8am02hs9m9r2wz279mh871k2h6l7pss-source/overlays/personal",
+        "path": "/nix/store/c1ml5ziz46raxsyx19j745k076ga2g12-source/overlays/personal",
         "type": "path"
       }
     },
@@ -601,11 +601,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "/nix/store/j8am02hs9m9r2wz279mh871k2h6l7pss-source/overlays/repos",
+        "path": "/nix/store/c1ml5ziz46raxsyx19j745k076ga2g12-source/overlays/repos",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/j8am02hs9m9r2wz279mh871k2h6l7pss-source/overlays/repos",
+        "path": "/nix/store/c1ml5ziz46raxsyx19j745k076ga2g12-source/overlays/repos",
         "type": "path"
       }
     },
@@ -716,11 +716,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-TWBBs2FFZdpyXASdoyjwZfTEIH8hQxBaoy3/V76iefw=",
-        "path": "/nix/store/j8am02hs9m9r2wz279mh871k2h6l7pss-source/overlays/vimPlugins",
+        "path": "/nix/store/c1ml5ziz46raxsyx19j745k076ga2g12-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/j8am02hs9m9r2wz279mh871k2h6l7pss-source/overlays/vimPlugins",
+        "path": "/nix/store/c1ml5ziz46raxsyx19j745k076ga2g12-source/overlays/vimPlugins",
         "type": "path"
       }
     },
