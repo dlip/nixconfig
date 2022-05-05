@@ -54,7 +54,16 @@ require("nvim-tree").setup({
     -- the command arguments as a list
     args = {},
   },
-
+  filters = {
+    dotfiles = false,
+    custom = {},
+    exclude = {},
+  },
+  git = {
+    enable = true,
+    ignore = false,
+    timeout = 400,
+  },
   view = {
     -- width of the window, can be either a number (columns) or a string in `%`, for left or right side placement
     width = 30,

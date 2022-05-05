@@ -37,6 +37,7 @@
       kind
       kmonad
       kubectl
+      kubectx
       kubernetes-helm
       kubetail
       ledger

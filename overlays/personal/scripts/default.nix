@@ -1,4 +1,5 @@
 { config, writeShellScriptBin, betterlockscreen }:
+
 let
   home = "/home/dane";
   codepath = "${home}/code";
@@ -48,11 +49,11 @@ let
     '';
 
     nixosconfig = ''
-      nixos-rebuild --use-remote-sudo switch --flake .# --flake ${nixconfigpath} "$@"
+      nice -19 nixos-rebuild --use-remote-sudo switch --flake .# --flake ${nixconfigpath} "$@"
     '';
 
     nixosconfigboot = ''
-      nixos-rebuild --use-remote-sudo boot --flake .# boot --flake ${nixconfigpath} "$@"
+      nice -19 nixos-rebuild --use-remote-sudo boot --flake .# boot --flake ${nixconfigpath} "$@"
     '';
 
     reset-k3s = ''

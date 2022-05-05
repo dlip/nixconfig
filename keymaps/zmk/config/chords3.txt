@@ -3,6 +3,7 @@
 `ing 'g
 ``ing 'v
 `n't 'n
+`'re 'r
 `s 's
 `'s 'c
 danelipscombe@gmail.com ze
@@ -138,7 +139,7 @@ tell te
 sentence sen
 set st
 three thre
-want wan
+want wnt
 air ai
 well wel
 also ao
@@ -385,7 +386,7 @@ notice not
 voice voi
 fall fal
 power pw
-town twn
+town town
 fine fin
 certain cer
 fly fly

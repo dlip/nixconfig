@@ -278,6 +278,11 @@
         tap-ms = <MACRO_TAP>;
         bindings = <&kp BSPC &kp N &kp SQT &kp T &kp SPACE>;
     )
+    ZMK_MACRO(m_BSPCSQTre,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp SQT &kp R &kp E &kp SPACE>;
+    )
     ZMK_MACRO(m_BSPCs,
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
@@ -2640,6 +2645,11 @@
       key-positions = <P_COMBO P_SQT P_N>;
       bindings = <&m_BSPCnSQTt>;
     };
+    combo_m_BSPCSQTre {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_R>;
+      bindings = <&m_BSPCSQTre>;
+    };
     combo_m_BSPCs {
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_COMBO P_SQT P_S>;
@@ -3317,7 +3327,7 @@
     };
     combo_m_want {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_W P_A P_N>;
+      key-positions = <P_COMBO P_W P_N P_T>;
       bindings = <&m_want>;
     };
     combo_m_air {
@@ -4552,7 +4562,7 @@
     };
     combo_m_town {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_COMBO P_T P_W P_N>;
+      key-positions = <P_COMBO P_T P_O P_W P_N>;
       bindings = <&m_town>;
     };
     combo_m_fine {
