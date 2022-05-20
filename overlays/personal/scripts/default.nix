@@ -32,7 +32,7 @@ let
       tmux new-window -t $session:1
       tmux send-keys -t $session 'cd ~/notes/immutable && nvim index.md' C-m
       tmux attach -t $session
-      '';
+    '';
 
     update-wallpaper = ''
       nice -19 ${betterlockscreen}/bin/betterlockscreen -u ~/wallpapers --fx dim --dim 20
@@ -114,7 +114,16 @@ let
       git checkout -b $branch
       git push -u $remote $branch
     '';
+
+    re = ''
+      FROM="''${1:-HEAD}"
+      TO="''${1:-main}"
+      BRANCH_POINT=$(diff -u <(git rev-list --first-parent "$TO") <(git rev-list --first-parent "$FROM") | sed -ne \"s/^ //p\" | head -1)
+      echo $BRANCH_POINT
+    '';
   };
+
+
 in
 {
   scripts = builtins.mapAttrs

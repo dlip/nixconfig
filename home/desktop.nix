@@ -11,6 +11,7 @@
       awscli2
       bat
       binutils
+      docker-buildx
       cargo
       cheat
       clang-tools
@@ -46,7 +47,7 @@
       (lua.withPackages (ps: with ps; [ luacheck ]))
       massren
       mdl
-      musikcube
+      # musikcube
       # myPythonPackages.shirah-reader
       # myPythonPackages.adafruit-nrfutil
       niv

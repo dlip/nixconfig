@@ -27,7 +27,14 @@ in
     nvidiaBusId = "PCI:1:0:0";
   };
 
+  # services.k3s = {
+  #   enable = false;
+  #   docker = true;
+  #   extraFlags = "--no-deploy traefik";
+  # };
+
   xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   services.flatpak.enable = true;
 
   # networking.wireguard.interfaces = {

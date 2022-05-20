@@ -4,12 +4,12 @@
     ./alacritty
     ./kitty
     ./rofi
-    # ./vscode
+    ./vscode
     ./awesome
   ];
 
   home.packages = with pkgs; [
-    anki
+    # anki
     antimicrox
     arandr
     alttab
@@ -33,7 +33,7 @@
     gramps
     kdenlive
     # krita
-    kicad
+    # kicad
     ledger-live-desktop
     lens
     libreoffice

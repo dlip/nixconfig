@@ -10,14 +10,11 @@
   "editor.fontFamily": "FiraCode Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 12,
-  "editor.formatOnSave": false,
+  "editor.formatOnSave": true,
   "editor.lineHeight": 20,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
-  "editor.rulers": [
-    80,
-    120
-  ],
+  "editor.rulers": [80, 120],
   "editor.tabSize": 2,
   "editor.useTabStops": false,
   "extensions.autoUpdate": false,
@@ -30,9 +27,7 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
-  "projectManager.git.baseFolders": [
-    "$home/code"
-  ],
+  "projectManager.git.baseFolders": ["$home/code"],
   "telemetry.enableCrashReporter": false,
   "telemetry.enableTelemetry": false,
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
@@ -50,22 +45,16 @@
   "vim.easymotion": true,
   "vim.surround": true,
   "vim.hlsearch": true,
-  "vim.useCtrlKeys": false,
+  "vim.useCtrlKeys": true,
   "vim.visualstar": true,
   "vim.easymotionKeys": "setnriaodhc,fuwypl",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "vspacecode.space"
-      ]
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
     },
     {
-      "before": [
-        ","
-      ],
+      "before": [","],
       "commands": [
         "vspacecode.space",
         {
@@ -76,59 +65,31 @@
     },
     // Clear highlight search
     {
-      "before": [
-        "<esc>"
-      ],
-      "commands": [
-        ":nohl"
-      ]
+      "before": ["<esc>"],
+      "commands": [":nohl"]
     },
     {
-      "before": [
-        "U"
-      ],
-      "after": [
-        "<C-r>"
-      ]
+      "before": ["U"],
+      "after": ["<C-r>"]
     },
     {
-      "before": [
-        "<enter>"
-      ],
-      "after": [
-        "o",
-        "<space>",
-        "<backspace>",
-        "<esc>"
-      ]
+      "before": ["<enter>"],
+      "after": ["o", "<space>", "<backspace>", "<esc>"]
     }
   ],
   "vim.useSystemClipboard": true,
   "vim.visualModeKeyBindingsNonRecursive": [
     // Disable yank on paste
     {
-      "before": [
-        "p"
-      ],
-      "after": [
-        "p",
-        "g",
-        "v",
-        "y"
-      ]
+      "before": ["p"],
+      "after": ["p", "g", "v", "y"]
     },
     {
-      "before": [
-        "<space>"
-      ],
-      "commands": [
-        "vspacecode.space"
-      ]
+      "before": ["<space>"],
+      "commands": ["vspacecode.space"]
     },
     {
-      "before": [
-        ","
-      ],
+      "before": [","],
       "commands": [
         "vspacecode.space",
         {
@@ -228,5 +189,17 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.startupEditor": "none"
+  "workbench.startupEditor": "none",
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

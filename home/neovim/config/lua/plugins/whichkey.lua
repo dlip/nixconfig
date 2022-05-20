@@ -77,7 +77,7 @@ local keymap = {
     b = { "<cmd>Telescope buffers<CR>", "Buffers" },
     c = { "<cmd>Telescope commands<CR>", "commands" },
     C = { "<cmd>Telescope command_history<CR>", "history" },
-    f = { "<cmd>Telescope fd<CR>", "Find Files" },
+    f = { "<cmd>Telescope find_files<CR>", "Find Files" },
     h = { "<cmd>Telescope help_tags<CR>", "help tags" },
     m = { "<cmd>Telescope man_pages<CR>", "man pages" },
     p = { "<cmd>Telescope frecency frecency default_text=:CWD:<CR>", "Find Recent Files" },

@@ -19,7 +19,7 @@ in
 {
 
   home.file = {
-    "${configFilePath}".source = ./settings.jsonc;
+    "${configFilePath}".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/vscode/settings.jsonc";
     "${keybindingsFilePath}".source = ./keybindings.jsonc;
   };
 
