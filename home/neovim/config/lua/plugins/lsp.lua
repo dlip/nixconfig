@@ -106,7 +106,10 @@ function _G.format_buffer()
     lsp.buf.formatting_seq_sync(nil, 1000, { "rust_analyzer" })
   elseif ft == "typescript" or ft == "typscriptreact" or ft == "javascript" then
     -- lsp.buf.formatting_seq_sync(nil, 5000, { "null-ls" })
-    vim.cmd("!eslint_d --fix %")
+    lsp.buf.formatting_seq_sync(nil, 1000, { "null_ls" })
+    -- vim.cmd("!eslint_d --fix %")
+  elseif ft == "html" then
+    lsp.buf.formatting_seq_sync(nil, 1000, { "null_ls" })
   else
     lsp.buf.formatting()
   end
