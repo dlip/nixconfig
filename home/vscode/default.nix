@@ -20,7 +20,7 @@ in
 
   home.file = {
     "${configFilePath}".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/vscode/settings.jsonc";
-    "${keybindingsFilePath}".source = ./keybindings.jsonc;
+    "${keybindingsFilePath}".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/vscode/keybindings.jsonc";
   };
 
   programs.vscode = {
@@ -30,6 +30,7 @@ in
       ms-vscode.cpptools
       ms-vsliveshare.vsliveshare
       chenglou92.rescript-vscode
+      hashicorp.terraform
     ]);
   };
 

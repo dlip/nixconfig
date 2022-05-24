@@ -28,8 +28,7 @@
   "git.confirmSync": false,
   "git.enableSmartCommit": true,
   "projectManager.git.baseFolders": ["$home/code"],
-  "telemetry.enableCrashReporter": false,
-  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
   "terminal.integrated.fontSize": 12,
   "todo-tree.general.tags": [
@@ -45,7 +44,7 @@
   "vim.easymotion": true,
   "vim.surround": true,
   "vim.hlsearch": true,
-  "vim.useCtrlKeys": true,
+  "vim.useCtrlKeys": false,
   "vim.visualstar": true,
   "vim.easymotionKeys": "setnriaodhc,fuwypl",
   "vim.normalModeKeyBindingsNonRecursive": [
@@ -75,6 +74,10 @@
     {
       "before": ["<enter>"],
       "after": ["o", "<space>", "<backspace>", "<esc>"]
+    },
+    {
+      "before": ["h"],
+      "after": ["leader", "leader", "s"]
     }
   ],
   "vim.useSystemClipboard": true,
@@ -97,6 +100,10 @@
           "command": "whichkey.triggerKey"
         }
       ]
+    },
+    {
+      "before": ["h"],
+      "after": ["leader", "leader", "s"]
     }
   ],
   "vscode-lua-format.binaryPath": "~/.nix-profile/bin/lua-format",
@@ -185,7 +192,7 @@
     }
   ],
   "whichkey.delay": 500,
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 2,
   "workbench.colorTheme": "One Dark Pro",
   "workbench.editor.enablePreview": false,
   "workbench.iconTheme": "material-icon-theme",

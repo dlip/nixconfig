@@ -150,7 +150,7 @@ function _G.coding_mappings()
   local dap = require"dap"
   local dapui = require"dapui"
   local buffKeymap = {
-    a = { "<cmd>Telescope lsp_code_actions<CR>", "Code Action" },
+    a = { function() vim.lsp.buf.code_action() end, "Code Action" },
     b = {
       name = "Debug",
       c = { function() dap.continue() end, "Continue" },

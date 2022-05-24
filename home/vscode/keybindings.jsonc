@@ -213,5 +213,10 @@
       "when": "textCompareEditorVisible"
     },
     "when": "whichkeyVisible && textCompareEditorVisible"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-extension.vim_ctrl+d",
+    "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
   }
 ]
