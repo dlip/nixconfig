@@ -1,0 +1,5049 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// GENERAL KEYS
+#define GEN_NONE &none
+#define GEN_TRAN &trans
+#define GEN_BSPC &kp BSPC
+
+// DEFAULT LAYER
+
+#define L_DEF 0
+
+#define DEF_Q &kp Q
+#define DEF_W &kp W
+#define DEF_F &kp F
+#define DEF_P &kp P
+#define DEF_B &kp B
+                        
+#define DEF_A &kp A 
+#define DEF_R &mt LALT R 
+#define DEF_S &mt LGUI S
+#define DEF_T &mt LCTRL T 
+#define DEF_G &kp G
+        
+#define DEF_Z &kp Z
+#define DEF_X &kp X
+#define DEF_C &kp C
+#define DEF_D &kp D
+#define DEF_V &kp V
+                        
+
+#define DEF_J &kp J
+#define DEF_L &kp L
+#define DEF_U &kp U
+#define DEF_Y &kp Y
+#define DEF_SEMI &kp SEMI
+
+#define DEF_K &kp K
+#define DEF_H &kp H
+#define DEF_COMA &kp COMMA
+#define DEF_DOT &kp DOT
+#define DEF_QUOT &kp SQT
+
+#define DEF_M &kp M
+#define DEF_N &mt LCTRL N
+#define DEF_E &mt RGUI E
+#define DEF_I &mt LALT I 
+#define DEF_O &kp O
+
+#define DEF_SPC  &kp SPC
+#define DEF_NAV  &mo L_NAV
+#define DEF_NUM  &mo L_NUM
+#define DEF_MED  &mo L_MED
+#define DEF_SHFT &sk LSHIFT
+
+// NAVIGATION LAYER
+#define L_NAV 1
+
+#define NAV_CAPS &kp CAPS
+#define NAV_BSLH &kp BSLH
+#define NAV_HOME &kp HOME
+#define NAV_UP &kp UP
+#define NAV_END &kp END
+#define NAV_PGUP &kp PG_UP
+
+#define NAV_ESC &kp ESC
+#define NAV_LEFT &kp LEFT
+#define NAV_DOWN &kp DOWN
+#define NAV_RGHT &kp RIGHT
+#define NAV_TAB &kp TAB
+
+#define NAV_GRV &kp GRAVE
+#define NAV_BSPW &kp LC(BSPC)
+#define NAV_DEL &kp DEL
+#define NAV_BSPC &kp BSPC
+#define NAV_RET &kp RET
+#define NAV_PGDN &kp PG_DN
+
+// NUM LAYER
+#define L_NUM 2
+
+#define NUM_LBKT &kp LBKT
+#define NUM_N7 &kp N7 
+#define NUM_N8 &kp N8
+#define NUM_N9 &kp N9
+#define NUM_RBKT &kp RBKT 
+
+#define NUM_EQUL &kp EQUAL
+#define NUM_PLUS &kp PLUS
+#define NUM_AST  &kp ASTERISK 
+
+#define NUM_N4 &kp N4
+#define NUM_N5 &kp N5
+#define NUM_N6 &kp N6
+#define NUM_N0 &kp N0
+
+#define NUM_MIN &kp MINUS
+#define NUM_N1 &kp N1
+#define NUM_N2 &kp N2
+#define NUM_N3 &kp N3
+#define NUM_FSLH &kp FSLH
+
+// MEDIA LAYER
+#define L_MED 3
+
+#define MED_BRID &kp C_BRI_DN
+#define MED_VOLU &kp C_VOL_UP
+#define MED_BRIU &kp C_BRI_UP
+
+
+#define MED_PRNT &kp PSCRN
+#define MED_PREV &kp C_PREV
+#define MED_PLAY &kp C_PP
+#define MED_NEXT &kp C_NEXT
+
+#define MED_MUTE &kp C_MUTE
+#define MED_VOLD &kp C_VOL_DN
+#define MED_STOP &kp C_STOP
+
+#define MED_UNDO &kp LC(Z)
+#define MED_CUT  &kp LC(X)
+#define MED_COPY &kp LC(C)
+#define NUM_PST  &kp LC(V)
+#define NUM_STAB &kp LS(TAB)
+
+#define FUN_F7 &kp F7
+#define FUN_F8 &kp F8
+#define FUN_F9 &kp F9
+#define FUN_F10 &kp F10
+
+#define FUN_GAME &to L_GAM
+#define FUN_F4 &kp F4
+#define FUN_F5 &kp F5
+#define FUN_F6 &kp F6
+#define FUN_F11 &kp F11
+
+#define FUN_BOOT &bootloader
+#define FUN_F1 &kp F1
+#define FUN_F2 &kp F2
+#define FUN_F3 &kp F3
+#define FUN_F13 &kp F12
+
+#define FUN_SPC &kp LC(SPC)
+
+// GAMING LAYER
+#define L_GAM 4
+
+#define GAM_TAB &kp TAB
+#define GAM_Q &kp Q
+#define GAM_W &kp W
+#define GAM_E &kp E
+#define GAM_R &kp R
+
+#define GAM_LSFT &kp LSHIFT
+#define GAM_A &kp A
+#define GAM_S &kp S
+#define GAM_D &kp D
+#define GAM_F &kp F
+
+#define GAM_LCTL &kp LCTRL
+#define GAM_Z &kp Z
+#define GAM_X &kp X
+#define GAM_C &kp C
+#define GAM_V &kp V
+
+
+#define GAM_UP &kp UP
+
+#define GAM_DEF &to L_DEF
+#define GAM_LEFT &kp LEFT
+#define GAM_DOWN &kp DOWN
+#define GAM_RGHT &kp RIGHT
+
+#define GAM_ESC &kp ESC
+#define GAM_SPC &kp SPACE
+
+// SYSTEM LAYER
+#define L_SYS 5
+
+#define SYS_BOOT &bootloader
+#define SYS_BTCL &bt BT_CLR
+#define SYS_BTNX &bt BT_NXT
+#define SYS_BTPR &bt BT_PRV
+#define SYS_BLE &out OUT_BLE
+#define SYS_USB &out OUT_USB
+#define SYS_OTG &out OUT_TOG
+#define SYS_BT0 &bt BT_SEL 0
+#define SYS_BT1 &bt BT_SEL 1
+#define SYS_BT2 &bt BT_SEL 2
+#define SYS_BT3 &bt BT_SEL 3
+#define SYS_BT4 &bt BT_SEL 4
+
+#define P_Q 0
+#define P_W 1
+#define P_F 2
+#define P_P 3
+#define P_B 4
+#define P_J 5
+#define P_L 6
+#define P_U 7
+#define P_Y 8
+#define P_SEMI 9
+#define P_A 10
+#define P_R 11
+#define P_S 12
+#define P_T 13
+#define P_G 14
+#define P_M 15
+#define P_N 16
+#define P_E 17
+#define P_I 18
+#define P_O 19
+#define P_Z 20
+#define P_X 21
+#define P_C 22
+#define P_D 23
+#define P_V 24
+#define P_K 25
+#define P_H 26
+#define P_COMMA 27
+#define P_DOT 28
+#define P_SQT 29
+#define P_COMBO 31 32
+
+#define COMBO_TIMEOUT 200
+#define MACRO_TAP 10
+#define MACRO_WAIT 0
+
+&mt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+
+&lt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+&sl {
+    release-after-ms = <1000>;
+};
+&sk {
+    release-after-ms = <1000>;
+    quick-release;
+};
+/ {
+  macros {
+    // MACROS START
+    ZMK_MACRO(m_BSPCDOT,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp DOT &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCCOMMA,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp COMMA &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCing,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCBSPCing,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp BSPC &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCnSQTt,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp N &kp SQT &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCSQTre,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp SQT &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCs,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_BSPCSQTs,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp SQT &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_danelipscombeATgmailDOTcom,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp A &kp N &kp E &kp L &kp I &kp P &kp S &kp C &kp O &kp M &kp B &kp E &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_DaneSPCLipscombe,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT &kp D &kp A &kp N &kp E &kp SPC &sk LSHIFT &kp L &kp I &kp P &kp S &kp C &kp O &kp M &kp B &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_Dane,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT &kp D &kp A &kp N &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_Lipscombe,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT &kp L &kp I &kp P &kp S &kp C &kp O &kp M &kp B &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_the,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_and,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_you,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp Y &kp O &kp U &kp SPACE>;
+    )
+    ZMK_MACRO(m_that,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp A &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_was,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp A &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_for,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp O &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_are,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_with,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp I &kp T &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_his,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp I &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_they,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp E &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_one,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp N &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_have,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp A &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_this,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp I &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_from,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp R &kp O &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_had,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp A &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_hot,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp O &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_but,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp U &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_some,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp O &kp M &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_what,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp H &kp A &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_there,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp E &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_can,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp A &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_out,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp U &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_other,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp T &kp H &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_all,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_were,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp E &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_your,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp Y &kp O &kp U &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_when,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp H &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_use,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp U &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_word,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp O &kp R &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_how,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp O &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_said,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp A &kp I &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_each,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp A &kp C &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_she,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp H &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_which,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp H &kp I &kp C &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_their,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp E &kp I &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_time,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp I &kp M &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_will,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp I &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_way,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp A &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_about,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp B &kp O &kp U &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_many,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp A &kp N &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_then,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_them,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp E &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_would,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp O &kp U &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_write,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp R &kp I &kp T &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_like,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp I &kp K &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_these,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp E &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_her,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_long,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp O &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_make,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp A &kp K &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_thing,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_see,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_him,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp I &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_two,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp W &kp O &kp SPACE>;
+    )
+    ZMK_MACRO(m_has,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp A &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_look,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp O &kp O &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_more,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp O &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_day,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp A &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_could,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp U &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_come,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp M &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_did,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp I &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_sound,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp O &kp U &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_most,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp O &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_number,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp U &kp M &kp B &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_who,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp H &kp O &kp SPACE>;
+    )
+    ZMK_MACRO(m_over,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp V &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_know,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp K &kp N &kp O &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_water,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp A &kp T &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_than,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp A &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_call,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp A &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_first,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp I &kp R &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_people,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp E &kp O &kp P &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_may,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp A &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_down,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp O &kp W &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_side,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp I &kp D &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_been,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_now,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp O &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_find,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp I &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_any,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp N &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_new,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp E &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_work,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp O &kp R &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_part,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp A &kp R &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_take,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp A &kp K &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_get,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp E &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_place,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp L &kp A &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_made,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp A &kp D &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_live,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp I &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_where,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp H &kp E &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_after,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp F &kp T &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_back,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp A &kp C &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_little,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp I &kp T &kp T &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_only,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp N &kp L &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_round,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp O &kp U &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_man,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp A &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_year,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp Y &kp E &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_came,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp A &kp M &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_show,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp H &kp O &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_every,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp V &kp E &kp R &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_good,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp O &kp O &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_give,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp I &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_our,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp U &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_under,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp U &kp N &kp D &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_name,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp A &kp M &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_very,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp V &kp E &kp R &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_through,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp R &kp O &kp U &kp G &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_just,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp J &kp U &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_form,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp O &kp R &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_much,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp U &kp C &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_great,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp R &kp E &kp A &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_think,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp I &kp N &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_say,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp A &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_help,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp E &kp L &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_low,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp O &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_line,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp I &kp N &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_before,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp F &kp O &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_turn,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp U &kp R &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_cause,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp A &kp U &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_same,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp A &kp M &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_mean,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp E &kp A &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_differ,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp I &kp F &kp F &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_move,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp O &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_right,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp I &kp G &kp H &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_boy,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp O &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_old,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_too,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp O &kp O &kp SPACE>;
+    )
+    ZMK_MACRO(m_does,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp O &kp E &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_tell,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp E &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_sentence,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp N &kp T &kp E &kp N &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_set,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_three,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp R &kp E &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_want,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp A &kp N &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_air,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp I &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_well,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp E &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_also,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp L &kp S &kp O &kp SPACE>;
+    )
+    ZMK_MACRO(m_play,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp L &kp A &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_small,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp M &kp A &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_end,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_put,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp U &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_home,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp O &kp M &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_read,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp E &kp A &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_hand,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp A &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_port,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp O &kp R &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_large,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp A &kp R &kp G &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_spell,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp P &kp E &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_add,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp D &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_even,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp V &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_land,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp A &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_here,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp E &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_must,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp U &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_big,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp I &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_high,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp I &kp G &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_such,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp U &kp C &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_follow,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp O &kp L &kp L &kp O &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_act,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp C &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_why,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp H &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_ask,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp S &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_men,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_change,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp H &kp A &kp N &kp G &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_went,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp E &kp N &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_light,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp I &kp G &kp H &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_kind,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp K &kp I &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_off,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp F &kp F &kp SPACE>;
+    )
+    ZMK_MACRO(m_need,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp E &kp E &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_house,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp O &kp U &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_picture,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp I &kp C &kp T &kp U &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_try,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp R &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_again,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp G &kp A &kp I &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_animal,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp N &kp I &kp M &kp A &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_point,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp O &kp I &kp N &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_mother,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp O &kp T &kp H &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_world,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp O &kp R &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_near,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp E &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_build,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp U &kp I &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_self,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp L &kp F &kp SPACE>;
+    )
+    ZMK_MACRO(m_earth,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp A &kp R &kp T &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_father,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp A &kp T &kp H &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_head,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp E &kp A &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_stand,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp A &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_own,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp W &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_page,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp A &kp G &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_should,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp H &kp O &kp U &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_country,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp U &kp N &kp T &kp R &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_found,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp O &kp U &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_answer,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp N &kp S &kp W &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_school,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp C &kp H &kp O &kp O &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_grow,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp R &kp O &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_study,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp U &kp D &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_still,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp I &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_learn,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp E &kp A &kp R &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_plant,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp L &kp A &kp N &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_cover,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp V &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_food,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp O &kp O &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_sun,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp U &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_four,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp O &kp U &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_thought,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp O &kp U &kp G &kp H &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_let,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp E &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_keep,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp K &kp E &kp E &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_eye,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp Y &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_never,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp E &kp V &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_last,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp A &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_door,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp O &kp O &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_between,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp T &kp W &kp E &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_city,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp I &kp T &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_tree,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp R &kp E &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_cross,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp R &kp O &kp S &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_since,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp I &kp N &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_hard,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp A &kp R &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_start,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp A &kp R &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_might,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp I &kp G &kp H &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_story,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp O &kp R &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_saw,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp A &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_far,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_sea,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp A &kp SPACE>;
+    )
+    ZMK_MACRO(m_draw,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp R &kp A &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_left,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp E &kp F &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_late,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp A &kp T &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_run,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp U &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_donSQTt,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp O &kp N &kp SQT &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_while,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp H &kp I &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_press,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp R &kp E &kp S &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_close,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp L &kp O &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_night,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp I &kp G &kp H &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_real,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp E &kp A &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_life,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp I &kp F &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_few,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp E &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_stop,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp O &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_open,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp P &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_seem,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp E &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_together,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp O &kp G &kp E &kp T &kp H &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_next,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp E &kp X &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_white,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp H &kp I &kp T &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_children,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp H &kp I &kp L &kp D &kp R &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_begin,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp G &kp I &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_got,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp O &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_walk,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp A &kp L &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_example,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp X &kp A &kp M &kp P &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_ease,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp A &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_paper,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp A &kp P &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_often,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp F &kp T &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_always,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp L &kp W &kp A &kp Y &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_music,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp U &kp S &kp I &kp C &kp SPACE>;
+    )
+    ZMK_MACRO(m_those,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp O &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_both,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp O &kp T &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_mark,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp A &kp R &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_book,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp O &kp O &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_letter,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp E &kp T &kp T &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_until,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp U &kp N &kp T &kp I &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_mile,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp I &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_river,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp I &kp V &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_car,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_feet,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp E &kp E &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_care,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp A &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_second,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp C &kp O &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_group,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp R &kp O &kp U &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_carry,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp A &kp R &kp R &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_took,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp O &kp O &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_rain,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp A &kp I &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_eat,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp A &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_room,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp O &kp O &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_friend,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp R &kp I &kp E &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_began,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp G &kp A &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_idea,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp I &kp D &kp E &kp A &kp SPACE>;
+    )
+    ZMK_MACRO(m_fish,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp I &kp S &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_mountain,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp O &kp U &kp N &kp T &kp A &kp I &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_north,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp O &kp R &kp T &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_once,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp N &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_base,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp A &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_hear,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp E &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_horse,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp O &kp R &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_cut,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp U &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_sure,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp U &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_watch,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp A &kp T &kp C &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_color,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp L &kp O &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_face,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp A &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_wood,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp O &kp O &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_main,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp A &kp I &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_enough,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp N &kp O &kp U &kp G &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_plain,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp L &kp A &kp I &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_girl,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp I &kp R &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_usual,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp U &kp S &kp U &kp A &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_young,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp Y &kp O &kp U &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_ready,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp E &kp A &kp D &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_above,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp B &kp O &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_ever,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp V &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_red,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp E &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_list,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp I &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_though,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp O &kp U &kp G &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_feel,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp E &kp E &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_talk,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp A &kp L &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_bird,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp I &kp R &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_soon,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp O &kp O &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_body,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp O &kp D &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_dog,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp O &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_family,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp A &kp M &kp I &kp L &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_direct,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp I &kp R &kp E &kp C &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_pose,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp O &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_leave,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp E &kp A &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_song,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp O &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_measure,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp E &kp A &kp S &kp U &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_state,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp A &kp T &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_product,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp R &kp O &kp D &kp U &kp C &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_black,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp L &kp A &kp C &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_short,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp H &kp O &kp R &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_numeral,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp U &kp M &kp E &kp R &kp A &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_class,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp L &kp A &kp S &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_wind,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp I &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_question,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp Q &kp U &kp E &kp S &kp T &kp I &kp O &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_happen,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp A &kp P &kp P &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_complete,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp M &kp P &kp L &kp E &kp T &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_ship,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp H &kp I &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_area,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp R &kp E &kp A &kp SPACE>;
+    )
+    ZMK_MACRO(m_half,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp A &kp L &kp F &kp SPACE>;
+    )
+    ZMK_MACRO(m_rock,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp O &kp C &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_order,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp R &kp D &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_fire,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp I &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_south,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp O &kp U &kp T &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_problem,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp R &kp O &kp B &kp L &kp E &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_piece,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp I &kp E &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_told,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp O &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_knew,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp K &kp N &kp E &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_pass,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp A &kp S &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_farm,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp A &kp R &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_top,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp O &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_whole,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp H &kp O &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_king,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp K &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_size,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp I &kp Z &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_heard,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp E &kp A &kp R &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_best,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_hour,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp O &kp U &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_better,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp T &kp T &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_true,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp R &kp U &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_during,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp U &kp R &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_hundred,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp U &kp N &kp D &kp R &kp E &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_remember,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp E &kp M &kp E &kp M &kp B &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_step,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp E &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_early,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp E &kp A &kp R &kp L &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_hold,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp O &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_west,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp E &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_ground,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp R &kp O &kp U &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_interest,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp I &kp N &kp T &kp E &kp R &kp E &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_reach,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp E &kp A &kp C &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_fast,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp A &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_five,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp I &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_sing,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_listen,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp I &kp S &kp T &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_six,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp I &kp X &kp SPACE>;
+    )
+    ZMK_MACRO(m_table,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp A &kp B &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_travel,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp R &kp A &kp V &kp E &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_less,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp E &kp S &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_morning,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp O &kp R &kp N &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_ten,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_simple,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp I &kp M &kp P &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_several,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp V &kp E &kp R &kp A &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_vowel,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp V &kp O &kp W &kp E &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_toward,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp O &kp W &kp A &kp R &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_war,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_lay,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp A &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_against,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp G &kp A &kp I &kp N &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_pattern,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp A &kp T &kp T &kp E &kp R &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_slow,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp L &kp O &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_center,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp E &kp N &kp T &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_love,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp O &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_person,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp E &kp R &kp S &kp O &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_money,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp O &kp N &kp E &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_serve,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp E &kp R &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_appear,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp P &kp P &kp E &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_road,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp O &kp A &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_map,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp A &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_science,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp C &kp I &kp E &kp N &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_rule,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp U &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_govern,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp O &kp V &kp E &kp R &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_pull,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp U &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_cold,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_notice,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp O &kp T &kp I &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_voice,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp V &kp O &kp I &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_fall,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp A &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_power,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp O &kp W &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_town,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp O &kp W &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_fine,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp I &kp N &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_certain,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp E &kp R &kp T &kp A &kp I &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_fly,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp L &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_unit,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp U &kp N &kp I &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_lead,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp E &kp A &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_cry,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp R &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_dark,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp A &kp R &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_machine,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp A &kp C &kp H &kp I &kp N &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_note,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp O &kp T &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_wait,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp A &kp I &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_plan,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp L &kp A &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_figure,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp I &kp G &kp U &kp R &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_star,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_box,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp O &kp X &kp SPACE>;
+    )
+    ZMK_MACRO(m_noun,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp O &kp U &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_field,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp I &kp E &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_rest,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp E &kp S &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_correct,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp R &kp R &kp E &kp C &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_able,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp B &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_pound,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp O &kp U &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_done,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp O &kp N &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_beauty,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp A &kp U &kp T &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_drive,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp R &kp I &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_stood,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp O &kp O &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_contain,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp N &kp T &kp A &kp I &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_front,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp R &kp O &kp N &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_teach,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp E &kp A &kp C &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_week,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp E &kp E &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_final,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp I &kp N &kp A &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_gave,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp A &kp V &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_green,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp R &kp E &kp E &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_quick,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp Q &kp U &kp I &kp C &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_develop,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp E &kp V &kp E &kp L &kp O &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_sleep,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp L &kp E &kp E &kp P &kp SPACE>;
+    )
+    ZMK_MACRO(m_warm,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp A &kp R &kp M &kp SPACE>;
+    )
+    ZMK_MACRO(m_free,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp R &kp E &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_minute,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp I &kp N &kp U &kp T &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_strong,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp R &kp O &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_special,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp P &kp E &kp C &kp I &kp A &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_mind,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp I &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_behind,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp H &kp I &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_clear,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp L &kp E &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_tail,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp A &kp I &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_produce,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp R &kp O &kp D &kp U &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_fact,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp A &kp C &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_inch,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp I &kp N &kp C &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_nothing,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp N &kp O &kp T &kp H &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_course,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp U &kp R &kp S &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_stay,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp T &kp A &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_full,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp F &kp U &kp L &kp L &kp SPACE>;
+    )
+    ZMK_MACRO(m_blue,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp L &kp U &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_object,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp O &kp B &kp J &kp E &kp C &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_decide,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp D &kp E &kp C &kp I &kp D &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_surface,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp U &kp R &kp F &kp A &kp C &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_island,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp I &kp S &kp L &kp A &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_yet,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp Y &kp E &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_busy,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp U &kp S &kp Y &kp SPACE>;
+    )
+    ZMK_MACRO(m_record,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp E &kp C &kp O &kp R &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_boat,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp O &kp A &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_common,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp O &kp M &kp M &kp O &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_gold,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp O &kp L &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_possible,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp O &kp S &kp S &kp I &kp B &kp L &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_plane,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp L &kp A &kp N &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_age,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp G &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_wonder,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp O &kp N &kp D &kp E &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(m_laugh,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp A &kp U &kp G &kp H &kp SPACE>;
+    )
+    ZMK_MACRO(m_thousand,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp T &kp H &kp O &kp U &kp S &kp A &kp N &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_ago,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp G &kp O &kp SPACE>;
+    )
+    ZMK_MACRO(m_ran,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp R &kp A &kp N &kp SPACE>;
+    )
+    ZMK_MACRO(m_check,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp C &kp H &kp E &kp C &kp K &kp SPACE>;
+    )
+    ZMK_MACRO(m_game,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp G &kp A &kp M &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_shape,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp H &kp A &kp P &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_yes,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp Y &kp E &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_brought,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp R &kp O &kp U &kp G &kp H &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_heat,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp E &kp A &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_snow,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp S &kp N &kp O &kp W &kp SPACE>;
+    )
+    ZMK_MACRO(m_bed,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp E &kp D &kp SPACE>;
+    )
+    ZMK_MACRO(m_bring,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp B &kp R &kp I &kp N &kp G &kp SPACE>;
+    )
+    ZMK_MACRO(m_perhaps,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp P &kp E &kp R &kp H &kp A &kp P &kp S &kp SPACE>;
+    )
+    ZMK_MACRO(m_weight,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp W &kp E &kp I &kp G &kp H &kp T &kp SPACE>;
+    )
+    ZMK_MACRO(m_language,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp L &kp A &kp N &kp G &kp U &kp A &kp G &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(m_among,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp A &kp M &kp O &kp N &kp G &kp SPACE>;
+    )
+
+    // MACROS END
+  };
+
+  combos {
+    compatible = "zmk,combos";
+    combo_system {
+      timeout-ms = <100>;
+      key-positions = <0 20>;
+      bindings = <&tog L_SYS>;
+    };
+    // COMBOS START
+    combo_m_BSPCDOT {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_DOT>;
+      bindings = <&m_BSPCDOT>;
+    };
+    combo_m_BSPCCOMMA {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_COMMA>;
+      bindings = <&m_BSPCCOMMA>;
+    };
+    combo_m_BSPCing {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_G>;
+      bindings = <&m_BSPCing>;
+    };
+    combo_m_BSPCBSPCing {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_V>;
+      bindings = <&m_BSPCBSPCing>;
+    };
+    combo_m_BSPCnSQTt {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_N>;
+      bindings = <&m_BSPCnSQTt>;
+    };
+    combo_m_BSPCSQTre {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_R>;
+      bindings = <&m_BSPCSQTre>;
+    };
+    combo_m_BSPCs {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_S>;
+      bindings = <&m_BSPCs>;
+    };
+    combo_m_BSPCSQTs {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_SQT P_C>;
+      bindings = <&m_BSPCSQTs>;
+    };
+    combo_m_danelipscombeATgmailDOTcom {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Z P_E>;
+      bindings = <&m_danelipscombeATgmailDOTcom>;
+    };
+    combo_m_DaneSPCLipscombe {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Z P_N>;
+      bindings = <&m_DaneSPCLipscombe>;
+    };
+    combo_m_Dane {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Z P_D>;
+      bindings = <&m_Dane>;
+    };
+    combo_m_Lipscombe {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Z P_L>;
+      bindings = <&m_Lipscombe>;
+    };
+    combo_m_the {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T>;
+      bindings = <&m_the>;
+    };
+    combo_m_and {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A>;
+      bindings = <&m_and>;
+    };
+    combo_m_you {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Y>;
+      bindings = <&m_you>;
+    };
+    combo_m_that {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H>;
+      bindings = <&m_that>;
+    };
+    combo_m_was {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W>;
+      bindings = <&m_was>;
+    };
+    combo_m_for {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F>;
+      bindings = <&m_for>;
+    };
+    combo_m_are {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_R>;
+      bindings = <&m_are>;
+    };
+    combo_m_with {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_I>;
+      bindings = <&m_with>;
+    };
+    combo_m_his {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H>;
+      bindings = <&m_his>;
+    };
+    combo_m_they {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_E>;
+      bindings = <&m_they>;
+    };
+    combo_m_one {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O>;
+      bindings = <&m_one>;
+    };
+    combo_m_have {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_A>;
+      bindings = <&m_have>;
+    };
+    combo_m_this {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_I>;
+      bindings = <&m_this>;
+    };
+    combo_m_from {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_R>;
+      bindings = <&m_from>;
+    };
+    combo_m_had {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_D>;
+      bindings = <&m_had>;
+    };
+    combo_m_hot {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_O>;
+      bindings = <&m_hot>;
+    };
+    combo_m_but {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B>;
+      bindings = <&m_but>;
+    };
+    combo_m_some {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S>;
+      bindings = <&m_some>;
+    };
+    combo_m_what {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_T>;
+      bindings = <&m_what>;
+    };
+    combo_m_there {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_R>;
+      bindings = <&m_there>;
+    };
+    combo_m_can {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C>;
+      bindings = <&m_can>;
+    };
+    combo_m_out {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_U>;
+      bindings = <&m_out>;
+    };
+    combo_m_other {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_T P_R>;
+      bindings = <&m_other>;
+    };
+    combo_m_all {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_L>;
+      bindings = <&m_all>;
+    };
+    combo_m_were {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_E>;
+      bindings = <&m_were>;
+    };
+    combo_m_your {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Y P_O>;
+      bindings = <&m_your>;
+    };
+    combo_m_when {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_N>;
+      bindings = <&m_when>;
+    };
+    combo_m_use {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_U>;
+      bindings = <&m_use>;
+    };
+    combo_m_word {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_O>;
+      bindings = <&m_word>;
+    };
+    combo_m_how {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_W>;
+      bindings = <&m_how>;
+    };
+    combo_m_said {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_A>;
+      bindings = <&m_said>;
+    };
+    combo_m_each {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E>;
+      bindings = <&m_each>;
+    };
+    combo_m_she {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_H>;
+      bindings = <&m_she>;
+    };
+    combo_m_which {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_H P_I>;
+      bindings = <&m_which>;
+    };
+    combo_m_their {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_E P_I>;
+      bindings = <&m_their>;
+    };
+    combo_m_time {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_I>;
+      bindings = <&m_time>;
+    };
+    combo_m_will {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_L>;
+      bindings = <&m_will>;
+    };
+    combo_m_way {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_A>;
+      bindings = <&m_way>;
+    };
+    combo_m_about {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_B>;
+      bindings = <&m_about>;
+    };
+    combo_m_many {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M>;
+      bindings = <&m_many>;
+    };
+    combo_m_then {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_N>;
+      bindings = <&m_then>;
+    };
+    combo_m_them {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_M>;
+      bindings = <&m_them>;
+    };
+    combo_m_would {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_O P_U>;
+      bindings = <&m_would>;
+    };
+    combo_m_write {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_R>;
+      bindings = <&m_write>;
+    };
+    combo_m_like {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L>;
+      bindings = <&m_like>;
+    };
+    combo_m_these {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_S>;
+      bindings = <&m_these>;
+    };
+    combo_m_her {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_E>;
+      bindings = <&m_her>;
+    };
+    combo_m_long {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_G>;
+      bindings = <&m_long>;
+    };
+    combo_m_make {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_A>;
+      bindings = <&m_make>;
+    };
+    combo_m_thing {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_I P_N>;
+      bindings = <&m_thing>;
+    };
+    combo_m_see {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_E>;
+      bindings = <&m_see>;
+    };
+    combo_m_him {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_I>;
+      bindings = <&m_him>;
+    };
+    combo_m_two {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_W P_O>;
+      bindings = <&m_two>;
+    };
+    combo_m_has {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_A P_S>;
+      bindings = <&m_has>;
+    };
+    combo_m_look {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_O>;
+      bindings = <&m_look>;
+    };
+    combo_m_more {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_O>;
+      bindings = <&m_more>;
+    };
+    combo_m_day {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D>;
+      bindings = <&m_day>;
+    };
+    combo_m_could {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_O>;
+      bindings = <&m_could>;
+    };
+    combo_m_come {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_M>;
+      bindings = <&m_come>;
+    };
+    combo_m_did {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_I>;
+      bindings = <&m_did>;
+    };
+    combo_m_sound {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_O>;
+      bindings = <&m_sound>;
+    };
+    combo_m_most {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_S>;
+      bindings = <&m_most>;
+    };
+    combo_m_number {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N>;
+      bindings = <&m_number>;
+    };
+    combo_m_who {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_H P_O>;
+      bindings = <&m_who>;
+    };
+    combo_m_over {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_V>;
+      bindings = <&m_over>;
+    };
+    combo_m_know {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_K>;
+      bindings = <&m_know>;
+    };
+    combo_m_water {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_T P_E>;
+      bindings = <&m_water>;
+    };
+    combo_m_than {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_A>;
+      bindings = <&m_than>;
+    };
+    combo_m_call {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_A>;
+      bindings = <&m_call>;
+    };
+    combo_m_first {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_I>;
+      bindings = <&m_first>;
+    };
+    combo_m_people {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P>;
+      bindings = <&m_people>;
+    };
+    combo_m_may {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_Y>;
+      bindings = <&m_may>;
+    };
+    combo_m_down {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_O>;
+      bindings = <&m_down>;
+    };
+    combo_m_side {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_I>;
+      bindings = <&m_side>;
+    };
+    combo_m_been {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_E>;
+      bindings = <&m_been>;
+    };
+    combo_m_now {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_O>;
+      bindings = <&m_now>;
+    };
+    combo_m_find {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_N>;
+      bindings = <&m_find>;
+    };
+    combo_m_any {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_N>;
+      bindings = <&m_any>;
+    };
+    combo_m_new {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_E>;
+      bindings = <&m_new>;
+    };
+    combo_m_work {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_O P_R>;
+      bindings = <&m_work>;
+    };
+    combo_m_part {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_A>;
+      bindings = <&m_part>;
+    };
+    combo_m_take {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_A>;
+      bindings = <&m_take>;
+    };
+    combo_m_get {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G>;
+      bindings = <&m_get>;
+    };
+    combo_m_place {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_L>;
+      bindings = <&m_place>;
+    };
+    combo_m_made {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_D>;
+      bindings = <&m_made>;
+    };
+    combo_m_live {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_I>;
+      bindings = <&m_live>;
+    };
+    combo_m_where {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_H P_E>;
+      bindings = <&m_where>;
+    };
+    combo_m_after {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_F>;
+      bindings = <&m_after>;
+    };
+    combo_m_back {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_K>;
+      bindings = <&m_back>;
+    };
+    combo_m_little {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_T>;
+      bindings = <&m_little>;
+    };
+    combo_m_only {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_N P_L>;
+      bindings = <&m_only>;
+    };
+    combo_m_round {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R>;
+      bindings = <&m_round>;
+    };
+    combo_m_man {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_N>;
+      bindings = <&m_man>;
+    };
+    combo_m_year {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Y P_R>;
+      bindings = <&m_year>;
+    };
+    combo_m_came {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_A P_M>;
+      bindings = <&m_came>;
+    };
+    combo_m_show {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_H P_O>;
+      bindings = <&m_show>;
+    };
+    combo_m_every {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_V>;
+      bindings = <&m_every>;
+    };
+    combo_m_good {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_O>;
+      bindings = <&m_good>;
+    };
+    combo_m_give {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_I>;
+      bindings = <&m_give>;
+    };
+    combo_m_our {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_R>;
+      bindings = <&m_our>;
+    };
+    combo_m_under {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_U P_N>;
+      bindings = <&m_under>;
+    };
+    combo_m_name {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_A P_M>;
+      bindings = <&m_name>;
+    };
+    combo_m_very {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_V>;
+      bindings = <&m_very>;
+    };
+    combo_m_through {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_R P_O>;
+      bindings = <&m_through>;
+    };
+    combo_m_just {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_J>;
+      bindings = <&m_just>;
+    };
+    combo_m_form {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_R P_M>;
+      bindings = <&m_form>;
+    };
+    combo_m_much {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_U>;
+      bindings = <&m_much>;
+    };
+    combo_m_great {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_R>;
+      bindings = <&m_great>;
+    };
+    combo_m_think {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_I P_K>;
+      bindings = <&m_think>;
+    };
+    combo_m_say {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_Y>;
+      bindings = <&m_say>;
+    };
+    combo_m_help {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_P>;
+      bindings = <&m_help>;
+    };
+    combo_m_low {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_O P_W>;
+      bindings = <&m_low>;
+    };
+    combo_m_line {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_N>;
+      bindings = <&m_line>;
+    };
+    combo_m_before {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_F>;
+      bindings = <&m_before>;
+    };
+    combo_m_turn {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_U>;
+      bindings = <&m_turn>;
+    };
+    combo_m_cause {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_S>;
+      bindings = <&m_cause>;
+    };
+    combo_m_same {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_A P_M P_E>;
+      bindings = <&m_same>;
+    };
+    combo_m_mean {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_E>;
+      bindings = <&m_mean>;
+    };
+    combo_m_differ {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_I P_E>;
+      bindings = <&m_differ>;
+    };
+    combo_m_move {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_V>;
+      bindings = <&m_move>;
+    };
+    combo_m_right {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_I>;
+      bindings = <&m_right>;
+    };
+    combo_m_boy {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_O>;
+      bindings = <&m_boy>;
+    };
+    combo_m_old {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_L P_D>;
+      bindings = <&m_old>;
+    };
+    combo_m_too {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_O>;
+      bindings = <&m_too>;
+    };
+    combo_m_does {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_S>;
+      bindings = <&m_does>;
+    };
+    combo_m_tell {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_E>;
+      bindings = <&m_tell>;
+    };
+    combo_m_sentence {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_E P_N>;
+      bindings = <&m_sentence>;
+    };
+    combo_m_set {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T>;
+      bindings = <&m_set>;
+    };
+    combo_m_three {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_R P_E>;
+      bindings = <&m_three>;
+    };
+    combo_m_want {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_N P_T>;
+      bindings = <&m_want>;
+    };
+    combo_m_air {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_I>;
+      bindings = <&m_air>;
+    };
+    combo_m_well {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_E P_L>;
+      bindings = <&m_well>;
+    };
+    combo_m_also {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_O>;
+      bindings = <&m_also>;
+    };
+    combo_m_play {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_L P_A>;
+      bindings = <&m_play>;
+    };
+    combo_m_small {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_M P_A>;
+      bindings = <&m_small>;
+    };
+    combo_m_end {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_N P_D>;
+      bindings = <&m_end>;
+    };
+    combo_m_put {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_U>;
+      bindings = <&m_put>;
+    };
+    combo_m_home {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_O P_E>;
+      bindings = <&m_home>;
+    };
+    combo_m_read {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_E>;
+      bindings = <&m_read>;
+    };
+    combo_m_hand {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_N>;
+      bindings = <&m_hand>;
+    };
+    combo_m_port {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_O>;
+      bindings = <&m_port>;
+    };
+    combo_m_large {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_R>;
+      bindings = <&m_large>;
+    };
+    combo_m_spell {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_P>;
+      bindings = <&m_spell>;
+    };
+    combo_m_add {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_D>;
+      bindings = <&m_add>;
+    };
+    combo_m_even {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_V P_N>;
+      bindings = <&m_even>;
+    };
+    combo_m_land {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_A P_N>;
+      bindings = <&m_land>;
+    };
+    combo_m_here {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_R>;
+      bindings = <&m_here>;
+    };
+    combo_m_must {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_U P_S>;
+      bindings = <&m_must>;
+    };
+    combo_m_big {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_I>;
+      bindings = <&m_big>;
+    };
+    combo_m_high {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_G>;
+      bindings = <&m_high>;
+    };
+    combo_m_such {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_U>;
+      bindings = <&m_such>;
+    };
+    combo_m_follow {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_W>;
+      bindings = <&m_follow>;
+    };
+    combo_m_act {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_C P_T>;
+      bindings = <&m_act>;
+    };
+    combo_m_why {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_Y>;
+      bindings = <&m_why>;
+    };
+    combo_m_ask {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_S P_K>;
+      bindings = <&m_ask>;
+    };
+    combo_m_men {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_E P_N>;
+      bindings = <&m_men>;
+    };
+    combo_m_change {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_H>;
+      bindings = <&m_change>;
+    };
+    combo_m_went {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_E P_N>;
+      bindings = <&m_went>;
+    };
+    combo_m_light {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_I P_G>;
+      bindings = <&m_light>;
+    };
+    combo_m_kind {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_K P_I>;
+      bindings = <&m_kind>;
+    };
+    combo_m_off {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_F>;
+      bindings = <&m_off>;
+    };
+    combo_m_need {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_D>;
+      bindings = <&m_need>;
+    };
+    combo_m_house {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_S P_E>;
+      bindings = <&m_house>;
+    };
+    combo_m_picture {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_I>;
+      bindings = <&m_picture>;
+    };
+    combo_m_try {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_R>;
+      bindings = <&m_try>;
+    };
+    combo_m_again {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_G>;
+      bindings = <&m_again>;
+    };
+    combo_m_animal {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_N P_I>;
+      bindings = <&m_animal>;
+    };
+    combo_m_point {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_N>;
+      bindings = <&m_point>;
+    };
+    combo_m_mother {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_O P_T>;
+      bindings = <&m_mother>;
+    };
+    combo_m_world {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_R P_L>;
+      bindings = <&m_world>;
+    };
+    combo_m_near {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_R>;
+      bindings = <&m_near>;
+    };
+    combo_m_build {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_U>;
+      bindings = <&m_build>;
+    };
+    combo_m_self {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_L>;
+      bindings = <&m_self>;
+    };
+    combo_m_earth {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_A P_R P_T>;
+      bindings = <&m_earth>;
+    };
+    combo_m_father {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_T>;
+      bindings = <&m_father>;
+    };
+    combo_m_head {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_E P_A>;
+      bindings = <&m_head>;
+    };
+    combo_m_stand {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_A>;
+      bindings = <&m_stand>;
+    };
+    combo_m_own {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_W P_N>;
+      bindings = <&m_own>;
+    };
+    combo_m_page {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_A P_E>;
+      bindings = <&m_page>;
+    };
+    combo_m_should {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_H P_D>;
+      bindings = <&m_should>;
+    };
+    combo_m_country {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_N>;
+      bindings = <&m_country>;
+    };
+    combo_m_found {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_O P_U>;
+      bindings = <&m_found>;
+    };
+    combo_m_answer {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_N P_S>;
+      bindings = <&m_answer>;
+    };
+    combo_m_school {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_C P_H>;
+      bindings = <&m_school>;
+    };
+    combo_m_grow {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_R P_O>;
+      bindings = <&m_grow>;
+    };
+    combo_m_study {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_U>;
+      bindings = <&m_study>;
+    };
+    combo_m_still {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_I>;
+      bindings = <&m_still>;
+    };
+    combo_m_learn {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_E>;
+      bindings = <&m_learn>;
+    };
+    combo_m_plant {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_L P_N>;
+      bindings = <&m_plant>;
+    };
+    combo_m_cover {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_V>;
+      bindings = <&m_cover>;
+    };
+    combo_m_food {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_D>;
+      bindings = <&m_food>;
+    };
+    combo_m_sun {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_N>;
+      bindings = <&m_sun>;
+    };
+    combo_m_four {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_O P_R>;
+      bindings = <&m_four>;
+    };
+    combo_m_thought {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_O>;
+      bindings = <&m_thought>;
+    };
+    combo_m_let {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_E P_T>;
+      bindings = <&m_let>;
+    };
+    combo_m_keep {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_K P_E>;
+      bindings = <&m_keep>;
+    };
+    combo_m_eye {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_Y>;
+      bindings = <&m_eye>;
+    };
+    combo_m_never {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_V>;
+      bindings = <&m_never>;
+    };
+    combo_m_last {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_A P_S>;
+      bindings = <&m_last>;
+    };
+    combo_m_door {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_R>;
+      bindings = <&m_door>;
+    };
+    combo_m_between {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_N>;
+      bindings = <&m_between>;
+    };
+    combo_m_city {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_I>;
+      bindings = <&m_city>;
+    };
+    combo_m_tree {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_R P_E>;
+      bindings = <&m_tree>;
+    };
+    combo_m_cross {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_R P_S>;
+      bindings = <&m_cross>;
+    };
+    combo_m_since {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_I P_N>;
+      bindings = <&m_since>;
+    };
+    combo_m_hard {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_A P_R>;
+      bindings = <&m_hard>;
+    };
+    combo_m_start {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_R>;
+      bindings = <&m_start>;
+    };
+    combo_m_might {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_I>;
+      bindings = <&m_might>;
+    };
+    combo_m_story {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_O>;
+      bindings = <&m_story>;
+    };
+    combo_m_saw {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_W>;
+      bindings = <&m_saw>;
+    };
+    combo_m_far {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_A P_R>;
+      bindings = <&m_far>;
+    };
+    combo_m_sea {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_E P_A>;
+      bindings = <&m_sea>;
+    };
+    combo_m_draw {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_R P_A>;
+      bindings = <&m_draw>;
+    };
+    combo_m_left {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_F>;
+      bindings = <&m_left>;
+    };
+    combo_m_late {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_A P_T>;
+      bindings = <&m_late>;
+    };
+    combo_m_run {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_U>;
+      bindings = <&m_run>;
+    };
+    combo_m_donSQTt {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_O P_N>;
+      bindings = <&m_donSQTt>;
+    };
+    combo_m_while {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_I P_L>;
+      bindings = <&m_while>;
+    };
+    combo_m_press {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_R>;
+      bindings = <&m_press>;
+    };
+    combo_m_close {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_L>;
+      bindings = <&m_close>;
+    };
+    combo_m_night {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_I>;
+      bindings = <&m_night>;
+    };
+    combo_m_real {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_E P_L>;
+      bindings = <&m_real>;
+    };
+    combo_m_life {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_I P_F>;
+      bindings = <&m_life>;
+    };
+    combo_m_few {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_E>;
+      bindings = <&m_few>;
+    };
+    combo_m_stop {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_P>;
+      bindings = <&m_stop>;
+    };
+    combo_m_open {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_P P_E>;
+      bindings = <&m_open>;
+    };
+    combo_m_seem {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_E P_M>;
+      bindings = <&m_seem>;
+    };
+    combo_m_together {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_G>;
+      bindings = <&m_together>;
+    };
+    combo_m_next {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_X>;
+      bindings = <&m_next>;
+    };
+    combo_m_white {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_H P_T>;
+      bindings = <&m_white>;
+    };
+    combo_m_children {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_H P_I>;
+      bindings = <&m_children>;
+    };
+    combo_m_begin {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_G>;
+      bindings = <&m_begin>;
+    };
+    combo_m_got {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_O P_T>;
+      bindings = <&m_got>;
+    };
+    combo_m_walk {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_A P_L>;
+      bindings = <&m_walk>;
+    };
+    combo_m_example {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_X>;
+      bindings = <&m_example>;
+    };
+    combo_m_ease {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_A>;
+      bindings = <&m_ease>;
+    };
+    combo_m_paper {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_A P_R>;
+      bindings = <&m_paper>;
+    };
+    combo_m_often {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_F P_T>;
+      bindings = <&m_often>;
+    };
+    combo_m_always {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_L P_Y>;
+      bindings = <&m_always>;
+    };
+    combo_m_music {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_S P_C>;
+      bindings = <&m_music>;
+    };
+    combo_m_those {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_O P_S>;
+      bindings = <&m_those>;
+    };
+    combo_m_both {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_O P_H>;
+      bindings = <&m_both>;
+    };
+    combo_m_mark {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_R>;
+      bindings = <&m_mark>;
+    };
+    combo_m_book {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_O P_K>;
+      bindings = <&m_book>;
+    };
+    combo_m_letter {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_T P_R>;
+      bindings = <&m_letter>;
+    };
+    combo_m_until {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_U P_N P_T>;
+      bindings = <&m_until>;
+    };
+    combo_m_mile {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_I P_E>;
+      bindings = <&m_mile>;
+    };
+    combo_m_river {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_V>;
+      bindings = <&m_river>;
+    };
+    combo_m_car {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_A P_R>;
+      bindings = <&m_car>;
+    };
+    combo_m_feet {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_E P_T>;
+      bindings = <&m_feet>;
+    };
+    combo_m_care {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_R>;
+      bindings = <&m_care>;
+    };
+    combo_m_second {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_E P_C>;
+      bindings = <&m_second>;
+    };
+    combo_m_group {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_R P_O P_U>;
+      bindings = <&m_group>;
+    };
+    combo_m_carry {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_A P_R P_Y>;
+      bindings = <&m_carry>;
+    };
+    combo_m_took {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_K>;
+      bindings = <&m_took>;
+    };
+    combo_m_rain {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_A P_I>;
+      bindings = <&m_rain>;
+    };
+    combo_m_eat {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_A P_T>;
+      bindings = <&m_eat>;
+    };
+    combo_m_room {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_O P_M>;
+      bindings = <&m_room>;
+    };
+    combo_m_friend {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_R P_I>;
+      bindings = <&m_friend>;
+    };
+    combo_m_began {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_E P_G>;
+      bindings = <&m_began>;
+    };
+    combo_m_idea {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_I>;
+      bindings = <&m_idea>;
+    };
+    combo_m_fish {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_S>;
+      bindings = <&m_fish>;
+    };
+    combo_m_mountain {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_O P_U>;
+      bindings = <&m_mountain>;
+    };
+    combo_m_north {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_O P_R>;
+      bindings = <&m_north>;
+    };
+    combo_m_once {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_N P_C>;
+      bindings = <&m_once>;
+    };
+    combo_m_base {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_S>;
+      bindings = <&m_base>;
+    };
+    combo_m_hear {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_E P_R>;
+      bindings = <&m_hear>;
+    };
+    combo_m_horse {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_R P_S P_E>;
+      bindings = <&m_horse>;
+    };
+    combo_m_cut {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_U>;
+      bindings = <&m_cut>;
+    };
+    combo_m_sure {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_R>;
+      bindings = <&m_sure>;
+    };
+    combo_m_watch {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_A P_T>;
+      bindings = <&m_watch>;
+    };
+    combo_m_color {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_O P_L>;
+      bindings = <&m_color>;
+    };
+    combo_m_face {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_A P_E>;
+      bindings = <&m_face>;
+    };
+    combo_m_wood {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_D>;
+      bindings = <&m_wood>;
+    };
+    combo_m_main {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_A P_I>;
+      bindings = <&m_main>;
+    };
+    combo_m_enough {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_N P_O>;
+      bindings = <&m_enough>;
+    };
+    combo_m_plain {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_L P_A P_I>;
+      bindings = <&m_plain>;
+    };
+    combo_m_girl {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_I P_R>;
+      bindings = <&m_girl>;
+    };
+    combo_m_usual {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_U P_S P_A>;
+      bindings = <&m_usual>;
+    };
+    combo_m_young {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Y P_N>;
+      bindings = <&m_young>;
+    };
+    combo_m_ready {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_D P_Y>;
+      bindings = <&m_ready>;
+    };
+    combo_m_above {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_B P_O>;
+      bindings = <&m_above>;
+    };
+    combo_m_ever {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_V P_R>;
+      bindings = <&m_ever>;
+    };
+    combo_m_red {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_E P_D>;
+      bindings = <&m_red>;
+    };
+    combo_m_list {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_I P_S>;
+      bindings = <&m_list>;
+    };
+    combo_m_though {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_G>;
+      bindings = <&m_though>;
+    };
+    combo_m_feel {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_E P_L>;
+      bindings = <&m_feel>;
+    };
+    combo_m_talk {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_A P_K>;
+      bindings = <&m_talk>;
+    };
+    combo_m_bird {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_R>;
+      bindings = <&m_bird>;
+    };
+    combo_m_soon {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_O P_N>;
+      bindings = <&m_soon>;
+    };
+    combo_m_body {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_O P_Y>;
+      bindings = <&m_body>;
+    };
+    combo_m_dog {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_A P_W>;
+      bindings = <&m_dog>;
+    };
+    combo_m_family {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_M>;
+      bindings = <&m_family>;
+    };
+    combo_m_direct {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_I P_R>;
+      bindings = <&m_direct>;
+    };
+    combo_m_pose {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_O P_S>;
+      bindings = <&m_pose>;
+    };
+    combo_m_leave {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_V>;
+      bindings = <&m_leave>;
+    };
+    combo_m_song {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_N P_G>;
+      bindings = <&m_song>;
+    };
+    combo_m_measure {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_E P_A>;
+      bindings = <&m_measure>;
+    };
+    combo_m_state {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_A P_E>;
+      bindings = <&m_state>;
+    };
+    combo_m_product {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_R P_O>;
+      bindings = <&m_product>;
+    };
+    combo_m_black {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_L>;
+      bindings = <&m_black>;
+    };
+    combo_m_short {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_H P_R>;
+      bindings = <&m_short>;
+    };
+    combo_m_numeral {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_U P_M>;
+      bindings = <&m_numeral>;
+    };
+    combo_m_class {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_L P_A>;
+      bindings = <&m_class>;
+    };
+    combo_m_wind {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_I P_N>;
+      bindings = <&m_wind>;
+    };
+    combo_m_question {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Q>;
+      bindings = <&m_question>;
+    };
+    combo_m_happen {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_A P_P>;
+      bindings = <&m_happen>;
+    };
+    combo_m_complete {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_O P_M>;
+      bindings = <&m_complete>;
+    };
+    combo_m_ship {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_H P_I>;
+      bindings = <&m_ship>;
+    };
+    combo_m_area {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_R P_E>;
+      bindings = <&m_area>;
+    };
+    combo_m_half {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_F>;
+      bindings = <&m_half>;
+    };
+    combo_m_rock {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_O P_C>;
+      bindings = <&m_rock>;
+    };
+    combo_m_order {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_R P_D>;
+      bindings = <&m_order>;
+    };
+    combo_m_fire {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_I P_R P_E>;
+      bindings = <&m_fire>;
+    };
+    combo_m_south {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_O P_U>;
+      bindings = <&m_south>;
+    };
+    combo_m_problem {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_R P_M>;
+      bindings = <&m_problem>;
+    };
+    combo_m_piece {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_I P_E>;
+      bindings = <&m_piece>;
+    };
+    combo_m_told {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_O P_L>;
+      bindings = <&m_told>;
+    };
+    combo_m_knew {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_K P_E P_W>;
+      bindings = <&m_knew>;
+    };
+    combo_m_pass {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_A P_S>;
+      bindings = <&m_pass>;
+    };
+    combo_m_farm {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_A P_R P_M>;
+      bindings = <&m_farm>;
+    };
+    combo_m_top {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_P>;
+      bindings = <&m_top>;
+    };
+    combo_m_whole {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_O P_E>;
+      bindings = <&m_whole>;
+    };
+    combo_m_king {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_K P_I P_G>;
+      bindings = <&m_king>;
+    };
+    combo_m_size {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_Z>;
+      bindings = <&m_size>;
+    };
+    combo_m_heard {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_R P_D>;
+      bindings = <&m_heard>;
+    };
+    combo_m_best {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_E P_S>;
+      bindings = <&m_best>;
+    };
+    combo_m_hour {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_O P_R>;
+      bindings = <&m_hour>;
+    };
+    combo_m_better {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_E P_R>;
+      bindings = <&m_better>;
+    };
+    combo_m_true {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_R P_U>;
+      bindings = <&m_true>;
+    };
+    combo_m_during {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_U>;
+      bindings = <&m_during>;
+    };
+    combo_m_hundred {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_U>;
+      bindings = <&m_hundred>;
+    };
+    combo_m_remember {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_E P_M>;
+      bindings = <&m_remember>;
+    };
+    combo_m_step {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_E>;
+      bindings = <&m_step>;
+    };
+    combo_m_early {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_E P_A P_R P_L>;
+      bindings = <&m_early>;
+    };
+    combo_m_hold {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_O P_D>;
+      bindings = <&m_hold>;
+    };
+    combo_m_west {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_E P_S>;
+      bindings = <&m_west>;
+    };
+    combo_m_ground {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_R P_N>;
+      bindings = <&m_ground>;
+    };
+    combo_m_interest {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_I P_N P_T P_E>;
+      bindings = <&m_interest>;
+    };
+    combo_m_reach {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_C P_H>;
+      bindings = <&m_reach>;
+    };
+    combo_m_fast {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_A P_S>;
+      bindings = <&m_fast>;
+    };
+    combo_m_five {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_V>;
+      bindings = <&m_five>;
+    };
+    combo_m_sing {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_I P_N P_G>;
+      bindings = <&m_sing>;
+    };
+    combo_m_listen {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_S P_T>;
+      bindings = <&m_listen>;
+    };
+    combo_m_six {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_X>;
+      bindings = <&m_six>;
+    };
+    combo_m_table {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_A P_L P_E>;
+      bindings = <&m_table>;
+    };
+    combo_m_travel {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_R P_A>;
+      bindings = <&m_travel>;
+    };
+    combo_m_less {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_E P_S>;
+      bindings = <&m_less>;
+    };
+    combo_m_morning {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_R P_N>;
+      bindings = <&m_morning>;
+    };
+    combo_m_ten {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_E P_N>;
+      bindings = <&m_ten>;
+    };
+    combo_m_simple {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_I P_M>;
+      bindings = <&m_simple>;
+    };
+    combo_m_several {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_V>;
+      bindings = <&m_several>;
+    };
+    combo_m_vowel {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_V P_W>;
+      bindings = <&m_vowel>;
+    };
+    combo_m_toward {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_W P_R>;
+      bindings = <&m_toward>;
+    };
+    combo_m_war {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_A P_R>;
+      bindings = <&m_war>;
+    };
+    combo_m_lay {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_Y>;
+      bindings = <&m_lay>;
+    };
+    combo_m_against {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_G P_I>;
+      bindings = <&m_against>;
+    };
+    combo_m_pattern {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_A P_T>;
+      bindings = <&m_pattern>;
+    };
+    combo_m_slow {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_L P_O>;
+      bindings = <&m_slow>;
+    };
+    combo_m_center {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_E>;
+      bindings = <&m_center>;
+    };
+    combo_m_love {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_O P_V>;
+      bindings = <&m_love>;
+    };
+    combo_m_person {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_E>;
+      bindings = <&m_person>;
+    };
+    combo_m_money {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_O P_N>;
+      bindings = <&m_money>;
+    };
+    combo_m_serve {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_E P_R>;
+      bindings = <&m_serve>;
+    };
+    combo_m_appear {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_P P_E P_R>;
+      bindings = <&m_appear>;
+    };
+    combo_m_road {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_O P_A>;
+      bindings = <&m_road>;
+    };
+    combo_m_map {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_P>;
+      bindings = <&m_map>;
+    };
+    combo_m_science {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_C P_I>;
+      bindings = <&m_science>;
+    };
+    combo_m_rule {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_U P_L>;
+      bindings = <&m_rule>;
+    };
+    combo_m_govern {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_V>;
+      bindings = <&m_govern>;
+    };
+    combo_m_pull {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_U P_L>;
+      bindings = <&m_pull>;
+    };
+    combo_m_cold {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_L P_D>;
+      bindings = <&m_cold>;
+    };
+    combo_m_notice {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_O P_T>;
+      bindings = <&m_notice>;
+    };
+    combo_m_voice {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_V P_O P_I>;
+      bindings = <&m_voice>;
+    };
+    combo_m_fall {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_A P_L>;
+      bindings = <&m_fall>;
+    };
+    combo_m_power {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_W>;
+      bindings = <&m_power>;
+    };
+    combo_m_town {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_O P_W P_N>;
+      bindings = <&m_town>;
+    };
+    combo_m_fine {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_I P_N>;
+      bindings = <&m_fine>;
+    };
+    combo_m_certain {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_E P_R>;
+      bindings = <&m_certain>;
+    };
+    combo_m_fly {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_L P_Y>;
+      bindings = <&m_fly>;
+    };
+    combo_m_unit {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_U P_N P_I>;
+      bindings = <&m_unit>;
+    };
+    combo_m_lead {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_D>;
+      bindings = <&m_lead>;
+    };
+    combo_m_cry {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_R P_Y>;
+      bindings = <&m_cry>;
+    };
+    combo_m_dark {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_K>;
+      bindings = <&m_dark>;
+    };
+    combo_m_machine {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_C P_I>;
+      bindings = <&m_machine>;
+    };
+    combo_m_note {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_O P_T P_E>;
+      bindings = <&m_note>;
+    };
+    combo_m_wait {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_A P_I>;
+      bindings = <&m_wait>;
+    };
+    combo_m_plan {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_L P_A P_N>;
+      bindings = <&m_plan>;
+    };
+    combo_m_figure {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_G>;
+      bindings = <&m_figure>;
+    };
+    combo_m_star {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_A P_R>;
+      bindings = <&m_star>;
+    };
+    combo_m_box {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_X>;
+      bindings = <&m_box>;
+    };
+    combo_m_noun {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_O P_U>;
+      bindings = <&m_noun>;
+    };
+    combo_m_field {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_I P_E>;
+      bindings = <&m_field>;
+    };
+    combo_m_rest {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_E P_S P_T>;
+      bindings = <&m_rest>;
+    };
+    combo_m_correct {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_R P_T>;
+      bindings = <&m_correct>;
+    };
+    combo_m_able {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_B P_L>;
+      bindings = <&m_able>;
+    };
+    combo_m_pound {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_O P_U>;
+      bindings = <&m_pound>;
+    };
+    combo_m_done {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_O P_N P_E>;
+      bindings = <&m_done>;
+    };
+    combo_m_beauty {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_E P_A>;
+      bindings = <&m_beauty>;
+    };
+    combo_m_drive {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_R P_I P_E>;
+      bindings = <&m_drive>;
+    };
+    combo_m_stood {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_D>;
+      bindings = <&m_stood>;
+    };
+    combo_m_contain {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_N P_T>;
+      bindings = <&m_contain>;
+    };
+    combo_m_front {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_R P_N>;
+      bindings = <&m_front>;
+    };
+    combo_m_teach {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_C>;
+      bindings = <&m_teach>;
+    };
+    combo_m_week {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_K>;
+      bindings = <&m_week>;
+    };
+    combo_m_final {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_N P_L>;
+      bindings = <&m_final>;
+    };
+    combo_m_gave {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_A P_V>;
+      bindings = <&m_gave>;
+    };
+    combo_m_green {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_R P_E>;
+      bindings = <&m_green>;
+    };
+    combo_m_quick {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Q P_U>;
+      bindings = <&m_quick>;
+    };
+    combo_m_develop {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_E>;
+      bindings = <&m_develop>;
+    };
+    combo_m_sleep {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_L P_P>;
+      bindings = <&m_sleep>;
+    };
+    combo_m_warm {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_R P_M>;
+      bindings = <&m_warm>;
+    };
+    combo_m_free {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_R P_E>;
+      bindings = <&m_free>;
+    };
+    combo_m_minute {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_I P_N>;
+      bindings = <&m_minute>;
+    };
+    combo_m_strong {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_R P_O>;
+      bindings = <&m_strong>;
+    };
+    combo_m_special {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_P P_E>;
+      bindings = <&m_special>;
+    };
+    combo_m_mind {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_M P_N P_D>;
+      bindings = <&m_mind>;
+    };
+    combo_m_behind {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_H>;
+      bindings = <&m_behind>;
+    };
+    combo_m_clear {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_L P_E>;
+      bindings = <&m_clear>;
+    };
+    combo_m_tail {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_A P_I>;
+      bindings = <&m_tail>;
+    };
+    combo_m_produce {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_R P_U>;
+      bindings = <&m_produce>;
+    };
+    combo_m_fact {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_A P_T>;
+      bindings = <&m_fact>;
+    };
+    combo_m_inch {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_I P_N P_C>;
+      bindings = <&m_inch>;
+    };
+    combo_m_nothing {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_N P_T P_H>;
+      bindings = <&m_nothing>;
+    };
+    combo_m_course {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_O P_U>;
+      bindings = <&m_course>;
+    };
+    combo_m_stay {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_T P_Y>;
+      bindings = <&m_stay>;
+    };
+    combo_m_full {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_F P_U>;
+      bindings = <&m_full>;
+    };
+    combo_m_blue {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_L P_U>;
+      bindings = <&m_blue>;
+    };
+    combo_m_object {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_O P_B P_J>;
+      bindings = <&m_object>;
+    };
+    combo_m_decide {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_D P_C>;
+      bindings = <&m_decide>;
+    };
+    combo_m_surface {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_U P_R>;
+      bindings = <&m_surface>;
+    };
+    combo_m_island {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_I P_S P_A>;
+      bindings = <&m_island>;
+    };
+    combo_m_yet {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Y P_T>;
+      bindings = <&m_yet>;
+    };
+    combo_m_busy {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_U P_S>;
+      bindings = <&m_busy>;
+    };
+    combo_m_record {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_C P_D>;
+      bindings = <&m_record>;
+    };
+    combo_m_boat {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_T>;
+      bindings = <&m_boat>;
+    };
+    combo_m_common {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_M P_N>;
+      bindings = <&m_common>;
+    };
+    combo_m_gold {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_O P_L>;
+      bindings = <&m_gold>;
+    };
+    combo_m_possible {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_S P_B>;
+      bindings = <&m_possible>;
+    };
+    combo_m_plane {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_L P_A P_N P_E>;
+      bindings = <&m_plane>;
+    };
+    combo_m_age {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_G P_E>;
+      bindings = <&m_age>;
+    };
+    combo_m_wonder {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_N P_D>;
+      bindings = <&m_wonder>;
+    };
+    combo_m_laugh {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_A P_U>;
+      bindings = <&m_laugh>;
+    };
+    combo_m_thousand {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_T P_H P_O P_U>;
+      bindings = <&m_thousand>;
+    };
+    combo_m_ago {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_G P_O>;
+      bindings = <&m_ago>;
+    };
+    combo_m_ran {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_R P_A P_N>;
+      bindings = <&m_ran>;
+    };
+    combo_m_check {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_C P_H P_E>;
+      bindings = <&m_check>;
+    };
+    combo_m_game {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_G P_M>;
+      bindings = <&m_game>;
+    };
+    combo_m_shape {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_H P_P>;
+      bindings = <&m_shape>;
+    };
+    combo_m_yes {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_Y P_E P_S>;
+      bindings = <&m_yes>;
+    };
+    combo_m_brought {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_R P_O>;
+      bindings = <&m_brought>;
+    };
+    combo_m_heat {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_H P_E P_A P_T>;
+      bindings = <&m_heat>;
+    };
+    combo_m_snow {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_S P_N P_W>;
+      bindings = <&m_snow>;
+    };
+    combo_m_bed {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_D>;
+      bindings = <&m_bed>;
+    };
+    combo_m_bring {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_B P_R P_I>;
+      bindings = <&m_bring>;
+    };
+    combo_m_perhaps {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_P P_E P_R>;
+      bindings = <&m_perhaps>;
+    };
+    combo_m_weight {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_W P_G>;
+      bindings = <&m_weight>;
+    };
+    combo_m_language {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_L P_N P_G>;
+      bindings = <&m_language>;
+    };
+    combo_m_among {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMBO P_A P_M P_O>;
+      bindings = <&m_among>;
+    };
+
+    // COMBOS END
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+      bindings = <
+        DEF_Q    DEF_W    DEF_F    DEF_P    DEF_B          DEF_J    DEF_L    DEF_U    DEF_Y    DEF_SEMI
+        DEF_A    DEF_R    DEF_S    DEF_T    DEF_G          DEF_M    DEF_N    DEF_E    DEF_I    DEF_O
+        DEF_Z    DEF_X    DEF_C    DEF_D    DEF_V          DEF_K    DEF_H    DEF_COMA DEF_DOT  DEF_QUOT
+                                   DEF_NUM  DEF_SPC        DEF_SHFT DEF_NAV
+      >;
+    };
+
+    navigation_layer {
+      bindings = <
+        NAV_CAPS NAV_HOME NAV_UP   NAV_END  NAV_PGUP       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        NAV_ESC  NAV_LEFT NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        NAV_BSPW NAV_DEL  NAV_BSPC NAV_RET  NAV_PGDN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   DEF_MED  DEF_SHFT       DEF_SHFT GEN_TRAN
+      >;
+    };
+
+    number_layer {
+      bindings = <
+        NAV_GRV  NAV_BSLH NUM_LBKT NUM_RBKT DEF_Y          NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
+        MED_PRNT GEN_TRAN GEN_TRAN GEN_TRAN NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        MED_UNDO MED_CUT  MED_COPY NUM_PST  NUM_STAB       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
+                                   GEN_TRAN DEF_SHFT       DEF_SHFT DEF_MED
+      >;
+    };
+
+    media_layer {
+      bindings = <
+        MED_STOP MED_VOLD MED_MUTE MED_VOLU MED_BRIU       GEN_TRAN FUN_F7   FUN_F8   FUN_F9   FUN_F10
+        MED_PRNT MED_PREV MED_PLAY MED_NEXT MED_BRID       FUN_GAME FUN_F4   FUN_F5   FUN_F6   FUN_F11
+        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN FUN_F1   FUN_F2   FUN_F3   FUN_F13
+                                   GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
+      >;
+    };
+
+    gaming_layer {
+      bindings = <
+        GAM_TAB  GAM_Q    GAM_W    GAM_E    GAM_R          GEN_NONE GEN_NONE GAM_UP   GEN_NONE GEN_NONE
+        GAM_LSFT GAM_A    GAM_S    GAM_D    GAM_F          GAM_DEF  GAM_LEFT GAM_DOWN GAM_RGHT GEN_NONE
+        GAM_LCTL GAM_Z    GAM_X    GAM_C    GAM_V          GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+                                   GEN_TRAN GAM_SPC        GEN_TRAN GEN_TRAN
+      >;
+    };
+
+    system_layer {
+      bindings = <
+        GEN_TRAN SYS_BTPR SYS_BTCL SYS_BTNX SYS_BLE        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        SYS_BOOT SYS_BT3  SYS_BT4  GEN_TRAN SYS_OTG        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        GEN_TRAN SYS_BT0  SYS_BT1  SYS_BT2  SYS_USB        GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+                                   GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+      >;
+    };
+
+    // empty_layer {
+    //   bindings = <
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //     GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+    //                                GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+    //   >;
+    // };
+
+  };
+};

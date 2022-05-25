@@ -15,6 +15,7 @@
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
   "editor.rulers": [80, 120],
+  "editor.smoothScrolling": true,
   "editor.tabSize": 2,
   "editor.useTabStops": false,
   "extensions.autoUpdate": false,
@@ -30,7 +31,7 @@
   "projectManager.git.baseFolders": ["$home/code"],
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.fontFamily": "FiraCode Nerd Font",
-  "terminal.integrated.fontSize": 12,
+  "terminal.integrated.copyOnSelection": true,
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -64,7 +65,7 @@
     },
     // Clear highlight search
     {
-      "before": ["<esc>"],
+      "before": ["j"],
       "commands": [":nohl"]
     },
     {
@@ -77,7 +78,19 @@
     },
     {
       "before": ["h"],
-      "after": ["leader", "leader", "s"]
+      "after": ["leader", "leader", "f"]
+    },
+    {
+      "before": ["k"],
+      "after": ["leader", "leader", "F"]
+    },
+    {
+      "before": ["H"],
+      "after": ["9", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["9", "k"]
     }
   ],
   "vim.useSystemClipboard": true,
@@ -102,8 +115,12 @@
       ]
     },
     {
-      "before": ["h"],
-      "after": ["leader", "leader", "s"]
+      "before": ["H"],
+      "after": ["9", "j"]
+    },
+    {
+      "before": ["K"],
+      "after": ["9", "k"]
     }
   ],
   "vscode-lua-format.binaryPath": "~/.nix-profile/bin/lua-format",
@@ -193,9 +210,9 @@
   ],
   "whichkey.delay": 500,
   "window.zoomLevel": 2,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Nord",
   "workbench.editor.enablePreview": false,
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "eq-material-theme-icons-light",
   "workbench.startupEditor": "none",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -208,5 +225,6 @@
   },
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "cSpell.userWords": ["Kubernetes", "Kustomize"]
 }
