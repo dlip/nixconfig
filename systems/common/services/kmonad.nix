@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 {
   services.kmonad = {
     enable = true;

@@ -226,5 +226,8 @@
   "[typescriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "cSpell.userWords": ["Kubernetes", "Kustomize"]
+  "cSpell.userWords": ["Kubernetes", "Kustomize"],
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
