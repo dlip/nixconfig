@@ -218,5 +218,20 @@
     "key": "ctrl+d",
     "command": "-extension.vim_ctrl+d",
     "when": "editorTextFocus && vim.active && vim.use<C-d> && !inDebugRepl"
+  },
+  {
+    "key": "tab",
+    "command": "vscode-neovim.send",
+    "when": "neovim.recording || editorTextFocus && neovim.init && neovim.mode != ' insert' && editorLangId != 'magit'"
+  },
+  {
+    "key": "tab",
+    "command": "-vscode-neovim.send",
+    "when": "neovim.recording || editorTextFocus && neovim.init && neovim.mode != 'insert'"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "-vscode-neovim.ctrl-d",
+    "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
   }
 ]

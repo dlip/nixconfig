@@ -1,145 +1,185 @@
-
-lua <<EOF
-vim.api.nvim_create_user_command("Reload", function(args)
-  require('plenary.reload').reload_module('my', true)
-  require('plenary.reload').reload_module('plugins', true)
-  vim.cmd('source $MYVIMRC')
-  print('Config Reloaded!')
-end, {
-    nargs = "*",
-    desc = "Reload Config",
-})
+if exists('g:vscode')
+  nnoremap <space> <Cmd>call VSCodeNotify('vspacecode.space')<CR>
+else
+  lua <<EOF
+  vim.api.nvim_create_user_command("Reload", function(args)
+    require('plenary.reload').reload_module('my', true)
+    require('plenary.reload').reload_module('plugins', true)
+    vim.cmd('source $MYVIMRC')
+    print('Config Reloaded!')
+  end, {
+      nargs = "*",
+      desc = "Reload Config",
+  })
 EOF
 
-" reload config
-nnoremap <C-M-R> <cmd>Reload<CR>
+  " reload config
+  nnoremap <C-M-R> <cmd>Reload<CR>
 
-" use new lua filetype detection
-let g:do_filetype_lua = 1
-let g:did_load_filetypes = 0
+  set shell=/run/current-system/sw/bin/bash
 
-let g:netrw_browsex_viewer = 'xdg-open'
+  " use new lua filetype detection
+  let g:do_filetype_lua = 1
+  let g:did_load_filetypes = 0
 
-" https://github.com/vim-test/vim-test
-let g:test#go#runner = 'gotest'
-let g:test#strategy = 'asyncrun_background'
+  let g:netrw_browsex_viewer = 'xdg-open'
 
-function! DebugNearest()
-  let g:test#go#runner = 'delve'
-  let defaultStrategy = g:test#strategy
-  let g:test#strategy = 'neovim'
-  TestNearest
+  " https://github.com/vim-test/vim-test
   let g:test#go#runner = 'gotest'
-  let g:test#strategy = defaultStrategy
-endfunction
+  let g:test#strategy = 'asyncrun_background'
 
-" https://github.com/skywind3000/asyncrun.vim
-let g:asyncrun_open = 8
+  function! DebugNearest()
+    let g:test#go#runner = 'delve'
+    let defaultStrategy = g:test#strategy
+    let g:test#strategy = 'neovim'
+    TestNearest
+    let g:test#go#runner = 'gotest'
+    let g:test#strategy = defaultStrategy
+  endfunction
 
-" https://github.com/plasticboy/vim-markdown
-let g:vim_markdown_folding_disabled = 1
+  " https://github.com/skywind3000/asyncrun.vim
+  let g:asyncrun_open = 8
 
-" https://github.com/SidOfc/mkdx
-let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
-                        \ 'enter': { 'shift': 1 },
-                        \ 'links': { 'external': { 'enable': 1 } },
-                        \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 1 },
-                        \ 'fold': { 'enable': 1 },
-                        \ 'checkbox': { 'toggles': [' ', 'x'] }
-                        \}
+  " https://github.com/plasticboy/vim-markdown
+  let g:vim_markdown_folding_disabled = 1
 
-let g:polyglot_disabled = ['markdown'] " for vim-polyglot users, it loads Plasticboy's markdown
-                                       " plugin which unfortunately interferes with mkdx list indentation.
-" https://github.com/christoomey/vim-tmux-navigator
-let g:tmux_navigator_no_mappings = 1
+  " https://github.com/SidOfc/mkdx
+  let g:mkdx#settings     = { 'highlight': { 'enable': 1 },
+                          \ 'enter': { 'shift': 1 },
+                          \ 'links': { 'external': { 'enable': 1 } },
+                          \ 'toc': { 'text': 'Table of Contents', 'update_on_write': 1 },
+                          \ 'fold': { 'enable': 1 },
+                          \ 'checkbox': { 'toggles': [' ', 'x'] }
+                          \}
 
-" https://github.com/vimwiki/vimwiki
-let g:vimwiki_list = [{'path': '~/notes/vimwiki/',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
+  let g:polyglot_disabled = ['markdown'] " for vim-polyglot users, it loads Plasticboy's markdown
+                                         " plugin which unfortunately interferes with mkdx list indentation.
+  " https://github.com/christoomey/vim-tmux-navigator
+  let g:tmux_navigator_no_mappings = 1
 
-let g:vimwiki_key_mappings = { 'all_maps': 0, }
+  " https://github.com/vimwiki/vimwiki
+  let g:vimwiki_list = [{'path': '~/notes/vimwiki/',
+                        \ 'syntax': 'markdown', 'ext': '.md'}]
 
-" https://github.com/glacambre/firenvim
-let g:firenvim_config = {
-    \ 'globalSettings': {
-        \ 'alt': 'all',
-    \  },
-    \ 'localSettings': {
-        \ '.*': {
-            \ 'cmdline': 'neovim',
-            \ 'content': 'markdown',
-            \ 'priority': 0,
-            \ 'selector': 'textarea',
-            \ 'takeover': 'never',
-        \ },
-    \ }
-\ }
+  let g:vimwiki_key_mappings = { 'all_maps': 0, }
 
-" https://github.com/neovide/neovide
-let g:neovide_cursor_vfx_mode = 'railgun'
-let g:neovide_transparency=0.8
-" let g:neovide_window_floating_opacity=1
+  " https://github.com/glacambre/firenvim
+  let g:firenvim_config = {
+      \ 'globalSettings': {
+          \ 'alt': 'all',
+      \  },
+      \ 'localSettings': {
+          \ '.*': {
+              \ 'cmdline': 'neovim',
+              \ 'content': 'markdown',
+              \ 'priority': 0,
+              \ 'selector': 'textarea',
+              \ 'takeover': 'never',
+          \ },
+      \ }
+  \ }
 
-" Colorscheme
-let g:nord_contrast = v:true
-let g:nord_borders = v:false
-let g:nord_disable_background = v:true
-let g:nord_italic = v:false
-colorscheme nord
+  " https://github.com/neovide/neovide
+  let g:neovide_cursor_vfx_mode = 'railgun'
+  let g:neovide_transparency=0.8
+  " let g:neovide_window_floating_opacity=1
 
-" open a terminal pane on the bottom using :Term
-command Term :botright split term://$SHELL
+  " Colorscheme
+  let g:nord_contrast = v:true
+  let g:nord_borders = v:false
+  let g:nord_disable_background = v:true
+  let g:nord_italic = v:false
+  colorscheme nord
 
-augroup vimrc
-  autocmd!
+  " open a terminal pane on the bottom using :Term
+  command Term :botright split term://$SHELL
 
-  " Set transparent background
-  autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
-  autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
-  autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
-  autocmd ColorScheme * highlight NvimTreeNormal ctermbg=NONE guibg=NONE
+  augroup vimrc
+    autocmd!
 
-  " highlight on yank
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
+    " Set transparent background
+    autocmd ColorScheme * highlight Normal ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight NormalNC ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight SignColumn ctermbg=NONE guibg=NONE
+    autocmd ColorScheme * highlight NvimTreeNormal ctermbg=NONE guibg=NONE
 
-  " don't auto comment new lines
-  autocmd BufEnter * set fo-=c fo-=r fo-=o
+    " highlight on yank
+    autocmd TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=300}
 
-  " auto write new files
-  autocmd BufNewFile * :write
+    " don't auto comment new lines
+    autocmd BufEnter * set fo-=c fo-=r fo-=o
 
-  "remove line length marker for selected filetypes
-  autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0
+    " auto write new files
+    autocmd BufNewFile * :write
 
-  " 2 spaces for selected filetypes
-  autocmd FileType python setlocal shiftwidth=4 tabstop=4
+    "remove line length marker for selected filetypes
+    autocmd FileType text,markdown,xml,html,xhtml,javascript setlocal cc=0
 
-  " disable IndentLine for markdown files (avoid concealing)
-  autocmd FileType markdown let g:indentLine_enabled=0
+    " 2 spaces for selected filetypes
+    autocmd FileType python setlocal shiftwidth=4 tabstop=4
 
-  " Terminal visual tweaks
-  "- enter insert mode when switching to terminal
-  "- close terminal buffer on process exit
-  autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
-  autocmd TermOpen * startinsert
-  autocmd TermOpen * setlocal winfixheight
-  autocmd BufWinEnter,WinEnter term://* startinsert
-  autocmd BufLeave term://* stopinsert
+    " disable IndentLine for markdown files (avoid concealing)
+    autocmd FileType markdown let g:indentLine_enabled=0
 
-  " Restore enter functionality in quickfix window
-  autocmd FileType qf nmap <buffer> <CR> <CR>
+    " Terminal visual tweaks
+    "- enter insert mode when switching to terminal
+    "- close terminal buffer on process exit
+    autocmd TermOpen * setlocal listchars= nonumber norelativenumber nocursorline
+    autocmd TermOpen * startinsert
+    autocmd TermOpen * setlocal winfixheight
+    autocmd BufWinEnter,WinEnter term://* startinsert
+    autocmd BufLeave term://* stopinsert
 
-  " Close quickfix by q
-  autocmd FileType qf nmap <buffer><silent> q :ccl<CR>
-  autocmd FileType help nmap <buffer><silent> q :q<CR>
-  autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
+    " Restore enter functionality in quickfix window
+    autocmd FileType qf nmap <buffer> <CR> <CR>
 
-  " Set filetypes
-  autocmd BufEnter *.sol setlocal filetype=solidity
+    " Close quickfix by q
+    autocmd FileType qf nmap <buffer><silent> q :ccl<CR>
+    autocmd FileType help nmap <buffer><silent> q :q<CR>
+    autocmd BufWinEnter,WinEnter diffview://* nnoremap q :tabclose<cr>
 
-  " Use tabs for golang
-  autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
-augroup end
+    " Set filetypes
+    autocmd BufEnter *.sol setlocal filetype=solidity
+
+    " Use tabs for golang
+    autocmd BufNewFile,BufRead *.go setlocal noet ts=4 sw=4 sts=4
+  augroup end
 
 
-lua require'my.init'
+    lua <<EOF
+    require("my.utils")
+
+    require("plugins.autosave")
+    -- require 'plugins.barbar'
+    require("plugins.cmp")
+    require("plugins.dap")
+    require("plugins.dashboard")
+    require("plugins.diffview")
+    require("plugins.gitsigns")
+    require("plugins.indent-blankline")
+    require("plugins.lsp")
+    require("plugins.lualine")
+    require("plugins.luasnip")
+    require("plugins.neogit")
+    require("plugins.neoscroll")
+    require("plugins.nnn")
+    require("plugins.nvim-lint")
+    require("plugins.nvim-tree")
+    require("plugins.octo")
+    require("plugins.rest")
+    require("plugins.telescope")
+    require("plugins.trouble")
+    require("plugins.treesitter")
+    require("plugins.neorg")
+    require("plugins.whichkey")
+
+    require("my.autocommands")
+EOF
+endif
+
+lua <<EOF
+  require("my.settings")
+  require("my.keymap")
+  require("plugins.hop")
+  require("plugins.comment")
+EOF

@@ -20,6 +20,9 @@ local keymaps = {
   { "nxo", "<C-S-left>", "<C-w>H" },
   { "nxo", "<C-S-right>", "<C-w>L" },
 
+  { "nxo", "<S-down>", "9j" },
+  { "nxo", "<S-up>", "9k" },
+
   -- Don't include line feed
   { "x", "<End>", "g_" },
   { "n", "Y", "yg_" },
