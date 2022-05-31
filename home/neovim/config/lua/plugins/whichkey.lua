@@ -203,6 +203,12 @@ function _G.coding_mappings()
     y = { "<cmd>Telescope lsp_type_definitions<CR>", "Type Definitions" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
+
+  vim.api.nvim_create_autocmd("BufWritePre", {
+      pattern = "<buffer>",
+      callback = format_buffer,
+      desc = "Format on save",
+  })
 end
 
 function _G.json_mappings()

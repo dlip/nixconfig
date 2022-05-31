@@ -49,8 +49,10 @@ local keymaps = {
   { "x", "<A-up>", "<cmd>m '<-2<CR>gv=gv" },
   { "x", "<A-down>", "<cmd>m '>+1<CR>gv=gv" },
 
+  -- Save all
+  { "n", "<CR>", ":wa<CR>" },
+
   -- Enable enter and backspace in normal mode
-  { "n", "<CR>", "o<Space><Backspace><Esc>" },
   { "n", "<Backspace>", "X" },
 
   -- Enable repeating change of selection
