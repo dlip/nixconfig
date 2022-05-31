@@ -4,6 +4,7 @@ local g = vim.g
 local lsp = vim.lsp
 
 null_ls.setup({
+  on_attach = require("lsp-format").on_attach,
   sources = {
     null_ls.builtins.code_actions.gitsigns,
     null_ls.builtins.diagnostics.vint,
@@ -44,6 +45,7 @@ local servers = {
 for _, server in ipairs(servers) do
   nvim_lsp[server].setup({
     capabilities = require("cmp_nvim_lsp").update_capabilities(lsp.protocol.make_client_capabilities()),
+    on_attach = require("lsp-format").on_attach,
     flags = {
       debounce_text_changes = 150,
     },
@@ -62,6 +64,7 @@ lib[g.awesome_root_path .. "/lib"] = true
 require("lspconfig").sumneko_lua.setup({
   cmd = { g.sumneko_root_path .. "/bin/lua-language-server", "-E", g.sumneko_root_path .. "/extras/main.lua" },
   capabilities = require("cmp_nvim_lsp").update_capabilities(lsp.protocol.make_client_capabilities()),
+  on_attach = require("lsp-format").on_attach,
   settings = {
     Lua = {
       runtime = {
@@ -93,8 +96,14 @@ require("lspconfig").sumneko_lua.setup({
 })
 
 require("lsp_signature").setup({})
-
-require("lsp-format").setup({})
+require("lsp-format").setup({
+  typescript = {
+    exclude = { "tsserver" },
+  },
+  lua = {
+    exclude = { "null-ls" },
+  },
+})
 
 function _G.format_buffer()
   local ft = vim.o.filetype

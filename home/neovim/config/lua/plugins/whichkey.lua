@@ -1,5 +1,5 @@
 local g = vim.g -- global variables
-local gs = require"gitsigns"
+local gs = require "gitsigns"
 
 g.which_key_timeout = 100
 local wk = require("which-key")
@@ -87,7 +87,7 @@ local keymap = {
   },
   g = {
     name = "Git",
-    b = { function() gs.blame_line{full=true} end, "Blame Line" },
+    b = { function() gs.blame_line { full = true } end, "Blame Line" },
     B = { "<cmd>Telescope git_branches<CR>", "Branches" },
     c = { "<cmd>Neogit commit<CR>", "Commit" },
     C = { "<cmd>Telescope git_commits<CR>", "Commit History" },
@@ -147,8 +147,8 @@ local keymap = {
 wk.register(keymap, { prefix = "<leader>" })
 
 function _G.coding_mappings()
-  local dap = require"dap"
-  local dapui = require"dapui"
+  local dap = require "dap"
+  local dapui = require "dapui"
   local buffKeymap = {
     a = { function() vim.lsp.buf.code_action() end, "Code Action" },
     b = {
@@ -205,9 +205,9 @@ function _G.coding_mappings()
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 
   vim.api.nvim_create_autocmd("BufWritePre", {
-      pattern = "<buffer>",
-      callback = format_buffer,
-      desc = "Format on save",
+    pattern = "<buffer>",
+    callback = format_buffer,
+    desc = "Format on save",
   })
 end
 
@@ -219,7 +219,7 @@ function _G.json_mappings()
 end
 
 function _G.package_json_mappings()
-  local pi = require"package-info"
+  local pi = require "package-info"
   local buffKeymap = {
     c = { function() pi.hide() end, "Hide package versions" },
     d = { function() pi.delete() end, "Delete package on line" },
