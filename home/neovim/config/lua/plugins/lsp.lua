@@ -100,8 +100,17 @@ require("lsp-format").setup({
   typescript = {
     exclude = { "tsserver" },
   },
+  javascript = {
+    exclude = { "tsserver" },
+  },
+  typescriptreact = {
+    exclude = { "tsserver" },
+  },
   lua = {
     exclude = { "null-ls" },
+  },
+  html = {
+    exclude = { "html" },
   },
 })
 
