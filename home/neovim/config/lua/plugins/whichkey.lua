@@ -204,11 +204,11 @@ function _G.coding_mappings()
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 
-  vim.api.nvim_create_autocmd("BufWritePre", {
-    pattern = "<buffer>",
-    callback = format_buffer,
-    desc = "Format on save",
-  })
+  -- vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged" }, {
+  --   pattern = "<buffer>",
+  --   callback = function() vim.cmd("Format") end,
+  --   desc = "Format on save",
+  -- })
 end
 
 function _G.json_mappings()
