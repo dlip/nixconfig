@@ -113,6 +113,10 @@ require("lsp-format").setup({
   html = {
     exclude = { "html" },
   },
+  -- disable yaml until i can work out how to change list indent settings
+  yaml = {
+    exclude = { "null-ls" },
+  },
 })
 
 function _G.format_buffer()
