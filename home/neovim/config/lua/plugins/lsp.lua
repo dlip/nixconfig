@@ -8,7 +8,7 @@ null_ls.setup({
   sources = {
     null_ls.builtins.code_actions.gitsigns,
     null_ls.builtins.diagnostics.vint,
-    null_ls.builtins.formatting.codespell,
+    null_ls.builtins.diagnostics.yamllint,
     null_ls.builtins.formatting.eslint_d,
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.shfmt,
@@ -40,7 +40,6 @@ local servers = {
   "terraformls",
   "tsserver",
   "vimls",
-  "yamlls",
 }
 
 for _, server in ipairs(servers) do
@@ -113,7 +112,7 @@ require("lsp-format").setup({
   html = {
     exclude = { "html" },
   },
-  -- disable yaml until i can work out how to change list indent settings
+  -- disable yaml
   yaml = {
     exclude = { "null-ls" },
   },

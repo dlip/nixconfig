@@ -10,6 +10,7 @@
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.eslint_d
     nodePackages.prettier
+    nodePackages.prettier_d_slim
     nodePackages.pyright
     nodePackages.typescript-language-server
     nodePackages.vscode-css-languageserver-bin
@@ -29,5 +30,6 @@
     tree-sitter
     vale
     vim-vint
+    yamllint
   ];
 }

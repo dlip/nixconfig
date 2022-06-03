@@ -230,5 +230,8 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "vscode-neovim.neovimExecutablePaths.linux": "/etc/profiles/per-user/dane/bin/nvim"
+  "vscode-neovim.neovimExecutablePaths.linux": "/etc/profiles/per-user/dane/bin/nvim",
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
