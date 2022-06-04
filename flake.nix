@@ -21,6 +21,9 @@
     vim-plugins = {
       url = "./overlays/vimPlugins";
     };
+    dap-adapters = {
+      url = "./overlays/dapAdapters";
+    };
     repos = {
       url = "./overlays/repos";
     };
@@ -57,6 +60,7 @@
     , home-manager
     , flake-utils
     , vim-plugins
+    , dap-adapters
     , repos
     , personal
     , kmonad
@@ -69,6 +73,7 @@
         config.allowUnfree = true;
         overlays = [
           personal.overlay
+          dap-adapters.overlay
           vim-plugins.overlay
           repos.overlay
           kmonad.overlay

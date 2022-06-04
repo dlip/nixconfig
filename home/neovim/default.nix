@@ -36,6 +36,7 @@ in
       extraConfig = ''
         let g:sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
         let g:awesome_root_path = "${awesomeSrc}"
+        let g:vscode_node_debug2_root_path = "${pkgs.dapAdapters.vscode-node-debug2}"
         let g:friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"
         source ${nvimHome}/myinit.vim
       '';
@@ -46,7 +47,7 @@ in
         in
         [
           asyncrun-vim
-          autosave-nvim
+          # autosave-nvim
           cmp-buffer
           cmp-nvim-lsp
           cmp-nvim-lua
@@ -56,7 +57,7 @@ in
           dashboard-nvim
           diffview-nvim
           editorconfig-vim
-          fire-nvim
+          # fire-nvim
           format-nvim
           friendly-snippets
           glow-nvim
@@ -72,15 +73,16 @@ in
           neogit
           neorg
           neoscroll-nvim
-          nnn-nvim
+          # nnn-nvim
           nord-nvim
           nui-nvim
           null-ls-nvim
           nvim-autopairs
           nvim-cmp
           nvim-dap
-          nvim-dap-go
+          # nvim-dap-go
           nvim-dap-ui
+          nvim-dap-virtual-text
           nvim-lint
           nvim-lspconfig
           nvim-treesitter-textobjects
@@ -94,7 +96,7 @@ in
           tokyonight-nvim
           trouble-nvim
           undotree
-          vim-delve
+          # vim-delve
           vim-dispatch
           vim-eunuch
           vim-fugitive
@@ -103,7 +105,7 @@ in
           vim-solidity
           vim-test
           vim-tmux-navigator
-          whichkey-nvim
+          which-key-nvim
 
           (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
           (pluginWithDeps lualine-nvim [ lsp-status-nvim ])

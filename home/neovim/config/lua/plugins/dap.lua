@@ -1,6 +1,6 @@
 local dap = require("dap")
 
-require("dap-go").setup()
+-- require("dap-go").setup()
 
 dap.adapters.lldb = {
   type = "executable",
@@ -8,6 +8,63 @@ dap.adapters.lldb = {
   name = "lldb",
 }
 
+dap.configurations.typescript = {
+  {
+    type = "node2",
+    name = "plan service",
+    request = "attach",
+    cwd = vim.fn.getcwd(),
+    port = 9305,
+  },
+  {
+    type = "node2",
+    name = "node attach",
+    request = "attach",
+    program = "${file}",
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = "inspector",
+  },
+  {
+    type = "chrome",
+    name = "chrome",
+    request = "attach",
+    program = "${file}",
+    -- cwd = "${workspaceFolder}",
+    -- protocol = "inspector",
+    port = 9222,
+    webRoot = "${workspaceFolder}",
+    -- sourceMaps = true,
+    sourceMapPathOverrides = {
+      -- Sourcemap override for nextjs
+      ["webpack://_N_E/./*"] = "${webRoot}/*",
+      ["webpack:///./*"] = "${webRoot}/*",
+    },
+  },
+}
+
+dap.configurations.typescriptreact = dap.configurations.typescript
+dap.configurations.javascript = dap.configurations.typescript
+dap.configurations.javascriptreact = dap.configurations.typescript
+dap.adapters.node2 = {
+  type = "executable",
+  command = "node",
+  args = {
+    vim.fn.stdpath "data" .. "/dapinstall/jsnode_dbg/" .. "/vscode-node-debug2/out/src/nodeDebug.js",
+  },
+}
+
+dap.configurations.javascript = {
+  {
+    type = "node2",
+    request = "launch",
+    program = "${workspaceFolder}/${file}",
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = "inspector",
+    console = "integratedTerminal",
+  },
+}
 dap.configurations.rust = {
   {
     name = "Launch",

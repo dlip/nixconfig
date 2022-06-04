@@ -149,7 +149,7 @@ EOF
     lua <<EOF
     require("my.utils")
 
-    require("plugins.autosave")
+    -- require("plugins.autosave")
     -- require 'plugins.barbar'
     require("plugins.cmp")
     require("plugins.dap")
@@ -162,7 +162,7 @@ EOF
     require("plugins.luasnip")
     require("plugins.neogit")
     require("plugins.neoscroll")
-    require("plugins.nnn")
+    -- require("plugins.nnn")
     require("plugins.nvim-lint")
     require("plugins.nvim-tree")
     require("plugins.octo")
