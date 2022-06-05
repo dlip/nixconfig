@@ -11,21 +11,9 @@ dap.adapters.lldb = {
 dap.configurations.typescript = {
   {
     type = "node2",
-    name = "plan service",
+    name = "Attach",
     request = "attach",
     sourceMaps = true,
-    -- trace = true,
-    sourceMapPathOverrides = {
-      ["webpack://planpay/./*"] = "${workspaceFolder}/*",
-    },
-    port = 9305,
-  },
-  {
-    type = "node2",
-    name = "jest",
-    request = "attach",
-    sourceMaps = true,
-    -- trace = true,
     sourceMapPathOverrides = {
       ["webpack://planpay/./*"] = "${workspaceFolder}/*",
     },
@@ -47,12 +35,14 @@ dap.configurations.typescript = {
   },
   {
     type = "node2",
-    name = "node attach",
+    name = "plan service",
     request = "attach",
-    program = "${file}",
-    cwd = vim.fn.getcwd(),
     sourceMaps = true,
-    protocol = "inspector",
+    -- trace = true,
+    sourceMapPathOverrides = {
+      ["webpack://planpay/./*"] = "${workspaceFolder}/*",
+    },
+    port = 9305,
   },
   {
     type = "chrome",
@@ -84,17 +74,6 @@ dap.adapters.node2 = {
   },
 }
 
-dap.configurations.javascript = {
-  {
-    type = "node2",
-    request = "launch",
-    program = "${workspaceFolder}/${file}",
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = "inspector",
-    console = "integratedTerminal",
-  },
-}
 dap.configurations.rust = {
   {
     name = "Launch",
