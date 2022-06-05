@@ -1,20 +1,17 @@
 {
   inputs = {
-    vscode-node-debug2 = {
+    vscodeNodeDebug2 = {
       url = "github:microsoft/vscode-node-debug2";
       flake = false;
     };
   };
 
   outputs =
-    inputs: {
+    { self, vscodeNodeDebug2 }: {
       overlay = final: prev: {
-        dapAdapters = builtins.listToAttrs (map
-          (input: {
-            name = input;
-            value = builtins.getAttr input inputs;
-          })
-          (builtins.attrNames (final.lib.filterAttrs (n: v: n != "self") inputs)));
+        dapAdapters = {
+          vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 { src = vscodeNodeDebug2; };
+        };
       };
     };
 }
