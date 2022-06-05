@@ -86,12 +86,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-sYSB4Hcpt+Ql7FRi6pjhNPVWnGvjPukb8kd+MZoUsW4=",
-        "path": "/nix/store/55xkcfj270vprwd9g7kgzy75r1g3lf9z-source/overlays/dapAdapters",
+        "narHash": "sha256-5IXqIFITsYihpTRNOVT19jteYnALR8C4zM0W3pwSL6w=",
+        "path": "/nix/store/80nb9jzny39w4wlwqrg1zy8lz5hpbzl4-source/overlays/dapAdapters",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/55xkcfj270vprwd9g7kgzy75r1g3lf9z-source/overlays/dapAdapters",
+        "path": "/nix/store/80nb9jzny39w4wlwqrg1zy8lz5hpbzl4-source/overlays/dapAdapters",
         "type": "path"
       }
     },
@@ -383,11 +383,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-dxLx33jBelsRKEeDkRYZ75ct7XvluHZJ4tZcxXdUIY0=",
-        "path": "/nix/store/55xkcfj270vprwd9g7kgzy75r1g3lf9z-source/overlays/personal",
+        "path": "/nix/store/80nb9jzny39w4wlwqrg1zy8lz5hpbzl4-source/overlays/personal",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/55xkcfj270vprwd9g7kgzy75r1g3lf9z-source/overlays/personal",
+        "path": "/nix/store/80nb9jzny39w4wlwqrg1zy8lz5hpbzl4-source/overlays/personal",
         "type": "path"
       }
     },
@@ -440,11 +440,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "/nix/store/55xkcfj270vprwd9g7kgzy75r1g3lf9z-source/overlays/repos",
+        "path": "/nix/store/80nb9jzny39w4wlwqrg1zy8lz5hpbzl4-source/overlays/repos",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/55xkcfj270vprwd9g7kgzy75r1g3lf9z-source/overlays/repos",
+        "path": "/nix/store/80nb9jzny39w4wlwqrg1zy8lz5hpbzl4-source/overlays/repos",
         "type": "path"
       }
     },
@@ -510,11 +510,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-ESC0u3Dl2238nQCb/Op+x4qfGZmVtV11WE53ki4fD5U=",
-        "path": "/nix/store/55xkcfj270vprwd9g7kgzy75r1g3lf9z-source/overlays/vimPlugins",
+        "path": "/nix/store/80nb9jzny39w4wlwqrg1zy8lz5hpbzl4-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/55xkcfj270vprwd9g7kgzy75r1g3lf9z-source/overlays/vimPlugins",
+        "path": "/nix/store/80nb9jzny39w4wlwqrg1zy8lz5hpbzl4-source/overlays/vimPlugins",
         "type": "path"
       }
     },

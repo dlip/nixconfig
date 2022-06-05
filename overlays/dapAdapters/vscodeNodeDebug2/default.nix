@@ -11,12 +11,11 @@ stdenv.mkDerivation {
   inherit src;
   buildInputs = [nodejs];
   buildPhase = ''
-    cp -r ${nodeDependencies}/lib/node_modules ./node_modules
-    ls -la node_modules
-    # ls -la node_modules/.bin
-    # export PATH="${nodeDependencies}/bin:$PATH"
-    # node_modules/gulp/bin/gulp.js build
+    ln -s ${nodeDependencies}/lib/node_modules ./node_modules
     npm run build
+  '';
+
+  installPhase = ''
     cp -r out $out/
   '';
 }
