@@ -21,6 +21,17 @@ dap.configurations.typescript = {
     port = 9305,
   },
   {
+    type = "node2",
+    name = "jest",
+    request = "attach",
+    sourceMaps = true,
+    -- trace = true,
+    sourceMapPathOverrides = {
+      ["webpack://planpay/./*"] = "${workspaceFolder}/*",
+    },
+    port = 9229,
+  },
+  {
     name = 'Launch',
     type = 'node2',
     request = 'launch',
