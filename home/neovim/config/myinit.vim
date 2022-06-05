@@ -168,9 +168,9 @@ EOF
     require("plugins.octo")
     require("plugins.rest")
     require("plugins.telescope")
-    require("plugins.trouble")
+    -- require("plugins.trouble")
     require("plugins.treesitter")
-    require("plugins.neorg")
+    require("plugins.ultest")
     require("plugins.whichkey")
 
     require("my.autocommands")

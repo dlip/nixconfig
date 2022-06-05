@@ -21,6 +21,20 @@ dap.configurations.typescript = {
     port = 9305,
   },
   {
+    name = 'Launch',
+    type = 'node2',
+    request = 'launch',
+    program = '${file}',
+    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    protocol = 'inspector',
+    console = 'integratedTerminal',
+    outFiles = { "${workspaceFolder}/dist/**/*.js" },
+    sourceMapPathOverrides = {
+      ["webpack://planpay/./*"] = "${workspaceFolder}/*",
+    },
+  },
+  {
     type = "node2",
     name = "node attach",
     request = "attach",

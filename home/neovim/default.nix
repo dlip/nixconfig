@@ -104,6 +104,7 @@ in
           vim-rhubarb
           vim-solidity
           vim-test
+          vim-ultest
           vim-tmux-navigator
           which-key-nvim
 

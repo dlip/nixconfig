@@ -68,6 +68,10 @@
       url = "github:nvim-telescope/telescope.nvim";
       flake = false;
     };
+    vim-test = {
+      url = "github:excalios/vim-test";
+      flake = false;
+    };
     # vim-delve = {
     #   url = "github:sebdah/vim-delve";
     #   flake = false;

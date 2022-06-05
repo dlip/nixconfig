@@ -69,6 +69,7 @@
       python3
       python39Packages.grip
       python39Packages.pip
+      python39Packages.pynvim
       python39Packages.setuptools
       rclone
       renameutils
