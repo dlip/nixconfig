@@ -13,7 +13,11 @@ dap.configurations.typescript = {
     type = "node2",
     name = "plan service",
     request = "attach",
-    cwd = vim.fn.getcwd(),
+    sourceMaps = true,
+    -- trace = true,
+    sourceMapPathOverrides = {
+      ["webpack://planpay/./*"] = "${workspaceFolder}/*",
+    },
     port = 9305,
   },
   {
@@ -46,12 +50,12 @@ dap.configurations.typescript = {
 dap.configurations.typescriptreact = dap.configurations.typescript
 dap.configurations.javascript = dap.configurations.typescript
 dap.configurations.javascriptreact = dap.configurations.typescript
-print(vim.g.vscode_node_debug2_root_path .. "/src/nodeDebug.js")
+
 dap.adapters.node2 = {
   type = "executable",
   command = "node",
   args = {
-    vim.g.vscode_node_debug2_root_path .. "/src/nodeDebug.js",
+    vim.g.vscode_node_debug2_root_path .. "/out/src/nodeDebug.js",
   },
 }
 

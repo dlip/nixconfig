@@ -4,6 +4,9 @@ let
     inherit src;
     buildInputs = [ pkgconfig libsecret ];
   }).nodeDependencies;
+  nodeDependenciesProd = ((callPackage ./nodeModulesProd {}).shell.override {
+    inherit src;
+  }).nodeDependencies;
 in
 
 stdenv.mkDerivation {
@@ -16,6 +19,9 @@ stdenv.mkDerivation {
   '';
 
   installPhase = ''
+    mkdir $out
     cp -r out $out/
+    cp package.json $out/
+    cp -r ${nodeDependenciesProd}/lib/node_modules $out/node_modules
   '';
 }
