@@ -65,6 +65,12 @@ local keymaps = {
   -- Hop
   { "nxo", "h", "<cmd>HopChar1AC<CR>" },
   { "nxo", "k", "<cmd>HopChar1BC<CR>" },
+
+  -- Debugging
+  { "nxo", "<F5>", "<Cmd>lua require'dap'.continue()<CR>" },
+  { "nxo", "<F6>", "<Cmd>lua require'dap'.step_over()<CR>" },
+  { "nxo", "<F2>", "<Cmd>lua require'dap'.step_into()<CR>" },
+  { "nxo", "<F4>", "<Cmd>lua require'dap'.step_out()<CR>" },
 }
 
 for i = 1, #keymaps do
