@@ -109,6 +109,9 @@ require("lsp-format").setup({
   lua = {
     exclude = { "null-ls" },
   },
+  terraform = {
+    exclude = { "null-ls" },
+  },
   html = {
     exclude = { "html" },
   },

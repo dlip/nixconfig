@@ -15,7 +15,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     home-manager = {
-      url = "github:nix-community/home-manager";
+      url = "github:nix-community/home-manager/70824bb5c790b820b189f62f643f795b1d2ade2e";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vim-plugins = {
@@ -76,7 +76,7 @@
           dap-adapters.overlay
           vim-plugins.overlay
           repos.overlay
-          kmonad.overlay
+          kmonad.overlays.default
           poetry2nix.overlay
           # (import ./overlays/personal/pythonPackages)
         ];
@@ -139,7 +139,7 @@
               modules =
                 [
                   ./systems/metabox/configuration.nix
-                  kmonad.nixosModule
+                  kmonad.nixosModules.default
                   home-manager.nixosModules.home-manager
                   pkgs.sops-nix.nixosModule
                   {
@@ -200,7 +200,7 @@
               pkgs = pkgsForSystem { system = "x86_64-linux"; };
               modules = [
                 ./systems/g/configuration.nix
-                kmonad.nixosModule
+                kmonad.nixosModules.default
                 pkgs.sops-nix.nixosModule
                 home-manager.nixosModules.home-manager
                 {

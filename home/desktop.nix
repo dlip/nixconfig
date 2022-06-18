@@ -34,6 +34,7 @@
       graphviz
       helix
       hledger
+      jdk11
       k9s
       kind
       kmonad
@@ -80,6 +81,7 @@
       teams
       tesseract4
       tldr
+      traceroute
       wireshark-cli
       ttyper
       typespeed

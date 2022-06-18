@@ -1,9 +1,7 @@
 { pkgs, ... }: {
 
   home.packages = with pkgs; [
-    steam
     minecraft
     # lutris
-
   ];
 }
