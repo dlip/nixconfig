@@ -60,8 +60,8 @@
       nodejs
       notify
       openssl
-      # openvpn
-      openvpn_aws
+      openvpn
+      # openvpn_aws
       pandoc
       pinentry
       poetry
