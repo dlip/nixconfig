@@ -4,6 +4,7 @@
       acpi
       age
       air
+      ansifilter
       appimage-run
       autoreconfHook
       avrdude
