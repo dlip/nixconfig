@@ -58,6 +58,7 @@ in
           diffview-nvim
           editorconfig-vim
           # fire-nvim
+          fix-cursor-hold-nvim
           format-nvim
           friendly-snippets
           glow-nvim
@@ -73,6 +74,9 @@ in
           neogit
           neorg
           neoscroll-nvim
+          neotest-jest
+          neotest-plenary
+          neotest-vim-test
           # nnn-nvim
           nord-nvim
           nui-nvim
@@ -85,6 +89,7 @@ in
           nvim-dap-virtual-text
           nvim-lint
           nvim-lspconfig
+          nvim-neotest
           nvim-treesitter-textobjects
           nvim-ts-rainbow
           octo-nvim
@@ -104,7 +109,7 @@ in
           vim-rhubarb
           vim-solidity
           vim-test
-          vim-ultest
+          # vim-ultest
           vim-tmux-navigator
           which-key-nvim
 

@@ -6,6 +6,7 @@
     ./rofi
     ./vscode
     ./awesome
+    # ./sway
   ];
 
   home.packages = with pkgs; [

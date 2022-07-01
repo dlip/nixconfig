@@ -49,11 +49,11 @@ let
     '';
 
     nixosconfig = ''
-      nice -19 nixos-rebuild --use-remote-sudo switch --flake .# --flake ${nixconfigpath} "$@"
+      nice -19 nixos-rebuild --use-remote-sudo switch --flake ${nixconfigpath} "$@"
     '';
 
     nixosconfigboot = ''
-      nice -19 nixos-rebuild --use-remote-sudo boot --flake .# boot --flake ${nixconfigpath} "$@"
+      nice -19 nixos-rebuild --use-remote-sudo boot --flake ${nixconfigpath} "$@"
     '';
 
     reset-k3s = ''

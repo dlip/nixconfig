@@ -161,6 +161,7 @@ EOF
     require("plugins.lualine")
     require("plugins.luasnip")
     require("plugins.neogit")
+    require("plugins.neotest")
     require("plugins.neoscroll")
     -- require("plugins.nnn")
     require("plugins.nvim-lint")
@@ -170,7 +171,7 @@ EOF
     require("plugins.telescope")
     -- require("plugins.trouble")
     require("plugins.treesitter")
-    require("plugins.ultest")
+    -- require("plugins.ultest")
     require("plugins.whichkey")
 
     require("my.autocommands")

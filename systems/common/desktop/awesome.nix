@@ -14,7 +14,6 @@
         enable = true;
         noDesktop = true;
         enableXfwm = false;
-        thunarPlugins = [ pkgs.xfce.thunar-archive-plugin ];
       };
     };
     windowManager.awesome = {
@@ -25,4 +24,8 @@
       ];
     };
   };
+
+  programs.thunar.plugins = [ pkgs.xfce.thunar-archive-plugin ];
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 }

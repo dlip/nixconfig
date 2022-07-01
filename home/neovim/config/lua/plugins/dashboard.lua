@@ -1,9 +1,5 @@
-local g = vim.g
-
-g.dashboard_disable_at_vimenter = 0
-g.dashboard_disable_statusline = 1
-g.dashboard_default_executive = "telescope"
-g.dashboard_custom_header = {
+local db = require('dashboard')
+db.custom_header = {
   "                                                   ",
   "                                                   ",
   "                                                   ",
@@ -20,18 +16,33 @@ g.dashboard_custom_header = {
   "                                                   ",
 }
 
-g.dashboard_custom_section = {
-  a = {
-    description = { "  Find File                 SPC p  " },
-    command = "Telescope frecency frecency default_text=:CWD:",
-  },
-  b = { description = { "  Recents                   SPC f o" }, command = "Telescope oldfiles" },
-  c = { description = { "  Find Word                 SPC f w" }, command = "Telescope live_grep" },
-  d = { description = { "洛 New File                  SPC f n" }, command = "DashboardNewFile" },
-  e = { description = { "  Bookmarks                 SPC b m" }, command = "Telescope marks" },
-  f = { description = { "  Load Last Session         SPC l  " }, command = "SessionLoad" },
-}
-
-g.dashboard_custom_footer = {
-  "   ",
+db.custom_center = {
+  { icon = '  ',
+    desc = 'Recent Files                            ',
+    action = 'Telescope oldfiles',
+    shortcut = 'SPC f o' },
+  { icon = '  ',
+    desc = 'Find File                               ',
+    action = 'Telescope frecency frecency default_text=:CWD:',
+    shortcut = 'SPC p  ' },
+  { icon = '洛 ',
+    desc = 'New File                                ',
+    action = 'DashboardNewFile',
+    shortcut = 'SPC ?  ' },
+  { icon = '  ',
+    desc = 'Bookmarks                               ',
+    action = 'Telescope marks',
+    shortcut = 'SPC f ?' },
+  { icon = '  ',
+    desc = 'File Browser                            ',
+    action = 'NvimTreeOpen',
+    shortcut = 'SPC f b' },
+  { icon = '  ',
+    desc = 'Find Word                               ',
+    action = 'Telescope live_grep',
+    shortcut = 'SPC f w' },
+  { icon = '  ',
+    desc = 'Load Last Session                       ',
+    shortcut = 'SPC s l',
+    action = 'SessionLoad' },
 }

@@ -48,6 +48,26 @@
     #   url = "github:MunifTanjim/nui.nvim";
     #   flake = false;
     # };
+    neotest-jest = {
+      url = "github:haydenmeade/neotest-jest";
+      flake = false;
+    };
+    neotest-plenary = {
+      url = "github:nvim-neotest/neotest-plenary";
+      flake = false;
+    };
+    neotest-vim-test = {
+      url = "github:nvim-neotest/neotest-vim-test";
+      flake = false;
+    };
+    nvim-neotest = {
+      url = "github:nvim-neotest/neotest";
+      flake = false;
+    };
+    fix-cursor-hold-nvim = {
+      url = "github:antoinemadec/FixCursorHold.nvim";
+      flake = false;
+    };
     # nvim-dap-go = {
     #   url = "github:leoluz/nvim-dap-go";
     #   flake = false;
