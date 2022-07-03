@@ -19,13 +19,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     vim-plugins = {
-      url = "./overlays/vimPlugins";
+      url = "path:./overlays/vimPlugins";
     };
     dap-adapters = {
-      url = "./overlays/dapAdapters";
+      url = "path:./overlays/dapAdapters";
     };
     repos = {
-      url = "./overlays/repos";
+      url = "path:./overlays/repos";
     };
     personal = {
       url = "./overlays/personal";
