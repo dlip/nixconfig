@@ -38,6 +38,7 @@
     ledger-live-desktop
     lens
     libreoffice
+    mongodb-compass
     mpv
     neovide
     # nyxt

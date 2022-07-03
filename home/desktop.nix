@@ -76,6 +76,7 @@
       rclone
       renameutils
       rustc
+      stern
       skopeo
       sops
       ssh-to-age

@@ -1,5 +1,6 @@
 local g = vim.g -- global variables
 local gs = require "gitsigns"
+local neotest = require("neotest")
 
 g.which_key_timeout = 100
 local wk = require("which-key")
@@ -188,15 +189,16 @@ function _G.coding_mappings()
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Dynamic Workspace Symbols" },
     t = {
       name = "Test",
-      a = { "<cmd>TestSuite<CR>", "Test All" },
+      a = { neotest.run.attach, "Attach Nearest" },
       d = { "<cmd>UltestDebugNearest<CR>", "Debug Nearest" },
-      D = { "<cmd>UltestDebug<CR>", "Debug File" },
-      f = { "<cmd>Ultest<CR>", "Test File" },
-      l = { "<cmd>UltestLast<CR>", "Test Last" },
-      n = { "<cmd>UltestNearest<CR>", "Test Nearest" },
-      s = { "<cmd>UltestSummary<CR>", "Summary" },
-      x = { "<cmd>UltestStopNearest<CR>", "Stop Nearest Test" },
-      X = { "<cmd>UltestStop<CR>", "Stop Tests" },
+      -- d = { function() neotest.run.run({ strategy = "dap" }) end, "Debug Nearest" },
+      f = { function() neotest.run.run(vim.fn.expand("%")) end, "Test File" },
+      l = { neotest.run.run_last, "Test Last" },
+      n = { neotest.jump.next, "Jump to Next Test" },
+      p = { neotest.jump.prev, "Jump to Previous Test" },
+      s = { neotest.summary.toggle, "Toggle Summary" },
+      t = { neotest.run.run, "Test Nearest" },
+      x = { neotest.run.stop, "Stop Nearest Test" },
     },
     w = { function() vim.lsp.buf.add_workspace_folder() end, "Add Workspace Folder" },
     W = { function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, "List Workspace Folders" },

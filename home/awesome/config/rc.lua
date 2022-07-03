@@ -307,7 +307,6 @@ globalkeys = gears.table.join(
     { description = "reload awesome", group = "awesome" }),
   awful.key({ modkey, "Control" }, "q", awesome.quit,
     { description = "quit awesome", group = "awesome" }),
-
   awful.key({ modkey, }, "+", function() awful.tag.incmwfact(0.05) end,
     { description = "increase master width factor", group = "layout" }),
   awful.key({ modkey, }, "_", function() awful.tag.incmwfact(-0.05) end,
@@ -376,6 +375,13 @@ clientkeys = gears.table.join(
     { description = "toggle fullscreen", group = "client" }),
   awful.key({ modkey, }, "w", function(c) c:kill() end,
     { description = "close", group = "client" }),
+  awful.key({ modkey, "Shift" }, "w",
+    function(c)
+      if c.pid then
+        awful.spawn("kill -9 " .. c.pid)
+      end
+    end
+  ),
   awful.key({ modkey, "Control" }, "space", awful.client.floating.toggle,
     { description = "toggle floating", group = "client" }),
   awful.key({ modkey, }, "s", function(c) c.sticky = not c.sticky end,

@@ -79,6 +79,8 @@ EOF
       \ }
   \ }
 
+  let g:ultest_deprecation_notice = 0
+
   " https://github.com/neovide/neovide
   let g:neovide_cursor_vfx_mode = 'railgun'
   let g:neovide_transparency=0.8
@@ -171,7 +173,7 @@ EOF
     require("plugins.telescope")
     -- require("plugins.trouble")
     require("plugins.treesitter")
-    -- require("plugins.ultest")
+    require("plugins.ultest")
     require("plugins.whichkey")
 
     require("my.autocommands")
