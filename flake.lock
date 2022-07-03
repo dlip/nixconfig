@@ -529,11 +529,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-uiwW69maIwmSDhq5YUOdNJYmaVXMhmZ4q9Glvj2eMGo=",
-        "path": "/nix/store/d6xbja7khi5spnh4cp3mrd27959ji0rk-source/overlays/personal",
+        "path": "./overlays/personal",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/d6xbja7khi5spnh4cp3mrd27959ji0rk-source/overlays/personal",
+        "path": "./overlays/personal",
         "type": "path"
       }
     },

@@ -28,7 +28,7 @@
       url = "path:./overlays/repos";
     };
     personal = {
-      url = "./overlays/personal";
+      url = "path:./overlays/personal";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
