@@ -53,7 +53,7 @@
       # myPythonPackages.shirah-reader
       # myPythonPackages.adafruit-nrfutil
       niv
-      # nix-du broken
+      nix-du
       nodePackages.node2nix
       nodePackages.quicktype
       nodePackages.reveal-md
