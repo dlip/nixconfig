@@ -72,6 +72,10 @@
     #   url = "github:leoluz/nvim-dap-go";
     #   flake = false;
     # };
+    nvim-dap-ui = {
+      url = "github:rcarriga/nvim-dap-ui";
+      flake = false;
+    };
     # octo-nvim = {
     #   url = "github:pwntester/octo.nvim";
     #   flake = false;
