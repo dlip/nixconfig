@@ -91,6 +91,7 @@
           ${(build {shield = "settings"; side = "reset";})}/bin/build
         '';
         init = pkgs.writeShellScriptBin "init" ''
+            git clone https://github.com/zmkfirmware/zmk.git
           	west init -l config
         '';
         update = pkgs.writeShellScriptBin "update" ''
