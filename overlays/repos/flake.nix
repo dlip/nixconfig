@@ -16,6 +16,9 @@
       url = "github:rxi/json.lua";
       flake = false;
     };
+    actual-server = {
+      url = "github:actualbudget/actual-server";
+    };
   };
 
   outputs =

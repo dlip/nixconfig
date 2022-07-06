@@ -5,6 +5,9 @@
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    actual-server = {
+      url = "github:actualbudget/actual-server";
+    };
     envy-sh = {
       url = "github:dlip/envy.sh";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -32,6 +35,7 @@
     { self
     , nixpkgs
     , flake-utils
+    , actual-server
     , envy-sh
     , emoji-menu
     , power-menu
@@ -40,6 +44,7 @@
     }:
     {
       overlay = final: prev: {
+        actualServer = final.callPackage ./actualServer { src = actual-server; };
         envy-sh = envy-sh.defaultPackage.${final.system};
         emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
         power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
