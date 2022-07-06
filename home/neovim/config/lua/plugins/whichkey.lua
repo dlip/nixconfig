@@ -72,10 +72,9 @@ require("which-key").setup({
 
 local keymap = {
   ["<Tab>"] = { "<C-^>", "Previous Buffer" },
-  b = { "<cmd>Telescope buffers<CR>", "Find Buffers" },
+  b = { function() require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true }) end, "Find Buffers" },
   f = {
     name = "Find",
-    b = { "<cmd>Telescope buffers<CR>", "Buffers" },
     c = { "<cmd>Telescope commands<CR>", "commands" },
     C = { "<cmd>Telescope command_history<CR>", "history" },
     f = { "<cmd>Telescope find_files<CR>", "Find Files" },
