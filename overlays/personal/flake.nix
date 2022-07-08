@@ -5,13 +5,14 @@
       url = "github:numtide/flake-utils";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    actual-server = {
-      url = "github:actualbudget/actual-server";
-    };
     envy-sh = {
       url = "github:dlip/envy.sh";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
+    };
+    actual-server = {
+      url = "github:actualbudget/actual-server";
+      flake = false;
     };
     emoji-menu = {
       url = "github:jchook/emoji-menu";
