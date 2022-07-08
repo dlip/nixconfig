@@ -690,6 +690,6 @@ screen.connect_signal("arrange", function(s)
   end
 end)
 -- Startup Commands
-awful.spawn.with_shell(xrandr_command)
+-- awful.spawn.with_shell(xrandr_command)
 -- Enable dpms
 awful.spawn.with_shell("xset s on && xset s 1200")
