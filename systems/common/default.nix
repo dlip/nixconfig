@@ -52,9 +52,9 @@ in
   networking.hostName = hostname; # Define your hostname.
   networking.useDHCP = false;
   networking.networkmanager.enable = true;
-  # networking.extraHosts = ''
-  #   10.10.0.123 dex
-  # '';
+  networking.extraHosts = ''
+    10.10.0.123 dex.local
+  '';
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

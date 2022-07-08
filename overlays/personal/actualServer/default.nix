@@ -1,63 +1,31 @@
-{stdenv, pkgs, src}:
+{ stdenv, pkgs, src, nodejs, fetchurl }:
+let
+  arch =
+    if stdenv.hostPlatform.system == "x86_64-linux" then "linux-x64"
+    else throw "Unsupported architecture: ${stdenv.hostPlatform.system}";
+
+  bcrypt_version = "5.0.1";
+  bcrypt_lib = fetchurl {
+    url = "https://github.com/kelektiv/node.bcrypt.js/releases/download/v${bcrypt_version}/bcrypt_lib-v${bcrypt_version}-napi-v3-${arch}-glibc.tar.gz";
+    sha256 = "3R3dBZyPansTuM77Nmm3f7BbTDkDdiT2HQIrti2Ottc=";
+  };
+in
 pkgs.mkYarnPackage {
-    name = "actual-sync";
-    inherit src;
-    # buildPhase = ''
-    #   runHook preBuild
-    #   pushd deps/actual-sync
-    #   yarn build
-    #   popd
-    #   runHook postBuild
-    # '';
-    postBuild = ''
-      pushd ./deps/actual-sync
-      yarn build
-      # cp app.js index.js
-      # mkdir -p $out/libexec/actual-sync
-      # cp -R build/* $out/libexec/actual-sync
-      # ls -la
-      # cp -R "$node_modules" .
-      popd
-      # cp -R deps/actual-sync/build $out
-    '';
+  name = "actual-sync";
+  inherit src;
+  postBuild = ''
+    pushd node_modules/bcrypt
+    mkdir -p ./lib/binding && tar -C ./lib/binding -xf ${bcrypt_lib}
+    popd
 
-    postInstall = ''
-      rm $out/libexec/actual-sync/deps/actual-sync/node_modules
-      cp -R "$node_modules" $out/libexec/actual-sync/deps/actual-sync/
-    '';
+    pushd ./deps/actual-sync
+    yarn build
+    popd
+  '';
+  postInstall = ''
+    rm $out/libexec/actual-sync/deps/actual-sync/node_modules
+    mv $out/libexec/actual-sync/node_modules $out/libexec/actual-sync/deps/actual-sync/node_modules
+  '';
 
-    # postConfigure = ''
-    #   cp -R "$node_modules" libexec/actual-sync/node_modules
-    # '';
-
-  #   preInstall = ''
-  #   mkdir $out
-  #   cp -R ./deps/lemmy-ui/dist $out
-  #   cp -R ./node_modules $out
-  # '';
-    # publishBinsFor = ["actual-sync"];
-
-    # postInstall = ''
-    #   cp -R ./deps/actual-sync/build/* $out/libexec/actual-sync
-    # '';
-
-    # doDist = false;
-  }
-
-# let
-#   nodeDependencies = (pkgs.callPackage ./import.nix { }).nodeDependencies;
-# in
-#
-# stdenv.mkDerivation {
-#   name = "my-webpack-app";
-#   inherit src;
-#   buildInputs = [ pkgs.nodejs ];
-#   buildPhase = ''
-#     ln -s ${nodeDependencies}/lib/node_modules ./node_modules
-#     export PATH="${nodeDependencies}/bin:$PATH"
-#
-#     # Build the distribution bundle in "dist"
-#     webpack
-#     cp -r dist $out/
-#   '';
-# }
+  doDist = false;
+}
