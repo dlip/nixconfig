@@ -13,17 +13,31 @@ in
       ../common/services/kmonad.nix
     ];
 
-  services.acpid.handlers = {
-    lid = {
-      event = "button/lid LID (open|close)";
-      action = ''
-        if grep -q closed /proc/acpi/button/lid/LID0/state; then
-          /etc/profiles/per-user/dane/bin/brightnessctl set 0
-        else
-          /etc/profiles/per-user/dane/bin/brightnessctl set 50%
-        fi
-      '';
-    };
+  # services.acpid = {
+  #   enable = true;
+  #
+  #   lidEventCommands = ''
+  #     #!${pkgs.bash}/bin/bash
+  #
+  #     export DISPLAY=:0
+  #
+  #     if grep -q open /proc/acpi/button/lid/LID/state; then
+  #       ${pkgs.sudo}/bin/sudo -u dane ${pkgs.autorandr}/bin/autorandr all
+  #     else
+  #       ${pkgs.sudo}/bin/sudo -u dane ${pkgs.autorandr}/bin/autorandr monitor
+  #     fi
+  #   '';
+  # };
+
+  services.acpid = {
+    enable = true;
+    lidEventCommands = ''
+      if grep -q closed /proc/acpi/button/lid/LID0/state; then
+        /etc/profiles/per-user/dane/bin/brightnessctl set 0
+      else
+        /etc/profiles/per-user/dane/bin/brightnessctl set 50%
+      fi
+    '';
   };
 
   services.autorandr = {
@@ -39,7 +53,7 @@ in
     HandlePowerKey=ignore
   '';
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = [ "nvidia" "displaylink" "modesetting" ];
   services.xserver.screenSection = ''
     Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"
     Option         "AllowIndirectGLXProtocol" "off"
