@@ -26,7 +26,7 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl lmet lalt muhenkan  spc  henkan ralt katakanahiragana rctl cmp  
+  lctl lmet lalt muhenkan  spc  henkan ralt katakanahiragana rctl cmp
 )
 
 (defalias
@@ -36,14 +36,16 @@
   num (layer-toggle num)
   fn (layer-toggle fn)
 
+  a (tap-hold-next-release 200 a @fn)
   r (tap-hold-next-release 200 r lalt)
   s (tap-hold-next-release 200 s lmet)
   t (tap-hold-next-release 200 t lctl)
-  
+
   n (tap-hold-next-release 200 n rctl)
   e (tap-hold-next-release 200 e rmet)
   i (tap-hold-next-release 200 i lalt)
-  
+  o (tap-hold-next-release 200 o @med)
+
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
   c (tap-hold 200 c C-c)
@@ -53,8 +55,6 @@
   spc (tap-hold-next-release 200 spc @med)
   snv (sticky-key 1000 @nav)
   snm (sticky-key 1000 @num)
-  sme (sticky-key 1000 @med)
-  sfn (sticky-key 1000 @fn)
   ssf (sticky-key 1000 lsft)
 )
 
@@ -62,8 +62,8 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @na  q    w    f    p    b    @na  j    l    u    y    ;    _    _
-  @na  a    @r   @s   @t   g    @na  m    @n   @e   @i   o    _
-  @na  @z   @x   @c   @d   v    @na  k    h    ,    .    ' 
+  @na  @a   @r   @s   @t   g    @na  m    @n   @e   @i   @o   _
+  @na  @z   @x   @c   @d   v    @na  k    h    ,    .    '
   _    _    @snm @snm      @spc      @ssf @ssf @snv @snv @snv
 )
 
@@ -73,7 +73,7 @@
   _    \    home up   end  pgup _    _    _    _    _    _    _    _
   _    esc  lft  down rght tab  _    _    _    _    _    _    _
   _    grv  del  bspc ret  pgdn _    _    _    _    _    _
-  _    _    @sme @sme      @ssf      @ssf @ssf _    _    _
+  _    _    _    _         @ssf      @ssf @ssf _    _    _
 )
 
 (defalias
@@ -89,8 +89,8 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    grv  \    [    ]    y    _    +    7    8    9    *    _    _
   _    prnt _    _    _    tab  _    =    4    5    6    0    _
-  _    @und @cut @cp  @stb @pst _    -    1    2    3    / 
-  _    _    _    _         @ssf      @ssf @ssf @sfn @sfn @sfn
+  _    @und @cut @cp  @stb @pst _    -    1    2    3    /
+  _    _    _    _         @ssf      @ssf @ssf _    _    _
 )
 
 (defalias
