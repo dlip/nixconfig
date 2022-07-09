@@ -92,7 +92,7 @@ rec {
     serviceConfig = {
       Type = "forking";
       User = "root";
-      ExecStart = ''${pkgs.actual-server}/bin/actual-server'';
+      ExecStart = ''${pkgs.actualServer}/bin/actual-server'';
     };
   };
 
