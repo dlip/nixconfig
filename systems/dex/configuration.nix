@@ -185,7 +185,10 @@ rec {
     virtualHosts = (pkgs.lib.attrsets.mapAttrs'
       (name: port:
         pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
-          locations."/" = { proxyPass = "http://127.0.0.1:${toString port}"; };
+          locations."/" = {
+            proxyPass = "http://127.0.0.1:${toString port}";
+            proxyWebsockets = true;
+          };
         }))
       dex-services) // (pkgs.lib.attrsets.mapAttrs'
       (name: port:
