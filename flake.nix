@@ -127,6 +127,8 @@
         };
         packages = with pkgs; {
           inherit juliusSpeech;
+          inherit actualServer;
+
           pushNixStoreDockerImage = (pkgs.callPackage ./pkgs/pushNixStoreDockerImage { });
         };
       }) // (
