@@ -78,6 +78,10 @@ rec {
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
     description = "Actual Server";
+    environment = {
+      USER_FILES = "/var/lib/actual-server/user";
+      SERVER_FILES = "/var/lib/actual-server/server";
+    };
     serviceConfig = {
       Type = "forking";
       User = "root";
