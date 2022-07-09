@@ -81,7 +81,7 @@ rec {
     };
   };
 
-  systemd.services.actual = {
+  systemd.services.actual-server = {
     wantedBy = [ "multi-user.target" ];
     after = [ "network.target" ];
     description = "Actual Server";
@@ -89,9 +89,7 @@ rec {
       USER_FILES = "/var/lib/actual-server/user";
       SERVER_FILES = "/var/lib/actual-server/server";
     };
-    serviceConfig = {
-      ExecStart = ''${pkgs.actualServer}/bin/actual-server'';
-    };
+    script = "${pkgs.actualServer}/bin/actual-server";
   };
 
   networking.nat.enable = true;
