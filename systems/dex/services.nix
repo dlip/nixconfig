@@ -5,4 +5,5 @@
   tekton-dashboard = 30001;
   nix-cache = 5000;
   syncthing = 8384;
+  budget = 5006;
 }
