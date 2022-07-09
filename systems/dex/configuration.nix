@@ -18,6 +18,7 @@ rec {
     ./hardware-configuration.nix
     (import ../common params)
     ../common/desktop/kde.nix
+    ../common/services/notify-problems.nix
   ];
 
   # Open ports in the firewall.
@@ -43,7 +44,7 @@ rec {
 
     script = ''
       if ! /run/wrappers/bin/mount | grep -q -wi "/media/backup"; then
-         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/sdc backup
+         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/sdf backup
          /run/wrappers/bin/mount /dev/mapper/backup /media/backup
       fi
     '';
@@ -52,6 +53,12 @@ rec {
   users.users.tv = {
     isNormalUser = true;
     initialPassword = "password";
+    extraGroups = [ ]; # Enable ‘sudo’ for the user.
+    shell = "/etc/profiles/per-user/tv/bin/zsh";
+  };
+
+  users.users.ryoko = {
+    isNormalUser = true;
     extraGroups = [ ]; # Enable ‘sudo’ for the user.
     shell = "/etc/profiles/per-user/tv/bin/zsh";
   };
@@ -196,6 +203,7 @@ rec {
     group = "root";
   };
 
+  systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
   services.restic.backups = {
     dex = {
       paths = [
