@@ -90,8 +90,6 @@ rec {
       SERVER_FILES = "/var/lib/actual-server/server";
     };
     serviceConfig = {
-      Type = "forking";
-      User = "root";
       ExecStart = ''${pkgs.actualServer}/bin/actual-server'';
     };
   };
