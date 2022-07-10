@@ -59,9 +59,9 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @na  q    w    f    p    b    @na  j    l    u    y    ;    _    _
-  @na  @a   @r   @s   @t   g    @na  m    @n   @e   @i   @o   _
-  @na  @z   @x   @c   @d   v    @na  k    h    ,    .    '
-  _    _    @lft @lft      spc       bspc bspc @rgt @rgt @rgt
+  @na  a    r    s    t    g    @na  m    n    e    i    o   _
+  @na  z    x    c    d    v    @na  k    h    ,    .    '
+  _    _    @lft @lft      spc       lsft rsft @rgt @rgt @rgt
 )
 
 

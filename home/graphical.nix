@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   imports = [
-    ./alacritty
+    # ./alacritty
     ./kitty
     ./rofi
     ./vscode
@@ -38,6 +38,7 @@
     ledger-live-desktop
     lens
     libreoffice
+    logseq
     mongodb-compass
     mpv
     neovide
@@ -46,19 +47,19 @@
     obsidian
     postman
     plexamp
-    plover.dev
+    # plover.dev
     qalculate-gtk
     remote-touchpad
     slack
     # spotify
-    talon
+    # talon
     tdesktop
     vial
     vlc
     xclip
     # xfce.thunar
     xorg.xmodmap
-    xournalpp
+    # xournalpp
     yacreader
     # yubikey-manager-qt #broken
     # yubioath-desktop #broken

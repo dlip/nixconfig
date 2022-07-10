@@ -1,32 +1,153 @@
 -- https://github.com/kyazdani42/nvim-tree.lua
-local tree_cb = require("nvim-tree.config").nvim_tree_callback
 
--- following options are the default
-require("nvim-tree").setup({
-  -- disables netrw completely
+require("nvim-tree").setup {
+  auto_reload_on_write = true,
+  create_in_closed_folder = false,
   disable_netrw = false,
-  -- hijack netrw window on startup
-  hijack_netrw = false,
-  -- open the tree when running this setup function
+  hijack_cursor = false,
+  hijack_netrw = true,
+  hijack_unnamed_buffer_when_opening = false,
+  ignore_buffer_on_setup = false,
   open_on_setup = false,
-  -- will not open on setup if the filetype is in this list
-  ignore_ft_on_setup = {},
-  -- opens the tree when changing/opening a new tab if the tree wasn't previously opened
+  open_on_setup_file = false,
   open_on_tab = false,
-  -- hijacks new directory buffers when they are opened.
-  update_to_buf_dir = {
-    -- enable the feature
+  sort_by = "name",
+  root_dirs = {},
+  prefer_startup_root = false,
+  sync_root_with_cwd = false,
+  reload_on_bufenter = false,
+  respect_buf_cwd = false,
+  view = {
+    adaptive_size = true,
+    centralize_selection = false,
+    width = 30,
+    height = 30,
+    hide_root_folder = false,
+    side = "left",
+    preserve_window_proportions = false,
+    number = false,
+    relativenumber = false,
+    signcolumn = "yes",
+    mappings = {
+      custom_only = false,
+      list = {
+        { key = { "<CR>", "o", "<2-LeftMouse>" }, action = "edit" },
+        { key = "<C-e>", action = "edit_in_place" },
+        { key = "O", action = "edit_no_picker" },
+        { key = { "<C-]>", "<2-RightMouse>" }, action = "cd" },
+        { key = "<C-v>", action = "vsplit" },
+        { key = "<C-x>", action = "split" },
+        { key = "<C-t>", action = "tabnew" },
+        { key = "<", action = "prev_sibling" },
+        { key = ">", action = "next_sibling" },
+        { key = "P", action = "parent_node" },
+        { key = "<BS>", action = "close_node" },
+        { key = "<Tab>", action = "preview" },
+        { key = "K", action = "first_sibling" },
+        { key = "J", action = "last_sibling" },
+        { key = "I", action = "toggle_git_ignored" },
+        { key = "H", action = "toggle_dotfiles" },
+        { key = "U", action = "toggle_custom" },
+        { key = "R", action = "refresh" },
+        { key = "a", action = "create" },
+        { key = "d", action = "remove" },
+        { key = "D", action = "trash" },
+        { key = "r", action = "rename" },
+        { key = "<C-r>", action = "full_rename" },
+        { key = "x", action = "cut" },
+        { key = "c", action = "copy" },
+        { key = "p", action = "paste" },
+        { key = "y", action = "copy_name" },
+        { key = "Y", action = "copy_path" },
+        { key = "gy", action = "copy_absolute_path" },
+        { key = "[e", action = "prev_diag_item" },
+        { key = "[c", action = "prev_git_item" },
+        { key = "]e", action = "next_diag_item" },
+        { key = "]c", action = "next_git_item" },
+        { key = "-", action = "dir_up" },
+        { key = "s", action = "system_open" },
+        { key = "f", action = "live_filter" },
+        { key = "F", action = "clear_live_filter" },
+        { key = "q", action = "close" },
+        { key = "W", action = "collapse_all" },
+        { key = "E", action = "expand_all" },
+        { key = "S", action = "search_node" },
+        { key = ".", action = "run_file_command" },
+        { key = "<C-k>", action = "toggle_file_info" },
+        { key = "g?", action = "toggle_help" },
+      }
+    },
+  },
+  renderer = {
+    add_trailing = false,
+    group_empty = false,
+    highlight_git = false,
+    full_name = false,
+    highlight_opened_files = "none",
+    root_folder_modifier = ":~",
+    indent_markers = {
+      enable = false,
+      icons = {
+        corner = "└ ",
+        edge = "│ ",
+        item = "│ ",
+        none = "  ",
+      },
+    },
+    icons = {
+      webdev_colors = true,
+      git_placement = "before",
+      padding = " ",
+      symlink_arrow = " ➛ ",
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
+      glyphs = {
+        default = "",
+        symlink = "",
+        folder = {
+          arrow_closed = "",
+          arrow_open = "",
+          default = "",
+          open = "",
+          empty = "",
+          empty_open = "",
+          symlink = "",
+          symlink_open = "",
+        },
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌",
+        },
+      },
+    },
+    special_files = { "Cargo.toml", "Makefile", "README.md", "readme.md" },
+  },
+  hijack_directories = {
     enable = true,
-    -- allow to open the tree if it was previously closed
     auto_open = true,
   },
-  -- hijack the cursor in the tree to put it at the start of the filename
-  hijack_cursor = true,
-  -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
-  update_cwd = false,
-  -- show lsp diagnostics in the signcolumn
-  diagnostics = {
+  update_focused_file = {
     enable = true,
+    update_root = false,
+    ignore_list = {},
+  },
+  ignore_ft_on_setup = {},
+  system_open = {
+    cmd = "",
+    args = {},
+  },
+  diagnostics = {
+    enable = false,
+    show_on_dirs = false,
     icons = {
       hint = "",
       info = "",
@@ -34,82 +155,67 @@ require("nvim-tree").setup({
       error = "",
     },
   },
-  -- update the focused file on `BufEnter`, un-collapses the folders recursively until it finds the file
-  update_focused_file = {
-    -- enables the feature
-    enable = true,
-    -- update the root directory of the tree to the one of the folder containing the file if the file is not under the current root directory
-    -- only relevant when `update_focused_file.enable` is true
-    update_cwd = false,
-    -- list of buffer names / filetypes that will not update the cwd if the file isn't found under the current root directory
-    -- only relevant when `update_focused_file.update_cwd` is true and `update_focused_file.enable` is true
-    ignore_list = {},
-  },
-  -- configuration options for the system open command (`s` in the tree by default)
-  system_open = {
-    -- the command to run this, leaving nil should work in most cases
-    cmd = nil,
-    -- the command arguments as a list
-    args = {},
-  },
   filters = {
-    dotfiles = false,
+    dotfiles = true,
     custom = {},
     exclude = {},
   },
+  filesystem_watchers = {
+    enable = true,
+    interval = 100,
+    debounce_delay = 50,
+  },
   git = {
     enable = true,
-    ignore = false,
+    ignore = true,
     timeout = 400,
   },
-  view = {
-    -- width of the window, can be either a number (columns) or a string in `%`, for left or right side placement
-    width = 30,
-    -- height of the window, can be either a number (columns) or a string in `%`, for top or bottom side placement
-    height = 30,
-    -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
-    side = "left",
-    -- if true the tree will resize itself after opening a file
-    auto_resize = false,
-    mappings = {
-      -- custom only false will merge the list with the default mappings
-      -- if true, it will only use your list to set the mappings
-      custom_only = true,
-      -- list of mappings to set on the tree manually
-      list = {
-        { key = { "<CR>", "o", "<2-LeftMouse>" }, cb = tree_cb("edit") },
-        { key = { "<2-RightMouse>", "<C-]>" }, cb = tree_cb("cd") },
-        { key = "<C-v>", cb = tree_cb("vsplit") },
-        { key = "<C-x>", cb = tree_cb("split") },
-        { key = "<C-t>", cb = tree_cb("tabnew") },
-        { key = "<", cb = tree_cb("prev_sibling") },
-        { key = ">", cb = tree_cb("next_sibling") },
-        { key = "P", cb = tree_cb("parent_node") },
-        { key = "<BS>", cb = tree_cb("close_node") },
-        { key = "<S-CR>", cb = tree_cb("close_node") },
-        { key = "<Tab>", cb = tree_cb("preview") },
-        { key = "K", cb = tree_cb("first_sibling") },
-        { key = "J", cb = tree_cb("last_sibling") },
-        { key = "I", cb = tree_cb("toggle_ignored") },
-        { key = "H", cb = tree_cb("toggle_dotfiles") },
-        { key = "R", cb = tree_cb("refresh") },
-        { key = "a", cb = tree_cb("create") },
-        { key = "d", cb = tree_cb("remove") },
-        { key = "r", cb = tree_cb("rename") },
-        { key = "<C-r>", cb = tree_cb("full_rename") },
-        { key = "x", cb = tree_cb("cut") },
-        { key = "c", cb = tree_cb("copy") },
-        { key = "p", cb = tree_cb("paste") },
-        { key = "y", cb = tree_cb("copy_name") },
-        { key = "Y", cb = tree_cb("copy_path") },
-        { key = "gy", cb = tree_cb("copy_absolute_path") },
-        { key = "[c", cb = tree_cb("prev_git_item") },
-        { key = "]c", cb = tree_cb("next_git_item") },
-        { key = "-", cb = tree_cb("dir_up") },
-        { key = "s", cb = tree_cb("system_open") },
-        { key = "q", cb = tree_cb("close") },
-        { key = "g?", cb = tree_cb("toggle_help") },
+  actions = {
+    use_system_clipboard = true,
+    change_dir = {
+      enable = true,
+      global = false,
+      restrict_above_cwd = false,
+    },
+    expand_all = {
+      max_folder_discovery = 300,
+      exclude = {},
+    },
+    open_file = {
+      quit_on_open = false,
+      resize_window = true,
+      window_picker = {
+        enable = true,
+        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        exclude = {
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          buftype = { "nofile", "terminal", "help" },
+        },
       },
     },
+    remove_file = {
+      close_window = true,
+    },
   },
-})
+  trash = {
+    cmd = "gio trash",
+    require_confirm = true,
+  },
+  live_filter = {
+    prefix = "[FILTER]: ",
+    always_show_folders = true,
+  },
+  log = {
+    enable = false,
+    truncate = false,
+    types = {
+      all = false,
+      config = false,
+      copy_paste = false,
+      diagnostics = false,
+      git = false,
+      profile = false,
+      watcher = false,
+    },
+  },
+}
