@@ -182,6 +182,7 @@ function _G.coding_mappings()
     n = { function() vim.lsp.diagnostic.goto_next() end, "Go to Next Error" },
     N = { function() vim.lsp.diagnostic.goto_prev() end, "Go to Previous Error" },
     o = { function() vim.lsp.diagnostic.show_line_diagnostics() end, "Show Line Diagnostics" },
+    p = { function() require('telescope.builtin').diagnostics({ severity_limit = "Error" }) end, "Problems" },
     q = { function() vim.lsp.diagnostic.set_loclist() end, "Set Loclist" },
     r = { "<cmd>Telescope lsp_references<CR>", "References" },
     s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
