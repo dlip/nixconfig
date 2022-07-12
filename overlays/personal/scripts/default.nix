@@ -12,6 +12,7 @@ let
       kitty --class Work work&
       obsidian&
       slack&
+      teams&
     '';
 
     work = ''
