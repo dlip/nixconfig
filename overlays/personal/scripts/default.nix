@@ -12,7 +12,6 @@ let
       kitty --class Work work&
       obsidian&
       slack&
-      plexamp&
     '';
 
     work = ''
