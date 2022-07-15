@@ -1,13 +1,9 @@
-{ ... }:
+{ config, ... }:
 {
   programs.starship = {
     enable = true;
-
     enableZshIntegration = true;
-
-    #  "${config.xdg.configHome}/starship.toml".text = ''
-    #   [nix_shell]
-    #   use_name = false
-    # '';
   };
+
+  home.file."${config.xdg.configHome}/starship.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/starship/starship.toml";
 }
