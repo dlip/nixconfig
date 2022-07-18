@@ -72,7 +72,8 @@ require("which-key").setup({
 
 local keymap = {
   ["<Tab>"] = { "<C-^>", "Previous Buffer" },
-  b = { function() require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true }) end, "Find Buffers" },
+  b = { function() require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true }) end,
+    "Find Buffers" },
   f = {
     name = "Find",
     c = { "<cmd>Telescope commands<CR>", "commands" },
@@ -179,11 +180,11 @@ function _G.coding_mappings()
     i = { "<cmd>Telescope lsp_implementations<CR>", "Go to Implementations" },
     l = { function() require('lint').try_lint() end, "Lint" },
     m = { function() vim.lsp.buf.rename() end, "Rename" },
-    n = { function() vim.lsp.diagnostic.goto_next() end, "Go to Next Error" },
-    N = { function() vim.lsp.diagnostic.goto_prev() end, "Go to Previous Error" },
-    o = { function() vim.lsp.diagnostic.show_line_diagnostics() end, "Show Line Diagnostics" },
+    n = { function() vim.diagnostic.goto_next() end, "Go to Next Error" },
+    N = { function() vim.diagnostic.goto_prev() end, "Go to Previous Error" },
+    o = { function() vim.diagnostic.open_float() end, "Open float" },
     p = { function() require('telescope.builtin').diagnostics({ severity_limit = "Error" }) end, "Problems" },
-    q = { function() vim.lsp.diagnostic.set_loclist() end, "Set Loclist" },
+    q = { function() vim.diagnostic.setloclist() end, "Set Loclist" },
     r = { "<cmd>Telescope lsp_references<CR>", "References" },
     s = { "<cmd>Telescope lsp_document_symbols<CR>", "Document Symbols" },
     S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Dynamic Workspace Symbols" },
