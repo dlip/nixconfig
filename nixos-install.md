@@ -116,10 +116,10 @@ Add public key to .sops.yaml
 
 On an existing machine
 
-Reencrypt the common secrets
+Update keys in the common secrets
 
 ```sh
-sops -r -i systems/common/secrets/secrets.yaml
+sops updatekeys systems/common/secrets/secrets.yaml
 ```
 
 Create secrets
