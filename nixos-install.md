@@ -114,6 +114,14 @@ sudo ssh-to-age -private-key -i /etc/ssh/ssh_host_ed25519_key | age-keygen -y
 
 Add public key to .sops.yaml
 
+On an existing machine
+
+Reencrypt the common secrets
+
+```sh
+sops -r -i systems/common/secrets/secrets.yaml
+```
+
 Create secrets
 
 ```sh
