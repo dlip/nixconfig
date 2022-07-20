@@ -32,7 +32,7 @@ theme.font_name = "Noto Sans"
 theme.font_size = dpi(18)
 theme.font      = theme.font_name .. " " .. theme.font_size
 
--- awful.screen.set_auto_dpi_enabled( true )
+-- awful.screen.set_auto_dpi_enabled(true)
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -356,15 +356,20 @@ globalkeys = gears.table.join(
     { description = "Emoji menu", group = "launcher" }),
   awful.key({ modkey }, "c", function() awful.util.spawn_with_shell("CM_LAUNCHER=rofi clipmenu") end,
     { description = "Clip menu", group = "launcher" }),
-  awful.key({ modkey }, "p", function() awful.util.spawn_with_shell("rofi -show-icons -modi windowcd -show windowcd") end,
+  awful.key({ modkey }, "p", function() awful.util.spawn_with_shell("rofi -show-icons -modi windowcd -show windowcd") end
+    ,
     { description = "Select window", group = "launcher" }),
-  awful.key({ modkey, "Shift" }, "p", function() awful.util.spawn_with_shell("rofi -show-icons -modi window -show window") end,
+  awful.key({ modkey, "Shift" }, "p",
+    function() awful.util.spawn_with_shell("rofi -show-icons -modi window -show window") end,
     { description = "Select window global", group = "launcher" }),
-  awful.key({ modkey }, "e", function() awful.util.spawn_with_shell("rofi -show-icons -show combi -combi-modi 'drun,run' -modi combi") end,
+  awful.key({ modkey }, "e",
+    function() awful.util.spawn_with_shell("rofi -show-icons -show combi -combi-modi 'drun,run' -modi combi") end,
     { description = "Launch program", group = "launcher" }),
-  awful.key({ modkey, "Shift" }, "q", function() awful.util.spawn_with_shell("rofi -show power-menu -modi power-menu:power-menu") end,
-    { description = "Power menu", group = "launcher" })
-)
+  awful.key({ modkey }, "d",
+    function() awful.util.spawn_with_shell("autorandr --change") end,
+    { description = "Display change", group = "system" }),
+  awful.key({ modkey, "Shift" }, "q",
+    function() awful.util.spawn_with_shell("rofi -show power-menu -modi power-menu:power-menu") end,
 
 clientkeys = gears.table.join(
   awful.key({ modkey, "Shift" }, "Return",
@@ -424,9 +429,15 @@ clientkeys = gears.table.join(
   awful.key({}, "XF86AudioNext", function() awful.util.spawn_with_shell("playerctl next") end),
   awful.key({}, "XF86AudioPrev", function() awful.util.spawn_with_shell("playerctl previous") end),
   awful.key({}, "XF86AudioStop", function() awful.util.spawn_with_shell("playerctl stop") end),
-  awful.key({}, "XF86AudioLowerVolume", function() awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5% && volnoti-show $(pamixer --get-volume)") end),
-  awful.key({}, "XF86AudioRaiseVolume", function() awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5% && volnoti-show $(pamixer --get-volume)") end),
-  awful.key({}, "XF86AudioMute", function() awful.util.spawn_with_shell("pactl set-sink-mute @DEFAULT_SINK@ && volnoti-show $(pamixer --get-volume)") end),
+  awful.key({}, "XF86AudioLowerVolume",
+    function() awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5% && volnoti-show $(pamixer --get-volume)") end)
+  ,
+  awful.key({}, "XF86AudioRaiseVolume",
+    function() awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5% && volnoti-show $(pamixer --get-volume)") end)
+  ,
+  awful.key({}, "XF86AudioMute",
+    function() awful.util.spawn_with_shell("pactl set-sink-mute @DEFAULT_SINK@ && volnoti-show $(pamixer --get-volume)") end)
+  ,
   awful.key({}, "XF86MonBrightnessUp", function() awful.util.spawn_with_shell("brightnessctl set +5%") end),
   awful.key({}, "XF86MonBrightnessDown", function() awful.util.spawn_with_shell("brightnessctl set 5%-") end),
   awful.key({}, "Print", function() awful.util.spawn_with_shell("flameshot gui") end)
@@ -692,4 +703,4 @@ end)
 -- Startup Commands
 -- awful.spawn.with_shell(xrandr_command)
 -- Enable dpms
-awful.spawn.with_shell("xset s on && xset s 1200")
+
