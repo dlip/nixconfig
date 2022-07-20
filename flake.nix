@@ -230,6 +230,7 @@
               modules = [
                 ./systems/x/configuration.nix
                 kmonad.nixosModules.default
+                pkgs.sops-nix.nixosModule
                 home-manager.nixosModules.home-manager
                 {
                   home-manager = {

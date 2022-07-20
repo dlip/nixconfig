@@ -103,11 +103,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-kJoTigkJY8TlZeJe3Ss5XM95dLdeARg26VHr8eX5eas=",
-        "path": "/mnt/nix/store/wpznm11sax63rcp2m2bd7h7106vwkbpv-source/overlays/dapAdapters",
+        "path": "/nix/store/68sjiyi6al2hydd3dqvdp7r6wp9difqg-source/overlays/dapAdapters",
         "type": "path"
       },
       "original": {
-        "path": "/mnt/nix/store/wpznm11sax63rcp2m2bd7h7106vwkbpv-source/overlays/dapAdapters",
+        "path": "/nix/store/68sjiyi6al2hydd3dqvdp7r6wp9difqg-source/overlays/dapAdapters",
         "type": "path"
       }
     },
@@ -530,11 +530,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-vO+2ILj0RgIjcJ21/saPgU6QFcaJDqhUGtjbkRVyv1o=",
-        "path": "/mnt/nix/store/wpznm11sax63rcp2m2bd7h7106vwkbpv-source/overlays/personal",
+        "path": "/nix/store/68sjiyi6al2hydd3dqvdp7r6wp9difqg-source/overlays/personal",
         "type": "path"
       },
       "original": {
-        "path": "/mnt/nix/store/wpznm11sax63rcp2m2bd7h7106vwkbpv-source/overlays/personal",
+        "path": "/nix/store/68sjiyi6al2hydd3dqvdp7r6wp9difqg-source/overlays/personal",
         "type": "path"
       }
     },
@@ -587,11 +587,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "/mnt/nix/store/wpznm11sax63rcp2m2bd7h7106vwkbpv-source/overlays/repos",
+        "path": "/nix/store/68sjiyi6al2hydd3dqvdp7r6wp9difqg-source/overlays/repos",
         "type": "path"
       },
       "original": {
-        "path": "/mnt/nix/store/wpznm11sax63rcp2m2bd7h7106vwkbpv-source/overlays/repos",
+        "path": "/nix/store/68sjiyi6al2hydd3dqvdp7r6wp9difqg-source/overlays/repos",
         "type": "path"
       }
     },
@@ -678,11 +678,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-5/g03yygkZro1h7nrGYt/Ap3SV+e+fIXyV2xDLWhV7I=",
-        "path": "/mnt/nix/store/wpznm11sax63rcp2m2bd7h7106vwkbpv-source/overlays/vimPlugins",
+        "path": "/nix/store/68sjiyi6al2hydd3dqvdp7r6wp9difqg-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/mnt/nix/store/wpznm11sax63rcp2m2bd7h7106vwkbpv-source/overlays/vimPlugins",
+        "path": "/nix/store/68sjiyi6al2hydd3dqvdp7r6wp9difqg-source/overlays/vimPlugins",
         "type": "path"
       }
     },

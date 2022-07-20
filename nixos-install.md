@@ -28,7 +28,7 @@ export P1=${D}p1
 export P2=${D}p2
 
 mkfs.fat $P1
-fatlabel $P1 EFIBOOT
+fatlabel $P1 BOOT
 
 # format the disk with the luks structure
 cryptsetup luksFormat $P2
@@ -39,7 +39,7 @@ mkfs.ext4 /dev/mapper/cryptroot -L ROOT
 # mount
 mount /dev/disk/by-label/ROOT /mnt
 mkdir /mnt/boot
-mount /dev/disk/by-label/EFIBOOT /mnt/boot
+mount /dev/disk/by-label/BOOT /mnt/boot
 
 # create swap file
 fallocate -l 8G /mnt/.swapfile
@@ -71,13 +71,7 @@ vim systems/$HOST/configuration.nix
 ```
 
 ```nix
-  nix = {
-    package = pkgs.nixUnstable;
-    extraOptions = ''
-      experimental-features = nix-command flakes
-    '';
-  };
-
+  networking.hostName = "HOSTNAME";
   # Enable wifi
   networking.networkmanager.enable = true;
 
@@ -100,7 +94,6 @@ vim flake.nix
 
 Copy an existing nixosConfigurations, replace HOST with name above and remove sops import
 
-
 Install system
 
 ```
@@ -116,19 +109,14 @@ If not using sshd generate keyfile
 ```sh
 mkdir /mnt/etc/ssh
 sudo ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N ""
+sudo ssh-to-age -private-key -i /etc/ssh/ssh_host_ed25519_key | age-keygen -y
 ```
 
 Add public key to .sops.yaml
 
-```sh
-sudo ssh-to-age -private-key -i /etc/ssh/ssh_host_ed25519_key | age-keygen -y
-```
-
 Create secrets
 
 ```sh
+mkdir systems/<HOSTNAME>/secrets
 sops systems/<HOSTNAME>/secrets/secrets.yaml
 ```
-
-
-
