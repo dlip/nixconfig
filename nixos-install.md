@@ -28,7 +28,7 @@ export P1=${D}p1
 export P2=${D}p2
 
 mkfs.fat $P1
-fatlabel $P1 BOOT
+fatlabel $P1 EFIBOOT
 
 # format the disk with the luks structure
 cryptsetup luksFormat $P2
@@ -39,7 +39,7 @@ mkfs.ext4 /dev/mapper/cryptroot -L ROOT
 # mount
 mount /dev/disk/by-label/ROOT /mnt
 mkdir /mnt/boot
-mount /dev/disk/by-label/BOOT /mnt/boot
+mount /dev/disk/by-label/EFIBOOT /mnt/boot
 
 # create swap file
 fallocate -l 8G /mnt/.swapfile
@@ -55,7 +55,7 @@ cd nixconfig
 
 export HOST=metabox
 mkdir systems/$HOST
-cp /mnt/etc/nixos systems/$HOST
+cp /mnt/etc/nixos/* systems/$HOST
 vim systems/$HOST/hardware-configuration.nix
 ```
 
@@ -98,20 +98,23 @@ vim systems/$HOST/configuration.nix
 vim flake.nix
 ```
 
-Add to nixosConfigurations, replace HOST with name above
+Copy an existing nixosConfigurations, replace HOST with name above and remove sops import
 
-```nix
 
-          HOST = with nixpkgs; lib.nixosSystem {
-            system = "x86_64-linux";
-            modules =
-              [ ./systems/HOST/configuration.nix ];
-          };
+Install system
+
 ```
+git add .
+nixos-install --flake .#$HOST
+reboot
+```
+
+Setup SOPS
 
 If not using sshd generate keyfile
 
 ```sh
+mkdir /mnt/etc/ssh
 sudo ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N ""
 ```
 
@@ -127,11 +130,5 @@ Create secrets
 sops systems/<HOSTNAME>/secrets/secrets.yaml
 ```
 
-Install system
-
-```
-nix-env -iA nixos.nixUnstable
-nixos-install --flake .#$HOST
-```
 
 

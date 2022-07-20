@@ -224,6 +224,31 @@
                 }
               ];
             };
+            x = nixpkgs.lib.nixosSystem rec {
+              system = "x86_64-linux";
+              pkgs = pkgsForSystem { system = "x86_64-linux"; };
+              modules = [
+                ./systems/x/configuration.nix
+                kmonad.nixosModules.default
+                home-manager.nixosModules.home-manager
+                {
+                  home-manager = {
+                    useGlobalPkgs = true;
+                    useUserPackages = true;
+                    users = {
+                      dane = {
+                        home.xrandrCommand = "xrandr --auto --output HDMI-0 --mode 1920x1080 --right-of eDP-1-1";
+                        imports = [
+                          ./home
+                          ./home/desktop.nix
+                          ./home/graphical.nix
+                        ];
+                      };
+                    };
+                  };
+                }
+              ];
+            };
           };
       }
     ) // ({
