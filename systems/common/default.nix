@@ -134,12 +134,12 @@ in
     ];
   };
 
-  networking.wireguard.interfaces = {
-    wg0 = {
-      listenPort = 51820; # to match firewall allowedUDPPorts (without this wg uses random port numbers)
-      privateKeyFile = config.sops.secrets.wireguard-key.path;
-    };
-  };
+  # networking.wireguard.interfaces = {
+  #   wg0 = {
+  #     listenPort = 51820; # to match firewall allowedUDPPorts (without this wg uses random port numbers)
+  #     privateKeyFile = config.sops.secrets.wireguard-key.path;
+  #   };
+  # };
 
   services.printing.enable = true;
   services.printing.drivers = with pkgs; [ brgenml1lpr brgenml1cupswrapper ];
@@ -212,7 +212,7 @@ in
     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     wget
     firefox
-    chromium
+    google-chrome
     git
     glxinfo
     pciutils

@@ -16,9 +16,7 @@
     alttab
     audacity
     # blender
-    brave
     calibre
-    chromium
     cozy
     dbeaver
     discord

@@ -567,7 +567,7 @@ awful.rules.rules = {
   { rule = { class = "Firefox" },
     properties = { screen = 1, tag = "4" } },
 
-  { rule = { class = "Brave" },
+  { rule = { class = "Google-chrome" },
     properties = { screen = 1, tag = "4" } },
 
   { rule = { class = "Work" },

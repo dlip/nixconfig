@@ -35,6 +35,7 @@
   nav (layer-toggle nav)
   num (layer-toggle num)
   fn (layer-toggle fn)
+  sym (layer-toggle sym)
 
   a (tap-hold-next-release 200 a @fn)
   r (tap-hold-next-release 200 r lalt)
@@ -51,7 +52,7 @@
   c (tap-hold 200 c C-c)
   d (tap-hold 200 d C-v)
 
-  spc (tap-hold-next-release 200 spc @med)
+  spc (tap-hold-next-release 200 spc lctl)
   snv (sticky-key 1000 @nav)
   snm (sticky-key 1000 @num)
   ssf (sticky-key 1000 lsft)
@@ -84,7 +85,7 @@
   _    \    home up   end  pgup +    7    8    9    *    _    _    _
   _    @esc @lft @dwn @rgt tab  =    @4   @5   @6   @0    _    _
   _    grv  del  bspc ret  pgdn -    1    2    3    /    _
-  _    _    _    _         @ssf      @ssf @ssf _    _    _
+  _    _    _    _         @sym      @ssf @ssf _    _    _
 )
 
 (defalias
@@ -102,6 +103,15 @@
   _    prnt _    _    _    tab  =    4    5    6    0    _    _
   _    @und @cut @cp  @pst @stb -    1    2    3    /    _
   _    _    _    _         @ssf      @ssf @ssf _    _    _
+)
+
+(deflayer sym
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    [    ]    _    _    _    _    _
+  _    _    _    _    _    _    _    {    }    |    \    _    _
+  _    _    _    _    _    _    _    grv  `    _    _    _
+  _    _    _    _         _         _    _    _    _    _
 )
 
 (defalias
@@ -126,9 +136,9 @@
 (deflayer fn
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    f7   f8   f9   f10  _    _
-  _    _    _    _    _    _    _    @gam f4   f5   f6   f11  _
-  _    _    _    _    _    _    _    _    f1   f2   f3   f12
+  _    _    _    _    _    _    _    f7   f8   f9   f10  _    _    _
+  _    _    _    _    _    _    @gam f4   f5   f6   f11  _    _
+  _    _    _    _    _    _    _    f1   f2   f3   f12  _
   _    _    _    _         @ssf      @ssf @ssf _    _    _
 )
 
@@ -139,8 +149,8 @@
 (deflayer gaming
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  tab  q    w    e    r    t    _    _    _    up   _    _    _    _
-  lsft a    s    d    f    g    _    @col lft  down rght _    _
+  tab  q    w    e    r    t    _    _    up   _    _    _    _    _
+  lsft a    s    d    f    g    @col lft  down rght _    _    _
   lctl z    x    c    v    b    _    _    _    _    _    _
   _    lalt esc  _         spc       _    _    _    _    _
 )

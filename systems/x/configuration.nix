@@ -17,5 +17,9 @@ in
       ../common/services/kmonad.nix
     ];
 
+  services.autorandr = {
+    enable = true;
+  };
+
   system.stateVersion = "22.05";
 }

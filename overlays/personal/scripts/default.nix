@@ -8,7 +8,7 @@ let
 
   scripts = {
     launch-default-programs = ''
-      brave&
+      google-chrome-stable&
       kitty --class Work work&
       obsidian&
       slack&
