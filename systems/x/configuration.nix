@@ -17,9 +17,6 @@ in
       ../common/services/kmonad.nix
     ];
 
-  services.autorandr = {
-    enable = true;
-  };
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
 

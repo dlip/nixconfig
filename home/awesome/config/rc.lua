@@ -32,7 +32,7 @@ theme.font_name = "Noto Sans"
 theme.font_size = dpi(18)
 theme.font      = theme.font_name .. " " .. theme.font_size
 
--- awful.screen.set_auto_dpi_enabled(true)
+-- awful.screen.set_auto_dpi_enabled( true )
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -365,11 +365,12 @@ globalkeys = gears.table.join(
   awful.key({ modkey }, "e",
     function() awful.util.spawn_with_shell("rofi -show-icons -show combi -combi-modi 'drun,run' -modi combi") end,
     { description = "Launch program", group = "launcher" }),
-  awful.key({ modkey }, "d",
-    function() awful.util.spawn_with_shell("autorandr --change") end,
+  awful.key({ modkey }, "d", function() awful.util.spawn_with_shell("autorandr --change") end,
     { description = "Display change", group = "system" }),
   awful.key({ modkey, "Shift" }, "q",
     function() awful.util.spawn_with_shell("rofi -show power-menu -modi power-menu:power-menu") end,
+    { description = "Power menu", group = "launcher" })
+)
 
 clientkeys = gears.table.join(
   awful.key({ modkey, "Shift" }, "Return",
@@ -703,4 +704,19 @@ end)
 -- Startup Commands
 -- awful.spawn.with_shell(xrandr_command)
 -- Enable dpms
+awful.spawn.with_shell("xset s on && xset s 1200")
 
+-- https://github.com/awesomeWM/awesome/issues/1344
+tag.connect_signal("request::screen", function(t)
+  for s in screen do
+    if s ~= t.screen then
+      local t2 = awful.tag.find_by_name(s, t.name)
+      if t2 then
+        t:swap(t2)
+      else
+        t.screen = s
+      end
+      return
+    end
+  end
+end)

@@ -151,6 +151,28 @@ in
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
 
+
+  # disable suspend on lid closed
+  services.logind.lidSwitch = "ignore";
+  services.autorandr = {
+    enable = true;
+  };
+  services.acpid = {
+    enable = true;
+    lidEventCommands = ''
+      export PATH=/run/wrappers/bin:/run/current-system/sw/bin:$PATH
+      export DISPLAY=":0"
+      export XAUTHORITY="/home/dane/.Xauthority"
+      export LID_STATE=$(awk '{print$NF}' /proc/acpi/button/lid/LID/state)
+      if [[ $LID_STATE == "closed" ]]; then
+        xrandr --output eDP-1-1 --off
+      else
+        xrandr --auto
+        autorandr --change horizontal
+      fi
+    '';
+  };
+
   # Pipewire sound
   security.rtkit.enable = true;
   services.pipewire = {
