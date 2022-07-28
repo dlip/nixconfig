@@ -36,7 +36,6 @@
   num (layer-toggle num)
   fn (layer-toggle fn)
 
-  spc (tap-hold-next-release 200 spc lctl)
   snv (sticky-key 1000 @nav)
   snm (sticky-key 1000 @num)
   ssf (sticky-key 1000 lsft)
