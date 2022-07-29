@@ -53,11 +53,11 @@ matches:
     replace: "\\(.*\\)"
 
   # MACROS START
-  - trigger: "ze;"
+  - trigger: "@;"
     replace: "danelipscombe@gmail.com "
-  - trigger: "zep;"
+  - trigger: "@p;"
     replace: "dlip1@protonmail.com "
-  - trigger: "zew;"
+  - trigger: "@w;"
     replace: "dane.lipscombe@playtravel.com.au "
   - trigger: "zn;"
     replace: "Dane Lipscombe "
