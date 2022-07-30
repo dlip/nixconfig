@@ -88,6 +88,7 @@
       ttyper
       typespeed
       usbutils
+      ventoy-bin
       visidata
       xdotool
       yarn
