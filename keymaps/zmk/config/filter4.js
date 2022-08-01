@@ -23,7 +23,7 @@ const readline = require("readline");
       let [word, keys] = line.split(" ");
       if (!keys) {
         keys = word;
-        if (word.length < 3) {
+        if (word.length < 4) {
           return;
         }
       } else {
@@ -85,7 +85,7 @@ const readline = require("readline");
         throw new Error(`No available option for word ${word}`);
       }
 
-      if (option.length > word.length - 1) {
+      if (option.length > word.length - 2) {
         throw new Error(
           `Option ${option} is not short enough for word ${word}`
         );
