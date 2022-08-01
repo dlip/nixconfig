@@ -5,7 +5,7 @@ const readline = require("readline");
 (async function processLineByLine() {
   try {
     const rl = readline.createInterface({
-      input: fs.createReadStream("words4.txt"),
+      input: fs.createReadStream("words5.txt"),
       crlfDelay: Infinity,
     });
 
