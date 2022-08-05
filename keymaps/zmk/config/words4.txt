@@ -5,12 +5,12 @@ have
 this ts
 from
 some
-what wt
+what wh
 there
 other
 were
 your
-when wh
+when wn
 word
 said
 each
@@ -38,7 +38,7 @@ most
 number
 over
 know
-water
+water wtr
 than tn
 call
 first
@@ -47,16 +47,16 @@ down
 side
 been
 find
-work wk
+work wr
 part
 take
 place
 made
-live
+live lv
 where
 after
 back
-little
+little ltl
 only
 round
 year
@@ -75,7 +75,7 @@ much
 great
 think
 help
-line
+line ln
 before
 turn
 cause
@@ -86,9 +86,9 @@ move
 right
 does
 tell
-sentence
+sentence snt
 three 3
-want wn
+want wa
 well wl
 also
 play py
@@ -98,7 +98,7 @@ read
 hand
 port
 large
-spell
+spell sl
 even en
 land ld
 here
@@ -107,8 +107,8 @@ high
 such
 follow
 change
-went
-light
+went wt
+light lg
 kind
 need
 house
@@ -120,7 +120,7 @@ mother
 world
 near
 build
-self
+self sf
 earth
 father
 head
@@ -131,7 +131,7 @@ country
 found
 answer
 school
-grow
+grow gw
 study
 still
 learn
@@ -149,29 +149,29 @@ city
 tree
 cross
 since
-hard
+hard hh
 start
 might
 story
-draw
+draw dw
 left
-late
+late lt
 don't
 while
 press
 close
 night
 real
-life
-stop
+life li
+stop sp
 open
-seem
+seem se
 together
 next
 white
 children
 begin
-walk
+walk wk
 example
 ease
 paper

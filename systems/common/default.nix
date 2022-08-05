@@ -62,12 +62,8 @@ in
 
   # Select internationalisation properties.
   i18n = {
-    defaultLocale = "en_US.UTF-8";
-    extraLocaleSettings = { LC_ALL = "en_US.UTF-8"; };
-    inputMethod = {
-      enabled = "fcitx5";
-      fcitx5.addons = [ pkgs.fcitx5-mozc ];
-    };
+    defaultLocale = "en_AU.UTF-8";
+    extraLocaleSettings = { LC_ALL = "en_AU.UTF-8"; };
   };
 
   fonts.fonts = with pkgs; [
@@ -247,7 +243,14 @@ in
     restic-dex
     # yubikey-personalization #broken
     pulseaudio
+    hunspell
+    hunspellDicts.en_US-large
+    hunspellDicts.en_AU-large
+    hyphen
   ];
+
+  environment.pathsToLink = [ "share/hunspell" "share/myspell" "share/hyphen" ];
+  environment.variables.DICPATH = "/run/current-system/sw/share/hunspell:/run/current-system/sw/share/hyphen";
 
   hardware.ledger.enable = true;
   services.udev.packages = with pkgs; [ yubikey-personalization via vial ];

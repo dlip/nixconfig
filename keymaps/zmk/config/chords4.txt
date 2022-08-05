@@ -4,462 +4,502 @@ dane.lipscombe@playtravel.com.au @w
 Dane_Lipscombe zn
 Dane zd
 Lipscombe zl
-the t
-and a
-you y
-that th
-was w
-for f
-are ar
-with wi
-his h
-they the
-one o
-have ha
-this thi
-from fr
-had hd
-hot ho
-but b
-some s
-what wt
-there thr
-can c
-out ou
-other otr
-all al
-were we
-your yo
-when wn
-use u
-word wo
-how hw
-said sa
-each e
-she sh
-which whi
-their thei
-time ti
-will wl
-way wa
-about ab
-many m
-then tn
-them tm
-would wou
-write wr
-like l
-these ths
-her he
-long lg
-make ma
-thing tin
-see se
-him hi
-two two
-has has
-look lo
-more mo
-day d
-could co
-come cm
-did di
-sound so
-most ms
-number n
-who who
-over ov
-know k
-water wte
-than tha
-call ca
-first fi
-people p
-may my
-down do
-side si
-been be
-now no
-find fn
-any an
-new ne
-work wor
-part pa
-take ta
-get g
-place pl
-made md
-live li
-where whe
-after af
-back bk
-little lt
-only onl
-round r
-man mn
-year yr
-came cam
-show sho
-every ev
-good go
-give gi
-our or
-under un
-name nam
-very v
-through thro
-just j
-form frm
-much mu
-great gr
-think tik
-say sy
-help hp
-low low
-line ln
-before bf
-turn tu
-cause cs
-same same
-mean me
-differ die
-move mv
-right ri
-boy bo
-old old
-too to
-does ds
-tell te
-sentence sen
-set st
-three thre
-want wnt
-air ai
-well wel
-also ao
-play pla
-small sma
-end end
-put pu
-home hoe
-read re
-hand hn
-port po
-large lr
-spell sp
-add ad
-even evn
-land lan
-here hr
-must mus
-big bi
-high hg
-such su
-follow fw
-act act
-why wy
-ask ask
-men men
-change ch
-went wen
-light lig
-kind ki
-off of
-need nd
-house hse
-picture pi
-try tr
-again ag
-animal ani
-point pn
-mother mot
-world wrl
-near nr
-build bu
-self sl
-earth eart
-father ft
-head hea
-stand sta
-own own
-page pae
-should shd
-country cn
-found fou
-answer ans
-school sch
-grow gro
-study stu
-still sti
-learn le
-plant pln
-cover cv
-food fd
-sun sn
-four for
-thought tho
-let let
-keep ke
-eye ey
-never nv
-last las
-door dr
-between bn
-city ci
-tree tre
-cross crs
-since sin
-hard har
-start str
-might mi
-story sto
-saw sw
-far far
-sea sea
-draw dra
-left lf
-late lat
-run ru
+the
+of
+to
+and
+a
+in
+is
+it
+you
+that
+he
+was
+for
+on
+are
+with
+as
+I
+his
+they
+be
+at
+one
+have
+this
+from
+or
+had
+by
+hot
+but
+some
+what
+there
+we
+can
+out
+other
+were
+all
+your
+when
+up
+use
+word
+how haw
+said
+an
+each
+she
+which
+do
+their thir
+time
+if
+will
+way
+about
+many
+then
+them
+would
+write
+like
+so
+these
+her
+long
+make
+thing
+see
+him
+two
+has
+look
+more
+day
+could
+go
+come
+did
+my
+sound
+no
+most
+number
+who
+over
+know
+water
+than
+call
+first
+people
+may
+down
+side
+been
+now naw
+find
+any
+new
+work
+part
+take
+get
+place
+made
+live
+where
+after
+back
+little
+only
+round
+man
+year
+came
+show
+every evy
+good
+me
+give
+our
+under
+name
+very
+through
+just
+form
+much
+great
+think
+say
+help
+low
+line
+before
+turn
+cause
+same
+mean mea
+differ
+move
+right
+boy
+old
+too
+does
+tell
+sentence
+set
+three
+want
+air
+well
+also
+play
+small
+end
+put
+home
+read read
+hand
+port
+large
+spell
+add
+even
+land
+here hia
+must
+big
+high
+such
+follow
+act
+why
+ask
+men
+change
+went
+light
+kind
+off
+need nead
+house
+picture
+try
+us
+again
+animal
+point
+mother
+world
+near
+build
+self
+earth
+father
+head
+stand
+own
+page
+should
+country
+found
+answer
+school
+grow
+study
+still
+learn
+plant
+cover
+food
+sun
+four
+thought
+let lat
+keep
+eye
+never
+last
+door
+between
+city
+tree tri
+cross
+since
+hard
+start
+might
+story
+saw sor
+far
+sea
+draw
+left
+late
+run
 don't don
-while wil
-press pr
-close cl
-night ni
-real rel
-life lif
-few fe
-stop stp
-open ope
-seem sem
-together tg
-next nx
-white wht
-children chi
-begin bg
-got got
-walk wal
-example ex
-ease ea
-paper par
-often oft
-always aly
-music msc
-those thos
-both boh
-mark mr
-book bok
-letter ltr
-until unt
-mile mie
-river rv
-car car
-feet fet
-care cr
-second sec
-group grou
+while
+press
+close
+night
+real
+life life
+few
+stop
+open
+seem
+together
+next
+white
+children
+begin
+got
+walk
+example
+ease eaz
+paper
+often oftn
+always
+music
+those
+both
+mark
+book
+letter
+until
+mile
+river
+car
+feet
+care
+second
+group
 carry cary
-took tk
-rain rai
-eat eat
-room rom
-friend fri
-began beg
-idea i
-fish fs
-mountain mou
-north nor
-once onc
-base bs
-hear her
-horse hrse
-cut cu
-sure sr
-watch wat
-color col
-face fae
-wood wd
-main mai
-enough eno
+took
+rain rain
+eat
+room rewm
+friend
+began
+idea
+fish
+mountain
+north
+once
+base
+hear
+horse
+cut
+sure
+watch
+color
+face
+wood
+main
+enough
 plain plai
-girl gir
-usual usa
-young yn
-ready rdy
-above abo
-ever evr
-red red
-list lis
-though thg
-feel fel
-talk tak
-bird br
-soon son
-body boy
+girl
+usual
+young
+ready rady
+above
+ever
+red
+list
+though
+feel
+talk
+bird
+soon
+body
 dog daw
-family fm
-direct dir
-pose pos
-leave lv
-song sng
-measure mea
-state stae
-product pro
-black bl
-short shr
-numeral num
-class cla
-wind win
-question q
-happen hap
-complete com
-ship shi
-area are
-half hf
-rock roc
-order ord
-fire fire
-south sou
-problem prm
-piece pie
-told tol
-knew kew
-pass pas
-farm farm
-top tp
-whole woe
-king kig
-size sz
-heard hrd
-best bes
-hour hor
-better ber
-true tru
-during du
-hundred hu
-remember rem
-step ste
-early earl
-hold hod
-west wes
-ground grn
-interest inte
-reach rch
-fast fas
-five fv
-sing sing
-listen lst
-six sx
-table tale
-travel tra
-less les
-morning mrn
-ten ten
-simple sim
-several sv
-vowel vw
-toward twr
-war war
-lay ly
-against agi
-pattern pat
-slow slo
-center ce
-love lov
-person pe
-money mon
-serve ser
-appear aper
-road roa
-map mp
-science sci
-rule rul
-govern gv
-pull pul
-cold cld
-notice not
-voice voi
-fall fal
-power pw
-town town
-fine fin
-certain cer
-fly fly
-unit uni
-lead ld
-cry cry
-dark dk
-machine mci
-note note
-wait wai
-plan plan
-figure fg
-star star
-box bx
-noun nou
-field fie
-rest rest
-correct crt
-able abl
-pound pou
-done done
-beauty bea
-drive drie
-stood std
-contain cnt
-front frn
-teach tc
-week wk
-final fnl
-gave gav
-green gre
-quick qu
-develop de
-sleep slp
-warm wrm
-free fre
-minute min
-strong stro
-special spe
-mind mnd
-behind bh
-clear cle
-tail tai
-produce pru
-fact fat
-inch inc
-nothing nth
-course cou
-stay sty
-full fu
-blue blu
-object obj
-decide dc
-surface sur
-island isa
-yet yt
-busy bus
-record rcd
-boat bt
-common cmn
-gold gol
-possible psb
-plane plane
-age age
-wonder wnd
-laugh lau
-thousand thou
-ago ago
-ran ran
-check che
-game gm
-shape shp
-yes yes
-brought bro
-heat heat
-snow snw
-bed bd
-bring bri
-perhaps per
-weight wg
-language lng
-among amo
+family
+direct
+pose
+leave
+song
+measure
+state
+product
+black
+short
+numeral
+class
+wind
+question
+happen
+complete
+ship
+area aire
+half
+rock
+order
+fire
+south
+problem
+piece
+told
+knew
+pass
+farm
+top
+whole
+king
+size
+heard
+best
+hour
+better
+true
+during
+hundred
+am
+remember
+step
+early
+hold
+west
+ground
+interest
+reach
+fast
+five
+sing
+listen
+six
+table
+travel
+less
+morning
+ten
+simple
+several
+vowel
+toward
+war
+lay
+against
+pattern
+slow
+center
+love
+person
+money
+serve
+appear
+road
+map
+science
+rule
+govern
+pull
+cold
+notice
+voice
+fall
+power
+town
+fine
+certain
+fly
+unit
+lead
+cry
+dark
+machine
+note
+wait
+plan
+figure
+star
+box
+noun
+field
+rest
+correct
+able
+pound
+done
+beauty
+drive
+stood
+contain
+front
+teach
+week
+final
+gave
+green
+oh
+quick
+develop
+sleep
+warm
+free
+minute
+strong
+special
+mind
+behind
+clear
+tail
+produce
+fact
+street stri
+inch
+lot
+nothing
+course
+stay
+wheel
+full
+force
+blue
+object
+decide
+surface
+deep
+moon
+island
+foot
+yet
+busy
+test tast
+record
+boat
+common
+gold
+possible
+plane
+age
+dry
+wonder
+laugh
+thousand
+ago
+ran
+check
+game
+shape
+yes
+miss
+brought
+heat
+snow
+bed
+bring
+sit
+perhaps
+fill
+east
+weight
+language
+among

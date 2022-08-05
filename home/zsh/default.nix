@@ -28,8 +28,8 @@
       export EDITOR=nvim
       export GOPATH=$HOME/go
       export PATH=$HOME/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
-      export LANG=en_US.UTF-8
-      export LC_ALL=en_US.UTF-8
+      export LANG=en_AU.UTF-8
+      export LC_ALL=en_AU.UTF-8
       export MANPAGER='nvim +Man!'
       export MANWIDTH=999
       export FZF_DEFAULT_COMMAND='fd'
