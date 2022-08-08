@@ -59,11 +59,11 @@ matches:
     replace: "dlip1@protonmail.com"
   - trigger: "@w.,"
     replace: "dane.lipscombe@playtravel.com.au"
-  - trigger: "zn.,"
+  - trigger: "dl.,"
     replace: "Dane Lipscombe"
-  - trigger: "zd.,"
+  - trigger: "zD.,"
     replace: "Dane"
-  - trigger: "zl.,"
+  - trigger: "zL.,"
     replace: "Lipscombe"
 
   # MACROS START
