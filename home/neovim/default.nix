@@ -137,6 +137,7 @@ in
             tree-sitter-lua
             tree-sitter-markdown
             tree-sitter-nix
+            tree-sitter-prisma
             tree-sitter-python
             tree-sitter-regex
             tree-sitter-rust

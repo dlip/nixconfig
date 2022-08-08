@@ -25,7 +25,7 @@ function translateWord(x) {
       throw new Error(`Unable to find keymap file ${keymap}`);
     }
     let rl = readline.createInterface({
-      input: fs.createReadStream("chords4.txt"),
+      input: fs.createReadStream("chords.txt"),
       crlfDelay: Infinity,
     });
 
