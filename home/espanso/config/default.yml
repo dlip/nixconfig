@@ -49,7 +49,7 @@ matches:
           cmd: "curl ifconfig.co"
 
   # Vim
-  - trigger: ".,."
+  - trigger: "..,"
     replace: "\\(.*\\)"
 
   # Personal

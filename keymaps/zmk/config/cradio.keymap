@@ -258,12 +258,29 @@
     quick-release;
 };
 / {
+  macros {
+    ZMK_MACRO(shorthand,
+        wait-ms = <10>;
+        tap-ms = <10>;
+        bindings = <&kp DOT &kp COMMA>;
+    )
+  };
   combos {
     compatible = "zmk,combos";
     combo_system {
       timeout-ms = <100>;
       key-positions = <0 20>;
       bindings = <&tog L_SYS>;
+    };
+    combo_shorthandl {
+      timeout-ms = <50>;
+      key-positions = <13 14>;
+      bindings = <&shorthand>;
+    };
+    combo_shorthandr {
+      timeout-ms = <50>;
+      key-positions = <15 16>;
+      bindings = <&shorthand>;
     };
   };
 
