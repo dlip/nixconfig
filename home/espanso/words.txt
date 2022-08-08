@@ -6,12 +6,12 @@ this ts
 from
 some
 what wh
-there
+there thr
 other
 were
 your
 when wn
-word
+word wd
 said
 each
 which
@@ -23,9 +23,9 @@ many
 then te
 them tm
 would wld
-write
+write wrt
 like
-these
+these ths
 long
 make
 thing
@@ -47,7 +47,7 @@ down
 side
 been
 find
-work wr
+work wo
 part
 take
 place
@@ -139,7 +139,7 @@ plant
 cover
 food
 four
-thought
+thought tht
 keep
 never
 last
@@ -178,7 +178,7 @@ paper
 often
 always
 music
-those
+those tho
 both
 mark
 book
@@ -187,7 +187,7 @@ until
 mile
 river
 feet
-care
+care cr
 second
 group
 carry

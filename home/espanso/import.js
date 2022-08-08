@@ -25,7 +25,7 @@ function translateWord(x) {
       throw new Error(`Unable to find keymap file ${keymap}`);
     }
     let rl = readline.createInterface({
-      input: fs.createReadStream("chords.txt"),
+      input: fs.createReadStream(keymap),
       crlfDelay: Infinity,
     });
 
@@ -34,16 +34,15 @@ function translateWord(x) {
     let used = {};
 
     rl.on("line", (line) => {
-      let [word, keys] = line.split(" ");
-      let index = keys.split("").sort().join("");
-      if (used[index]) {
+      let [word, keys] = line.split(" = ");
+      if (used[keys]) {
         throw new Error(
-          `Can't use combo '${keys}' for word '${word}' already used by ${used[index]}`
+          `Can't use combo '${keys}' for word '${word}' already used by ${used[keys]}`
         );
       }
-      used[index] = word;
+      used[keys] = word;
       const output = word.split("").map(translateWord).join("");
-      macros += `  - trigger: "${keys};"
+      macros += `  - trigger: "${keys}.,"
     replace: "${output} "
 `;
     });
@@ -51,7 +50,7 @@ function translateWord(x) {
     await events.once(rl, "close");
 
     rl = readline.createInterface({
-      input: fs.createReadStream(keymap),
+      input: fs.createReadStream("config/default.yml"),
       crlfDelay: Infinity,
     });
 
@@ -82,7 +81,7 @@ function translateWord(x) {
           # MACROS END
       `);
     }
-    fs.writeFileSync(keymap, output, {
+    fs.writeFileSync("config/default.yml", output, {
       encoding: "utf8",
       flag: "w",
       mode: 0o644,
