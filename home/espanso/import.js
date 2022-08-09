@@ -29,12 +29,12 @@ function translateWord(x) {
       crlfDelay: Infinity,
     });
 
-    let macros = "";
+    let briefs = "";
     let combos = "";
     let used = {};
 
     rl.on("line", (line) => {
-      let [word, keys] = line.split("  ");
+      let [word, keys] = line.split(" ");
       if (used[keys]) {
         throw new Error(
           `Can't use combo '${keys}' for word '${word}' already used by ${used[keys]}`
@@ -42,7 +42,7 @@ function translateWord(x) {
       }
       used[keys] = word;
       const output = word.split("").map(translateWord).join("");
-      macros += `  - trigger: "${keys}"
+      briefs += `  - trigger: "${keys}"
     replace: "${output}"
     propagate_case: true
     word: true
@@ -58,17 +58,17 @@ function translateWord(x) {
 
     let output = "";
     let mode = "normal";
-    let foundMacros = false;
+    let foundBriefs = false;
     rl.on("line", (line) => {
       if (mode === "normal") {
         output += line + "\n";
-        if (line.includes("MACROS START")) {
-          mode = "macros";
+        if (line.includes("BRIEFS START")) {
+          mode = "briefs";
         }
-      } else if (mode === "macros") {
-        if (line.includes("MACROS END")) {
-          foundMacros = true;
-          output += macros + "\n" + line + "\n";
+      } else if (mode === "briefs") {
+        if (line.includes("BRIEFS END")) {
+          foundBriefs = true;
+          output += briefs + "\n" + line + "\n";
           mode = "normal";
         }
       }
@@ -77,10 +77,10 @@ function translateWord(x) {
 
     await events.once(rl, "close");
 
-    if (!foundMacros) {
-      throw new Error(`Unable to find MACROS START/END, please add the comments to your keymap:
-          # MACROS START
-          # MACROS END
+    if (!foundBriefs) {
+      throw new Error(`Unable to find BRIEFS START/END, please add the comments to your keymap:
+          # BRIEFS START
+          # BRIES END
       `);
     }
     fs.writeFileSync("config/default.yml", output, {

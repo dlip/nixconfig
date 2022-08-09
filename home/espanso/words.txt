@@ -4,6 +4,7 @@ an
 the
 of
 to
+us
 and x
 in
 is
@@ -24,7 +25,7 @@ at
 one
 have
 this
-from
+from fm
 or
 had
 by
@@ -42,7 +43,7 @@ all
 your yr
 when
 up
-use
+use ys
 word
 how
 said
@@ -80,7 +81,7 @@ go
 come
 did
 my
-sound
+sound snd
 no
 most
 number
@@ -110,7 +111,7 @@ live
 where
 after
 back
-little
+little ltl
 only
 round
 man ma
@@ -121,7 +122,7 @@ every
 good
 me
 give
-our ow
+our oa
 under
 name
 very
@@ -136,12 +137,195 @@ help
 low
 line
 before
-turn
+turn tn
 cause
 same
-mean
+mean mea
 differ
 move
 right
 boy
 old
+too tu
+does
+tell
+sentence snt
+set
+three
+want
+air
+well
+also
+play
+small
+end
+put
+home
+read
+hand
+port
+large
+spell
+add
+even
+land
+here
+must
+big
+high
+such
+follow
+act
+why y
+ask ak
+men mn
+change
+went
+light
+kind
+off ff
+need
+house
+picture
+try
+again
+animal
+point
+mother
+world
+near
+build
+self
+earth
+father ftr
+head
+stand
+own ow
+page
+should
+country
+found
+answer
+school
+grow
+study
+still
+learn
+plant
+cover
+food
+sun sn
+four fr
+thought
+let lt
+keep
+eye
+never
+last
+door
+between
+city
+tree
+cross crs
+since
+hard hrd
+start
+might
+story
+saw
+far fa
+sea ss
+draw
+left
+late
+run
+don't
+while
+press
+close
+night
+real
+life
+few
+stop
+open
+seem
+together
+next
+white
+children
+begin
+got
+walk
+example
+ease
+paper
+often
+always
+music
+those
+both
+mark
+book
+letter
+until
+mile
+river
+car cr
+feet
+care
+second
+group
+carry
+took
+rain
+eat
+room
+friend
+began
+idea
+fish
+mountain
+north
+once
+base
+hear har
+horse
+cut
+sure
+watch
+color
+face
+wood
+main
+enough
+plain
+girl
+usual
+young
+ready rdy
+above
+ever
+red rd
+list
+though
+feel
+talk
+bird
+soon
+body
+dog
+family
+direct
+pose
+leave
+song
+measure
+state
+product
+black
+short
+numeral
+class
+wind
+question
