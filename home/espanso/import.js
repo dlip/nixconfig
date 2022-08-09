@@ -50,10 +50,16 @@ function capitalizeFirstLetter(string) {
         briefs += `  - trigger: "${keys}"
     replace: "${output}"
     word: true
-  - trigger: "${capitalizeFirstLetter(keys)}"
+`;
+        if (keys.length > 1) {
+          briefs += `    propagate_case: true
+`;
+        } else {
+          briefs += `  - trigger: "${capitalizeFirstLetter(keys)}"
     replace: "${capitalizeFirstLetter(output)}"
     word: true
 `;
+        }
       }
     });
 
