@@ -1,10 +1,9 @@
 # espanso configuration file
-#backend: Clipboard
+# backend: Clipboard
 # fast_inject: false
 # This is the default configuration file, change it as you like it
 # You can refer to the official documentation:
 # https://espanso.org/docs/
-
 # Matches are the substitution rules, when you type the "trigger" string
 # it gets replaced by the "replace" string.
 matches:
@@ -561,7 +560,7 @@ matches:
     replace: "great"
     word: true
     propagate_case: true
-  - trigger: "thnk"
+  - trigger: "tk"
     replace: "think"
     word: true
     propagate_case: true
@@ -1147,7 +1146,7 @@ matches:
     replace: "carry"
     word: true
     propagate_case: true
-  - trigger: "tk"
+  - trigger: "too"
     replace: "took"
     word: true
     propagate_case: true
