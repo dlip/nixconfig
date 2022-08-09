@@ -1357,5 +1357,197 @@ matches:
   - trigger: "Q"
     replace: "Question"
     word: true
+  - trigger: "hp"
+    replace: "happen"
+    word: true
+    propagate_case: true
+  - trigger: "com"
+    replace: "complete"
+    word: true
+    propagate_case: true
+  - trigger: "shi"
+    replace: "ship"
+    word: true
+    propagate_case: true
+  - trigger: "are"
+    replace: "area"
+    word: true
+    propagate_case: true
+  - trigger: "hal"
+    replace: "half"
+    word: true
+    propagate_case: true
+  - trigger: "rc"
+    replace: "rock"
+    word: true
+    propagate_case: true
+  - trigger: "ord"
+    replace: "order"
+    word: true
+    propagate_case: true
+  - trigger: "fir"
+    replace: "fire"
+    word: true
+    propagate_case: true
+  - trigger: "sou"
+    replace: "south"
+    word: true
+    propagate_case: true
+  - trigger: "prb"
+    replace: "problem"
+    word: true
+    propagate_case: true
+  - trigger: "pc"
+    replace: "piece"
+    word: true
+    propagate_case: true
+  - trigger: "tol"
+    replace: "told"
+    word: true
+    propagate_case: true
+  - trigger: "kn"
+    replace: "knew"
+    word: true
+    propagate_case: true
+  - trigger: "pas"
+    replace: "pass"
+    word: true
+    propagate_case: true
+  - trigger: "far"
+    replace: "farm"
+    word: true
+    propagate_case: true
+  - trigger: "tp"
+    replace: "top"
+    word: true
+    propagate_case: true
+  - trigger: "who"
+    replace: "whole"
+    word: true
+    propagate_case: true
+  - trigger: "kin"
+    replace: "king"
+    word: true
+    propagate_case: true
+  - trigger: "sz"
+    replace: "size"
+    word: true
+    propagate_case: true
+  - trigger: "hear"
+    replace: "heard"
+    word: true
+    propagate_case: true
+  - trigger: "bes"
+    replace: "best"
+    word: true
+    propagate_case: true
+  - trigger: "owa"
+    replace: "hour"
+    word: true
+    propagate_case: true
+  - trigger: "bet"
+    replace: "better"
+    word: true
+    propagate_case: true
+  - trigger: "tru"
+    replace: "true"
+    word: true
+    propagate_case: true
+  - trigger: "du"
+    replace: "during"
+    word: true
+    propagate_case: true
+  - trigger: "hun"
+    replace: "hundred"
+    word: true
+    propagate_case: true
+  - trigger: "rm"
+    replace: "remember"
+    word: true
+    propagate_case: true
+  - trigger: "ste"
+    replace: "step"
+    word: true
+    propagate_case: true
+  - trigger: "er"
+    replace: "early"
+    word: true
+    propagate_case: true
+  - trigger: "hol"
+    replace: "hold"
+    word: true
+    propagate_case: true
+  - trigger: "ws"
+    replace: "west"
+    word: true
+    propagate_case: true
+  - trigger: "grn"
+    replace: "ground"
+    word: true
+    propagate_case: true
+  - trigger: "int"
+    replace: "interest"
+    word: true
+    propagate_case: true
+  - trigger: "rea"
+    replace: "reach"
+    word: true
+    propagate_case: true
+  - trigger: "fas"
+    replace: "fast"
+    word: true
+    propagate_case: true
+  - trigger: "fv"
+    replace: "five"
+    word: true
+    propagate_case: true
+  - trigger: "sng"
+    replace: "sing"
+    word: true
+    propagate_case: true
+  - trigger: "lst"
+    replace: "listen"
+    word: true
+    propagate_case: true
+  - trigger: "sx"
+    replace: "six"
+    word: true
+    propagate_case: true
+  - trigger: "tb"
+    replace: "table"
+    word: true
+    propagate_case: true
+  - trigger: "tra"
+    replace: "travel"
+    word: true
+    propagate_case: true
+  - trigger: "les"
+    replace: "less"
+    word: true
+    propagate_case: true
+  - trigger: "mor"
+    replace: "morning"
+    word: true
+    propagate_case: true
+  - trigger: "vv"
+    replace: "ten"
+    word: true
+    propagate_case: true
+  - trigger: "sim"
+    replace: "simple"
+    word: true
+    propagate_case: true
+  - trigger: "sv"
+    replace: "several"
+    word: true
+    propagate_case: true
+  - trigger: "vo"
+    replace: "vowel"
+    word: true
+    propagate_case: true
+  - trigger: "tow"
+    replace: "toward"
+    word: true
+    propagate_case: true
 
   # BRIEFS END
