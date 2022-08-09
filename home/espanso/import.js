@@ -42,8 +42,10 @@ function translateWord(x) {
       }
       used[keys] = word;
       const output = word.split("").map(translateWord).join("");
-      macros += `  - trigger: "${keys}.,"
-    replace: "${output} "
+      macros += `  - trigger: "${keys}"
+    replace: "${output}"
+    propagate_case: true
+    word: true
 `;
     });
 
