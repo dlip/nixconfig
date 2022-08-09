@@ -1,9 +1,12 @@
 a a
 I i
+I'll il
 the t
 and x
+it's its
 you u
 that th
+that's ths
 was w
 for f
 are ar
@@ -45,7 +48,7 @@ them thm
 would wou
 write wri
 like l
-these ths
+these thes
 her hr
 long lo
 make mk

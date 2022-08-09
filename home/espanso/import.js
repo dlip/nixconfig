@@ -15,6 +15,10 @@ function translateWord(x) {
   }
 }
 
+function capitalizeFirstLetter(string) {
+  return string[0].toUpperCase() + string.slice(1);
+}
+
 (async function processLineByLine() {
   try {
     const keymap = process.argv[2];
@@ -42,11 +46,15 @@ function translateWord(x) {
       }
       used[keys] = word;
       const output = word.split("").map(translateWord).join("");
-      briefs += `  - trigger: "${keys}"
+      if (keys !== output) {
+        briefs += `  - trigger: "${keys}"
     replace: "${output}"
-    propagate_case: true
+    word: true
+  - trigger: "${capitalizeFirstLetter(keys)}"
+    replace: "${capitalizeFirstLetter(output)}"
     word: true
 `;
+      }
     });
 
     await events.once(rl, "close");
