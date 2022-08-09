@@ -34,7 +34,7 @@ function translateWord(x) {
     let used = {};
 
     rl.on("line", (line) => {
-      let [word, keys] = line.split(" = ");
+      let [word, keys] = line.split("  ");
       if (used[keys]) {
         throw new Error(
           `Can't use combo '${keys}' for word '${word}' already used by ${used[keys]}`

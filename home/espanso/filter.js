@@ -23,7 +23,9 @@ const readline = require("readline");
       let [word, keys] = line.split(" ");
       if (!keys) {
         keys = word;
-        if (word.length < 4) {
+        // Ignore 2 letter words since its not a significant saving of effort
+        if (word.length <= 2) {
+          addWord(word, keys);
           return;
         }
       } else {
@@ -85,12 +87,11 @@ const readline = require("readline");
         throw new Error(`No available option for word ${word}`);
       }
 
-      if (option.length > word.length - 2) {
+      if (option.length == word.length) {
         throw new Error(
           `Option ${option} is not short enough for word ${word}`
         );
       }
-
       console.log(word, option);
     });
 
