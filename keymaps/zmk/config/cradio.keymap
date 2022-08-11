@@ -70,6 +70,7 @@
 
 #define NAV_CAPS &kp CAPS
 #define NAV_BSLH &kp BSLH
+#define NAV_PIPE &kp PIPE
 #define NAV_HOME &kp HOME
 #define NAV_UP &kp UP
 #define NAV_END &kp END
@@ -82,7 +83,7 @@
 #define NAV_TAB &kp TAB
 
 #define NAV_GRV &kp GRAVE
-#define NAV_BSPW &kp LC(BSPC)
+#define NAV_TILD &kp TILDE
 #define NAV_DEL &kp DEL
 #define NAV_BSPC &kp BSPC
 #define NAV_RET &kp RET
@@ -92,10 +93,12 @@
 #define L_NUM 2
 
 #define NUM_LBKT &kp LBKT
+#define NUM_LBRC &kp LBRC
 #define NUM_N7 &kp N7 
 #define NUM_N8 &kp N8
 #define NUM_N9 &kp N9
 #define NUM_RBKT &kp RBKT 
+#define NUM_RBRC &kp RBRC
 
 #define NUM_EQUL &kp EQUAL
 #define NUM_PLUS &kp PLUS
@@ -298,9 +301,9 @@
 
     navigation_layer {
       bindings = <
-        NAV_DEL  NAV_ESC  NAV_BSPC NAV_RET  MED_PRNT       GEN_TRAN NUM_RBKT NUM_LBKT NAV_BSLH NAV_GRV
+        NAV_DEL  NAV_ESC  NAV_BSPC NAV_RET  MED_PRNT       GEN_TRAN NUM_LBKT NUM_RBKT NAV_GRV  NAV_BSLH
         NAV_LEFT NAV_UP   NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_CTRL GEN_GUI  GEN_ALT  GEN_MED
-        NAV_HOME NAV_PGUP NAV_PGDN NAV_END  NUM_STAB       GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN GEN_TRAN
+        NAV_HOME NAV_PGUP NAV_PGDN NAV_END  NUM_STAB       GEN_TRAN NUM_LBRC NUM_RBRC NAV_TILD NAV_PIPE
                                    GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
       >;
     };
