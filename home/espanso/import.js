@@ -66,7 +66,7 @@ function capitalizeFirstLetter(string) {
     await events.once(rl, "close");
 
     rl = readline.createInterface({
-      input: fs.createReadStream("config/default.yml"),
+      input: fs.createReadStream("config/match/base.yml"),
       crlfDelay: Infinity,
     });
 
@@ -97,7 +97,7 @@ function capitalizeFirstLetter(string) {
           # BRIES END
       `);
     }
-    fs.writeFileSync("config/default.yml", output, {
+    fs.writeFileSync("config/match/base.yml", output, {
       encoding: "utf8",
       flag: "w",
       mode: 0o644,

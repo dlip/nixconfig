@@ -2,6 +2,7 @@ a a
 I i
 I'll il
 the t
+the the
 and x
 it's its
 you u
@@ -12,7 +13,7 @@ for f
 are ar
 with w
 his h
-they the
+they ty
 one o
 have ha
 this thi
