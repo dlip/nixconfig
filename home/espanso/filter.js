@@ -4,19 +4,31 @@ const readline = require("readline");
 
 (async function processLineByLine() {
   try {
+    const dictinput = readline.createInterface({
+      input: fs.createReadStream("dictionary.txt"),
+      crlfDelay: Infinity,
+    });
+    const dict = new Map();
+
+    dictinput.on("line", (line) => {
+      dict.set(line.toLowerCase(), true);
+    });
+
     const rl = readline.createInterface({
       input: fs.createReadStream("words.txt"),
       crlfDelay: Infinity,
     });
 
-    let used = {};
+    let used = new Map();
     function addWord(word, keys) {
-      if (used[keys]) {
+      if (used.has(keys)) {
         throw new Error(
-          `Can't use combo '${keys}' for word '${word}' already used by ${used[keys]}`
+          `Can't use combo '${keys}' for word '${word}' already used by ${used.get(
+            keys
+          )}`
         );
       }
-      used[keys] = word;
+      used.set(keys, word);
     }
 
     rl.on("line", (line) => {
@@ -29,6 +41,9 @@ const readline = require("readline");
           return;
         }
       } else {
+        if (dict.has(keys)) {
+          throw new Error(`Error: ${keys} is a dictionary word`);
+        }
         addWord(word, keys);
         console.log(word, keys);
         return;
@@ -71,7 +86,7 @@ const readline = require("readline");
 
       let option = null;
       for (let x = 0; x < options.length; x++) {
-        if (!used[options[x]]) {
+        if (!used.has(options[x]) && !dict.has(options[x])) {
           option = options[x];
           addWord(word, option);
           break;
@@ -81,8 +96,7 @@ const readline = require("readline");
       if (!option) {
         for (let x = 0; x < options.length; x++) {
           index = options[x].split("").sort().join("");
-          let existing = used[index];
-          console.error(`Option ${options[x]} taken by ${used[index]}`);
+          console.error(`Option ${options[x]} taken by ${used.get(index)}`);
         }
         throw new Error(`No available option for word ${word}`);
       }
