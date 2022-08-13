@@ -3,14 +3,13 @@
   services.espanso = {
     enable = true;
     package = pkgs.myEspanso;
-    settings = ''
-      extra_includes:
-        - "../myespanso/default.yml"
-    '';
   };
   home.file = {
-    ".config/myespanso" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/espanso/config";
+    ".config/espanso/config" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/espanso/config/config";
+    };
+    ".config/espanso/match" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/espanso/config/match";
     };
   };
 }
