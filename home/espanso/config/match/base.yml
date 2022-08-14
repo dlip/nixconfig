@@ -210,7 +210,7 @@ matches:
     replace: "when"
     word: true
     propagate_case: true
-  - trigger: "ys"
+  - trigger: "yu"
     replace: "use"
     word: true
     propagate_case: true
@@ -1288,7 +1288,7 @@ matches:
     replace: "soon"
     word: true
     propagate_case: true
-  - trigger: "bd"
+  - trigger: "bdy"
     replace: "body"
     word: true
     propagate_case: true
@@ -1426,7 +1426,7 @@ matches:
     replace: "king"
     word: true
     propagate_case: true
-  - trigger: "si"
+  - trigger: "sz"
     replace: "size"
     word: true
     propagate_case: true
@@ -1936,6 +1936,82 @@ matches:
     propagate_case: true
   - trigger: "thsn"
     replace: "thousand"
+    word: true
+    propagate_case: true
+  - trigger: "ao"
+    replace: "ago"
+    word: true
+    propagate_case: true
+  - trigger: "rn"
+    replace: "ran"
+    word: true
+    propagate_case: true
+  - trigger: "che"
+    replace: "check"
+    word: true
+    propagate_case: true
+  - trigger: "gm"
+    replace: "game"
+    word: true
+    propagate_case: true
+  - trigger: "shp"
+    replace: "shape"
+    word: true
+    propagate_case: true
+  - trigger: "ys"
+    replace: "yes"
+    word: true
+    propagate_case: true
+  - trigger: "mss"
+    replace: "miss"
+    word: true
+    propagate_case: true
+  - trigger: "brg"
+    replace: "brought"
+    word: true
+    propagate_case: true
+  - trigger: "het"
+    replace: "heat"
+    word: true
+    propagate_case: true
+  - trigger: "sno"
+    replace: "snow"
+    word: true
+    propagate_case: true
+  - trigger: "bd"
+    replace: "bed"
+    word: true
+    propagate_case: true
+  - trigger: "bri"
+    replace: "bring"
+    word: true
+    propagate_case: true
+  - trigger: "si"
+    replace: "sit"
+    word: true
+    propagate_case: true
+  - trigger: "prh"
+    replace: "perhaps"
+    word: true
+    propagate_case: true
+  - trigger: "fll"
+    replace: "fill"
+    word: true
+    propagate_case: true
+  - trigger: "est"
+    replace: "east"
+    word: true
+    propagate_case: true
+  - trigger: "wg"
+    replace: "weight"
+    word: true
+    propagate_case: true
+  - trigger: "lan"
+    replace: "language"
+    word: true
+    propagate_case: true
+  - trigger: "amo"
+    replace: "among"
     word: true
     propagate_case: true
 

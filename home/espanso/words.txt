@@ -46,7 +46,7 @@ all
 your yor
 when
 up
-use ys
+use yu
 word
 how
 said
@@ -316,7 +316,7 @@ feel
 talk
 bird
 soon
-body
+body bdy
 dog
 family
 direct
@@ -350,7 +350,7 @@ farm
 top
 whole
 king
-size
+size sz
 heard hrrd
 best
 hour owa
@@ -371,13 +371,13 @@ fast
 five
 sing sig
 listen
-six
+six sx
 table
 travel
 less
 morning
 ten vv
-simple
+simple smp
 several
 vowel
 toward
@@ -480,3 +480,22 @@ dry dy
 wonder
 laugh
 thousand
+ago ao
+ran
+check
+game
+shape
+yes ys
+miss
+brought
+heat het
+snow
+bed bd
+bring
+sit si
+perhaps
+fill
+east
+weight
+language
+among
