@@ -38,6 +38,7 @@ const readline = require("readline");
       used.set(keys, word);
     }
 
+    const backupWords = [];
     const rl = readline.createInterface({
       input: fs.createReadStream("words.txt"),
       crlfDelay: Infinity,
@@ -56,7 +57,7 @@ const readline = require("readline");
       }
 
       // generate every possible combination of letters
-      let options = new Map();
+      const options = new Map();
       for (x of word) {
         for (y of word.split("").reverse()) {
           const combo = (x + y).split("").sort().join("");
@@ -67,18 +68,8 @@ const readline = require("readline");
       }
       if (options.size === 0) {
         // throw new Error(`No available option for word ${word}`);
-        // look for any combination of a single letter
-        for (x of word) {
-          for (y of alphabet) {
-            const combo = (x + y).split("").sort().join("");
-            if (used.get(combo) === false && combo[0] !== combo[1]) {
-              options.set(combo, true);
-            }
-          }
-        }
-        if (options.size === 0) {
-          return;
-        }
+        backupWords.push(word);
+        return;
       }
 
       const value = options.keys().next().value;
@@ -88,7 +79,26 @@ const readline = require("readline");
     });
 
     await events.once(rl, "close");
-    // used.forEach((v, k => {
+    for (word of backupWords) {
+      const options = new Map();
+      // look for any combination of a single letter
+      for (x of word) {
+        for (y of alphabet) {
+          const combo = (x + y).split("").sort().join("");
+          if (used.get(combo) === false && combo[0] !== combo[1]) {
+            options.set(combo, true);
+          }
+        }
+      }
+      if (options.size === 0) {
+        continue;
+      }
+      const value = options.keys().next().value;
+      addWord(word, value);
+      console.log(word, value);
+      console.log(word, value[1] + value[0]);
+    }
+    // used.forEach((v, k) => {
     //   if (v === false) {
     //     console.log(k);
     //   }
