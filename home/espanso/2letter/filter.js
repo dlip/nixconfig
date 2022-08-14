@@ -27,7 +27,6 @@ const readline = require("readline");
         }
       }
     }
-    used.forEach((v, k) => console.log(k));
     function addWord(word, keys) {
       if (used.get(keys) === true) {
         throw new Error(
@@ -48,19 +47,18 @@ const readline = require("readline");
       if (!keys) {
         keys = word;
         // Ignore 3 letter words since its not a significant saving of effort
-        if (word.length < 4) {
+        if (word.length < 3) {
           return;
         }
       } else {
         addWord(word, keys);
-        console.log(word, keys);
         return;
       }
 
       // generate every possible combination of letters
       let options = new Map();
       for (x of word) {
-        for (y of word) {
+        for (y of word.split("").reverse()) {
           const combo = (x + y).split("").sort().join("");
           if (used.get(combo) === false && combo[0] !== combo[1]) {
             options.set(combo, true);
@@ -69,15 +67,32 @@ const readline = require("readline");
       }
       if (options.size === 0) {
         // throw new Error(`No available option for word ${word}`);
-        return;
+        // look for any combination of a single letter
+        for (x of word) {
+          for (y of alphabet) {
+            const combo = (x + y).split("").sort().join("");
+            if (used.get(combo) === false && combo[0] !== combo[1]) {
+              options.set(combo, true);
+            }
+          }
+        }
+        if (options.size === 0) {
+          return;
+        }
       }
 
       const value = options.keys().next().value;
       addWord(word, value);
       console.log(word, value);
+      console.log(word, value[1] + value[0]);
     });
 
     await events.once(rl, "close");
+    // used.forEach((v, k => {
+    //   if (v === false) {
+    //     console.log(k);
+    //   }
+    // });
   } catch (err) {
     console.error(err);
   }

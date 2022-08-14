@@ -10,7 +10,7 @@ in
 is
 it
 age ag
-it's its
+it's ts
 you u
 that
 that's ths
@@ -19,7 +19,7 @@ was z
 for
 on
 are
-with
+with w
 as
 his
 they ty
@@ -35,7 +35,7 @@ by
 hot
 but
 some sm
-what
+what wt
 there
 we
 can
@@ -44,7 +44,7 @@ other
 were
 all
 your yor
-when
+when wn
 up
 use yu
 word
@@ -52,7 +52,7 @@ how
 said
 each
 she
-which
+which wc
 do
 their
 time
@@ -111,7 +111,7 @@ get
 place
 made md
 live
-where
+where wh
 after
 back
 little ltl
@@ -183,7 +183,7 @@ why y
 ask ak
 men mm
 change
-went
+went wnt
 light
 kind
 off ff
