@@ -9,6 +9,7 @@ and x
 in
 is
 it
+age ag
 it's its
 you u
 that
@@ -21,7 +22,7 @@ are
 with
 as
 his
-they
+they ty
 be
 at
 one
@@ -33,7 +34,7 @@ had
 by
 hot
 but
-some
+some sm
 what
 there
 we
@@ -42,7 +43,7 @@ out
 other
 were
 all
-your yr
+your yor
 when
 up
 use ys
@@ -68,14 +69,14 @@ like
 so
 these
 her
-long
+long lng
 make mk
 thing
 see
 him
 two
 has
-look
+look lk
 more
 day
 could
@@ -92,12 +93,12 @@ over
 know
 water
 than
-call
+call cl
 first
 people
 may mi
 down
-side
+side sd
 been
 now
 find
@@ -116,9 +117,9 @@ back
 little ltl
 only
 round
-man ma
-year ya
-came
+man mn
+year yr
+came cam
 show
 every
 good
@@ -133,20 +134,20 @@ just
 form
 much
 great
-think tk
+think tnk
 say
 help
-low
-line
+low lw
+line ln
 before
 turn tn
-cause
+cause cs
 same
 mean mea
 differ
 move
 right
-boy
+boy bo
 old
 too tu
 does
@@ -155,23 +156,23 @@ sentence snt
 set
 three
 want
-air
+air ar
 well
 also
 play
 small
-end
+end nd
 put
 home
-read
+read rdd
 hand
 port
-large
+large lg
 spell
 add ad
 even
 land
-here
+here hea
 must
 big
 high
@@ -180,7 +181,7 @@ follow
 act
 why y
 ask ak
-men mn
+men mm
 change
 went
 light
@@ -208,12 +209,12 @@ should
 country
 found
 answer
-school
+school scl
 grow
 study
 still
 learn
-plant
+plant plt
 cover
 food
 sun sn
@@ -229,7 +230,7 @@ between
 city
 tree
 cross crs
-since
+since sc
 hard hrd
 start
 might
@@ -241,7 +242,7 @@ draw
 left
 late
 run
-don't
+don't dt
 while
 press
 close
@@ -301,7 +302,7 @@ face
 wood
 main
 enough
-plain
+plain pli
 girl
 usual
 young
@@ -334,7 +335,7 @@ question
 happen
 complete
 ship
-area
+area ara
 half
 rock
 order
@@ -350,10 +351,10 @@ top
 whole
 king
 size
-heard
+heard hrrd
 best
 hour owa
-better
+better btr
 true
 during
 hundred
@@ -368,7 +369,7 @@ interest
 reach
 fast
 five
-sing
+sing sig
 listen
 six
 table
@@ -380,3 +381,102 @@ simple
 several
 vowel
 toward
+war ww
+lay
+against
+pattern
+slow
+center
+love lov
+person
+money mny
+serve
+appear
+road
+map
+science
+rule
+govern
+pull
+cold
+notice
+voice
+fall
+power
+town
+fine
+certain
+fly fy
+unit
+lead
+cry cy
+dark
+machine
+note nte
+wait
+plan pln
+figure
+star sar
+box
+noun
+field
+rest
+correct
+able
+pound
+done
+beauty
+drive
+stood
+contain
+front
+teach
+week
+final
+gave
+green
+oh
+quick
+develop
+sleep
+warm
+free
+minute
+strong
+special
+mind
+behind
+clear
+tail
+produce
+fact
+street
+inch
+lot
+nothing
+course
+stay
+wheel
+full
+force
+blue
+object
+decide
+surface
+deep
+moon
+island
+foot
+yet
+busy
+test
+record
+boat btt
+common
+gold
+possible
+plane pne
+dry dy
+wonder
+laugh
+thousand

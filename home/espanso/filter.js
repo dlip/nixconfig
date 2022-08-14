@@ -14,6 +14,8 @@ const readline = require("readline");
       dict.set(line.toLowerCase(), true);
     });
 
+    await events.once(dictinput, "close");
+
     const rl = readline.createInterface({
       input: fs.createReadStream("words.txt"),
       crlfDelay: Infinity,
@@ -37,7 +39,6 @@ const readline = require("readline");
         keys = word;
         // Ignore 2 letter words since its not a significant saving of effort
         if (word.length <= 2) {
-          addWord(word, keys);
           return;
         }
       } else {
@@ -95,8 +96,9 @@ const readline = require("readline");
 
       if (!option) {
         for (let x = 0; x < options.length; x++) {
-          index = options[x].split("").sort().join("");
-          console.error(`Option ${options[x]} taken by ${used.get(index)}`);
+          index = options[x].split("").join("");
+          const taken = used.get(index) || "dictionary entry";
+          console.error(`Option ${options[x]} taken by ${taken}`);
         }
         throw new Error(`No available option for word ${word}`);
       }
