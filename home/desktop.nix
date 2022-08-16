@@ -52,6 +52,7 @@
       # musikcube
       # myPythonPackages.shirah-reader
       # myPythonPackages.adafruit-nrfutil
+      mysql80
       niv
       nix-du
       nodePackages.node2nix

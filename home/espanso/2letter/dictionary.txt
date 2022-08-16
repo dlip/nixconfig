@@ -1,5 +1,9 @@
 qz
 pd
+tb
+tv
+nk
+nj
 lh
 ah
 am
@@ -10,6 +14,7 @@ be
 bi
 by
 do
+db
 ed
 ex
 go

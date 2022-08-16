@@ -4,29 +4,7 @@ const readline = require("readline");
 
 (async function processLineByLine() {
   try {
-    const dictinput = readline.createInterface({
-      input: fs.createReadStream("dictionary.txt"),
-      crlfDelay: Infinity,
-    });
-    const dict = new Map();
-
-    dictinput.on("line", (line) => {
-      dict.set(line.toLowerCase().split("").sort().join(""), true);
-    });
-
-    await events.once(dictinput, "close");
-
     const used = new Map();
-    const alpha = Array.from(Array(26)).map((e, i) => i + 97);
-    const alphabet = alpha.map((x) => String.fromCharCode(x));
-    for (x of alphabet) {
-      for (y of alphabet) {
-        const combo = (x + y).split("").sort().join("");
-        if (dict.get(combo) !== true && combo[0] !== combo[1]) {
-          used.set(combo, false);
-        }
-      }
-    }
     function addWord(word, keys) {
       if (used.get(keys) === true) {
         throw new Error(
@@ -36,6 +14,30 @@ const readline = require("readline");
         );
       }
       used.set(keys, word);
+    }
+
+    const dictinput = readline.createInterface({
+      input: fs.createReadStream("dictionary.txt"),
+      crlfDelay: Infinity,
+    });
+    const dict = new Map();
+
+    dictinput.on("line", (line) => {
+      const combo = line.toLowerCase().split("").sort().join("");
+      dict.set(combo, true);
+    });
+
+    await events.once(dictinput, "close");
+
+    const alpha = Array.from(Array(26)).map((e, i) => i + 97);
+    const alphabet = alpha.map((x) => String.fromCharCode(x));
+    for (x of alphabet) {
+      for (y of alphabet) {
+        const combo = (x + y).split("").sort().join("");
+        if (dict.get(combo) !== true && combo[0] !== combo[1]) {
+          used.set(combo, false);
+        }
+      }
     }
 
     const backupWords = [];
@@ -67,42 +69,26 @@ const readline = require("readline");
         }
       }
       if (options.size === 0) {
-        // throw new Error(`No available option for word ${word}`);
-        backupWords.push(word);
-        return;
-      }
-
-      const value = options.keys().next().value;
-      addWord(word, value);
-      console.log(word, value);
-      console.log(word, value[1] + value[0]);
-    });
-
-    await events.once(rl, "close");
-    for (word of backupWords) {
-      const options = new Map();
-      // look for any combination of a single letter
-      for (x of word) {
-        for (y of alphabet) {
-          const combo = (x + y).split("").sort().join("");
-          if (used.get(combo) === false && combo[0] !== combo[1]) {
-            options.set(combo, true);
+        // look for any combination of a single letter
+        for (x of word) {
+          for (y of alphabet) {
+            const combo = (x + y).split("").sort().join("");
+            if (used.get(combo) === false && combo[0] !== combo[1]) {
+              options.set(combo, true);
+            }
           }
         }
       }
-      if (options.size === 0) {
-        continue;
+
+      if (options.size > 0) {
+        const value = options.keys().next().value;
+        addWord(word, value);
+        console.log(word, value);
       }
-      const value = options.keys().next().value;
-      addWord(word, value);
-      console.log(word, value);
-      console.log(word, value[1] + value[0]);
-    }
-    // used.forEach((v, k) => {
-    //   if (v === false) {
-    //     console.log(k);
-    //   }
-    // });
+    });
+
+    await events.once(rl, "close");
+    const result = [...used].sort();
   } catch (err) {
     console.error(err);
   }

@@ -1090,11 +1090,11 @@ matches:
     replace: "point"
     word: true
     propagate_case: true
-  - trigger: "bd"
+  - trigger: "bl"
     replace: "build"
     word: true
     propagate_case: true
-  - trigger: "db"
+  - trigger: "lb"
     replace: "build"
     word: true
     propagate_case: true
@@ -1480,14 +1480,6 @@ matches:
     propagate_case: true
   - trigger: "xs"
     replace: "six"
-    word: true
-    propagate_case: true
-  - trigger: "bl"
-    replace: "table"
-    word: true
-    propagate_case: true
-  - trigger: "lb"
-    replace: "table"
     word: true
     propagate_case: true
   - trigger: "tv"
