@@ -55,6 +55,8 @@ const readline = require("readline");
         }
       } else {
         addWord(word, keys);
+        console.log(word, value);
+        // console.log(word, value[1] + value[0]);
         return;
       }
 
@@ -84,6 +86,7 @@ const readline = require("readline");
         const value = options.keys().next().value;
         addWord(word, value);
         console.log(word, value);
+        // console.log(word, value[1] + value[0]);
       }
     });
 

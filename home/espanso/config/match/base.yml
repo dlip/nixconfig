@@ -178,11 +178,19 @@ matches:
     replace: "had"
     word: true
     propagate_case: true
-  - trigger: "bt"
+  - trigger: "bh"
+    replace: "hot"
+    word: true
+    propagate_case: true
+  - trigger: "hb"
+    replace: "hot"
+    word: true
+    propagate_case: true
+  - trigger: "bu"
     replace: "but"
     word: true
     propagate_case: true
-  - trigger: "tb"
+  - trigger: "ub"
     replace: "but"
     word: true
     propagate_case: true
@@ -306,6 +314,14 @@ matches:
     replace: "each"
     word: true
     propagate_case: true
+  - trigger: "bs"
+    replace: "she"
+    word: true
+    propagate_case: true
+  - trigger: "sb"
+    replace: "she"
+    word: true
+    propagate_case: true
   - trigger: "cw"
     replace: "which"
     word: true
@@ -402,6 +418,22 @@ matches:
     replace: "like"
     word: true
     propagate_case: true
+  - trigger: "ct"
+    replace: "these"
+    word: true
+    propagate_case: true
+  - trigger: "tc"
+    replace: "these"
+    word: true
+    propagate_case: true
+  - trigger: "ch"
+    replace: "her"
+    word: true
+    propagate_case: true
+  - trigger: "hc"
+    replace: "her"
+    word: true
+    propagate_case: true
   - trigger: "gl"
     replace: "long"
     word: true
@@ -426,12 +458,36 @@ matches:
     replace: "thing"
     word: true
     propagate_case: true
+  - trigger: "cs"
+    replace: "see"
+    word: true
+    propagate_case: true
+  - trigger: "sc"
+    replace: "see"
+    word: true
+    propagate_case: true
   - trigger: "im"
     replace: "him"
     word: true
     propagate_case: true
   - trigger: "mi"
     replace: "him"
+    word: true
+    propagate_case: true
+  - trigger: "dt"
+    replace: "two"
+    word: true
+    propagate_case: true
+  - trigger: "td"
+    replace: "two"
+    word: true
+    propagate_case: true
+  - trigger: "fh"
+    replace: "has"
+    word: true
+    propagate_case: true
+  - trigger: "hf"
+    replace: "has"
     word: true
     propagate_case: true
   - trigger: "kl"
@@ -506,6 +562,14 @@ matches:
     replace: "number"
     word: true
     propagate_case: true
+  - trigger: "aw"
+    replace: "who"
+    word: true
+    propagate_case: true
+  - trigger: "wa"
+    replace: "who"
+    word: true
+    propagate_case: true
   - trigger: "ov"
     replace: "over"
     word: true
@@ -522,11 +586,11 @@ matches:
     replace: "know"
     word: true
     propagate_case: true
-  - trigger: "aw"
+  - trigger: "ar"
     replace: "water"
     word: true
     propagate_case: true
-  - trigger: "wa"
+  - trigger: "ra"
     replace: "water"
     word: true
     propagate_case: true
@@ -594,6 +658,14 @@ matches:
     replace: "been"
     word: true
     propagate_case: true
+  - trigger: "en"
+    replace: "now"
+    word: true
+    propagate_case: true
+  - trigger: "ne"
+    replace: "now"
+    word: true
+    propagate_case: true
   - trigger: "df"
     replace: "find"
     word: true
@@ -610,11 +682,11 @@ matches:
     replace: "any"
     word: true
     propagate_case: true
-  - trigger: "en"
+  - trigger: "fn"
     replace: "new"
     word: true
     propagate_case: true
-  - trigger: "ne"
+  - trigger: "nf"
     replace: "new"
     word: true
     propagate_case: true
@@ -674,11 +746,19 @@ matches:
     replace: "live"
     word: true
     propagate_case: true
-  - trigger: "ar"
+  - trigger: "bw"
+    replace: "where"
+    word: true
+    propagate_case: true
+  - trigger: "wb"
+    replace: "where"
+    word: true
+    propagate_case: true
+  - trigger: "af"
     replace: "after"
     word: true
     propagate_case: true
-  - trigger: "ra"
+  - trigger: "fa"
     replace: "after"
     word: true
     propagate_case: true
@@ -714,6 +794,14 @@ matches:
     replace: "round"
     word: true
     propagate_case: true
+  - trigger: "bm"
+    replace: "man"
+    word: true
+    propagate_case: true
+  - trigger: "mb"
+    replace: "man"
+    word: true
+    propagate_case: true
   - trigger: "ey"
     replace: "year"
     word: true
@@ -728,6 +816,14 @@ matches:
     propagate_case: true
   - trigger: "ca"
     replace: "came"
+    word: true
+    propagate_case: true
+  - trigger: "fs"
+    replace: "show"
+    word: true
+    propagate_case: true
+  - trigger: "sf"
+    replace: "show"
     word: true
     propagate_case: true
   - trigger: "ev"
@@ -768,6 +864,14 @@ matches:
     propagate_case: true
   - trigger: "ud"
     replace: "under"
+    word: true
+    propagate_case: true
+  - trigger: "gn"
+    replace: "name"
+    word: true
+    propagate_case: true
+  - trigger: "ng"
+    replace: "name"
     word: true
     propagate_case: true
   - trigger: "vy"
@@ -842,6 +946,14 @@ matches:
     replace: "help"
     word: true
     propagate_case: true
+  - trigger: "bl"
+    replace: "low"
+    word: true
+    propagate_case: true
+  - trigger: "lb"
+    replace: "low"
+    word: true
+    propagate_case: true
   - trigger: "ln"
     replace: "line"
     word: true
@@ -866,12 +978,28 @@ matches:
     replace: "turn"
     word: true
     propagate_case: true
-  - trigger: "cs"
+  - trigger: "bc"
     replace: "cause"
     word: true
     propagate_case: true
-  - trigger: "sc"
+  - trigger: "cb"
     replace: "cause"
+    word: true
+    propagate_case: true
+  - trigger: "gs"
+    replace: "same"
+    word: true
+    propagate_case: true
+  - trigger: "sg"
+    replace: "same"
+    word: true
+    propagate_case: true
+  - trigger: "gm"
+    replace: "mean"
+    word: true
+    propagate_case: true
+  - trigger: "mg"
+    replace: "mean"
     word: true
     propagate_case: true
   - trigger: "ir"
@@ -914,12 +1042,60 @@ matches:
     replace: "old"
     word: true
     propagate_case: true
-  - trigger: "ct"
+  - trigger: "qt"
+    replace: "too"
+    word: true
+    propagate_case: true
+  - trigger: "tq"
+    replace: "too"
+    word: true
+    propagate_case: true
+  - trigger: "dj"
+    replace: "does"
+    word: true
+    propagate_case: true
+  - trigger: "jd"
+    replace: "does"
+    word: true
+    propagate_case: true
+  - trigger: "tx"
+    replace: "tell"
+    word: true
+    propagate_case: true
+  - trigger: "xt"
+    replace: "tell"
+    word: true
+    propagate_case: true
+  - trigger: "js"
     replace: "sentence"
     word: true
     propagate_case: true
-  - trigger: "tc"
+  - trigger: "sj"
     replace: "sentence"
+    word: true
+    propagate_case: true
+  - trigger: "ks"
+    replace: "set"
+    word: true
+    propagate_case: true
+  - trigger: "sk"
+    replace: "set"
+    word: true
+    propagate_case: true
+  - trigger: "tz"
+    replace: "three"
+    word: true
+    propagate_case: true
+  - trigger: "zt"
+    replace: "three"
+    word: true
+    propagate_case: true
+  - trigger: "fw"
+    replace: "want"
+    word: true
+    propagate_case: true
+  - trigger: "wf"
+    replace: "want"
     word: true
     propagate_case: true
   - trigger: "ai"
@@ -928,6 +1104,14 @@ matches:
     propagate_case: true
   - trigger: "ia"
     replace: "air"
+    word: true
+    propagate_case: true
+  - trigger: "gw"
+    replace: "well"
+    word: true
+    propagate_case: true
+  - trigger: "wg"
+    replace: "well"
     word: true
     propagate_case: true
   - trigger: "ao"
@@ -954,6 +1138,46 @@ matches:
     replace: "small"
     word: true
     propagate_case: true
+  - trigger: "ef"
+    replace: "end"
+    word: true
+    propagate_case: true
+  - trigger: "fe"
+    replace: "end"
+    word: true
+    propagate_case: true
+  - trigger: "bp"
+    replace: "put"
+    word: true
+    propagate_case: true
+  - trigger: "pb"
+    replace: "put"
+    word: true
+    propagate_case: true
+  - trigger: "gh"
+    replace: "home"
+    word: true
+    propagate_case: true
+  - trigger: "hg"
+    replace: "home"
+    word: true
+    propagate_case: true
+  - trigger: "cr"
+    replace: "read"
+    word: true
+    propagate_case: true
+  - trigger: "rc"
+    replace: "read"
+    word: true
+    propagate_case: true
+  - trigger: "hj"
+    replace: "hand"
+    word: true
+    propagate_case: true
+  - trigger: "jh"
+    replace: "hand"
+    word: true
+    propagate_case: true
   - trigger: "pr"
     replace: "port"
     word: true
@@ -978,12 +1202,44 @@ matches:
     replace: "spell"
     word: true
     propagate_case: true
+  - trigger: "ab"
+    replace: "add"
+    word: true
+    propagate_case: true
+  - trigger: "ba"
+    replace: "add"
+    word: true
+    propagate_case: true
   - trigger: "nv"
     replace: "even"
     word: true
     propagate_case: true
   - trigger: "vn"
     replace: "even"
+    word: true
+    propagate_case: true
+  - trigger: "fl"
+    replace: "land"
+    word: true
+    propagate_case: true
+  - trigger: "lf"
+    replace: "land"
+    word: true
+    propagate_case: true
+  - trigger: "hq"
+    replace: "here"
+    word: true
+    propagate_case: true
+  - trigger: "qh"
+    replace: "here"
+    word: true
+    propagate_case: true
+  - trigger: "jm"
+    replace: "must"
+    word: true
+    propagate_case: true
+  - trigger: "mj"
+    replace: "must"
     word: true
     propagate_case: true
   - trigger: "bg"
@@ -994,28 +1250,36 @@ matches:
     replace: "big"
     word: true
     propagate_case: true
-  - trigger: "gh"
+  - trigger: "gi"
     replace: "high"
     word: true
     propagate_case: true
-  - trigger: "hg"
+  - trigger: "ig"
     replace: "high"
     word: true
     propagate_case: true
-  - trigger: "ch"
+  - trigger: "qs"
     replace: "such"
     word: true
     propagate_case: true
-  - trigger: "hc"
+  - trigger: "sq"
     replace: "such"
     word: true
     propagate_case: true
-  - trigger: "fw"
+  - trigger: "bf"
     replace: "follow"
     word: true
     propagate_case: true
-  - trigger: "wf"
+  - trigger: "fb"
     replace: "follow"
+    word: true
+    propagate_case: true
+  - trigger: "aj"
+    replace: "act"
+    word: true
+    propagate_case: true
+  - trigger: "ja"
+    replace: "act"
     word: true
     propagate_case: true
   - trigger: "hy"
@@ -1034,12 +1298,28 @@ matches:
     replace: "ask"
     word: true
     propagate_case: true
+  - trigger: "lm"
+    replace: "men"
+    word: true
+    propagate_case: true
+  - trigger: "ml"
+    replace: "men"
+    word: true
+    propagate_case: true
   - trigger: "cg"
     replace: "change"
     word: true
     propagate_case: true
   - trigger: "gc"
     replace: "change"
+    word: true
+    propagate_case: true
+  - trigger: "jw"
+    replace: "went"
+    word: true
+    propagate_case: true
+  - trigger: "wj"
+    replace: "went"
     word: true
     propagate_case: true
   - trigger: "il"
@@ -1058,6 +1338,30 @@ matches:
     replace: "kind"
     word: true
     propagate_case: true
+  - trigger: "co"
+    replace: "off"
+    word: true
+    propagate_case: true
+  - trigger: "oc"
+    replace: "off"
+    word: true
+    propagate_case: true
+  - trigger: "np"
+    replace: "need"
+    word: true
+    propagate_case: true
+  - trigger: "pn"
+    replace: "need"
+    word: true
+    propagate_case: true
+  - trigger: "hx"
+    replace: "house"
+    word: true
+    propagate_case: true
+  - trigger: "xh"
+    replace: "house"
+    word: true
+    propagate_case: true
   - trigger: "ip"
     replace: "picture"
     word: true
@@ -1066,60 +1370,116 @@ matches:
     replace: "picture"
     word: true
     propagate_case: true
-  - trigger: "gn"
+  - trigger: "jr"
+    replace: "try"
+    word: true
+    propagate_case: true
+  - trigger: "rj"
+    replace: "try"
+    word: true
+    propagate_case: true
+  - trigger: "aq"
     replace: "again"
     word: true
     propagate_case: true
-  - trigger: "ng"
+  - trigger: "qa"
     replace: "again"
     word: true
     propagate_case: true
-  - trigger: "lm"
+  - trigger: "av"
     replace: "animal"
     word: true
     propagate_case: true
-  - trigger: "ml"
+  - trigger: "va"
     replace: "animal"
     word: true
     propagate_case: true
-  - trigger: "np"
+  - trigger: "op"
     replace: "point"
     word: true
     propagate_case: true
-  - trigger: "pn"
+  - trigger: "po"
     replace: "point"
     word: true
     propagate_case: true
-  - trigger: "bl"
+  - trigger: "mp"
+    replace: "mother"
+    word: true
+    propagate_case: true
+  - trigger: "pm"
+    replace: "mother"
+    word: true
+    propagate_case: true
+  - trigger: "mw"
+    replace: "world"
+    word: true
+    propagate_case: true
+  - trigger: "wm"
+    replace: "world"
+    word: true
+    propagate_case: true
+  - trigger: "nq"
+    replace: "near"
+    word: true
+    propagate_case: true
+  - trigger: "qn"
+    replace: "near"
+    word: true
+    propagate_case: true
+  - trigger: "lu"
     replace: "build"
     word: true
     propagate_case: true
-  - trigger: "lb"
+  - trigger: "ul"
     replace: "build"
     word: true
     propagate_case: true
-  - trigger: "fs"
+  - trigger: "rs"
     replace: "self"
     word: true
     propagate_case: true
-  - trigger: "sf"
+  - trigger: "sr"
     replace: "self"
     word: true
     propagate_case: true
-  - trigger: "ef"
+  - trigger: "ej"
+    replace: "earth"
+    word: true
+    propagate_case: true
+  - trigger: "je"
+    replace: "earth"
+    word: true
+    propagate_case: true
+  - trigger: "cf"
     replace: "father"
     word: true
     propagate_case: true
-  - trigger: "fe"
+  - trigger: "fc"
     replace: "father"
     word: true
     propagate_case: true
-  - trigger: "dt"
+  - trigger: "hz"
+    replace: "head"
+    word: true
+    propagate_case: true
+  - trigger: "zh"
+    replace: "head"
+    word: true
+    propagate_case: true
+  - trigger: "sv"
     replace: "stand"
     word: true
     propagate_case: true
-  - trigger: "td"
+  - trigger: "vs"
     replace: "stand"
+    word: true
+    propagate_case: true
+  - trigger: "oq"
+    replace: "own"
+    word: true
+    propagate_case: true
+  - trigger: "qo"
+    replace: "own"
     word: true
     propagate_case: true
   - trigger: "gp"
@@ -1130,11 +1490,11 @@ matches:
     replace: "page"
     word: true
     propagate_case: true
-  - trigger: "lu"
+  - trigger: "sx"
     replace: "should"
     word: true
     propagate_case: true
-  - trigger: "ul"
+  - trigger: "xs"
     replace: "should"
     word: true
     propagate_case: true
@@ -1146,36 +1506,60 @@ matches:
     replace: "country"
     word: true
     propagate_case: true
-  - trigger: "fn"
+  - trigger: "fu"
     replace: "found"
     word: true
     propagate_case: true
-  - trigger: "nf"
+  - trigger: "uf"
     replace: "found"
     word: true
     propagate_case: true
-  - trigger: "rs"
+  - trigger: "ax"
     replace: "answer"
     word: true
     propagate_case: true
-  - trigger: "sr"
+  - trigger: "xa"
     replace: "answer"
     word: true
     propagate_case: true
-  - trigger: "co"
+  - trigger: "sz"
     replace: "school"
     word: true
     propagate_case: true
-  - trigger: "oc"
+  - trigger: "zs"
     replace: "school"
     word: true
     propagate_case: true
-  - trigger: "gw"
+  - trigger: "fg"
     replace: "grow"
     word: true
     propagate_case: true
-  - trigger: "wg"
+  - trigger: "gf"
     replace: "grow"
+    word: true
+    propagate_case: true
+  - trigger: "gu"
+    replace: "study"
+    word: true
+    propagate_case: true
+  - trigger: "ug"
+    replace: "study"
+    word: true
+    propagate_case: true
+  - trigger: "ci"
+    replace: "still"
+    word: true
+    propagate_case: true
+  - trigger: "ic"
+    replace: "still"
+    word: true
+    propagate_case: true
+  - trigger: "jl"
+    replace: "learn"
+    word: true
+    propagate_case: true
+  - trigger: "lj"
+    replace: "learn"
     word: true
     propagate_case: true
   - trigger: "lp"
@@ -1186,28 +1570,52 @@ matches:
     replace: "plant"
     word: true
     propagate_case: true
-  - trigger: "cr"
+  - trigger: "cv"
     replace: "cover"
     word: true
     propagate_case: true
-  - trigger: "rc"
+  - trigger: "vc"
     replace: "cover"
     word: true
     propagate_case: true
-  - trigger: "fu"
+  - trigger: "fj"
+    replace: "food"
+    word: true
+    propagate_case: true
+  - trigger: "jf"
+    replace: "food"
+    word: true
+    propagate_case: true
+  - trigger: "iu"
+    replace: "sun"
+    word: true
+    propagate_case: true
+  - trigger: "ui"
+    replace: "sun"
+    word: true
+    propagate_case: true
+  - trigger: "fk"
     replace: "four"
     word: true
     propagate_case: true
-  - trigger: "uf"
+  - trigger: "kf"
     replace: "four"
     word: true
     propagate_case: true
-  - trigger: "gu"
+  - trigger: "ox"
     replace: "thought"
     word: true
     propagate_case: true
-  - trigger: "ug"
+  - trigger: "xo"
     replace: "thought"
+    word: true
+    propagate_case: true
+  - trigger: "lq"
+    replace: "let"
+    word: true
+    propagate_case: true
+  - trigger: "ql"
+    replace: "let"
     word: true
     propagate_case: true
   - trigger: "kp"
@@ -1218,6 +1626,14 @@ matches:
     replace: "keep"
     word: true
     propagate_case: true
+  - trigger: "ek"
+    replace: "eye"
+    word: true
+    propagate_case: true
+  - trigger: "ke"
+    replace: "eye"
+    word: true
+    propagate_case: true
   - trigger: "rv"
     replace: "never"
     word: true
@@ -1226,748 +1642,44 @@ matches:
     replace: "never"
     word: true
     propagate_case: true
-  - trigger: "bw"
-    replace: "between"
-    word: true
-    propagate_case: true
-  - trigger: "wb"
-    replace: "between"
-    word: true
-    propagate_case: true
-  - trigger: "ci"
-    replace: "city"
-    word: true
-    propagate_case: true
-  - trigger: "ic"
-    replace: "city"
-    word: true
-    propagate_case: true
-  - trigger: "gm"
-    replace: "might"
-    word: true
-    propagate_case: true
-  - trigger: "mg"
-    replace: "might"
-    word: true
-    propagate_case: true
-  - trigger: "af"
-    replace: "far"
-    word: true
-    propagate_case: true
-  - trigger: "fa"
-    replace: "far"
-    word: true
-    propagate_case: true
-  - trigger: "fl"
-    replace: "left"
-    word: true
-    propagate_case: true
-  - trigger: "lf"
-    replace: "left"
-    word: true
-    propagate_case: true
-  - trigger: "gi"
-    replace: "night"
-    word: true
-    propagate_case: true
-  - trigger: "ig"
-    replace: "night"
-    word: true
-    propagate_case: true
-  - trigger: "op"
-    replace: "stop"
-    word: true
-    propagate_case: true
-  - trigger: "po"
-    replace: "stop"
-    word: true
-    propagate_case: true
-  - trigger: "nx"
-    replace: "next"
-    word: true
-    propagate_case: true
-  - trigger: "xn"
-    replace: "next"
-    word: true
-    propagate_case: true
   - trigger: "lx"
-    replace: "example"
+    replace: "last"
     word: true
     propagate_case: true
   - trigger: "xl"
-    replace: "example"
-    word: true
-    propagate_case: true
-  - trigger: "ly"
-    replace: "always"
-    word: true
-    propagate_case: true
-  - trigger: "yl"
-    replace: "always"
-    word: true
-    propagate_case: true
-  - trigger: "iu"
-    replace: "music"
-    word: true
-    propagate_case: true
-  - trigger: "ui"
-    replace: "music"
-    word: true
-    propagate_case: true
-  - trigger: "bh"
-    replace: "both"
-    word: true
-    propagate_case: true
-  - trigger: "hb"
-    replace: "both"
-    word: true
-    propagate_case: true
-  - trigger: "iv"
-    replace: "river"
-    word: true
-    propagate_case: true
-  - trigger: "vi"
-    replace: "river"
-    word: true
-    propagate_case: true
-  - trigger: "ab"
-    replace: "began"
-    word: true
-    propagate_case: true
-  - trigger: "ba"
-    replace: "began"
-    word: true
-    propagate_case: true
-  - trigger: "fh"
-    replace: "fish"
-    word: true
-    propagate_case: true
-  - trigger: "hf"
-    replace: "fish"
-    word: true
-    propagate_case: true
-  - trigger: "bs"
-    replace: "base"
-    word: true
-    propagate_case: true
-  - trigger: "sb"
-    replace: "base"
-    word: true
-    propagate_case: true
-  - trigger: "cf"
-    replace: "face"
-    word: true
-    propagate_case: true
-  - trigger: "fc"
-    replace: "face"
-    word: true
-    propagate_case: true
-  - trigger: "gy"
-    replace: "young"
-    word: true
-    propagate_case: true
-  - trigger: "yg"
-    replace: "young"
-    word: true
-    propagate_case: true
-  - trigger: "av"
-    replace: "above"
-    word: true
-    propagate_case: true
-  - trigger: "va"
-    replace: "above"
-    word: true
-    propagate_case: true
-  - trigger: "fy"
-    replace: "family"
-    word: true
-    propagate_case: true
-  - trigger: "yf"
-    replace: "family"
-    word: true
-    propagate_case: true
-  - trigger: "gs"
-    replace: "song"
-    word: true
-    propagate_case: true
-  - trigger: "sg"
-    replace: "song"
-    word: true
-    propagate_case: true
-  - trigger: "bc"
-    replace: "black"
-    word: true
-    propagate_case: true
-  - trigger: "cb"
-    replace: "black"
-    word: true
-    propagate_case: true
-  - trigger: "nq"
-    replace: "question"
-    word: true
-    propagate_case: true
-  - trigger: "qn"
-    replace: "question"
-    word: true
-    propagate_case: true
-  - trigger: "mp"
-    replace: "complete"
-    word: true
-    propagate_case: true
-  - trigger: "pm"
-    replace: "complete"
-    word: true
-    propagate_case: true
-  - trigger: "ck"
-    replace: "rock"
-    word: true
-    propagate_case: true
-  - trigger: "kc"
-    replace: "rock"
-    word: true
-    propagate_case: true
-  - trigger: "bp"
-    replace: "problem"
-    word: true
-    propagate_case: true
-  - trigger: "pb"
-    replace: "problem"
-    word: true
-    propagate_case: true
-  - trigger: "ek"
-    replace: "knew"
-    word: true
-    propagate_case: true
-  - trigger: "ke"
-    replace: "knew"
-    word: true
-    propagate_case: true
-  - trigger: "gk"
-    replace: "king"
-    word: true
-    propagate_case: true
-  - trigger: "kg"
-    replace: "king"
-    word: true
-    propagate_case: true
-  - trigger: "sz"
-    replace: "size"
-    word: true
-    propagate_case: true
-  - trigger: "zs"
-    replace: "size"
-    word: true
-    propagate_case: true
-  - trigger: "bm"
-    replace: "remember"
-    word: true
-    propagate_case: true
-  - trigger: "mb"
-    replace: "remember"
-    word: true
-    propagate_case: true
-  - trigger: "fv"
-    replace: "five"
-    word: true
-    propagate_case: true
-  - trigger: "vf"
-    replace: "five"
-    word: true
-    propagate_case: true
-  - trigger: "sx"
-    replace: "six"
-    word: true
-    propagate_case: true
-  - trigger: "xs"
-    replace: "six"
-    word: true
-    propagate_case: true
-  - trigger: "tv"
-    replace: "travel"
-    word: true
-    propagate_case: true
-  - trigger: "vt"
-    replace: "travel"
-    word: true
-    propagate_case: true
-  - trigger: "sv"
-    replace: "several"
-    word: true
-    propagate_case: true
-  - trigger: "vs"
-    replace: "several"
-    word: true
-    propagate_case: true
-  - trigger: "vw"
-    replace: "vowel"
-    word: true
-    propagate_case: true
-  - trigger: "wv"
-    replace: "vowel"
-    word: true
-    propagate_case: true
-  - trigger: "cv"
-    replace: "voice"
-    word: true
-    propagate_case: true
-  - trigger: "vc"
-    replace: "voice"
-    word: true
-    propagate_case: true
-  - trigger: "pw"
-    replace: "power"
-    word: true
-    propagate_case: true
-  - trigger: "wp"
-    replace: "power"
-    word: true
-    propagate_case: true
-  - trigger: "fg"
-    replace: "figure"
-    word: true
-    propagate_case: true
-  - trigger: "gf"
-    replace: "figure"
-    word: true
-    propagate_case: true
-  - trigger: "bx"
-    replace: "box"
-    word: true
-    propagate_case: true
-  - trigger: "xb"
-    replace: "box"
-    word: true
-    propagate_case: true
-  - trigger: "bu"
-    replace: "beauty"
-    word: true
-    propagate_case: true
-  - trigger: "ub"
-    replace: "beauty"
-    word: true
-    propagate_case: true
-  - trigger: "dv"
-    replace: "drive"
-    word: true
-    propagate_case: true
-  - trigger: "vd"
-    replace: "drive"
-    word: true
-    propagate_case: true
-  - trigger: "kq"
-    replace: "quick"
-    word: true
-    propagate_case: true
-  - trigger: "qk"
-    replace: "quick"
-    word: true
-    propagate_case: true
-  - trigger: "pv"
-    replace: "develop"
-    word: true
-    propagate_case: true
-  - trigger: "vp"
-    replace: "develop"
-    word: true
-    propagate_case: true
-  - trigger: "mw"
-    replace: "warm"
-    word: true
-    propagate_case: true
-  - trigger: "wm"
-    replace: "warm"
-    word: true
-    propagate_case: true
-  - trigger: "bj"
-    replace: "object"
-    word: true
-    propagate_case: true
-  - trigger: "jb"
-    replace: "object"
-    word: true
-    propagate_case: true
-  - trigger: "hj"
-    replace: "hot"
-    word: true
-    propagate_case: true
-  - trigger: "jh"
-    replace: "hot"
-    word: true
-    propagate_case: true
-  - trigger: "js"
-    replace: "she"
-    word: true
-    propagate_case: true
-  - trigger: "sj"
-    replace: "she"
-    word: true
-    propagate_case: true
-  - trigger: "qt"
-    replace: "these"
-    word: true
-    propagate_case: true
-  - trigger: "tq"
-    replace: "these"
-    word: true
-    propagate_case: true
-  - trigger: "hq"
-    replace: "her"
-    word: true
-    propagate_case: true
-  - trigger: "qh"
-    replace: "her"
-    word: true
-    propagate_case: true
-  - trigger: "ks"
-    replace: "see"
-    word: true
-    propagate_case: true
-  - trigger: "sk"
-    replace: "see"
-    word: true
-    propagate_case: true
-  - trigger: "tx"
-    replace: "two"
-    word: true
-    propagate_case: true
-  - trigger: "xt"
-    replace: "two"
-    word: true
-    propagate_case: true
-  - trigger: "hx"
-    replace: "has"
-    word: true
-    propagate_case: true
-  - trigger: "xh"
-    replace: "has"
-    word: true
-    propagate_case: true
-  - trigger: "jw"
-    replace: "who"
-    word: true
-    propagate_case: true
-  - trigger: "wj"
-    replace: "who"
-    word: true
-    propagate_case: true
-  - trigger: "jn"
-    replace: "now"
-    word: true
-    propagate_case: true
-  - trigger: "nj"
-    replace: "now"
-    word: true
-    propagate_case: true
-  - trigger: "qw"
-    replace: "where"
-    word: true
-    propagate_case: true
-  - trigger: "wq"
-    replace: "where"
-    word: true
-    propagate_case: true
-  - trigger: "jm"
-    replace: "man"
-    word: true
-    propagate_case: true
-  - trigger: "mj"
-    replace: "man"
-    word: true
-    propagate_case: true
-  - trigger: "qs"
-    replace: "show"
-    word: true
-    propagate_case: true
-  - trigger: "sq"
-    replace: "show"
-    word: true
-    propagate_case: true
-  - trigger: "kn"
-    replace: "name"
-    word: true
-    propagate_case: true
-  - trigger: "nk"
-    replace: "name"
-    word: true
-    propagate_case: true
-  - trigger: "jl"
-    replace: "low"
-    word: true
-    propagate_case: true
-  - trigger: "lj"
-    replace: "low"
-    word: true
-    propagate_case: true
-  - trigger: "aj"
-    replace: "same"
-    word: true
-    propagate_case: true
-  - trigger: "ja"
-    replace: "same"
-    word: true
-    propagate_case: true
-  - trigger: "mq"
-    replace: "mean"
-    word: true
-    propagate_case: true
-  - trigger: "qm"
-    replace: "mean"
-    word: true
-    propagate_case: true
-  - trigger: "tz"
-    replace: "too"
-    word: true
-    propagate_case: true
-  - trigger: "zt"
-    replace: "too"
-    word: true
-    propagate_case: true
-  - trigger: "dj"
-    replace: "does"
-    word: true
-    propagate_case: true
-  - trigger: "jd"
-    replace: "does"
-    word: true
-    propagate_case: true
-  - trigger: "ej"
-    replace: "tell"
-    word: true
-    propagate_case: true
-  - trigger: "je"
-    replace: "tell"
-    word: true
-    propagate_case: true
-  - trigger: "eq"
-    replace: "set"
-    word: true
-    propagate_case: true
-  - trigger: "qe"
-    replace: "set"
-    word: true
-    propagate_case: true
-  - trigger: "hz"
-    replace: "three"
-    word: true
-    propagate_case: true
-  - trigger: "zh"
-    replace: "three"
-    word: true
-    propagate_case: true
-  - trigger: "wx"
-    replace: "want"
-    word: true
-    propagate_case: true
-  - trigger: "xw"
-    replace: "want"
-    word: true
-    propagate_case: true
-  - trigger: "wz"
-    replace: "well"
-    word: true
-    propagate_case: true
-  - trigger: "zw"
-    replace: "well"
-    word: true
-    propagate_case: true
-  - trigger: "ez"
-    replace: "end"
-    word: true
-    propagate_case: true
-  - trigger: "ze"
-    replace: "end"
-    word: true
-    propagate_case: true
-  - trigger: "fp"
-    replace: "put"
-    word: true
-    propagate_case: true
-  - trigger: "pf"
-    replace: "put"
-    word: true
-    propagate_case: true
-  - trigger: "oq"
-    replace: "home"
-    word: true
-    propagate_case: true
-  - trigger: "qo"
-    replace: "home"
-    word: true
-    propagate_case: true
-  - trigger: "jr"
-    replace: "read"
-    word: true
-    propagate_case: true
-  - trigger: "rj"
-    replace: "read"
-    word: true
-    propagate_case: true
-  - trigger: "aq"
-    replace: "hand"
-    word: true
-    propagate_case: true
-  - trigger: "qa"
-    replace: "hand"
-    word: true
-    propagate_case: true
-  - trigger: "ax"
-    replace: "add"
-    word: true
-    propagate_case: true
-  - trigger: "xa"
-    replace: "add"
-    word: true
-    propagate_case: true
-  - trigger: "lq"
-    replace: "land"
-    word: true
-    propagate_case: true
-  - trigger: "ql"
-    replace: "land"
-    word: true
-    propagate_case: true
-  - trigger: "qr"
-    replace: "here"
-    word: true
-    propagate_case: true
-  - trigger: "rq"
-    replace: "here"
-    word: true
-    propagate_case: true
-  - trigger: "mx"
-    replace: "must"
-    word: true
-    propagate_case: true
-  - trigger: "xm"
-    replace: "must"
-    word: true
-    propagate_case: true
-  - trigger: "az"
-    replace: "act"
-    word: true
-    propagate_case: true
-  - trigger: "za"
-    replace: "act"
-    word: true
-    propagate_case: true
-  - trigger: "mz"
-    replace: "men"
-    word: true
-    propagate_case: true
-  - trigger: "zm"
-    replace: "men"
-    word: true
-    propagate_case: true
-  - trigger: "nz"
-    replace: "went"
-    word: true
-    propagate_case: true
-  - trigger: "zn"
-    replace: "went"
-    word: true
-    propagate_case: true
-  - trigger: "ox"
-    replace: "off"
-    word: true
-    propagate_case: true
-  - trigger: "xo"
-    replace: "off"
+    replace: "last"
     word: true
     propagate_case: true
   - trigger: "dq"
-    replace: "need"
+    replace: "door"
     word: true
     propagate_case: true
   - trigger: "qd"
-    replace: "need"
+    replace: "door"
     word: true
     propagate_case: true
-  - trigger: "oz"
-    replace: "house"
+  - trigger: "bj"
+    replace: "between"
     word: true
     propagate_case: true
-  - trigger: "zo"
-    replace: "house"
-    word: true
-    propagate_case: true
-  - trigger: "rx"
-    replace: "try"
-    word: true
-    propagate_case: true
-  - trigger: "xr"
-    replace: "try"
-    word: true
-    propagate_case: true
-  - trigger: "rz"
-    replace: "mother"
-    word: true
-    propagate_case: true
-  - trigger: "zr"
-    replace: "mother"
-    word: true
-    propagate_case: true
-  - trigger: "lz"
-    replace: "world"
-    word: true
-    propagate_case: true
-  - trigger: "zl"
-    replace: "world"
-    word: true
-    propagate_case: true
-  - trigger: "dx"
-    replace: "head"
-    word: true
-    propagate_case: true
-  - trigger: "xd"
-    replace: "head"
-    word: true
-    propagate_case: true
-  - trigger: "ju"
-    replace: "study"
-    word: true
-    propagate_case: true
-  - trigger: "uj"
-    replace: "study"
-    word: true
-    propagate_case: true
-  - trigger: "ij"
-    replace: "still"
-    word: true
-    propagate_case: true
-  - trigger: "ji"
-    replace: "still"
-    word: true
-    propagate_case: true
-  - trigger: "bf"
-    replace: "food"
-    word: true
-    propagate_case: true
-  - trigger: "fb"
-    replace: "food"
-    word: true
-    propagate_case: true
-  - trigger: "ku"
-    replace: "sun"
-    word: true
-    propagate_case: true
-  - trigger: "uk"
-    replace: "sun"
+  - trigger: "jb"
+    replace: "between"
     word: true
     propagate_case: true
   - trigger: "iy"
-    replace: "eye"
+    replace: "city"
     word: true
     propagate_case: true
   - trigger: "yi"
-    replace: "eye"
+    replace: "city"
     word: true
     propagate_case: true
-  - trigger: "dz"
-    replace: "door"
+  - trigger: "qr"
+    replace: "tree"
     word: true
     propagate_case: true
-  - trigger: "zd"
-    replace: "door"
+  - trigger: "rq"
+    replace: "tree"
     word: true
     propagate_case: true
   - trigger: "cj"
@@ -1978,35 +1690,115 @@ matches:
     replace: "cross"
     word: true
     propagate_case: true
-  - trigger: "ik"
+  - trigger: "ij"
     replace: "since"
     word: true
     propagate_case: true
-  - trigger: "ki"
+  - trigger: "ji"
     replace: "since"
     word: true
     propagate_case: true
-  - trigger: "jy"
+  - trigger: "az"
+    replace: "hard"
+    word: true
+    propagate_case: true
+  - trigger: "za"
+    replace: "hard"
+    word: true
+    propagate_case: true
+  - trigger: "rx"
+    replace: "start"
+    word: true
+    propagate_case: true
+  - trigger: "xr"
+    replace: "start"
+    word: true
+    propagate_case: true
+  - trigger: "mq"
+    replace: "might"
+    word: true
+    propagate_case: true
+  - trigger: "qm"
+    replace: "might"
+    word: true
+    propagate_case: true
+  - trigger: "oz"
     replace: "story"
     word: true
     propagate_case: true
-  - trigger: "yj"
+  - trigger: "zo"
     replace: "story"
     word: true
     propagate_case: true
-  - trigger: "qu"
+  - trigger: "pw"
+    replace: "saw"
+    word: true
+    propagate_case: true
+  - trigger: "wp"
+    replace: "saw"
+    word: true
+    propagate_case: true
+  - trigger: "fp"
+    replace: "far"
+    word: true
+    propagate_case: true
+  - trigger: "pf"
+    replace: "far"
+    word: true
+    propagate_case: true
+  - trigger: "eq"
+    replace: "sea"
+    word: true
+    propagate_case: true
+  - trigger: "qe"
+    replace: "sea"
+    word: true
+    propagate_case: true
+  - trigger: "dv"
+    replace: "draw"
+    word: true
+    propagate_case: true
+  - trigger: "vd"
+    replace: "draw"
+    word: true
+    propagate_case: true
+  - trigger: "ly"
+    replace: "left"
+    word: true
+    propagate_case: true
+  - trigger: "yl"
+    replace: "left"
+    word: true
+    propagate_case: true
+  - trigger: "lz"
+    replace: "late"
+    word: true
+    propagate_case: true
+  - trigger: "zl"
+    replace: "late"
+    word: true
+    propagate_case: true
+  - trigger: "rz"
     replace: "run"
     word: true
     propagate_case: true
-  - trigger: "uq"
+  - trigger: "zr"
     replace: "run"
     word: true
     propagate_case: true
-  - trigger: "iq"
+  - trigger: "dx"
+    replace: "don't"
+    word: true
+    propagate_case: true
+  - trigger: "xd"
+    replace: "don't"
+    word: true
+    propagate_case: true
+  - trigger: "qw"
     replace: "while"
     word: true
     propagate_case: true
-  - trigger: "qi"
+  - trigger: "wq"
     replace: "while"
     word: true
     propagate_case: true
@@ -2018,36 +1810,68 @@ matches:
     replace: "press"
     word: true
     propagate_case: true
-  - trigger: "cq"
+  - trigger: "ck"
     replace: "close"
     word: true
     propagate_case: true
-  - trigger: "qc"
+  - trigger: "kc"
     replace: "close"
     word: true
     propagate_case: true
-  - trigger: "ix"
+  - trigger: "nx"
+    replace: "night"
+    word: true
+    propagate_case: true
+  - trigger: "xn"
+    replace: "night"
+    word: true
+    propagate_case: true
+  - trigger: "ez"
+    replace: "real"
+    word: true
+    propagate_case: true
+  - trigger: "ze"
+    replace: "real"
+    word: true
+    propagate_case: true
+  - trigger: "ik"
     replace: "life"
     word: true
     propagate_case: true
-  - trigger: "xi"
+  - trigger: "ki"
     replace: "life"
     word: true
     propagate_case: true
-  - trigger: "fj"
+  - trigger: "fq"
     replace: "few"
     word: true
     propagate_case: true
-  - trigger: "jf"
+  - trigger: "qf"
     replace: "few"
     word: true
     propagate_case: true
   - trigger: "pq"
-    replace: "open"
+    replace: "stop"
     word: true
     propagate_case: true
   - trigger: "qp"
+    replace: "stop"
+    word: true
+    propagate_case: true
+  - trigger: "pv"
     replace: "open"
+    word: true
+    propagate_case: true
+  - trigger: "vp"
+    replace: "open"
+    word: true
+    propagate_case: true
+  - trigger: "mx"
+    replace: "seem"
+    word: true
+    propagate_case: true
+  - trigger: "xm"
+    replace: "seem"
     word: true
     propagate_case: true
   - trigger: "gj"
@@ -2058,19 +1882,27 @@ matches:
     replace: "together"
     word: true
     propagate_case: true
-  - trigger: "iz"
+  - trigger: "nz"
+    replace: "next"
+    word: true
+    propagate_case: true
+  - trigger: "zn"
+    replace: "next"
+    word: true
+    propagate_case: true
+  - trigger: "vw"
     replace: "white"
     word: true
     propagate_case: true
-  - trigger: "zi"
+  - trigger: "wv"
     replace: "white"
     word: true
     propagate_case: true
-  - trigger: "cx"
+  - trigger: "cq"
     replace: "children"
     word: true
     propagate_case: true
-  - trigger: "xc"
+  - trigger: "qc"
     replace: "children"
     word: true
     propagate_case: true
@@ -2082,36 +1914,68 @@ matches:
     replace: "begin"
     word: true
     propagate_case: true
-  - trigger: "gq"
+  - trigger: "gk"
     replace: "got"
     word: true
     propagate_case: true
-  - trigger: "qg"
+  - trigger: "kg"
     replace: "got"
     word: true
     propagate_case: true
-  - trigger: "fk"
+  - trigger: "wx"
     replace: "walk"
     word: true
     propagate_case: true
-  - trigger: "kf"
+  - trigger: "xw"
     replace: "walk"
     word: true
     propagate_case: true
   - trigger: "px"
-    replace: "paper"
+    replace: "example"
     word: true
     propagate_case: true
   - trigger: "xp"
+    replace: "example"
+    word: true
+    propagate_case: true
+  - trigger: "pz"
     replace: "paper"
     word: true
     propagate_case: true
-  - trigger: "fq"
+  - trigger: "zp"
+    replace: "paper"
+    word: true
+    propagate_case: true
+  - trigger: "fv"
     replace: "often"
     word: true
     propagate_case: true
-  - trigger: "qf"
+  - trigger: "vf"
     replace: "often"
+    word: true
+    propagate_case: true
+  - trigger: "wz"
+    replace: "always"
+    word: true
+    propagate_case: true
+  - trigger: "zw"
+    replace: "always"
+    word: true
+    propagate_case: true
+  - trigger: "mz"
+    replace: "music"
+    word: true
+    propagate_case: true
+  - trigger: "zm"
+    replace: "music"
+    word: true
+    propagate_case: true
+  - trigger: "bv"
+    replace: "both"
+    word: true
+    propagate_case: true
+  - trigger: "vb"
+    replace: "both"
     word: true
     propagate_case: true
   - trigger: "jk"
@@ -2122,27 +1986,43 @@ matches:
     replace: "mark"
     word: true
     propagate_case: true
-  - trigger: "bv"
+  - trigger: "bx"
     replace: "book"
     word: true
     propagate_case: true
-  - trigger: "vb"
+  - trigger: "xb"
     replace: "book"
     word: true
     propagate_case: true
-  - trigger: "uv"
+  - trigger: "ju"
     replace: "until"
     word: true
     propagate_case: true
-  - trigger: "vu"
+  - trigger: "uj"
     replace: "until"
     word: true
     propagate_case: true
-  - trigger: "cz"
+  - trigger: "iq"
+    replace: "mile"
+    word: true
+    propagate_case: true
+  - trigger: "qi"
+    replace: "mile"
+    word: true
+    propagate_case: true
+  - trigger: "iv"
+    replace: "river"
+    word: true
+    propagate_case: true
+  - trigger: "vi"
+    replace: "river"
+    word: true
+    propagate_case: true
+  - trigger: "cx"
     replace: "car"
     word: true
     propagate_case: true
-  - trigger: "zc"
+  - trigger: "xc"
     replace: "car"
     word: true
     propagate_case: true
@@ -2154,28 +2034,52 @@ matches:
     replace: "feet"
     word: true
     propagate_case: true
-  - trigger: "gx"
+  - trigger: "cz"
+    replace: "care"
+    word: true
+    propagate_case: true
+  - trigger: "zc"
+    replace: "care"
+    word: true
+    propagate_case: true
+  - trigger: "dz"
+    replace: "second"
+    word: true
+    propagate_case: true
+  - trigger: "zd"
+    replace: "second"
+    word: true
+    propagate_case: true
+  - trigger: "gq"
     replace: "group"
     word: true
     propagate_case: true
-  - trigger: "xg"
+  - trigger: "qg"
     replace: "group"
     word: true
     propagate_case: true
-  - trigger: "ky"
+  - trigger: "fy"
     replace: "carry"
     word: true
     propagate_case: true
-  - trigger: "yk"
+  - trigger: "yf"
     replace: "carry"
     word: true
     propagate_case: true
-  - trigger: "kv"
+  - trigger: "kq"
     replace: "took"
     word: true
     propagate_case: true
-  - trigger: "vk"
+  - trigger: "qk"
     replace: "took"
+    word: true
+    propagate_case: true
+  - trigger: "ix"
+    replace: "rain"
+    word: true
+    propagate_case: true
+  - trigger: "xi"
+    replace: "rain"
     word: true
     propagate_case: true
   - trigger: "fz"
@@ -2186,52 +2090,108 @@ matches:
     replace: "friend"
     word: true
     propagate_case: true
-  - trigger: "ux"
+  - trigger: "bz"
+    replace: "began"
+    word: true
+    propagate_case: true
+  - trigger: "zb"
+    replace: "began"
+    word: true
+    propagate_case: true
+  - trigger: "iz"
+    replace: "idea"
+    word: true
+    propagate_case: true
+  - trigger: "zi"
+    replace: "idea"
+    word: true
+    propagate_case: true
+  - trigger: "ku"
     replace: "mountain"
+    word: true
+    propagate_case: true
+  - trigger: "uk"
+    replace: "mountain"
+    word: true
+    propagate_case: true
+  - trigger: "qu"
+    replace: "cut"
+    word: true
+    propagate_case: true
+  - trigger: "uq"
+    replace: "cut"
+    word: true
+    propagate_case: true
+  - trigger: "uv"
+    replace: "sure"
+    word: true
+    propagate_case: true
+  - trigger: "vu"
+    replace: "sure"
+    word: true
+    propagate_case: true
+  - trigger: "ux"
+    replace: "enough"
     word: true
     propagate_case: true
   - trigger: "xu"
-    replace: "mountain"
+    replace: "enough"
+    word: true
+    propagate_case: true
+  - trigger: "gx"
+    replace: "girl"
+    word: true
+    propagate_case: true
+  - trigger: "xg"
+    replace: "girl"
     word: true
     propagate_case: true
   - trigger: "uz"
-    replace: "cut"
+    replace: "usual"
     word: true
     propagate_case: true
   - trigger: "zu"
-    replace: "cut"
+    replace: "usual"
     word: true
     propagate_case: true
-  - trigger: "gz"
-    replace: "enough"
+  - trigger: "gy"
+    replace: "young"
     word: true
     propagate_case: true
-  - trigger: "zg"
-    replace: "enough"
+  - trigger: "yg"
+    replace: "young"
     word: true
     propagate_case: true
-  - trigger: "pz"
-    replace: "plain"
-    word: true
-    propagate_case: true
-  - trigger: "zp"
-    replace: "plain"
-    word: true
-    propagate_case: true
-  - trigger: "qy"
+  - trigger: "jy"
     replace: "ready"
     word: true
     propagate_case: true
-  - trigger: "yq"
+  - trigger: "yj"
     replace: "ready"
     word: true
     propagate_case: true
   - trigger: "jv"
-    replace: "ever"
+    replace: "above"
     word: true
     propagate_case: true
   - trigger: "vj"
+    replace: "above"
+    word: true
+    propagate_case: true
+  - trigger: "kv"
     replace: "ever"
+    word: true
+    propagate_case: true
+  - trigger: "vk"
+    replace: "ever"
+    word: true
+    propagate_case: true
+  - trigger: "gz"
+    replace: "though"
+    word: true
+    propagate_case: true
+  - trigger: "zg"
+    replace: "though"
     word: true
     propagate_case: true
   - trigger: "kx"
@@ -2242,20 +2202,20 @@ matches:
     replace: "talk"
     word: true
     propagate_case: true
-  - trigger: "bz"
-    replace: "bird"
-    word: true
-    propagate_case: true
-  - trigger: "zb"
-    replace: "bird"
-    word: true
-    propagate_case: true
-  - trigger: "xy"
+  - trigger: "ky"
     replace: "body"
     word: true
     propagate_case: true
-  - trigger: "yx"
+  - trigger: "yk"
     replace: "body"
+    word: true
+    propagate_case: true
+  - trigger: "qy"
+    replace: "family"
+    word: true
+    propagate_case: true
+  - trigger: "yq"
+    replace: "family"
     word: true
     propagate_case: true
   - trigger: "qv"
@@ -2266,36 +2226,76 @@ matches:
     replace: "leave"
     word: true
     propagate_case: true
-  - trigger: "yz"
+  - trigger: "kz"
+    replace: "black"
+    word: true
+    propagate_case: true
+  - trigger: "zk"
+    replace: "black"
+    word: true
+    propagate_case: true
+  - trigger: "jq"
+    replace: "question"
+    word: true
+    propagate_case: true
+  - trigger: "qj"
+    replace: "question"
+    word: true
+    propagate_case: true
+  - trigger: "jz"
+    replace: "size"
+    word: true
+    propagate_case: true
+  - trigger: "zj"
+    replace: "size"
+    word: true
+    propagate_case: true
+  - trigger: "xy"
     replace: "early"
     word: true
     propagate_case: true
-  - trigger: "zy"
+  - trigger: "yx"
     replace: "early"
     word: true
     propagate_case: true
   - trigger: "vx"
-    replace: "love"
+    replace: "five"
     word: true
     propagate_case: true
   - trigger: "xv"
-    replace: "love"
+    replace: "five"
+    word: true
+    propagate_case: true
+  - trigger: "jx"
+    replace: "six"
+    word: true
+    propagate_case: true
+  - trigger: "xj"
+    replace: "six"
     word: true
     propagate_case: true
   - trigger: "vz"
-    replace: "serve"
+    replace: "travel"
     word: true
     propagate_case: true
   - trigger: "zv"
-    replace: "serve"
+    replace: "travel"
     word: true
     propagate_case: true
-  - trigger: "kz"
-    replace: "dark"
+  - trigger: "yz"
+    replace: "lay"
     word: true
     propagate_case: true
-  - trigger: "zk"
-    replace: "dark"
+  - trigger: "zy"
+    replace: "lay"
+    word: true
+    propagate_case: true
+  - trigger: "qx"
+    replace: "box"
+    word: true
+    propagate_case: true
+  - trigger: "xq"
+    replace: "box"
     word: true
     propagate_case: true
 
