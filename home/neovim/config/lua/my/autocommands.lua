@@ -19,7 +19,7 @@ autocmd("FileType", {
 })
 
 autocmd("FileType", {
-  pattern = "sh,c,go,javascript,lua,nix,python,rust,typescript,typescriptreact,vim,yaml,html,terraform",
+  pattern = "sh,c,go,javascript,lua,nix,python,rust,typescript,typescriptreact,vim,yaml,html,terraform,prisma",
   callback = coding_mappings,
   desc = "Coding buffer mappings",
 })
