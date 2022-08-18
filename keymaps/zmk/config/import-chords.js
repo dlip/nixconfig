@@ -70,10 +70,10 @@ function mapBindings(x) {
         tap-ms = <MACRO_TAP>;
         bindings = <${bindings} &kp SPACE>;
     )
-    ZMK_MACRO(d${macro},
+    ZMK_MACRO(sh${macro},
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
-        bindings = <${bindings} &kp DOT>;
+        bindings = <&sk LSHIFT ${bindings} &kp SPACE>;
     )
 `;
 
@@ -83,10 +83,10 @@ function mapBindings(x) {
       key-positions = <${positions} P_SPC>;
       bindings = <&sp${macro}>;
     };
-    combo_d${macro} {
+    combo_sh${macro} {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <${positions} P_RALT>;
-      bindings = <&d${macro}>;
+      key-positions = <${positions} P_SHFT>;
+      bindings = <&sh${macro}>;
     };
 `;
     });
