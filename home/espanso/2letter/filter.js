@@ -17,7 +17,7 @@ const readline = require("readline");
     }
 
     const dictinput = readline.createInterface({
-      input: fs.createReadStream("dictionary.txt"),
+      input: fs.createReadStream("ng.txt"),
       crlfDelay: Infinity,
     });
     const dict = new Map();

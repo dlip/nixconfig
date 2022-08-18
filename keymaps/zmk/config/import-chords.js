@@ -64,19 +64,29 @@ function mapBindings(x) {
       used[index] = word;
       const macro = "m_" + word.split("").map(translateKeys).join("");
       const inputs = keys.toUpperCase().split("").map(translateKeys);
-      const bindings = word.split("").map(mapBindings).join(" ") + " &kp SPACE";
-      macros += `    ZMK_MACRO(${macro},
+      const bindings = word.split("").map(mapBindings).join(" ");
+      macros += `    ZMK_MACRO(sp${macro},
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
-        bindings = <${bindings}>;
+        bindings = <${bindings} &kp SPACE>;
+    )
+    ZMK_MACRO(d${macro},
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <${bindings} &kp DOT>;
     )
 `;
 
       const positions = "P_" + inputs.join(" P_");
-      combos += `    combo_${macro} {
+      combos += `    combo_sp${macro} {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <${positions}>;
-      bindings = <&${macro}>;
+      key-positions = <${positions} P_SPC>;
+      bindings = <&sp${macro}>;
+    };
+    combo_d${macro} {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <${positions} P_RALT>;
+      bindings = <&d${macro}>;
     };
 `;
     });
