@@ -35,15 +35,15 @@ function capitalizeFirstLetter(string) {
       briefs += `  - trigger: "${keys}"
     replace: "${word}"
     word: true
+  - trigger: "${keys.toUpperCase()}"
+    replace: "${capitalizeFirstLetter(word)}"
+    word: true
 `;
       if (keys.length === 2) {
         const reverseKeys = keys.split("").reverse().join("");
         used[reverseKeys] = word;
         briefs += `  - trigger: "${reverseKeys}"
     replace: "${word}"
-    word: true
-  - trigger: "${keys.toUpperCase()}"
-    replace: "${capitalizeFirstLetter(word)}"
     word: true
   - trigger: "${reverseKeys.toUpperCase()}"
     replace: "${capitalizeFirstLetter(word)}"
