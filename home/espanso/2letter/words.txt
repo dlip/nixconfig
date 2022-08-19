@@ -1,7 +1,7 @@
 be b
 see c
-the d
-eye e
+do d
+the e
 for f
 get g
 he h
@@ -51,11 +51,15 @@ uh uh
 um um
 up up
 us us
+VS vs
 we we
-what wh
+eye ai
+who wo
+what wt
 when wn
+where wh
+would wd
 were wr
-would ow
 was ws
 from fm
 him im
@@ -71,7 +75,7 @@ which wc
 I'll il
 had hd
 not nt
-with wt
+with wi
 are
 one
 hot
@@ -110,7 +114,6 @@ did
 sound
 most
 number
-who
 over
 know
 water
@@ -133,7 +136,6 @@ get
 place
 made
 live
-where
 after
 back
 little
