@@ -31,13 +31,15 @@ function capitalizeFirstLetter(string) {
           `Can't use combo '${keys}' for word '${word}' already used by ${used[keys]}`
         );
       }
-      const reverseKeys = keys.split("").reverse().join("");
-      used[reverseKeys] = word;
       used[keys] = word;
       briefs += `  - trigger: "${keys}"
     replace: "${word}"
     word: true
-  - trigger: "${reverseKeys}"
+`;
+      if (keys.length === 2) {
+        const reverseKeys = keys.split("").reverse().join("");
+        used[reverseKeys] = word;
+        briefs += `  - trigger: "${reverseKeys}"
     replace: "${word}"
     word: true
   - trigger: "${keys.toUpperCase()}"
@@ -47,6 +49,7 @@ function capitalizeFirstLetter(string) {
     replace: "${capitalizeFirstLetter(word)}"
     word: true
 `;
+      }
     });
 
     await events.once(rl, "close");

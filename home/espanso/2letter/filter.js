@@ -43,6 +43,7 @@ const readline = require("readline");
     });
     await events.once(nginput, "close");
     for (x of alphabet) {
+      used.set(x, false);
       for (y of alphabet) {
         const combo = (x + y).split("").sort().join("");
         if (ng.get(combo) !== true && combo[0] !== combo[1]) {
