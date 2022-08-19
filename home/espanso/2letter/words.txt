@@ -1,6 +1,6 @@
 be b
 see c
-and d
+the d
 eye e
 for f
 get g
@@ -13,16 +13,16 @@ me m
 no n
 on o
 up p
-would q
-from r
+question q
+or r
 she s
-the t
+to t
 you u
 have v
 with w
-when x
+and x
 why y
-what z
+as z
 ah ah
 am am
 an an
@@ -52,11 +52,15 @@ um um
 up up
 us us
 we we
+what wh
+when wn
 were wr
+would ow
+was ws
+from fm
 him im
 his hs
 all al
-was ws
 that th
 this ts
 they te
@@ -346,7 +350,6 @@ short
 numeral
 class
 wind
-question
 happen
 complete
 ship
