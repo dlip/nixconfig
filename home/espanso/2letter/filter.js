@@ -5,42 +5,52 @@ const readline = require("readline");
 (async function processLineByLine() {
   try {
     const used = new Map();
-    function addWord(word, keys) {
-      if (used.get(keys) === true) {
-        throw new Error(
+    function wordAvailable(word, keys) {
+      const sortedKeys = keys.split("").sort().join("");
+      if (used.get(sortedKeys)) {
+        return new Error(
           `Can't use combo '${keys}' for word '${word}' already used by ${used.get(
-            keys
+            sortedKeys
           )}`
         );
       }
-      used.set(keys, word);
+      if (used.get(sortedKeys) !== false && sortedKeys !== "i") {
+        return new Error(`Invalid combination of keys '${keys}' or NG word`);
+      }
+      return true;
     }
 
-    const dictinput = readline.createInterface({
-      input: fs.createReadStream("ng.txt"),
-      crlfDelay: Infinity,
-    });
-    const dict = new Map();
-
-    dictinput.on("line", (line) => {
-      const combo = line.toLowerCase().split("").sort().join("");
-      dict.set(combo, true);
-    });
-
-    await events.once(dictinput, "close");
+    function addWord(word, keys) {
+      const sortedKeys = keys.split("").sort().join("");
+      const available = wordAvailable(word, keys);
+      if (available !== true) {
+        throw available;
+      }
+      used.set(sortedKeys, word);
+      console.log(word, keys);
+    }
 
     const alpha = Array.from(Array(26)).map((e, i) => i + 97);
     const alphabet = alpha.map((x) => String.fromCharCode(x));
+    const nginput = readline.createInterface({
+      input: fs.createReadStream("ng.txt"),
+      crlfDelay: Infinity,
+    });
+    const ng = new Map();
+    nginput.on("line", (line) => {
+      const combo = line.toLowerCase().split("").sort().join("");
+      ng.set(combo, true);
+    });
+    await events.once(nginput, "close");
     for (x of alphabet) {
       for (y of alphabet) {
         const combo = (x + y).split("").sort().join("");
-        if (dict.get(combo) !== true && combo[0] !== combo[1]) {
+        if (ng.get(combo) !== true && combo[0] !== combo[1]) {
           used.set(combo, false);
         }
       }
     }
 
-    const backupWords = [];
     const rl = readline.createInterface({
       input: fs.createReadStream("words.txt"),
       crlfDelay: Infinity,
@@ -49,49 +59,41 @@ const readline = require("readline");
       let [word, keys] = line.split(" ");
       if (!keys) {
         keys = word;
-        // Ignore 3 letter words since its not a significant saving of effort
-        if (word.length < 3) {
-          return;
-        }
       } else {
         addWord(word, keys);
-        console.log(word, value);
-        // console.log(word, value[1] + value[0]);
         return;
       }
 
-      // generate every possible combination of letters
+      // look for combination in word itself
       const options = new Map();
       for (x of word) {
         for (y of word.split("").reverse()) {
-          const combo = (x + y).split("").sort().join("");
-          if (used.get(combo) === false && combo[0] !== combo[1]) {
-            options.set(combo, true);
-          }
-        }
-      }
-      if (options.size === 0) {
-        // look for any combination of a single letter
-        for (x of word) {
-          for (y of alphabet) {
-            const combo = (x + y).split("").sort().join("");
-            if (used.get(combo) === false && combo[0] !== combo[1]) {
-              options.set(combo, true);
-            }
+          const keys = x + y;
+          if (wordAvailable(word, keys) === true) {
+            addWord(word, keys);
+            return;
           }
         }
       }
 
-      if (options.size > 0) {
-        const value = options.keys().next().value;
-        addWord(word, value);
-        console.log(word, value);
-        // console.log(word, value[1] + value[0]);
+      // look for combination of a letter from the word plus any other letter
+      for (x of word) {
+        for (y of alphabet) {
+          const keys = x + y;
+          if (wordAvailable(word, keys) === true) {
+            addWord(word, keys);
+            return;
+          }
+        }
       }
     });
-
     await events.once(rl, "close");
-    const result = [...used].sort();
+
+    // used.forEach((v, k) => {
+    //   if (v === false) {
+    //     console.log(k);
+    //   }
+    // });
   } catch (err) {
     console.error(err);
   }

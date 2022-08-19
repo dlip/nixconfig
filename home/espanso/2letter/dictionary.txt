@@ -5,44 +5,44 @@ tv
 nk
 nj
 lh
-ah
-am
-an
-as
-at
-be
-bi
-by
-do
-db
-ed
-ex
-go
-ha
-he
-hi
-ho
-if
-in
-is
-it
-jo
-lo
-ma
-me
-my
-no
-of
-oh
-oi
-ok
-on
-or
-pa
-so
-to
-uh
-um
-up
-us
-we
+ah ah
+am am
+an an
+as as
+at at
+be be
+bi bi
+by by
+do do
+db db
+ed ed
+ex ex
+go go
+ha ha
+he he
+hi hi
+ho ho
+if if
+in in
+is is
+it it
+jo jo
+lo lo
+ma ma
+me me
+my my
+no no
+of of
+oh oh
+oi oi
+ok ok
+on on
+or or
+pa pa
+so so
+to to
+uh uh
+um um
+up up
+us us
+we we
