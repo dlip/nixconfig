@@ -1,0 +1,3805 @@
+matches:
+  - trigger: "et"
+    replace: "the"
+    word: true
+  - trigger: "te"
+    replace: "the"
+    word: true
+  - trigger: "ET"
+    replace: "The"
+    word: true
+  - trigger: "TE"
+    replace: "The"
+    word: true
+  - trigger: "ad"
+    replace: "and"
+    word: true
+  - trigger: "da"
+    replace: "and"
+    word: true
+  - trigger: "AD"
+    replace: "And"
+    word: true
+  - trigger: "DA"
+    replace: "And"
+    word: true
+  - trigger: "uy"
+    replace: "you"
+    word: true
+  - trigger: "yu"
+    replace: "you"
+    word: true
+  - trigger: "UY"
+    replace: "You"
+    word: true
+  - trigger: "YU"
+    replace: "You"
+    word: true
+  - trigger: "at"
+    replace: "that"
+    word: true
+  - trigger: "ta"
+    replace: "that"
+    word: true
+  - trigger: "AT"
+    replace: "That"
+    word: true
+  - trigger: "TA"
+    replace: "That"
+    word: true
+  - trigger: "sw"
+    replace: "was"
+    word: true
+  - trigger: "ws"
+    replace: "was"
+    word: true
+  - trigger: "SW"
+    replace: "Was"
+    word: true
+  - trigger: "WS"
+    replace: "Was"
+    word: true
+  - trigger: "fr"
+    replace: "for"
+    word: true
+  - trigger: "rf"
+    replace: "for"
+    word: true
+  - trigger: "FR"
+    replace: "For"
+    word: true
+  - trigger: "RF"
+    replace: "For"
+    word: true
+  - trigger: "ae"
+    replace: "are"
+    word: true
+  - trigger: "ea"
+    replace: "are"
+    word: true
+  - trigger: "AE"
+    replace: "Are"
+    word: true
+  - trigger: "EA"
+    replace: "Are"
+    word: true
+  - trigger: "hw"
+    replace: "with"
+    word: true
+  - trigger: "wh"
+    replace: "with"
+    word: true
+  - trigger: "HW"
+    replace: "With"
+    word: true
+  - trigger: "WH"
+    replace: "With"
+    word: true
+  - trigger: "hs"
+    replace: "his"
+    word: true
+  - trigger: "sh"
+    replace: "his"
+    word: true
+  - trigger: "HS"
+    replace: "His"
+    word: true
+  - trigger: "SH"
+    replace: "His"
+    word: true
+  - trigger: "ty"
+    replace: "they"
+    word: true
+  - trigger: "yt"
+    replace: "they"
+    word: true
+  - trigger: "TY"
+    replace: "They"
+    word: true
+  - trigger: "YT"
+    replace: "They"
+    word: true
+  - trigger: "eo"
+    replace: "one"
+    word: true
+  - trigger: "oe"
+    replace: "one"
+    word: true
+  - trigger: "EO"
+    replace: "One"
+    word: true
+  - trigger: "OE"
+    replace: "One"
+    word: true
+  - trigger: "eh"
+    replace: "have"
+    word: true
+  - trigger: "he"
+    replace: "have"
+    word: true
+  - trigger: "EH"
+    replace: "Have"
+    word: true
+  - trigger: "HE"
+    replace: "Have"
+    word: true
+  - trigger: "st"
+    replace: "this"
+    word: true
+  - trigger: "ts"
+    replace: "this"
+    word: true
+  - trigger: "ST"
+    replace: "This"
+    word: true
+  - trigger: "TS"
+    replace: "This"
+    word: true
+  - trigger: "fm"
+    replace: "from"
+    word: true
+  - trigger: "mf"
+    replace: "from"
+    word: true
+  - trigger: "FM"
+    replace: "From"
+    word: true
+  - trigger: "MF"
+    replace: "From"
+    word: true
+  - trigger: "dh"
+    replace: "had"
+    word: true
+  - trigger: "hd"
+    replace: "had"
+    word: true
+  - trigger: "DH"
+    replace: "Had"
+    word: true
+  - trigger: "HD"
+    replace: "Had"
+    word: true
+  - trigger: "ht"
+    replace: "hot"
+    word: true
+  - trigger: "th"
+    replace: "hot"
+    word: true
+  - trigger: "HT"
+    replace: "Hot"
+    word: true
+  - trigger: "TH"
+    replace: "Hot"
+    word: true
+  - trigger: "bu"
+    replace: "but"
+    word: true
+  - trigger: "ub"
+    replace: "but"
+    word: true
+  - trigger: "BU"
+    replace: "But"
+    word: true
+  - trigger: "UB"
+    replace: "But"
+    word: true
+  - trigger: "es"
+    replace: "some"
+    word: true
+  - trigger: "se"
+    replace: "some"
+    word: true
+  - trigger: "ES"
+    replace: "Some"
+    word: true
+  - trigger: "SE"
+    replace: "Some"
+    word: true
+  - trigger: "tw"
+    replace: "what"
+    word: true
+  - trigger: "wt"
+    replace: "what"
+    word: true
+  - trigger: "TW"
+    replace: "What"
+    word: true
+  - trigger: "WT"
+    replace: "What"
+    word: true
+  - trigger: "rt"
+    replace: "there"
+    word: true
+  - trigger: "tr"
+    replace: "there"
+    word: true
+  - trigger: "RT"
+    replace: "There"
+    word: true
+  - trigger: "TR"
+    replace: "There"
+    word: true
+  - trigger: "cn"
+    replace: "can"
+    word: true
+  - trigger: "nc"
+    replace: "can"
+    word: true
+  - trigger: "CN"
+    replace: "Can"
+    word: true
+  - trigger: "NC"
+    replace: "Can"
+    word: true
+  - trigger: "ot"
+    replace: "out"
+    word: true
+  - trigger: "to"
+    replace: "out"
+    word: true
+  - trigger: "OT"
+    replace: "Out"
+    word: true
+  - trigger: "TO"
+    replace: "Out"
+    word: true
+  - trigger: "or"
+    replace: "other"
+    word: true
+  - trigger: "ro"
+    replace: "other"
+    word: true
+  - trigger: "OR"
+    replace: "Other"
+    word: true
+  - trigger: "RO"
+    replace: "Other"
+    word: true
+  - trigger: "ew"
+    replace: "were"
+    word: true
+  - trigger: "we"
+    replace: "were"
+    word: true
+  - trigger: "EW"
+    replace: "Were"
+    word: true
+  - trigger: "WE"
+    replace: "Were"
+    word: true
+  - trigger: "al"
+    replace: "all"
+    word: true
+  - trigger: "la"
+    replace: "all"
+    word: true
+  - trigger: "AL"
+    replace: "All"
+    word: true
+  - trigger: "LA"
+    replace: "All"
+    word: true
+  - trigger: "ry"
+    replace: "your"
+    word: true
+  - trigger: "yr"
+    replace: "your"
+    word: true
+  - trigger: "RY"
+    replace: "Your"
+    word: true
+  - trigger: "YR"
+    replace: "Your"
+    word: true
+  - trigger: "nw"
+    replace: "when"
+    word: true
+  - trigger: "wn"
+    replace: "when"
+    word: true
+  - trigger: "NW"
+    replace: "When"
+    word: true
+  - trigger: "WN"
+    replace: "When"
+    word: true
+  - trigger: "eu"
+    replace: "use"
+    word: true
+  - trigger: "ue"
+    replace: "use"
+    word: true
+  - trigger: "EU"
+    replace: "Use"
+    word: true
+  - trigger: "UE"
+    replace: "Use"
+    word: true
+  - trigger: "dw"
+    replace: "word"
+    word: true
+  - trigger: "wd"
+    replace: "word"
+    word: true
+  - trigger: "DW"
+    replace: "Word"
+    word: true
+  - trigger: "WD"
+    replace: "Word"
+    word: true
+  - trigger: "ho"
+    replace: "how"
+    word: true
+  - trigger: "oh"
+    replace: "how"
+    word: true
+  - trigger: "HO"
+    replace: "How"
+    word: true
+  - trigger: "OH"
+    replace: "How"
+    word: true
+  - trigger: "ds"
+    replace: "said"
+    word: true
+  - trigger: "sd"
+    replace: "said"
+    word: true
+  - trigger: "DS"
+    replace: "Said"
+    word: true
+  - trigger: "SD"
+    replace: "Said"
+    word: true
+  - trigger: "ce"
+    replace: "each"
+    word: true
+  - trigger: "ec"
+    replace: "each"
+    word: true
+  - trigger: "CE"
+    replace: "Each"
+    word: true
+  - trigger: "EC"
+    replace: "Each"
+    word: true
+  - trigger: "as"
+    replace: "she"
+    word: true
+  - trigger: "sa"
+    replace: "she"
+    word: true
+  - trigger: "AS"
+    replace: "She"
+    word: true
+  - trigger: "SA"
+    replace: "She"
+    word: true
+  - trigger: "cw"
+    replace: "which"
+    word: true
+  - trigger: "wc"
+    replace: "which"
+    word: true
+  - trigger: "CW"
+    replace: "Which"
+    word: true
+  - trigger: "WC"
+    replace: "Which"
+    word: true
+  - trigger: "it"
+    replace: "their"
+    word: true
+  - trigger: "ti"
+    replace: "their"
+    word: true
+  - trigger: "IT"
+    replace: "Their"
+    word: true
+  - trigger: "TI"
+    replace: "Their"
+    word: true
+  - trigger: "mt"
+    replace: "time"
+    word: true
+  - trigger: "tm"
+    replace: "time"
+    word: true
+  - trigger: "MT"
+    replace: "Time"
+    word: true
+  - trigger: "TM"
+    replace: "Time"
+    word: true
+  - trigger: "lw"
+    replace: "will"
+    word: true
+  - trigger: "wl"
+    replace: "will"
+    word: true
+  - trigger: "LW"
+    replace: "Will"
+    word: true
+  - trigger: "WL"
+    replace: "Will"
+    word: true
+  - trigger: "wy"
+    replace: "way"
+    word: true
+  - trigger: "yw"
+    replace: "way"
+    word: true
+  - trigger: "WY"
+    replace: "Way"
+    word: true
+  - trigger: "YW"
+    replace: "Way"
+    word: true
+  - trigger: "au"
+    replace: "about"
+    word: true
+  - trigger: "ua"
+    replace: "about"
+    word: true
+  - trigger: "AU"
+    replace: "About"
+    word: true
+  - trigger: "UA"
+    replace: "About"
+    word: true
+  - trigger: "my"
+    replace: "many"
+    word: true
+  - trigger: "ym"
+    replace: "many"
+    word: true
+  - trigger: "MY"
+    replace: "Many"
+    word: true
+  - trigger: "YM"
+    replace: "Many"
+    word: true
+  - trigger: "nt"
+    replace: "then"
+    word: true
+  - trigger: "tn"
+    replace: "then"
+    word: true
+  - trigger: "NT"
+    replace: "Then"
+    word: true
+  - trigger: "TN"
+    replace: "Then"
+    word: true
+  - trigger: "hm"
+    replace: "them"
+    word: true
+  - trigger: "mh"
+    replace: "them"
+    word: true
+  - trigger: "HM"
+    replace: "Them"
+    word: true
+  - trigger: "MH"
+    replace: "Them"
+    word: true
+  - trigger: "uw"
+    replace: "would"
+    word: true
+  - trigger: "wu"
+    replace: "would"
+    word: true
+  - trigger: "UW"
+    replace: "Would"
+    word: true
+  - trigger: "WU"
+    replace: "Would"
+    word: true
+  - trigger: "iw"
+    replace: "write"
+    word: true
+  - trigger: "wi"
+    replace: "write"
+    word: true
+  - trigger: "IW"
+    replace: "Write"
+    word: true
+  - trigger: "WI"
+    replace: "Write"
+    word: true
+  - trigger: "el"
+    replace: "like"
+    word: true
+  - trigger: "le"
+    replace: "like"
+    word: true
+  - trigger: "EL"
+    replace: "Like"
+    word: true
+  - trigger: "LE"
+    replace: "Like"
+    word: true
+  - trigger: "ct"
+    replace: "these"
+    word: true
+  - trigger: "tc"
+    replace: "these"
+    word: true
+  - trigger: "CT"
+    replace: "These"
+    word: true
+  - trigger: "TC"
+    replace: "These"
+    word: true
+  - trigger: "hr"
+    replace: "her"
+    word: true
+  - trigger: "rh"
+    replace: "her"
+    word: true
+  - trigger: "HR"
+    replace: "Her"
+    word: true
+  - trigger: "RH"
+    replace: "Her"
+    word: true
+  - trigger: "gl"
+    replace: "long"
+    word: true
+  - trigger: "lg"
+    replace: "long"
+    word: true
+  - trigger: "GL"
+    replace: "Long"
+    word: true
+  - trigger: "LG"
+    replace: "Long"
+    word: true
+  - trigger: "em"
+    replace: "make"
+    word: true
+  - trigger: "me"
+    replace: "make"
+    word: true
+  - trigger: "EM"
+    replace: "Make"
+    word: true
+  - trigger: "ME"
+    replace: "Make"
+    word: true
+  - trigger: "gt"
+    replace: "thing"
+    word: true
+  - trigger: "tg"
+    replace: "thing"
+    word: true
+  - trigger: "GT"
+    replace: "Thing"
+    word: true
+  - trigger: "TG"
+    replace: "Thing"
+    word: true
+  - trigger: "bs"
+    replace: "see"
+    word: true
+  - trigger: "sb"
+    replace: "see"
+    word: true
+  - trigger: "BS"
+    replace: "See"
+    word: true
+  - trigger: "SB"
+    replace: "See"
+    word: true
+  - trigger: "hi"
+    replace: "him"
+    word: true
+  - trigger: "ih"
+    replace: "him"
+    word: true
+  - trigger: "HI"
+    replace: "Him"
+    word: true
+  - trigger: "IH"
+    replace: "Him"
+    word: true
+  - trigger: "ow"
+    replace: "two"
+    word: true
+  - trigger: "wo"
+    replace: "two"
+    word: true
+  - trigger: "OW"
+    replace: "Two"
+    word: true
+  - trigger: "WO"
+    replace: "Two"
+    word: true
+  - trigger: "ah"
+    replace: "has"
+    word: true
+  - trigger: "ha"
+    replace: "has"
+    word: true
+  - trigger: "AH"
+    replace: "Has"
+    word: true
+  - trigger: "HA"
+    replace: "Has"
+    word: true
+  - trigger: "kl"
+    replace: "look"
+    word: true
+  - trigger: "lk"
+    replace: "look"
+    word: true
+  - trigger: "KL"
+    replace: "Look"
+    word: true
+  - trigger: "LK"
+    replace: "Look"
+    word: true
+  - trigger: "mr"
+    replace: "more"
+    word: true
+  - trigger: "rm"
+    replace: "more"
+    word: true
+  - trigger: "MR"
+    replace: "More"
+    word: true
+  - trigger: "RM"
+    replace: "More"
+    word: true
+  - trigger: "dy"
+    replace: "day"
+    word: true
+  - trigger: "yd"
+    replace: "day"
+    word: true
+  - trigger: "DY"
+    replace: "Day"
+    word: true
+  - trigger: "YD"
+    replace: "Day"
+    word: true
+  - trigger: "cd"
+    replace: "could"
+    word: true
+  - trigger: "dc"
+    replace: "could"
+    word: true
+  - trigger: "CD"
+    replace: "Could"
+    word: true
+  - trigger: "DC"
+    replace: "Could"
+    word: true
+  - trigger: "cm"
+    replace: "come"
+    word: true
+  - trigger: "mc"
+    replace: "come"
+    word: true
+  - trigger: "CM"
+    replace: "Come"
+    word: true
+  - trigger: "MC"
+    replace: "Come"
+    word: true
+  - trigger: "di"
+    replace: "did"
+    word: true
+  - trigger: "id"
+    replace: "did"
+    word: true
+  - trigger: "DI"
+    replace: "Did"
+    word: true
+  - trigger: "ID"
+    replace: "Did"
+    word: true
+  - trigger: "ns"
+    replace: "sound"
+    word: true
+  - trigger: "sn"
+    replace: "sound"
+    word: true
+  - trigger: "NS"
+    replace: "Sound"
+    word: true
+  - trigger: "SN"
+    replace: "Sound"
+    word: true
+  - trigger: "ms"
+    replace: "most"
+    word: true
+  - trigger: "sm"
+    replace: "most"
+    word: true
+  - trigger: "MS"
+    replace: "Most"
+    word: true
+  - trigger: "SM"
+    replace: "Most"
+    word: true
+  - trigger: "nr"
+    replace: "number"
+    word: true
+  - trigger: "rn"
+    replace: "number"
+    word: true
+  - trigger: "NR"
+    replace: "Number"
+    word: true
+  - trigger: "RN"
+    replace: "Number"
+    word: true
+  - trigger: "aw"
+    replace: "who"
+    word: true
+  - trigger: "wa"
+    replace: "who"
+    word: true
+  - trigger: "AW"
+    replace: "Who"
+    word: true
+  - trigger: "WA"
+    replace: "Who"
+    word: true
+  - trigger: "ov"
+    replace: "over"
+    word: true
+  - trigger: "vo"
+    replace: "over"
+    word: true
+  - trigger: "OV"
+    replace: "Over"
+    word: true
+  - trigger: "VO"
+    replace: "Over"
+    word: true
+  - trigger: "kw"
+    replace: "know"
+    word: true
+  - trigger: "wk"
+    replace: "know"
+    word: true
+  - trigger: "KW"
+    replace: "Know"
+    word: true
+  - trigger: "WK"
+    replace: "Know"
+    word: true
+  - trigger: "rw"
+    replace: "water"
+    word: true
+  - trigger: "wr"
+    replace: "water"
+    word: true
+  - trigger: "RW"
+    replace: "Water"
+    word: true
+  - trigger: "WR"
+    replace: "Water"
+    word: true
+  - trigger: "hn"
+    replace: "than"
+    word: true
+  - trigger: "nh"
+    replace: "than"
+    word: true
+  - trigger: "HN"
+    replace: "Than"
+    word: true
+  - trigger: "NH"
+    replace: "Than"
+    word: true
+  - trigger: "cl"
+    replace: "call"
+    word: true
+  - trigger: "lc"
+    replace: "call"
+    word: true
+  - trigger: "CL"
+    replace: "Call"
+    word: true
+  - trigger: "LC"
+    replace: "Call"
+    word: true
+  - trigger: "ft"
+    replace: "first"
+    word: true
+  - trigger: "tf"
+    replace: "first"
+    word: true
+  - trigger: "FT"
+    replace: "First"
+    word: true
+  - trigger: "TF"
+    replace: "First"
+    word: true
+  - trigger: "ep"
+    replace: "people"
+    word: true
+  - trigger: "pe"
+    replace: "people"
+    word: true
+  - trigger: "EP"
+    replace: "People"
+    word: true
+  - trigger: "PE"
+    replace: "People"
+    word: true
+  - trigger: "am"
+    replace: "may"
+    word: true
+  - trigger: "ma"
+    replace: "may"
+    word: true
+  - trigger: "AM"
+    replace: "May"
+    word: true
+  - trigger: "MA"
+    replace: "May"
+    word: true
+  - trigger: "dn"
+    replace: "down"
+    word: true
+  - trigger: "nd"
+    replace: "down"
+    word: true
+  - trigger: "DN"
+    replace: "Down"
+    word: true
+  - trigger: "ND"
+    replace: "Down"
+    word: true
+  - trigger: "is"
+    replace: "side"
+    word: true
+  - trigger: "si"
+    replace: "side"
+    word: true
+  - trigger: "IS"
+    replace: "Side"
+    word: true
+  - trigger: "SI"
+    replace: "Side"
+    word: true
+  - trigger: "bn"
+    replace: "been"
+    word: true
+  - trigger: "nb"
+    replace: "been"
+    word: true
+  - trigger: "BN"
+    replace: "Been"
+    word: true
+  - trigger: "NB"
+    replace: "Been"
+    word: true
+  - trigger: "no"
+    replace: "now"
+    word: true
+  - trigger: "on"
+    replace: "now"
+    word: true
+  - trigger: "NO"
+    replace: "Now"
+    word: true
+  - trigger: "ON"
+    replace: "Now"
+    word: true
+  - trigger: "df"
+    replace: "find"
+    word: true
+  - trigger: "fd"
+    replace: "find"
+    word: true
+  - trigger: "DF"
+    replace: "Find"
+    word: true
+  - trigger: "FD"
+    replace: "Find"
+    word: true
+  - trigger: "ay"
+    replace: "any"
+    word: true
+  - trigger: "ya"
+    replace: "any"
+    word: true
+  - trigger: "AY"
+    replace: "Any"
+    word: true
+  - trigger: "YA"
+    replace: "Any"
+    word: true
+  - trigger: "en"
+    replace: "new"
+    word: true
+  - trigger: "ne"
+    replace: "new"
+    word: true
+  - trigger: "EN"
+    replace: "New"
+    word: true
+  - trigger: "NE"
+    replace: "New"
+    word: true
+  - trigger: "ko"
+    replace: "work"
+    word: true
+  - trigger: "ok"
+    replace: "work"
+    word: true
+  - trigger: "KO"
+    replace: "Work"
+    word: true
+  - trigger: "OK"
+    replace: "Work"
+    word: true
+  - trigger: "pt"
+    replace: "part"
+    word: true
+  - trigger: "tp"
+    replace: "part"
+    word: true
+  - trigger: "PT"
+    replace: "Part"
+    word: true
+  - trigger: "TP"
+    replace: "Part"
+    word: true
+  - trigger: "kt"
+    replace: "take"
+    word: true
+  - trigger: "tk"
+    replace: "take"
+    word: true
+  - trigger: "KT"
+    replace: "Take"
+    word: true
+  - trigger: "TK"
+    replace: "Take"
+    word: true
+  - trigger: "eg"
+    replace: "get"
+    word: true
+  - trigger: "ge"
+    replace: "get"
+    word: true
+  - trigger: "EG"
+    replace: "Get"
+    word: true
+  - trigger: "GE"
+    replace: "Get"
+    word: true
+  - trigger: "cp"
+    replace: "place"
+    word: true
+  - trigger: "pc"
+    replace: "place"
+    word: true
+  - trigger: "CP"
+    replace: "Place"
+    word: true
+  - trigger: "PC"
+    replace: "Place"
+    word: true
+  - trigger: "dm"
+    replace: "made"
+    word: true
+  - trigger: "md"
+    replace: "made"
+    word: true
+  - trigger: "DM"
+    replace: "Made"
+    word: true
+  - trigger: "MD"
+    replace: "Made"
+    word: true
+  - trigger: "lv"
+    replace: "live"
+    word: true
+  - trigger: "vl"
+    replace: "live"
+    word: true
+  - trigger: "LV"
+    replace: "Live"
+    word: true
+  - trigger: "VL"
+    replace: "Live"
+    word: true
+  - trigger: "er"
+    replace: "where"
+    word: true
+  - trigger: "re"
+    replace: "where"
+    word: true
+  - trigger: "ER"
+    replace: "Where"
+    word: true
+  - trigger: "RE"
+    replace: "Where"
+    word: true
+  - trigger: "ar"
+    replace: "after"
+    word: true
+  - trigger: "ra"
+    replace: "after"
+    word: true
+  - trigger: "AR"
+    replace: "After"
+    word: true
+  - trigger: "RA"
+    replace: "After"
+    word: true
+  - trigger: "bk"
+    replace: "back"
+    word: true
+  - trigger: "kb"
+    replace: "back"
+    word: true
+  - trigger: "BK"
+    replace: "Back"
+    word: true
+  - trigger: "KB"
+    replace: "Back"
+    word: true
+  - trigger: "lt"
+    replace: "little"
+    word: true
+  - trigger: "tl"
+    replace: "little"
+    word: true
+  - trigger: "LT"
+    replace: "Little"
+    word: true
+  - trigger: "TL"
+    replace: "Little"
+    word: true
+  - trigger: "oy"
+    replace: "only"
+    word: true
+  - trigger: "yo"
+    replace: "only"
+    word: true
+  - trigger: "OY"
+    replace: "Only"
+    word: true
+  - trigger: "YO"
+    replace: "Only"
+    word: true
+  - trigger: "dr"
+    replace: "round"
+    word: true
+  - trigger: "rd"
+    replace: "round"
+    word: true
+  - trigger: "DR"
+    replace: "Round"
+    word: true
+  - trigger: "RD"
+    replace: "Round"
+    word: true
+  - trigger: "mn"
+    replace: "man"
+    word: true
+  - trigger: "nm"
+    replace: "man"
+    word: true
+  - trigger: "MN"
+    replace: "Man"
+    word: true
+  - trigger: "NM"
+    replace: "Man"
+    word: true
+  - trigger: "ey"
+    replace: "year"
+    word: true
+  - trigger: "ye"
+    replace: "year"
+    word: true
+  - trigger: "EY"
+    replace: "Year"
+    word: true
+  - trigger: "YE"
+    replace: "Year"
+    word: true
+  - trigger: "ac"
+    replace: "came"
+    word: true
+  - trigger: "ca"
+    replace: "came"
+    word: true
+  - trigger: "AC"
+    replace: "Came"
+    word: true
+  - trigger: "CA"
+    replace: "Came"
+    word: true
+  - trigger: "os"
+    replace: "show"
+    word: true
+  - trigger: "so"
+    replace: "show"
+    word: true
+  - trigger: "OS"
+    replace: "Show"
+    word: true
+  - trigger: "SO"
+    replace: "Show"
+    word: true
+  - trigger: "ev"
+    replace: "every"
+    word: true
+  - trigger: "ve"
+    replace: "every"
+    word: true
+  - trigger: "EV"
+    replace: "Every"
+    word: true
+  - trigger: "VE"
+    replace: "Every"
+    word: true
+  - trigger: "dg"
+    replace: "good"
+    word: true
+  - trigger: "gd"
+    replace: "good"
+    word: true
+  - trigger: "DG"
+    replace: "Good"
+    word: true
+  - trigger: "GD"
+    replace: "Good"
+    word: true
+  - trigger: "gv"
+    replace: "give"
+    word: true
+  - trigger: "vg"
+    replace: "give"
+    word: true
+  - trigger: "GV"
+    replace: "Give"
+    word: true
+  - trigger: "VG"
+    replace: "Give"
+    word: true
+  - trigger: "ou"
+    replace: "our"
+    word: true
+  - trigger: "uo"
+    replace: "our"
+    word: true
+  - trigger: "OU"
+    replace: "Our"
+    word: true
+  - trigger: "UO"
+    replace: "Our"
+    word: true
+  - trigger: "ru"
+    replace: "under"
+    word: true
+  - trigger: "ur"
+    replace: "under"
+    word: true
+  - trigger: "RU"
+    replace: "Under"
+    word: true
+  - trigger: "UR"
+    replace: "Under"
+    word: true
+  - trigger: "an"
+    replace: "name"
+    word: true
+  - trigger: "na"
+    replace: "name"
+    word: true
+  - trigger: "AN"
+    replace: "Name"
+    word: true
+  - trigger: "NA"
+    replace: "Name"
+    word: true
+  - trigger: "vy"
+    replace: "very"
+    word: true
+  - trigger: "yv"
+    replace: "very"
+    word: true
+  - trigger: "VY"
+    replace: "Very"
+    word: true
+  - trigger: "YV"
+    replace: "Very"
+    word: true
+  - trigger: "tu"
+    replace: "through"
+    word: true
+  - trigger: "ut"
+    replace: "through"
+    word: true
+  - trigger: "TU"
+    replace: "Through"
+    word: true
+  - trigger: "UT"
+    replace: "Through"
+    word: true
+  - trigger: "jt"
+    replace: "just"
+    word: true
+  - trigger: "tj"
+    replace: "just"
+    word: true
+  - trigger: "JT"
+    replace: "Just"
+    word: true
+  - trigger: "TJ"
+    replace: "Just"
+    word: true
+  - trigger: "fo"
+    replace: "form"
+    word: true
+  - trigger: "of"
+    replace: "form"
+    word: true
+  - trigger: "FO"
+    replace: "Form"
+    word: true
+  - trigger: "OF"
+    replace: "Form"
+    word: true
+  - trigger: "mu"
+    replace: "much"
+    word: true
+  - trigger: "um"
+    replace: "much"
+    word: true
+  - trigger: "MU"
+    replace: "Much"
+    word: true
+  - trigger: "UM"
+    replace: "Much"
+    word: true
+  - trigger: "ag"
+    replace: "great"
+    word: true
+  - trigger: "ga"
+    replace: "great"
+    word: true
+  - trigger: "AG"
+    replace: "Great"
+    word: true
+  - trigger: "GA"
+    replace: "Great"
+    word: true
+  - trigger: "hk"
+    replace: "think"
+    word: true
+  - trigger: "kh"
+    replace: "think"
+    word: true
+  - trigger: "HK"
+    replace: "Think"
+    word: true
+  - trigger: "KH"
+    replace: "Think"
+    word: true
+  - trigger: "sy"
+    replace: "say"
+    word: true
+  - trigger: "ys"
+    replace: "say"
+    word: true
+  - trigger: "SY"
+    replace: "Say"
+    word: true
+  - trigger: "YS"
+    replace: "Say"
+    word: true
+  - trigger: "hp"
+    replace: "help"
+    word: true
+  - trigger: "ph"
+    replace: "help"
+    word: true
+  - trigger: "HP"
+    replace: "Help"
+    word: true
+  - trigger: "PH"
+    replace: "Help"
+    word: true
+  - trigger: "lo"
+    replace: "low"
+    word: true
+  - trigger: "ol"
+    replace: "low"
+    word: true
+  - trigger: "LO"
+    replace: "Low"
+    word: true
+  - trigger: "OL"
+    replace: "Low"
+    word: true
+  - trigger: "ln"
+    replace: "line"
+    word: true
+  - trigger: "nl"
+    replace: "line"
+    word: true
+  - trigger: "LN"
+    replace: "Line"
+    word: true
+  - trigger: "NL"
+    replace: "Line"
+    word: true
+  - trigger: "be"
+    replace: "before"
+    word: true
+  - trigger: "eb"
+    replace: "before"
+    word: true
+  - trigger: "BE"
+    replace: "Before"
+    word: true
+  - trigger: "EB"
+    replace: "Before"
+    word: true
+  - trigger: "nu"
+    replace: "turn"
+    word: true
+  - trigger: "un"
+    replace: "turn"
+    word: true
+  - trigger: "NU"
+    replace: "Turn"
+    word: true
+  - trigger: "UN"
+    replace: "Turn"
+    word: true
+  - trigger: "cs"
+    replace: "cause"
+    word: true
+  - trigger: "sc"
+    replace: "cause"
+    word: true
+  - trigger: "CS"
+    replace: "Cause"
+    word: true
+  - trigger: "SC"
+    replace: "Cause"
+    word: true
+  - trigger: "fs"
+    replace: "same"
+    word: true
+  - trigger: "sf"
+    replace: "same"
+    word: true
+  - trigger: "FS"
+    replace: "Same"
+    word: true
+  - trigger: "SF"
+    replace: "Same"
+    word: true
+  - trigger: "bm"
+    replace: "mean"
+    word: true
+  - trigger: "mb"
+    replace: "mean"
+    word: true
+  - trigger: "BM"
+    replace: "Mean"
+    word: true
+  - trigger: "MB"
+    replace: "Mean"
+    word: true
+  - trigger: "de"
+    replace: "differ"
+    word: true
+  - trigger: "ed"
+    replace: "differ"
+    word: true
+  - trigger: "DE"
+    replace: "Differ"
+    word: true
+  - trigger: "ED"
+    replace: "Differ"
+    word: true
+  - trigger: "mv"
+    replace: "move"
+    word: true
+  - trigger: "vm"
+    replace: "move"
+    word: true
+  - trigger: "MV"
+    replace: "Move"
+    word: true
+  - trigger: "VM"
+    replace: "Move"
+    word: true
+  - trigger: "gr"
+    replace: "right"
+    word: true
+  - trigger: "rg"
+    replace: "right"
+    word: true
+  - trigger: "GR"
+    replace: "Right"
+    word: true
+  - trigger: "RG"
+    replace: "Right"
+    word: true
+  - trigger: "by"
+    replace: "boy"
+    word: true
+  - trigger: "yb"
+    replace: "boy"
+    word: true
+  - trigger: "BY"
+    replace: "Boy"
+    word: true
+  - trigger: "YB"
+    replace: "Boy"
+    word: true
+  - trigger: "do"
+    replace: "old"
+    word: true
+  - trigger: "od"
+    replace: "old"
+    word: true
+  - trigger: "DO"
+    replace: "Old"
+    word: true
+  - trigger: "OD"
+    replace: "Old"
+    word: true
+  - trigger: "dt"
+    replace: "too"
+    word: true
+  - trigger: "td"
+    replace: "too"
+    word: true
+  - trigger: "DT"
+    replace: "Too"
+    word: true
+  - trigger: "TD"
+    replace: "Too"
+    word: true
+  - trigger: "dj"
+    replace: "does"
+    word: true
+  - trigger: "jd"
+    replace: "does"
+    word: true
+  - trigger: "DJ"
+    replace: "Does"
+    word: true
+  - trigger: "JD"
+    replace: "Does"
+    word: true
+  - trigger: "qt"
+    replace: "tell"
+    word: true
+  - trigger: "tq"
+    replace: "tell"
+    word: true
+  - trigger: "QT"
+    replace: "Tell"
+    word: true
+  - trigger: "TQ"
+    replace: "Tell"
+    word: true
+  - trigger: "gs"
+    replace: "sentence"
+    word: true
+  - trigger: "sg"
+    replace: "sentence"
+    word: true
+  - trigger: "GS"
+    replace: "Sentence"
+    word: true
+  - trigger: "SG"
+    replace: "Sentence"
+    word: true
+  - trigger: "js"
+    replace: "set"
+    word: true
+  - trigger: "sj"
+    replace: "set"
+    word: true
+  - trigger: "JS"
+    replace: "Set"
+    word: true
+  - trigger: "SJ"
+    replace: "Set"
+    word: true
+  - trigger: "tv"
+    replace: "three"
+    word: true
+  - trigger: "vt"
+    replace: "three"
+    word: true
+  - trigger: "TV"
+    replace: "Three"
+    word: true
+  - trigger: "VT"
+    replace: "Three"
+    word: true
+  - trigger: "bw"
+    replace: "want"
+    word: true
+  - trigger: "wb"
+    replace: "want"
+    word: true
+  - trigger: "BW"
+    replace: "Want"
+    word: true
+  - trigger: "WB"
+    replace: "Want"
+    word: true
+  - trigger: "ai"
+    replace: "air"
+    word: true
+  - trigger: "ia"
+    replace: "air"
+    word: true
+  - trigger: "AI"
+    replace: "Air"
+    word: true
+  - trigger: "IA"
+    replace: "Air"
+    word: true
+  - trigger: "fw"
+    replace: "well"
+    word: true
+  - trigger: "wf"
+    replace: "well"
+    word: true
+  - trigger: "FW"
+    replace: "Well"
+    word: true
+  - trigger: "WF"
+    replace: "Well"
+    word: true
+  - trigger: "ao"
+    replace: "also"
+    word: true
+  - trigger: "oa"
+    replace: "also"
+    word: true
+  - trigger: "AO"
+    replace: "Also"
+    word: true
+  - trigger: "OA"
+    replace: "Also"
+    word: true
+  - trigger: "py"
+    replace: "play"
+    word: true
+  - trigger: "yp"
+    replace: "play"
+    word: true
+  - trigger: "PY"
+    replace: "Play"
+    word: true
+  - trigger: "YP"
+    replace: "Play"
+    word: true
+  - trigger: "ls"
+    replace: "small"
+    word: true
+  - trigger: "sl"
+    replace: "small"
+    word: true
+  - trigger: "LS"
+    replace: "Small"
+    word: true
+  - trigger: "SL"
+    replace: "Small"
+    word: true
+  - trigger: "ef"
+    replace: "end"
+    word: true
+  - trigger: "fe"
+    replace: "end"
+    word: true
+  - trigger: "EF"
+    replace: "End"
+    word: true
+  - trigger: "FE"
+    replace: "End"
+    word: true
+  - trigger: "pu"
+    replace: "put"
+    word: true
+  - trigger: "up"
+    replace: "put"
+    word: true
+  - trigger: "PU"
+    replace: "Put"
+    word: true
+  - trigger: "UP"
+    replace: "Put"
+    word: true
+  - trigger: "mo"
+    replace: "home"
+    word: true
+  - trigger: "om"
+    replace: "home"
+    word: true
+  - trigger: "MO"
+    replace: "Home"
+    word: true
+  - trigger: "OM"
+    replace: "Home"
+    word: true
+  - trigger: "br"
+    replace: "read"
+    word: true
+  - trigger: "rb"
+    replace: "read"
+    word: true
+  - trigger: "BR"
+    replace: "Read"
+    word: true
+  - trigger: "RB"
+    replace: "Read"
+    word: true
+  - trigger: "bh"
+    replace: "hand"
+    word: true
+  - trigger: "hb"
+    replace: "hand"
+    word: true
+  - trigger: "BH"
+    replace: "Hand"
+    word: true
+  - trigger: "HB"
+    replace: "Hand"
+    word: true
+  - trigger: "pr"
+    replace: "port"
+    word: true
+  - trigger: "rp"
+    replace: "port"
+    word: true
+  - trigger: "PR"
+    replace: "Port"
+    word: true
+  - trigger: "RP"
+    replace: "Port"
+    word: true
+  - trigger: "lr"
+    replace: "large"
+    word: true
+  - trigger: "rl"
+    replace: "large"
+    word: true
+  - trigger: "LR"
+    replace: "Large"
+    word: true
+  - trigger: "RL"
+    replace: "Large"
+    word: true
+  - trigger: "ps"
+    replace: "spell"
+    word: true
+  - trigger: "sp"
+    replace: "spell"
+    word: true
+  - trigger: "PS"
+    replace: "Spell"
+    word: true
+  - trigger: "SP"
+    replace: "Spell"
+    word: true
+  - trigger: "ab"
+    replace: "add"
+    word: true
+  - trigger: "ba"
+    replace: "add"
+    word: true
+  - trigger: "AB"
+    replace: "Add"
+    word: true
+  - trigger: "BA"
+    replace: "Add"
+    word: true
+  - trigger: "nv"
+    replace: "even"
+    word: true
+  - trigger: "vn"
+    replace: "even"
+    word: true
+  - trigger: "NV"
+    replace: "Even"
+    word: true
+  - trigger: "VN"
+    replace: "Even"
+    word: true
+  - trigger: "dl"
+    replace: "land"
+    word: true
+  - trigger: "ld"
+    replace: "land"
+    word: true
+  - trigger: "DL"
+    replace: "Land"
+    word: true
+  - trigger: "LD"
+    replace: "Land"
+    word: true
+  - trigger: "ch"
+    replace: "here"
+    word: true
+  - trigger: "hc"
+    replace: "here"
+    word: true
+  - trigger: "CH"
+    replace: "Here"
+    word: true
+  - trigger: "HC"
+    replace: "Here"
+    word: true
+  - trigger: "su"
+    replace: "must"
+    word: true
+  - trigger: "us"
+    replace: "must"
+    word: true
+  - trigger: "SU"
+    replace: "Must"
+    word: true
+  - trigger: "US"
+    replace: "Must"
+    word: true
+  - trigger: "bg"
+    replace: "big"
+    word: true
+  - trigger: "gb"
+    replace: "big"
+    word: true
+  - trigger: "BG"
+    replace: "Big"
+    word: true
+  - trigger: "GB"
+    replace: "Big"
+    word: true
+  - trigger: "gh"
+    replace: "high"
+    word: true
+  - trigger: "hg"
+    replace: "high"
+    word: true
+  - trigger: "GH"
+    replace: "High"
+    word: true
+  - trigger: "HG"
+    replace: "High"
+    word: true
+  - trigger: "hu"
+    replace: "such"
+    word: true
+  - trigger: "uh"
+    replace: "such"
+    word: true
+  - trigger: "HU"
+    replace: "Such"
+    word: true
+  - trigger: "UH"
+    replace: "Such"
+    word: true
+  - trigger: "fl"
+    replace: "follow"
+    word: true
+  - trigger: "lf"
+    replace: "follow"
+    word: true
+  - trigger: "FL"
+    replace: "Follow"
+    word: true
+  - trigger: "LF"
+    replace: "Follow"
+    word: true
+  - trigger: "af"
+    replace: "act"
+    word: true
+  - trigger: "fa"
+    replace: "act"
+    word: true
+  - trigger: "AF"
+    replace: "Act"
+    word: true
+  - trigger: "FA"
+    replace: "Act"
+    word: true
+  - trigger: "hy"
+    replace: "why"
+    word: true
+  - trigger: "yh"
+    replace: "why"
+    word: true
+  - trigger: "HY"
+    replace: "Why"
+    word: true
+  - trigger: "YH"
+    replace: "Why"
+    word: true
+  - trigger: "ak"
+    replace: "ask"
+    word: true
+  - trigger: "ka"
+    replace: "ask"
+    word: true
+  - trigger: "AK"
+    replace: "Ask"
+    word: true
+  - trigger: "KA"
+    replace: "Ask"
+    word: true
+  - trigger: "gm"
+    replace: "men"
+    word: true
+  - trigger: "mg"
+    replace: "men"
+    word: true
+  - trigger: "GM"
+    replace: "Men"
+    word: true
+  - trigger: "MG"
+    replace: "Men"
+    word: true
+  - trigger: "cg"
+    replace: "change"
+    word: true
+  - trigger: "gc"
+    replace: "change"
+    word: true
+  - trigger: "CG"
+    replace: "Change"
+    word: true
+  - trigger: "GC"
+    replace: "Change"
+    word: true
+  - trigger: "gw"
+    replace: "went"
+    word: true
+  - trigger: "wg"
+    replace: "went"
+    word: true
+  - trigger: "GW"
+    replace: "Went"
+    word: true
+  - trigger: "WG"
+    replace: "Went"
+    word: true
+  - trigger: "il"
+    replace: "light"
+    word: true
+  - trigger: "li"
+    replace: "light"
+    word: true
+  - trigger: "IL"
+    replace: "Light"
+    word: true
+  - trigger: "LI"
+    replace: "Light"
+    word: true
+  - trigger: "dk"
+    replace: "kind"
+    word: true
+  - trigger: "kd"
+    replace: "kind"
+    word: true
+  - trigger: "DK"
+    replace: "Kind"
+    word: true
+  - trigger: "KD"
+    replace: "Kind"
+    word: true
+  - trigger: "bo"
+    replace: "off"
+    word: true
+  - trigger: "ob"
+    replace: "off"
+    word: true
+  - trigger: "BO"
+    replace: "Off"
+    word: true
+  - trigger: "OB"
+    replace: "Off"
+    word: true
+  - trigger: "fn"
+    replace: "need"
+    word: true
+  - trigger: "nf"
+    replace: "need"
+    word: true
+  - trigger: "FN"
+    replace: "Need"
+    word: true
+  - trigger: "NF"
+    replace: "Need"
+    word: true
+  - trigger: "fh"
+    replace: "house"
+    word: true
+  - trigger: "hf"
+    replace: "house"
+    word: true
+  - trigger: "FH"
+    replace: "House"
+    word: true
+  - trigger: "HF"
+    replace: "House"
+    word: true
+  - trigger: "ip"
+    replace: "picture"
+    word: true
+  - trigger: "pi"
+    replace: "picture"
+    word: true
+  - trigger: "IP"
+    replace: "Picture"
+    word: true
+  - trigger: "PI"
+    replace: "Picture"
+    word: true
+  - trigger: "tx"
+    replace: "try"
+    word: true
+  - trigger: "xt"
+    replace: "try"
+    word: true
+  - trigger: "TX"
+    replace: "Try"
+    word: true
+  - trigger: "XT"
+    replace: "Try"
+    word: true
+  - trigger: "gn"
+    replace: "again"
+    word: true
+  - trigger: "ng"
+    replace: "again"
+    word: true
+  - trigger: "GN"
+    replace: "Again"
+    word: true
+  - trigger: "NG"
+    replace: "Again"
+    word: true
+  - trigger: "in"
+    replace: "animal"
+    word: true
+  - trigger: "ni"
+    replace: "animal"
+    word: true
+  - trigger: "IN"
+    replace: "Animal"
+    word: true
+  - trigger: "NI"
+    replace: "Animal"
+    word: true
+  - trigger: "np"
+    replace: "point"
+    word: true
+  - trigger: "pn"
+    replace: "point"
+    word: true
+  - trigger: "NP"
+    replace: "Point"
+    word: true
+  - trigger: "PN"
+    replace: "Point"
+    word: true
+  - trigger: "im"
+    replace: "mother"
+    word: true
+  - trigger: "mi"
+    replace: "mother"
+    word: true
+  - trigger: "IM"
+    replace: "Mother"
+    word: true
+  - trigger: "MI"
+    replace: "Mother"
+    word: true
+  - trigger: "jw"
+    replace: "world"
+    word: true
+  - trigger: "wj"
+    replace: "world"
+    word: true
+  - trigger: "JW"
+    replace: "World"
+    word: true
+  - trigger: "WJ"
+    replace: "World"
+    word: true
+  - trigger: "kn"
+    replace: "near"
+    word: true
+  - trigger: "nk"
+    replace: "near"
+    word: true
+  - trigger: "KN"
+    replace: "Near"
+    word: true
+  - trigger: "NK"
+    replace: "Near"
+    word: true
+  - trigger: "bl"
+    replace: "build"
+    word: true
+  - trigger: "lb"
+    replace: "build"
+    word: true
+  - trigger: "BL"
+    replace: "Build"
+    word: true
+  - trigger: "LB"
+    replace: "Build"
+    word: true
+  - trigger: "ks"
+    replace: "self"
+    word: true
+  - trigger: "sk"
+    replace: "self"
+    word: true
+  - trigger: "KS"
+    replace: "Self"
+    word: true
+  - trigger: "SK"
+    replace: "Self"
+    word: true
+  - trigger: "ei"
+    replace: "earth"
+    word: true
+  - trigger: "ie"
+    replace: "earth"
+    word: true
+  - trigger: "EI"
+    replace: "Earth"
+    word: true
+  - trigger: "IE"
+    replace: "Earth"
+    word: true
+  - trigger: "bf"
+    replace: "father"
+    word: true
+  - trigger: "fb"
+    replace: "father"
+    word: true
+  - trigger: "BF"
+    replace: "Father"
+    word: true
+  - trigger: "FB"
+    replace: "Father"
+    word: true
+  - trigger: "hq"
+    replace: "head"
+    word: true
+  - trigger: "qh"
+    replace: "head"
+    word: true
+  - trigger: "HQ"
+    replace: "Head"
+    word: true
+  - trigger: "QH"
+    replace: "Head"
+    word: true
+  - trigger: "qs"
+    replace: "stand"
+    word: true
+  - trigger: "sq"
+    replace: "stand"
+    word: true
+  - trigger: "QS"
+    replace: "Stand"
+    word: true
+  - trigger: "SQ"
+    replace: "Stand"
+    word: true
+  - trigger: "co"
+    replace: "own"
+    word: true
+  - trigger: "oc"
+    replace: "own"
+    word: true
+  - trigger: "CO"
+    replace: "Own"
+    word: true
+  - trigger: "OC"
+    replace: "Own"
+    word: true
+  - trigger: "gp"
+    replace: "page"
+    word: true
+  - trigger: "pg"
+    replace: "page"
+    word: true
+  - trigger: "GP"
+    replace: "Page"
+    word: true
+  - trigger: "PG"
+    replace: "Page"
+    word: true
+  - trigger: "du"
+    replace: "should"
+    word: true
+  - trigger: "ud"
+    replace: "should"
+    word: true
+  - trigger: "DU"
+    replace: "Should"
+    word: true
+  - trigger: "UD"
+    replace: "Should"
+    word: true
+  - trigger: "cy"
+    replace: "country"
+    word: true
+  - trigger: "yc"
+    replace: "country"
+    word: true
+  - trigger: "CY"
+    replace: "Country"
+    word: true
+  - trigger: "YC"
+    replace: "Country"
+    word: true
+  - trigger: "fu"
+    replace: "found"
+    word: true
+  - trigger: "uf"
+    replace: "found"
+    word: true
+  - trigger: "FU"
+    replace: "Found"
+    word: true
+  - trigger: "UF"
+    replace: "Found"
+    word: true
+  - trigger: "rs"
+    replace: "answer"
+    word: true
+  - trigger: "sr"
+    replace: "answer"
+    word: true
+  - trigger: "RS"
+    replace: "Answer"
+    word: true
+  - trigger: "SR"
+    replace: "Answer"
+    word: true
+  - trigger: "sv"
+    replace: "school"
+    word: true
+  - trigger: "vs"
+    replace: "school"
+    word: true
+  - trigger: "SV"
+    replace: "School"
+    word: true
+  - trigger: "VS"
+    replace: "School"
+    word: true
+  - trigger: "go"
+    replace: "grow"
+    word: true
+  - trigger: "og"
+    replace: "grow"
+    word: true
+  - trigger: "GO"
+    replace: "Grow"
+    word: true
+  - trigger: "OG"
+    replace: "Grow"
+    word: true
+  - trigger: "sx"
+    replace: "study"
+    word: true
+  - trigger: "xs"
+    replace: "study"
+    word: true
+  - trigger: "SX"
+    replace: "Study"
+    word: true
+  - trigger: "XS"
+    replace: "Study"
+    word: true
+  - trigger: "sz"
+    replace: "still"
+    word: true
+  - trigger: "zs"
+    replace: "still"
+    word: true
+  - trigger: "SZ"
+    replace: "Still"
+    word: true
+  - trigger: "ZS"
+    replace: "Still"
+    word: true
+  - trigger: "jl"
+    replace: "learn"
+    word: true
+  - trigger: "lj"
+    replace: "learn"
+    word: true
+  - trigger: "JL"
+    replace: "Learn"
+    word: true
+  - trigger: "LJ"
+    replace: "Learn"
+    word: true
+  - trigger: "ap"
+    replace: "plant"
+    word: true
+  - trigger: "pa"
+    replace: "plant"
+    word: true
+  - trigger: "AP"
+    replace: "Plant"
+    word: true
+  - trigger: "PA"
+    replace: "Plant"
+    word: true
+  - trigger: "cr"
+    replace: "cover"
+    word: true
+  - trigger: "rc"
+    replace: "cover"
+    word: true
+  - trigger: "CR"
+    replace: "Cover"
+    word: true
+  - trigger: "RC"
+    replace: "Cover"
+    word: true
+  - trigger: "cf"
+    replace: "food"
+    word: true
+  - trigger: "fc"
+    replace: "food"
+    word: true
+  - trigger: "CF"
+    replace: "Food"
+    word: true
+  - trigger: "FC"
+    replace: "Food"
+    word: true
+  - trigger: "cu"
+    replace: "sun"
+    word: true
+  - trigger: "uc"
+    replace: "sun"
+    word: true
+  - trigger: "CU"
+    replace: "Sun"
+    word: true
+  - trigger: "UC"
+    replace: "Sun"
+    word: true
+  - trigger: "fg"
+    replace: "four"
+    word: true
+  - trigger: "gf"
+    replace: "four"
+    word: true
+  - trigger: "FG"
+    replace: "Four"
+    word: true
+  - trigger: "GF"
+    replace: "Four"
+    word: true
+  - trigger: "gu"
+    replace: "thought"
+    word: true
+  - trigger: "ug"
+    replace: "thought"
+    word: true
+  - trigger: "GU"
+    replace: "Thought"
+    word: true
+  - trigger: "UG"
+    replace: "Thought"
+    word: true
+  - trigger: "lm"
+    replace: "let"
+    word: true
+  - trigger: "ml"
+    replace: "let"
+    word: true
+  - trigger: "LM"
+    replace: "Let"
+    word: true
+  - trigger: "ML"
+    replace: "Let"
+    word: true
+  - trigger: "kp"
+    replace: "keep"
+    word: true
+  - trigger: "pk"
+    replace: "keep"
+    word: true
+  - trigger: "KP"
+    replace: "Keep"
+    word: true
+  - trigger: "PK"
+    replace: "Keep"
+    word: true
+  - trigger: "ej"
+    replace: "eye"
+    word: true
+  - trigger: "je"
+    replace: "eye"
+    word: true
+  - trigger: "EJ"
+    replace: "Eye"
+    word: true
+  - trigger: "JE"
+    replace: "Eye"
+    word: true
+  - trigger: "rv"
+    replace: "never"
+    word: true
+  - trigger: "vr"
+    replace: "never"
+    word: true
+  - trigger: "RV"
+    replace: "Never"
+    word: true
+  - trigger: "VR"
+    replace: "Never"
+    word: true
+  - trigger: "lp"
+    replace: "last"
+    word: true
+  - trigger: "pl"
+    replace: "last"
+    word: true
+  - trigger: "LP"
+    replace: "Last"
+    word: true
+  - trigger: "PL"
+    replace: "Last"
+    word: true
+  - trigger: "dq"
+    replace: "door"
+    word: true
+  - trigger: "qd"
+    replace: "door"
+    word: true
+  - trigger: "DQ"
+    replace: "Door"
+    word: true
+  - trigger: "QD"
+    replace: "Door"
+    word: true
+  - trigger: "bc"
+    replace: "between"
+    word: true
+  - trigger: "cb"
+    replace: "between"
+    word: true
+  - trigger: "BC"
+    replace: "Between"
+    word: true
+  - trigger: "CB"
+    replace: "Between"
+    word: true
+  - trigger: "ci"
+    replace: "city"
+    word: true
+  - trigger: "ic"
+    replace: "city"
+    word: true
+  - trigger: "CI"
+    replace: "City"
+    word: true
+  - trigger: "IC"
+    replace: "City"
+    word: true
+  - trigger: "tz"
+    replace: "tree"
+    word: true
+  - trigger: "zt"
+    replace: "tree"
+    word: true
+  - trigger: "TZ"
+    replace: "Tree"
+    word: true
+  - trigger: "ZT"
+    replace: "Tree"
+    word: true
+  - trigger: "cj"
+    replace: "cross"
+    word: true
+  - trigger: "jc"
+    replace: "cross"
+    word: true
+  - trigger: "CJ"
+    replace: "Cross"
+    word: true
+  - trigger: "JC"
+    replace: "Cross"
+    word: true
+  - trigger: "bi"
+    replace: "since"
+    word: true
+  - trigger: "ib"
+    replace: "since"
+    word: true
+  - trigger: "BI"
+    replace: "Since"
+    word: true
+  - trigger: "IB"
+    replace: "Since"
+    word: true
+  - trigger: "hv"
+    replace: "hard"
+    word: true
+  - trigger: "vh"
+    replace: "hard"
+    word: true
+  - trigger: "HV"
+    replace: "Hard"
+    word: true
+  - trigger: "VH"
+    replace: "Hard"
+    word: true
+  - trigger: "aj"
+    replace: "start"
+    word: true
+  - trigger: "ja"
+    replace: "start"
+    word: true
+  - trigger: "AJ"
+    replace: "Start"
+    word: true
+  - trigger: "JA"
+    replace: "Start"
+    word: true
+  - trigger: "gi"
+    replace: "might"
+    word: true
+  - trigger: "ig"
+    replace: "might"
+    word: true
+  - trigger: "GI"
+    replace: "Might"
+    word: true
+  - trigger: "IG"
+    replace: "Might"
+    word: true
+  - trigger: "io"
+    replace: "story"
+    word: true
+  - trigger: "oi"
+    replace: "story"
+    word: true
+  - trigger: "IO"
+    replace: "Story"
+    word: true
+  - trigger: "OI"
+    replace: "Story"
+    word: true
+  - trigger: "aq"
+    replace: "saw"
+    word: true
+  - trigger: "qa"
+    replace: "saw"
+    word: true
+  - trigger: "AQ"
+    replace: "Saw"
+    word: true
+  - trigger: "QA"
+    replace: "Saw"
+    word: true
+  - trigger: "fi"
+    replace: "far"
+    word: true
+  - trigger: "if"
+    replace: "far"
+    word: true
+  - trigger: "FI"
+    replace: "Far"
+    word: true
+  - trigger: "IF"
+    replace: "Far"
+    word: true
+  - trigger: "ek"
+    replace: "sea"
+    word: true
+  - trigger: "ke"
+    replace: "sea"
+    word: true
+  - trigger: "EK"
+    replace: "Sea"
+    word: true
+  - trigger: "KE"
+    replace: "Sea"
+    word: true
+  - trigger: "dv"
+    replace: "draw"
+    word: true
+  - trigger: "vd"
+    replace: "draw"
+    word: true
+  - trigger: "DV"
+    replace: "Draw"
+    word: true
+  - trigger: "VD"
+    replace: "Draw"
+    word: true
+  - trigger: "lq"
+    replace: "left"
+    word: true
+  - trigger: "ql"
+    replace: "left"
+    word: true
+  - trigger: "LQ"
+    replace: "Left"
+    word: true
+  - trigger: "QL"
+    replace: "Left"
+    word: true
+  - trigger: "lu"
+    replace: "late"
+    word: true
+  - trigger: "ul"
+    replace: "late"
+    word: true
+  - trigger: "LU"
+    replace: "Late"
+    word: true
+  - trigger: "UL"
+    replace: "Late"
+    word: true
+  - trigger: "ir"
+    replace: "run"
+    word: true
+  - trigger: "ri"
+    replace: "run"
+    word: true
+  - trigger: "IR"
+    replace: "Run"
+    word: true
+  - trigger: "RI"
+    replace: "Run"
+    word: true
+  - trigger: "dx"
+    replace: "don't"
+    word: true
+  - trigger: "xd"
+    replace: "don't"
+    word: true
+  - trigger: "DX"
+    replace: "Don't"
+    word: true
+  - trigger: "XD"
+    replace: "Don't"
+    word: true
+  - trigger: "mw"
+    replace: "while"
+    word: true
+  - trigger: "wm"
+    replace: "while"
+    word: true
+  - trigger: "MW"
+    replace: "While"
+    word: true
+  - trigger: "WM"
+    replace: "While"
+    word: true
+  - trigger: "bp"
+    replace: "press"
+    word: true
+  - trigger: "pb"
+    replace: "press"
+    word: true
+  - trigger: "BP"
+    replace: "Press"
+    word: true
+  - trigger: "PB"
+    replace: "Press"
+    word: true
+  - trigger: "ck"
+    replace: "close"
+    word: true
+  - trigger: "kc"
+    replace: "close"
+    word: true
+  - trigger: "CK"
+    replace: "Close"
+    word: true
+  - trigger: "KC"
+    replace: "Close"
+    word: true
+  - trigger: "nq"
+    replace: "night"
+    word: true
+  - trigger: "qn"
+    replace: "night"
+    word: true
+  - trigger: "NQ"
+    replace: "Night"
+    word: true
+  - trigger: "QN"
+    replace: "Night"
+    word: true
+  - trigger: "jr"
+    replace: "real"
+    word: true
+  - trigger: "rj"
+    replace: "real"
+    word: true
+  - trigger: "JR"
+    replace: "Real"
+    word: true
+  - trigger: "RJ"
+    replace: "Real"
+    word: true
+  - trigger: "lx"
+    replace: "life"
+    word: true
+  - trigger: "xl"
+    replace: "life"
+    word: true
+  - trigger: "LX"
+    replace: "Life"
+    word: true
+  - trigger: "XL"
+    replace: "Life"
+    word: true
+  - trigger: "fj"
+    replace: "few"
+    word: true
+  - trigger: "jf"
+    replace: "few"
+    word: true
+  - trigger: "FJ"
+    replace: "Few"
+    word: true
+  - trigger: "JF"
+    replace: "Few"
+    word: true
+  - trigger: "op"
+    replace: "stop"
+    word: true
+  - trigger: "po"
+    replace: "stop"
+    word: true
+  - trigger: "OP"
+    replace: "Stop"
+    word: true
+  - trigger: "PO"
+    replace: "Stop"
+    word: true
+  - trigger: "jo"
+    replace: "open"
+    word: true
+  - trigger: "oj"
+    replace: "open"
+    word: true
+  - trigger: "JO"
+    replace: "Open"
+    word: true
+  - trigger: "OJ"
+    replace: "Open"
+    word: true
+  - trigger: "eq"
+    replace: "seem"
+    word: true
+  - trigger: "qe"
+    replace: "seem"
+    word: true
+  - trigger: "EQ"
+    replace: "Seem"
+    word: true
+  - trigger: "QE"
+    replace: "Seem"
+    word: true
+  - trigger: "oq"
+    replace: "together"
+    word: true
+  - trigger: "qo"
+    replace: "together"
+    word: true
+  - trigger: "OQ"
+    replace: "Together"
+    word: true
+  - trigger: "QO"
+    replace: "Together"
+    word: true
+  - trigger: "nx"
+    replace: "next"
+    word: true
+  - trigger: "xn"
+    replace: "next"
+    word: true
+  - trigger: "NX"
+    replace: "Next"
+    word: true
+  - trigger: "XN"
+    replace: "Next"
+    word: true
+  - trigger: "pw"
+    replace: "white"
+    word: true
+  - trigger: "wp"
+    replace: "white"
+    word: true
+  - trigger: "PW"
+    replace: "White"
+    word: true
+  - trigger: "WP"
+    replace: "White"
+    word: true
+  - trigger: "cq"
+    replace: "children"
+    word: true
+  - trigger: "qc"
+    replace: "children"
+    word: true
+  - trigger: "CQ"
+    replace: "Children"
+    word: true
+  - trigger: "QC"
+    replace: "Children"
+    word: true
+  - trigger: "bj"
+    replace: "begin"
+    word: true
+  - trigger: "jb"
+    replace: "begin"
+    word: true
+  - trigger: "BJ"
+    replace: "Begin"
+    word: true
+  - trigger: "JB"
+    replace: "Begin"
+    word: true
+  - trigger: "gj"
+    replace: "got"
+    word: true
+  - trigger: "jg"
+    replace: "got"
+    word: true
+  - trigger: "GJ"
+    replace: "Got"
+    word: true
+  - trigger: "JG"
+    replace: "Got"
+    word: true
+  - trigger: "qw"
+    replace: "walk"
+    word: true
+  - trigger: "wq"
+    replace: "walk"
+    word: true
+  - trigger: "QW"
+    replace: "Walk"
+    word: true
+  - trigger: "WQ"
+    replace: "Walk"
+    word: true
+  - trigger: "ex"
+    replace: "example"
+    word: true
+  - trigger: "xe"
+    replace: "example"
+    word: true
+  - trigger: "EX"
+    replace: "Example"
+    word: true
+  - trigger: "XE"
+    replace: "Example"
+    word: true
+  - trigger: "ez"
+    replace: "ease"
+    word: true
+  - trigger: "ze"
+    replace: "ease"
+    word: true
+  - trigger: "EZ"
+    replace: "Ease"
+    word: true
+  - trigger: "ZE"
+    replace: "Ease"
+    word: true
+  - trigger: "fp"
+    replace: "paper"
+    word: true
+  - trigger: "pf"
+    replace: "paper"
+    word: true
+  - trigger: "FP"
+    replace: "Paper"
+    word: true
+  - trigger: "PF"
+    replace: "Paper"
+    word: true
+  - trigger: "ox"
+    replace: "often"
+    word: true
+  - trigger: "xo"
+    replace: "often"
+    word: true
+  - trigger: "OX"
+    replace: "Often"
+    word: true
+  - trigger: "XO"
+    replace: "Often"
+    word: true
+  - trigger: "ly"
+    replace: "always"
+    word: true
+  - trigger: "yl"
+    replace: "always"
+    word: true
+  - trigger: "LY"
+    replace: "Always"
+    word: true
+  - trigger: "YL"
+    replace: "Always"
+    word: true
+  - trigger: "iu"
+    replace: "music"
+    word: true
+  - trigger: "ui"
+    replace: "music"
+    word: true
+  - trigger: "IU"
+    replace: "Music"
+    word: true
+  - trigger: "UI"
+    replace: "Music"
+    word: true
+  - trigger: "hx"
+    replace: "those"
+    word: true
+  - trigger: "xh"
+    replace: "those"
+    word: true
+  - trigger: "HX"
+    replace: "Those"
+    word: true
+  - trigger: "XH"
+    replace: "Those"
+    word: true
+  - trigger: "bq"
+    replace: "both"
+    word: true
+  - trigger: "qb"
+    replace: "both"
+    word: true
+  - trigger: "BQ"
+    replace: "Both"
+    word: true
+  - trigger: "QB"
+    replace: "Both"
+    word: true
+  - trigger: "km"
+    replace: "mark"
+    word: true
+  - trigger: "mk"
+    replace: "mark"
+    word: true
+  - trigger: "KM"
+    replace: "Mark"
+    word: true
+  - trigger: "MK"
+    replace: "Mark"
+    word: true
+  - trigger: "bv"
+    replace: "book"
+    word: true
+  - trigger: "vb"
+    replace: "book"
+    word: true
+  - trigger: "BV"
+    replace: "Book"
+    word: true
+  - trigger: "VB"
+    replace: "Book"
+    word: true
+  - trigger: "lz"
+    replace: "letter"
+    word: true
+  - trigger: "zl"
+    replace: "letter"
+    word: true
+  - trigger: "LZ"
+    replace: "Letter"
+    word: true
+  - trigger: "ZL"
+    replace: "Letter"
+    word: true
+  - trigger: "ju"
+    replace: "until"
+    word: true
+  - trigger: "uj"
+    replace: "until"
+    word: true
+  - trigger: "JU"
+    replace: "Until"
+    word: true
+  - trigger: "UJ"
+    replace: "Until"
+    word: true
+  - trigger: "jm"
+    replace: "mile"
+    word: true
+  - trigger: "mj"
+    replace: "mile"
+    word: true
+  - trigger: "JM"
+    replace: "Mile"
+    word: true
+  - trigger: "MJ"
+    replace: "Mile"
+    word: true
+  - trigger: "iv"
+    replace: "river"
+    word: true
+  - trigger: "vi"
+    replace: "river"
+    word: true
+  - trigger: "IV"
+    replace: "River"
+    word: true
+  - trigger: "VI"
+    replace: "River"
+    word: true
+  - trigger: "cv"
+    replace: "car"
+    word: true
+  - trigger: "vc"
+    replace: "car"
+    word: true
+  - trigger: "CV"
+    replace: "Car"
+    word: true
+  - trigger: "VC"
+    replace: "Car"
+    word: true
+  - trigger: "fk"
+    replace: "feet"
+    word: true
+  - trigger: "kf"
+    replace: "feet"
+    word: true
+  - trigger: "FK"
+    replace: "Feet"
+    word: true
+  - trigger: "KF"
+    replace: "Feet"
+    word: true
+  - trigger: "cx"
+    replace: "care"
+    word: true
+  - trigger: "xc"
+    replace: "care"
+    word: true
+  - trigger: "CX"
+    replace: "Care"
+    word: true
+  - trigger: "XC"
+    replace: "Care"
+    word: true
+  - trigger: "cz"
+    replace: "second"
+    word: true
+  - trigger: "zc"
+    replace: "second"
+    word: true
+  - trigger: "CZ"
+    replace: "Second"
+    word: true
+  - trigger: "ZC"
+    replace: "Second"
+    word: true
+  - trigger: "gk"
+    replace: "group"
+    word: true
+  - trigger: "kg"
+    replace: "group"
+    word: true
+  - trigger: "GK"
+    replace: "Group"
+    word: true
+  - trigger: "KG"
+    replace: "Group"
+    word: true
+  - trigger: "av"
+    replace: "carry"
+    word: true
+  - trigger: "va"
+    replace: "carry"
+    word: true
+  - trigger: "AV"
+    replace: "Carry"
+    word: true
+  - trigger: "VA"
+    replace: "Carry"
+    word: true
+  - trigger: "oz"
+    replace: "took"
+    word: true
+  - trigger: "zo"
+    replace: "took"
+    word: true
+  - trigger: "OZ"
+    replace: "Took"
+    word: true
+  - trigger: "ZO"
+    replace: "Took"
+    word: true
+  - trigger: "kr"
+    replace: "rain"
+    word: true
+  - trigger: "rk"
+    replace: "rain"
+    word: true
+  - trigger: "KR"
+    replace: "Rain"
+    word: true
+  - trigger: "RK"
+    replace: "Rain"
+    word: true
+  - trigger: "ax"
+    replace: "eat"
+    word: true
+  - trigger: "xa"
+    replace: "eat"
+    word: true
+  - trigger: "AX"
+    replace: "Eat"
+    word: true
+  - trigger: "XA"
+    replace: "Eat"
+    word: true
+  - trigger: "qr"
+    replace: "room"
+    word: true
+  - trigger: "rq"
+    replace: "room"
+    word: true
+  - trigger: "QR"
+    replace: "Room"
+    word: true
+  - trigger: "RQ"
+    replace: "Room"
+    word: true
+  - trigger: "fq"
+    replace: "friend"
+    word: true
+  - trigger: "qf"
+    replace: "friend"
+    word: true
+  - trigger: "FQ"
+    replace: "Friend"
+    word: true
+  - trigger: "QF"
+    replace: "Friend"
+    word: true
+  - trigger: "bx"
+    replace: "began"
+    word: true
+  - trigger: "xb"
+    replace: "began"
+    word: true
+  - trigger: "BX"
+    replace: "Began"
+    word: true
+  - trigger: "XB"
+    replace: "Began"
+    word: true
+  - trigger: "ij"
+    replace: "idea"
+    word: true
+  - trigger: "ji"
+    replace: "idea"
+    word: true
+  - trigger: "IJ"
+    replace: "Idea"
+    word: true
+  - trigger: "JI"
+    replace: "Idea"
+    word: true
+  - trigger: "fv"
+    replace: "fish"
+    word: true
+  - trigger: "vf"
+    replace: "fish"
+    word: true
+  - trigger: "FV"
+    replace: "Fish"
+    word: true
+  - trigger: "VF"
+    replace: "Fish"
+    word: true
+  - trigger: "mp"
+    replace: "mountain"
+    word: true
+  - trigger: "pm"
+    replace: "mountain"
+    word: true
+  - trigger: "MP"
+    replace: "Mountain"
+    word: true
+  - trigger: "PM"
+    replace: "Mountain"
+    word: true
+  - trigger: "ny"
+    replace: "north"
+    word: true
+  - trigger: "yn"
+    replace: "north"
+    word: true
+  - trigger: "NY"
+    replace: "North"
+    word: true
+  - trigger: "YN"
+    replace: "North"
+    word: true
+  - trigger: "nz"
+    replace: "once"
+    word: true
+  - trigger: "zn"
+    replace: "once"
+    word: true
+  - trigger: "NZ"
+    replace: "Once"
+    word: true
+  - trigger: "ZN"
+    replace: "Once"
+    word: true
+  - trigger: "bz"
+    replace: "base"
+    word: true
+  - trigger: "zb"
+    replace: "base"
+    word: true
+  - trigger: "BZ"
+    replace: "Base"
+    word: true
+  - trigger: "ZB"
+    replace: "Base"
+    word: true
+  - trigger: "hz"
+    replace: "hear"
+    word: true
+  - trigger: "zh"
+    replace: "hear"
+    word: true
+  - trigger: "HZ"
+    replace: "Hear"
+    word: true
+  - trigger: "ZH"
+    replace: "Hear"
+    word: true
+  - trigger: "rx"
+    replace: "horse"
+    word: true
+  - trigger: "xr"
+    replace: "horse"
+    word: true
+  - trigger: "RX"
+    replace: "Horse"
+    word: true
+  - trigger: "XR"
+    replace: "Horse"
+    word: true
+  - trigger: "ku"
+    replace: "cut"
+    word: true
+  - trigger: "uk"
+    replace: "cut"
+    word: true
+  - trigger: "KU"
+    replace: "Cut"
+    word: true
+  - trigger: "UK"
+    replace: "Cut"
+    word: true
+  - trigger: "qu"
+    replace: "sure"
+    word: true
+  - trigger: "uq"
+    replace: "sure"
+    word: true
+  - trigger: "QU"
+    replace: "Sure"
+    word: true
+  - trigger: "UQ"
+    replace: "Sure"
+    word: true
+  - trigger: "vw"
+    replace: "watch"
+    word: true
+  - trigger: "wv"
+    replace: "watch"
+    word: true
+  - trigger: "VW"
+    replace: "Watch"
+    word: true
+  - trigger: "WV"
+    replace: "Watch"
+    word: true
+  - trigger: "rz"
+    replace: "color"
+    word: true
+  - trigger: "zr"
+    replace: "color"
+    word: true
+  - trigger: "RZ"
+    replace: "Color"
+    word: true
+  - trigger: "ZR"
+    replace: "Color"
+    word: true
+  - trigger: "fx"
+    replace: "face"
+    word: true
+  - trigger: "xf"
+    replace: "face"
+    word: true
+  - trigger: "FX"
+    replace: "Face"
+    word: true
+  - trigger: "XF"
+    replace: "Face"
+    word: true
+  - trigger: "wx"
+    replace: "wood"
+    word: true
+  - trigger: "xw"
+    replace: "wood"
+    word: true
+  - trigger: "WX"
+    replace: "Wood"
+    word: true
+  - trigger: "XW"
+    replace: "Wood"
+    word: true
+  - trigger: "mq"
+    replace: "main"
+    word: true
+  - trigger: "qm"
+    replace: "main"
+    word: true
+  - trigger: "MQ"
+    replace: "Main"
+    word: true
+  - trigger: "QM"
+    replace: "Main"
+    word: true
+  - trigger: "uv"
+    replace: "enough"
+    word: true
+  - trigger: "vu"
+    replace: "enough"
+    word: true
+  - trigger: "UV"
+    replace: "Enough"
+    word: true
+  - trigger: "VU"
+    replace: "Enough"
+    word: true
+  - trigger: "jp"
+    replace: "plain"
+    word: true
+  - trigger: "pj"
+    replace: "plain"
+    word: true
+  - trigger: "JP"
+    replace: "Plain"
+    word: true
+  - trigger: "PJ"
+    replace: "Plain"
+    word: true
+  - trigger: "gq"
+    replace: "girl"
+    word: true
+  - trigger: "qg"
+    replace: "girl"
+    word: true
+  - trigger: "GQ"
+    replace: "Girl"
+    word: true
+  - trigger: "QG"
+    replace: "Girl"
+    word: true
+  - trigger: "ux"
+    replace: "usual"
+    word: true
+  - trigger: "xu"
+    replace: "usual"
+    word: true
+  - trigger: "UX"
+    replace: "Usual"
+    word: true
+  - trigger: "XU"
+    replace: "Usual"
+    word: true
+  - trigger: "gy"
+    replace: "young"
+    word: true
+  - trigger: "yg"
+    replace: "young"
+    word: true
+  - trigger: "GY"
+    replace: "Young"
+    word: true
+  - trigger: "YG"
+    replace: "Young"
+    word: true
+  - trigger: "az"
+    replace: "ready"
+    word: true
+  - trigger: "za"
+    replace: "ready"
+    word: true
+  - trigger: "AZ"
+    replace: "Ready"
+    word: true
+  - trigger: "ZA"
+    replace: "Ready"
+    word: true
+  - trigger: "jv"
+    replace: "above"
+    word: true
+  - trigger: "vj"
+    replace: "above"
+    word: true
+  - trigger: "JV"
+    replace: "Above"
+    word: true
+  - trigger: "VJ"
+    replace: "Above"
+    word: true
+  - trigger: "kv"
+    replace: "ever"
+    word: true
+  - trigger: "vk"
+    replace: "ever"
+    word: true
+  - trigger: "KV"
+    replace: "Ever"
+    word: true
+  - trigger: "VK"
+    replace: "Ever"
+    word: true
+  - trigger: "dz"
+    replace: "red"
+    word: true
+  - trigger: "zd"
+    replace: "red"
+    word: true
+  - trigger: "DZ"
+    replace: "Red"
+    word: true
+  - trigger: "ZD"
+    replace: "Red"
+    word: true
+  - trigger: "ik"
+    replace: "list"
+    word: true
+  - trigger: "ki"
+    replace: "list"
+    word: true
+  - trigger: "IK"
+    replace: "List"
+    word: true
+  - trigger: "KI"
+    replace: "List"
+    word: true
+  - trigger: "uz"
+    replace: "though"
+    word: true
+  - trigger: "zu"
+    replace: "though"
+    word: true
+  - trigger: "UZ"
+    replace: "Though"
+    word: true
+  - trigger: "ZU"
+    replace: "Though"
+    word: true
+  - trigger: "fy"
+    replace: "feel"
+    word: true
+  - trigger: "yf"
+    replace: "feel"
+    word: true
+  - trigger: "FY"
+    replace: "Feel"
+    word: true
+  - trigger: "YF"
+    replace: "Feel"
+    word: true
+  - trigger: "jk"
+    replace: "talk"
+    word: true
+  - trigger: "kj"
+    replace: "talk"
+    word: true
+  - trigger: "JK"
+    replace: "Talk"
+    word: true
+  - trigger: "KJ"
+    replace: "Talk"
+    word: true
+  - trigger: "iq"
+    replace: "bird"
+    word: true
+  - trigger: "qi"
+    replace: "bird"
+    word: true
+  - trigger: "IQ"
+    replace: "Bird"
+    word: true
+  - trigger: "QI"
+    replace: "Bird"
+    word: true
+  - trigger: "iy"
+    replace: "body"
+    word: true
+  - trigger: "yi"
+    replace: "body"
+    word: true
+  - trigger: "IY"
+    replace: "Body"
+    word: true
+  - trigger: "YI"
+    replace: "Body"
+    word: true
+  - trigger: "gx"
+    replace: "dog"
+    word: true
+  - trigger: "xg"
+    replace: "dog"
+    word: true
+  - trigger: "GX"
+    replace: "Dog"
+    word: true
+  - trigger: "XG"
+    replace: "Dog"
+    word: true
+  - trigger: "fz"
+    replace: "family"
+    word: true
+  - trigger: "zf"
+    replace: "family"
+    word: true
+  - trigger: "FZ"
+    replace: "Family"
+    word: true
+  - trigger: "ZF"
+    replace: "Family"
+    word: true
+  - trigger: "ix"
+    replace: "direct"
+    word: true
+  - trigger: "xi"
+    replace: "direct"
+    word: true
+  - trigger: "IX"
+    replace: "Direct"
+    word: true
+  - trigger: "XI"
+    replace: "Direct"
+    word: true
+  - trigger: "pq"
+    replace: "pose"
+    word: true
+  - trigger: "qp"
+    replace: "pose"
+    word: true
+  - trigger: "PQ"
+    replace: "Pose"
+    word: true
+  - trigger: "QP"
+    replace: "Pose"
+    word: true
+  - trigger: "pv"
+    replace: "leave"
+    word: true
+  - trigger: "vp"
+    replace: "leave"
+    word: true
+  - trigger: "PV"
+    replace: "Leave"
+    word: true
+  - trigger: "VP"
+    replace: "Leave"
+    word: true
+  - trigger: "gz"
+    replace: "song"
+    word: true
+  - trigger: "zg"
+    replace: "song"
+    word: true
+  - trigger: "GZ"
+    replace: "Song"
+    word: true
+  - trigger: "ZG"
+    replace: "Song"
+    word: true
+  - trigger: "mx"
+    replace: "measure"
+    word: true
+  - trigger: "xm"
+    replace: "measure"
+    word: true
+  - trigger: "MX"
+    replace: "Measure"
+    word: true
+  - trigger: "XM"
+    replace: "Measure"
+    word: true
+  - trigger: "px"
+    replace: "product"
+    word: true
+  - trigger: "xp"
+    replace: "product"
+    word: true
+  - trigger: "PX"
+    replace: "Product"
+    word: true
+  - trigger: "XP"
+    replace: "Product"
+    word: true
+  - trigger: "kq"
+    replace: "black"
+    word: true
+  - trigger: "qk"
+    replace: "black"
+    word: true
+  - trigger: "KQ"
+    replace: "Black"
+    word: true
+  - trigger: "QK"
+    replace: "Black"
+    word: true
+  - trigger: "mz"
+    replace: "numeral"
+    word: true
+  - trigger: "zm"
+    replace: "numeral"
+    word: true
+  - trigger: "MZ"
+    replace: "Numeral"
+    word: true
+  - trigger: "ZM"
+    replace: "Numeral"
+    word: true
+  - trigger: "wz"
+    replace: "wind"
+    word: true
+  - trigger: "zw"
+    replace: "wind"
+    word: true
+  - trigger: "WZ"
+    replace: "Wind"
+    word: true
+  - trigger: "ZW"
+    replace: "Wind"
+    word: true
+  - trigger: "jq"
+    replace: "question"
+    word: true
+  - trigger: "qj"
+    replace: "question"
+    word: true
+  - trigger: "JQ"
+    replace: "Question"
+    word: true
+  - trigger: "QJ"
+    replace: "Question"
+    word: true
+  - trigger: "pz"
+    replace: "happen"
+    word: true
+  - trigger: "zp"
+    replace: "happen"
+    word: true
+  - trigger: "PZ"
+    replace: "Happen"
+    word: true
+  - trigger: "ZP"
+    replace: "Happen"
+    word: true
+  - trigger: "iz"
+    replace: "ship"
+    word: true
+  - trigger: "zi"
+    replace: "ship"
+    word: true
+  - trigger: "IZ"
+    replace: "Ship"
+    word: true
+  - trigger: "ZI"
+    replace: "Ship"
+    word: true
+  - trigger: "kx"
+    replace: "rock"
+    word: true
+  - trigger: "xk"
+    replace: "rock"
+    word: true
+  - trigger: "KX"
+    replace: "Rock"
+    word: true
+  - trigger: "XK"
+    replace: "Rock"
+    word: true
+  - trigger: "ky"
+    replace: "knew"
+    word: true
+  - trigger: "yk"
+    replace: "knew"
+    word: true
+  - trigger: "KY"
+    replace: "Knew"
+    word: true
+  - trigger: "YK"
+    replace: "Knew"
+    word: true
+  - trigger: "kz"
+    replace: "king"
+    word: true
+  - trigger: "zk"
+    replace: "king"
+    word: true
+  - trigger: "KZ"
+    replace: "King"
+    word: true
+  - trigger: "ZK"
+    replace: "King"
+    word: true
+  - trigger: "jz"
+    replace: "size"
+    word: true
+  - trigger: "zj"
+    replace: "size"
+    word: true
+  - trigger: "JZ"
+    replace: "Size"
+    word: true
+  - trigger: "ZJ"
+    replace: "Size"
+    word: true
+  - trigger: "jy"
+    replace: "early"
+    word: true
+  - trigger: "yj"
+    replace: "early"
+    word: true
+  - trigger: "JY"
+    replace: "Early"
+    word: true
+  - trigger: "YJ"
+    replace: "Early"
+    word: true
+  - trigger: "qv"
+    replace: "five"
+    word: true
+  - trigger: "vq"
+    replace: "five"
+    word: true
+  - trigger: "QV"
+    replace: "Five"
+    word: true
+  - trigger: "VQ"
+    replace: "Five"
+    word: true
+  - trigger: "jx"
+    replace: "six"
+    word: true
+  - trigger: "xj"
+    replace: "six"
+    word: true
+  - trigger: "JX"
+    replace: "Six"
+    word: true
+  - trigger: "XJ"
+    replace: "Six"
+    word: true
+  - trigger: "vx"
+    replace: "travel"
+    word: true
+  - trigger: "xv"
+    replace: "travel"
+    word: true
+  - trigger: "VX"
+    replace: "Travel"
+    word: true
+  - trigger: "XV"
+    replace: "Travel"
+    word: true
+  - trigger: "vz"
+    replace: "several"
+    word: true
+  - trigger: "zv"
+    replace: "several"
+    word: true
+  - trigger: "VZ"
+    replace: "Several"
+    word: true
+  - trigger: "ZV"
+    replace: "Several"
+    word: true
+  - trigger: "qy"
+    replace: "lay"
+    word: true
+  - trigger: "yq"
+    replace: "lay"
+    word: true
+  - trigger: "QY"
+    replace: "Lay"
+    word: true
+  - trigger: "YQ"
+    replace: "Lay"
+    word: true
+  - trigger: "xy"
+    replace: "money"
+    word: true
+  - trigger: "yx"
+    replace: "money"
+    word: true
+  - trigger: "XY"
+    replace: "Money"
+    word: true
+  - trigger: "YX"
+    replace: "Money"
+    word: true
+  - trigger: "yz"
+    replace: "fly"
+    word: true
+  - trigger: "zy"
+    replace: "fly"
+    word: true
+  - trigger: "YZ"
+    replace: "Fly"
+    word: true
+  - trigger: "ZY"
+    replace: "Fly"
+    word: true
+  - trigger: "qx"
+    replace: "box"
+    word: true
+  - trigger: "xq"
+    replace: "box"
+    word: true
+  - trigger: "QX"
+    replace: "Box"
+    word: true
+  - trigger: "XQ"
+    replace: "Box"
+    word: true
