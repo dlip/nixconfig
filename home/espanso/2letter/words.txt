@@ -17,6 +17,9 @@ is is
 it it
 me me
 my my
+np np
+no nx
+on ox
 of of
 oh oh
 OK ok
