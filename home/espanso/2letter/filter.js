@@ -30,21 +30,49 @@ const readline = require("readline");
       console.log(word, keys);
     }
 
-    // const alpha = Array.from(Array(26)).map((e, i) => i + 97);
-    // const alphabet = alpha.map((x) => String.fromCharCode(x));
+    // alphabet sorted by colemak-dh comfort
     const alphabet = "setnriaocfupldhgmxwyvkbjzq".split("");
-    const nginput = readline.createInterface({
-      input: fs.createReadStream("ng.txt"),
-      crlfDelay: Infinity,
-    });
-    const ng = new Map();
-    nginput.on("line", (line) => {
-      const combo = line.toLowerCase().split("").sort().join("");
-      ng.set(combo, true);
-    });
-    await events.once(nginput, "close");
+
+    // ng is No Good combos to exclude from options
+    const ng = new Map(
+      [
+        // no is a palindrome with on
+        "no",
+        // awkward for colmak
+        "qz",
+        "pd",
+        "tb",
+        "nj",
+        "lh",
+        "db",
+        "jh",
+        "js",
+        "wz",
+        "wx",
+        "fc",
+        "bv",
+        "jk",
+        // impossible on charachorder
+        "oi",
+        "re",
+        "vm",
+        "vc",
+        "vk",
+        "gz",
+        "gw",
+        "pf",
+        "pd",
+        "ph",
+        "xb",
+        "xq",
+        "ln",
+        "lj",
+        "ys",
+      ].map((x) => [x.split("").sort().join(""), true])
+    );
+
+    // set used = false for everything that is an option
     for (x of alphabet) {
-      used.set(x, false);
       for (y of alphabet) {
         const combo = (x + y).split("").sort().join("");
         if (ng.get(combo) !== true && combo[0] !== combo[1]) {
@@ -68,11 +96,6 @@ const readline = require("readline");
 
       const options = new Map();
       const x = word[0];
-      // Check first letter is available
-      if (wordAvailable(word, x) === true) {
-        addWord(word, x);
-        return;
-      }
       // look for combination in word itself, using the alphabet to prioritize most comfortable
       const tail = word.slice(1);
       for (y of alphabet) {
