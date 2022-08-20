@@ -599,18 +599,6 @@ matches:
   - trigger: "DH"
     replace: "Had"
     word: true
-  - trigger: "hn"
-    replace: "hot"
-    word: true
-  - trigger: "HN"
-    replace: "Hot"
-    word: true
-  - trigger: "nh"
-    replace: "hot"
-    word: true
-  - trigger: "NH"
-    replace: "Hot"
-    word: true
   - trigger: "bu"
     replace: "but"
     word: true
@@ -1055,16 +1043,16 @@ matches:
   - trigger: "PT"
     replace: "Two"
     word: true
-  - trigger: "hc"
+  - trigger: "hn"
     replace: "has"
     word: true
-  - trigger: "HC"
+  - trigger: "HN"
     replace: "Has"
     word: true
-  - trigger: "ch"
+  - trigger: "nh"
     replace: "has"
     word: true
-  - trigger: "CH"
+  - trigger: "NH"
     replace: "Has"
     word: true
   - trigger: "lk"
@@ -1739,16 +1727,16 @@ matches:
   - trigger: "KS"
     replace: "Say"
     word: true
-  - trigger: "hf"
+  - trigger: "hc"
     replace: "help"
     word: true
-  - trigger: "HF"
+  - trigger: "HC"
     replace: "Help"
     word: true
-  - trigger: "fh"
+  - trigger: "ch"
     replace: "help"
     word: true
-  - trigger: "FH"
+  - trigger: "CH"
     replace: "Help"
     word: true
   - trigger: "lr"
@@ -2039,16 +2027,16 @@ matches:
   - trigger: "IP"
     replace: "Put"
     word: true
-  - trigger: "hg"
+  - trigger: "hf"
     replace: "home"
     word: true
-  - trigger: "HG"
+  - trigger: "HF"
     replace: "Home"
     word: true
-  - trigger: "gh"
+  - trigger: "fh"
     replace: "home"
     word: true
-  - trigger: "GH"
+  - trigger: "FH"
     replace: "Home"
     word: true
   - trigger: "rx"
@@ -2063,16 +2051,16 @@ matches:
   - trigger: "XR"
     replace: "Read"
     word: true
-  - trigger: "hx"
+  - trigger: "hg"
     replace: "hand"
     word: true
-  - trigger: "HX"
+  - trigger: "HG"
     replace: "Hand"
     word: true
-  - trigger: "xh"
+  - trigger: "gh"
     replace: "hand"
     word: true
-  - trigger: "XH"
+  - trigger: "GH"
     replace: "Hand"
     word: true
   - trigger: "pc"
@@ -2135,16 +2123,16 @@ matches:
   - trigger: "DL"
     replace: "Land"
     word: true
-  - trigger: "hy"
+  - trigger: "hx"
     replace: "here"
     word: true
-  - trigger: "HY"
+  - trigger: "HX"
     replace: "Here"
     word: true
-  - trigger: "yh"
+  - trigger: "xh"
     replace: "here"
     word: true
-  - trigger: "YH"
+  - trigger: "XH"
     replace: "Here"
     word: true
   - trigger: "mx"
@@ -2171,16 +2159,16 @@ matches:
   - trigger: "GB"
     replace: "Big"
     word: true
-  - trigger: "hk"
+  - trigger: "hy"
     replace: "high"
     word: true
-  - trigger: "HK"
+  - trigger: "HY"
     replace: "High"
     word: true
-  - trigger: "kh"
+  - trigger: "yh"
     replace: "high"
     word: true
-  - trigger: "KH"
+  - trigger: "YH"
     replace: "High"
     word: true
   - trigger: "fl"
@@ -2315,16 +2303,16 @@ matches:
   - trigger: "YN"
     replace: "Need"
     word: true
-  - trigger: "hb"
+  - trigger: "hk"
     replace: "house"
     word: true
-  - trigger: "HB"
+  - trigger: "HK"
     replace: "House"
     word: true
-  - trigger: "bh"
+  - trigger: "kh"
     replace: "house"
     word: true
-  - trigger: "BH"
+  - trigger: "KH"
     replace: "House"
     word: true
   - trigger: "pg"
@@ -2447,16 +2435,16 @@ matches:
   - trigger: "UF"
     replace: "Father"
     word: true
-  - trigger: "hz"
+  - trigger: "hb"
     replace: "head"
     word: true
-  - trigger: "HZ"
+  - trigger: "HB"
     replace: "Head"
     word: true
-  - trigger: "zh"
+  - trigger: "bh"
     replace: "head"
     word: true
-  - trigger: "ZH"
+  - trigger: "BH"
     replace: "Head"
     word: true
   - trigger: "oq"
@@ -2699,16 +2687,16 @@ matches:
   - trigger: "KC"
     replace: "Cross"
     word: true
-  - trigger: "hq"
+  - trigger: "hz"
     replace: "hard"
     word: true
-  - trigger: "HQ"
+  - trigger: "HZ"
     replace: "Hard"
     word: true
-  - trigger: "qh"
+  - trigger: "zh"
     replace: "hard"
     word: true
-  - trigger: "QH"
+  - trigger: "ZH"
     replace: "Hard"
     word: true
   - trigger: "mz"
@@ -3094,6 +3082,18 @@ matches:
     word: true
   - trigger: "QB"
     replace: "Base"
+    word: true
+  - trigger: "hq"
+    replace: "hear"
+    word: true
+  - trigger: "HQ"
+    replace: "Hear"
+    word: true
+  - trigger: "qh"
+    replace: "hear"
+    word: true
+  - trigger: "QH"
+    replace: "Hear"
     word: true
   - trigger: "pz"
     replace: "plain"

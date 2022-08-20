@@ -779,16 +779,6 @@
         tap-ms = <MACRO_TAP>;
         bindings = <&sk LSHIFT &kp H &kp A &kp D &kp SPACE>;
     )
-    ZMK_MACRO(spm_hot,
-        wait-ms = <MACRO_WAIT>;
-        tap-ms = <MACRO_TAP>;
-        bindings = <&kp H &kp O &kp T &kp SPACE>;
-    )
-    ZMK_MACRO(shm_hot,
-        wait-ms = <MACRO_WAIT>;
-        tap-ms = <MACRO_TAP>;
-        bindings = <&sk LSHIFT &kp H &kp O &kp T &kp SPACE>;
-    )
     ZMK_MACRO(spm_but,
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
@@ -2859,6 +2849,16 @@
         tap-ms = <MACRO_TAP>;
         bindings = <&sk LSHIFT &kp B &kp A &kp S &kp E &kp SPACE>;
     )
+    ZMK_MACRO(spm_hear,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp H &kp E &kp A &kp R &kp SPACE>;
+    )
+    ZMK_MACRO(shm_hear,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT &kp H &kp E &kp A &kp R &kp SPACE>;
+    )
     ZMK_MACRO(spm_plain,
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
@@ -3620,16 +3620,6 @@
       key-positions = <P_H P_D P_SHFT>;
       bindings = <&shm_had>;
     };
-    combo_spm_hot {
-      timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_N P_SPC>;
-      bindings = <&spm_hot>;
-    };
-    combo_shm_hot {
-      timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_N P_SHFT>;
-      bindings = <&shm_hot>;
-    };
     combo_spm_but {
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_B P_U P_SPC>;
@@ -4002,12 +3992,12 @@
     };
     combo_spm_has {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_C P_SPC>;
+      key-positions = <P_H P_N P_SPC>;
       bindings = <&spm_has>;
     };
     combo_shm_has {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_C P_SHFT>;
+      key-positions = <P_H P_N P_SHFT>;
       bindings = <&shm_has>;
     };
     combo_spm_look {
@@ -4572,12 +4562,12 @@
     };
     combo_spm_help {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_F P_SPC>;
+      key-positions = <P_H P_C P_SPC>;
       bindings = <&spm_help>;
     };
     combo_shm_help {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_F P_SHFT>;
+      key-positions = <P_H P_C P_SHFT>;
       bindings = <&shm_help>;
     };
     combo_spm_low {
@@ -4822,12 +4812,12 @@
     };
     combo_spm_home {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_G P_SPC>;
+      key-positions = <P_H P_F P_SPC>;
       bindings = <&spm_home>;
     };
     combo_shm_home {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_G P_SHFT>;
+      key-positions = <P_H P_F P_SHFT>;
       bindings = <&shm_home>;
     };
     combo_spm_read {
@@ -4842,12 +4832,12 @@
     };
     combo_spm_hand {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_X P_SPC>;
+      key-positions = <P_H P_G P_SPC>;
       bindings = <&spm_hand>;
     };
     combo_shm_hand {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_X P_SHFT>;
+      key-positions = <P_H P_G P_SHFT>;
       bindings = <&shm_hand>;
     };
     combo_spm_port {
@@ -4902,12 +4892,12 @@
     };
     combo_spm_here {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_Y P_SPC>;
+      key-positions = <P_H P_X P_SPC>;
       bindings = <&spm_here>;
     };
     combo_shm_here {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_Y P_SHFT>;
+      key-positions = <P_H P_X P_SHFT>;
       bindings = <&shm_here>;
     };
     combo_spm_must {
@@ -4932,12 +4922,12 @@
     };
     combo_spm_high {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_K P_SPC>;
+      key-positions = <P_H P_Y P_SPC>;
       bindings = <&spm_high>;
     };
     combo_shm_high {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_K P_SHFT>;
+      key-positions = <P_H P_Y P_SHFT>;
       bindings = <&shm_high>;
     };
     combo_spm_follow {
@@ -5052,12 +5042,12 @@
     };
     combo_spm_house {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_B P_SPC>;
+      key-positions = <P_H P_K P_SPC>;
       bindings = <&spm_house>;
     };
     combo_shm_house {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_B P_SHFT>;
+      key-positions = <P_H P_K P_SHFT>;
       bindings = <&shm_house>;
     };
     combo_spm_picture {
@@ -5162,12 +5152,12 @@
     };
     combo_spm_head {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_Z P_SPC>;
+      key-positions = <P_H P_B P_SPC>;
       bindings = <&spm_head>;
     };
     combo_shm_head {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_Z P_SHFT>;
+      key-positions = <P_H P_B P_SHFT>;
       bindings = <&shm_head>;
     };
     combo_spm_own {
@@ -5372,12 +5362,12 @@
     };
     combo_spm_hard {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_Q P_SPC>;
+      key-positions = <P_H P_Z P_SPC>;
       bindings = <&spm_hard>;
     };
     combo_shm_hard {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <P_H P_Q P_SHFT>;
+      key-positions = <P_H P_Z P_SHFT>;
       bindings = <&shm_hard>;
     };
     combo_spm_might {
@@ -5699,6 +5689,16 @@
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_B P_Q P_SHFT>;
       bindings = <&shm_base>;
+    };
+    combo_spm_hear {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_H P_Q P_SPC>;
+      bindings = <&spm_hear>;
+    };
+    combo_shm_hear {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_H P_Q P_SHFT>;
+      bindings = <&shm_hear>;
     };
     combo_spm_plain {
       timeout-ms = <COMBO_TIMEOUT>;

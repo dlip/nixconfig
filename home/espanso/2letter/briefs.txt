@@ -48,7 +48,6 @@ have hv
 this ts
 from fm
 had hd
-hot hn
 but bu
 some se
 what wa
@@ -86,7 +85,7 @@ thing tg
 see sr
 him hm
 two tp
-has hc
+has hn
 look lk
 more mr
 day dy
@@ -143,7 +142,7 @@ much mp
 great gr
 think tx
 say sk
-help hf
+help hc
 low lr
 line lc
 before br
@@ -168,18 +167,18 @@ also af
 play pl
 end ei
 put pi
-home hg
+home hf
 read rx
-hand hx
+hand hg
 port pc
 large lg
 add ag
 even ek
 land ld
-here hy
+here hx
 must mx
 big bg
-high hk
+high hy
 follow fl
 act ax
 why wb
@@ -191,7 +190,7 @@ light lu
 kind ki
 off oz
 need ny
-house hb
+house hk
 picture pg
 again av
 animal aj
@@ -202,7 +201,7 @@ near nv
 build bl
 earth ej
 father fu
-head hz
+head hb
 own oq
 page py
 country cy
@@ -223,7 +222,7 @@ door dc
 between bc
 city cx
 cross ck
-hard hq
+hard hz
 might mz
 far fv
 draw dx
@@ -256,6 +255,7 @@ began bz
 idea ix
 fish fq
 base bq
+hear hq
 plain pz
 girl gy
 usual ux
