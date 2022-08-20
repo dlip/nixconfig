@@ -30,8 +30,9 @@ const readline = require("readline");
       console.log(word, keys);
     }
 
-    const alpha = Array.from(Array(26)).map((e, i) => i + 97);
-    const alphabet = alpha.map((x) => String.fromCharCode(x));
+    // const alpha = Array.from(Array(26)).map((e, i) => i + 97);
+    // const alphabet = alpha.map((x) => String.fromCharCode(x));
+    const alphabet = "setnriaocfupldhgmxwyvkbjzq".split("");
     const nginput = readline.createInterface({
       input: fs.createReadStream("ng.txt"),
       crlfDelay: Infinity,
@@ -84,7 +85,6 @@ const readline = require("readline");
           return;
         }
       }
-      throw new Error(keys);
     });
     await events.once(rl, "close");
 

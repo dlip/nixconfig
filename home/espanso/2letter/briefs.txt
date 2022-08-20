@@ -1,28 +1,26 @@
 be b
-see c
+can c
 do d
-the e
+each e
 for f
 get g
 he h
 I i
 just j
-OK k
-will l
+know k
+like l
 me m
 no n
 on o
-up p
+people p
 question q
-or r
+round r
 she s
-to t
-you u
-have v
+the t
+use u
+very v
 with w
-and x
-why y
-as z
+you y
 ah ah
 am am
 an an
@@ -53,109 +51,262 @@ up up
 us us
 VS vs
 we we
-eye ai
-who wo
-how hw
-were wr
-what wt
-when wn
-where wf
-would wu
-was ws
-from fm
-him im
-his hs
-all al
+and ad
 that th
-this ts
-they te
-her hr
-said sd
-but bu
-which wc
-I'll il
-had hd
-not nt
-with wi
+was ws
 are ae
+his hs
+they ty
 one oe
+have hv
+this ts
+from fm
+had hd
+hot hn
+but bu
 some se
-there tr
-can cn
+what wt
+there te
 out ou
-other er
+other oi
+were wr
+all al
 your yr
-use ue
+when wn
 word wd
-each ec
-their ei
+how hw
+said sd
+which wc
+their tr
 time tm
 will wl
 way wy
 about au
 many mn
-then hn
-them hm
-write ri
-like le
-tc
-td
-tf
-tg
-tj
-tk
-tl
-tp
-tq
-tu
-tv
-tx
-ty
-tz
-hb
-hc
-hf
-hg
-hk
-hp
-hq
-hv
-hx
-hy
-hz
-ed
-ef
-ej
-ek
-em
-en
-ep
-eq
-ev
-ey
-ez
-sb
-sc
-sf
-sg
-sk
-sl
-sm
-sn
-sp
-sq
-sr
-sx
-sy
-sz
-ed
-ef
-ej
-ek
-em
-en
-ep
-eq
-ev
-ey
-ez
+then tn
+them tc
+would wu
+write wi
+these tf
+her hr
+long lg
+make me
+thing tg
+see sn
+him hm
+two tu
+has hc
+look lk
+more mr
+day dy
+could cd
+come ce
+did di
+sound sr
+most ms
+number nr
+who wo
+over ov
+water wf
+than tp
+call cl
+first fs
+may mi
+down dn
+side sc
+been bn
+now ne
+find fd
+any ay
+new nc
+work wk
+part pr
+take tk
+place pe
+made md
+live le
+where wp
+after ar
+back bk
+little lt
+only ol
+man mo
+year ye
+came cm
+show sp
+every er
+good gd
+give gv
+our oa
+under ur
+name nf
+through td
+form fr
+much mp
+great ga
+think tx
+say sy
+help hp
+low ls
+line ln
+before br
+turn tv
+cause cu
+same sg
+mean ml
+differ dr
+move mv
+right rg
+boy bo
+old oc
+too tj
+does de
+tell tz
+sentence sx
+set sk
+three tq
+want wg
+air ai
+well wm
+also ac
+play py
+small sb
+end ei
+put pn
+home hf
+read ri
+hand hg
+port po
+large lr
+spell sz
+add af
+even ev
+land ld
+here hx
+must mg
+big bg
+high hy
+such sq
+follow fl
+act ap
+why wv
+ask ak
+men mx
+change cg
+went wb
+light li
+kind kd
+off ox
+need nu
+house hk
+picture pc
+again ax
+animal av
+point pi
+mother mk
+world wj
+near ng
+build bl
+earth ef
+father fu
+head hb
+own oj
+page pg
+country cy
+found fp
+answer ab
+grow gi
+learn lu
+plant pl
+cover cr
+food fg
+four fx
+let lx
+keep kp
+eye eu
+never nv
+last ly
+door du
+between bi
+city ci
+cross cx
+hard hz
+might mb
+far fy
+draw dx
+left lv
+late lj
+run rx
+don't dv
+while wq
+press px
+close cv
+night nx
+real rv
+life lz
+few fv
+open oz
+next ny
+children ck
+begin bc
+got gu
+example ek
+ease ej
+paper pv
+often oq
+always aj
+music mj
+both bf
+mark mz
+book bp
+letter lq
+until ui
+mile mq
+river rk
+car cj
+feet fk
+care cz
+group gx
+carry cq
+rain rj
+eat ez
+room rz
+friend fj
+began bx
+idea ix
+fish fz
+north nk
+base bj
+hear hq
+face fq
+enough eq
+plain pj
+girl gy
+usual ux
+young yu
+ready rq
+above az
+bird bz
+body bq
+dog dj
+direct dz
+pose pz
+product pq
+numeral nz
+area aq
+knew ki
+king kg
+during dq
+ground gj
+interest iy
+vowel vi
+govern gz
+notice nq
+voice vu
+unit uk
+gave gq
+quick qk
+inch ij
+island iz
+yet yx
+yes yv
