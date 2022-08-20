@@ -40,20 +40,17 @@ matches:
           cmd: "curl ifconfig.co"
 
   # Vim
-  - trigger: "..,"
+  - trigger: ".,."
     replace: "\\(.*\\)"
 
   # Personal
-  - trigger: "@.,"
+  - trigger: ".,e"
     replace: "danelipscombe@gmail.com"
-  - trigger: "@p.,"
-    replace: "dlip1@protonmail.com"
-  - trigger: "@w.,"
+  - trigger: ".,ew"
     replace: "dane.lipscombe@playtravel.com.au"
-  - trigger: "dl.,"
+  - trigger: ",.n"
     replace: "Dane Lipscombe"
-  - trigger: "zD.,"
+  - trigger: ".,f"
     replace: "Dane"
-  - trigger: "zL.,"
+  - trigger: ".,l"
     replace: "Lipscombe"
-

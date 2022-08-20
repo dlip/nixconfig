@@ -66,9 +66,14 @@ const readline = require("readline");
         return;
       }
 
-      // look for combination in word itself
       const options = new Map();
       const x = word[0];
+      // Check first letter is available
+      if (wordAvailable(word, x) === true) {
+        addWord(word, x);
+        return;
+      }
+      // look for combination in word itself
       for (y of word.split("").reverse()) {
         const keys = x + y;
         if (wordAvailable(word, keys) === true) {
