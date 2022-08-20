@@ -407,6 +407,18 @@ matches:
   - trigger: "EW"
     replace: "We"
     word: true
+  - trigger: "yo"
+    replace: "yo"
+    word: true
+  - trigger: "YO"
+    replace: "Yo"
+    word: true
+  - trigger: "oy"
+    replace: "yo"
+    word: true
+  - trigger: "OY"
+    replace: "Yo"
+    word: true
   - trigger: "te"
     replace: "the"
     word: true
@@ -431,16 +443,16 @@ matches:
   - trigger: "DA"
     replace: "And"
     word: true
-  - trigger: "yo"
+  - trigger: "yu"
     replace: "you"
     word: true
-  - trigger: "YO"
+  - trigger: "YU"
     replace: "You"
     word: true
-  - trigger: "oy"
+  - trigger: "uy"
     replace: "you"
     word: true
-  - trigger: "OY"
+  - trigger: "UY"
     replace: "You"
     word: true
   - trigger: "th"
@@ -3119,16 +3131,16 @@ matches:
   - trigger: "XU"
     replace: "Usual"
     word: true
-  - trigger: "yu"
+  - trigger: "yi"
     replace: "young"
     word: true
-  - trigger: "YU"
+  - trigger: "YI"
     replace: "Young"
     word: true
-  - trigger: "uy"
+  - trigger: "iy"
     replace: "young"
     word: true
-  - trigger: "UY"
+  - trigger: "IY"
     replace: "Young"
     word: true
   - trigger: "dk"
@@ -3227,28 +3239,28 @@ matches:
   - trigger: "VG"
     replace: "Ground"
     word: true
-  - trigger: "iy"
+  - trigger: "iv"
     replace: "interest"
     word: true
-  - trigger: "IY"
-    replace: "Interest"
-    word: true
-  - trigger: "yi"
-    replace: "interest"
-    word: true
-  - trigger: "YI"
+  - trigger: "IV"
     replace: "Interest"
     word: true
   - trigger: "vi"
-    replace: "vowel"
+    replace: "interest"
     word: true
   - trigger: "VI"
-    replace: "Vowel"
+    replace: "Interest"
     word: true
-  - trigger: "iv"
+  - trigger: "vu"
     replace: "vowel"
     word: true
-  - trigger: "IV"
+  - trigger: "VU"
+    replace: "Vowel"
+    word: true
+  - trigger: "uv"
+    replace: "vowel"
+    word: true
+  - trigger: "UV"
     replace: "Vowel"
     word: true
   - trigger: "gj"
@@ -3263,16 +3275,16 @@ matches:
   - trigger: "JG"
     replace: "Govern"
     word: true
-  - trigger: "vu"
+  - trigger: "vx"
     replace: "voice"
     word: true
-  - trigger: "VU"
+  - trigger: "VX"
     replace: "Voice"
     word: true
-  - trigger: "uv"
+  - trigger: "xv"
     replace: "voice"
     word: true
-  - trigger: "UV"
+  - trigger: "XV"
     replace: "Voice"
     word: true
   - trigger: "uj"
