@@ -55,11 +55,12 @@ VS vs
 we we
 eye ai
 who wo
+how hw
+were wr
 what wt
 when wn
-where wh
-would wd
-were wr
+where wf
+would wu
 was ws
 from fm
 him im
@@ -78,7 +79,6 @@ not nt
 with wi
 are ae
 one oe
-hot hb
 some se
 there tr
 can cn
@@ -86,8 +86,7 @@ out ou
 other er
 your yr
 use ue
-word rd
-how hc
+word wd
 each ec
 their ei
 time tm
@@ -99,235 +98,64 @@ then hn
 them hm
 write ri
 like le
-these tc
-long lg
-make me
-thing tg
-two td
-has hf
-look lk
-more mr
-day dy
-could cd
-come cm
-did di
-sound sn
-most ms
-number nr
-over ov
-know kw
-water ar
-than tf
-call cl
-first fs
-people pe
-may ay
-down dn
-side de
-been bn
-now ne
-find fd
-any ny
-new nf
-work rk
-part pt
-take tk
-get ga
-place pc
-made md
-live lv
-after af
-back bk
-little lt
-only ol
-round ru
-man mb
-year ye
-came ca
-show sb
-every ev
-good gd
-give gv
-our oa
-under ud
-name ng
-very vy
-through tu
-form fr
-much uc
-great gr
-think hk
-say sy
-help hp
-low lb
-line ln
-before br
-turn un
-cause cs
-same sg
-mean mg
-differ fe
-move mv
-right ig
-boy bo
-old ld
-too tj
-does da
-tell tq
-sentence sk
-set sl
-three tv
-want wb
-air ab
-well wf
-also aj
-play py
-small ml
-end ej
-put pa
-home om
-read rc
-hand hg
-port pr
-large lr
-spell sp
-add ak
-even vn
-land lf
-here hq
-must mj
-big bg
-high hv
-such sq
-follow fb
-act aq
-ask av
-men mk
-change cg
-went wg
-light lj
-kind kd
-off oc
-need nk
-house hx
-picture pi
-try ty
-again ax
-animal az
-point pn
-mother mp
-world wj
-near nq
-build bi
-self sr
-earth ek
-father fg
-head hy
-stand sx
-own oi
-page pg
-should ul
-country cy
-found fu
-answer nx
-school sz
-grow gj
-study uy
-still tx
-learn lp
-plant pb
-cover cv
-food fj
-sun ug
-four fk
-thought tz
-let lq
-keep kp
-eye eq
-never vr
-last lx
-door dj
-between bc
-city ci
-tree rj
-cross cj
-since ij
-hard hz
-start rq
-might mq
-story oj
-saw wm
-far fp
-sea ez
-draw dq
-left ly
-late lz
-run rx
-don't dv
-while wp
-press pj
-close ck
-night nz
-real rz
-life ik
-few fq
-stop op
-open oq
-seem mx
-together ox
-next xb
-white wq
-children cq
-begin bj
-got gk
-walk wu
-example xp
-paper pq
-often oz
-always wv
-music ui
-both bq
-mark mz
-book bz
-until uj
-mile iq
-river iv
-car cx
-feet fv
-care cz
-second dx
-group gq
-carry yf
-took kq
-rain ix
-friend fx
-began gx
-idea iy
-fish fz
-mountain uk
-cut uq
-sure uv
-wood dz
-main iz
-enough ux
-plain pv
-girl gy
-usual uz
-young yj
-ready yk
-above vj
-ever vk
-though gz
-talk kx
-body yq
-family yx
-pose pz
-leave vq
-black kz
-size zj
-early yz
-five vx
-six xj
-travel vz
-box xq
-quick qj
+tc
+td
+tf
+tg
+tj
+tk
+tl
+tp
+tq
+tu
+tv
+tx
+ty
+tz
+hb
+hc
+hf
+hg
+hk
+hp
+hq
+hv
+hx
+hy
+hz
+ed
+ef
+ej
+ek
+em
+en
+ep
+eq
+ev
+ey
+ez
+sb
+sc
+sf
+sg
+sk
+sl
+sm
+sn
+sp
+sq
+sr
+sx
+sy
+sz
+ed
+ef
+ej
+ek
+em
+en
+ep
+eq
+ev
+ey
+ez

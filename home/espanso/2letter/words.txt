@@ -55,11 +55,12 @@ VS vs
 we we
 eye ai
 who wo
+how hw
+were wr
 what wt
 when wn
-where wh
-would wd
-were wr
+where wf
+would wu
 was ws
 from fm
 him im
@@ -78,7 +79,6 @@ not nt
 with wi
 are
 one
-hot
 some
 there
 can
@@ -87,7 +87,6 @@ other
 your
 use
 word
-how
 each
 their
 time
@@ -99,12 +98,12 @@ then
 them
 write
 like
-these
+these tz
 long
 make
 thing
-two
-has
+two tu
+has hz
 look
 more
 day

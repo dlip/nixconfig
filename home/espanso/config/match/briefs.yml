@@ -533,6 +533,30 @@ matches:
   - trigger: "OW"
     replace: "Who"
     word: true
+  - trigger: "hw"
+    replace: "how"
+    word: true
+  - trigger: "HW"
+    replace: "How"
+    word: true
+  - trigger: "wh"
+    replace: "how"
+    word: true
+  - trigger: "WH"
+    replace: "How"
+    word: true
+  - trigger: "wr"
+    replace: "were"
+    word: true
+  - trigger: "WR"
+    replace: "Were"
+    word: true
+  - trigger: "rw"
+    replace: "were"
+    word: true
+  - trigger: "RW"
+    replace: "Were"
+    word: true
   - trigger: "wt"
     replace: "what"
     word: true
@@ -557,41 +581,29 @@ matches:
   - trigger: "NW"
     replace: "When"
     word: true
-  - trigger: "wh"
+  - trigger: "wf"
     replace: "where"
     word: true
-  - trigger: "WH"
+  - trigger: "WF"
     replace: "Where"
     word: true
-  - trigger: "hw"
+  - trigger: "fw"
     replace: "where"
     word: true
-  - trigger: "HW"
+  - trigger: "FW"
     replace: "Where"
     word: true
-  - trigger: "wd"
+  - trigger: "wu"
     replace: "would"
     word: true
-  - trigger: "WD"
+  - trigger: "WU"
     replace: "Would"
     word: true
-  - trigger: "dw"
+  - trigger: "uw"
     replace: "would"
     word: true
-  - trigger: "DW"
+  - trigger: "UW"
     replace: "Would"
-    word: true
-  - trigger: "wr"
-    replace: "were"
-    word: true
-  - trigger: "WR"
-    replace: "Were"
-    word: true
-  - trigger: "rw"
-    replace: "were"
-    word: true
-  - trigger: "RW"
-    replace: "Were"
     word: true
   - trigger: "ws"
     replace: "was"
@@ -809,18 +821,6 @@ matches:
   - trigger: "EO"
     replace: "One"
     word: true
-  - trigger: "hb"
-    replace: "hot"
-    word: true
-  - trigger: "HB"
-    replace: "Hot"
-    word: true
-  - trigger: "bh"
-    replace: "hot"
-    word: true
-  - trigger: "BH"
-    replace: "Hot"
-    word: true
   - trigger: "se"
     replace: "some"
     word: true
@@ -905,29 +905,17 @@ matches:
   - trigger: "EU"
     replace: "Use"
     word: true
-  - trigger: "rd"
+  - trigger: "wd"
     replace: "word"
     word: true
-  - trigger: "RD"
+  - trigger: "WD"
     replace: "Word"
     word: true
-  - trigger: "dr"
+  - trigger: "dw"
     replace: "word"
     word: true
-  - trigger: "DR"
+  - trigger: "DW"
     replace: "Word"
-    word: true
-  - trigger: "hc"
-    replace: "how"
-    word: true
-  - trigger: "HC"
-    replace: "How"
-    word: true
-  - trigger: "ch"
-    replace: "how"
-    word: true
-  - trigger: "CH"
-    replace: "How"
     word: true
   - trigger: "ec"
     replace: "each"
@@ -1121,16 +1109,16 @@ matches:
   - trigger: "DT"
     replace: "Two"
     word: true
-  - trigger: "hf"
+  - trigger: "hb"
     replace: "has"
     word: true
-  - trigger: "HF"
+  - trigger: "HB"
     replace: "Has"
     word: true
-  - trigger: "fh"
+  - trigger: "bh"
     replace: "has"
     word: true
-  - trigger: "FH"
+  - trigger: "BH"
     replace: "Has"
     word: true
   - trigger: "lk"
@@ -1553,16 +1541,16 @@ matches:
   - trigger: "LO"
     replace: "Only"
     word: true
-  - trigger: "ru"
+  - trigger: "rd"
     replace: "round"
     word: true
-  - trigger: "RU"
+  - trigger: "RD"
     replace: "Round"
     word: true
-  - trigger: "ur"
+  - trigger: "dr"
     replace: "round"
     word: true
-  - trigger: "UR"
+  - trigger: "DR"
     replace: "Round"
     word: true
   - trigger: "mb"
@@ -1649,16 +1637,16 @@ matches:
   - trigger: "VG"
     replace: "Give"
     word: true
-  - trigger: "oa"
+  - trigger: "ur"
     replace: "our"
     word: true
-  - trigger: "OA"
+  - trigger: "UR"
     replace: "Our"
     word: true
-  - trigger: "ao"
+  - trigger: "ru"
     replace: "our"
     word: true
-  - trigger: "AO"
+  - trigger: "RU"
     replace: "Our"
     word: true
   - trigger: "ud"
@@ -2021,28 +2009,28 @@ matches:
   - trigger: "BA"
     replace: "Air"
     word: true
-  - trigger: "wf"
+  - trigger: "wg"
     replace: "well"
     word: true
-  - trigger: "WF"
+  - trigger: "WG"
     replace: "Well"
     word: true
-  - trigger: "fw"
+  - trigger: "gw"
     replace: "well"
     word: true
-  - trigger: "FW"
+  - trigger: "GW"
     replace: "Well"
     word: true
-  - trigger: "aj"
+  - trigger: "ao"
     replace: "also"
     word: true
-  - trigger: "AJ"
+  - trigger: "AO"
     replace: "Also"
     word: true
-  - trigger: "ja"
+  - trigger: "oa"
     replace: "also"
     word: true
-  - trigger: "JA"
+  - trigger: "OA"
     replace: "Also"
     word: true
   - trigger: "py"
@@ -2117,16 +2105,16 @@ matches:
   - trigger: "CR"
     replace: "Read"
     word: true
-  - trigger: "hg"
+  - trigger: "hc"
     replace: "hand"
     word: true
-  - trigger: "HG"
+  - trigger: "HC"
     replace: "Hand"
     word: true
-  - trigger: "gh"
+  - trigger: "ch"
     replace: "hand"
     word: true
-  - trigger: "GH"
+  - trigger: "CH"
     replace: "Hand"
     word: true
   - trigger: "pr"
@@ -2165,16 +2153,16 @@ matches:
   - trigger: "PS"
     replace: "Spell"
     word: true
-  - trigger: "ak"
+  - trigger: "aj"
     replace: "add"
     word: true
-  - trigger: "AK"
+  - trigger: "AJ"
     replace: "Add"
     word: true
-  - trigger: "ka"
+  - trigger: "ja"
     replace: "add"
     word: true
-  - trigger: "KA"
+  - trigger: "JA"
     replace: "Add"
     word: true
   - trigger: "vn"
@@ -2201,16 +2189,16 @@ matches:
   - trigger: "FL"
     replace: "Land"
     word: true
-  - trigger: "hq"
+  - trigger: "hf"
     replace: "here"
     word: true
-  - trigger: "HQ"
+  - trigger: "HF"
     replace: "Here"
     word: true
-  - trigger: "qh"
+  - trigger: "fh"
     replace: "here"
     word: true
-  - trigger: "QH"
+  - trigger: "FH"
     replace: "Here"
     word: true
   - trigger: "mj"
@@ -2237,16 +2225,16 @@ matches:
   - trigger: "GB"
     replace: "Big"
     word: true
-  - trigger: "hv"
+  - trigger: "hg"
     replace: "high"
     word: true
-  - trigger: "HV"
+  - trigger: "HG"
     replace: "High"
     word: true
-  - trigger: "vh"
+  - trigger: "gh"
     replace: "high"
     word: true
-  - trigger: "VH"
+  - trigger: "GH"
     replace: "High"
     word: true
   - trigger: "sq"
@@ -2273,28 +2261,28 @@ matches:
   - trigger: "BF"
     replace: "Follow"
     word: true
-  - trigger: "aq"
+  - trigger: "ak"
     replace: "act"
+    word: true
+  - trigger: "AK"
+    replace: "Act"
+    word: true
+  - trigger: "ka"
+    replace: "act"
+    word: true
+  - trigger: "KA"
+    replace: "Act"
+    word: true
+  - trigger: "aq"
+    replace: "ask"
     word: true
   - trigger: "AQ"
-    replace: "Act"
-    word: true
-  - trigger: "qa"
-    replace: "act"
-    word: true
-  - trigger: "QA"
-    replace: "Act"
-    word: true
-  - trigger: "av"
-    replace: "ask"
-    word: true
-  - trigger: "AV"
     replace: "Ask"
     word: true
-  - trigger: "va"
+  - trigger: "qa"
     replace: "ask"
     word: true
-  - trigger: "VA"
+  - trigger: "QA"
     replace: "Ask"
     word: true
   - trigger: "mk"
@@ -2321,16 +2309,16 @@ matches:
   - trigger: "GC"
     replace: "Change"
     word: true
-  - trigger: "wg"
+  - trigger: "wj"
     replace: "went"
     word: true
-  - trigger: "WG"
+  - trigger: "WJ"
     replace: "Went"
     word: true
-  - trigger: "gw"
+  - trigger: "jw"
     replace: "went"
     word: true
-  - trigger: "GW"
+  - trigger: "JW"
     replace: "Went"
     word: true
   - trigger: "lj"
@@ -2381,16 +2369,16 @@ matches:
   - trigger: "KN"
     replace: "Need"
     word: true
-  - trigger: "hx"
+  - trigger: "hq"
     replace: "house"
     word: true
-  - trigger: "HX"
+  - trigger: "HQ"
     replace: "House"
     word: true
-  - trigger: "xh"
+  - trigger: "qh"
     replace: "house"
     word: true
-  - trigger: "XH"
+  - trigger: "QH"
     replace: "House"
     word: true
   - trigger: "pi"
@@ -2417,28 +2405,28 @@ matches:
   - trigger: "YT"
     replace: "Try"
     word: true
-  - trigger: "ax"
+  - trigger: "av"
     replace: "again"
+    word: true
+  - trigger: "AV"
+    replace: "Again"
+    word: true
+  - trigger: "va"
+    replace: "again"
+    word: true
+  - trigger: "VA"
+    replace: "Again"
+    word: true
+  - trigger: "ax"
+    replace: "animal"
     word: true
   - trigger: "AX"
-    replace: "Again"
-    word: true
-  - trigger: "xa"
-    replace: "again"
-    word: true
-  - trigger: "XA"
-    replace: "Again"
-    word: true
-  - trigger: "az"
-    replace: "animal"
-    word: true
-  - trigger: "AZ"
     replace: "Animal"
     word: true
-  - trigger: "za"
+  - trigger: "xa"
     replace: "animal"
     word: true
-  - trigger: "ZA"
+  - trigger: "XA"
     replace: "Animal"
     word: true
   - trigger: "pn"
@@ -2465,16 +2453,16 @@ matches:
   - trigger: "PM"
     replace: "Mother"
     word: true
-  - trigger: "wj"
+  - trigger: "wm"
     replace: "world"
     word: true
-  - trigger: "WJ"
+  - trigger: "WM"
     replace: "World"
     word: true
-  - trigger: "jw"
+  - trigger: "mw"
     replace: "world"
     word: true
-  - trigger: "JW"
+  - trigger: "MW"
     replace: "World"
     word: true
   - trigger: "nq"
@@ -2537,16 +2525,16 @@ matches:
   - trigger: "GF"
     replace: "Father"
     word: true
-  - trigger: "hy"
+  - trigger: "hv"
     replace: "head"
     word: true
-  - trigger: "HY"
+  - trigger: "HV"
     replace: "Head"
     word: true
-  - trigger: "yh"
+  - trigger: "vh"
     replace: "head"
     word: true
-  - trigger: "YH"
+  - trigger: "VH"
     replace: "Head"
     word: true
   - trigger: "sx"
@@ -2621,16 +2609,16 @@ matches:
   - trigger: "UF"
     replace: "Found"
     word: true
-  - trigger: "nx"
+  - trigger: "az"
     replace: "answer"
     word: true
-  - trigger: "NX"
+  - trigger: "AZ"
     replace: "Answer"
     word: true
-  - trigger: "xn"
+  - trigger: "za"
     replace: "answer"
     word: true
-  - trigger: "XN"
+  - trigger: "ZA"
     replace: "Answer"
     word: true
   - trigger: "sz"
@@ -2897,16 +2885,16 @@ matches:
   - trigger: "JI"
     replace: "Since"
     word: true
-  - trigger: "hz"
+  - trigger: "hx"
     replace: "hard"
     word: true
-  - trigger: "HZ"
+  - trigger: "HX"
     replace: "Hard"
     word: true
-  - trigger: "zh"
+  - trigger: "xh"
     replace: "hard"
     word: true
-  - trigger: "ZH"
+  - trigger: "XH"
     replace: "Hard"
     word: true
   - trigger: "rq"
@@ -2945,16 +2933,16 @@ matches:
   - trigger: "JO"
     replace: "Story"
     word: true
-  - trigger: "wm"
+  - trigger: "wp"
     replace: "saw"
     word: true
-  - trigger: "WM"
+  - trigger: "WP"
     replace: "Saw"
     word: true
-  - trigger: "mw"
+  - trigger: "pw"
     replace: "saw"
     word: true
-  - trigger: "MW"
+  - trigger: "PW"
     replace: "Saw"
     word: true
   - trigger: "fp"
@@ -3041,16 +3029,16 @@ matches:
   - trigger: "VD"
     replace: "Don't"
     word: true
-  - trigger: "wp"
+  - trigger: "wq"
     replace: "while"
     word: true
-  - trigger: "WP"
+  - trigger: "WQ"
     replace: "While"
     word: true
-  - trigger: "pw"
+  - trigger: "qw"
     replace: "while"
     word: true
-  - trigger: "PW"
+  - trigger: "QW"
     replace: "While"
     word: true
   - trigger: "pj"
@@ -3077,16 +3065,16 @@ matches:
   - trigger: "KC"
     replace: "Close"
     word: true
-  - trigger: "nz"
+  - trigger: "nx"
     replace: "night"
     word: true
-  - trigger: "NZ"
+  - trigger: "NX"
     replace: "Night"
     word: true
-  - trigger: "zn"
+  - trigger: "xn"
     replace: "night"
     word: true
-  - trigger: "ZN"
+  - trigger: "XN"
     replace: "Night"
     word: true
   - trigger: "rz"
@@ -3173,28 +3161,28 @@ matches:
   - trigger: "XO"
     replace: "Together"
     word: true
-  - trigger: "xb"
+  - trigger: "nz"
     replace: "next"
     word: true
-  - trigger: "XB"
+  - trigger: "NZ"
     replace: "Next"
     word: true
-  - trigger: "bx"
+  - trigger: "zn"
     replace: "next"
     word: true
-  - trigger: "BX"
+  - trigger: "ZN"
     replace: "Next"
     word: true
-  - trigger: "wq"
+  - trigger: "wv"
     replace: "white"
     word: true
-  - trigger: "WQ"
+  - trigger: "WV"
     replace: "White"
     word: true
-  - trigger: "qw"
+  - trigger: "vw"
     replace: "white"
     word: true
-  - trigger: "QW"
+  - trigger: "VW"
     replace: "White"
     word: true
   - trigger: "cq"
@@ -3233,16 +3221,16 @@ matches:
   - trigger: "KG"
     replace: "Got"
     word: true
-  - trigger: "wu"
+  - trigger: "kq"
     replace: "walk"
     word: true
-  - trigger: "WU"
+  - trigger: "KQ"
     replace: "Walk"
     word: true
-  - trigger: "uw"
+  - trigger: "qk"
     replace: "walk"
     word: true
-  - trigger: "UW"
+  - trigger: "QK"
     replace: "Walk"
     word: true
   - trigger: "xp"
@@ -3281,16 +3269,16 @@ matches:
   - trigger: "ZO"
     replace: "Often"
     word: true
-  - trigger: "wv"
+  - trigger: "yf"
     replace: "always"
     word: true
-  - trigger: "WV"
+  - trigger: "YF"
     replace: "Always"
     word: true
-  - trigger: "vw"
+  - trigger: "fy"
     replace: "always"
     word: true
-  - trigger: "VW"
+  - trigger: "FY"
     replace: "Always"
     word: true
   - trigger: "ui"
@@ -3304,6 +3292,18 @@ matches:
     word: true
   - trigger: "IU"
     replace: "Music"
+    word: true
+  - trigger: "hy"
+    replace: "those"
+    word: true
+  - trigger: "HY"
+    replace: "Those"
+    word: true
+  - trigger: "yh"
+    replace: "those"
+    word: true
+  - trigger: "YH"
+    replace: "Those"
     word: true
   - trigger: "bq"
     replace: "both"
@@ -3329,16 +3329,16 @@ matches:
   - trigger: "ZM"
     replace: "Mark"
     word: true
-  - trigger: "bz"
+  - trigger: "bx"
     replace: "book"
     word: true
-  - trigger: "BZ"
+  - trigger: "BX"
     replace: "Book"
     word: true
-  - trigger: "zb"
+  - trigger: "xb"
     replace: "book"
     word: true
-  - trigger: "ZB"
+  - trigger: "XB"
     replace: "Book"
     word: true
   - trigger: "uj"
@@ -3437,28 +3437,28 @@ matches:
   - trigger: "QG"
     replace: "Group"
     word: true
-  - trigger: "yf"
+  - trigger: "yg"
     replace: "carry"
     word: true
-  - trigger: "YF"
+  - trigger: "YG"
     replace: "Carry"
     word: true
-  - trigger: "fy"
+  - trigger: "gy"
     replace: "carry"
     word: true
-  - trigger: "FY"
+  - trigger: "GY"
     replace: "Carry"
     word: true
-  - trigger: "kq"
+  - trigger: "ku"
     replace: "took"
     word: true
-  - trigger: "KQ"
+  - trigger: "KU"
     replace: "Took"
     word: true
-  - trigger: "qk"
+  - trigger: "uk"
     replace: "took"
     word: true
-  - trigger: "QK"
+  - trigger: "UK"
     replace: "Took"
     word: true
   - trigger: "ix"
@@ -3485,16 +3485,16 @@ matches:
   - trigger: "XF"
     replace: "Friend"
     word: true
-  - trigger: "gx"
+  - trigger: "bz"
     replace: "began"
     word: true
-  - trigger: "GX"
+  - trigger: "BZ"
     replace: "Began"
     word: true
-  - trigger: "xg"
+  - trigger: "zb"
     replace: "began"
     word: true
-  - trigger: "XG"
+  - trigger: "ZB"
     replace: "Began"
     word: true
   - trigger: "iy"
@@ -3521,40 +3521,52 @@ matches:
   - trigger: "ZF"
     replace: "Fish"
     word: true
-  - trigger: "uk"
-    replace: "mountain"
-    word: true
-  - trigger: "UK"
-    replace: "Mountain"
-    word: true
-  - trigger: "ku"
-    replace: "mountain"
-    word: true
-  - trigger: "KU"
-    replace: "Mountain"
-    word: true
   - trigger: "uq"
-    replace: "cut"
+    replace: "mountain"
     word: true
   - trigger: "UQ"
-    replace: "Cut"
+    replace: "Mountain"
     word: true
   - trigger: "qu"
-    replace: "cut"
+    replace: "mountain"
     word: true
   - trigger: "QU"
-    replace: "Cut"
+    replace: "Mountain"
+    word: true
+  - trigger: "hz"
+    replace: "north"
+    word: true
+  - trigger: "HZ"
+    replace: "North"
+    word: true
+  - trigger: "zh"
+    replace: "north"
+    word: true
+  - trigger: "ZH"
+    replace: "North"
     word: true
   - trigger: "uv"
-    replace: "sure"
+    replace: "cut"
     word: true
   - trigger: "UV"
-    replace: "Sure"
+    replace: "Cut"
     word: true
   - trigger: "vu"
-    replace: "sure"
+    replace: "cut"
     word: true
   - trigger: "VU"
+    replace: "Cut"
+    word: true
+  - trigger: "ux"
+    replace: "sure"
+    word: true
+  - trigger: "UX"
+    replace: "Sure"
+    word: true
+  - trigger: "xu"
+    replace: "sure"
+    word: true
+  - trigger: "XU"
     replace: "Sure"
     word: true
   - trigger: "dz"
@@ -3581,16 +3593,16 @@ matches:
   - trigger: "ZI"
     replace: "Main"
     word: true
-  - trigger: "ux"
+  - trigger: "uz"
     replace: "enough"
     word: true
-  - trigger: "UX"
+  - trigger: "UZ"
     replace: "Enough"
     word: true
-  - trigger: "xu"
+  - trigger: "zu"
     replace: "enough"
     word: true
-  - trigger: "XU"
+  - trigger: "ZU"
     replace: "Enough"
     word: true
   - trigger: "pv"
@@ -3605,29 +3617,17 @@ matches:
   - trigger: "VP"
     replace: "Plain"
     word: true
-  - trigger: "gy"
+  - trigger: "gx"
     replace: "girl"
     word: true
-  - trigger: "GY"
+  - trigger: "GX"
     replace: "Girl"
     word: true
-  - trigger: "yg"
+  - trigger: "xg"
     replace: "girl"
     word: true
-  - trigger: "YG"
+  - trigger: "XG"
     replace: "Girl"
-    word: true
-  - trigger: "uz"
-    replace: "usual"
-    word: true
-  - trigger: "UZ"
-    replace: "Usual"
-    word: true
-  - trigger: "zu"
-    replace: "usual"
-    word: true
-  - trigger: "ZU"
-    replace: "Usual"
     word: true
   - trigger: "yj"
     replace: "young"

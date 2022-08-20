@@ -82,11 +82,13 @@ const readline = require("readline");
         for (y of alphabet) {
           const keys = x + y;
           if (wordAvailable(word, keys) === true) {
-            addWord(word, keys);
-            return;
+            // addWord(word, keys);
+            console.log(keys);
+            // return;
           }
         }
       }
+      throw new Error(keys);
     });
     await events.once(rl, "close");
 
