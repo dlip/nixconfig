@@ -1,5 +1,5 @@
 be b
-see c
+can c
 do d
 the e
 for f
@@ -14,9 +14,9 @@ no n
 on o
 up p
 question q
-or r
+round r
 she s
-to t
+the t
 you u
 have v
 with w
@@ -53,41 +53,40 @@ up up
 us us
 VS vs
 we we
-eye ai
-who wo
-how hw
-were wr
-what wt
-when wn
-where wf
-would wu
-was ws
-from fm
-him im
-his hs
-all al
-that th
-this ts
-they te
-her hr
-said sd
-but bu
-which wc
-I'll il
-had hd
-not nt
-with wi
+the
+and
+you
+that
+was
+for
 are
+with
+his
+they
 one
+have
+this
+from
+had
+hot
+but
 some
+what
 there
 can
 out
 other
+were
+all
 your
+when
 use
 word
+how
+said
 each
+she
+which
 their
 time
 will
@@ -96,14 +95,18 @@ about
 many
 then
 them
+would
 write
 like
-these tz
+these
+her
 long
 make
 thing
-two tu
-has hz
+see
+him
+two
+has
 look
 more
 day
@@ -113,6 +116,7 @@ did
 sound
 most
 number
+who
 over
 know
 water
@@ -135,6 +139,7 @@ get
 place
 made
 live
+where
 after
 back
 little
@@ -152,6 +157,7 @@ under
 name
 very
 through
+just
 form
 much
 great
@@ -200,6 +206,7 @@ high
 such
 follow
 act
+why
 ask
 men
 change
@@ -351,6 +358,7 @@ short
 numeral
 class
 wind
+question
 happen
 complete
 ship
