@@ -85,6 +85,7 @@
       tesseract4
       tldr
       traceroute
+      unrar
       wireshark-cli
       ttyper
       typespeed

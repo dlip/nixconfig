@@ -62,7 +62,7 @@
     yacreader
     # yubikey-manager-qt #broken
     # yubioath-desktop #broken
-    zathura
+    # zathura # broken
     zoom-us
   ];
 }
