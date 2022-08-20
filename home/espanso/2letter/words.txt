@@ -1,28 +1,26 @@
 be b
 can c
 do d
-the e
+each e
 for f
 get g
 he h
 I i
 just j
-OK k
-will l
+know k
+like l
 me m
 no n
 on o
-up p
+people p
 question q
 round r
 she s
 the t
-you u
-have v
+use u
+very v
 with w
-and x
-why y
-as z
+you y
 ah ah
 am am
 an an
@@ -53,14 +51,10 @@ up up
 us us
 VS vs
 we we
-the
 and
-you
 that
 was
-for
 are
-with
 his
 they
 one
@@ -73,19 +67,15 @@ but
 some
 what
 there
-can
 out
 other
 were
 all
 your
 when
-use
 word
 how
 said
-each
-she
 which
 their
 time
@@ -97,7 +87,6 @@ then
 them
 would
 write
-like
 these
 her
 long
@@ -118,12 +107,10 @@ most
 number
 who
 over
-know
 water
 than
 call
 first
-people
 may
 down
 side
@@ -135,7 +122,6 @@ new
 work
 part
 take
-get
 place
 made
 live
@@ -144,7 +130,6 @@ after
 back
 little
 only
-round
 man
 year
 came
@@ -155,9 +140,7 @@ give
 our
 under
 name
-very
 through
-just
 form
 much
 great
@@ -358,7 +341,6 @@ short
 numeral
 class
 wind
-question
 happen
 complete
 ship

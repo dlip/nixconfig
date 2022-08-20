@@ -67,25 +67,21 @@ const readline = require("readline");
 
       // look for combination in word itself
       const options = new Map();
-      for (x of word) {
-        for (y of word.split("").reverse()) {
-          const keys = x + y;
-          if (wordAvailable(word, keys) === true) {
-            addWord(word, keys);
-            return;
-          }
+      const x = word[0];
+      for (y of word.split("").reverse()) {
+        const keys = x + y;
+        if (wordAvailable(word, keys) === true) {
+          addWord(word, keys);
+          return;
         }
       }
 
       // look for combination of a letter from the word plus any other letter
-      for (x of word) {
-        for (y of alphabet) {
-          const keys = x + y;
-          if (wordAvailable(word, keys) === true) {
-            // addWord(word, keys);
-            console.log(keys);
-            // return;
-          }
+      for (y of alphabet) {
+        const keys = x + y;
+        if (wordAvailable(word, keys) === true) {
+          addWord(word, keys);
+          return;
         }
       }
       throw new Error(keys);
