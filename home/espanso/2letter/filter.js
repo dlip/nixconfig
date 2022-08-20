@@ -73,12 +73,15 @@ const readline = require("readline");
         addWord(word, x);
         return;
       }
-      // look for combination in word itself
-      for (y of word.split("").reverse()) {
-        const keys = x + y;
-        if (wordAvailable(word, keys) === true) {
-          addWord(word, keys);
-          return;
+      // look for combination in word itself, using the alphabet to prioritize most comfortable
+      const tail = word.slice(1);
+      for (y of alphabet) {
+        if (tail.includes(y)) {
+          const keys = x + y;
+          if (wordAvailable(word, keys) === true) {
+            addWord(word, keys);
+            return;
+          }
         }
       }
 
