@@ -44,8 +44,6 @@ const readline = require("readline");
     // ng is No Good combos to exclude from options
     const ng = new Map(
       [
-        // no is a palindrome with on
-        "no",
         // awkward for colmak
         "qz",
         "pd",
