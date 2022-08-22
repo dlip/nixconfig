@@ -1,14 +1,16 @@
 a ar
 I ei
+I'm im I've I'll
 an an
 as as
 at at
 be be
 by by
 do do did doing
+don't dn didn't
 go go
 he he his him
-hi hi
+hi hi hey g'day
 if if
 in in
 is is isn't
@@ -31,7 +33,6 @@ but bu
 can cn can't
 could cd couldn't
 day dy days
-don't dn didn't
 for fr
 get ge got getting
 how ho
@@ -51,6 +52,7 @@ was ws
 way wa
 who wo
 you yu your yours
+you're yr you've you'll
 also ac
 back ba
 come ce came coming
@@ -75,8 +77,9 @@ that th those
 them tm
 then tu
 they ty their theirs
+they're tr they've they'll
 this ts these
-time tr times
+time tf times
 want wf wanted wants
 well wl
 what wh
@@ -85,7 +88,7 @@ will wi won't
 would wd wouldn't
 with wp
 work wr worked working
-year yr years
+year ye years
 about au
 after ae
 first fs
