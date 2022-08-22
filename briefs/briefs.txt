@@ -59,14 +59,14 @@ from fm
 give gi gave giving
 good gd
 have ha had having
-into ir
+into iu
 just jt
 know kn knew knows
 like le liked likes
-look lo looked looking
+look lk looked looking
 make ma made making
 most ms
-only oc
+only ol
 over ov
 some sn
 take tk took taking
@@ -76,7 +76,7 @@ them tm
 then tu
 they ty their theirs
 this ts these
-time tf
+time tr times
 want wf wanted wants
 well wl
 what wh
