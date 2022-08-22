@@ -10,9 +10,9 @@ go go
 he he
 if if
 in in
-it it
-me me
-my my
+is is
+it it its its
+me me my mine
 no nu
 of of
 on on
@@ -28,19 +28,17 @@ and ad
 any ay
 but bu
 can cn
-day dy
+day dy days
 for fr
 get ge
-her hr
-him hi
-his hs
+her hr her hers
+him hi his his
 how ho
-its is
 new ne
 not nt
 now nw
 one oe
-our ou
+our ou our ours
 out oa
 say se
 see st
@@ -50,7 +48,7 @@ two tw
 use ue
 way wa
 who wo
-you yo
+you yu your yours
 also ac
 back ba
 come ce
@@ -85,7 +83,6 @@ will wi
 with wp
 work wr
 year ye
-your yr
 about au
 after ae
 could cu

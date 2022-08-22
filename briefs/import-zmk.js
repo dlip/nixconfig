@@ -131,14 +131,14 @@ function mapBindings(x) {
 `;
       }
       if (right) {
-        combos += `    combo_sp${macro} {
+        combos += `    combo_r${macro} {
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <${positions} P_RALT>;
       bindings = <&r${macro}>;
     };
-    combo_ls${macro} {
+    combo_rs${macro} {
       timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <${positions} P_RALT P_SHFT>;
+      key-positions = <${positions} P_RALT P_SPC>;
       bindings = <&rs${macro}>;
     };
 `;
