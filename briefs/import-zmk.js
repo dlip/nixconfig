@@ -54,7 +54,7 @@ function mapBindings(x) {
     let used = {};
 
     rl.on("line", (line) => {
-      let [word, keys] = line.split(" ");
+      let [word, keys, left, right] = line.split(" ");
       let index = keys.split("").sort().join("");
       if (used[index]) {
         throw new Error(
@@ -76,6 +76,34 @@ function mapBindings(x) {
         bindings = <&sk LSHIFT ${bindings} &kp SPACE>;
     )
 `;
+      if (left) {
+        const leftBindings = left.split("").map(mapBindings).join(" ");
+        macros += `    ZMK_MACRO(l${macro},
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <${leftBindings} &kp SPACE>;
+    )
+    ZMK_MACRO(ls${macro},
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT ${leftBindings} &kp SPACE>;
+    )
+`;
+      }
+      if (right) {
+        const rightBindings = right.split("").map(mapBindings).join(" ");
+        macros += `    ZMK_MACRO(r${macro},
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <${rightBindings} &kp SPACE>;
+    )
+    ZMK_MACRO(rs${macro},
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT ${rightBindings} &kp SPACE>;
+    )
+`;
+      }
 
       const positions = "P_" + inputs.join(" P_");
       combos += `    combo_sp${macro} {
@@ -89,6 +117,32 @@ function mapBindings(x) {
       bindings = <&sh${macro}>;
     };
 `;
+      if (left) {
+        combos += `    combo_l${macro} {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <${positions} P_LALT>;
+      bindings = <&l${macro}>;
+    };
+    combo_ls${macro} {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <${positions} P_LALT P_SHFT>;
+      bindings = <&ls${macro}>;
+    };
+`;
+      }
+      if (right) {
+        combos += `    combo_sp${macro} {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <${positions} P_RALT>;
+      bindings = <&r${macro}>;
+    };
+    combo_ls${macro} {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <${positions} P_RALT P_SHFT>;
+      bindings = <&rs${macro}>;
+    };
+`;
+      }
     });
 
     await events.once(rl, "close");

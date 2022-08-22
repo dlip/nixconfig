@@ -20,14 +20,22 @@ const readline = require("readline");
       return true;
     }
 
-    function addWord(word, keys) {
+    function addWord(word, keys, left, right) {
       const sortedKeys = keys.split("").sort().join("");
       const available = wordAvailable(word, keys);
       if (available !== true) {
         throw available;
       }
       used.set(sortedKeys, word);
-      console.log(word, keys);
+      let output = word + " " + keys;
+      if (left) {
+        output += " " + left;
+      }
+      if (right) {
+        output += " " + right;
+      }
+
+      console.log(output);
     }
 
     // alphabet sorted by colemak-dh comfort
@@ -86,11 +94,14 @@ const readline = require("readline");
       crlfDelay: Infinity,
     });
     rl.on("line", (line) => {
-      let [word, keys] = line.split(" ");
+      let [word, keys, left, right] = line.split(" ");
+      if (keys === "xx") {
+        keys = undefined;
+      }
       if (!keys) {
         keys = word;
       } else {
-        addWord(word, keys);
+        addWord(word, keys, left, right);
         return;
       }
 
@@ -102,7 +113,7 @@ const readline = require("readline");
         if (tail.includes(y)) {
           const keys = x + y;
           if (wordAvailable(word, keys) === true) {
-            addWord(word, keys);
+            addWord(word, keys, left, right);
             return;
           }
         }
@@ -112,7 +123,7 @@ const readline = require("readline");
       for (y of alphabet) {
         const keys = x + y;
         if (wordAvailable(word, keys) === true) {
-          addWord(word, keys);
+          addWord(word, keys, left, right);
           return;
         }
       }

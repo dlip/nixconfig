@@ -469,6 +469,16 @@
         tap-ms = <MACRO_TAP>;
         bindings = <&sk LSHIFT &kp M &kp Y &kp SPACE>;
     )
+    ZMK_MACRO(lm_my,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp M &kp I &kp N &kp E &kp SPACE>;
+    )
+    ZMK_MACRO(lsm_my,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&sk LSHIFT &kp M &kp I &kp N &kp E &kp SPACE>;
+    )
     ZMK_MACRO(spm_np,
         wait-ms = <MACRO_WAIT>;
         tap-ms = <MACRO_TAP>;
@@ -3309,6 +3319,16 @@
       timeout-ms = <COMBO_TIMEOUT>;
       key-positions = <P_M P_Y P_SHFT>;
       bindings = <&shm_my>;
+    };
+    combo_lm_my {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_M P_Y P_LALT>;
+      bindings = <&lm_my>;
+    };
+    combo_lsm_my {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_M P_Y P_LALT P_SHFT>;
+      bindings = <&lsm_my>;
     };
     combo_spm_np {
       timeout-ms = <COMBO_TIMEOUT>;

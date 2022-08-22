@@ -16,7 +16,7 @@ in in
 is is
 it it
 me me
-my my
+my my mine
 np np
 no nx
 on ox
@@ -35,7 +35,7 @@ we we
 yo yo
 the
 and
-you
+you xx yours
 that
 was
 for

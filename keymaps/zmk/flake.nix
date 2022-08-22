@@ -72,7 +72,7 @@
             checkPhase = "";
             text = ''
               cd config
-              node import-chords.js ../../../home/espanso/2letter/briefs.txt
+              node ../../../briefs/import-zmk.js ../../../briefs/briefs.txt
               cd ..
               source ${zephyrDir}/zephyr-env.sh
               west build -p -s ${zmkDir}/app -b ${board} -d build/shield_${side} -- -DSHIELD=${shield}_${side} -DKEYMAP=${keymap} -DZMK_CONFIG=$PWD/${configDir}
