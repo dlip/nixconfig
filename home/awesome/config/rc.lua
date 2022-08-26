@@ -258,7 +258,7 @@ root.buttons(gears.table.join(
 
 -- {{{ Key bindings
 globalkeys = gears.table.join(
-  awful.key({ modkey, }, "h", hotkeys_popup.show_help,
+  awful.key({ modkey, "Shift" }, "h", hotkeys_popup.show_help,
     { description = "show help", group = "awesome" }),
   awful.key({ modkey, }, "Up", awful.tag.viewprev,
     { description = "view previous", group = "tag" }),
@@ -356,10 +356,10 @@ globalkeys = gears.table.join(
     { description = "Emoji menu", group = "launcher" }),
   awful.key({ modkey }, "c", function() awful.util.spawn_with_shell("CM_LAUNCHER=rofi clipmenu") end,
     { description = "Clip menu", group = "launcher" }),
-  awful.key({ modkey }, "p", function() awful.util.spawn_with_shell("rofi -show-icons -modi windowcd -show windowcd") end
-    ,
+  awful.key({ modkey, "Shift" }, "f",
+    function() awful.util.spawn_with_shell("rofi -show-icons -modi windowcd -show windowcd") end,
     { description = "Select window", group = "launcher" }),
-  awful.key({ modkey, "Shift" }, "p",
+  awful.key({ modkey }, "f",
     function() awful.util.spawn_with_shell("rofi -show-icons -modi window -show window") end,
     { description = "Select window global", group = "launcher" }),
   awful.key({ modkey }, "e",
@@ -430,16 +430,29 @@ clientkeys = gears.table.join(
     end,
     { description = "(un)maximize horizontally", group = "client" }),
   awful.key({}, "XF86AudioPlay", function() awful.util.spawn_with_shell("playerctl play-pause") end),
+  awful.key({ modkey }, "p", function() awful.util.spawn_with_shell("playerctl play-pause") end),
   awful.key({}, "XF86AudioNext", function() awful.util.spawn_with_shell("playerctl next") end),
+  awful.key({ modkey }, "h", function() awful.util.spawn_with_shell("playerctl next") end),
   awful.key({}, "XF86AudioPrev", function() awful.util.spawn_with_shell("playerctl previous") end),
+  awful.key({ modkey }, "f", function() awful.util.spawn_with_shell("playerctl previous") end),
   awful.key({}, "XF86AudioStop", function() awful.util.spawn_with_shell("playerctl stop") end),
+  awful.key({ modkey }, "d", function() awful.util.spawn_with_shell("playerctl stop") end),
   awful.key({}, "XF86AudioLowerVolume",
+    function() awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5% && volnoti-show $(pamixer --get-volume)") end)
+  ,
+  awful.key({ modkey }, "m",
     function() awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ -5% && volnoti-show $(pamixer --get-volume)") end)
   ,
   awful.key({}, "XF86AudioRaiseVolume",
     function() awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5% && volnoti-show $(pamixer --get-volume)") end)
   ,
+  awful.key({ modkey }, "k",
+    function() awful.util.spawn_with_shell("pactl set-sink-volume @DEFAULT_SINK@ +5% && volnoti-show $(pamixer --get-volume)") end)
+  ,
   awful.key({}, "XF86AudioMute",
+    function() awful.util.spawn_with_shell("pactl set-sink-mute @DEFAULT_SINK@ && volnoti-show $(pamixer --get-volume)") end)
+  ,
+  awful.key({ modkey }, "v",
     function() awful.util.spawn_with_shell("pactl set-sink-mute @DEFAULT_SINK@ && volnoti-show $(pamixer --get-volume)") end)
   ,
   awful.key({}, "XF86MonBrightnessUp", function() awful.util.spawn_with_shell("brightnessctl set +5%") end),
@@ -548,7 +561,8 @@ awful.rules.rules = {
       "Tor Browser", -- Needs a fixed window size to avoid fingerprinting by screen size.
       "Wpa_gui",
       "veromix",
-      "xtightvncviewer" },
+      "xtightvncviewer"
+    },
 
     -- Note that the name property shown in xprop might be set slightly after creation of the client
     -- and the name shown there might not match defined rules here.

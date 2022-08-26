@@ -216,7 +216,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dane = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" "networkmanager" "dialout" ]; # Enable ‘sudo’ for the user.
     shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 

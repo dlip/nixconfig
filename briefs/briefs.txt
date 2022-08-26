@@ -1,7 +1,10 @@
 a ar
 I ei
 I'm im I've I'll
+I've iv
+I'll il
 an an
+am am
 as as
 at at
 be be
@@ -14,7 +17,7 @@ hi hi hey g'day
 if if
 in in
 is is isn't
-it it its
+it it its it's
 me me my mine
 no nu
 of of
@@ -25,6 +28,9 @@ to to
 up up
 us us
 we we
+we're wr we've we'll
+we've wv
+we'll wl
 OK ok
 all al
 and ad
@@ -53,6 +59,8 @@ way wa
 who wo
 you yu your yours
 you're yr you've you'll
+you've yv
+you'll yl
 also ac
 back ba
 come ce came coming
@@ -66,28 +74,30 @@ just jt
 know kn knew knows
 like le liked likes
 look lk looked looking
-make ma made making
+make mk made making
 most ms
 only ol
 over ov
 some sn
 take tk took taking
-than tl
+than tc
 that th those
 them tm
 then tu
 they ty their theirs
-they're tr they've they'll
+they're tr
+they've tv
+they'll tl
 this ts these
 time tf times
 want wf wanted wants
-well wl
+well wg
 what wh
 when wu
 will wi won't
 would wd wouldn't
 with wp
-work wr worked working
+work wk worked working
 year ye years
 about au
 after ae
