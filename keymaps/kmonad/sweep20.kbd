@@ -43,22 +43,22 @@
   sal (sticky-key 1000 lalt)
   smt (sticky-key 1000 lmet)
 
-  a (tap-hold 200 a @fn)
-  r (tap-hold 200 r lalt)
-  s (tap-hold 200 s lmet)
-  t (tap-hold 200 t lctl)
+  a (tap-hold-next-release 200 a @fn)
+  r (tap-hold-next-release 200 r lalt)
+  s (tap-hold-next-release 200 s lmet)
+  t (tap-hold-next-release 200 t lctl)
 
-  n (tap-hold 200 n rctl)
-  e (tap-hold 200 e rmet)
-  i (tap-hold 200 i lalt)
-  o (tap-hold 200 o @med)
+  n (tap-hold-next-release 200 n rctl)
+  e (tap-hold-next-release 200 e rmet)
+  i (tap-hold-next-release 200 i lalt)
+  o (tap-hold-next-release 200 o @med)
 
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
   c (tap-hold 200 c C-c)
   d (tap-hold 200 d C-v)
 
-  spc (tap-hold 200 spc lsft)
+  spc (tap-hold-next-release 200 spc lsft)
   cpy C-c
   pst C-v
   cut C-x
