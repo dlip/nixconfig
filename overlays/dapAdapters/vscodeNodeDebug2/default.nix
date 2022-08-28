@@ -1,10 +1,10 @@
-{ lib, stdenv, src, nodejs, callPackage, pkgconfig, libsecret }:
+{ lib, stdenv, src, nodejs-16_x, callPackage, pkgconfig, libsecret }:
 let
-  nodeDependencies = ((callPackage ./nodeModules {}).shell.override {
+  nodeDependencies = ((callPackage ./nodeModules { nodejs = nodejs-16_x; }).shell.override {
     inherit src;
     buildInputs = [ pkgconfig libsecret ];
   }).nodeDependencies;
-  nodeDependenciesProd = ((callPackage ./nodeModulesProd {}).shell.override {
+  nodeDependenciesProd = ((callPackage ./nodeModulesProd { nodejs = nodejs-16_x; }).shell.override {
     inherit src;
   }).nodeDependencies;
 in
@@ -12,7 +12,7 @@ in
 stdenv.mkDerivation {
   name = "vscode-node-debug2";
   inherit src;
-  buildInputs = [nodejs];
+  buildInputs = [ nodejs-16_x ];
   buildPhase = ''
     ln -s ${nodeDependencies}/lib/node_modules ./node_modules
     npm run build
