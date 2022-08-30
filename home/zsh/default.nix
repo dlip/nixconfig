@@ -21,6 +21,7 @@
       x = "xplr";
       ls = "exa";
       find = "fd";
+      grc = "git reset $(git merge-base HEAD origin/main)";
     };
 
     initExtra = ''
