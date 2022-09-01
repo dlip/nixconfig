@@ -48,6 +48,9 @@
 
 (defalias
   na reserved
+  nav (layer-toggle nav)
+  num (layer-toggle num)
+
   x (tap-hold-next-release 200 x lalt)
   c (tap-hold-next-release 200 c lmet)
   d (tap-hold-next-release 200 d lctl)
@@ -56,11 +59,74 @@
   , (tap-hold-next-release 200 , lmet)
   . (tap-hold-next-release 200 . lalt)
 )
+
 (deflayer remap
 ;; base
           q             w       f         p     #|_|#    l            u        y           ;
 #|numshift|#  a     tab   r  esc  s   bspc  t   #|_|#  n  #|bspc|#  e   ret  i   del    o    #|numshift|#
         #|mirror|#     @x      @c       @d      #|_|#    @h           @,        @.       #|mirror|#
+                                                #|_|#
+                             up          b      #|_|#    h
+                        left   right   z   g    #|_|#  m   /
+                            down         v      #|_|#    k
+                                                #|_|#
+                                      #|na|#    #|_|#     @na
+                                     spc lsft   #|_|#  lsft  #|dup|#
+                                      @num      #|_|#     @nav
+                                                #|_|#
+                                        -       #|_|#     #|?|#
+                                    @na  @na    #|_|#  #|na|# @na
+                                       @na      #|_|#    #|esc|#
+
+;; numshift
+                     =   `    6  4   3   1      #|_|#                      #|=|#    #|?|#
+                     #|_|#     5       2        #|_|#
+                                                #|_|#
+                                       8        #|_|#
+                                     9   7      #|_|#
+                                       0        #|_|#
+                                                #|_|#
+                                       8        #|_|#
+                                     [   7      #|_|#
+                                       ]        #|_|#
+)
+
+(deflayer nav
+;; base
+          q            w       up        pgup   #|_|#    l            u        y           ;
+#|numshift|#  a    tab   r  left right home end #|_|#  n  #|home|#  e   ret  i   del    o    #|numshift|#
+        #|mirror|#    @x      down       pgdn   #|_|#    @h           @,        @.       #|mirror|#
+                                                #|_|#
+                             up          b      #|_|#    h
+                        left   right   z   g    #|_|#  m   /
+                            down         v      #|_|#    k
+                                                #|_|#
+                                      #|na|#    #|_|#     @na
+                                     spc lsft   #|_|#  lsft  #|dup|#
+                                      @na       #|_|#     @na
+                                                #|_|#
+                                        -       #|_|#     #|?|#
+                                    @na  @na    #|_|#  #|na|# @na
+                                       @na      #|_|#    #|esc|#
+
+;; numshift
+                     =   `    6  4   3   1      #|_|#                      #|=|#    #|?|#
+                     #|_|#     5       2        #|_|#
+                                                #|_|#
+                                       8        #|_|#
+                                     9   7      #|_|#
+                                       0        #|_|#
+                                                #|_|#
+                                       8        #|_|#
+                                     [   7      #|_|#
+                                       ]        #|_|#
+)
+
+(deflayer num
+;; base
+          q             w       f         p     #|_|#    7            8        9           ;
+#|numshift|#  a     tab   r  esc  s   bspc  t   #|_|#  4  #|bspc|#  5   ret  6   del    0    #|numshift|#
+        #|mirror|#     @x       @c       @d     #|_|#    1            2        3        #|mirror|#
                                                 #|_|#
                              up          b      #|_|#    h
                         left   right   z   g    #|_|#  m   /
