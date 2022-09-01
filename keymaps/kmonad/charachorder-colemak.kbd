@@ -50,6 +50,7 @@
   na reserved
   nav (layer-toggle nav)
   num (layer-toggle num)
+  fn (layer-toggle fn)
 
   x (tap-hold-next-release 200 x lalt)
   c (tap-hold-next-release 200 c lmet)
@@ -67,11 +68,11 @@
         #|mirror|#     @x      @c       @d      #|_|#    @h           @,        @.       #|mirror|#
                                                 #|_|#
                              up          b      #|_|#    h
-                        left   right   z   g    #|_|#  m   /
+                        left   right   z   g    #|_|#  m   '
                             down         v      #|_|#    k
                                                 #|_|#
-                                      #|na|#    #|_|#     @na
-                                     spc lsft   #|_|#  lsft  #|dup|#
+                                      #|na|#    #|_|#     @fn
+                                     spc lsft   #|_|#  rsft  #|dup|#
                                       @num      #|_|#     @nav
                                                 #|_|#
                                        @na      #|_|#     #|?|#
@@ -98,11 +99,11 @@
         #|mirror|#    @x      down       pgdn   #|_|#    @h           @,        @.       #|mirror|#
                                                 #|_|#
                              up          b      #|_|#    h
-                        left   right   z   g    #|_|#  m   /
+                        left   right   z   g    #|_|#  m   '
                             down         v      #|_|#    k
                                                 #|_|#
                                       #|na|#    #|_|#     @na
-                                     spc lsft   #|_|#  lsft  #|dup|#
+                                     spc lsft   #|_|#  rsft  #|dup|#
                                       @na       #|_|#     @na
                                                 #|_|#
                                        @na      #|_|#     #|?|#
@@ -133,8 +134,39 @@
                             down         v      #|_|#    -
                                                 #|_|#
                                       #|na|#    #|_|#     @na
-                                     spc lsft   #|_|#  lsft  #|dup|#
+                                     spc lsft   #|_|#  rsft  #|dup|#
                                       @na       #|_|#     @na
+                                                #|_|#
+                                       @na      #|_|#     #|?|#
+                                    @na  @na    #|_|#  #|na|# @na
+                                       @na      #|_|#    #|na|#
+
+;; numshift
+                     =   `    6  4   3   1      #|_|#                      #|=|#    #|?|#
+                     #|_|#     5       2        #|_|#
+                                                #|_|#
+                                       8        #|_|#
+                                     9   7      #|_|#
+                                       0        #|_|#
+                                                #|_|#
+                                       8        #|_|#
+                                     [   7      #|_|#
+                                       ]        #|_|#
+)
+
+(deflayer fn
+;; base
+          f11           f7       f8       f9    #|_|#    l            u        y           ;
+#|numshift|#  f10    f12  f4  esc f5   bspc f6  #|_|#  n  #|bspc|#  e   ret  i   del    o    #|numshift|#
+        #|mirror|#     f1      f2         f3    #|_|#    @h           @,        @.       #|mirror|#
+                                                #|_|#
+                             up        volu     #|_|#    h
+                        left   right  pp  next  #|_|#  m   '
+                            down       vold     #|_|#    k
+                                                #|_|#
+                                      #|na|#    #|_|#     @fn
+                                     spc lsft   #|_|#  rsft  #|dup|#
+                                      @num      #|_|#     @nav
                                                 #|_|#
                                        @na      #|_|#     #|?|#
                                     @na  @na    #|_|#  #|na|# @na
