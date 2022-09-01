@@ -58,21 +58,21 @@
 )
 (deflayer remap
 ;; base
-          q             w       f         p     #|_|#   l             u        y             ;
+          q             w       f         p     #|_|#    l            u        y           ;
 #|numshift|#  a     tab   r  esc  s   bspc  t   #|_|#  n  #|bspc|#  e   ret  i   del    o    #|numshift|#
         #|mirror|#     @x      @c       @d      #|_|#    @h           @,        @.       #|mirror|#
                                                 #|_|#
                              up          b      #|_|#    h
-                        left   right spc   g    #|_|#  m   /
+                        left   right   z   g    #|_|#  m   /
                             down         v      #|_|#    k
                                                 #|_|#
                                       #|na|#    #|_|#     @na
-                                      @na  @na     #|_|#   @na  #|dup|#
-                                        z       #|_|#     @na
+                                     spc lsft   #|_|#  lsft  #|dup|#
+                                      @na       #|_|#     @na
                                                 #|_|#
                                         -       #|_|#     #|?|#
-                                    lmet /      #|_|#  #|na|# rmet
-                                       esc      #|_|#    #|esc|#
+                                    @na  @na    #|_|#  #|na|# @na
+                                       @na      #|_|#    #|esc|#
 
 ;; numshift
                      =   `    6  4   3   1      #|_|#                      #|=|#    #|?|#
