@@ -143,6 +143,7 @@ local keymap = {
     y = { "<Plug>VimwikiMakeYesterdayDiaryNote", "Diary Yesterday" },
   },
   x = { "<cmd>Bdelete<CR>", "Close Buffer" },
+  y = { function() vim.fn.setreg("+", vim.fn.expand("%")) end, "Yank current filename" },
 }
 
 wk.register(keymap, { prefix = "<leader>" })
