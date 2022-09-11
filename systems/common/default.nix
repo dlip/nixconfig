@@ -32,6 +32,7 @@ in
   system.autoUpgrade = {
     enable = true;
     flake = "github:dlip/nixconfig";
+    flags = [ "--no-write-lock-file" ];
   };
 
   nixpkgs.config.allowUnfree = true;
