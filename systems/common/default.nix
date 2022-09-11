@@ -31,7 +31,7 @@ in
 
   system.autoUpgrade = {
     enable = true;
-    flake = "gihub:dlip/nixconfig";
+    flake = "github:dlip/nixconfig";
   };
 
   nixpkgs.config.allowUnfree = true;
