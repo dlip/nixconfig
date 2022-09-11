@@ -29,6 +29,11 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  system.autoUpgrade = {
+    enable = true;
+    flake = "gihub:dlip/nixconfig";
+  };
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
     "electron-13.6.9"
