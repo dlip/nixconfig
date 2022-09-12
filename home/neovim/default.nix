@@ -91,6 +91,7 @@ in
           nvim-lspconfig
           nvim-neotest
           nvim-treesitter-textobjects
+          nvim-treesitter-context
           nvim-ts-rainbow
           octo-nvim
           package-info-nvim

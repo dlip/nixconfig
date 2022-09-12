@@ -44,7 +44,7 @@ matches:
     replace: "\\(.*\\)"
 
   # Personal
-  - trigger: ".,e"
+  - trigger: ".,eg"
     replace: "danelipscombe@gmail.com"
   - trigger: ".,ew"
     replace: "dane.lipscombe@playtravel.com.au"
