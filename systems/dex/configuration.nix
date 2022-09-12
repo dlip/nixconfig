@@ -136,6 +136,11 @@ rec {
           publicKey = "AyT/WKTrPwaiCFLRx68Jz/isw4Rv/4PQ+y3qlNJ32HA=";
           allowedIPs = [ "10.100.0.3/32" ];
         }
+        # flip
+        {
+          publicKey = "MLNoLlIYeq6F8NBwg/Cu95fwO7BiJbcTRq4dj5MLAzA=";
+          allowedIPs = [ "10.100.0.4/32" ];
+        }
       ];
     };
   };
