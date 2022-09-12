@@ -92,6 +92,16 @@ rec {
     script = "${pkgs.actualServer}/bin/actual-server";
   };
 
+  # services.k3s = {
+  #   enable = true;
+  #   extraFlags = "--no-deploy traefik";
+  # };
+
+  services.gitea = {
+    enable = true;
+    httpPort = 3001;
+  };
+
   networking.nat.enable = true;
   networking.nat.internalInterfaces = [ "wg0" "ve-+" ];
   networking.nat.externalInterface = "enp0s31f6";
@@ -267,6 +277,14 @@ rec {
       };
       media2 = {
         path = "/media/media2";
+        browsable = "yes";
+        "read only" = "no";
+        "guest ok" = "no";
+        "create mask" = "0644";
+        "directory mask" = "0755";
+      };
+      games = {
+        path = "/media/games";
         browsable = "yes";
         "read only" = "no";
         "guest ok" = "no";
