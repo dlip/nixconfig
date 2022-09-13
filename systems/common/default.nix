@@ -83,6 +83,10 @@ in
     keyMap = "us";
   };
 
+  zramSwap = {
+    enable = true;
+    memoryPercent = 100;
+  };
 
   sops.defaultSopsFile = ./.. + builtins.toPath "/${hostname}/secrets/secrets.yaml";
   # This will automatically import SSH keys as age keys

@@ -38,7 +38,5 @@
   #     in ["${automount_opts},credentials=/etc/nixos/smb-secrets"];
   # };
 
-  swapDevices = [{ device = "/.swapfile"; }];
-
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
 }
