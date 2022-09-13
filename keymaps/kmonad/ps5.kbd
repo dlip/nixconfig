@@ -1,7 +1,7 @@
 
 (defcfg
   ;; ** For Linux **
-  input  (device-file "/dev/input/event29")
+  input  (device-file "/dev/input/event11")
   output (uinput-sink "ps5-keyboard")
 
   ;; ** For Windows **
@@ -27,7 +27,64 @@ r s t    u   v w x
   y      g     z
 )
 
+
+(defalias
+  na reserved
+  lu (layer-toggle lu)
+  ld (layer-toggle ld)
+  ll (layer-toggle ll)
+  lr (layer-toggle ll)
+)
+
 (deflayer remap
+ lmet         lalt
+ lsft         lctl
+  up  esc    ret  t
+lft rght      bspc   e
+  down           spc
+
+  @lu            q
+@ll f  @lr  u   v w x
+  @ll      g     z
+)
+
+(deflayer lu
+  a            b
+  c            d
+  e  f      h  i
+j   k        l   m
+  n            o
+
+  p            q
+r s t    u   v w x
+  y      g     z
+)
+
+(deflayer ld
+  a            b
+  c            d
+  e  f      h  i
+j   k        l   m
+  n            o
+
+  p            q
+r s t    u   v w x
+  y      g     z
+)
+
+(deflayer ll
+  a            b
+  c            d
+  e  f      h  i
+j   k        l   m
+  n            o
+
+  p            q
+r s t    u   v w x
+  y      g     z
+)
+
+(deflayer lr
   a            b
   c            d
   e  f      h  i

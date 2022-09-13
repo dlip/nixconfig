@@ -19,6 +19,9 @@
     <sets>
         <set index="1">
             <stick index="1">
+                <deadZone>17759</deadZone>
+                <modifierZone>17804</modifierZone>
+                <mode>four-way</mode>
                 <stickbutton index="3">
                     <slots>
                         <slot>
@@ -53,6 +56,8 @@
                 </stickbutton>
             </stick>
             <stick index="2">
+                <deadZone>18791</deadZone>
+                <mode>four-way</mode>
                 <stickbutton index="3">
                     <slots>
                         <slot>
