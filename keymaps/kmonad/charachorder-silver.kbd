@@ -62,17 +62,17 @@
 
 (deflayer nav
 ;; base
-          lsft        @num  @esc_win    up      #|_|#  @ret_ctl   @tab_win    @nav           rsft
-#|numshift|#  lalt  lmet  , del tab left right  #|_|#  a  #|spc|#  l   j    y    rmet   ralt  #|numshift|#
-        #|mirror|#     ;      prnt     down     #|_|#    t           n         s       #|mirror|#
+          _          _       esc       up       #|_|#   rctl         rmet      @nav       _
+#|numshift|#  _     _  _  del _    left right   #|_|#  _  #|spc|#  _   _    _    _    _  #|numshift|#
+        #|mirror|#   _      prnt     down       #|_|#    _           _         _       #|mirror|#
                                                 #|_|#
-                                        pgup    #|_|#   ralt
-                                     home end   #|_|#  f   h
-                                        pgdn    #|_|#    d
+                                       pgup     #|_|#  ralt
+                                     home end   #|_|#  _   _
+                                        pgdn    #|_|#    _
                                                 #|_|#
-                                      #|na|#    #|_|#      x
-                                      g   w     #|_|#    b  #|dup|#
-                                        z       #|_|#      q
+                                      #|na|#    #|_|#      _
+                                      g   w     #|_|#    _  #|dup|#
+                                        z       #|_|#      _
 )
 
 (deflayer num
