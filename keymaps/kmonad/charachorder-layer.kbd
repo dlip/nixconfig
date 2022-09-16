@@ -28,34 +28,23 @@
                                       #|na|#    #|_|#      x
                                       g   w     #|_|#    b  #|dup|#
                                         z       #|_|#      q
-                                                #|_|#
-                                        -       #|_|#     #|?|#
-                                    lmet /      #|_|#  #|na|# rmet
-                                       esc      #|_|#    #|esc|#
-
-;; numshift
-                     =   `    6  4   3   1      #|_|#                      #|=|#    #|?|#
-                     #|_|#     5       2        #|_|#
-                                                #|_|#
-                                       8        #|_|#
-                                     9   7      #|_|#
-                                       0        #|_|#
-                                                #|_|#
-                                       8        #|_|#
-                                     [   7      #|_|#
-                                       ]        #|_|#
 )
 
 (defalias
   na reserved
   nav (layer-toggle nav)
   num (layer-toggle num)
+
+  ret_ctl (tap-hold-next-release 200 ret rctl)
+  bspc_ctl (tap-hold-next-release 200 bspc lctl)
+  esc_win (tap-hold-next-release 200 esc lmet)
+  tab_win (tap-hold-next-release 200 tab lmet)
 )
 
 (deflayer remap
 ;; base
-          lalt        lctl     @num      bspc    #|_|#   ret       @nav      rctl        ralt
-#|numshift|#  lsft  lmet  '   .   i    spc  r   #|_|#  a  #|spc|#  l   j    y    rmet rshift  #|numshift|#
+          lsft        @num    @esc_win  @bspc_ctl #|_|#   @ret_ctl @tab_win  @nav       rsft
+#|numshift|#  lalt    ,  '    .   i    spc  r   #|_|#  a  #|spc|#  l   j    y    ;   ralt  #|numshift|#
         #|mirror|#     u        o        e      #|_|#    t           n         s       #|mirror|#
                                                 #|_|#
                              up          v      #|_|#    p
@@ -65,61 +54,29 @@
                                       #|na|#    #|_|#      x
                                       g   w     #|_|#    b  #|dup|#
                                         z       #|_|#      q
-                                                #|_|#
-                                        -       #|_|#     #|?|#
-                                    lmet /      #|_|#  #|na|# rmet
-                                       esc      #|_|#    #|esc|#
-
-;; numshift
-                     =   `    6  4   3   1      #|_|#                      #|=|#    #|?|#
-                     #|_|#     5       2        #|_|#
-                                                #|_|#
-                                       8        #|_|#
-                                     9   7      #|_|#
-                                       0        #|_|#
-                                                #|_|#
-                                       8        #|_|#
-                                     [   7      #|_|#
-                                       ]        #|_|#
 )
 
 
 (deflayer nav
 ;; base
-          lalt        lctl    esc      up       #|_|#   ret         @nav     rctl        ralt
-#|numshift|#  lsft  lmet  , del tab left right #|_|#  a  #|spc|#  l   j    y    rmet   rshift  #|numshift|#
+          lsft        @num  @esc_win    up      #|_|# @ret_ctl    @tab_win  @nav             rsft
+#|numshift|#  lalt  lmet  , del tab left right  #|_|#  a  #|spc|#  l   j    y    rmet   rshift  #|numshift|#
         #|mirror|#     ;      prnt     down     #|_|#    t           n         s       #|mirror|#
                                                 #|_|#
                              up         pgup    #|_|#    p
                         left   right home end   #|_|#  f   h
-                            down        end     #|_|#    d
+                            down        pgdn    #|_|#    d
                                                 #|_|#
                                       #|na|#    #|_|#      x
                                       g   w     #|_|#    b  #|dup|#
                                         z       #|_|#      q
-                                                #|_|#
-                                        -       #|_|#     #|?|#
-                                    lmet /      #|_|#  #|na|# rmet
-                                       esc      #|_|#    #|esc|#
-
-;; numshift
-                     =   `    6  4   3   1      #|_|#                      #|=|#    #|?|#
-                     #|_|#     5       2        #|_|#
-                                                #|_|#
-                                       8        #|_|#
-                                     9   7      #|_|#
-                                       0        #|_|#
-                                                #|_|#
-                                       8        #|_|#
-                                     [   7      #|_|#
-                                       ]        #|_|#
 )
 
 (deflayer num
 ;; base
-          lalt        lctl     @num     bspc    #|_|#   ret         tab      rctl        ralt
-#|numshift|#  lsft  lmet  ,   ;   i    3    r   #|_|#  1  #|3|#    4   6    y    rmet   rshift  #|numshift|#
-        #|mirror|#     u        o        e      #|_|#    2           5         s       #|mirror|#
+          lsft        @num  @esc_win  @bspc_ctl #|_|#   @ret_ctl @tab_win    @nav          rsft
+#|numshift|#  lalt  lmet  ,   ;   i    3    r   #|_|#  1  #|3|#    4   6    y    rmet   ralt  #|numshift|#
+        #|mirror|#     u        o        e      #|_|#    2           5         s         #|mirror|#
                                                 #|_|#
                              up          v      #|_|#    8
                         left   right   m   k    #|_|#  7   9
@@ -128,20 +85,4 @@
                                       #|na|#    #|_|#      x
                                       g   w     #|_|#    b  #|dup|#
                                         z       #|_|#      q
-                                                #|_|#
-                                        -       #|_|#     #|?|#
-                                    lmet /      #|_|#  #|na|# rmet
-                                       esc      #|_|#    #|esc|#
-
-;; numshift
-                     =   `    6  4   3   1      #|_|#                      #|=|#    #|?|#
-                     #|_|#     5       2        #|_|#
-                                                #|_|#
-                                       8        #|_|#
-                                     9   7      #|_|#
-                                       0        #|_|#
-                                                #|_|#
-                                       8        #|_|#
-                                     [   7      #|_|#
-                                       ]        #|_|#
 )
