@@ -17,18 +17,17 @@
 )
 
 (defsrc
-;; base
-          lalt        lctl     del      bspc    #|_|#   ret         tab      rctl        ralt
-#|numshift|#  lsft   ,   '   .   i    spc  r    #|_|#  a  #|spc|#  l   j     y   ;   rshift  #|numshift|#
-        #|mirror|#     u        o        e      #|_|#    t           n         s       #|mirror|#
-                                                #|_|#
-                                         v      #|_|#    p
-                                       m   k    #|_|#  f   h
-                                         c      #|_|#    d
-                                                #|_|#
-                                      #|na|#    #|_|#      x
-                                      g   w     #|_|#    b  #|dup|#
-                                        z       #|_|#      q
+lalt        lctl     del      bspc    #|_|#   ret         tab      rctl        ralt
+    lsft   ,   '   .   i    spc  r    #|_|#  a  #|spc|#  l   j     y   ;   rshift
+             u        o        e      #|_|#    t           n         s
+                                      #|_|#
+                               v      #|_|#    p
+                             m   k    #|_|#  f   h
+                               c      #|_|#    d
+                                      #|_|#
+                            #|na|#    #|_|#      x
+                            g   w     #|_|#    b  #|dup|#
+                              z       #|_|#      q
 )
 
 (defalias
@@ -45,47 +44,44 @@
 )
 
 (deflayer remap
-;; base
-          lsft       @num   @esc_win  @bspc_ctl #|_|#  @ret_ctl   @tab_win   @nav       rsft
-#|numshift|#  `     ,   '    .   i    spc  r    #|_|#  a  #|spc|#  l   j    y    ;      /  #|numshift|#
-        #|mirror|#     u        o        e      #|_|#    t           n         s       #|mirror|#
-                                                #|_|#
-                                       @v_alt   #|_|#  @p_alt
-                                       m   k    #|_|#  f   h
-                                         c      #|_|#    d
-                                                #|_|#
-                                      #|na|#    #|_|#      x
-                                      g   w     #|_|#    b  #|dup|#
-                                        z       #|_|#      q
+lsft       @num   @esc_win  @bspc_ctl #|_|#  @ret_ctl   @tab_win   @nav       rsft
+    `     ,   '    .   i    spc  r    #|_|#  a  #|spc|#  l   j    y    ;     /
+             u        o        e      #|_|#    t           n         s
+                                      #|_|#
+                             @v_alt   #|_|#  @p_alt
+                             m   k    #|_|#  f   h
+                               c      #|_|#    d
+                                      #|_|#
+                            #|na|#    #|_|#      x
+                            g   w     #|_|#    b  #|dup|#
+                              z       #|_|#      q
 )
 
 
 (deflayer nav
-;; base
-          _          _       esc       up       #|_|#   rctl         rmet      @nav       _
-#|numshift|#  _     _  _  del _    left right   #|_|#  _  #|spc|#  _   _    _    _    _  #|numshift|#
-        #|mirror|#   _      prnt     down       #|_|#    _           _         _       #|mirror|#
-                                                #|_|#
-                                       pgup     #|_|#  ralt
-                                     home end   #|_|#  _   _
-                                        pgdn    #|_|#    _
-                                                #|_|#
-                                      #|na|#    #|_|#      _
-                                      g   w     #|_|#    _  #|dup|#
-                                        z       #|_|#      _
+_          _       esc       up       #|_|#   rctl         rmet      @nav       _
+  _       _  _  del _    left right   #|_|#  _  #|spc|#  _   _    _    _    _
+            _      prnt     down      #|_|#    _           _         _
+                                      #|_|#
+                             pgup     #|_|#  ralt
+                           home end   #|_|#  _   _
+                              pgdn    #|_|#    _
+                                      #|_|#
+                            #|na|#    #|_|#      _
+                            _   _     #|_|#    _  #|dup|#
+                              _       #|_|#      _
 )
 
 (deflayer num
-;; base
-          lsft        @num     lmet     lctl    #|_|#    [           ]         {        rsft
-#|numshift|#  lalt  lmet  ,   ;   i    3    r   #|_|#  1  #|3|#    4   6     <    >    ralt  #|numshift|#
-        #|mirror|#     u        o        e      #|_|#    2           5         s         #|mirror|#
-                                                #|_|#
-                                       lalt     #|_|#    8
-                                       m   k    #|_|#  7   9
-                                         c      #|_|#    0
-                                                #|_|#
-                                      #|na|#    #|_|#      =
-                                      g   w     #|_|#    \  #|dup|#
-                                        z       #|_|#      -
+lsft        @num     lmet     lctl    #|_|#    [           ]         {         _
+    lalt    _   _   _   _    3    _   #|_|#  1  #|3|#    4   6     <    >    _
+              _        _        _     #|_|#    2           5         s
+                                      #|_|#
+                             lalt     #|_|#    8
+                             _   _    #|_|#  7   9
+                               _      #|_|#    0
+                                      #|_|#
+                            #|na|#    #|_|#      =
+                            _   _     #|_|#    \  #|dup|#
+                              _       #|_|#      -
 )
