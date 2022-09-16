@@ -37,15 +37,15 @@ lalt        lctl     del      bspc    #|_|#   ret         tab      rctl        r
 
   ret_ctl (tap-hold-next-release 200 ret rctl)
   bspc_ctl (tap-hold-next-release 200 bspc lctl)
-  esc_win (tap-hold-next-release 200 esc lmet)
-  tab_win (tap-hold-next-release 200 tab lmet)
+  esc_met (tap-hold-next-release 200 esc lmet)
+  tab_met (tap-hold-next-release 200 tab lmet)
   v_alt (tap-hold-next-release 200 v lalt)
   p_alt (tap-hold-next-release 200 p ralt)
 )
 
 (deflayer remap
-lsft       @num   @esc_win  @bspc_ctl #|_|#  @ret_ctl   @tab_win   @nav       rsft
-    `     ,   '    .   i    spc  r    #|_|#  a  #|spc|#  l   j    y    ;     /
+lsft       @num   @esc_met  @bspc_ctl #|_|#  @ret_ctl   @tab_met   @nav       rsft
+    ?     ,   '    .   i    spc  r    #|_|#  a  #|spc|#  l   j    y    ;     /
              u        o        e      #|_|#    t           n         s
                                       #|_|#
                              @v_alt   #|_|#  @p_alt
@@ -59,7 +59,7 @@ lsft       @num   @esc_win  @bspc_ctl #|_|#  @ret_ctl   @tab_win   @nav       rs
 
 
 (deflayer nav
-_          _       esc       up       #|_|#   rctl         rmet      @nav       _
+_          _       esc       up       #|_|#   rctl         rmet      @nav     _
   _       _  _  del _    left right   #|_|#  _  #|spc|#  _   _    _    _    _
             _      prnt     down      #|_|#    _           _         _
                                       #|_|#
@@ -73,9 +73,9 @@ _          _       esc       up       #|_|#   rctl         rmet      @nav       
 )
 
 (deflayer num
-lsft        @num     lmet     lctl    #|_|#    [           ]         {         _
-    lalt    _   _   _   _    3    _   #|_|#  1  #|3|#    4   6     <    >    _
-              _        _        _     #|_|#    2           5         s
+_           @num     lmet     lctl    #|_|#    `           ~         {         _
+  _         _   _   _   _    3    _   #|_|#  1  #|3|#    4   6     [    }    _
+              _        _        _     #|_|#    2           5         ]
                                       #|_|#
                              lalt     #|_|#    8
                              _   _    #|_|#  7   9
