@@ -18,7 +18,7 @@
 
 (defsrc
 lalt        lctl     del      bspc    #|_|#   ret         tab      rctl        ralt
-    lsft   ,   '   .   i    spc  r    #|_|#  a  #|spc|#  l   j     y   ;   rsft
+    lsft   ,   '   .   i    spc  r    #|_|#  a  #|spc|#  l   j     y   ;   rshift
              u        o        e      #|_|#    t           n         s
                                       #|_|#
                                v      #|_|#    p
@@ -45,7 +45,7 @@ lalt        lctl     del      bspc    #|_|#   ret         tab      rctl        r
 
 (deflayer remap
 lsft       @num   @esc_met  @bspc_ctl #|_|#  @ret_ctl   @tab_met   @nav       rsft
-    @num     ,   '    .   i    spc  r    #|_|#  a  #|spc|#  l   j    y    ;     /
+    ?     ,   '    .   i    spc  r    #|_|#  a  #|spc|#  l   j    y    ;     /
              u        o        e      #|_|#    t           n         s
                                       #|_|#
                              @v_alt   #|_|#  @p_alt
