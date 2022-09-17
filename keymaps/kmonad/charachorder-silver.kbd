@@ -18,14 +18,14 @@
 
 (defsrc
 lalt        lctl     del      bspc    #|_|#   ret         tab      rctl        ralt
-    lsft   ,   '   .   i    spc  r    #|_|#  a  #|spc|#  l   j     y   ;   rshift
+    lsft   ,   '   .   i    spc  r    #|_|#  a  #|spc|#  l   j     y   ;   rsft
              u        o        e      #|_|#    t           n         s
                                       #|_|#
                                v      #|_|#    p
                              m   k    #|_|#  f   h
                                c      #|_|#    d
                                       #|_|#
-                            #|na|#    #|_|#      x
+                           #|mlb|#    #|_|#      x
                             g   w     #|_|#    b  #|dup|#
                               z       #|_|#      q
 )
@@ -35,24 +35,24 @@ lalt        lctl     del      bspc    #|_|#   ret         tab      rctl        r
   nav (layer-toggle nav)
   num (layer-toggle num)
 
-  ret_ctl (tap-hold-next-release 200 ret rctl)
-  bspc_ctl (tap-hold-next-release 200 bspc lctl)
-  esc_met (tap-hold-next-release 200 esc lmet)
-  tab_met (tap-hold-next-release 200 tab lmet)
-  v_alt (tap-hold-next-release 200 v lalt)
-  p_alt (tap-hold-next-release 200 p ralt)
+  ret_ctl (tap-hold-next-release 250 ret rctl)
+  bspc_ctl (tap-hold-next-release 250 bspc lctl)
+  esc_met (tap-hold-next-release 250 esc lmet)
+  tab_met (tap-hold-next-release 250 tab lmet)
+  v_alt (tap-hold-next-release 250 v lalt)
+  p_alt (tap-hold-next-release 250 p ralt)
 )
 
 (deflayer remap
 lsft       @num   @esc_met  @bspc_ctl #|_|#  @ret_ctl   @tab_met   @nav       rsft
-    ?     ,   '    .   i    spc  r    #|_|#  a  #|spc|#  l   j    y    ;     /
+    @num     ,   '    .   i    spc  r    #|_|#  a  #|spc|#  l   j    y    ;     /
              u        o        e      #|_|#    t           n         s
                                       #|_|#
                              @v_alt   #|_|#  @p_alt
                              m   k    #|_|#  f   h
                                c      #|_|#    d
                                       #|_|#
-                            #|na|#    #|_|#      x
+                           #|mlb|#    #|_|#      x
                             g   w     #|_|#    b  #|dup|#
                               z       #|_|#      q
 )
@@ -60,14 +60,14 @@ lsft       @num   @esc_met  @bspc_ctl #|_|#  @ret_ctl   @tab_met   @nav       rs
 
 (deflayer nav
 brup       stop       esc     up      #|_|#   rctl        rmet      @nav      _
-  brdn  prev  next  del _  left right #|_|#  _  #|spc|#  _   _    _    _    _
+  brdn  prev  next del  _  left right #|_|#  _  #|spc|#  _   _    _    _    _
             pp       prnt   down      #|_|#    _           _         _
                                       #|_|#
                              pgup     #|_|#  ralt
                            home end   #|_|#  _   _
                               pgdn    #|_|#    _
                                       #|_|#
-                            #|na|#    #|_|#      _
+                           #|mlb|#    #|_|#      _
                            vold volu  #|_|#    _  #|dup|#
                              mute     #|_|#      _
 )
