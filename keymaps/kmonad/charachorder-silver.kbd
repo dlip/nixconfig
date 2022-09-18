@@ -31,18 +31,19 @@ lalt        lctl     del      bspc    #|_|#   ret         tab      rctl        r
 )
 
 (defalias
-  na reserved
-  nav (layer-toggle nav)
+  esc_alt (tap-hold-next-release 250 esc lalt)
+  del_met (tap-hold-next-release 250 del lmet)
   num (layer-toggle num)
+  bspc_ctl (tap-hold-next-release 250 bspc lctl)
 
   ret_ctl (tap-hold-next-release 250 ret rctl)
-  bspc_ctl (tap-hold-next-release 250 bspc lctl)
-  esc_met (tap-hold-next-release 250 esc lmet)
+  nav (layer-toggle nav)
   tab_met (tap-hold-next-release 250 tab lmet)
+  slsh_alt (tap-hold-next-release 250 / lalt)
 )
 
 (deflayer remap
-_         @esc_met  @num  @bspc_ctl   #|_|#  @ret_ctl    @nav    @tab_met     _
+@esc_alt  @del_met  @num  @bspc_ctl   #|_|#  @ret_ctl    @nav    @tab_met   @slsh_alt
     _     _   _    _   _    _    _    #|_|#  _  #|spc|#  _   _    _    _   _
              _        _        _      #|_|#    _           _         _
                                       #|_|#
@@ -82,15 +83,15 @@ _         @esc_met  @num  @bspc_ctl   #|_|#  @ret_ctl    @nav    @tab_met     _
 )
 
 (deflayer num
-_           lmet     @num     lctl    #|_|#    ?           /         =         \
-  _         _   _   _   _    3    _   #|_|#  1  #|3|#    4   6     +   \_    |
-              _        _       _      #|_|#    2           5         -
+_           lmet     @num     lctl    #|_|#    -           =         _         \
+  _         _   _   _   _    3    _   #|_|#  1  #|3|#    4   6     _   _     _
+              _        _       _      #|_|#    2           5         _
                                       #|_|#
                              @paste   #|_|#    8
                            @cut @undo #|_|#  7   9
                              @copy    #|_|#    0
                                       #|_|#
-                            #|mlb|#   #|_|#    _
-                          @back @fwd  #|_|#  _  #|dup|#
-                              prnt    #|_|#    _
+                            #|mlb|#   #|_|#    +
+                          @back @fwd  #|_|#  |  #|dup|#
+                              prnt    #|_|#    \_
 )
