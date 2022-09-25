@@ -12,7 +12,7 @@ let
 
   bettersqlite3_version = "7.5.0";
   bettersqlite3_lib = fetchurl {
-    url = "https://github.com/WiseLibs/better-sqlite3/releases/download/v${bettersqlite3_version}/better-sqlite3-v${bettersqlite3_version}-node-v93-linux-x64.tar.gz";
+    url = "https://github.com/WiseLibs/better-sqlite3/releases/download/v${bettersqlite3_version}/better-sqlite3-v${bettersqlite3_version}-node-v108-linux-x64.tar.gz";
     sha256 = "sha256-n9OvLPm2XuzaJjbikPeAr96eCVNukK2Cn0KaKLIIRws=";
   };
 
