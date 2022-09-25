@@ -3,8 +3,8 @@
   programs.kitty = {
     enable = true;
     settings = {
-      font_size = 11;
-      font_family = "FiraCode Nerd Font";
+      font_size = 10;
+      font_family = "RobotoMono Nerd Font Mono";
       bold_font = "auto";
       italic_font = "auto";
       bold_italic_font = "auto";
