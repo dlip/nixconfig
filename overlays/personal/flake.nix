@@ -45,7 +45,7 @@
     }:
     {
       overlay = final: prev: {
-        actualServer = final.callPackage ./actualServer { src = actual-server; };
+        actualServer = final.callPackage ./actualServer { src = actual-server; nodejs = nodejs-16_x; };
         envy-sh = envy-sh.defaultPackage.${final.system};
         emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
         myEspanso = final.callPackage ./espanso { };
