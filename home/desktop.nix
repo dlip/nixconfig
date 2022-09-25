@@ -94,6 +94,7 @@
       visidata
       xdotool
       yarn
+      yarn2nix
       youtube-dl
       yq
       # yubikey-manager #broken
