@@ -45,7 +45,7 @@
     }:
     {
       overlay = final: prev: {
-        actualServer = final.callPackage ./actualServer { src = actual-server; nodejs = nodejs-16_x; };
+        actualServer = final.callPackage ./actualServer { src = actual-server; nodejs = final.nodejs-16_x; };
         envy-sh = envy-sh.defaultPackage.${final.system};
         emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
         myEspanso = final.callPackage ./espanso { };
@@ -59,7 +59,7 @@
         skyscraper = final.callPackage ./skyscraper { };
         solang = final.callPackage ./solang { };
         juliusSpeech = final.callPackage ./juliusSpeech { };
-        # talon = final.callPackage ./talon { };
+        talon = final.callPackage ./talon { };
         inherit sops-nix;
         inherit (final.callPackages "${openvpn-aws}/derivations/openvpn.nix" { }) openvpn_aws;
       };
