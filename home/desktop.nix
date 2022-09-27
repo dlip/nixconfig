@@ -1,4 +1,9 @@
 { pkgs, lib, ... }: {
+
+  imports = [
+    ./espanso
+  ];
+
   home.packages = with pkgs;
     [
       acpi

@@ -22,7 +22,6 @@ in
 
   imports = [
     #./emacs
-    ./espanso
     ./files
     ./fonts.nix
     ./git

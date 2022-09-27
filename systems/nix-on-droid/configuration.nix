@@ -41,6 +41,7 @@
       nixpkgs = { inherit (config.nixpkgs) overlays; };
       imports = [
         ../../home
+        ../../home/nix-on-droid.nix
       ];
       home.packages = with pkgs; [
         unzip
