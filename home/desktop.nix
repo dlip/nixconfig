@@ -71,14 +71,14 @@
       # openvpn_aws
       pandoc
       pinentry
-      poetry
+      # poetry
       postgresql
       python
       python3
-      python39Packages.grip
-      python39Packages.pip
-      python39Packages.pynvim
-      python39Packages.setuptools
+      # python39Packages.grip
+      # python39Packages.pip
+      # python39Packages.pynvim
+      # python39Packages.setuptools
       rclone
       renameutils
       rustc

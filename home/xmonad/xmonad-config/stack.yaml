@@ -77,4 +77,4 @@ nix:
     - xorg.libXrender
     - xorg.libXScrnSaver
     - xorg.libXft
-    - pkgconfig
+    - pkg-config

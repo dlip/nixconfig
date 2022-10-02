@@ -114,6 +114,7 @@
             name = input;
             value = (final.vimUtils.buildVimPluginFrom2Nix {
               name = input;
+              pname = input;
               src = (builtins.getAttr input inputs);
             });
           })

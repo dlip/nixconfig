@@ -1,8 +1,8 @@
-{ lib, stdenv, src, nodejs-16_x, callPackage, pkgconfig, libsecret }:
+{ lib, stdenv, src, nodejs-16_x, callPackage, pkg-config, libsecret }:
 let
   nodeDependencies = ((callPackage ./nodeModules { nodejs = nodejs-16_x; }).shell.override {
     inherit src;
-    buildInputs = [ pkgconfig libsecret ];
+    buildInputs = [ pkg-config libsecret ];
   }).nodeDependencies;
   nodeDependenciesProd = ((callPackage ./nodeModulesProd { nodejs = nodejs-16_x; }).shell.override {
     inherit src;
