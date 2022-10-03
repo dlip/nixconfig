@@ -175,7 +175,7 @@ function _G.coding_mappings()
     },
     d = { "<cmd>Telescope lsp_definitions<CR>", "Go to Definition(s)" },
     D = { function() vim.lsp.buf.declaration() end, "Go to Declaration" },
-    f = { function() format_buffer() end, "Format Buffer" },
+    f = { function() vim.lsp.buf.format() end, "Format Buffer" },
     F = { function() vim.lsp.buf.formatting() end, "LSP Format Buffer" },
     h = { function() vim.lsp.buf.hover() end, "Trigger Hover" },
     H = { function() vim.lsp.buf.signature_help() end, "Signature Help" },
@@ -219,7 +219,7 @@ end
 
 function _G.json_mappings()
   local buffKeymap = {
-    f = { function() format_buffer() end, "Format Buffer" },
+    f = { function() vim.lsp.buf.format() end, "Format Buffer" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end
@@ -336,7 +336,7 @@ end
 
 function _G.quickfix_mappings()
   local buffKeymap = {
-    f = { "<cmd>cfdo lua format_buffer()<CR><cmd>wa<CR>", "Format All" },
+    f = { "<cmd>cfdo lua vim.lsp.buf.format()<CR><cmd>wa<CR>", "Format All" },
   }
   wk.register(buffKeymap, { prefix = "<localleader>", buffer = 0 })
 end

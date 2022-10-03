@@ -47,7 +47,7 @@ in
         in
         [
           asyncrun-vim
-          # autosave-nvim
+          auto-save-nvim
           cmp-buffer
           cmp-nvim-lsp
           cmp-nvim-lua
@@ -59,7 +59,7 @@ in
           editorconfig-vim
           # fire-nvim
           fix-cursor-hold-nvim
-          format-nvim
+          lsp-format-nvim
           friendly-snippets
           glow-nvim
           gv-vim

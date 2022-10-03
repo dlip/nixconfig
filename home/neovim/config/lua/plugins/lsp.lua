@@ -120,23 +120,3 @@ require("lsp-format").setup({
     exclude = { "null-ls" },
   },
 })
-
-function _G.format_buffer()
-  local ft = vim.o.filetype
-  if ft == "nix" then
-    lsp.buf.formatting_seq_sync(nil, 1000, { "rnix" })
-  elseif ft == "lua" then
-    lsp.buf.formatting_seq_sync(nil, 1000, { "sumneko" })
-  elseif ft == "go" then
-    lsp.buf.formatting_seq_sync(nil, 1000, { "gopls" })
-  elseif ft == "rust" then
-    lsp.buf.formatting_seq_sync(nil, 1000, { "rust_analyzer" })
-  elseif ft == "typescript" or ft == "typescriptreact" or ft == "javascript" then
-    lsp.buf.formatting_seq_sync(nil, 1000, { "null_ls" })
-    -- vim.cmd("!eslint_d --fix %")
-  elseif ft == "html" then
-    lsp.buf.formatting_seq_sync(nil, 1000, { "null_ls" })
-  else
-    lsp.buf.formatting()
-  end
-end

@@ -32,6 +32,22 @@
         "type": "github"
       }
     },
+    "auto-save-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1659824161,
+        "narHash": "sha256-keK+IAnHTTA5uFkMivViMMAkYaBvouYqcR+wNPgN3n0=",
+        "owner": "pocco81",
+        "repo": "auto-save.nvim",
+        "rev": "2c7a2943340ee2a36c6a61db812418fca1f57866",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pocco81",
+        "repo": "auto-save.nvim",
+        "type": "github"
+      }
+    },
     "awesome-wm-widgets": {
       "flake": false,
       "locked": {
@@ -103,11 +119,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-iPjyzVhjzyvH+2gpuITW7lrcMbLR9ABFwpDlxIIZEy4=",
-        "path": "/nix/store/2l25h3a9ynys3hwgbga2ajxnfb4zqs40-source/overlays/dapAdapters",
+        "path": "/nix/store/7asjkh3bgsqaagbaqkyj9491f6mmlv4z-source/overlays/dapAdapters",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/2l25h3a9ynys3hwgbga2ajxnfb4zqs40-source/overlays/dapAdapters",
+        "path": "/nix/store/7asjkh3bgsqaagbaqkyj9491f6mmlv4z-source/overlays/dapAdapters",
         "type": "path"
       }
     },
@@ -217,22 +233,6 @@
         "type": "github"
       }
     },
-    "format-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1662349592,
-        "narHash": "sha256-oa5gRKDSzsnk8+1t1eaAUX8OOjyWV7sssSl2xApNoOs=",
-        "owner": "lukas-reineke",
-        "repo": "format.nvim",
-        "rev": "b611bd6cea82ccc127cf8fd781a1cb784b0d6d3c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lukas-reineke",
-        "repo": "format.nvim",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -309,6 +309,22 @@
       "original": {
         "owner": "kmonad",
         "repo": "kmonad-vim",
+        "type": "github"
+      }
+    },
+    "lsp-format-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662349592,
+        "narHash": "sha256-oa5gRKDSzsnk8+1t1eaAUX8OOjyWV7sssSl2xApNoOs=",
+        "owner": "lukas-reineke",
+        "repo": "lsp-format.nvim",
+        "rev": "b611bd6cea82ccc127cf8fd781a1cb784b0d6d3c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "lukas-reineke",
+        "repo": "lsp-format.nvim",
         "type": "github"
       }
     },
@@ -530,11 +546,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-OuF8GjaEKGvGK4ujxaidzociiPrR6bveaHgZM/R2Nb8=",
-        "path": "/nix/store/2l25h3a9ynys3hwgbga2ajxnfb4zqs40-source/overlays/personal",
+        "path": "/nix/store/7asjkh3bgsqaagbaqkyj9491f6mmlv4z-source/overlays/personal",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/2l25h3a9ynys3hwgbga2ajxnfb4zqs40-source/overlays/personal",
+        "path": "/nix/store/7asjkh3bgsqaagbaqkyj9491f6mmlv4z-source/overlays/personal",
         "type": "path"
       }
     },
@@ -587,11 +603,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "/nix/store/2l25h3a9ynys3hwgbga2ajxnfb4zqs40-source/overlays/repos",
+        "path": "/nix/store/7asjkh3bgsqaagbaqkyj9491f6mmlv4z-source/overlays/repos",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/2l25h3a9ynys3hwgbga2ajxnfb4zqs40-source/overlays/repos",
+        "path": "/nix/store/7asjkh3bgsqaagbaqkyj9491f6mmlv4z-source/overlays/repos",
         "type": "path"
       }
     },
@@ -664,9 +680,10 @@
     },
     "vim-plugins": {
       "inputs": {
+        "auto-save-nvim": "auto-save-nvim",
         "fix-cursor-hold-nvim": "fix-cursor-hold-nvim",
-        "format-nvim": "format-nvim",
         "kmonad-vim": "kmonad-vim",
+        "lsp-format-nvim": "lsp-format-nvim",
         "neotest-jest": "neotest-jest",
         "neotest-plenary": "neotest-plenary",
         "neotest-vim-test": "neotest-vim-test",
@@ -677,12 +694,12 @@
       },
       "locked": {
         "lastModified": 1,
-        "narHash": "sha256-eAQy+vIh5AKs6u/n7iXDU838t6KMA34ENuLuz/RIqu8=",
-        "path": "/nix/store/2l25h3a9ynys3hwgbga2ajxnfb4zqs40-source/overlays/vimPlugins",
+        "narHash": "sha256-pwzlynzt9qm9ryTXF7EIlq6PNm4L7NsrPPjHG7fquXY=",
+        "path": "/nix/store/7asjkh3bgsqaagbaqkyj9491f6mmlv4z-source/overlays/vimPlugins",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/2l25h3a9ynys3hwgbga2ajxnfb4zqs40-source/overlays/vimPlugins",
+        "path": "/nix/store/7asjkh3bgsqaagbaqkyj9491f6mmlv4z-source/overlays/vimPlugins",
         "type": "path"
       }
     },

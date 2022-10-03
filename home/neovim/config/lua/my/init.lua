@@ -1,4 +1,4 @@
--- require("plugins.autosave")
+require("plugins.auto-save")
 -- require 'plugins.barbar'
 require("plugins.cmp")
 require("plugins.dap")

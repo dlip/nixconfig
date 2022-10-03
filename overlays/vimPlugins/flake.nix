@@ -4,10 +4,10 @@
     #   url = "github:skywind3000/asyncrun.vim";
     #   flake = false;
     # };
-    # autosave-nvim = {
-    #   url = "github:Pocco81/AutoSave.nvim";
-    #   flake = false;
-    # };
+    auto-save-nvim = {
+      url = "github:pocco81/auto-save.nvim";
+      flake = false;
+    };
     # cmp_luasnip = {
     #   url = "github:saadparwaiz1/cmp_luasnip";
     #   flake = false;
@@ -16,8 +16,8 @@
     #   url = "github:glacambre/firenvim";
     #   flake = false;
     # };
-    format-nvim = {
-      url = "github:lukas-reineke/format.nvim";
+    lsp-format-nvim = {
+      url = "github:lukas-reineke/lsp-format.nvim";
       flake = false;
     };
     # hop-nvim = {
