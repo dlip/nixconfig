@@ -22,7 +22,7 @@
     neofetch
     nettools
     nmap
-    nvimpager
+    # nvimpager # Build hanging
     p7zip
     ripgrep
     ripgrep-all
