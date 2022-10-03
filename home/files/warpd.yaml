@@ -2,23 +2,23 @@ hint_activation_key: A-M-s
 hint2_activation_key: A-M-r
 grid_activation_key: A-M-g
 history_activation_key: A-M-x
-screen_activation_key: A-M-c
+screen_activation_key: A-M-d
 activation_key: A-M-t
 # hint_oneshot_key: A-M-l
 # hint2_oneshot_key: A-M-L
 exit: space
 drag: o
 # copy_and_exit: c
-accelerator: h
-decelerator: ,
+accelerator: u
+decelerator: l
 buttons: e i n
-#oneshot_buttons: u l y
+oneshot_buttons: E I N
 print: ;
-hint: A-M-s
-hint2: A-M-r
-grid: A-M-g
-history: A-M-x
-screen: A-M-c
+hint: s
+hint2: r
+grid: g
+history: x
+screen: d
 left: q
 down: f
 up: w
@@ -28,8 +28,8 @@ right: p
 # bottom: v
 # start: 0
 # end: $
-scroll_down: k
-scroll_up: m
+scroll_down: m
+scroll_up: j
 cursor_color: #88C0D0
 # cursor_size: 7
 # repeat_interval: 20
@@ -48,7 +48,7 @@ grid_up: w
 grid_left: q
 grid_down: f
 grid_right: p
-grid_keys: a r s t
+grid_keys: l u y ;
 grid_exit: g
 # grid_size: 4
 # grid_border_size: 0
@@ -57,14 +57,14 @@ grid_exit: g
 hint_bgcolor: #434C5E
 hint_fgcolor: #88C0D0
 hint_chars: setnriaoc,dhx.fuplwyq;z'
-# hint_font: Arial
-hint_size: 20
+hint_font: SauceCodePro Nerd Font Mono
+hint_size: 23
 # hint_border_radius: 3
 # hint_exit: esc
 # hint_undo: backspace
 # hint_undo_all: C-u
 hint2_chars: wfprstxcd
-hint2_size: 20
+hint2_size: 23
 hint2_gap_size: 3
 # hint2_grid_size: 3
 # screen_chars: jkl;asdfg
