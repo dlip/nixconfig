@@ -13,6 +13,10 @@ require("auto-save").setup({
   -- return false: if it's not ok to be saved
   condition = function(buf)
     local fn = vim.fn
+    local undotree = vim.fn.undotree()
+    if undotree.seq_last ~= undotree.seq_cur then
+      return false -- don't try to save again if I tried to undo. k thanks
+    end
     local utils = require("auto-save.utils.data")
 
     if fn.getbufvar(buf, "&modifiable") == 1 and
