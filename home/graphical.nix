@@ -55,6 +55,7 @@
     tdesktop
     vial
     vlc
+    warpd
     xclip
     # xfce.thunar
     xorg.xmodmap
