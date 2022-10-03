@@ -9,8 +9,8 @@ activation_key: A-M-t
 exit: space
 drag: o
 # copy_and_exit: c
-# accelerator: a
-# decelerator: d
+accelerator: h
+decelerator: ,
 buttons: e i n
 #oneshot_buttons: u l y
 print: ;
@@ -28,8 +28,8 @@ right: p
 # bottom: v
 # start: 0
 # end: $
-scroll_down: ,
-scroll_up: h
+scroll_down: k
+scroll_up: m
 cursor_color: #88C0D0
 # cursor_size: 7
 # repeat_interval: 20
@@ -54,8 +54,8 @@ grid_exit: g
 # grid_border_size: 0
 # grid_color: #1c1c1e
 # grid_border_color: #ffffff
-# hint_bgcolor: #1c1c1e
-# hint_fgcolor: #a1aba7
+hint_bgcolor: #434C5E
+hint_fgcolor: #88C0D0
 hint_chars: setnriaoc,dhx.fuplwyq;z'
 # hint_font: Arial
 hint_size: 20
@@ -64,8 +64,8 @@ hint_size: 20
 # hint_undo: backspace
 # hint_undo_all: C-u
 hint2_chars: wfprstxcd
-hint2_size: 30
-# hint2_gap_size: 50
+hint2_size: 20
+hint2_gap_size: 3
 # hint2_grid_size: 3
 # screen_chars: jkl;asdfg
 # scroll_speed: 300
