@@ -1,6 +1,5 @@
 local g = vim.g -- global variables
 local gs = require "gitsigns"
-local neotest = require("neotest")
 
 g.which_key_timeout = 100
 local wk = require("which-key")
@@ -151,6 +150,8 @@ wk.register(keymap, { prefix = "<leader>" })
 function _G.coding_mappings()
   local dap = require "dap"
   local dapui = require "dapui"
+  local neotest = require "neotest"
+
   local buffKeymap = {
     a = { function() vim.lsp.buf.code_action() end, "Code Action" },
     b = {

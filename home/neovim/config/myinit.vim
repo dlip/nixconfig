@@ -15,10 +15,6 @@ nnoremap <C-M-R> <cmd>Reload<CR>
 
 set shell=/run/current-system/sw/bin/bash
 
-" use new lua filetype detection
-let g:do_filetype_lua = 1
-let g:did_load_filetypes = 0
-
 let g:netrw_browsex_viewer = 'xdg-open'
 
 " https://github.com/vim-test/vim-test
