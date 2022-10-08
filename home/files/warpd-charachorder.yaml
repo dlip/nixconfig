@@ -1,23 +1,23 @@
 hint_activation_key: A-M-o
 hint2_activation_key: A-M-u
 grid_activation_key: A-M-g
-history_activation_key: A-M-x
+history_activation_key: A-M-i
 screen_activation_key: A-M-r
 activation_key: A-M-e
 # hint_oneshot_key: A-M-l
 # hint2_oneshot_key: A-M-L
 exit: space
-drag: f
+drag: j
 # copy_and_exit: c
-accelerator: ;
-decelerator: j
+accelerator: h
+decelerator: f
 buttons: n t s
 oneshot_buttons: l a y
 print: x
-hint: s
-hint2: r
+hint: o
+hint2: u
 grid: g
-history: h
+history: i
 screen: r
 left: m
 down: c
@@ -33,7 +33,7 @@ scroll_up: p
 cursor_color: #88C0D0
 # cursor_size: 7
 # repeat_interval: 20
-# speed: 220
+speed: 100
 # max_speed: 1600
 # decelerator_speed: 50
 # acceleration: 700
@@ -63,7 +63,7 @@ hint_size: 23
 # hint_exit: esc
 # hint_undo: backspace
 # hint_undo_all: C-u
-hint2_chars: onetuscd.iljmkfhvpgwb
+hint2_chars: 123456789
 hint2_size: 23
 hint2_gap_size: 3
 # hint2_grid_size: 3
