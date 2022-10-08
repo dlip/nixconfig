@@ -120,3 +120,5 @@ require("lsp-format").setup({
     exclude = { "null-ls" },
   },
 })
+
+vim.cmd("FormatDisable")

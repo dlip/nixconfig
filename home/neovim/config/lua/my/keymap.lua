@@ -49,8 +49,8 @@ local keymaps = {
   { "x", "<A-up>", "<cmd>m '<-2<CR>gv=gv" },
   { "x", "<A-down>", "<cmd>m '>+1<CR>gv=gv" },
 
-  -- Save all
-  { "n", "<CR>", ":wa<CR>" },
+  -- Format
+  { "n", "<CR>", ":lua vim.lsp.buf.format()<CR>" },
 
   -- Enable enter and backspace in normal mode
   { "n", "<Backspace>", "X" },

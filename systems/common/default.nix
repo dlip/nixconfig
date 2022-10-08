@@ -153,6 +153,8 @@ in
   programs.nm-applet.enable = true;
   hardware.opengl.driSupport32Bit = true;
 
+  programs.adb.enable = true;
+
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
@@ -226,7 +228,7 @@ in
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.dane = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" "dialout" ]; # Enable ‘sudo’ for the user.
+    extraGroups = [ "wheel" "docker" "networkmanager" "dialout" "adbusers" ]; # Enable ‘sudo’ for the user.
     shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 

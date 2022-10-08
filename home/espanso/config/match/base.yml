@@ -54,3 +54,5 @@ matches:
     replace: "Dane"
   - trigger: ".,l"
     replace: "Lipscombe"
+  - trigger: ".,p"
+    replace: "TestPassword!123"

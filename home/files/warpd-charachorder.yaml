@@ -1,0 +1,77 @@
+hint_activation_key: A-M-o
+hint2_activation_key: A-M-u
+grid_activation_key: A-M-g
+history_activation_key: A-M-x
+screen_activation_key: A-M-r
+activation_key: A-M-e
+# hint_oneshot_key: A-M-l
+# hint2_oneshot_key: A-M-L
+exit: space
+drag: f
+# copy_and_exit: c
+accelerator: ;
+decelerator: j
+buttons: n t s
+oneshot_buttons: l a y
+print: x
+hint: s
+hint2: r
+grid: g
+history: h
+screen: r
+left: m
+down: c
+up: v
+right: k
+# top: b
+# middle: g
+# bottom: v
+# start: 0
+# end: $
+scroll_down: d
+scroll_up: p
+cursor_color: #88C0D0
+# cursor_size: 7
+# repeat_interval: 20
+# speed: 220
+# max_speed: 1600
+# decelerator_speed: 50
+# acceleration: 700
+# accelerator_acceleration: 2900
+# oneshot_timeout: 300
+# hist_hint_size: 2
+# grid_nr: 2
+# grid_nc: 2
+# hist_back: C-o
+# hist_forward: C-i
+grid_up: w
+grid_left: q
+grid_down: f
+grid_right: p
+grid_keys: l u y ;
+grid_exit: g
+# grid_size: 4
+# grid_border_size: 0
+# grid_color: #1c1c1e
+# grid_border_color: #ffffff
+hint_bgcolor: #434C5E
+hint_fgcolor: #88C0D0
+hint_chars: onetuscd.iljmkfhvpgwb
+hint_font: SauceCodePro Nerd Font Mono
+hint_size: 23
+# hint_border_radius: 3
+# hint_exit: esc
+# hint_undo: backspace
+# hint_undo_all: C-u
+hint2_chars: onetuscd.iljmkfhvpgwb
+hint2_size: 23
+hint2_gap_size: 3
+# hint2_grid_size: 3
+# screen_chars: jkl;asdfg
+# scroll_speed: 300
+# scroll_max_speed: 9000
+# scroll_acceleration: 1600
+# scroll_deceleration: -3400
+# indicator: none
+# indicator_color: #00ff00
+# indicator_size: 12
