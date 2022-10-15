@@ -1,9 +1,6 @@
 { config, lib, pkgs, ... }:
 
 with lib;
-let
-  cfg = config.home;
-in
 {
   options.home = {
     name = mkOption {
@@ -27,6 +24,7 @@ in
     ./nnn
     ./packages.nix
     ./readline
+    ./scripts.nix
     ./starship
     ./syncthing
     ./tmux

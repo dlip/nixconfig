@@ -36,5 +36,5 @@
     wget
     wireguard-tools
     zip
-  ] ++ (builtins.attrValues scripts.scripts);
+  ];
 }

@@ -41,13 +41,7 @@ in
   fileSystems."/mnt/dex-dane" = {
     device = "//10.10.0.123/dane";
     fsType = "cifs";
-    options =
-      let
-        # this line prevents hanging on network split
-        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s";
-
-      in
-      [ "${automount_opts},credentials=${config.sops.secrets.dex-dane.path}" ];
+    options = [ "credentials=${config.sops.secrets.dex-dane.path},uid=1000,gid=100,x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s" ];
   };
   # services.k3s = {
   #   enable = false;

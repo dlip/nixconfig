@@ -1,7 +1,7 @@
-{ config, writeShellScriptBin, betterlockscreen }:
-
+{ config, pkgs, ... }:
+with pkgs;
 let
-  home = "/home/dane";
+  home = config.home.homeDirectory;
   codepath = "${home}/code";
   nixconfigpath = "${codepath}/nixconfig";
   projectfile = "${codepath}/projects.txt";
@@ -123,13 +123,11 @@ let
       echo $BRANCH_POINT
     '';
   };
-
-
 in
 {
-  scripts = builtins.mapAttrs
+  home.packages = builtins.attrValues (builtins.mapAttrs
     (name: val: writeShellScriptBin name ''
       set -euo pipefail
       ${val}'')
-    scripts;
+    scripts);
 }
