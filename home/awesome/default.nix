@@ -33,7 +33,6 @@ in
 
   home.file = symlinkedFiles // {
     "${awesomeHome}/env.lua".text = ''
-      xrandr_command = "${config.home.xrandrCommand}"
       arc_icon_theme = "${pkgs.arc-icon-theme}"
     '';
     "${awesomeHome}/awesome-wm-widgets".source = pkgs.awesome-wm-widgets;

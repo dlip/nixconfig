@@ -14,10 +14,6 @@ in
       type = types.str;
       default = "danelipscombe@gmail.com";
     };
-    xrandrCommand = mkOption {
-      type = types.str;
-      default = "";
-    };
   };
 
   imports = [
