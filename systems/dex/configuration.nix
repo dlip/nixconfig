@@ -240,26 +240,42 @@ rec {
     group = "root";
   };
 
+  environment.etc.restic-ignore.text = ''
+    .cache
+    .Cache
+    /var/lib/docker
+    .rustup
+    .spago
+    .vscode
+    Dropbox
+    Google Drive
+    Temp
+    VirtualBox VMs
+    node_modules
+  '';
   systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
   services.restic.backups = {
     dex = {
       paths = [
         "/home"
         "/root"
-        "/media/media/dane"
-        "/media/media/ryoko"
+        "/media/media/home"
         "/mnt/services"
         "/mnt/downloader"
         "/var/lib"
       ];
+      repository = "/media/backup/restic";
+      passwordFile = config.sops.secrets.restic-encryption.path;
+      pruneOpts = [
+        "--keep-daily 7"
+        "--keep-weekly 4"
+      ];
+      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" "2" ];
+      timerConfig = {
+        OnCalendar = "daily";
+        Persistent = true;
+      };
     };
-  };
-
-  services.restic.server = {
-    enable = true;
-    listenAddress = "0.0.0.0:8000";
-    dataDir = "/media/backup/restic";
-    extraFlags = [ "--no-auth" ];
   };
 
   services.samba = {

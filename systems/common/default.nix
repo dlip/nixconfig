@@ -264,38 +264,6 @@ in
   services.pcscd.enable = true;
 
 
-  environment.etc.restic-ignore.text = ''
-    .cache
-    .Cache
-    /var/lib/docker
-    .rustup
-    .spago
-    .vscode
-    Dropbox
-    Google Drive
-    Temp
-    VirtualBox VMs
-    node_modules
-  '';
-  systemd.services.restic-backups-dex.unitConfig.OnFailure = "notify-problems@%i.service";
-  services.restic.backups = {
-    dex = {
-      paths = [ "/home" "/root" "/var/lib" ];
-      repository = "rest:http://dex.local:8000/${hostname}";
-      passwordFile = config.sops.secrets.restic-encryption.path;
-      pruneOpts = [
-        "--keep-daily 7"
-        "--keep-weekly 4"
-      ];
-      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" "2" ];
-      timerConfig = {
-        OnCalendar = "daily";
-        Persistent = true;
-      };
-    };
-  };
-
-
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
