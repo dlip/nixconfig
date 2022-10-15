@@ -248,6 +248,7 @@ in
     pciutils
     nvidia-offload
     wine
+    wine64
     winetricks
     dropbox
     pavucontrol

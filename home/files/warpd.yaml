@@ -56,7 +56,7 @@ grid_exit: g
 # grid_border_color: #ffffff
 hint_bgcolor: #434C5E
 hint_fgcolor: #88C0D0
-hint_chars: setnriaoc,dhx.fuplwyq;z'
+hint_chars: setnriaocdhxfuplwyqbgvjmkqz,.;'
 hint_font: SauceCodePro Nerd Font Mono
 hint_size: 23
 # hint_border_radius: 3

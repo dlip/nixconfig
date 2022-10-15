@@ -13,6 +13,7 @@ let
       obsidian&
       slack&
       teams&
+      warpd&
     '';
 
     work = ''

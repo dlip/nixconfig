@@ -27,6 +27,7 @@
       docker-compose
       eksctl
       evtest
+      exiv2
       file
       fluxcd
       ghc
@@ -38,6 +39,7 @@
       gobang
       gotypist
       graphviz
+      hexdino
       helix
       hledger
       jdk11

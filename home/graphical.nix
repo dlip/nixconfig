@@ -37,7 +37,7 @@
     lens
     libreoffice
     logseq
-    mongodb
+    mlt
     mongodb-compass
     mpv
     neovide
