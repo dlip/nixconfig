@@ -11,7 +11,7 @@ let
     exec "$@"
   '';
   restic-dex = pkgs.writeShellScriptBin "restic-dex" ''
-    export RESTIC_REPOSITORY="rest:http://dex.local:8000/${hostname}"
+    export RESTIC_REPOSITORY="/media/media/backup/restic"
     export RESTIC_PASSWORD_FILE="${config.sops.secrets.restic-encryption.path}"
 
     ${pkgs.restic}/bin/restic $@
