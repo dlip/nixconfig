@@ -16,6 +16,12 @@ in
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "dane" ];
 
+  users.users.dane = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "docker" "networkmanager" "dialout" "adbusers" ]; # Enable ‘sudo’ for the user.
+    shell = "/etc/profiles/per-user/dane/bin/zsh";
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
   services.xserver.screenSection = ''
     Option         "metamodes" "nvidia-auto-select +0+0 {ForceFullCompositionPipeline=On}"

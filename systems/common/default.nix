@@ -225,13 +225,6 @@ in
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.dane = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" "dialout" "adbusers" ]; # Enable ‘sudo’ for the user.
-    shell = "/etc/profiles/per-user/dane/bin/zsh";
-  };
-
   virtualisation.docker.enable = true;
   virtualisation.docker.enableNvidia = true;
   systemd.enableUnifiedCgroupHierarchy = false;

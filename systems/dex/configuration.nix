@@ -52,15 +52,23 @@ rec {
 
   users.users.tv = {
     isNormalUser = true;
-    initialPassword = "password";
     extraGroups = [ ]; # Enable ‘sudo’ for the user.
     shell = "/etc/profiles/per-user/tv/bin/zsh";
   };
 
   users.users.ryoko = {
     isNormalUser = true;
+    home = "/media/media/home/ryoko";
+    createHome = true;
     extraGroups = [ ]; # Enable ‘sudo’ for the user.
-    shell = "/etc/profiles/per-user/tv/bin/zsh";
+  };
+
+  users.users.dane = {
+    isNormalUser = true;
+    home = "/media/media/home/dane";
+    createHome = true;
+    extraGroups = [ "wheel" "docker" "networkmanager" "dialout" "adbusers" ]; # Enable ‘sudo’ for the user.
+    shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 
   programs.steam.enable = true;

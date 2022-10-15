@@ -17,6 +17,12 @@ in
       ../common/services/kmonad.nix
     ];
 
+  users.users.dane = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "docker" "networkmanager" "dialout" "adbusers" ]; # Enable ‘sudo’ for the user.
+    shell = "/etc/profiles/per-user/dane/bin/zsh";
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
 
