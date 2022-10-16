@@ -9,17 +9,6 @@
       url = "github:nix-community/home-manager/70824bb5c790b820b189f62f643f795b1d2ade2e";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    dap-adapters = {
-      url = "./overlays/dapAdapters";
-    };
-    repos = {
-      url = "./overlays/repos";
-    };
-    personal = {
-      url = "./overlays/personal";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
-    };
     kmonad = {
       url = "github:kmonad/kmonad?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,6 +23,51 @@
       url = "github:nix-community/poetry2nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
+    };
+    envy-sh = {
+      url = "github:dlip/envy.sh";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
+    actual-server = {
+      url = "github:actualbudget/actual-server";
+      flake = false;
+    };
+    emoji-menu = {
+      url = "github:jchook/emoji-menu";
+      flake = false;
+    };
+    power-menu = {
+      url = "github:jluttine/rofi-power-menu";
+      flake = false;
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    openvpn-aws = {
+      url = "github:abhibansal530/dotfiles";
+      flake = false;
+    };
+    repo-nnn = {
+      url = "github:jarun/nnn";
+      flake = false;
+    };
+    repo-awesome-wm-widgets = {
+      url = "github:streetturtle/awesome-wm-widgets";
+      flake = false;
+    };
+    repo-arc-icon-theme = {
+      url = "github:horst3180/arc-icon-theme";
+      flake = false;
+    };
+    repo-json-lua = {
+      url = "github:rxi/json.lua";
+      flake = false;
+    };
+    vscodeNodeDebug2 = {
+      url = "github:microsoft/vscode-node-debug2";
+      flake = false;
     };
     vimplugin-auto-save-nvim = {
       url = "github:pocco81/auto-save.nvim";

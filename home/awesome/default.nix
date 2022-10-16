@@ -33,10 +33,10 @@ in
 
   home.file = symlinkedFiles // {
     "${awesomeHome}/env.lua".text = ''
-      arc_icon_theme = "${pkgs.arc-icon-theme}"
+      arc_icon_theme = "${pkgs.repo-arc-icon-theme}"
     '';
-    "${awesomeHome}/awesome-wm-widgets".source = pkgs.awesome-wm-widgets;
-    "${awesomeHome}/json.lua".source = "${pkgs.json-lua}/json.lua";
+    "${awesomeHome}/awesome-wm-widgets".source = pkgs.repo-awesome-wm-widgets;
+    "${awesomeHome}/json.lua".source = "${pkgs.repo-json-lua}/json.lua";
   };
 
   home.packages = with pkgs; [

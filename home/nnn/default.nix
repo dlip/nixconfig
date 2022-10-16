@@ -7,11 +7,11 @@ let
         file: {
           name = "${nnnConfig}/plugins/${file}";
           value = {
-            source = "${pkgs.nnn-git}/plugins/${file}";
+            source = "${pkgs.repo-nnn}/plugins/${file}";
           };
         }
       )
-      (builtins.attrNames (builtins.readDir "${pkgs.nnn-git}/plugins"))
+      (builtins.attrNames (builtins.readDir "${pkgs.repo-nnn}/plugins"))
   );
 
   nnn = pkgs.writeShellScriptBin "nnn" ''

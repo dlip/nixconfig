@@ -16,38 +16,6 @@
         "type": "github"
       }
     },
-    "arc-icon-theme": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1479849780,
-        "narHash": "sha256-TfYtzwo69AC5hHbzEqB4r5Muqvn/eghCGSlmjMCFA7I=",
-        "owner": "horst3180",
-        "repo": "arc-icon-theme",
-        "rev": "55a575386a412544c3ed2b5617a61f842ee4ec15",
-        "type": "github"
-      },
-      "original": {
-        "owner": "horst3180",
-        "repo": "arc-icon-theme",
-        "type": "github"
-      }
-    },
-    "awesome-wm-widgets": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1662169885,
-        "narHash": "sha256-zXAiEeAJibdmF5lpSJc7zZrgUJP/+l/dKcBR1HdUf9k=",
-        "owner": "streetturtle",
-        "repo": "awesome-wm-widgets",
-        "rev": "3bb3d56c26ac3500aab33381af0cccebf6aaa05c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "streetturtle",
-        "repo": "awesome-wm-widgets",
-        "type": "github"
-      }
-    },
     "bats-assert": {
       "flake": false,
       "locked": {
@@ -96,21 +64,6 @@
         "type": "github"
       }
     },
-    "dap-adapters": {
-      "inputs": {
-        "vscodeNodeDebug2": "vscodeNodeDebug2"
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-iPjyzVhjzyvH+2gpuITW7lrcMbLR9ABFwpDlxIIZEy4=",
-        "path": "/nix/store/7wgrdrxqiji4xnmq0l04g9h3w70fdava-source/overlays/dapAdapters",
-        "type": "path"
-      },
-      "original": {
-        "path": "/nix/store/7wgrdrxqiji4xnmq0l04g9h3w70fdava-source/overlays/dapAdapters",
-        "type": "path"
-      }
-    },
     "emoji-menu": {
       "flake": false,
       "locked": {
@@ -133,11 +86,9 @@
         "bats-file": "bats-file",
         "bats-support": "bats-support",
         "flake-utils": [
-          "personal",
           "flake-utils"
         ],
         "nixpkgs": [
-          "personal",
           "nixpkgs"
         ]
       },
@@ -223,22 +174,6 @@
         "owner": "nix-community",
         "repo": "home-manager",
         "rev": "70824bb5c790b820b189f62f643f795b1d2ade2e",
-        "type": "github"
-      }
-    },
-    "json-lua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1592496233,
-        "narHash": "sha256-BrM+r0VVdaeFgLfzmt1wkj0sC3dj9nNojkuZJK5f35s=",
-        "owner": "rxi",
-        "repo": "json.lua",
-        "rev": "dbf4b2dd2eb7c23be2773c89eb059dadd6436f94",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rxi",
-        "repo": "json.lua",
         "type": "github"
       }
     },
@@ -352,22 +287,6 @@
         "type": "gitlab"
       }
     },
-    "nnn-git": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1665586401,
-        "narHash": "sha256-Sbj/KaF9odm6RYbjZfF27o3TpzIZnlMHdWGGNilxsKg=",
-        "owner": "jarun",
-        "repo": "nnn",
-        "rev": "f89ba7751620cfff2b39d3e198b41db2e2e14dc6",
-        "type": "github"
-      },
-      "original": {
-        "owner": "jarun",
-        "repo": "nnn",
-        "type": "github"
-      }
-    },
     "openvpn-aws": {
       "flake": false,
       "locked": {
@@ -382,32 +301,6 @@
         "owner": "abhibansal530",
         "repo": "dotfiles",
         "type": "github"
-      }
-    },
-    "personal": {
-      "inputs": {
-        "actual-server": "actual-server",
-        "emoji-menu": "emoji-menu",
-        "envy-sh": "envy-sh",
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "openvpn-aws": "openvpn-aws",
-        "power-menu": "power-menu",
-        "sops-nix": "sops-nix"
-      },
-      "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-C9dNjI+cn8CzCinTJwXXOYAHOKPJXj84wqEDWfcLbrs=",
-        "path": "/nix/store/7wgrdrxqiji4xnmq0l04g9h3w70fdava-source/overlays/personal",
-        "type": "path"
-      },
-      "original": {
-        "path": "/nix/store/7wgrdrxqiji4xnmq0l04g9h3w70fdava-source/overlays/personal",
-        "type": "path"
       }
     },
     "poetry2nix": {
@@ -449,35 +342,88 @@
         "type": "github"
       }
     },
-    "repos": {
-      "inputs": {
-        "arc-icon-theme": "arc-icon-theme",
-        "awesome-wm-widgets": "awesome-wm-widgets",
-        "json-lua": "json-lua",
-        "nnn-git": "nnn-git"
-      },
+    "repo-arc-icon-theme": {
+      "flake": false,
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-RlNDCRavfpaK9mHhtgPl55VjIXgZ1mlTyC0TScxZxp8=",
-        "path": "/nix/store/7wgrdrxqiji4xnmq0l04g9h3w70fdava-source/overlays/repos",
-        "type": "path"
+        "lastModified": 1479849780,
+        "narHash": "sha256-TfYtzwo69AC5hHbzEqB4r5Muqvn/eghCGSlmjMCFA7I=",
+        "owner": "horst3180",
+        "repo": "arc-icon-theme",
+        "rev": "55a575386a412544c3ed2b5617a61f842ee4ec15",
+        "type": "github"
       },
       "original": {
-        "path": "/nix/store/7wgrdrxqiji4xnmq0l04g9h3w70fdava-source/overlays/repos",
-        "type": "path"
+        "owner": "horst3180",
+        "repo": "arc-icon-theme",
+        "type": "github"
+      }
+    },
+    "repo-awesome-wm-widgets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1662169885,
+        "narHash": "sha256-zXAiEeAJibdmF5lpSJc7zZrgUJP/+l/dKcBR1HdUf9k=",
+        "owner": "streetturtle",
+        "repo": "awesome-wm-widgets",
+        "rev": "3bb3d56c26ac3500aab33381af0cccebf6aaa05c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "streetturtle",
+        "repo": "awesome-wm-widgets",
+        "type": "github"
+      }
+    },
+    "repo-json-lua": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1592496233,
+        "narHash": "sha256-BrM+r0VVdaeFgLfzmt1wkj0sC3dj9nNojkuZJK5f35s=",
+        "owner": "rxi",
+        "repo": "json.lua",
+        "rev": "dbf4b2dd2eb7c23be2773c89eb059dadd6436f94",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rxi",
+        "repo": "json.lua",
+        "type": "github"
+      }
+    },
+    "repo-nnn": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1665586401,
+        "narHash": "sha256-Sbj/KaF9odm6RYbjZfF27o3TpzIZnlMHdWGGNilxsKg=",
+        "owner": "jarun",
+        "repo": "nnn",
+        "rev": "f89ba7751620cfff2b39d3e198b41db2e2e14dc6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jarun",
+        "repo": "nnn",
+        "type": "github"
       }
     },
     "root": {
       "inputs": {
-        "dap-adapters": "dap-adapters",
+        "actual-server": "actual-server",
+        "emoji-menu": "emoji-menu",
+        "envy-sh": "envy-sh",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "kmonad": "kmonad",
         "nix-on-droid": "nix-on-droid",
         "nixpkgs": "nixpkgs",
-        "personal": "personal",
+        "openvpn-aws": "openvpn-aws",
         "poetry2nix": "poetry2nix",
-        "repos": "repos",
+        "power-menu": "power-menu",
+        "repo-arc-icon-theme": "repo-arc-icon-theme",
+        "repo-awesome-wm-widgets": "repo-awesome-wm-widgets",
+        "repo-json-lua": "repo-json-lua",
+        "repo-nnn": "repo-nnn",
+        "sops-nix": "sops-nix",
         "vimplugin-auto-save-nvim": "vimplugin-auto-save-nvim",
         "vimplugin-fix-cursor-hold-nvim": "vimplugin-fix-cursor-hold-nvim",
         "vimplugin-kmonad-vim": "vimplugin-kmonad-vim",
@@ -488,13 +434,13 @@
         "vimplugin-nvim-dap-ui": "vimplugin-nvim-dap-ui",
         "vimplugin-nvim-neotest": "vimplugin-nvim-neotest",
         "vimplugin-telescope-nvim": "vimplugin-telescope-nvim",
-        "vimplugin-vim-test": "vimplugin-vim-test"
+        "vimplugin-vim-test": "vimplugin-vim-test",
+        "vscodeNodeDebug2": "vscodeNodeDebug2"
       }
     },
     "sops-nix": {
       "inputs": {
         "nixpkgs": [
-          "personal",
           "nixpkgs"
         ],
         "nixpkgs-22_05": "nixpkgs-22_05"
