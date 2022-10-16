@@ -1,20 +1,16 @@
 { config, pkgs, lib, ... }:
 {
+  hardware.pulseaudio.enable = false;
   services.xserver = {
     displayManager = {
       lightdm.enable = true;
-      defaultSession = "xfce+awesome";
+      defaultSession = "cinnamon";
       autoLogin.enable = true;
       job.preStart = "sleep 2"; # Hack to ensure X is ready for autoLogin
       autoLogin.user = "dane";
     };
     desktopManager = {
-      xterm.enable = false;
-      xfce = {
-        enable = true;
-        noDesktop = true;
-        enableXfwm = false;
-      };
+      cinnamon.enable = true;
     };
     windowManager.awesome = {
       enable = true;
