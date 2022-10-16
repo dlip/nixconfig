@@ -427,6 +427,7 @@
         "vimplugin-auto-save-nvim": "vimplugin-auto-save-nvim",
         "vimplugin-fix-cursor-hold-nvim": "vimplugin-fix-cursor-hold-nvim",
         "vimplugin-kmonad-vim": "vimplugin-kmonad-vim",
+        "vimplugin-leap-nvim": "vimplugin-leap-nvim",
         "vimplugin-lsp-format-nvim": "vimplugin-lsp-format-nvim",
         "vimplugin-neotest-jest": "vimplugin-neotest-jest",
         "vimplugin-neotest-plenary": "vimplugin-neotest-plenary",
@@ -519,6 +520,22 @@
       "original": {
         "owner": "kmonad",
         "repo": "kmonad-vim",
+        "type": "github"
+      }
+    },
+    "vimplugin-leap-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1665830680,
+        "narHash": "sha256-4mUFSxcs6QjzPDNW2GroZSncLZ90uPO4lo417ahn4UY=",
+        "owner": "ggandor",
+        "repo": "leap.nvim",
+        "rev": "a9d3232b178fddabb6660dc19abf40e05d6841b0",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ggandor",
+        "repo": "leap.nvim",
         "type": "github"
       }
     },

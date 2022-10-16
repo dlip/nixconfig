@@ -22,7 +22,7 @@ require("plugins.trouble")
 require("plugins.treesitter")
 ---require("plugins.ultest")
 require("plugins.whichkey")
-require("plugins.hop")
+require("plugins.leap")
 require("plugins.comment")
 
 require("my.utils")

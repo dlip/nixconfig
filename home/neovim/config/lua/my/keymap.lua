@@ -62,9 +62,12 @@ local keymaps = {
   -- Paste in insert mode
   { "i", "<C-v>", '<C-r>"' },
 
-  -- Hop
-  { "nxo", "h", "<cmd>HopChar1AC<CR>" },
-  { "nxo", "k", "<cmd>HopChar1BC<CR>" },
+  -- Leap
+  { "nxo", "h", "<Plug>(leap-forward-to)" },
+  { "nxo", "H", "<Plug>(leap-forward-till)" },
+  { "nxo", "k", "<Plug>(leap-backward-to)" },
+  { "nxo", "K", "<Plug>(leap-backward-till)" },
+  { "nxo", "gs", "<Plug>(leap-cross-window)" },
 
   -- Debugging
   { "nxo", "<F5>", "<Cmd>lua require'dap'.continue()<CR>" },

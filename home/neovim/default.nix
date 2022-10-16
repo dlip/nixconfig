@@ -63,9 +63,9 @@ in
           friendly-snippets
           glow-nvim
           gv-vim
-          hop-nvim
           indent-blankline-nvim
           kmonad-vim
+          leap-nvim
           lspkind-nvim # Icons for lsp popup
           lsp_signature-nvim
           luasnip

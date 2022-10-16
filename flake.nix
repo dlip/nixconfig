@@ -73,6 +73,10 @@
       url = "github:pocco81/auto-save.nvim";
       flake = false;
     };
+    vimplugin-leap-nvim = {
+      url = "github:ggandor/leap.nvim";
+      flake = false;
+    };
     vimplugin-lsp-format-nvim = {
       url = "github:lukas-reineke/lsp-format.nvim";
       flake = false;
