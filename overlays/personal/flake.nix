@@ -53,14 +53,14 @@
         nnn = prev.nnn.overrideAttrs (oldAttrs: {
           makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
         });
-        myNodePackages = final.callPackage ./nodePackages { };
+        # myNodePackages = final.callPackage ./nodePackages { };
         # myPythonPackages = final.callPackage ./pythonPackages { };
-        skyscraper = final.callPackage ./skyscraper { };
-        solang = final.callPackage ./solang { };
-        juliusSpeech = final.callPackage ./juliusSpeech { };
-        talon = final.callPackage ./talon { };
+        # skyscraper = final.callPackage ./skyscraper { };
+        # solang = final.callPackage ./solang { };
+        # juliusSpeech = final.callPackage ./juliusSpeech { };
+        # talon = final.callPackage ./talon { };
         inherit sops-nix;
-        inherit (final.callPackages "${openvpn-aws}/derivations/openvpn.nix" { }) openvpn_aws;
+        # inherit (final.callPackages "${openvpn-aws}/derivations/openvpn.nix" { }) openvpn_aws;
       };
     };
 }

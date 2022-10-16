@@ -23,7 +23,7 @@
     rust-analyzer
     rustfmt
     shfmt
-    solang
+    # solang
     stylua
     sumneko-lua-language-server
     terraform

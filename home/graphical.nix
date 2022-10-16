@@ -51,7 +51,7 @@
     remote-touchpad
     slack
     # spotify
-    talon
+    # talon
     tdesktop
     vial
     vlc
