@@ -9,9 +9,6 @@
       url = "github:nix-community/home-manager/70824bb5c790b820b189f62f643f795b1d2ade2e";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    vim-plugins = {
-      url = "./overlays/vimPlugins";
-    };
     dap-adapters = {
       url = "./overlays/dapAdapters";
     };
@@ -38,11 +35,50 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
     };
-    # neovim = {
-    #   url = "github:neovim/neovim/v0.6.0?dir=contrib";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   inputs.flake-utils.follows = "flake-utils";
-    # };
+    vimplugin-auto-save-nvim = {
+      url = "github:pocco81/auto-save.nvim";
+      flake = false;
+    };
+    vimplugin-lsp-format-nvim = {
+      url = "github:lukas-reineke/lsp-format.nvim";
+      flake = false;
+    };
+    vimplugin-kmonad-vim = {
+      url = "github:kmonad/kmonad-vim";
+      flake = false;
+    };
+    vimplugin-neotest-jest = {
+      url = "github:haydenmeade/neotest-jest";
+      flake = false;
+    };
+    vimplugin-neotest-plenary = {
+      url = "github:nvim-neotest/neotest-plenary";
+      flake = false;
+    };
+    vimplugin-neotest-vim-test = {
+      url = "github:nvim-neotest/neotest-vim-test";
+      flake = false;
+    };
+    vimplugin-nvim-neotest = {
+      url = "github:nvim-neotest/neotest";
+      flake = false;
+    };
+    vimplugin-fix-cursor-hold-nvim = {
+      url = "github:antoinemadec/FixCursorHold.nvim";
+      flake = false;
+    };
+    vimplugin-nvim-dap-ui = {
+      url = "github:rcarriga/nvim-dap-ui";
+      flake = false;
+    };
+    vimplugin-telescope-nvim = {
+      url = "github:nvim-telescope/telescope.nvim";
+      flake = false;
+    };
+    vimplugin-vim-test = {
+      url = "github:excalios/vim-test";
+      flake = false;
+    };
   };
 
   outputs = inputs: (import ./outputs.nix inputs);
