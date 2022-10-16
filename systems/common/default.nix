@@ -243,7 +243,6 @@ in
     wine
     wine64
     winetricks
-    dropbox
     pavucontrol
     restic
     restic-dex

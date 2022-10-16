@@ -43,6 +43,16 @@ in
     fsType = "cifs";
     options = [ "credentials=${config.sops.secrets.dex-dane.path},uid=1000,gid=100,x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s" ];
   };
+  fileSystems."/mnt/dex-media" = {
+    device = "//10.10.0.123/media";
+    fsType = "cifs";
+    options = [ "credentials=${config.sops.secrets.dex-dane.path},uid=1000,gid=100,x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s" ];
+  };
+  fileSystems."/mnt/dex-media2" = {
+    device = "//10.10.0.123/media2";
+    fsType = "cifs";
+    options = [ "credentials=${config.sops.secrets.dex-dane.path},uid=1000,gid=100,x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s" ];
+  };
   # services.k3s = {
   #   enable = false;
   #   docker = true;
