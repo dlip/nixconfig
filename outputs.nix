@@ -1,9 +1,11 @@
-inputs: { self
-        , nixpkgs
-        , home-manager
-        , flake-utils
-        , nix-on-droid
-        }:
+inputs@{ self
+, nixpkgs
+, home-manager
+, flake-utils
+, nix-on-droid
+, kmonad
+, ...
+}:
 let
   pkgsForSystem = { system, pkgs ? nixpkgs }: import pkgs {
     inherit system;
