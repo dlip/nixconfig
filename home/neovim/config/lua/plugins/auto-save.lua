@@ -13,14 +13,13 @@ require("auto-save").setup({
   -- return false: if it's not ok to be saved
   condition = function(buf)
     local fn = vim.fn
-    local undotree = vim.fn.undotree()
-    if undotree.seq_last ~= undotree.seq_cur then
-      return false -- don't try to save again if I tried to undo. k thanks
-    end
+    -- local undotree = vim.fn.undotree()
+    -- if undotree.seq_last ~= undotree.seq_cur then
+    --   return false -- don't try to save again if I tried to undo. k thanks
+    -- end
     local utils = require("auto-save.utils.data")
 
-    if fn.getbufvar(buf, "&modifiable") == 1 and
-        utils.not_in(fn.getbufvar(buf, "&filetype"), {}) then
+    if fn.getbufvar(buf, "&modifiable") == 1 and utils.not_in(fn.getbufvar(buf, "&filetype"), {}) then
       return true -- met condition(s), can save
     end
     return false -- can't save
@@ -32,6 +31,6 @@ require("auto-save").setup({
     disabling = nil, -- ran when disabling auto-save
     before_asserting_save = nil, -- ran before checking `condition`
     before_saving = nil, -- ran before doing the actual save
-    after_saving = nil -- ran after doing the actual save
-  }
+    after_saving = nil, -- ran after doing the actual save
+  },
 })

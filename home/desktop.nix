@@ -105,5 +105,6 @@
       youtube-dl
       yq
       # yubikey-manager #broken
+      zgrviewer
     ];
 }
