@@ -275,8 +275,144 @@
     compatible = "zmk,combos";
     combo_system {
       timeout-ms = <100>;
-      key-positions = <0 20>;
+      key-positions = <P_Q P_Z>;
       bindings = <&tog L_SYS>;
+    };
+    combo_boot {
+      timeout-ms = <100>;
+      key-positions = <P_Q P_B>;
+      bindings = <SYS_BOOT>;
+    };
+    combo_tab {
+      timeout-ms = <100>;
+      key-positions = <P_P P_B>;
+      bindings = <&kp TAB>;
+    };
+    combo_bspc {
+      timeout-ms = <100>;
+      key-positions = <P_T P_G>;
+      bindings = <&kp BSPC>;
+    };
+    combo_esc {
+      timeout-ms = <100>;
+      key-positions = <P_D P_V>;
+      bindings = <&kp ESC>;
+    };
+    combo_del {
+      timeout-ms = <100>;
+      key-positions = <P_J P_L>;
+      bindings = <&kp DEL>;
+    };
+    combo_ret {
+      timeout-ms = <100>;
+      key-positions = <P_M P_N>;
+      bindings = <&kp RET>;
+    };
+    combo_ins {
+      timeout-ms = <100>;
+      key-positions = <P_K P_H>;
+      bindings = <&kp INS>;
+    };
+    combo_excl {
+      timeout-ms = <100>;
+      key-positions = <P_A P_Q>;
+      bindings = <&kp EXCL>;
+    };
+    combo_at {
+      timeout-ms = <100>;
+      key-positions = <P_R P_W>;
+      bindings = <&kp AT>;
+    };
+    combo_pound {
+      timeout-ms = <100>;
+      key-positions = <P_S P_F>;
+      bindings = <&kp POUND>;
+    };
+    combo_dollar {
+      timeout-ms = <100>;
+      key-positions = <P_T P_P>;
+      bindings = <&kp DOLLAR>;
+    };
+    combo_percent {
+      timeout-ms = <100>;
+      key-positions = <P_G P_B>;
+      bindings = <&kp PERCENT>;
+    };
+    combo_caret {
+      timeout-ms = <100>;
+      key-positions = <P_M P_J>;
+      bindings = <&kp CARET>;
+    };
+    combo_amps {
+      timeout-ms = <100>;
+      key-positions = <P_N P_L>;
+      bindings = <&kp AMPS>;
+    };
+    combo_star {
+      timeout-ms = <100>;
+      key-positions = <P_E P_U>;
+      bindings = <&kp PERCENT>;
+    };
+    combo_lpar {
+      timeout-ms = <100>;
+      key-positions = <P_I P_Y>;
+      bindings = <&kp LPAR>;
+    };
+    combo_rpar {
+      timeout-ms = <100>;
+      key-positions = <P_O P_SEMI>;
+      bindings = <&kp RPAR>;
+    };
+
+    combo_lbkt {
+      timeout-ms = <100>;
+      key-positions = <P_A P_Z>;
+      bindings = <&kp LBKT>;
+    };
+    combo_rbkt {
+      timeout-ms = <100>;
+      key-positions = <P_R P_X>;
+      bindings = <&kp RBKT>;
+    };
+    combo_lbrc {
+      timeout-ms = <100>;
+      key-positions = <P_S P_C>;
+      bindings = <&kp LBRC>;
+    };
+    combo_rbrc {
+      timeout-ms = <100>;
+      key-positions = <P_T P_D>;
+      bindings = <&kp DOLLAR>;
+    };
+    combo_grave {
+      timeout-ms = <100>;
+      key-positions = <P_G P_V>;
+      bindings = <&kp GRAVE>;
+    };
+    combo_tilde {
+      timeout-ms = <100>;
+      key-positions = <P_M P_K>;
+      bindings = <&kp TILDE>;
+    };
+    combo_minus {
+      timeout-ms = <100>;
+      key-positions = <P_N P_H>;
+      bindings = <&kp MINUS>;
+    };
+    combo_equal {
+      timeout-ms = <100>;
+      key-positions = <P_E P_COMMA>;
+      bindings = <&kp EQUAL>;
+    };
+    combo_under {
+      timeout-ms = <100>;
+      key-positions = <P_I P_DOT>;
+      bindings = <&kp UNDER>;
+    };
+    combo_plus {
+      timeout-ms = <100>;
+      key-positions = <P_O P_SQT>;
+      bindings = <&kp PLUS>;
     };
     // COMBOS START
     // COMBOS END
