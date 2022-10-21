@@ -295,6 +295,11 @@
     };
     combo_esc {
       timeout-ms = <100>;
+      key-positions = <P_T P_V>;
+      bindings = <&kp ESC>;
+    ;
+    combo_ret {
+      timeout-ms = <100>;
       key-positions = <P_D P_V>;
       bindings = <&kp ESC>;
     };
@@ -382,7 +387,7 @@
     combo_rbrc {
       timeout-ms = <100>;
       key-positions = <P_T P_D>;
-      bindings = <&kp DOLLAR>;
+      bindings = <&kp RBRC>;
     };
     combo_grave {
       timeout-ms = <100>;
