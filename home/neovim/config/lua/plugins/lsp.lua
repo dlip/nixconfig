@@ -44,7 +44,7 @@ local servers = {
 
 for _, server in ipairs(servers) do
   nvim_lsp[server].setup({
-    capabilities = require("cmp_nvim_lsp").update_capabilities(lsp.protocol.make_client_capabilities()),
+    capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities()),
     on_attach = require("lsp-format").on_attach,
     flags = {
       debounce_text_changes = 150,
@@ -63,7 +63,7 @@ lib[g.awesome_root_path .. "/lib"] = true
 
 require("lspconfig").sumneko_lua.setup({
   cmd = { g.sumneko_root_path .. "/bin/lua-language-server", "-E", g.sumneko_root_path .. "/extras/main.lua" },
-  capabilities = require("cmp_nvim_lsp").update_capabilities(lsp.protocol.make_client_capabilities()),
+  capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities()),
   on_attach = require("lsp-format").on_attach,
   settings = {
     Lua = {
