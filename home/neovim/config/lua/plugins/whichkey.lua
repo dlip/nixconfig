@@ -77,13 +77,13 @@ local keymap = {
     name = "Find",
     c = { "<cmd>Telescope commands<CR>", "commands" },
     C = { "<cmd>Telescope command_history<CR>", "history" },
-    f = { "<cmd>Telescope find_files<CR>", "Find Files" },
+    f = { "<cmd>Telescope find_files hidden=true<CR>", "Find Files" },
     h = { "<cmd>Telescope help_tags<CR>", "help tags" },
     m = { "<cmd>Telescope man_pages<CR>", "man pages" },
     p = { "<cmd>Telescope frecency frecency default_text=:CWD:<CR>", "Find Recent Files" },
     q = { "<cmd>Telescope quickfix<CR>", "quickfix" },
     r = { "<cmd>Telescope frecency frecency default_text=:CWD:<CR>", "Find Recent Files" },
-    t = { "<cmd>Telescope live_grep<CR>", "Text" },
+    t = { "<cmd>Telescope live_grep hidden=true<CR>", "Text" },
   },
   g = {
     name = "Git",
@@ -120,7 +120,7 @@ local keymap = {
     ["."] = { "]c", "Next change" },
   },
   n = { "<cmd>NvimTreeToggle<CR>", "NvimTreeToggle" },
-  p = { "<cmd>Telescope fd<CR>", "Find Files" },
+  p = { "<cmd>Telescope fd hidden=true<CR>", "Find Files" },
   s = { "<cmd>w!<CR>", "save file" }, -- set a single command and text
   q = {
     name = "Quickfix",
@@ -198,6 +198,7 @@ function _G.coding_mappings()
       f = { function() neotest.run.run(vim.fn.expand("%")) end, "Test File" },
       l = { neotest.run.run_last, "Test Last" },
       n = { neotest.jump.next, "Jump to Next Test" },
+      o = { neotest.output.open, "Open test output" },
       p = { neotest.jump.prev, "Jump to Previous Test" },
       s = { neotest.summary.toggle, "Toggle Summary" },
       t = { neotest.run.run, "Test Nearest" },

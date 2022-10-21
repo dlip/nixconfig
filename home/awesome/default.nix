@@ -75,8 +75,5 @@ in
     enable = true;
     backend = "xrender";
     vSync = true;
-    extraOptions = ''
-      use-ewmh-active-win = true;
-    '';
   };
 }

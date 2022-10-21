@@ -13,6 +13,7 @@ with lib;
     };
   };
 
+
   imports = [
     #./emacs
     ./files
@@ -28,6 +29,7 @@ with lib;
     ./starship
     ./syncthing
     ./tmux
+    ./version.nix
     ./zsh
   ];
 }

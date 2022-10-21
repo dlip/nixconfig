@@ -20,6 +20,17 @@ telescope.setup({
         ["<c-t>"] = trouble.open_with_trouble,
       },
     },
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+      "--hidden",
+      -- "--glob=*.env",
+    },
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
@@ -39,5 +50,8 @@ telescope.setup({
     --   extension_config_key = value,
     -- }
     -- please take a look at the readme of the extension you want to configure
+    frecency = {
+      db_safe_mode = false,
+    },
   },
 })

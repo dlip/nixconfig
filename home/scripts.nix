@@ -36,7 +36,7 @@ let
     '';
 
     update-wallpaper = ''
-      nice -19 ${betterlockscreen}/bin/betterlockscreen -u ~/wallpapers --fx dim --dim 20
+      nice -19 ${betterlockscreen}/bin/betterlockscreen -u ~/sync/wallpapers --fx dim --dim 20
       ${betterlockscreen}/bin/betterlockscreen -w dim
     '';
 
