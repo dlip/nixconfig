@@ -23,6 +23,8 @@
     drawio
     easyeffects
     emoji-menu
+    cinnamon.nemo
+    keyd
     power-menu
     firefox
     gimp
