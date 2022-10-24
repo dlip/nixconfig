@@ -37,6 +37,10 @@
       url = "github:jchook/emoji-menu";
       flake = false;
     };
+    keyd = {
+      url = "github:rvaiya/keyd";
+      flake = false;
+    };
     power-menu = {
       url = "github:jluttine/rofi-power-menu";
       flake = false;
