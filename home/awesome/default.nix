@@ -47,18 +47,18 @@ in
     playerctl
     pamixer
     sox
-    betterlockscreen
     brightnessctl
     notify-desktop
-    i3lock
+    i3lock-color
   ];
 
-  services.betterlockscreen = {
+  services.screen-locker = {
     enable = true;
-    arguments = [
-      "-l dim"
+    inactiveInterval = 5;
+    lockCmd = "lock-screen";
+    xautolock.extraOptions = [
+      "Xautolock.killer: systemctl suspend"
     ];
-    inactiveInterval = 60;
   };
 
   services.dunst = {

@@ -36,12 +36,11 @@ let
     '';
 
     update-wallpaper = ''
-      nice -19 ${betterlockscreen}/bin/betterlockscreen -u ~/sync/wallpapers --fx dim --dim 20
-      ${betterlockscreen}/bin/betterlockscreen -w dim
+      feh --bg-fill --randomize ~/sync/wallpapers
     '';
 
     lock-screen = ''
-      ${betterlockscreen}/bin/betterlockscreen -l dim
+      i3lock-color -i ~/sync/wallpapers/i3lock.png --ring-color=5e81ac --inside-color=2e3440 --ringver-color=88c0d0 --insidever-color=5e81ac --ringwrong-color=b74242 --insidewrong-color=c62c2c --line-color=20242c --keyhl-color=88c0d0 --wrong-text="nope"
     '';
 
     nixconfig = ''

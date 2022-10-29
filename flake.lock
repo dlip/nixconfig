@@ -157,6 +157,22 @@
         "type": "github"
       }
     },
+    "keyd": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1665636885,
+        "narHash": "sha256-G0vnDRZrffgyJYIrBsbyiEYfAwmQ8Rdk37ViptABqr8=",
+        "owner": "rvaiya",
+        "repo": "keyd",
+        "rev": "97b42553f5e1f01548fb42887e6a007169c8c619",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rvaiya",
+        "repo": "keyd",
+        "type": "github"
+      }
+    },
     "kmonad": {
       "inputs": {
         "nixpkgs": [
@@ -251,29 +267,6 @@
         "type": "github"
       }
     },
-    "poetry2nix": {
-      "inputs": {
-        "flake-utils": [
-          "flake-utils"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1666275627,
-        "narHash": "sha256-FgsXXBbQX8dsNAv8+82AkMxCQQ6g+SH2k/c8q7MD3XI=",
-        "owner": "nix-community",
-        "repo": "poetry2nix",
-        "rev": "a982fc6574b0eaec19d02834e2c988df7e0948a3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "poetry2nix",
-        "type": "github"
-      }
-    },
     "power-menu": {
       "flake": false,
       "locked": {
@@ -361,11 +354,11 @@
         "envy-sh": "envy-sh",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
+        "keyd": "keyd",
         "kmonad": "kmonad",
         "nix-on-droid": "nix-on-droid",
         "nixpkgs": "nixpkgs",
         "openvpn-aws": "openvpn-aws",
-        "poetry2nix": "poetry2nix",
         "power-menu": "power-menu",
         "repo-arc-icon-theme": "repo-arc-icon-theme",
         "repo-awesome-wm-widgets": "repo-awesome-wm-widgets",
