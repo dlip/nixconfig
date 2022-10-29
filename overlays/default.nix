@@ -1,5 +1,5 @@
 inputs@{ kmonad
-, poetry2nix
+# , poetry2nix
 , actual-server
 , envy-sh
 , emoji-menu
@@ -11,7 +11,7 @@ inputs@{ kmonad
 }:
 [
   kmonad.overlays.default
-  poetry2nix.overlay
+  # poetry2nix.overlay
   # packages
   (final: prev: {
     inherit sops-nix;

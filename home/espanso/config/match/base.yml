@@ -56,3 +56,5 @@ matches:
     replace: "Lipscombe"
   - trigger: ".,p"
     replace: "TestPassword!123"
+  - trigger: ".,c"
+    replace: "42424242424242420125123"
