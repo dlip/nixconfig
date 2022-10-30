@@ -55,10 +55,9 @@ in
   services.screen-locker = {
     enable = true;
     inactiveInterval = 5;
-    lockCmd = "lock-screen";
-    xautolock.extraOptions = [
-      "Xautolock.killer: systemctl suspend"
-    ];
+    lockCmd = ''
+      ${pkgs.i3lock-color}/bin/i3lock-color -i ${config.home.homeDirectory}/sync/wallpapers/i3lock.png --ring-color=5e81ac --inside-color=2e3440 --ringver-color=88c0d0 --insidever-color=5e81ac --ringwrong-color=b74242 --insidewrong-color=c62c2c --line-color=20242c --keyhl-color=88c0d0 --wrong-text="nope"
+    '';
   };
 
   services.dunst = {
