@@ -68,6 +68,11 @@
       url = "github:rxi/json.lua";
       flake = false;
     };
+    turbo = {
+      url = "github:dlip/turbo";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+    };
     vscodeNodeDebug2 = {
       url = "github:microsoft/vscode-node-debug2";
       flake = false;

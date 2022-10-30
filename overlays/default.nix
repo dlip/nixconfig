@@ -1,5 +1,5 @@
 inputs@{ kmonad
-# , poetry2nix
+  # , poetry2nix
 , actual-server
 , envy-sh
 , emoji-menu
@@ -7,10 +7,12 @@ inputs@{ kmonad
 , sops-nix
 , vscodeNodeDebug2
 , keyd
+, turbo
 , ...
 }:
 [
   kmonad.overlays.default
+  turbo.overlay
   # poetry2nix.overlay
   # packages
   (final: prev: {

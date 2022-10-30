@@ -365,6 +365,7 @@
         "repo-json-lua": "repo-json-lua",
         "repo-nnn": "repo-nnn",
         "sops-nix": "sops-nix",
+        "turbo": "turbo",
         "vimplugin-auto-save-nvim": "vimplugin-auto-save-nvim",
         "vimplugin-fix-cursor-hold-nvim": "vimplugin-fix-cursor-hold-nvim",
         "vimplugin-kmonad-vim": "vimplugin-kmonad-vim",
@@ -378,6 +379,31 @@
         "vimplugin-telescope-nvim": "vimplugin-telescope-nvim",
         "vimplugin-vim-test": "vimplugin-vim-test",
         "vscodeNodeDebug2": "vscodeNodeDebug2"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "flake-utils": [
+          "turbo",
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "turbo",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1667098607,
+        "narHash": "sha256-zTYgUaS+81mNq8Z0v2WYr46ACJFBeWqcQfOVQaTxtNE=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "de5c4d5d40ae0a0dab67c5f7ae8d26c5445cf00d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "sops-nix": {
@@ -398,6 +424,30 @@
       "original": {
         "owner": "Mic92",
         "repo": "sops-nix",
+        "type": "github"
+      }
+    },
+    "turbo": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1667101783,
+        "narHash": "sha256-GVEzxWPJnAbe6v/6ao6wXu8AnpL+kRRXvSfBFbgBlOg=",
+        "owner": "dlip",
+        "repo": "turbo",
+        "rev": "741dd34c4642e69cf123a14c7c58288c47d44559",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dlip",
+        "repo": "turbo",
         "type": "github"
       }
     },

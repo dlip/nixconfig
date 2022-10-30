@@ -284,31 +284,6 @@
       key-positions = <P_Q P_B>;
       bindings = <SYS_BOOT>;
     };
-    /* combo_esc { */
-    /*   timeout-ms = <100>; */
-    /*   key-positions = <P_LALT P_A>; */
-    /*   bindings = <&kp ESC>; */
-    /* }; */
-    /* combo_del { */
-    /*   timeout-ms = <100>; */
-    /*   key-positions = <P_LALT P_R>; */
-    /*   bindings = <&kp DEL>; */
-    /* }; */
-    /* combo_bspc { */
-    /*   timeout-ms = <100>; */
-    /*   key-positions = <P_LALT P_S>; */
-    /*   bindings = <&kp BSPC>; */
-    /* }; */
-    /* combo_ret { */
-    /*   timeout-ms = <100>; */
-    /*   key-positions = <P_LALT P_T>; */
-    /*   bindings = <&kp RET>; */
-    /* }; */
-    /* combo_tab { */
-    /*   timeout-ms = <100>; */
-    /*   key-positions = <P_LALT P_G>; */
-    /*   bindings = <&kp TAB>; */
-    /* }; */
     combo_ins {
       timeout-ms = <100>;
       key-positions = <P_K P_H>;
@@ -434,7 +409,7 @@
     navigation_layer {
       bindings = <
         NAV_DEL  NAV_ESC  NAV_BSPC NAV_RET  MED_PRNT       GEN_TRAN NUM_LBRC NUM_RBRC NAV_TILD NAV_PIPE
-        NAV_LEFT NAV_UP   NAV_DOWN NAV_RGHT NAV_TAB        GEN_TRAN GEN_CTRL GEN_GUI  GEN_ALT  GEN_MED
+        NAV_LEFT NAV_UP   NAV_DOWN NAV_RGHT NAV_TAB        NAV_TAB  NAV_RET  NAV_BSPC NAV_DEL  NAV_ESC  
         NAV_HOME NAV_PGUP NAV_PGDN NAV_END  NUM_STAB       GEN_TRAN NUM_LBKT NUM_RBKT NAV_GRV  NAV_BSLH
                                    GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
       >;

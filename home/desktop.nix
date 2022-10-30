@@ -92,6 +92,7 @@
       tesseract4
       tldr
       traceroute
+      turbo
       unrar
       wireshark-cli
       ttyper
