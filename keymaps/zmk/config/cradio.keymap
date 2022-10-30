@@ -76,7 +76,7 @@
 #define NAV_END &kp END
 #define NAV_PGUP &kp PG_UP
 
-#define NAV_ESC &kp ESC
+#define NAV_ESC &lt L_FUN ESC
 #define NAV_LEFT &kp LEFT
 #define NAV_DOWN &kp DOWN
 #define NAV_RGHT &kp RIGHT
@@ -84,9 +84,10 @@
 
 #define NAV_GRV &kp GRAVE
 #define NAV_TILD &kp TILDE
-#define NAV_DEL &kp DEL
-#define NAV_BSPC &kp BSPC
-#define NAV_RET &kp RET
+
+#define NAV_DEL &mt LALT DEL
+#define NAV_BSPC &mt LGUI BSPC
+#define NAV_RET &mt LCTRL RET
 #define NAV_PGDN &kp PG_DN
 
 // NUM LAYER
@@ -283,36 +284,31 @@
       key-positions = <P_Q P_B>;
       bindings = <SYS_BOOT>;
     };
-    combo_tab {
-      timeout-ms = <100>;
-      key-positions = <P_P P_B>;
-      bindings = <&kp TAB>;
-    };
-    combo_bspc {
-      timeout-ms = <100>;
-      key-positions = <P_T P_G>;
-      bindings = <&kp BSPC>;
-    };
-    combo_esc {
-      timeout-ms = <100>;
-      key-positions = <P_T P_V>;
-      bindings = <&kp ESC>;
-    ;
-    combo_ret {
-      timeout-ms = <100>;
-      key-positions = <P_D P_V>;
-      bindings = <&kp ESC>;
-    };
-    combo_del {
-      timeout-ms = <100>;
-      key-positions = <P_J P_L>;
-      bindings = <&kp DEL>;
-    };
-    combo_ret {
-      timeout-ms = <100>;
-      key-positions = <P_M P_N>;
-      bindings = <&kp RET>;
-    };
+    /* combo_esc { */
+    /*   timeout-ms = <100>; */
+    /*   key-positions = <P_LALT P_A>; */
+    /*   bindings = <&kp ESC>; */
+    /* }; */
+    /* combo_del { */
+    /*   timeout-ms = <100>; */
+    /*   key-positions = <P_LALT P_R>; */
+    /*   bindings = <&kp DEL>; */
+    /* }; */
+    /* combo_bspc { */
+    /*   timeout-ms = <100>; */
+    /*   key-positions = <P_LALT P_S>; */
+    /*   bindings = <&kp BSPC>; */
+    /* }; */
+    /* combo_ret { */
+    /*   timeout-ms = <100>; */
+    /*   key-positions = <P_LALT P_T>; */
+    /*   bindings = <&kp RET>; */
+    /* }; */
+    /* combo_tab { */
+    /*   timeout-ms = <100>; */
+    /*   key-positions = <P_LALT P_G>; */
+    /*   bindings = <&kp TAB>; */
+    /* }; */
     combo_ins {
       timeout-ms = <100>;
       key-positions = <P_K P_H>;
@@ -447,7 +443,7 @@
     number_layer {
       bindings = <
         NAV_DEL  NAV_ESC  NAV_BSPC NAV_RET  MED_PRNT       NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
-        GEN_FN   GEN_ALT  GEN_GUI  GEN_CTRL NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
+        NAV_ESC  NAV_DEL  NAV_BSPC NAV_RET  NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
         MED_UNDO MED_CUT  MED_COPY NUM_PST  NUM_STAB       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
                                    GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
       >;
