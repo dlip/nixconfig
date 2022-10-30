@@ -63,6 +63,7 @@
       niv
       nix-du
       nodePackages.node2nix
+      nodePackages.pnpm
       nodePackages.quicktype
       nodePackages.reveal-md
       nodePackages.typescript
