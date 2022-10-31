@@ -54,10 +54,25 @@ in
 
   services.screen-locker = {
     enable = true;
-    inactiveInterval = 5;
-    lockCmd = ''
-      ${pkgs.i3lock-color}/bin/i3lock-color -i ${config.home.homeDirectory}/sync/wallpapers/i3lock.png --ring-color=5e81ac --inside-color=2e3440 --ringver-color=88c0d0 --insidever-color=5e81ac --ringwrong-color=b74242 --insidewrong-color=c62c2c --line-color=20242c --keyhl-color=88c0d0 --wrong-text="nope"
-    '';
+    xautolock.enable = false;
+    lockCmd = ''${pkgs.i3lock-color}/bin/i3lock-color -i ${config.home.homeDirectory}/sync/wallpapers/i3lock.png --ring-color=5e81ac --inside-color=2e3440 --ringver-color=88c0d0 --insidever-color=5e81ac --ringwrong-color=b74242 --insidewrong-color=c62c2c --line-color=20242c --keyhl-color=88c0d0 --wrong-text="nope" --ring-width=20'';
+  };
+
+  services.xidlehook = {
+    enable = true;
+    not-when-fullscreen = true;
+    not-when-audio = true;
+    timers = [
+      {
+        delay = 290;
+        command = ''${pkgs.libnotify}/bin/notify-send "Idle" "Locking screen in 10 seconds..."'';
+        canceller = ''${pkgs.libnotify}/bin/notify-send "Idle" "Oh you're awake, my appologies sir."'';
+      }
+      {
+        delay = 300;
+        command = ''${pkgs.i3lock-color}/bin/i3lock-color -i ${config.home.homeDirectory}/sync/wallpapers/i3lock.png --ring-color=5e81ac --inside-color=2e3440 --ringver-color=88c0d0 --insidever-color=5e81ac --ringwrong-color=b74242 --insidewrong-color=c62c2c --line-color=20242c --keyhl-color=88c0d0 --wrong-text="nope" --ring-width=20'';
+      }
+    ];
   };
 
   services.blueman-applet.enable = true;
