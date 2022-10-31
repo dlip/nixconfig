@@ -53,6 +53,12 @@
   i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o @med)
 
+  esl (tap-hold-next-release 200 esc @fn)
+  del (tap-hold-next-release 200 del lalt)
+  bsp (tap-hold-next-release 200 bspc lmet)
+  ret (tap-hold-next-release 200 ret lctl)
+  esr (tap-hold-next-release 200 esc @med)
+
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
   c (tap-hold 200 c C-c)
@@ -79,9 +85,9 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    del  esc  bspc ret  _    _    [    ]   `    \    _    _    _
-  _    left up   down rght tab  _    @sct @smt @sal @med _    _
-  _    home pgup pgdn end  _    _    {    }    ~    |    _
+  _    _    _    up   end  pgup _    [    ]   `    \    _    _    _
+  _    _    left down rght pgdn tab  @ret @bsp @del @esr _    _
+  _    _    _    _    _    _    _    {    }    ~    |    _
   _    _    _    _         _         _    _    _    _    _
 )
 
@@ -89,7 +95,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    del  esc  bspc ret  prnt +    7    8    9    *    _    _    _
-  _    @fn  @sal @smt @sct tab  =    4    5    6    0    _    _
+  _    @esl @del @bsp @ret tab  =    4    5    6    0    _    _
   _    @udo @cut @cpy @pst @all -    1    2    3    /    _
   _    _    _    _         _         _    _    _    _    _
 )
