@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -xuo pipefail
+set -euo pipefail
 
 session="work"
 tmux new-session -d -s $session

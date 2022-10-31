@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
-set -xuo pipefail
+set -euo pipefail
 
 nice -19 nixos-rebuild --use-remote-sudo switch --flake .# "$@"

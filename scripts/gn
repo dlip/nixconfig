@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-set -xuo pipefail
+set -euo pipefail
 
-if [ -z "''${1:-}" ]; then
+if [ -z "${1:-}" ]; then
   echo "Error: gn <branch>"
   exit 1
 fi

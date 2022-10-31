@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-set -xuo pipefail
+set -euo pipefail
 
 # Open project
 filter_params=""
-if [ -n "''${1:-}" ]; then
+if [ -n "${1:-}" ]; then
     filter_params="-q $1"
 fi
 repo_path=$(cat ~/code/projects.txt | fzf $filter_params --select-1)

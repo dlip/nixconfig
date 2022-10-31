@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -xuo pipefail
+set -euo pipefail
 
 # Project add current dir
 pwd | sed "s|${HOME}/||" >> ~/code/projects.txt

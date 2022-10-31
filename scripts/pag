@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -xuo pipefail
+set -euo pipefail
 
 # Project add git folders
 find ~+ -maxdepth 4 -name .git -prune | sed 's|/.git$||' | sed "s|${HOME}/||" >> ~/code/projects.txt
