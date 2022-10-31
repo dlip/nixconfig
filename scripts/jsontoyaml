@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -xuo pipefail
+
+xclip -o -selection clipboard | sed 's/\t//g' | yq -y | xclip -sel c

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+set -xuo pipefail
+
+session="notes"
+tmux new-session -d -s $session
+tmux send-keys -t $session 'cd ~/notes/personal && nvim index.md' C-m
+sleep 1
+tmux new-window -t $session:1
+tmux send-keys -t $session 'cd ~/notes/immutable && nvim index.md' C-m
+tmux attach -t $session

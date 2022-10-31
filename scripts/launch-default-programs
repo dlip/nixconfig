@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+google-chrome-stable&
+kitty --class Work work&
+obsidian&
+slack&
+teams&
+warpd&

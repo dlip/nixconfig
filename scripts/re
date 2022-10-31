@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -xuo pipefail
+
+FROM="''${1:-HEAD}"
+TO="''${1:-main}"
+BRANCH_POINT=$(diff -u <(git rev-list --first-parent "$TO") <(git rev-list --first-parent "$FROM") | sed -ne \"s/^ //p\" | head -1)
+echo $BRANCH_POINT

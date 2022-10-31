@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -xuo pipefail
+
+session="work"
+tmux new-session -d -s $session
+tmux send-keys -t $session 'p nixconfig' C-m
+tmux wait project_opened
+tmux attach -t $session
+zsh

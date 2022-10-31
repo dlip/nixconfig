@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -xuo pipefail
+
+# Open project
+filter_params=""
+if [ -n "''${1:-}" ]; then
+    filter_params="-q $1"
+fi
+repo_path=$(cat ~/code/projects.txt | fzf $filter_params --select-1)
+if [ -n "$repo_path" ]; then
+    cd ~/$repo_path
+    tmux split-window -p 20
+    tmux wait -S project_opened
+    tmux select-pane -U
+    nvim
+    $SHELL
+fi

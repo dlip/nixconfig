@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+set -xuo pipefail
+
+feh --bg-fill --randomize ~/sync/wallpapers

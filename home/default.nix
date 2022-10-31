@@ -25,7 +25,6 @@ with lib;
     ./nnn
     ./packages.nix
     ./readline
-    ./scripts.nix
     ./starship
     ./syncthing
     ./tmux

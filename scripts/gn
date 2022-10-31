@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+set -xuo pipefail
+
+if [ -z "''${1:-}" ]; then
+  echo "Error: gn <branch>"
+  exit 1
+fi
+branch=$1
+remote=origin
+main=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
+git fetch $remote $main
+git checkout $remote/$main
+git checkout -b $branch
+git push -u $remote $branch

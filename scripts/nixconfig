@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -xuo pipefail
+
+export HOME_MANAGER_BACKUP_EXT=$(date +"%Y%m%d%H%M%S").nixbackup
+nix run .#homeConfigurations.$NIXCONFIG "$@"
