@@ -350,6 +350,8 @@ globalkeys = gears.table.join(
   -- Menubar
   awful.key({ modkey }, "l", function() awful.util.spawn_with_shell("lock-screen") end,
     { description = "Lock screen", group = "awesome" }),
+  awful.key({ modkey, "Shift" }, "s", function() awful.util.spawn_with_shell("systemctl suspend") end,
+    { description = "Suspend", group = "awesome" }),
   awful.key({ modkey, "Shift" }, ";", function() awful.util.spawn_with_shell("launch-default-programs") end,
     { description = "Launch default programs", group = "launcher" }),
   awful.key({ modkey }, ".", function() awful.util.spawn_with_shell("emoji-menu") end,

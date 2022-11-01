@@ -16,6 +16,7 @@ with lib;
 
   imports = [
     #./emacs
+    ./bash
     ./files
     ./fonts.nix
     ./git
