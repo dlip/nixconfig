@@ -284,112 +284,6 @@
       key-positions = <P_Q P_B>;
       bindings = <SYS_BOOT>;
     };
-    combo_ins {
-      timeout-ms = <100>;
-      key-positions = <P_K P_H>;
-      bindings = <&kp INS>;
-    };
-    combo_excl {
-      timeout-ms = <100>;
-      key-positions = <P_A P_Q>;
-      bindings = <&kp EXCL>;
-    };
-    combo_at {
-      timeout-ms = <100>;
-      key-positions = <P_R P_W>;
-      bindings = <&kp AT>;
-    };
-    combo_pound {
-      timeout-ms = <100>;
-      key-positions = <P_S P_F>;
-      bindings = <&kp POUND>;
-    };
-    combo_dollar {
-      timeout-ms = <100>;
-      key-positions = <P_T P_P>;
-      bindings = <&kp DOLLAR>;
-    };
-    combo_percent {
-      timeout-ms = <100>;
-      key-positions = <P_G P_B>;
-      bindings = <&kp PERCENT>;
-    };
-    combo_caret {
-      timeout-ms = <100>;
-      key-positions = <P_M P_J>;
-      bindings = <&kp CARET>;
-    };
-    combo_amps {
-      timeout-ms = <100>;
-      key-positions = <P_N P_L>;
-      bindings = <&kp AMPS>;
-    };
-    combo_star {
-      timeout-ms = <100>;
-      key-positions = <P_E P_U>;
-      bindings = <&kp PERCENT>;
-    };
-    combo_lpar {
-      timeout-ms = <100>;
-      key-positions = <P_I P_Y>;
-      bindings = <&kp LPAR>;
-    };
-    combo_rpar {
-      timeout-ms = <100>;
-      key-positions = <P_O P_SEMI>;
-      bindings = <&kp RPAR>;
-    };
-
-    combo_lbkt {
-      timeout-ms = <100>;
-      key-positions = <P_A P_Z>;
-      bindings = <&kp LBKT>;
-    };
-    combo_rbkt {
-      timeout-ms = <100>;
-      key-positions = <P_R P_X>;
-      bindings = <&kp RBKT>;
-    };
-    combo_lbrc {
-      timeout-ms = <100>;
-      key-positions = <P_S P_C>;
-      bindings = <&kp LBRC>;
-    };
-    combo_rbrc {
-      timeout-ms = <100>;
-      key-positions = <P_T P_D>;
-      bindings = <&kp RBRC>;
-    };
-    combo_grave {
-      timeout-ms = <100>;
-      key-positions = <P_G P_V>;
-      bindings = <&kp GRAVE>;
-    };
-    combo_tilde {
-      timeout-ms = <100>;
-      key-positions = <P_M P_K>;
-      bindings = <&kp TILDE>;
-    };
-    combo_minus {
-      timeout-ms = <100>;
-      key-positions = <P_N P_H>;
-      bindings = <&kp MINUS>;
-    };
-    combo_equal {
-      timeout-ms = <100>;
-      key-positions = <P_E P_COMMA>;
-      bindings = <&kp EQUAL>;
-    };
-    combo_under {
-      timeout-ms = <100>;
-      key-positions = <P_I P_DOT>;
-      bindings = <&kp UNDER>;
-    };
-    combo_plus {
-      timeout-ms = <100>;
-      key-positions = <P_O P_SQT>;
-      bindings = <&kp PLUS>;
-    };
     // COMBOS START
     // COMBOS END
   };
@@ -408,16 +302,16 @@
 
     navigation_layer {
       bindings = <
-        GEN_NONE GEN_NONE NAV_UP   NAV_PGUP GEN_NONE       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+        GEN_NONE GEN_NONE NAV_UP   NAV_PGUP GEN_NONE       GEN_NONE NUM_LBRC NUM_RBRC NAV_TILD NAV_PIPE
         NAV_HOME NAV_LEFT NAV_DOWN NAV_RGHT NAV_END        NAV_TAB  NAV_RET  NAV_BSPC NAV_DEL  NAV_ESC  
-        GEN_NONE GEN_NONE GEN_NONE NAV_PGDN GEN_NONE       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+        GEN_NONE GEN_NONE GEN_NONE NAV_PGDN GEN_NONE       GEN_NONE NUM_LBKT NUM_RBKT NAV_GRV  NAV_BSLH
                                    GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
       >;
     };
 
     number_layer {
       bindings = <
-        NAV_GRV  NAV_BSLH NUM_LBKT NUM_RBKT GEN_NONE       NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
+        NUM_N1   NUM_N2   NUM_N3   NUM_N4   NUM_N5         NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
         NAV_ESC  NAV_DEL  NAV_BSPC NAV_RET  NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
         MED_UNDO MED_CUT  MED_COPY NUM_PST  MED_PRNT       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
                                    GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
