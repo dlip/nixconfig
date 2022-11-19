@@ -234,5 +234,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "editor.stickyScroll.enabled": true,
-  "window.menuBarVisibility": "hidden"
+  "window.menuBarVisibility": "hidden",
+  "workbench.sideBar.location": "right"
 }

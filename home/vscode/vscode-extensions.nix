@@ -150,12 +150,6 @@
     sha256 = "1fcy4q6y8z0nzyi473dmisc7s2s6710vkx9krjb8n3lgmb2s9cln";
   }
   {
-    name = "todo-tree";
-    publisher = "Gruntfuggly";
-    version = "0.0.220";
-    sha256 = "06kzb4msfdv11lij4dwbn1vxdxhvnpfcjqw0gvydgkqjy7dridjk";
-  }
-  {
     name = "haskell";
     publisher = "haskell";
     version = "2.2.1";
@@ -334,6 +328,12 @@
     publisher = "rlivings39";
     version = "0.5.0";
     sha256 = "0jr6f3bknl9avm7b2x3rggsj4hmk877nd3lypf2lz135hy5rbgfp";
+  }
+  {
+    name = "multi-command";
+    publisher = "ryuta46";
+    version = "1.6.0";
+    sha256 = "0q97nvzi398fff1l4055nhpxr8n4pc9c983kjr8vcmpj1gbwsw82";
   }
   {
     name = "svg-preview";

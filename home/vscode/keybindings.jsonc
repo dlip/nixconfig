@@ -233,5 +233,16 @@
     "key": "ctrl+d",
     "command": "-vscode-neovim.ctrl-d",
     "when": "editorTextFocus && neovim.ctrlKeysNormal && neovim.init && neovim.mode != 'insert'"
+  },
+  {
+    "key": "enter",
+    "command": "extension.multiCommand.execute",
+    "args": {
+      "sequence": [
+        "explorer.openAndPassFocus",
+        "workbench.action.toggleSidebarVisibility"
+      ]
+    },
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsFolder && !inputFocus"
   }
 ]
