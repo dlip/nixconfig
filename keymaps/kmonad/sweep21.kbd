@@ -77,9 +77,9 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    \    home up   end  pgup _    _    _    _    _    _    _    _
-  _    esc  lft  down rght tab  _    _    _    _    _    _    _
-  _    grv  del  bspc ret  pgdn _    _    _    _    _    _
+  _    _    _    up   pgup _    _    _    _    _    _    _    _    _
+  _    home lft  down rght end  _    _    _    _    _    _    _
+  _    _    _    bspc pgdn _    _    _    _    _    _    _
   _    _    _    _         _         _    _    _    _    _
 )
 
