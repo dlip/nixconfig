@@ -53,6 +53,16 @@
   i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o @med)
 
+  hme (tap-hold-next-release 200 home @fn)
+  lft (tap-hold-next-release 200 left lalt)
+  dwn (tap-hold-next-release 200 down lmet)
+  rgt (tap-hold-next-release 200 right lctl)
+
+  4 (tap-hold-next-release 200 4 rctl)
+  5 (tap-hold-next-release 200 5 rmet)
+  6 (tap-hold-next-release 200 6 lalt)
+  0 (tap-hold-next-release 200 0 @med)
+
   esl (tap-hold-next-release 200 esc @fn)
   del (tap-hold-next-release 200 del lalt)
   bsp (tap-hold-next-release 200 bspc lmet)
@@ -85,7 +95,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    up   pgup _    _    _    [    ]    `    \    _    _
-  _    home  left down rght end _    tab  @ret @bsp @del @esr _
+  _    @hme @lft @dwn @rgt end _    tab  @ret @bsp @del @esr _
   _    _    _    _    pgdn _    _    _    {    }    ~    |
   _    _    _    _         lsft      _    _    _    _    _
 )
@@ -94,7 +104,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    del  esc  bspc ret  prnt _    +    7    8    9    *    _    _
-  _    @esl @del @bsp @ret tab  _    =    4    5    6    0    _
+  _    @esl @del @bsp @ret tab  _    =    @4   @5   @6   @0    _
   _    @udo @cut @cpy @pst @all _    -    1    2    3    /
   _    _    _    _         _         _    _    _    _    _
 )
