@@ -7,11 +7,11 @@
     "restructuredtext"
   ],
   "editor.bracketPairColorization.enabled": true,
-  "editor.fontFamily": "FiraCode Nerd Font",
+  "editor.fontFamily": "RobotoMono Nerd Font",
   "editor.fontLigatures": true,
-  "editor.fontSize": 12,
+  "editor.fontSize": 15,
   "editor.formatOnSave": true,
-  "editor.lineHeight": 20,
+  "editor.lineHeight": 18,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
   "editor.rulers": [80, 120],
@@ -30,7 +30,7 @@
   "git.enableSmartCommit": true,
   "projectManager.git.baseFolders": ["$home/code"],
   "telemetry.telemetryLevel": "off",
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "terminal.integrated.fontFamily": "RobotoMono Nerd Font",
   "terminal.integrated.copyOnSelection": true,
   "todo-tree.general.tags": [
     "BUG",
@@ -230,8 +230,9 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "vscode-neovim.neovimExecutablePaths.linux": "/etc/profiles/per-user/dane/bin/nvim",
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "editor.stickyScroll.enabled": true,
+  "window.menuBarVisibility": "hidden"
 }

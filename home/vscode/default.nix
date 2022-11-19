@@ -28,8 +28,8 @@ in
     extensions = pkgs.vscode-utils.extensionsFromVscodeMarketplace
       (import ./vscode-extensions.nix).extensions ++ (with pkgs.vscode-extensions; [
       ms-vscode.cpptools
-      ms-vsliveshare.vsliveshare
-      chenglou92.rescript-vscode
+      # ms-vsliveshare.vsliveshare
+      # chenglou92.rescript-vscode
       hashicorp.terraform
     ]);
   };
