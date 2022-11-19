@@ -34,9 +34,13 @@
   med (layer-toggle media)
   nav (layer-toggle nav)
   num (layer-toggle num)
-  fn (layer-toggle fn)
+  fn  (layer-toggle fn)
+  rgt (layer-toggle right)
+  lft (layer-toggle left)
 
   snv (sticky-key 1000 @nav)
+  srt (sticky-key 1000 @rgt)
+  slf (sticky-key 1000 @lft)
   snm (sticky-key 1000 @num)
   ssf (sticky-key 1000 lsft)
   sct (sticky-key 1000 lctl)
@@ -75,19 +79,69 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @na  q    w    f    p    b    j    l    u    y    ;    _    _    _
-  @na  @a   @r   @s   @t   g    m    @n   @e   @i   @o   _    _
-  @na  z    x    c    d    v    k    h    ,    .    '    _
-  _    _    @snm @snm      @spc      @snv @snv @snv @snv @snv
+  @na  q    w    f    p    b    j    l    u    y    ;    _    _
+  @na  a    r    s    t    g    m    n    e    i    o    _
+  @na  z    x    c    d    v    k    h    ,    .    '
+  _    _    @slf @slf      @spc      @srt @srt @srt @srt @srt
 )
 
+
+(deflayer right1
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    ralt rmet _    _    _    _    _
+  _    _    _    _    _    _    _    rctl rsft @nav @med _    _
+  _    _    _    _    _    _    tab  ret  bspc del  esc  _
+  _    _    _    _         _         _    _    _    _    _
+)
+
+;; this felt the most powerful
+(deflayer right2
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    prnt esc  rmet ralt @med _    _    _
+  _    _    _    _    _    _    tab  bspc @ssf rctl @nav _    _
+  _    _    _    _    _    _    del  ret  _    _    _    _
+  _    _    _    _         _         _    _    _    _    _
+)
+
+;; pinkie should not hold or be fast press!
+(deflayer right
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    prnt @med rmet ralt esc  _    _    _
+  _    _    _    _    _    _    tab  @nav @ssf rctl ret  _    _
+  _    _    _    _    _    _    del  bspc _    _    _    _
+  _    _    _    _         _         _    _    _    _    _
+)
+
+
+(deflayer left
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    esc  ralt rmet @med prnt _    _    _    _    _    _    _    _
+  _    ret  rctl @ssf @nav tab  _    _    _    _    _    _    _
+  _    _    _    _    bspc del  _    _    _    _    _    _
+  _    _    _    _         _         _    _    _    _    _
+)
+
+;; having the mods in the middle wastes the lower area
+;; but cant do nav shift met
+(deflayer right4
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    @med rmet ralt esc  prnt _    _    _
+  _    _    _    _    _    _    @nav @ssf rctl ret  tab  _    _
+  _    _    _    _    _    _    bspc _    _    _    del  _
+  _    _    _    _         _         _    _    _    _    _
+)
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    up   pgup _    _    [    ]   `    \    _    _    _
-  _    home  left down rght end tab  @ret @bsp @del @esr _    _
-  _    _    _    _    pgdn _    _    {    }    ~    |    _
+  _    _    _    up   pgup _    _    _    _    _    _    _    _    _
+  _    home left down rght end  _    _    _    _    _    _    _
+  _    _    _    _    pgdn _    _    _    _    _    _    _
   _    _    _    _         _         _    _    _    _    _
 )
 

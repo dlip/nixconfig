@@ -56,7 +56,6 @@ in
           comment-nvim
           dashboard-nvim
           diffview-nvim
-          editorconfig-vim
           # fire-nvim
           fix-cursor-hold-nvim
           lsp-format-nvim

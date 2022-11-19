@@ -7,12 +7,10 @@ inputs@{ kmonad
 , sops-nix
 , vscodeNodeDebug2
 , keyd
-, turbo
 , ...
 }:
 [
   kmonad.overlays.default
-  turbo.overlay
   # poetry2nix.overlay
   # packages
   (final: prev: {

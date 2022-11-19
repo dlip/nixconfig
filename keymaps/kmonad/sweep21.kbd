@@ -34,14 +34,10 @@
   med (layer-toggle media)
   nav (layer-toggle nav)
   num (layer-toggle num)
+  sym (layer-toggle sym)
   fn (layer-toggle fn)
 
-  snv (sticky-key 1000 @nav)
-  snm (sticky-key 1000 @num)
-  ssf (sticky-key 1000 lsft)
-  sct (sticky-key 1000 lctl)
-  sal (sticky-key 1000 lalt)
-  smt (sticky-key 1000 lmet)
+  bnv (tap-hold-next-release 200 bspc @nav)
 
   a (tap-hold-next-release 200 a @fn)
   r (tap-hold-next-release 200 r lalt)
@@ -53,50 +49,63 @@
   i (tap-hold-next-release 200 i lalt)
   o (tap-hold-next-release 200 o @med)
 
-  esl (tap-hold-next-release 200 esc @fn)
-  del (tap-hold-next-release 200 del lalt)
-  bsp (tap-hold-next-release 200 bspc lmet)
-  ret (tap-hold-next-release 200 ret lctl)
-  esr (tap-hold-next-release 200 esc @med)
-
   z (tap-hold 200 z C-z)
   x (tap-hold 200 x C-x)
   c (tap-hold 200 c C-c)
   d (tap-hold 200 d C-v)
 
-  spc (tap-hold-next-release 200 spc lsft)
-  cpy C-c
-  pst C-v
-  cut C-x
-  udo C-z
-  all C-a
+
+  met (tap-hold-next-release 200 esc lmet)
+  spc (tap-hold-next-release 200 spc lctl)
+  ssf (sticky-key 1000 lsft)
+  alt (tap-hold-next-release 200 ret lmet)
+
+  snv (sticky-key 1000 @nav)
+  snm (sticky-key 1000 @num)
+
 )
 
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @na  q    w    f    p    b    j    l    u    y    ;    _    _    _
-  @na  @a   @r   @s   @t   g    m    @n   @e   @i   @o   _    _
-  @na  z    x    c    d    v    k    h    ,    .    '    _
-  _    _    @snm @snm      @spc      @snv @snv @snv @snv @snv
+  @na  q    w    f    p    b    @na  j    l    u    y    @fn  _    _
+  @na  a    r    s    t    g    @na  m    n    e    i    o    _
+  @na  z    x    c    d    v    @na  k    h    @bnv @num @sym
+  _    _    @met @met      @spc      @ssf @ssf @alt @alt @alt
 )
-
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    up   pgup _    _    [    ]   `    \    _    _    _
-  _    home  left down rght end tab  @ret @bsp @del @esr _    _
-  _    _    _    _    pgdn _    _    {    }    ~    |    _
+  _    \    home up   end  pgup _    _    _    _    _    _    _    _
+  _    esc  lft  down rght tab  _    _    _    _    _    _    _
+  _    grv  del  bspc ret  pgdn _    _    _    _    _    _
   _    _    _    _         _         _    _    _    _    _
+)
+
+(defalias
+  und C-z
+  cut C-x
+  cp C-c
+  pst C-v
+  stb S-tab
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    del  esc  bspc ret  prnt +    7    8    9    *    _    _    _
-  _    @esl @del @bsp @ret tab  =    4    5    6    0    _    _
-  _    @udo @cut @cpy @pst @all -    1    2    3    /    _
+  _    *    7    8    9    +    _    _    _    _    _    _    _    _
+  _    0    4    5    6    =    _    _    _    _    _    _    _
+  _    /    1    2    3    -    _    _    _    _    _    _
+  _    _    _    _         _         _    _    _    _    _
+)
+
+(deflayer sym
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    ;    ?    {    }    :    _    _    _    _    _    _    _    _
+  _    `    \    [    ]    ~    _    _    _    _    _    _    _
+  _    '    /    .    ,    "    _    _    _    _    _    _
   _    _    _    _         _         _    _    _    _    _
 )
 
@@ -122,10 +131,10 @@
 (deflayer fn
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    f7   f8   f9   f10  _    _    _
-  _    _    _    _    _    _    @gam f4   f5   f6   f11  _    _
-  _    _    _    _    _    _    _    f1   f2   f3   f12  _
-  _    _    _    _         _         _    _    _    _    _
+  _    _    _    _    _    _    _    _    f7   f8   f9   f10  _    _
+  _    _    _    _    _    _    _    @gam f4   f5   f6   f11  _
+  _    _    _    _    _    _    _    _    f1   f2   f3   f12
+  _    _    _    _         @ssf      @ssf @ssf _    _    _
 )
 
 (defalias
@@ -135,8 +144,8 @@
 (deflayer gaming
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  tab  q    w    e    r    t    _    _    up   _    _    _    _    _
-  lsft a    s    d    f    g    @col lft  down rght _    _    _
+  tab  q    w    e    r    t    _    _    _    up   _    _    _    _
+  lsft a    s    d    f    g    _    @col lft  down rght _    _
   lctl z    x    c    v    b    _    _    _    _    _    _
   _    lalt esc  _         spc       _    _    _    _    _
 )
