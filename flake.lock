@@ -145,7 +145,6 @@
     "keyd": {
       "flake": false,
       "locked": {
-        "lastModified": 1668305078,
         "narHash": "sha256-2N4HVqCFZ6/BAgbKH2OBXdPOc+kMDT6ZJhsYA9zHFyc=",
         "owner": "rvaiya",
         "repo": "keyd",

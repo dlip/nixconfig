@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+for i in */; do
+  zip -r "${i%/}.zip" "$i"
+  rm -rf "${i%/}"
+done
