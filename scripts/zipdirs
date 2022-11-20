@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+EXT=${1:-zip}
 for i in */; do
-  zip -r "${i%/}.zip" "$i"
-  rm -rf "${i%/}"
+	zip -r "${i%/}.${EXT}" "$i"
+	rm -rf "${i%/}"
 done
