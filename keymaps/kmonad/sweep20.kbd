@@ -88,15 +88,15 @@
   @na  q    w    f    p    b    _    j    l    u    y    ;    _    _
   @na  @a   @r   @s   @t   g    _    m    @n   @e   @i   @o   _
   @na  z    x    c    d    v    _    k    h    ,    .    '
-  _    _    @snm @snm      spc       lsft lsft @snv @snv @snv
+  _    _    @snm @snm      @spc      lsft lsft @snv @snv @snv
 )
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    up   pgup _    _    _    [    ]    `    \    _    _
+  _    _    _    up   pgup _    _    _    {    }    ~    |    _    _
   _    @hme @lft @dwn @rgt end _    tab  @ret @bsp @del @esr _
-  _    _    _    _    pgdn _    _    _    {    }    ~    |
+  _    _    _    _    pgdn _    _    _    [    ]    `    \
   _    _    _    _         lsft      _    _    _    _    _
 )
 

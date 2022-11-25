@@ -33,6 +33,7 @@ local servers = {
   "eslint",
   "gopls",
   "html",
+  "prismals",
   "pyright",
   "rnix",
   "rust_analyzer",

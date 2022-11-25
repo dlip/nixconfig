@@ -45,7 +45,7 @@ inputs@{ kmonad
     });
 
     vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 { src = vscodeNodeDebug2; };
-    # myNodePackages = final.callPackage ./nodePackages { };
+    myNodePackages = final.callPackage ./nodePackages { };
     # myPythonPackages = final.callPackage ./pythonPackages { };
     # skyscraper = final.callPackage ./skyscraper { };
     # solang = final.callPackage ./solang { };

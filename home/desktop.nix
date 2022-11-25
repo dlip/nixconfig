@@ -1,5 +1,7 @@
 { pkgs, lib, ... }: {
 
+
+  services.dropbox.enable = true;
   imports = [
     ./espanso
   ];
@@ -54,12 +56,14 @@
       ledger-autosync
       lldb
       (lua.withPackages (ps: with ps; [ luacheck ]))
+      mangal
       massren
       mdl
       # musikcube
       # myPythonPackages.shirah-reader
       # myPythonPackages.adafruit-nrfutil
       mysql80
+      myNodePackages."@prisma/language-server"
       niv
       nix-du
       nodePackages.node2nix
