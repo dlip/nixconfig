@@ -32,6 +32,7 @@
     openssh
     stack
     tcpdump
+    tree
     unzip
     wget
     wireguard-tools
