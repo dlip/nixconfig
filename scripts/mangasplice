@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# combines cbz files from japanese folder and english folder
+# into the output folder so each 2nd page is the english translation
+# assumes the pages and cbz have the same filenames in each language
+
+set -euo pipefail
+
+if [ ! -d japanese ]; then
+	echo "No japanese folder found"
+	exit 1
+fi
+
+if [ ! -d english ]; then
+	echo "No english folder found"
+	exit 1
+fi
+
+if [ ! -d output ]; then
+	echo "Creating output folder"
+	mkdir output
+fi
+
+for jp in japanese/*.cbz; do
+	NAME=$(basename "${jp%.*}")
+    echo "Processing ${NAME}..."
+	en="english/${NAME}.cbz"
+	if [ ! -f "$en" ]; then
+		echo "Error: can't find $en"
+		exit 1
+	fi
+    unzip -o -d "output/${NAME}" "${jp}" > /dev/null
+    unzip -o -d "output/${NAME}e" "${en}" > /dev/null
+    for file in output/${NAME}e/*.jpg; do 
+        FILENAME=$(basename "${file}")
+        mv "${file}" "output/${NAME}/${FILENAME%.jpg}e.jpg"
+    done
+    rm -rf "output/${NAME}e"
+	zip -r "output/${NAME}.cbz" "output/${NAME}" > /dev/null
+    rm -rf "output/${NAME}"
+done
+
+

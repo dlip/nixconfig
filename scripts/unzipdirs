@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+EXT=${1:-zip}
+for i in *.${EXT}; do
+	NAME=${i%.*}
+    unzip -d "$NAME" "$i"
+    rm "$i"
+done
