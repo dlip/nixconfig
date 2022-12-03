@@ -114,7 +114,7 @@ in
           which-key-nvim
 
           (pluginWithDeps gitsigns-nvim [ plenary-nvim ])
-          (pluginWithDeps lualine-nvim [ lsp-status-nvim ])
+          (pluginWithDeps lualine-nvim [ lsp-status-nvim lualine-lsp-progress ])
           (pluginWithDeps nvim-tree-lua [ nvim-web-devicons ])
           (pluginWithDeps rust-tools-nvim [ telescope nvim-lspconfig ])
           (pluginWithDeps telescope-symbols-nvim [ telescope ])
