@@ -7,6 +7,7 @@ inputs@{ kmonad
 , sops-nix
 , vscodeNodeDebug2
 , keyd
+, plasma-manager
 , ...
 }:
 [
@@ -15,6 +16,7 @@ inputs@{ kmonad
   # packages
   (final: prev: {
     inherit sops-nix;
+    rc2nix = plasma-manager.packages.${final.system}.rc2nix;
     actualServer = final.callPackage ./actualServer { src = actual-server; nodejs = final.nodejs-16_x; };
     envy-sh = envy-sh.defaultPackage.${final.system};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");

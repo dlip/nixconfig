@@ -9,7 +9,8 @@ in
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       (import ../common params)
-      ../common/desktop/awesome.nix
+      # ../common/desktop/awesome.nix
+      ../common/desktop/kde.nix
       ../common/services/kmonad.nix
     ];
 

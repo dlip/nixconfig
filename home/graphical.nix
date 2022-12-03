@@ -5,7 +5,8 @@
     ./kitty
     ./rofi
     ./vscode
-    ./awesome
+    ./kde
+    # ./awesome
     # ./sway
   ];
 
