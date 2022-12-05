@@ -849,6 +849,7 @@
       "klipperrc"."General"."IgnoreImages" = false;
       "kscreenlockerrc"."Greeter"."WallpaperPlugin" = "org.kde.slideshow";
       "kscreenlockerrc"."Greeter.Wallpaper.org.kde.slideshow.General"."SlidePaths" = "/home/dane/sync/wallpapers/";
+      "ksmserverrc"."General"."loginMode" = "emptySession";
       "kwalletrc"."Wallet"."First Use" = false;
       "kwinrc"."Desktops"."Id_1" = "e68c61ee-3868-4426-b256-d514210f5a0b";
       "kwinrc"."Desktops"."Id_2" = "f115a74a-d615-4c76-81e4-379f8183876c";
