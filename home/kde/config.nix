@@ -861,6 +861,7 @@
       "kwinrc"."Desktops"."Id_9" = "ba5df78e-1cd4-49b3-b3b7-90b484d30e9c";
       "kwinrc"."Desktops"."Number" = 9;
       "kwinrc"."Desktops"."Rows" = 1;
+      "kwinrc"."ModifierOnlyShortcuts"."Meta" = "";
       "kwinrc"."Plugins"."bismuthEnabled" = true;
       "kwinrc"."Plugins"."slideEnabled" = false;
       "kwinrc"."Script-bismuth"."enableFloatingLayout" = true;
