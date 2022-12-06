@@ -259,7 +259,7 @@
       "plasmashell"."switch to next activity" = [ ];
       "plasmashell"."switch to previous activity" = [ ];
       "plasmashell"."toggle do not disturb" = [ ];
-      "systemsettings.desktop"."_launch" = "Tools";
+      "systemsettings.desktop"."_launch" = "Meta+,";
       "systemsettings.desktop"."kcm-kscreen" = [ ];
       "systemsettings.desktop"."kcm-lookandfeel" = [ ];
       "systemsettings.desktop"."kcm-users" = [ ];
@@ -282,7 +282,7 @@
       "kded5rc"."PlasmaBrowserIntegration"."shownCount" = 1;
       "kdeglobals"."DirSelect Dialog"."DirSelectDialog Size" = "858,598";
       "kdeglobals"."General"."AllowKDEAppsToRememberWindowPositions" = true;
-      "kdeglobals"."KDE"."SingleClick" = true;
+      "kdeglobals"."KDE"."SingleClick" = false;
       "kdeglobals"."KFileDialog Settings"."Allow Expansion" = false;
       "kdeglobals"."KFileDialog Settings"."Automatically select filename extension" = true;
       "kdeglobals"."KFileDialog Settings"."Breadcrumb Navigation" = true;
@@ -867,12 +867,13 @@
       "kwinrc"."ModifierOnlyShortcuts"."Meta" = "";
       "kwinrc"."Plugins"."bismuthEnabled" = true;
       "kwinrc"."Plugins"."slideEnabled" = false;
-      "kwinrc"."Script-bismuth"."enableFloatingLayout" = true;
       "kwinrc"."Script-bismuth"."enableSpiralLayout" = false;
       "kwinrc"."Script-bismuth"."enableSpreadLayout" = false;
       "kwinrc"."Script-bismuth"."enableStairLayout" = false;
       "kwinrc"."Script-bismuth"."enableTileLayout" = false;
       "kwinrc"."Script-bismuth"."noTileBorder" = true;
+      "kwinrc"."Script-bismuth"."preventMinimize" = true;
+      "kwinrc"."Script-bismuth"."tileLayoutGap" = 5;
       "kwinrulesrc"."1"."Description" = "Application settings for slack";
       "kwinrulesrc"."1"."clientmachine" = "localhost";
       "kwinrulesrc"."1"."desktops" = "f115a74a-d615-4c76-81e4-379f8183876c";
