@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+# renames files ending in $1 starting from $2$1 until $3$1
+
+set -euo pipefail
+
+EXT=$1
+FROM=$2
+TO=$3
+
+TEMP=$(mktemp -d)
+while true; do
+  FROMNO=$(printf '%03d\n' "$FROM")
+  FILE="$FROMNO$EXT"
+  if [ ! -f "$FILE" ]; then
+      echo "done"
+      break
+  fi
+  TONO=$(printf '%03d\n' "$TO")
+  mv "$FILE" "$TEMP/$TONO$EXT"
+  ((FROM = FROM + 1))
+  ((TO = TO + 1))
+done
+mv $TEMP/* .
