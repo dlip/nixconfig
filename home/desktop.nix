@@ -48,6 +48,7 @@
       k9s
       kind
       kmonad
+      krename
       kubectl
       kubectx
       kubernetes-helm

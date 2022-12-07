@@ -60,7 +60,7 @@
 #define DEF_I &mt LALT I 
 #define DEF_O &lt L_MED O
 
-#define DEF_SPC  &kp SPC
+#define DEF_SPC  &mt LSHIFT SPC
 #define DEF_NAV  &mo L_NAV
 #define DEF_NUM  &mo L_NUM
 #define DEF_SHFT &sk LSHIFT
@@ -311,7 +311,7 @@
 
     number_layer {
       bindings = <
-        NUM_N1   NUM_N2   NUM_N3   NUM_N4   NUM_N5         NUM_PLUS NUM_N7    NUM_N8    NUM_N9    NUM_AST
+        NAV_GRV  DEF_SEMI NUM_LBKT NUM_RBKT DEF_COMA       DEF_DOT  NUM_N7    NUM_N8    NUM_N9    NAV_BSLH
         NAV_ESC  NAV_DEL  NAV_BSPC NAV_RET  NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
         MED_UNDO MED_CUT  MED_COPY NUM_PST  MED_PRNT       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
                                    GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
