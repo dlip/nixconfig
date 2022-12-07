@@ -278,7 +278,7 @@
       "kactivitymanagerdrc"."main"."currentActivity" = "aad297cc-b62a-4ec1-b451-7e57d743f2e5";
       "kcminputrc"."Mouse"."X11LibInputXAccelProfileFlat" = false;
       "kcminputrc"."Tmp"."update_info" = "delete_cursor_old_default_size.upd:DeleteCursorOldDefaultSize";
-      "kded5rc"."Module-device_automounter"."autoload" = false;
+      "kded5rc"."Module-device_automounter"."autoload" = true;
       "kded5rc"."PlasmaBrowserIntegration"."shownCount" = 1;
       "kdeglobals"."DirSelect Dialog"."DirSelectDialog Size" = "858,598";
       "kdeglobals"."General"."AllowKDEAppsToRememberWindowPositions" = true;
