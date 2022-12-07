@@ -874,6 +874,11 @@
       "kwinrc"."Script-bismuth"."noTileBorder" = true;
       "kwinrc"."Script-bismuth"."preventMinimize" = true;
       "kwinrc"."Script-bismuth"."tileLayoutGap" = 5;
+      "kwinrulesrc"."0fc295a0-00a6-40a4-a444-eb67bcd5151e"."Description" = "Application settings for obsidian";
+      "kwinrulesrc"."0fc295a0-00a6-40a4-a444-eb67bcd5151e"."desktops" = "4369ca1b-9f03-456f-9652-c81677c4c9de";
+      "kwinrulesrc"."0fc295a0-00a6-40a4-a444-eb67bcd5151e"."desktopsrule" = 3;
+      "kwinrulesrc"."0fc295a0-00a6-40a4-a444-eb67bcd5151e"."wmclass" = "obsidian";
+      "kwinrulesrc"."0fc295a0-00a6-40a4-a444-eb67bcd5151e"."wmclassmatch" = 1;
       "kwinrulesrc"."1"."Description" = "Application settings for slack";
       "kwinrulesrc"."1"."clientmachine" = "localhost";
       "kwinrulesrc"."1"."desktops" = "f115a74a-d615-4c76-81e4-379f8183876c";
@@ -916,8 +921,8 @@
       "kwinrulesrc"."8852c6ea-4957-43bc-a0ae-e0f9238aa4a6"."desktopsrule" = 3;
       "kwinrulesrc"."8852c6ea-4957-43bc-a0ae-e0f9238aa4a6"."wmclass" = "teams";
       "kwinrulesrc"."8852c6ea-4957-43bc-a0ae-e0f9238aa4a6"."wmclassmatch" = 1;
-      "kwinrulesrc"."General"."count" = 4;
-      "kwinrulesrc"."General"."rules" = "1,2,3,4";
+      "kwinrulesrc"."General"."count" = 5;
+      "kwinrulesrc"."General"."rules" = "1,2,3,4,0fc295a0-00a6-40a4-a444-eb67bcd5151e";
       "kwinrulesrc"."d6baacc1-0a9e-4d4d-9e7a-44382997495c"."Description" = "Application settings for slack";
       "kwinrulesrc"."d6baacc1-0a9e-4d4d-9e7a-44382997495c"."clientmachine" = "localhost";
       "kwinrulesrc"."d6baacc1-0a9e-4d4d-9e7a-44382997495c"."desktops" = "f115a74a-d615-4c76-81e4-379f8183876c";
@@ -933,7 +938,7 @@
       "plasma-localerc"."Formats"."LANG" = "en_AU.UTF-8";
       "systemsettingsrc"."KFileDialog Settings"."detailViewIconSize" = 16;
       "systemsettingsrc"."Open-with settings"."CompletionMode" = 1;
-      "systemsettingsrc"."Open-with settings"."History" = "kitty,chro,slac,fire";
+      "systemsettingsrc"."Open-with settings"."History" = "obsi,kitty,chro,slac,fire";
       "systemsettingsrc"."systemsettings_sidebar_mode"."HighlightNonDefaultSettings" = true;
     };
   };
