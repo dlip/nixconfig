@@ -7,7 +7,7 @@
         sweep = {
           name = "sweep";
           device = "/dev/input/by-path/platform-i8042-serio-0-event-kbd";
-          config = builtins.readFile (../../../keymaps/kmonad/sweep20.kbd);
+          config = builtins.readFile (../../../keymaps/kmonad/sweep22.kbd);
         };
         # charachorder = {
         #   name = "charachorder";

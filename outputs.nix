@@ -165,6 +165,9 @@ flake-utils.lib.eachDefaultSystem
             home-manager.nixosModules.home-manager
             {
               home-manager = {
+                sharedModules = [
+                  inputs.plasma-manager.homeManagerModules.plasma-manager
+                ];
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users = {
