@@ -26,7 +26,7 @@ inputs@{ kmonad
       makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
     });
     keyd = prev.keyd.overrideAttrs (oldAttrs: {
-      src = keyd;
+     src = keyd;
       buildInputs = [ final.git final.systemd ];
       installPhase = ''
         mkdir -p $out/bin/
@@ -41,8 +41,6 @@ inputs@{ kmonad
         install -m644 layouts/* $out/share/keyd/layouts
         install -m644 data/*.1.gz $out/share/man/man1/
         install -m644 data/keyd.compose $out/share/keyd/
-        # NOTE: this is not the correct way to install quirks, it won't work
-        install -Dm644 keyd.quirks $out/share/libinput/30-keyd.quirks
       '';
     });
 

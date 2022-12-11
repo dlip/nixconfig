@@ -36,7 +36,7 @@
     kdenlive
     # krita
     # kicad
-    ledger-live-desktop
+    # ledger-live-desktop
     lens
     libreoffice
     logseq
