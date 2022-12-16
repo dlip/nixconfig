@@ -1,7 +1,4 @@
-# https://github.com/NixOS/nixpkgs/issues/119513
-if [ -z $_XPROFILE_SOURCED ]; then
-  export _XPROFILE_SOURCED=1
-  
+startup() {
   work&
   kitty tmux a -t work&
   google-chrome-stable&
@@ -9,4 +6,10 @@ if [ -z $_XPROFILE_SOURCED ]; then
   slack&
   teams&
   warpd&
+}
+
+# https://github.com/NixOS/nixpkgs/issues/119513
+if [ -z $_XPROFILE_SOURCED ]; then
+  export _XPROFILE_SOURCED=1
+  sleep 1 && startup&
 fi
