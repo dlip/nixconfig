@@ -12,6 +12,7 @@
 
   home.packages = with pkgs; [
     # anki
+    appimage-run
     antimicrox
     arandr
     alttab

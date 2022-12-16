@@ -1,0 +1,12 @@
+# https://github.com/NixOS/nixpkgs/issues/119513
+if [ -z $_XPROFILE_SOURCED ]; then
+  export _XPROFILE_SOURCED=1
+  
+  work&
+  kitty tmux a -t work&
+  google-chrome-stable&
+  obsidian&
+  slack&
+  teams&
+  warpd&
+fi

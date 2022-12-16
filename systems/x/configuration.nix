@@ -17,7 +17,7 @@ in
       ../common/services/kmonad.nix
     ];
 
-    # Bootloader.
+  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
@@ -37,15 +37,16 @@ in
     shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 
-#   services.xserver.videoDrivers = [ "nvidia" ];
-#   hardware.opengl.enable = true;
-#
-#   hardware.nvidia.prime = {
-#     sync.enable = true;
-#     # offload.enable = true;
-#     intelBusId = "PCI:0:2:0";
-#     nvidiaBusId = "PCI:1:0:0";
-#   };
+  virtualisation.virtualbox.host.enable = true;
+  #   services.xserver.videoDrivers = [ "nvidia" ];
+  #   hardware.opengl.enable = true;
+  #
+  #   hardware.nvidia.prime = {
+  #     sync.enable = true;
+  #     # offload.enable = true;
+  #     intelBusId = "PCI:0:2:0";
+  #     nvidiaBusId = "PCI:1:0:0";
+  #   };
 
   system.stateVersion = "22.11";
 }
