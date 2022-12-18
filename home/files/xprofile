@@ -1,5 +1,6 @@
 startup() {
-  work&
+  tmux new-session -d -s work
+  tmux send-keys -t work 'p nixconfig' C-m
   kitty tmux a -t work&
   google-chrome-stable&
   obsidian&
