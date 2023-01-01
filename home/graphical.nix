@@ -17,6 +17,7 @@
     arandr
     alttab
     audacity
+    brightnessctl
     # blender
     calibre
     cozy
