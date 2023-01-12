@@ -202,6 +202,46 @@ rec {
     };
   };
 
+  services.traefik = {
+    enable = true;
+    staticConfigOptions = {
+      api = {
+        insecure = true;
+      };
+      certificatesResolvers.myresolver.acme = {
+        email = "your-email@example.com";
+        storage = "/var/lib/traefik/acme.json";
+        httpChallenge.entryPoint = "web";
+      };
+      entryPoints = {
+        web = {
+          address = ":8081";
+          # http.redirections.entrypoint = {
+          #   to = "websecure";
+          #   scheme = "https";
+          # };
+        };
+        websecure = {
+          address = ":443";
+        };
+      };
+      dynamicConfigOptions = {
+        http = {
+          routers.dashboard = {
+            rule = "PathPrefix(`/dashboard`)";
+            service = "api@internal";
+          };
+          # middlewares = {
+          #   redirect-to-https.redirectScheme = {
+          #     scheme = "https";
+          #     port = "443";
+          #     permanent = true;
+          #   };
+        };
+      };
+    };
+  };
+
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;

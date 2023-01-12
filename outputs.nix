@@ -177,6 +177,7 @@ flake-utils.lib.eachDefaultSystem
                       ./home
                       ./home/desktop.nix
                       ./home/graphical.nix
+                      ./home/gamedev.nix
                     ];
                   };
                 };
