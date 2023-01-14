@@ -205,6 +205,8 @@ in
             "bluez5.msbc-support" = true;
             # SBC-XQ is not expected to work on all headset + adapter combinations.
             "bluez5.sbc-xq-support" = true;
+            # Auto switch to headset
+            "bluez5.autoswitch-profile" = true;
           };
         };
       }
