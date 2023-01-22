@@ -81,7 +81,6 @@
       pinentry
       # poetry
       postgresql
-      python
       python3
       # python39Packages.grip
       # python39Packages.pip
