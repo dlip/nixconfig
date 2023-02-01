@@ -121,6 +121,7 @@ local keymap = {
   },
   n = { "<cmd>NvimTreeToggle<CR>", "NvimTreeToggle" },
   p = { "<cmd>Telescope fd hidden=true<CR>", "Find Files" },
+  P = { "<cmd>r!pwgen -ncvs 64<CR>", "Generate Password" },
   s = { "<cmd>w!<CR>", "save file" }, -- set a single command and text
   q = {
     name = "Quickfix",

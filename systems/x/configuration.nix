@@ -21,7 +21,6 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
-
   # Setup keyfile
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
@@ -43,8 +42,8 @@ in
   # '';
 
   # hardware.enableAllFirmware = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.prime = {
     sync.enable = true;
     intelBusId = "PCI:0:2:0";

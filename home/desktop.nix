@@ -20,7 +20,8 @@
       bat
       binutils
       docker-buildx
-      cargo
+      # cargo
+      cargo-wasi
       cheat
       clang-tools
       delve
@@ -32,6 +33,7 @@
       exiv2
       file
       fluxcd
+      fusee-launcher
       ghc
       ghostscript
       glow
@@ -81,16 +83,18 @@
       pinentry
       # poetry
       postgresql
-      python
       python3
+      pwgen
       # python39Packages.grip
       # python39Packages.pip
       # python39Packages.pynvim
       # python39Packages.setuptools
       rclone
       renameutils
-      rustc
+      # rustc
+      rustup
       stern
+      strace
       skopeo
       sops
       ssh-to-age
@@ -106,6 +110,7 @@
       usbutils
       ventoy-bin
       visidata
+      wasmtime
       xdotool
       yarn
       yarn2nix

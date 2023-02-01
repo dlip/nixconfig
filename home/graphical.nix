@@ -40,7 +40,7 @@
     # kicad
     # ledger-live-desktop
     lens
-    libreoffice
+    # libreoffice # broken
     logseq
     mlt
     mongodb-compass
@@ -68,7 +68,7 @@
     yacreader
     # yubikey-manager-qt #broken
     # yubioath-desktop #broken
-    # zathura # broken
+    zathura
     zoom-us
   ];
 }

@@ -13,7 +13,7 @@ null_ls.setup({
     null_ls.builtins.formatting.prettier,
     null_ls.builtins.formatting.shfmt,
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.trim_whitespace,
+    -- null_ls.builtins.formatting.trim_whitespace,
     null_ls.builtins.formatting.gofmt.with({
       args = { "-s" },
     }),
