@@ -108,6 +108,7 @@
       ttyper
       typespeed
       usbutils
+      vegeta
       ventoy-bin
       visidata
       wasmtime
