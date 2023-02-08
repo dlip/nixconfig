@@ -65,139 +65,20 @@ function mapBindings(x) {
       const macro = "m_" + word.split("").map(translateKeys).join("");
       const inputs = keys.toUpperCase().split("").map(translateKeys);
       const bindings = word.split("").map(mapBindings).join(" ");
-      macros += `    ZMK_MACRO(sp${macro},
-        wait-ms = <MACRO_WAIT>;
-        tap-ms = <MACRO_TAP>;
-        bindings = <${bindings} &kp SPACE>;
-    )
-    ZMK_MACRO(sh${macro},
-        wait-ms = <MACRO_WAIT>;
-        tap-ms = <MACRO_TAP>;
-        bindings = <&sk LSHIFT ${bindings} &kp SPACE>;
-    )
-`;
-      if (left) {
-        const leftBindings = left.split("").map(mapBindings).join(" ");
-        macros += `    ZMK_MACRO(l${macro},
-        wait-ms = <MACRO_WAIT>;
-        tap-ms = <MACRO_TAP>;
-        bindings = <${leftBindings} &kp SPACE>;
-    )
-    ZMK_MACRO(ls${macro},
-        wait-ms = <MACRO_WAIT>;
-        tap-ms = <MACRO_TAP>;
-        bindings = <&sk LSHIFT ${leftBindings} &kp SPACE>;
-    )
-`;
-      }
-      if (right) {
-        const rightBindings = right.split("").map(mapBindings).join(" ");
-        macros += `    ZMK_MACRO(r${macro},
-        wait-ms = <MACRO_WAIT>;
-        tap-ms = <MACRO_TAP>;
-        bindings = <${rightBindings} &kp SPACE>;
-    )
-    ZMK_MACRO(rs${macro},
-        wait-ms = <MACRO_WAIT>;
-        tap-ms = <MACRO_TAP>;
-        bindings = <&sk LSHIFT ${rightBindings} &kp SPACE>;
-    )
-`;
-      }
+      macros += `MACRO(${macro}, ${bindings} &kp SPACE)\n`;
 
       const positions = "P_" + inputs.join(" P_");
-      combos += `    combo_sp${macro} {
-      timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <${positions} P_SPC>;
-      bindings = <&sp${macro}>;
-    };
-    combo_sh${macro} {
-      timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <${positions} P_SHFT>;
-      bindings = <&sh${macro}>;
-    };
-`;
-      if (left) {
-        combos += `    combo_l${macro} {
-      timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <${positions} P_LALT>;
-      bindings = <&l${macro}>;
-    };
-    combo_ls${macro} {
-      timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <${positions} P_LALT P_SHFT>;
-      bindings = <&ls${macro}>;
-    };
-`;
-      }
-      if (right) {
-        combos += `    combo_r${macro} {
-      timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <${positions} P_RALT>;
-      bindings = <&r${macro}>;
-    };
-    combo_rs${macro} {
-      timeout-ms = <COMBO_TIMEOUT>;
-      key-positions = <${positions} P_RALT P_SPC>;
-      bindings = <&rs${macro}>;
-    };
-`;
-      }
+      combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
     });
 
     await events.once(rl, "close");
 
-    rl = readline.createInterface({
-      input: fs.createReadStream("cradio.keymap"),
-      crlfDelay: Infinity,
+    fs.writeFileSync("macros.dtsi", macros, {
+      encoding: "utf8",
+      flag: "w",
+      mode: 0o644,
     });
-
-    let output = "";
-    let mode = "normal";
-    let foundMacros = false;
-    let foundCombos = false;
-    rl.on("line", (line) => {
-      if (mode === "normal") {
-        output += line + "\n";
-        if (line.includes("MACROS START")) {
-          mode = "macros";
-        } else if (line.includes("COMBOS START")) {
-          mode = "combos";
-        }
-      } else if (mode === "macros") {
-        if (line.includes("MACROS END")) {
-          foundMacros = true;
-          output += macros + "\n" + line + "\n";
-          mode = "normal";
-        }
-      } else if (mode === "combos") {
-        if (line.includes("COMBOS END")) {
-          foundCombos = true;
-          output += combos + "\n" + line + "\n";
-          mode = "normal";
-        }
-      }
-    });
-
-    await events.once(rl, "close");
-
-    if (!foundMacros) {
-      throw new Error(`Unable to find MACROS START/END, please add the comments to your keymap:
-        macros {
-          // MACROS START
-          // MACROS END
-        }
-      `);
-    }
-    if (!foundCombos) {
-      throw new Error(`Unable to find MACROS START/END, please add the comments to your keymap:
-        combos {
-          // COMBOS START
-          // COMBOS END
-        }
-      `);
-    }
-    fs.writeFileSync("cradio.keymap", output, {
+    fs.writeFileSync("combos.dtsi", combos, {
       encoding: "utf8",
       flag: "w",
       mode: 0o644,

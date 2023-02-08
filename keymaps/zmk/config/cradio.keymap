@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include "library.dtsi"
 
 // GENERAL KEYS
 #define GEN_NONE &none
@@ -63,6 +64,7 @@
 #define DEF_SPC  &mt LSHIFT SPC
 #define DEF_NAV  &mo L_NAV
 #define DEF_NUM  &mo L_NUM
+#define DEF_CBO  &mo L_CBO
 #define DEF_SHFT &sk LSHIFT
 
 // NAVIGATION LAYER
@@ -209,6 +211,9 @@
 #define SYS_BT3 &bt BT_SEL 3
 #define SYS_BT4 &bt BT_SEL 4
 
+// COMBO LAYER
+#define L_CBO 7
+
 // POSITIONS
 #define P_Q 0
 #define P_W 1
@@ -269,8 +274,7 @@
 };
 / {
   macros {
-    // MACROS START
-    // MACROS END
+    #include "macros.dtsi"
   };
   combos {
     compatible = "zmk,combos";
@@ -278,14 +282,15 @@
       timeout-ms = <100>;
       key-positions = <P_Q P_Z>;
       bindings = <&tog L_SYS>;
+      layers = <0>;
     };
     combo_boot {
       timeout-ms = <100>;
       key-positions = <P_Q P_B>;
       bindings = <SYS_BOOT>;
+      layers = <0>;
     };
-    // COMBOS START
-    // COMBOS END
+    #include "combos.dtsi"
   };
 
   keymap {
@@ -305,7 +310,7 @@
         GEN_NONE GEN_NONE NAV_UP   NAV_PGUP GEN_NONE       GEN_NONE NUM_LBRC NUM_RBRC NAV_TILD NAV_PIPE
         NAV_HOME NAV_LEFT NAV_DOWN NAV_RGHT NAV_END        NAV_TAB  NAV_RET  NAV_BSPC NAV_DEL  NAV_ESC  
         GEN_NONE GEN_NONE GEN_NONE NAV_PGDN GEN_NONE       GEN_NONE NUM_LBKT NUM_RBKT NAV_GRV  NAV_BSLH
-                                   GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
+                                   DEF_CBO DEF_SHFT       DEF_SHFT GEN_TRAN
       >;
     };
 
@@ -314,7 +319,7 @@
         NAV_GRV  DEF_SEMI NUM_LBKT NUM_RBKT DEF_COMA       DEF_DOT  NUM_N7    NUM_N8    NUM_N9    NAV_BSLH
         NAV_ESC  NAV_DEL  NAV_BSPC NAV_RET  NAV_TAB        NUM_EQUL NUM_N4    NUM_N5    NUM_N6    NUM_N0
         MED_UNDO MED_CUT  MED_COPY NUM_PST  MED_PRNT       NUM_MIN  NUM_N1    NUM_N2    NUM_N3    NUM_FSLH
-                                   GEN_TRAN DEF_SHFT       DEF_SHFT GEN_TRAN
+                                   GEN_TRAN DEF_SHFT       DEF_SHFT DEF_CBO
       >;
     };
 
@@ -351,6 +356,15 @@
         SYS_BOOT SYS_BT3  SYS_BT4  GEN_NONE SYS_OTG        GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
         GEN_NONE SYS_BT0  SYS_BT1  SYS_BT2  SYS_USB        GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
                                    GEN_TRAN GEN_TRAN       GEN_TRAN GEN_TRAN
+      >;
+    };
+
+    combo {
+      bindings = <
+        GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+        GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+        GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE       GEN_NONE GEN_NONE GEN_NONE GEN_NONE GEN_NONE
+                                   GEN_NONE GEN_NONE       GEN_NONE GEN_NONE
       >;
     };
 
