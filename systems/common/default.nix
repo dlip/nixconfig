@@ -61,6 +61,7 @@ in
   networking.extraHosts = ''
     10.10.0.123 dex.local
   '';
+  networking.enableIPv6 = false;
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
