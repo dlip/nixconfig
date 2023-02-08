@@ -54,7 +54,10 @@ function mapBindings(x) {
     let used = {};
 
     rl.on("line", (line) => {
-      let [word, keys, left, right] = line.split(" ");
+      let [word, keys] = line.split(" ");
+      if (!keys) {
+        return;
+      }
       let index = keys.split("").sort().join("");
       if (used[index]) {
         throw new Error(
