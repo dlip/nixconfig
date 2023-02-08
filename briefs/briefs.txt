@@ -20,56 +20,56 @@ they ty
 I i
 at k
 be b
-this
-have
-from
+this ths
+have hv
+from fm
 or r
 one oe
 had ha
 by y
-word
+word wr
 but bu
 not nt
-what
+what wt
 all al
-were
+were wre
 we w
-when
-your
+when whe
+your yr
 can cn
-said
+said sd
 there
 use us
 an v
-each
-which
+each eh
+which whi
 she sh
 do d
 how ho
 their
 if f
-will
+will wl
 up u
 other
 about
 out ou
-many
-then
-them
-these
+many mny
+then thn
+them tm
+these thes
 so c
-some
+some sm
 her hr
 would
-make
-like
+make mk
+like li
 him hm
-into
-time
+into in
+time tme
 has hz
-look
+look lu
 two tu
-more
+more mr
 write
 go g
 see se
@@ -79,115 +79,115 @@ way wy
 could
 people
 my z
-than
+than tan
 first
 water
-been
-call
+been be
+call cl
 who wo
 oil ol
 its it
 now nw
-find
-long
-down
+find fi
+long lg
+down don
 day dy
 did di
 get ge
-come
-made
+come co
+made md
 may my
-part
-over
+part pt
+over ov
 new ne
 sound
-take
-only
+take ta
+only oy
 little
-work
-know
+work wk
+know kn
 place
-year
-live
+year yar
+live lv
 me m
-back
-give
-most
-very
+back ba
+give gi
+most mo
+very ve
 after
 thing
 our or
-just
-name
-good
+just ju
+name nm
+good gd
 sentence
 man ma
 think
 say sy
 great
 where
-help
+help hp
 through
-much
+much mu
 before
-line
+line ln
 right
 too to
-mean
+mean mea
 old od
 any an
-same
-tell
+same sam
+tell te
 boy bo
 follow
-came
-want
-show
-also
+came cm
+want wnt
+show sho
+also als
 around
-form
+form frm
 three
 small
 set st
 put pu
 end ed
-does
+does dos
 another
-well
+well we
 large
-must
+must mst
 big bi
-even
-such
+even evn
+such sch
 because
-turn
-here
+turn trn
+here her
 why wh
 ask ak
-went
+went wet
 men me
-read
-need
-land
+read re
+need ned
+land ld
 different
-home
+home hoe
 us q
-move
+move mv
 try tr
-kind
-hand
+kind ki
+hand hd
 picture
 again
 change
 off of
-play
+play pl
 spell
 air ai
-away
+away ay
 animal
 house
 point
-page
+page pa
 letter
 mother
 answer
@@ -198,33 +198,33 @@ learn
 should
 America
 world
-high
+high hi
 every
-near
+near nr
 add ad
-food
+food fd
 between
 own on
 below
 country
 plant
-last
+last ls
 school
 father
-keep
-tree
+keep ke
+tree tre
 never
 start
-city
+city ci
 earth
 eye ey
 light
 thought
-head
+head hed
 under
 story
 saw sw
-left
+left lf
 don’t
 few fe
 while
@@ -232,16 +232,16 @@ along
 might
 close
 something
-seem
-next
-hard
-open
+seem sem
+next nx
+hard hrd
+open op
 example
 begin
-life
+life lfe
 always
 those
-both
+both bh
 paper
 together
 got go
@@ -251,33 +251,33 @@ run ru
 important
 until
 children
-side
-feet
+side sid
+feet ft
 car ca
-mile
+mile mi
 night
-walk
+walk wak
 white
 sea sa
 began
-grow
-took
+grow gr
+took tk
 river
-four
+four for
 carry
 state
-once
-book
-hear
-stop
+once oce
+book bk
+hear hea
+stop sp
 without
 second
 later
-miss
-idea
+miss mis
+idea ide
 enough
 eat ea
-face
+face fae
 watch
 far fa
 Indian
@@ -285,15 +285,15 @@ really
 almost
 let lt
 above
-girl
+girl gil
 sometimes
 mountain
 cut cu
 young
-talk
-soon
-list
-song
+talk tak
+soon so
+list lst
+song sg
 being
 leave
 family
