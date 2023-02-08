@@ -269,15 +269,37 @@
     release-after-ms = <1000>;
 };
 &sk {
-    release-after-ms = <1000>;
+    release-after-ms = <2000>;
     quick-release;
 };
 / {
   macros {
+    ZMK_MACRO(dot,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp DOT &kp SPACE &sk LSHIFT>;
+    )
+    ZMK_MACRO(comma,
+        wait-ms = <MACRO_WAIT>;
+        tap-ms = <MACRO_TAP>;
+        bindings = <&kp BSPC &kp COMMA &kp SPACE>;
+    )
     #include "macros.dtsi"
   };
   combos {
     compatible = "zmk,combos";
+    combo_comma {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_COMMA>;
+      bindings = <&comma>;
+      layers = <7>;
+    };
+    combo_dot {
+      timeout-ms = <COMBO_TIMEOUT>;
+      key-positions = <P_DOT>;
+      bindings = <&dot>;
+      layers = <7>;
+    };
     combo_system {
       timeout-ms = <100>;
       key-positions = <P_Q P_Z>;
@@ -310,7 +332,7 @@
         GEN_NONE GEN_NONE NAV_UP   NAV_PGUP GEN_NONE       GEN_NONE NUM_LBRC NUM_RBRC NAV_TILD NAV_PIPE
         NAV_HOME NAV_LEFT NAV_DOWN NAV_RGHT NAV_END        NAV_TAB  NAV_RET  NAV_BSPC NAV_DEL  NAV_ESC  
         GEN_NONE GEN_NONE GEN_NONE NAV_PGDN GEN_NONE       GEN_NONE NUM_LBKT NUM_RBKT NAV_GRV  NAV_BSLH
-                                   DEF_CBO DEF_SHFT       DEF_SHFT GEN_TRAN
+                                   DEF_CBO  DEF_SHFT       DEF_SHFT GEN_TRAN
       >;
     };
 
