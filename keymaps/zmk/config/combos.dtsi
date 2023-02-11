@@ -1,3 +1,12 @@
+
+#define COMBO(NAME, BINDINGS, KEYPOS) \
+  combo_##NAME { \
+    timeout-ms = <100>; \
+    bindings = <BINDINGS>; \
+    key-positions = <KEYPOS>; \
+    layers = <7>; \
+  };
+
 COMBO(m_the, &macro_m_the, P_E)
 COMBO(m_of, &macro_m_of, P_O)
 COMBO(m_and, &macro_m_and, P_N P_D)

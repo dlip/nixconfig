@@ -49,8 +49,29 @@ function mapBindings(x) {
       crlfDelay: Infinity,
     });
 
-    let macros = "";
-    let combos = "";
+    let macros = `
+#define str(s) #s
+#define MACRO(NAME, BINDINGS) \\
+  macro_##NAME: macro_##NAME { \\
+      compatible = "zmk,behavior-macro"; \\
+      label = str(macro_##NAME); \\
+      #binding-cells = <0>; \\
+      wait-ms = <0>; \\
+      tap-ms = <10>; \\
+      bindings = <BINDINGS>; \\
+  };
+
+`;
+    let combos = `
+#define COMBO(NAME, BINDINGS, KEYPOS) \\
+  combo_##NAME { \\
+    timeout-ms = <100>; \\
+    bindings = <BINDINGS>; \\
+    key-positions = <KEYPOS>; \\
+    layers = <7>; \\
+  };
+
+`;
     let used = {};
 
     rl.on("line", (line) => {
