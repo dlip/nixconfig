@@ -10,8 +10,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // LAYERS
-#define LNAV 1 
-#define LSYS 1 
+#define _NAV 1 
+#define _NUM 1 
+#define _SYS 1 
 
 &mt {
   flavor = "tap-preferred";
@@ -41,7 +42,7 @@
     combo_system {
       timeout-ms = <100>;
       key-positions = <0 20>;
-      bindings = <&tog LSYS>;
+      bindings = <&tog _SYS>;
       layers = <0>;
     };
     combo_boot {
@@ -59,12 +60,20 @@
     default_layer {
       bindings = <
         &kp Q          &kp W          &kp F          &kp P          &kp B               &kp J          &kp L          &kp U          &kp Y          &kp SEMI
-        &lt LNAV A     &mt LALT R     &mt LGUI S     &mt LCTRL T    &kp G               &kp M          &mt LCTRL N    &mt RGUI E     &mt LALT I     &lt LNAV O
+        &lt _NAV A     &mt LALT R     &mt LGUI S     &mt LCTRL T    &kp G               &kp M          &mt RCTRL N    &mt RGUI E     &mt RALT I     &lt _NAV O
         &kp Z          &kp X          &kp C          &kp D          &kp V               &kp K          &kp H          &kp COMMA      &kp DOT        &kp QUOT
-                                                     &mo LNAV       &mo LNAV            &kp SPC        &kp LSHIFT
+                                                     &mo _NUM       &mo _NAV            &kp SPC        &kp LSHIFT
       >;
     };
 
+    num_layer {
+      bindings = <
+        &kp TILDE      &kp BSLH       &kp LBKT       &kp RBKT       &kp PSCRN           &kp DOT        &kp N7         &kp N8         &kp N9         &kp BSLH 
+        &kp ESC        &mt LALT DEL   &mt LGUI BSPC  &mt LCTRL RET  &kp TAB             &kp EQUAL      &mt RCTRL N4   &mt RGUI N5    &mt RALT N6    &kp N0
+        &kp LC(Z)      &kp LC(X)      &kp LC(C)      &kp LC(V)      &kp LS(TAB)         &kp MINUS      &kp N1         &kp N2         &kp N3         &kp FSLH 
+                                                     &trans         &trans              &trans         &trans
+      >;
+    };
 
     empty_layer {
       bindings = <
