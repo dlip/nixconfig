@@ -2,6 +2,47 @@ const events = require("events");
 const fs = require("fs");
 const readline = require("readline");
 
+const positions = [
+  "Q",
+  "W",
+  "F",
+  "P",
+  "B",
+  "J",
+  "L",
+  "U",
+  "Y",
+  ";",
+  "A",
+  "R",
+  "S",
+  "T",
+  "G",
+  "M",
+  "N",
+  "E",
+  "I",
+  "O",
+  "Z",
+  "X",
+  "C",
+  "D",
+  "V",
+  "K",
+  "H",
+  "DOT",
+  "COMMA",
+  '"',
+];
+
+function translatePosition(x) {
+  const pos = positions.indexOf(x);
+  if (pos === -1) {
+    throw new Error(`Unable to find position for ${x}`);
+  }
+  return pos;
+}
+
 function translateKeys(x) {
   switch (x) {
     case "'":
@@ -49,8 +90,7 @@ function mapBindings(x) {
       crlfDelay: Infinity,
     });
 
-    let macros = `
-#define str(s) #s
+    let macros = `#define str(s) #s
 #define MACRO(NAME, BINDINGS) \\
   macro_##NAME: macro_##NAME { \\
       compatible = "zmk,behavior-macro"; \\
@@ -62,8 +102,7 @@ function mapBindings(x) {
   };
 
 `;
-    let combos = `
-#define COMBO(NAME, BINDINGS, KEYPOS) \\
+    let combos = `#define COMBO(NAME, BINDINGS, KEYPOS) \\
   combo_##NAME { \\
     timeout-ms = <100>; \\
     bindings = <BINDINGS>; \\
@@ -91,7 +130,7 @@ function mapBindings(x) {
       const bindings = word.split("").map(mapBindings).join(" ");
       macros += `MACRO(${macro}, ${bindings} &kp SPACE)\n`;
 
-      const positions = "P_" + inputs.join(" P_");
+      const positions = inputs.map(translatePosition).join(" ");
       combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
     });
 
