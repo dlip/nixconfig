@@ -9,6 +9,8 @@
       bindings = <BINDINGS>; \
   };
 
+MACRO(m_BSPCDOT, &kp BSPC &kp DOT &kp SPACE)
+MACRO(m_BSPCCOMMA, &kp BSPC &kp COMMA &kp SPACE)
 MACRO(m_the, &kp T &kp H &kp E &kp SPACE)
 MACRO(m_of, &kp O &kp F &kp SPACE)
 MACRO(m_and, &kp A &kp N &kp D &kp SPACE)
