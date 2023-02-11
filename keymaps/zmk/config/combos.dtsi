@@ -3,11 +3,11 @@
     timeout-ms = <100>; \
     bindings = <BINDINGS>; \
     key-positions = <KEYPOS>; \
-    layers = <7>; \
+    layers = <3>; \
   };
 
-COMBO(m_BSPCDOT, &macro_m_BSPCDOT, 27)
-COMBO(m_BSPCCOMMA, &macro_m_BSPCCOMMA, 28)
+COMBO(m_BSPCDOTSPCLSHIFT, &macro_m_BSPCDOTSPCLSHIFT, 27)
+COMBO(m_BSPCCOMMASPCLSHIFT, &macro_m_BSPCCOMMASPCLSHIFT, 28)
 COMBO(m_the, &macro_m_the, 17)
 COMBO(m_of, &macro_m_of, 19)
 COMBO(m_and, &macro_m_and, 16 23)

@@ -32,7 +32,7 @@ const positions = [
   "H",
   "DOT",
   "COMMA",
-  '"',
+  'QUOT',
 ];
 
 function translatePosition(x) {
@@ -48,8 +48,11 @@ function translateKeys(x) {
     case "'":
       return "SQT";
       break;
-    case "`":
+    case "←":
       return "BSPC";
+      break;
+    case "⇧":
+      return "LSHIFT";
       break;
     case "_":
       return "SPC";
@@ -60,8 +63,8 @@ function translateKeys(x) {
     case ",":
       return "COMMA";
       break;
-    case "@":
-      return "AT";
+    case "␣":
+      return "SPC";
       break;
     default:
       return x;
@@ -73,7 +76,7 @@ function mapBindings(x) {
     return `&sk LSHIFT &kp ${x.toUpperCase()}`;
   }
 
-  return `&kp ${translateKeys(x).toUpperCase()}`;
+  return `&${x == '⇧' ? 'sk' : 'kp'} ${translateKeys(x).toUpperCase()}`;
 }
 
 (async function processLineByLine() {
@@ -107,7 +110,7 @@ function mapBindings(x) {
     timeout-ms = <100>; \\
     bindings = <BINDINGS>; \\
     key-positions = <KEYPOS>; \\
-    layers = <7>; \\
+    layers = <3>; \\
   };
 
 `;
@@ -128,7 +131,7 @@ function mapBindings(x) {
       const macro = "m_" + word.split("").map(translateKeys).join("");
       const inputs = keys.toUpperCase().split("").map(translateKeys);
       const bindings = word.split("").map(mapBindings).join(" ");
-      macros += `MACRO(${macro}, ${bindings} &kp SPACE)\n`;
+      macros += `MACRO(${macro}, ${bindings}${word.includes('␣') ? '' : ' &kp SPACE'})\n`;
 
       const positions = inputs.map(translatePosition).join(" ");
       combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;

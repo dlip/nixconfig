@@ -48,7 +48,7 @@
     };
     combo_boot {
       timeout-ms = <100>;
-      key-positions = <0 5>;
+      key-positions = <0 4>;
       bindings = <&bootloader>;
       layers = <0>;
     };
@@ -61,9 +61,9 @@
     default_layer {
       bindings = <
         &kp Q          &kp W          &kp F          &kp P          &kp B               &kp J          &kp L          &kp U          &kp Y          &kp SEMI
-        &lt _NAV A     &mt LALT R     &mt LGUI S     &mt LCTRL T    &kp G               &kp M          &mt RCTRL N    &mt RGUI E     &mt RALT I     &lt _NAV O
-        &kp Z          &kp X          &kp C          &kp D          &kp V               &kp K          &kp H          &kp COMMA      &kp DOT        &kp QUOT
-                                                     &mo _CBO       &mo _NUM            &kp SPC        &sk LSHIFT
+        &kp A          &mt LALT R     &mt LGUI S     &mt LCTRL T    &kp G               &kp M          &mt RCTRL N    &mt RGUI E     &mt RALT I     &kp O
+        &kp Z          &kp X          &kp C          &kp D          &kp V               &kp K          &kp H          &kp COMMA      &kp DOT        &kp SQT
+                                                     &mo _NUM       &lt _NAV SPC        &sk LSHIFT     &mo _CBO      
       >;
     };
 
@@ -78,9 +78,9 @@
 
     nav_layer {
       bindings = <
-        &kp C_BRI_UP   &kp HOME       &kp UP         &kp END        &kp PG_UP           &trans         &trans         &trans         &trans         &trans  
-        &kp C_BRI_DN   &kp LEFT       &kp DOWN       &kp RIGHT      &kp PG_DN           &trans         &trans         &trans         &trans         &trans  
-        &kp C_VOL_DN   &kp C_PREV     &kp C_PP       &kp C_NEXT     &kp C_VOL_UP        &trans         &trans         &trans         &trans         &trans  
+        &kp C_BRI_UP   &kp HOME       &kp UP         &kp END        &kp PG_UP           &trans         &kp F7         &kp F8         &kp F9         &kp F11
+        &kp C_BRI_DN   &kp LEFT       &kp DOWN       &kp RIGHT      &kp PG_DN           &trans         &mt RCTRL F4   &mt RGUI F5    &mt RALT F6    &kp F10
+        &kp C_VOL_DN   &kp C_PREV     &kp C_PP       &kp C_NEXT     &kp C_VOL_UP        &trans         &kp F1         &kp F2         &kp F3         &kp F12
                                                      &trans         &trans              &trans         &trans
       >;
     };
