@@ -78,9 +78,9 @@
 
     nav_layer {
       bindings = <
-        &kp C_BRI_UP   &kp HOME       &kp UP         &kp END        &kp PG_UP           &trans         &kp F7         &kp F8         &kp F9         &kp F11
-        &kp C_BRI_DN   &kp LEFT       &kp DOWN       &kp RIGHT      &kp PG_DN           &trans         &mt RCTRL F4   &mt RGUI F5    &mt RALT F6    &kp F10
-        &kp C_VOL_DN   &kp C_PREV     &kp C_PP       &kp C_NEXT     &kp C_VOL_UP        &trans         &kp F1         &kp F2         &kp F3         &kp F12
+        &kp C_BRI_UP   &kp HOME       &kp UP         &kp END        &kp PG_UP           &none          &kp F7         &kp F8         &kp F9         &kp F11
+        &kp C_BRI_DN   &kp LEFT       &kp DOWN       &kp RIGHT      &kp PG_DN           &none          &mt RCTRL F4   &mt RGUI F5    &mt RALT F6    &kp F10
+        &kp C_VOL_DN   &kp C_PREV     &kp C_PP       &kp C_NEXT     &kp C_VOL_UP        &none          &kp F1         &kp F2         &kp F3         &kp F12
                                                      &trans         &trans              &trans         &trans
       >;
     };
@@ -90,7 +90,7 @@
         &none          &none          &none          &none          &none               &none          &none          &none          &none          &none
         &none          &none          &none          &none          &none               &none          &none          &none          &none          &none
         &none          &none          &none          &none          &none               &none          &none          &none          &none          &none
-                                                     &trans         &trans              &trans         &trans
+                                                     &kp LC(BSPC)   &trans              &trans         &trans
       >;
     };
   };

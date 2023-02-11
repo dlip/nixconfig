@@ -30,8 +30,8 @@ const positions = [
   "V",
   "K",
   "H",
-  "DOT",
   "COMMA",
+  "DOT",
   'QUOT',
 ];
 

@@ -10,7 +10,7 @@
   };
 
 MACRO(m_BSPCDOTSPCLSHIFT, &kp BSPC &kp DOT &kp SPC &sk LSHIFT)
-MACRO(m_BSPCCOMMASPCLSHIFT, &kp BSPC &kp COMMA &kp SPC &sk LSHIFT)
+MACRO(m_BSPCCOMMA, &kp BSPC &kp COMMA &kp SPACE)
 MACRO(m_the, &kp T &kp H &kp E &kp SPACE)
 MACRO(m_of, &kp O &kp F &kp SPACE)
 MACRO(m_and, &kp A &kp N &kp D &kp SPACE)
