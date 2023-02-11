@@ -33,6 +33,10 @@ const positions = [
   "COMMA",
   "DOT",
   'QUOT',
+  '',
+  'SPC',
+  '',
+  '',
 ];
 
 function translatePosition(x) {
