@@ -40,7 +40,7 @@
     # kicad
     # ledger-live-desktop
     lens
-    # libreoffice # broken
+    libreoffice
     logseq
     mlt
     mongodb-compass

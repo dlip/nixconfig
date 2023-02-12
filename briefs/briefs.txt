@@ -141,7 +141,7 @@ our or
 ours or␣
 just ju
 name nm
-good gd
+good go
 sentence snt
 man ma
 man's ma␣
