@@ -119,7 +119,7 @@ sound sn
 take tk
 took tk␣
 only oy
-little
+little lte
 work wk
 worked wk␣
 know kn
@@ -142,7 +142,7 @@ ours or␣
 just ju
 name nm
 good gd
-sentence
+sentence snt
 man ma
 man's ma␣
 think tin
@@ -151,11 +151,11 @@ great gt
 where whr
 help hp
 helped hp␣
-through
+through thro
 much mu
-before
+before bf
 line ln
-right
+right rgt
 too to
 mean mea
 old od
@@ -172,22 +172,22 @@ wanted wnt␣
 show sho
 showed sho␣
 also als
-around
+around aro
 form frm
-three
-small
+three thr
+small sml
 set st
 put pu
 end ed
 does dos
-another
+another ano
 well we
-large
+large lge
 must mst
 big bi
 even evn
 such sch
-because
+because bes
 turn trn
 here her
 why wh
@@ -199,7 +199,7 @@ need ned
 needed ned␣
 land ld
 landed ld␣
-different
+different dnt
 home hoe
 us q
 move mv
@@ -211,7 +211,7 @@ hand hd
 handed hd␣
 picture pi
 pictured pi␣
-again
+again ag
 change ch
 changed ch␣
 off of
@@ -221,36 +221,37 @@ spell spl
 spelled spl␣
 air ai
 away ay
-animal
-house
+animal ani
+house hse
 point pn
 pointed pn␣
 page pa
-letter
+letter ler
 mother mot
 mothered mot␣
 answer ans
 answered ans␣
 study stu
 studied stu␣
-still
+still sti
 learn lr
 learnt lr␣
-should
-America
+should sd
+America amc
+America's amc␣
 world wrl
 world's wrl␣
 high hi
-every
+every evr
 near ner
 neared ner␣
 add ad
 added ad␣
 food fd
-between
+between bw
 own on
 owned on␣
-below
+below bl
 country cty
 country's cty␣
 plant pan
@@ -263,64 +264,64 @@ father's ftr␣
 keep ke
 kept ke␣
 tree tre
-never
+never nv
 start sta
 started sta␣
 city ci
-earth
+earth ear
 eye ey
 eyed ey␣
 light lgt
 lighted lgt␣
 head hed
 headed hed␣
-under
-story
+under un
+story sty
 left lf
 don’t
 few fe
-while
-along
-might
+while whie
+along alg
+might mg
 close clo
 closed clo␣
-something
+something smg
 seem sem
 seemed sem␣
 next nx
 hard hrd
 open op
 opened op␣
-example
+example ex
 begin bgn
 began bgn␣
 life lfe
-always
-those
+always aly
+those tho
 both bh
-paper
-together
+paper pr
+together tog
 group gru
 grouped gru␣
-often
+often otn
 run rn
 ran rn␣
-important
-until
+important im
+until unt
 children chi
 children's chi␣
 side sid
 feet ft
 car ca
-mile mi
-night
+mile mie
+night ng
 walk wak
 walked wak␣
-white
+white wte
 sea sa
 grow gr
 grew gr␣
-river
+river rv
 four for
 carry cr
 carried cr␣
@@ -333,13 +334,13 @@ hear hea
 heard hea␣
 stop sp
 stopped sp␣
-without
-second
-later
+without wto
+second sc
+later ltr
 miss mis
 missed mis␣
 idea ide
-enough
+enough eno
 eat ea
 ate ea␣
 face fae
@@ -347,24 +348,25 @@ faced fae␣
 watch wth
 watched wth␣
 far fa
-Indian
-really
-almost
+Indian ind
+Indian's ind␣
+really rly
+almost amo
 let lt
-above
+above av
 girl gil
 girl's gil␣
-sometimes
+sometimes smte
 mountain mtn
 mountain's mtn␣
 cut cu
-young
+young yg
 talk tak
 soon so
 list lst
 listed lst␣
 song sg
-being
+being bg
 leave lve
 left lve␣
 family fy
