@@ -1,6 +1,8 @@
 ←.␣⇧ .
 ←, ,
 ←ing ,.
+←s ;
+←'s '
 the e
 of o
 and nd
@@ -13,9 +15,8 @@ you yu
 your yu␣
 that th
 it l
-it's l␣
+its l␣
 he h
-his h␣
 for fr
 on p
 are ar
@@ -42,6 +43,7 @@ were wre
 we w
 when whe
 can cn
+could cn␣
 say z
 said z␣
 there the
@@ -50,8 +52,8 @@ an v
 each eh
 which whi
 she sh
-hers sh␣
 do d
+did d␣
 how ho
 if f
 will wl
@@ -66,23 +68,31 @@ these thes
 so c
 some sm
 her hr
+hers hr␣
 would wu
 make mk
+made mk␣
 like li
-him hm
+liked li␣
+him hn
+his hn␣
 into in
 time tme
 has hz
+had hz␣
 look lu
+looked lu␣
 two tu
 more mr
 write wrt
+wrote wrt␣
 go g
+went g␣
 see se
+saw se␣
 number nmr
 no x
 way wy
-could cd
 people pel
 than tan
 first fst
@@ -91,47 +101,56 @@ been be
 call cl
 who wo
 oil ol
-its it
 now nw
 find fi
+found fi␣
 long lg
 down don
 day dy
-did di
 get ge
-come co
-made md
+got ge␣
+come cm
+came cm␣
 may my
 part pt
 over ov
 new ne
 sound sn
-take ta
+take tk
+took tk␣
 only oy
 little
 work wk
+worked wk␣
 know kn
+knew kn␣
 place pla
 year yar
 live lv
+lived lv␣
 me m
 my m␣
 back ba
-give gi
+give gv
+gave gv␣
 most mo
 very ve
 after aft
 thing thi
 our or
+ours or␣
 just ju
 name nm
 good gd
 sentence
 man ma
+man's ma␣
 think tin
+thought tin␣
 great gt
 where whr
 help hp
+helped hp␣
 through
 much mu
 before
@@ -143,11 +162,15 @@ old od
 any an
 same sam
 tell te
+told te␣
 boy bo
-follow
-came cm
+boy's bo␣
+follow fw
+followed fw␣
 want wnt
+wanted wnt␣
 show sho
+showed sho␣
 also als
 around
 form frm
@@ -169,121 +192,160 @@ turn trn
 here her
 why wh
 ask ak
-went wet
 men me
+men's me␣
 read re
 need ned
+needed ned␣
 land ld
+landed ld␣
 different
 home hoe
 us q
 move mv
+moved mv␣
 try tr
+tried tr␣
 kind ki
 hand hd
-picture
+handed hd␣
+picture pi
+pictured pi␣
 again
-change
+change ch
+changed ch␣
 off of
 play pl
-spell
+played pl␣
+spell spl
+spelled spl␣
 air ai
 away ay
 animal
 house
-point
+point pn
+pointed pn␣
 page pa
 letter
-mother
-answer
-found
-study
+mother mot
+mothered mot␣
+answer ans
+answered ans␣
+study stu
+studied stu␣
 still
-learn
+learn lr
+learnt lr␣
 should
 America
-world
+world wrl
+world's wrl␣
 high hi
 every
-near nr
+near ner
+neared ner␣
 add ad
+added ad␣
 food fd
 between
 own on
+owned on␣
 below
-country
-plant
+country cty
+country's cty␣
+plant pan
+planted pan␣
 last ls
-school
-father
+school scl
+school's scl␣
+father ftr
+father's ftr␣
 keep ke
+kept ke␣
 tree tre
 never
-start
+start sta
+started sta␣
 city ci
 earth
 eye ey
-light
-thought
+eyed ey␣
+light lgt
+lighted lgt␣
 head hed
+headed hed␣
 under
 story
-saw sw
 left lf
 don’t
 few fe
 while
 along
 might
-close
+close clo
+closed clo␣
 something
 seem sem
+seemed sem␣
 next nx
 hard hrd
 open op
+opened op␣
 example
-begin
+begin bgn
+began bgn␣
 life lfe
 always
 those
 both bh
 paper
 together
-got go
-group
+group gru
+grouped gru␣
 often
-run ru
+run rn
+ran rn␣
 important
 until
-children
+children chi
+children's chi␣
 side sid
 feet ft
 car ca
 mile mi
 night
 walk wak
+walked wak␣
 white
 sea sa
-began
 grow gr
-took tk
+grew gr␣
 river
 four for
-carry
-state
+carry cr
+carried cr␣
+state ste
+state's ste␣
 once oce
 book bk
+booked bk␣
 hear hea
+heard hea␣
 stop sp
+stopped sp␣
 without
 second
 later
 miss mis
+missed mis␣
 idea ide
 enough
 eat ea
+ate ea␣
 face fae
-watch
+faced fae␣
+watch wth
+watched wth␣
 far fa
 Indian
 really
@@ -291,15 +353,19 @@ almost
 let lt
 above
 girl gil
+girl's gil␣
 sometimes
-mountain
+mountain mtn
+mountain's mtn␣
 cut cu
 young
 talk tak
 soon so
 list lst
+listed lst␣
 song sg
 being
-leave
-family
-it’s
+leave lve
+left lve␣
+family fy
+family's fy␣

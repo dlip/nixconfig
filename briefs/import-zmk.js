@@ -32,7 +32,7 @@ const positions = [
   "H",
   "COMMA",
   "DOT",
-  'QUOT',
+  'SQT',
   '',
   'SPC',
   '',
