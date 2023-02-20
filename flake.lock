@@ -145,11 +145,11 @@
     "keyd": {
       "flake": false,
       "locked": {
-        "lastModified": 1669720414,
-        "narHash": "sha256-QvQkG/g8by7eGNx9rvj1fh35DzUxmNyutqD/aG3ol94=",
+        "lastModified": 1676583544,
+        "narHash": "sha256-z5wF8csDXuTLvC7KpRdUS8NAdPXzHNqjkTo4IK/vk58=",
         "owner": "rvaiya",
         "repo": "keyd",
-        "rev": "bcfb8bb3390cb293c0b2bc72f04fd0a339d7b1ca",
+        "rev": "1750334d7131b9af7e27784aa3822f4bc1662f55",
         "type": "github"
       },
       "original": {
@@ -231,11 +231,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1676300157,
-        "narHash": "sha256-1HjRzfp6LOLfcj/HJHdVKWAkX9QRAouoh6AjzJiIerU=",
+        "lastModified": 1676481215,
+        "narHash": "sha256-afma/1RU0EePRyrBPcjBdOt+dV8z1bJH9dtpTN/WXmY=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "545c7a31e5dedea4a6d372712a18e00ce097d462",
+        "rev": "28319deb5ab05458d9cd5c7d99e1a24ec2e8fc4b",
         "type": "github"
       },
       "original": {
@@ -431,11 +431,11 @@
     "repo-nnn": {
       "flake": false,
       "locked": {
-        "lastModified": 1676230536,
-        "narHash": "sha256-UbeaE7Vofk/eDI4KSsGKmRDe/7cmj5r9l1wb3lZ/SAw=",
+        "lastModified": 1676598515,
+        "narHash": "sha256-dpbSw3BDtmu3I89EwwzLiFnMpcuWJfixCEf0So0WCds=",
         "owner": "jarun",
         "repo": "nnn",
-        "rev": "bbfb16db42404875e5d2df8fb90064e0bf604dd6",
+        "rev": "ade477e705630660baf9ee2345001233047741b5",
         "type": "github"
       },
       "original": {
