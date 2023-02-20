@@ -34,6 +34,7 @@
       file
       fluxcd
       fusee-launcher
+      google-cloud-sdk
       ghc
       ghostscript
       glow
@@ -46,6 +47,7 @@
       hexdino
       helix
       hledger
+      iredis
       jdk11
       k9s
       kind
@@ -80,6 +82,7 @@
       openvpn
       # openvpn_aws
       pandoc
+      php
       pinentry
       # poetry
       postgresql

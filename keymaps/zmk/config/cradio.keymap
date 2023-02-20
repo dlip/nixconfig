@@ -10,10 +10,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // LAYERS
-#define _NUM 1 
-#define _NAV 2 
+#define _NNM 1 
+#define _MED 2 
 #define _CBO 3 
-#define _SYS 1 
+#define _SYS 4 
 
 &mt {
   flavor = "tap-preferred";
@@ -52,6 +52,11 @@
       bindings = <&bootloader>;
       layers = <0>;
     };
+    combo_system {
+      timeout-ms = <100>;
+      key-positions = <0 20>;
+      bindings = <&tog _SYS>;
+    };
     #include "combos.dtsi"
   };
 
@@ -61,25 +66,25 @@
     default_layer {
       bindings = <
         &kp Q            &kp W            &kp F            &kp P            &kp B                 &kp J            &kp L            &kp U            &kp Y            &kp SEMI
-        &kp A            &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &kp O
+        &mt LSHIFT A     &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &mt RSHIFT O
         &kp Z            &kp X            &kp C            &kp D            &kp V                 &kp K            &kp H            &kp COMMA        &kp DOT          &kp SQT
-                                                           &mo _NUM         &lt _NAV SPC          &sk LSHIFT       &mo _CBO      
+                                                           &mo _NNM         &lt _MED SPC          &sk LSHIFT       &mo _CBO      
       >;
     };
 
-    num_layer {
+    navnum_layer {
       bindings = <
-        &kp LBKT         &kp HOME         &kp UP           &kp END          &kp PG_UP             &kp GRAVE        &kp N7           &kp N8           &kp N9           &kp BSLH 
-        &kp RBKT         &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp PG_DN             &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &kp N0
+        &kp GRAVE        &kp HOME         &kp UP           &kp END          &kp PG_UP             &kp LBKT         &kp N7           &kp N8           &kp N9           &kp RBKT 
+        &mt LSHIFT BSLH  &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp PG_DN             &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &mt RSHIFT N0
         &kp ESC          &kp DEL          &kp BSPC         &kp RET          &kp TAB               &kp MINUS        &kp N1           &kp N2           &kp N3           &kp FSLH 
                                                            &trans           &trans                &trans           &trans
       >;
     };
 
-    nav_layer {
+    media_layer {
       bindings = <
         &none            &kp C_VOL_DN     &kp C_STOP       &kp C_VOL_UP     &kp C_BRI_UP          &none            &kp F7           &kp F8           &kp F9           &kp F11
-        &none            &mt LALT C_PREV  &mt LGUI C_PP    &mt LCTRL C_NEXT &kp C_BRI_DN          &none            &mt RCTRL F4     &mt RGUI F5      &mt RALT F6      &kp F10
+        &kp LSHIFT       &mt LALT C_PREV  &mt LGUI C_PP    &mt LCTRL C_NEXT &kp C_BRI_DN          &none            &mt RCTRL F4     &mt RGUI F5      &mt RALT F6      &mt RSHIFT F10
         &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(V)        &kp PSCRN             &none            &kp F1           &kp F2           &kp F3           &kp F12
                                                            &trans           &trans                &trans           &trans
       >;
@@ -91,6 +96,14 @@
         &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none
         &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none
                                                            &kp LC(BSPC)     &trans                &trans           &trans
+      >;
+    };
+    system_layer {
+      bindings = <
+        &none            &bt BT_PRV       &bt BT_CLR       &bt BT_NXT       &out OUT_BLE          &none            &none            &none            &none            &none
+        &bootloader      &bt BT_SEL 3     &bt BT_SEL 4     &none            &out OUT_TOG          &none            &none            &none            &none            &none
+        &none            &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &out OUT_USB          &none            &none            &none            &none            &none
+                                                           &trans           &trans                &trans           &trans
       >;
     };
   };
