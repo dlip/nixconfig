@@ -42,6 +42,7 @@ in
   # '';
 
   hardware.opengl.enable = true;
+  hardware.enableRedistributableFirmware = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.prime = {
     sync.enable = true;
