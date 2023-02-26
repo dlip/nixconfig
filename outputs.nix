@@ -172,7 +172,7 @@ flake-utils.lib.eachDefaultSystem
                 useUserPackages = true;
                 users = {
                   dane = {
-                    home.email = "dane.lipscombe@playtravel.com.au";
+                    home.email = "dane.lipscombe@planpay.com";
                     imports = [
                       ./home
                       ./home/desktop.nix

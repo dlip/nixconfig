@@ -34,7 +34,7 @@ in
       # package = pkgs.neovim-unwrapped;
 
       extraConfig = ''
-        let g:sumneko_root_path = "${pkgs.sumneko-lua-language-server}"
+        let g:lua_ls_root_path = "${pkgs.lua-language-server}"
         let g:awesome_root_path = "${awesomeSrc}"
         let g:vscode_node_debug2_root_path = "${pkgs.vscodeNodeDebug2}"
         let g:friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"

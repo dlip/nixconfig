@@ -47,7 +47,7 @@ matches:
   - trigger: ".,eg"
     replace: "danelipscombe@gmail.com"
   - trigger: ".,ew"
-    replace: "dane.lipscombe@playtravel.com.au"
+    replace: "dane.lipscombe@planpay.com"
   - trigger: ",.n"
     replace: "Dane Lipscombe"
   - trigger: ".,f"

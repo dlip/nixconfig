@@ -53,7 +53,7 @@ for _, server in ipairs(servers) do
   })
 end
 
--- Sumneko lua-language-server setup
+-- lua-language-server setup
 
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
@@ -62,8 +62,8 @@ table.insert(runtime_path, "lua/?/init.lua")
 local lib = vim.api.nvim_get_runtime_file("", true)
 lib[g.awesome_root_path .. "/lib"] = true
 
-require("lspconfig").sumneko_lua.setup({
-  cmd = { g.sumneko_root_path .. "/bin/lua-language-server", "-E", g.sumneko_root_path .. "/extras/main.lua" },
+require("lspconfig").lua_ls.setup({
+  cmd = { g.lua_ls_root_path .. "/bin/lua-language-server", "-E", g.lua_ls_root_path .. "/extras/main.lua" },
   capabilities = require("cmp_nvim_lsp").default_capabilities(lsp.protocol.make_client_capabilities()),
   on_attach = require("lsp-format").on_attach,
   settings = {

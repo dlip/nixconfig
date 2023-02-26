@@ -25,7 +25,7 @@
     shfmt
     # solang
     stylua
-    sumneko-lua-language-server
+    lua-language-server
     terraform
     terraform-ls
     tree-sitter

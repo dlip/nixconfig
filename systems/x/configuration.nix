@@ -41,7 +41,6 @@ in
   #   options snd-intel-dspcfg dsp_driver=2
   # '';
 
-  # hardware.enableAllFirmware = true;
   hardware.opengl.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.prime = {
