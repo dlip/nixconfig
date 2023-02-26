@@ -102,6 +102,9 @@ flake-utils.lib.eachDefaultSystem
             pkgs.sops-nix.nixosModule
             {
               home-manager = {
+                sharedModules = [
+                  inputs.plasma-manager.homeManagerModules.plasma-manager
+                ];
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 users = {
@@ -109,6 +112,7 @@ flake-utils.lib.eachDefaultSystem
                     imports = [
                       ./home
                       ./home/desktop.nix
+                      ./home/graphical.nix
                     ];
                   };
                   tv = {
