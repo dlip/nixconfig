@@ -30,7 +30,7 @@ in
   boot.loader.efi.canTouchEfiVariables = true;
 
   system.autoUpgrade = {
-    enable = true;
+    enable = false;
     flake = "github:dlip/nixconfig";
     flags = [ "--no-write-lock-file" ];
   };

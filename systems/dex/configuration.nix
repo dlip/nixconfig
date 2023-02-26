@@ -25,10 +25,12 @@ rec {
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
 
-  networking.firewall.allowedTCPPorts = [ 445 139 80 22 8000 6443 1234 ];
+  networking.firewall.allowedTCPPorts = [ 443 445 139 80 22 8000 6443 1234 ];
   networking.firewall.allowedUDPPorts = [ 137 138 ];
 
   services.xserver.videoDrivers = [ "nvidia" ];
+
+  hardware.enableAllFirmware = true;
 
   systemd.services.mount-backup = {
     enable = true;
@@ -89,16 +91,16 @@ rec {
     };
   };
 
-  systemd.services.actual-server = {
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
-    description = "Actual Server";
-    environment = {
-      USER_FILES = "/var/lib/actual-server/user";
-      SERVER_FILES = "/var/lib/actual-server/server";
-    };
-    script = "${pkgs.actualServer}/bin/actual-server";
-  };
+  # systemd.services.actual-server = {
+  #   wantedBy = [ "multi-user.target" ];
+  #   after = [ "network.target" ];
+  #   description = "Actual Server";
+  #   environment = {
+  #     USER_FILES = "/var/lib/actual-server/user";
+  #     SERVER_FILES = "/var/lib/actual-server/server";
+  #   };
+  #   script = "${pkgs.actualServer}/bin/actual-server";
+  # };
 
   # services.k3s = {
   #   enable = true;
@@ -110,9 +112,10 @@ rec {
     httpPort = 3001;
   };
 
+  hardware.bluetooth.enable = true;
   networking.nat.enable = true;
   networking.nat.internalInterfaces = [ "wg0" "ve-+" ];
-  networking.nat.externalInterface = "enp0s31f6";
+  networking.nat.externalInterface = "wlp4s0";
 
   networking.wireguard.interfaces = {
     # "wg0" is the network interface name. You can name the interface arbitrarily.
@@ -202,45 +205,54 @@ rec {
     };
   };
 
-  services.traefik = {
-    enable = true;
-    staticConfigOptions = {
-      api = {
-        insecure = true;
-      };
-      certificatesResolvers.myresolver.acme = {
-        email = "your-email@example.com";
-        storage = "/var/lib/traefik/acme.json";
-        httpChallenge.entryPoint = "web";
-      };
-      entryPoints = {
-        web = {
-          address = ":8081";
-          # http.redirections.entrypoint = {
-          #   to = "websecure";
-          #   scheme = "https";
-          # };
-        };
-        websecure = {
-          address = ":443";
-        };
-      };
-      dynamicConfigOptions = {
-        http = {
-          routers.dashboard = {
-            rule = "PathPrefix(`/dashboard`)";
-            service = "api@internal";
-          };
-          # middlewares = {
-          #   redirect-to-https.redirectScheme = {
-          #     scheme = "https";
-          #     port = "443";
-          #     permanent = true;
-          #   };
-        };
-      };
-    };
-  };
+  # services.traefik = {
+  #   enable = true;
+  #   staticConfigOptions = {
+  #     log.level = "DEBUG";
+  #     api = {
+  #       insecure = true;
+  #     };
+  #     certificatesResolvers.myresolver.acme = {
+  #       email = "danelipscombe@gmail.com";
+  #       storage = "/var/lib/traefik/acme.json";
+  #       httpChallenge.entryPoint = "web";
+  #     };
+  #     entryPoints = {
+  #       web = {
+  #         address = ":80";
+  #         http.redirections.entrypoint = {
+  #           to = "websecure";
+  #           scheme = "https";
+  #         };
+  #       };
+  #       websecure = {
+  #         address = ":443";
+  #
+  #         http.tls = {
+  #
+  #           certResolver = "myresolver";
+  #         };
+  #
+  #       };
+  #     };
+  #   };
+  #   dynamicConfigOptions = {
+  #     http = {
+  #       routers.syncthing = {
+  #         rule = "Host(`syncthing.dex-lips.duckdns.org`)";
+  #         service = "syncthing";
+  #         # tls = {
+  #         #   certResolver = "myresolver";
+  #         # };
+  #       };
+  #       services = {
+  #         syncthing = {
+  #           loadBalancer.servers = [{ url = "http://${containers.downloader.localAddress}:9117/"; }];
+  #         };
+  #       };
+  #     };
+  #   };
+  # };
 
   services.nginx = {
     enable = true;
