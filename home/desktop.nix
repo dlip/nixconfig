@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
 
 
-  services.dropbox.enable = true;
+  # services.dropbox.enable = true;
   imports = [
     ./espanso
   ];
