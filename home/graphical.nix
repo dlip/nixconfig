@@ -4,7 +4,7 @@
     # ./alacritty
     ./kitty
     ./rofi
-    ./vscode
+    # ./vscode
     ./kde
     # ./awesome
     # ./sway
