@@ -153,6 +153,7 @@ in
 
   programs.nm-applet.enable = true;
   hardware.opengl.driSupport32Bit = true;
+  hardware.enableAllFirmware = true;
 
   programs.adb.enable = true;
 

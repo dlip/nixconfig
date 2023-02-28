@@ -1,6 +1,5 @@
 inputs@{ self
 , nixpkgs
-, nixpkgs-unstable
 , home-manager
 , flake-utils
 , nix-on-droid
@@ -28,7 +27,6 @@ flake-utils.lib.eachDefaultSystem
   (system:
     let
       pkgs = pkgsForSystem { inherit system; };
-      pkgs-unstable = pkgsForSystem { inherit system; nixpkgs = nixpkgs-unstable; };
 
       createHomeConfiguration = name: config:
         flake-utils.lib.mkApp
@@ -36,8 +34,7 @@ flake-utils.lib.eachDefaultSystem
             drv =
               (home-manager.lib.homeManagerConfiguration
                 {
-                  inherit system;
-                  pkgs = pkgs-unstable;
+                  inherit pkgs system;
                   inherit (config) homeDirectory username;
                   configuration = { imports = config.imports; };
                 }
@@ -175,9 +172,7 @@ flake-utils.lib.eachDefaultSystem
                 sharedModules = [
                   inputs.plasma-manager.homeManagerModules.plasma-manager
                 ];
-                extraSpecialArgs = {
-                  pkgs = pkgsForSystem { system = "x86_64-linux"; pkgs = nixpkgs-unstable; };
-                };
+                useGlobalPkgs = true;
                 useUserPackages = true;
                 users = {
                   dane = {
