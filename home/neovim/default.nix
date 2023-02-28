@@ -87,7 +87,7 @@ in
           nvim-dap-ui
           nvim-dap-virtual-text
           nvim-lint
-          unstable.nvim-lspconfig
+          pkgs.unstable.vimPlugins.nvim-lspconfig
           nvim-neotest
           nvim-treesitter-textobjects
           nvim-treesitter-context

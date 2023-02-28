@@ -101,7 +101,7 @@
       skopeo
       sops
       ssh-to-age
-      # teams #broken
+      teams
       tesseract4
       tldr
       traceroute
