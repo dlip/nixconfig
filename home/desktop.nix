@@ -53,7 +53,7 @@
       kind
       kmonad
       krename
-      kubectl
+      unstable.kubectl
       kubectx
       kubernetes-helm
       kubetail

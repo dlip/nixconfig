@@ -25,7 +25,7 @@
     shfmt
     # solang
     stylua
-    lua-language-server
+    unstable.lua-language-server
     terraform
     terraform-ls
     tree-sitter

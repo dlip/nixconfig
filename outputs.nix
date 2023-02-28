@@ -1,5 +1,6 @@
 inputs@{ self
 , nixpkgs
+, nixpkgs-unstable
 , home-manager
 , flake-utils
 , nix-on-droid
@@ -10,7 +11,8 @@ let
   pkgsForSystem = { system, pkgs ? nixpkgs }: import pkgs {
     inherit system;
     config.allowUnfree = true;
-    overlays = import ./overlays inputs;
+    overlays = (import ./overlays inputs) ++
+      [ (final: prev: { unstable = pkgsForSystem { inherit system; pkgs = nixpkgs-unstable; }; }) ];
   };
 
   configs = rec {

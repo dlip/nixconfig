@@ -34,7 +34,7 @@ in
       # package = pkgs.neovim-unwrapped;
 
       extraConfig = ''
-        let g:lua_ls_root_path = "${pkgs.lua-language-server}"
+        let g:lua_ls_root_path = "${pkgs.unstable.lua-language-server}"
         let g:awesome_root_path = "${awesomeSrc}"
         let g:vscode_node_debug2_root_path = "${pkgs.vscodeNodeDebug2}"
         let g:friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"
@@ -87,7 +87,7 @@ in
           nvim-dap-ui
           nvim-dap-virtual-text
           nvim-lint
-          nvim-lspconfig
+          unstable.nvim-lspconfig
           nvim-neotest
           nvim-treesitter-textobjects
           nvim-treesitter-context
