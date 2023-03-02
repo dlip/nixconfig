@@ -27,6 +27,7 @@
       delve
       deno
       dive
+      difftastic
       docker-compose
       eksctl
       evtest
