@@ -35,10 +35,6 @@ in
     flags = [ "--no-write-lock-file" ];
   };
 
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-13.6.9"
-  ];
   nix = {
     package = pkgs.nixUnstable;
     settings.auto-optimise-store = true;
