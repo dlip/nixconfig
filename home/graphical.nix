@@ -10,7 +10,7 @@
     # ./sway
   ];
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     # anki
     appimage-run
     antimicrox

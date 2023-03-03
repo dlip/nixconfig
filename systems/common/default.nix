@@ -35,6 +35,7 @@ in
     flags = [ "--no-write-lock-file" ];
   };
 
+  nixpkgs.config.allowUnfree = true;
   nix = {
     package = pkgs.nixUnstable;
     settings.auto-optimise-store = true;

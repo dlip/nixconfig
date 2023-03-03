@@ -6,7 +6,7 @@
     ./espanso
   ];
 
-  home.packages = with pkgs;
+  home.packages = with pkgs.unstable;
     [
       acpi
       age
@@ -16,7 +16,7 @@
       autoreconfHook
       avrdude
       aws-google-auth
-      awscli2
+      pkgs.awscli2
       bat
       binutils
       docker-buildx

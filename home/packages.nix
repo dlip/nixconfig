@@ -1,5 +1,5 @@
 { pkgs, lib, ... }: {
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     delta
     dig
     direnv

@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home.packages = with pkgs; [
+  home.packages = with pkgs.unstable; [
     codespell
     gopls
     golangci-lint
@@ -25,7 +25,7 @@
     shfmt
     # solang
     stylua
-    unstable.lua-language-server
+    lua-language-server
     terraform
     terraform-ls
     tree-sitter

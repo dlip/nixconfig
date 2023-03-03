@@ -27,6 +27,7 @@ in
   programs = {
     neovim = {
       enable = true;
+      package = pkgs.unstable.neovim-unwrapped;
       viAlias = true;
       vimAlias = true;
       vimdiffAlias = true;
@@ -41,7 +42,7 @@ in
         source ${nvimHome}/myinit.vim
       '';
 
-      plugins = with pkgs.vimPlugins;
+      plugins = with pkgs.unstable.vimPlugins;
         let
           telescope = (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim telescope-frecency-nvim ]);
         in
@@ -87,7 +88,7 @@ in
           nvim-dap-ui
           nvim-dap-virtual-text
           nvim-lint
-          pkgs.unstable.vimPlugins.nvim-lspconfig
+          nvim-lspconfig
           nvim-neotest
           nvim-treesitter-textobjects
           nvim-treesitter-context
