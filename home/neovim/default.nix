@@ -32,8 +32,6 @@ in
       vimAlias = true;
       vimdiffAlias = true;
 
-      # package = pkgs.neovim-unwrapped;
-
       extraConfig = ''
         let g:lua_ls_root_path = "${pkgs.unstable.lua-language-server}"
         let g:awesome_root_path = "${awesomeSrc}"
