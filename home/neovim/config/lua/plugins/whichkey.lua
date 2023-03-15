@@ -129,8 +129,6 @@ local keymap = {
       local dir = home .. "/scratch" .. cwd:gsub(home, "")
       os.execute("mkdir -p " .. dir)
       vim.cmd("e " .. dir .. "/scratch")
-
-      print(dir)
     end,
     "Open scratch"
   },
@@ -155,7 +153,21 @@ local keymap = {
     y = { "<Plug>VimwikiMakeYesterdayDiaryNote", "Diary Yesterday" },
   },
   x = { "<cmd>Bdelete<CR>", "Close Buffer" },
-  y = { function() vim.fn.setreg("+", vim.fn.expand("%")) end, "Yank current filename" },
+  y = {
+    function()
+      local cwd = vim.loop.cwd()
+      vim.fn.setreg("+", vim.fn.expand("%"):gsub(cwd .. "/", ""))
+    end,
+    "Yank current filename"
+  },
+  Y = {
+    function()
+      local cwd = vim.loop.cwd()
+      local r,c = unpack(vim.api.nvim_win_get_cursor(0))
+      vim.fn.setreg("+", vim.fn.expand("%"):gsub(cwd .. "/", "") .. ":" .. r .. ":" .. c)
+    end,
+    "Yank current filename with position"
+  },
 }
 
 wk.register(keymap, { prefix = "<leader>" })

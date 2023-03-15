@@ -103,6 +103,7 @@ in
           # vim-delve
           vim-dispatch
           vim-eunuch
+          vim-fetch
           vim-fugitive
           vim-mergetool
           vim-rhubarb
