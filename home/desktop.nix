@@ -24,6 +24,7 @@
       cargo-wasi
       cheat
       clang-tools
+      clamav
       delve
       deno
       dive
@@ -48,6 +49,7 @@
       hexdino
       helix
       hledger
+      imagemagick
       iredis
       jdk11
       k9s

@@ -122,7 +122,18 @@ local keymap = {
   n = { "<cmd>NvimTreeToggle<CR>", "NvimTreeToggle" },
   p = { "<cmd>Telescope fd hidden=true<CR>", "Find Files" },
   P = { "<cmd>r!pwgen -ncvs 64<CR>", "Generate Password" },
-  s = { "<cmd>w!<CR>", "save file" }, -- set a single command and text
+  s = {
+    function()
+      local cwd = vim.loop.cwd()
+      local home = vim.env.HOME
+      local dir = home .. "/scratch" .. cwd:gsub(home, "")
+      os.execute("mkdir -p " .. dir)
+      vim.cmd("e " .. dir .. "/scratch")
+
+      print(dir)
+    end,
+    "Open scratch"
+  },
   q = {
     name = "Quickfix",
     o = { "<cmd>copen<CR>", "Open" },
@@ -130,6 +141,7 @@ local keymap = {
     n = { "<cmd>cn<CR>", "Next" },
     p = { "<cmd>cp<CR>", "Previous" },
   },
+  v = { "<cmd>w!<CR>", "save file" },
   w = {
     name = "VimWiki",
     w = { "<Plug>VimwikiIndex", "Wiki Index" },
