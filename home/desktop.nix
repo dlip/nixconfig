@@ -50,13 +50,13 @@
       helix
       hledger
       imagemagick
-      iredis
+      pkgs.iredis
       jdk11
       k9s
       kind
       kmonad
       krename
-      unstable.kubectl
+      kubectl
       kubectx
       kubernetes-helm
       kubetail

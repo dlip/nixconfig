@@ -33,10 +33,9 @@
     gimp
     gnome.file-roller
     gnome.seahorse
-    # godot
     gramps
     kdenlive
-    # krita
+    krita
     # kicad
     # ledger-live-desktop
     lens
