@@ -5,10 +5,8 @@ an an
 as as
 at at
 be be
-bi bi
 by by
 do do
-ex ex
 go go
 he he
 hi hi
@@ -16,6 +14,7 @@ if if
 in in
 is is
 it it
+its it⇐
 me me
 my my
 no nx
@@ -28,167 +27,190 @@ to to
 up up
 us us
 we we
-add
-air
+add ad
+added ad⇐
+air air
 all al
 and nd
 any ay
-are
+are re
 ask ak
-ate
-big
-boy
+big bi
+boy bo
 but bu
 can cn
-car
-cut
+car cr
+cut cu
 day dy
-did
-eat
+did di
+eat ea
+ate ea⇐
 end ed 
 eye ey
-far
+eyed ey⇐
+far fa
 few fe
 for fr
 get ge
-got
-had
-had
-has
-her
-him
-his
+got gt
+has ha
+had ha⇐
+her hr
+hers hr⇐
+hey hy
+him hm
+his hm⇐
 how hw
-its
-let
+let le
 man mn
+men mn⇒
 may ma
-men
 new ne
 not nt
 now nw
 off ov
-oil
+oil oi
 old ol
 one oe
-our
+our our
 out ou
 own ow
-put
-ran
+owned ow⇐
+put pt
 run ru
-saw
+ran ru⇐
 say sy
-sea
+sea sea
 see se
+saw se⇐
 set st
 she sh
 the te
 too tu
-try
-two
+try tr
+tried tr⇐
+two tw
 use ue
-was
+was ws
 way wa
 who hu
 why wy
 you yu
-also
-away
-back
-been
-book
-both
-call
-came
-city
-come
-does
-down
-each
-even
-eyed
-face
-fact
-feel
-feet
-find
-food
-form
-four
-from
-gave
-girl
-give
-good
-grew
-grow
-hand
-hard
-have
-head
-hear
-help
-here
-hers
-high
-hold
-home
-idea
-into
-just
-keep
-kept
-kind
-knew
-know
-land
-last
-late
-lead
-left
-life
-like
-line
-list
-live
-long
-look
-made
-make
-many
-mean
-mile
-miss
+your yu⇐
+also ao
+away awy
+back bk
+been bn
+book bok
+booked bok⇐
+both bh
+call cl
+city ct
+come cm
+came cm⇐
+does ds
+down dw
+each ec
+even ev
+face fae
+faced fae⇐
+fact fk
+feel fl
+feet ft
+find fd
+food fod
+form frm
+four fur
+from fm
+girl gl
+give gi
+gave gi⇐
+good gu
+grow gr
+grew gr⇐
+hand hd
+handed hd⇐
+hard hrd
+have hv
+head hed
+headed hed⇐
+hear hea
+heard hea⇐
+help hp
+helped hp⇐
+here her
+high hg
+hold hod
+home ho
+idea ie
+into int
+just ju
+keep ke
+kept ke⇐
+kind kd
+know kw
+knew kw⇐
+land ln
+landed ln⇐
+last lt
+late lat
+lead ld
+led ld⇐
+left lft
+life li
+like ike
+liked ike⇐
+line lne
+list ls
+listed
+live lv
+lived lv⇐
+long log
+look lk
+looked
+make mk
+made mk⇐
+many man
+mean men
+miss ms
+missed ms⇐
 more
 most
 move
+moved
 much
 must
 name
 near
+neared
 need
+needed
 next
 once
 only
 open
+opened
 ours
 over
 page
 part
 plan
 play
+played
 read
 real
 said
 same
 seem
+seemed
 show
+showed
 side
 some
 song
 soon
 stop
+stopped
 such
 take
 talk
@@ -206,7 +228,9 @@ tree
 turn
 very
 walk
+walked
 want
+wanted
 well
 went
 were
@@ -216,11 +240,10 @@ will
 with
 word
 work
+worked
 year
-your
 about
 above
-added
 after
 again
 along
@@ -229,52 +252,55 @@ begin
 being
 below
 carry
+carried
 child
 close
+closed
 could
 don’t
 early
 earth
 every
-faced
 first
 found
 great
 group
-heard
+grouped
 house
 large
 later
 learn
 leave
 light
-liked
-lived
+lighted
 might
-moved
 never
 night
 often
 order
 other
-owned
 paper
 place
 plant
+planted
 point
+pointed
 right
 river
 since
 small
 sound
 spell
+spelled
 stand
 start
+started
 state
 state
 still
 story
 study
+studied
 their
 there
 these
@@ -282,10 +308,10 @@ thing
 think
 those
 three
-tried
 under
 until
 watch
+watched
 water
 where
 which
@@ -300,85 +326,57 @@ almost
 always
 animal
 answer
+answered
 around
 become
 before
-booked
 change
-closed
+changed
 course
 during
 enough
 family
 father
 follow
+followed
 govern
-handed
-headed
-helped
-landed
 learnt
 letter
-listed
 little
-looked
-missed
 mother
+mothered
 nation
-neared
-needed
 number
-opened
 people
 person
-played
 public
 really
 school
 second
-seemed
 should
-showed
 system
-walked
-wanted
-worked
 against
 another
 because
 between
-carried
-changed
 country
 develop
 example
 general
-grouped
 however
-lighted
 picture
-planted
-pointed
+pictured
 present
 problem
 program
-spelled
-started
-stopped
-studied
 thought
 through
-watched
 without
-answered
 children
 consider
-followed
 increase
 interest
-mothered
 mountain
-pictured
 possible
 sentence
 together
@@ -386,3 +384,5 @@ different
 important
 something
 sometimes
+kubernetes ku
+function fn

@@ -33,10 +33,10 @@ const positions = [
   "COMMA",
   "DOT",
   'SQT',
-  '',
+  'LALT',
   'SPC',
   'LSHIFT',
-  '',
+  'RALT',
 ];
 
 function translatePosition(x) {
@@ -58,8 +58,14 @@ function translateKeys(x) {
     case "⇧":
       return "LSHIFT";
       break;
+    case "⇐":
+      return "LALT";
+      break;
     case "_":
       return "SPC";
+      break;
+    case "⇒":
+      return "RALT";
       break;
     case ".":
       return "DOT";
