@@ -73,6 +73,7 @@ oil oi
 old ol
 one oe
 our our
+ours our⇒
 out ou
 own ow
 owned ow⇐
@@ -162,86 +163,87 @@ like ike
 liked ike⇐
 line lne
 list ls
-listed
+listed ls⇐
 live lv
 lived lv⇐
 long log
 look lk
-looked
+looked lk⇐
 make mk
 made mk⇐
-many man
+many mny
 mean men
-miss ms
-missed ms⇐
-more
-most
-move
-moved
-much
-must
-name
-near
-neared
-need
-needed
-next
-once
-only
-open
-opened
-ours
-over
-page
-part
-plan
-play
-played
-read
-real
-said
-same
-seem
-seemed
-show
-showed
-side
-some
-song
-soon
-stop
-stopped
-such
-take
-talk
-tell
-than
-that
-them
-then
-they
-this
-time
-told
-took
-tree
-turn
-very
-walk
-walked
-want
-wanted
-well
-went
-were
-what
-when
-will
-with
-word
-work
-worked
-year
+miss mis
+missed mis⇐
+more mr
+most mos
+move mv
+moved mv⇐
+much mu
+must mst
+name nam
+near nr
+neared nr⇐
+need ned
+needed ned⇐
+next nxt
+once onc
+only onl
+open op
+opened op⇐
+over ovr
+page pe
+part par
+plan pla
+play ply
+played ply⇐
+read rd
+real rl
+said sed
+same sam
+seem sem
+seemed sem⇐
+show sho
+showed sho⇐
+side sid
+some sm
+song sg
+soon sn
+stop sp
+stopped sp⇐
+such sc
+take tk
+took tk⇐
+talk tak
+tell tel
+told tel⇐
+than thn
+that tha
+them tm
+then the
+they thy
+this thi
+time tme
+timed tme⇐
+tree tre
+turn trn
+very vy
+walk wl
+walked wl⇐
+want wnt
+wanted wnt⇐
+week wek
+well wel
+went wen
+were wr
+what wha
+when whe
+will wi
+with wth
+word wor
+work wrk
+worked wrk⇐
+year yr
 about
 above
 after
