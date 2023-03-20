@@ -28,110 +28,188 @@ to to
 up up
 us us
 we we
+add
+air
 all al
 and nd
 any ay
+are
 ask ak
+ate
+big
+boy
 but bu
 can cn
+car
+cut
 day dy
+did
+eat
 end ed 
 eye ey
+far
 few fe
 for fr
 get ge
+got
+had
+had
+has
+her
+him
+his
 how hw
+its
+let
 man mn
 may ma
+men
 new ne
 not nt
 now nw
 off ov
+oil
 old ol
 one oe
-out
-own
-run
-say
-see
-set
-she
+our
+out ou
+own ow
+put
+ran
+run ru
+saw
+say sy
+sea
+see se
+set st
+she sh
 the te
-too
-use
-way
-who
-why
+too tu
+try
+two
+use ue
+was
+way wa
+who hu
+why wy
 you yu
 also
+away
 back
+been
+book
 both
 call
+came
+city
 come
+does
 down
 each
 even
+eyed
 face
 fact
 feel
+feet
 find
+food
 form
+four
 from
+gave
+girl
 give
 good
+grew
+grow
 hand
+hard
 have
 head
+hear
 help
 here
+hers
 high
 hold
 home
+idea
 into
 just
 keep
+kept
+kind
+knew
 know
+land
 last
 late
 lead
+left
 life
 like
 line
+list
+live
 long
 look
+made
 make
 many
 mean
+mile
+miss
 more
 most
 move
 much
 must
+name
+near
 need
+next
+once
 only
 open
+ours
 over
+page
 part
 plan
 play
+read
 real
+said
 same
 seem
 show
+side
 some
+song
+soon
+stop
 such
 take
+talk
 tell
 than
 that
+them
 then
 they
 this
 time
+told
+took
+tree
 turn
 very
+walk
 want
 well
+went
+were
 what
 when
 will
@@ -139,73 +217,172 @@ with
 word
 work
 year
+your
 about
+above
+added
 after
 again
+along
+began
 begin
+being
+below
+carry
 child
+close
 could
+don’t
 early
+earth
+every
+faced
 first
+found
 great
 group
+heard
 house
 large
+later
+learn
 leave
+light
+liked
+lived
 might
+moved
 never
+night
+often
 order
 other
+owned
+paper
 place
+plant
 point
 right
+river
 since
 small
+sound
+spell
 stand
+start
+state
 state
 still
+story
+study
+their
 there
 these
 thing
 think
 those
+three
+tried
 under
+until
+watch
+water
 where
 which
 while
+white
 world
 would
 write
+wrote
+young
+almost
+always
+animal
+answer
 around
 become
 before
+booked
 change
+closed
 course
 during
+enough
+family
+father
 follow
 govern
+handed
+headed
+helped
+landed
+learnt
+letter
+listed
 little
+looked
+missed
+mother
 nation
+neared
+needed
 number
+opened
 people
 person
+played
 public
+really
 school
+second
+seemed
 should
+showed
 system
+walked
+wanted
+worked
 against
 another
 because
 between
+carried
+changed
+country
 develop
+example
 general
+grouped
 however
+lighted
+picture
+planted
+pointed
 present
 problem
 program
+spelled
+started
+stopped
+studied
+thought
 through
+watched
 without
+answered
+children
 consider
+followed
 increase
 interest
+mothered
+mountain
+pictured
 possible
+sentence
+together
+different
+important
+something
+sometimes
