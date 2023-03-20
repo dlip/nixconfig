@@ -1,5 +1,6 @@
+←.␣⇧ .,
 a ar
-I i⇧
+I ai
 an an
 as as
 at at
@@ -28,26 +29,26 @@ up up
 us us
 we we
 all al
-and 
-any
-ask
-but
-can
-day
-end
-eye
-few
-for
-get
-how
-man
-may
-new
-not
-now
-off
-old
-one
+and nd
+any ay
+ask ak
+but bu
+can cn
+day dy
+end ed 
+eye ey
+few fe
+for fr
+get ge
+how hw
+man mn
+may ma
+new ne
+not nt
+now nw
+off ov
+old ol
+one oe
 out
 own
 run
@@ -55,12 +56,13 @@ say
 see
 set
 she
-the
+the te
 too
 use
 way
 who
-you
+why
+you yu
 also
 back
 both

@@ -135,10 +135,14 @@ function mapBindings(x) {
       const macro = "m_" + word.split("").map(translateKeys).join("");
       const inputs = keys.toUpperCase().split("").map(translateKeys);
       const bindings = word.split("").map(mapBindings).join(" ");
-      macros += `MACRO(${macro}, ${bindings}${word.includes('␣') ? '' : ' &kp SPACE'})\n`;
+      macros += `MACRO(${macro}, ${bindings}${word.includes('␣') ? '' : ' &kp SPC'})\n`;
 
       const positions = [...inputs, 'SPC'].map(translatePosition).join(" ");
       combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
+
+      // Shifted
+      macros += `MACRO(s_${macro}, &sk LSHIFT ${bindings}${word.includes('␣') ? '' : ' &kp SPC'})\n`;
+      combos += `COMBO(s_${macro}, &macro_s_${macro}, ${translatePosition('LSHIFT')} ${positions})\n`;
     });
 
     await events.once(rl, "close");
