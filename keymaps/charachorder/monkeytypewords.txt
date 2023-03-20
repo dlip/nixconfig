@@ -1,34 +1,25 @@
-a ar
-I i⇧
-an an
-as as
-at at
-be be
-bi bi
-by by
-do do
-ex ex
-go go
-he he
-hi hi
-if if
-in in
-is is
-it it
-me me
-my my
-no nx
-of of
-OK ok
-on on
-or or
-so so
-to to
-up up
-us us
-we we
-all al
-and 
+a
+I
+as
+at
+be
+by
+do
+go
+he
+if
+in
+it
+no
+of
+on
+or
+so
+to
+up
+we
+all
+and
 any
 ask
 but

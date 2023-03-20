@@ -35,7 +35,7 @@ const positions = [
   'SQT',
   '',
   'SPC',
-  '',
+  'LSHIFT',
   '',
 ];
 
@@ -114,7 +114,7 @@ function mapBindings(x) {
     timeout-ms = <100>; \\
     bindings = <BINDINGS>; \\
     key-positions = <KEYPOS>; \\
-    layers = <3>; \\
+    layers = <0>; \\
   };
 
 `;
@@ -137,7 +137,7 @@ function mapBindings(x) {
       const bindings = word.split("").map(mapBindings).join(" ");
       macros += `MACRO(${macro}, ${bindings}${word.includes('␣') ? '' : ' &kp SPACE'})\n`;
 
-      const positions = inputs.map(translatePosition).join(" ");
+      const positions = [...inputs, 'SPC'].map(translatePosition).join(" ");
       combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
     });
 
