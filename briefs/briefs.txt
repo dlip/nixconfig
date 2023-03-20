@@ -7,6 +7,8 @@ at at
 be be
 by by
 do do
+did di⇐
+don’t do⇒
 go go
 he he
 hi hi
@@ -39,10 +41,10 @@ big bi
 boy bo
 but bu
 can cn
+could cn⇐
 car cr
 cut cu
 day dy
-did di
 eat ea
 ate ea⇐
 end ed 
@@ -155,6 +157,7 @@ land ln
 landed ln⇐
 last lt
 late lat
+later lat⇒
 lead ld
 led ld⇐
 left lft
@@ -244,51 +247,49 @@ word wor
 work wrk
 worked wrk⇐
 year yr
-about
-above
-after
-again
-along
-began
-begin
-being
-below
-carry
-carried
-child
-close
-closed
-could
-don’t
-early
-earth
-every
-first
-found
-great
-group
-grouped
-house
-large
-later
-learn
-leave
-light
-lighted
-might
-never
-night
-often
-order
-other
-paper
-place
-plant
-planted
-point
-pointed
-right
-river
+about ab
+above av
+after atr
+again ag
+along alg
+begin bg
+began bg⇐
+being beg
+below bw
+carry cy
+carried cy⇐
+child ch
+close cls
+closed cls⇐
+early ear
+earth eart
+every ery
+first fs
+found fou
+great gre
+group gro
+grouped gro⇐
+house hoe
+large lge
+learn lrn
+learned lrn⇐
+leave lea
+light lig
+lighted lig⇐
+might mi
+never nv
+night nig
+often oft
+order ord
+other otr
+paper pa
+place pl
+plant plt
+planted pla⇐
+point poi
+pointed poi⇐
+right ri
+river rv
 since
 small
 sound
