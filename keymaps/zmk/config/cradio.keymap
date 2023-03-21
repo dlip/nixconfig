@@ -66,7 +66,7 @@
     default_layer {
       bindings = <
         &kp Q            &kp W            &kp F            &kp P            &kp B                 &kp J            &kp L            &kp U            &kp Y            &kp SEMI
-        &kp A            &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &kp O
+        &lt _MED A       &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &lt _MED O
         &kp Z            &kp X            &kp C            &kp D            &kp V                 &kp K            &kp H            &kp COMMA        &kp DOT          &kp SQT
                                                            &mo _NUM         &mt LSHIFT SPC        &sk LSHIFT       &mo _NAV      
       >;
@@ -93,8 +93,8 @@
     media_layer {
       bindings = <
         &none            &kp C_VOL_DN     &kp C_STOP       &kp C_VOL_UP     &kp C_BRI_UP          &none            &kp F7           &kp F8           &kp F9           &kp F11
-        &kp LSHIFT       &mt LALT C_PREV  &mt LGUI C_PP    &mt LCTRL C_NEXT &kp C_BRI_DN          &none            &mt RCTRL F4     &mt RGUI F5      &mt RALT F6      &mt RSHIFT F10
-        &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(V)        &kp PSCRN             &none            &kp F1           &kp F2           &kp F3           &kp F12
+        &none            &mt LALT C_PREV  &mt LGUI C_PP    &mt LCTRL C_NEXT &kp C_BRI_DN          &none            &mt RCTRL F4     &mt RGUI F5      &mt RALT F6      &kp F10
+        &noe             &none            &none            &none            &none                 &none            &kp F1           &kp F2           &kp F3           &kp F12
                                                            &trans           &trans                &trans           &trans
       >;
     };
