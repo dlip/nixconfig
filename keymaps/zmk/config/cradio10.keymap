@@ -10,10 +10,10 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // LAYERS
-#define _NAV 1 
-#define _NUM 2 
-#define _MED 3 
-#define _SYS 5 
+#define _NNM 1 
+#define _MED 2 
+#define _CBO 3 
+#define _SYS 4 
 
 &mt {
   flavor = "tap-preferred";
@@ -66,26 +66,17 @@
     default_layer {
       bindings = <
         &kp Q            &kp W            &kp F            &kp P            &kp B                 &kp J            &kp L            &kp U            &kp Y            &kp SEMI
-        &kp A            &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &kp O
+        &mt LSHIFT A     &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &mt RSHIFT O
         &kp Z            &kp X            &kp C            &kp D            &kp V                 &kp K            &kp H            &kp COMMA        &kp DOT          &kp SQT
-                                                           &mo _NUM         &mt LSHIFT SPC        &sk LSHIFT       &mo _NAV      
+                                                           &mo _NNM         &lt _MED SPC          &sk LSHIFT       &mo _CBO      
       >;
     };
 
-    nav_layer {
+    navnum_layer {
       bindings = <
-        &none            &none            &kp UP           &kp PG_UP        &none                 &none            &none            &none            &none            &none 
-        &kp HOME         &kp LEFT         &kp DOWN         &kp RIGHT        &kp END               &kp TAB          &mt RCTRL RET    &mt RGUI BSPC    &mt RALT DEL     &kp ESC
-        &kp ESC          &kp DEL          &kp BSPC         &kp PG_DN        &none                 &none            &none            &none            &none            &none 
-                                                           &trans           &trans                &trans           &trans
-      >;
-    };
-
-    num_layer {
-      bindings = <
-        &kp GRAVE        &kp BSLH         &kp LBKT         &kp RBKT         &none                 &none            &kp N7           &kp N8           &kp N9           &kp STAR 
-        &kp ESC          &mt LALT DEL     &mt LGUI BSPC    &mt LCTRL RET    &kp TAB               &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &kp N0
-        &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(V)        &kp PSCRN             &kp MINUS        &kp N1           &kp N2           &kp N3           &kp FSLH 
+        &kp GRAVE        &kp HOME         &kp UP           &kp END          &kp PG_UP             &kp LBKT         &kp N7           &kp N8           &kp N9           &kp RBKT 
+        &mt LSHIFT BSLH  &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp PG_DN             &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &mt RSHIFT N0
+        &kp ESC          &kp DEL          &kp BSPC         &kp RET          &kp TAB               &kp MINUS        &kp N1           &kp N2           &kp N3           &kp FSLH 
                                                            &trans           &trans                &trans           &trans
       >;
     };
@@ -99,6 +90,14 @@
       >;
     };
 
+    combo_layer {
+      bindings = <
+        &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none
+        &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none
+        &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none
+                                                           &kp LC(BSPC)     &trans                &trans           &trans
+      >;
+    };
     system_layer {
       bindings = <
         &none            &bt BT_PRV       &bt BT_CLR       &bt BT_NXT       &out OUT_BLE          &none            &none            &none            &none            &none
