@@ -1,4 +1,5 @@
 ←.␣⇧ .,
+←ing␣ ng
 a ar
 I ai
 an an
@@ -53,7 +54,7 @@ far fa
 few fe
 for fr
 get ge
-got gt
+got ge⇐
 has ha
 had ha⇐
 her hr
@@ -93,6 +94,7 @@ try tr
 tried tr⇐
 two tw
 use ue
+used ue⇐
 was ws
 way wa
 who hu
@@ -118,8 +120,10 @@ face fae
 faced fae⇐
 fact fk
 feel fl
+felt fl⇐
 feet ft
 find fd
+found fd⇐
 food fod
 form frm
 four fur
@@ -238,10 +242,10 @@ week wek
 well wel
 went wen
 were wr
-what wha
-when whe
+what wht
+when whn
 will wi
-with wth
+with wit
 word wor
 work wrk
 worked wrk⇐
@@ -264,14 +268,13 @@ early ear
 earth eart
 every ery
 first fs
-found fou
 great gre
 group gro
 grouped gro⇐
 house hoe
 large lge
 learn lrn
-learned lrn⇐
+learnt lrn⇐
 leave lea
 light lig
 lighted lig⇐
@@ -289,102 +292,103 @@ point poi
 pointed poi⇐
 right ri
 river rv
-since
-small
-sound
-spell
-spelled
-stand
-start
-started
-state
-state
-still
-story
-study
-studied
-their
-there
-these
-thing
-think
-those
-three
-under
-until
-watch
-watched
-water
-where
-which
-while
-white
-world
-would
-write
-wrote
-young
-almost
-always
-animal
-answer
-answered
-around
-become
-before
-change
-changed
-course
-during
-enough
-family
-father
-follow
-followed
-govern
-learnt
-letter
-little
-mother
-mothered
-nation
-number
-people
-person
-public
-really
-school
-second
-should
-system
-against
-another
-because
-between
-country
-develop
-example
-general
-however
-picture
-pictured
-present
-problem
-program
-thought
-through
-without
-children
-consider
-increase
-interest
-mountain
-possible
-sentence
-together
-different
-important
-something
-sometimes
+since sin
+small sal
+sound snd
+spell spl
+spelled spl⇐
+stand stn
+start str
+started str⇐
+state ste
+stated ste⇐
+still stl
+story sty
+study stu
+studied stu⇐
+their tei
+there thr
+these ths
+thing thg
+think thk
+thought thk⇐
+those tho
+three thre
+under un
+until ul
+watch ach
+watched ach⇐
+water wtr
+where whr
+which whi
+while wil
+white wte
+world wrd
+would wou
+write wri
+wrote wri⇐
+young yng
+almost amo
+always aly
+animal ani
+answer ans
+answered ans⇐
+around aro
+become bem
+before bef
+change che
+changed che⇐
+course cou
+during dur
+enough eno
+family fam
+father fat
+follow fol
+followed fol⇐
+govern gov
+letter ltr
+little lit
+mother mtr
+mothered mtr⇐
+nation nat
+number nbr
+person pn
+people pn⇒
+public pb
+really rly
+school sch
+second sec
+should shd
+system sym
+against agt
+another ano
+because bes
+between ben
+country cty
+develop dev
+developed dev⇐
+example ex
+general gen
+however hvr
+picture pit
+pictured pit⇐
+present pre
+problem pro
+program prm
+programmed prm⇐
+through thu
+without wto
+children chi
+consider cns
+increase inc
+interest inr
+mountain mtn
+possible pos
+sentence sen
+together tog
+different dif
+important ip
+something smg
+sometimes sot
 kubernetes ku
 function fn

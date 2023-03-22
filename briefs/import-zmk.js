@@ -146,9 +146,9 @@ function mapBindings(x) {
       const positions = [...inputs, 'SPC'].map(translatePosition).join(" ");
       combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
 
-      // Shifted
-      macros += `MACRO(s_${macro}, &sk LSHIFT ${bindings}${word.includes('␣') ? '' : ' &kp SPC'})\n`;
-      combos += `COMBO(s_${macro}, &macro_s_${macro}, ${translatePosition('LSHIFT')} ${positions})\n`;
+      // Shifted (takes double the sram!)
+      // macros += `MACRO(s_${macro}, &sk LSHIFT ${bindings}${word.includes('␣') ? '' : ' &kp SPC'})\n`;
+      // combos += `COMBO(s_${macro}, &macro_s_${macro}, ${translatePosition('LSHIFT')} ${positions})\n`;
     });
 
     await events.once(rl, "close");
