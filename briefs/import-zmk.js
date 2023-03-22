@@ -32,11 +32,11 @@ const positions = [
   "H",
   "COMMA",
   "DOT",
-  'SQT',
-  'LALT',
-  'SPC',
-  'LSHIFT',
-  'RALT',
+  "SQT",
+  "LMOD",
+  "SPC",
+  "LSHIFT",
+  "RMOD",
 ];
 
 function translatePosition(x) {
@@ -59,13 +59,13 @@ function translateKeys(x) {
       return "LSHIFT";
       break;
     case "⇐":
-      return "LALT";
+      return "LMOD";
       break;
     case "_":
       return "SPC";
       break;
     case "⇒":
-      return "RALT";
+      return "RMOD";
       break;
     case ".":
       return "DOT";
@@ -89,7 +89,7 @@ function mapBindings(x) {
     return `&sk LSHIFT &kp ${x.toUpperCase()}`;
   }
 
-  return `&${x == '⇧' ? 'sk' : 'kp'} ${translateKeys(x).toUpperCase()}`;
+  return `&${x == "⇧" ? "sk" : "kp"} ${translateKeys(x).toUpperCase()}`;
 }
 
 (async function processLineByLine() {
@@ -128,9 +128,14 @@ function mapBindings(x) {
 
 `;
     let used = {};
+    let header = true;
 
     rl.on("line", (line) => {
-      let [word, keys] = line.split("\t");
+      if (header) {
+        header = false;
+        return;
+      }
+      let [keys, sword, lword, rword] = line.split("\t");
       if (!keys) {
         return;
       }
@@ -140,18 +145,29 @@ function mapBindings(x) {
           `Can't use combo '${keys}' for word '${word}' already used by ${used[index]}`
         );
       }
-      used[index] = word;
-      const macro = "m_" + word.split("").map(translateKeys).join("");
-      const inputs = keys.toUpperCase().split("").map(translateKeys);
-      const bindings = word.split("").map(mapBindings).join(" ");
-      macros += `MACRO(${macro}, ${bindings}${word.includes('⇧') ? '' : ' &kp SPC'})\n`;
 
-      const positions = [...inputs, 'SPC'].map(translatePosition).join(" ");
-      combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
+      function addWord(word, modifier = '') {
+        if(!word) {
+          return;
+        }
+        used[index] = word;
+        const macro = "m_" + word.split("").map(translateKeys).join("");
+        const inputs = (keys + modifier).toUpperCase().split("").map(translateKeys);
+        const bindings = word.split("").map(mapBindings).join(" ");
+        macros += `MACRO(${macro}, ${bindings}${word.includes("⇧") ? "" : " &kp SPC"
+          })\n`;
 
-      // Shifted (takes double the sram!)
-      // macros += `MACRO(s_${macro}, &sk LSHIFT ${bindings}${word.includes('⇧') ? '' : ' &kp SPC'})\n`;
-      // combos += `COMBO(s_${macro}, &macro_s_${macro}, ${translatePosition('LSHIFT')} ${positions})\n`;
+        const positions = [...inputs, "SPC"].map(translatePosition).join(" ");
+        combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
+
+        // Shifted (takes double the sram!)
+        // macros += `MACRO(s_${macro}, &sk LSHIFT ${bindings}${word.includes('⇧') ? '' : ' &kp SPC'})\n`;
+        // combos += `COMBO(s_${macro}, &macro_s_${macro}, ${translatePosition('LSHIFT')} ${positions})\n`;
+      }
+
+      addWord(sword);
+      addWord(lword, '⇐');
+      addWord(rword, '⇒');
     });
 
     await events.once(rl, "close");
