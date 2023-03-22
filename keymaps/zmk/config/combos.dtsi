@@ -8,6 +8,7 @@
 
 COMBO(m_BSPCDOTSPCLSHIFT, &macro_m_BSPCDOTSPCLSHIFT, 28 27 31)
 COMBO(m_BSPCingSPC, &macro_m_BSPCingSPC, 16 14 31)
+COMBO(m_BSPCQUESTION, &macro_m_BSPCQUESTION, 29 28 31)
 COMBO(m_a, &macro_m_a, 10 11 31)
 COMBO(m_I, &macro_m_I, 10 18 31)
 COMBO(m_an, &macro_m_an, 10 16 31)

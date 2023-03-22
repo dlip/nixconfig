@@ -57,6 +57,18 @@
       key-positions = <0 20>;
       bindings = <&tog _SYS>;
     };
+    combo_bspcword {
+      timeout-ms = <100>;
+      key-positions = <3 4>;
+      bindings = <&kp LC(BSPC)>;
+      layers = <0>;
+    };
+    combo_bspc {
+      timeout-ms = <100>;
+      key-positions = <13 14>;
+      bindings = <&kp BSPC>;
+      layers = <0>;
+    };
     #include "combos.dtsi"
   };
 
@@ -75,7 +87,7 @@
     nav_layer {
       bindings = <
         &none            &none            &kp UP           &kp PG_UP        &none                 &none            &none            &none            &none            &none 
-        &kp HOME         &kp LEFT         &kp DOWN         &kp RIGHT        &kp END               &kp TAB          &mt RCTRL RET    &mt RGUI BSPC    &mt RALT DEL     &kp ESC
+        &kp HOME         &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp END               &kp TAB          &mt RCTRL RET    &mt RGUI BSPC    &mt RALT DEL     &kp ESC
         &kp ESC          &kp DEL          &kp BSPC         &kp PG_DN        &none                 &none            &none            &none            &none            &none 
                                                            &trans           &trans                &trans           &trans
       >;

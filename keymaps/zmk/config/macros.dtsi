@@ -11,6 +11,7 @@
 
 MACRO(m_BSPCDOTSPCLSHIFT, &kp BSPC &kp DOT &kp SPC &sk LSHIFT)
 MACRO(m_BSPCingSPC, &kp BSPC &kp I &kp N &kp G &kp SPC)
+MACRO(m_BSPCQUESTION, &kp BSPC &kp QUESTION &kp SPC)
 MACRO(m_a, &kp A &kp SPC)
 MACRO(m_I, &sk LSHIFT &kp I &kp SPC)
 MACRO(m_an, &kp A &kp N &kp SPC)

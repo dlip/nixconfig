@@ -76,6 +76,9 @@ function translateKeys(x) {
     case "␣":
       return "SPC";
       break;
+    case "?":
+      return "QUESTION";
+      break;
     default:
       return x;
   }
