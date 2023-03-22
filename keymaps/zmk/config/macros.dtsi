@@ -10,8 +10,9 @@
   };
 
 MACRO(m_BSPCDOTSPCLSHIFT, &kp BSPC &kp DOT &kp SPC &sk LSHIFT)
-MACRO(m_BSPCingSPC, &kp BSPC &kp I &kp N &kp G &kp SPC)
+MACRO(m_BSPCCOMMA, &kp BSPC &kp COMMA &kp SPC)
 MACRO(m_BSPCQUESTION, &kp BSPC &kp QUESTION &kp SPC)
+MACRO(m_BSPCingSPC, &kp BSPC &kp I &kp N &kp G &kp SPC &kp SPC)
 MACRO(m_a, &kp A &kp SPC)
 MACRO(m_I, &sk LSHIFT &kp I &kp SPC)
 MACRO(m_an, &kp A &kp N &kp SPC)
@@ -404,3 +405,5 @@ MACRO(m_something, &kp S &kp O &kp M &kp E &kp T &kp H &kp I &kp N &kp G &kp SPC
 MACRO(m_sometimes, &kp S &kp O &kp M &kp E &kp T &kp I &kp M &kp E &kp S &kp SPC)
 MACRO(m_kubernetes, &kp K &kp U &kp B &kp E &kp R &kp N &kp E &kp T &kp E &kp S &kp SPC)
 MACRO(m_function, &kp F &kp U &kp N &kp C &kp T &kp I &kp O &kp N &kp SPC)
+MACRO(m_question, &kp Q &kp U &kp E &kp S &kp T &kp I &kp O &kp N &kp SPC)
+MACRO(m_thankSPCyou, &kp T &kp H &kp A &kp N &kp K &kp SPC &kp Y &kp O &kp U &kp SPC)

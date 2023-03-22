@@ -73,7 +73,7 @@ function translateKeys(x) {
     case ",":
       return "COMMA";
       break;
-    case "␣":
+    case " ":
       return "SPC";
       break;
     case "?":
@@ -130,7 +130,7 @@ function mapBindings(x) {
     let used = {};
 
     rl.on("line", (line) => {
-      let [word, keys] = line.split(" ");
+      let [word, keys] = line.split("\t");
       if (!keys) {
         return;
       }
@@ -144,13 +144,13 @@ function mapBindings(x) {
       const macro = "m_" + word.split("").map(translateKeys).join("");
       const inputs = keys.toUpperCase().split("").map(translateKeys);
       const bindings = word.split("").map(mapBindings).join(" ");
-      macros += `MACRO(${macro}, ${bindings}${word.includes('␣') ? '' : ' &kp SPC'})\n`;
+      macros += `MACRO(${macro}, ${bindings}${word.includes('⇧') ? '' : ' &kp SPC'})\n`;
 
       const positions = [...inputs, 'SPC'].map(translatePosition).join(" ");
       combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
 
       // Shifted (takes double the sram!)
-      // macros += `MACRO(s_${macro}, &sk LSHIFT ${bindings}${word.includes('␣') ? '' : ' &kp SPC'})\n`;
+      // macros += `MACRO(s_${macro}, &sk LSHIFT ${bindings}${word.includes('⇧') ? '' : ' &kp SPC'})\n`;
       // combos += `COMBO(s_${macro}, &macro_s_${macro}, ${translatePosition('LSHIFT')} ${positions})\n`;
     });
 
