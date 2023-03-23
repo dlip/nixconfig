@@ -142,7 +142,7 @@ function mapBindings(x) {
       let index = keys.split("").sort().join("");
       if (used[index]) {
         throw new Error(
-          `Can't use combo '${keys}' for word '${word}' already used by ${used[index]}`
+          `Can't use combo '${keys}' for word '${sword}' already used by ${used[index]}`
         );
       }
 
