@@ -1,8 +1,8 @@
 chord	output	left modifier	right modifier
-,.	←. ⇧		
-,h	←,		
-.	←?		
-gn	←ing		
+.,	←. ⇧		
+h,	←,		
+'.	←?		
+ng	←ing		
 ar	a		
 ai	I		
 an	an		
@@ -12,30 +12,29 @@ be	be
 by	by		
 do	do	did	doing
 go	go	went	going
-eh	he		
+he	he		
 hi	hi		
-fi	if		
+if	if		
 in	in		
 is	is		
 it	it		its
-em	me	mine	my
-my	my		
+me	me	mine	my
 nx	no		
-fo	of		
-ko	OK		
-no	on		
+of	of		
+ok	OK		
+on	on		
 or	or		
-os	so		
-ot	to		
-pu	up		
-su	us		
-ew	we		
+so	so		
+to	to		
+up	up		
+us	us		
+we	we		
 ad	add	added	adding
 air	air		
 al	all		
-dn	and		
+nd	and		
 ay	any		
-er	are		
+re	are		
 ak	ask		
 bi	big		
 bo	boy		
@@ -44,250 +43,249 @@ cn	can	could
 cr	car		
 cu	cut		
 dy	day		
-ae	eat	ate	eating
-de	end		
+ea	eat	ate	eating
+ed	end		
 ey	eye	eyed	eying
-af	far		
-ef	few		
+fa	far		
+fe	few		
 fr	for		
-eg	get	got	getting
-ah	has	had	
+ge	get	got	getting
+ha	has	had	
 hr	her		hers
 hy	hey		
 hm	him		his
 hw	how		
-el	let		
+le	let		
 mn	man		men
-am	may		
-en	new		
+ma	may		
+ne	new		
 nt	not		
 nw	now		
 ov	off		
-io	oil		
-lo	old		
-eo	one		one's
-oru	our		ours
+oi	oil		
+ol	old		
+oe	one		one's
+our	our		ours
 ou	out		
 ow	own	owned	owning
 pt	put		
 ru	run	ran	running
 sy	say		
-aes	sea		
-es	see	saw	seeing
+sea	sea		
+se	see	saw	seeing
 st	set		
-hs	she		
-et	the		
+sh	she		
+te	the		
 tu	too		
-rt	try	tried	trying
+tr	try	tried	trying
 tw	two		
-eu	use	used	using
-sw	was		
-aw	way		
+ue	use	used	using
+ws	was		
+wa	way		
 hu	who		
 wy	why		
-uy	you	yours	your
+yu	you	yours	your
 ao	also		
 awy	away		
 bk	back		
 bn	been		
-bko	book	booked	booking
+bok	book	booked	booking
 bh	both		
 cl	call		
 ct	city		
 cm	come	came	coming
 ds	does		
 dw	down		
-ce	each		
+ec	each		
 ev	even		
-aef	face	faced	facing
+fae	face	faced	facing
 fk	fact		
 fl	feel	felt	feeling
 ft	feet		
-df	find	found	finding
-dfo	food		
-fmr	form		
-fru	four		
+fd	find	found	finding
+fod	food		
+frm	form		
+fur	four		
 fm	from		
 gl	girl		
 gi	give	gave	giving
 gu	good		
 gr	grow	grew	growing
-dh	hand	handed	handing
-dhr	hard		
+hd	hand	handed	handing
+hrd	hard		
 hv	have		
-deh	head	headed	heading
-aeh	hear	heard	hearing
+hed	head	headed	heading
+hea	hear	heard	hearing
 hp	help	helped	helping
-ehr	here		
-gh	high		
-dho	hold	held	holding
+her	here		
+hg	high		
+hod	hold	held	holding
 ho	home		
-ei	idea		
+ie	idea		
 int	into		
 ju	just		
-ek	keep	kept	keeping
-dk	kind		
+ke	keep	kept	keeping
+kd	kind		
 kw	know	knew	knowing
 ln	land	landed	landing
 lt	last		
-alt	late	later	
-dl	lead	led	leading
-flt	left		
-il	life		
-eik	like	liked	liking
-eln	line		
+lat	late	later	
+ld	lead	led	leading
+lft	left		
+li	life		
+ike	like	liked	liking
+lne	line		
 ls	list	listed	listing
 lv	live	lived	living
-glo	long		
-kl	look	looked	looking
-km	make	made	making
+log	long		
+lk	look	looked	looking
+mk	make	made	making
 mny	many		
-emn	mean		
-ims	miss	missed	missing
+men	mean		
+mis	miss	missed	missing
 mr	more		
 mos	most		
 mv	move	moved	moving
 mu	much		
 mst	must		
-amn	name		
+nam	name		
 nr	near	neared	nearing
-den	need	needed	needing
-ntx	next		
-cno	once		
-lno	only		
+ned	need	needed	needing
+nxt	next		
+onc	once		
+onl	only		
 op	open	opened	opening
-orv	over		
-ep	page		
-apr	part		
-alp	plan		
-lpy	play	played	playing
-dr	read		
-lr	real		
-des	said		
-ams	same		
-ems	seem	seemed	seeming
-hos	show	showed	showing
-dis	side		
-ms	some		
-gs	song		
-ns	soon		
-ps	stop	stopped	stoping
-cs	such		
-kt	take	took	taking
-akt	talk		
-elt	tell	told	telling
-hnt	than		
-aht	that		
-mt	them		
-eht	then		
-hty	they		
-hit	this		
-emt	time	timed	timing
-ert	tree		
-nrt	turn		
+ovr	over		
+pe	page		
+par	part		
+pla	plan		
+ply	play	played	playing
+rd	read		
+rl	real		
+sed	said		
+sam	same		
+sem	seem	seemed	seeming
+sho	show	showed	showing
+sid	side		
+sm	some		
+sg	song		
+sn	soon		
+sp	stop	stopped	stoping
+sc	such		
+tk	take	took	taking
+tak	talk		
+tel	tell	told	telling
+thn	than		
+tha	that		
+tm	them		
+the	then		
+thy	they	theirs	their
+thi	this		
+tme	time	timed	timing
+tre	tree		
+trn	turn		
 vy	very		
-lw	walk	walked	walking
-ntw	want	wanted	wanting
-ekw	week		
-elw	well		
-rw	were		
-htw	what		
-hnw	when		
-iw	will		
-itw	with		
-orw	word		
-krw	work	worked	working
-ry	year		
+wl	walk	walked	walking
+wnt	want	wanted	wanting
+wek	week		
+wel	well		
+wr	were		
+wht	what		
+whn	when		
+wi	will		
+wit	with		
+wor	word		
+wrk	work	worked	working
+yr	year		
 ab	about		
 av	above		
-art	after		
+atr	after		
 ag	again		
-agl	along		
+alg	along		
 bg	begin	began	beginning
 beg	being		
 bw	below		
 cy	carry	carried	carrying
 ch	child		children
 cls	close	closed	closing
-aer	early		
-aert	earth		
+ear	early		
+eart	earth		
 ery	every		
 fs	first		
-egr	great		
-gor	group	grouped	grouping
-eho	house		
-egl	large		
-lnr	learn	learnt	learning
-ael	leave		
-gil	light	lighted	lighting
-im	might		
+gre	great		
+gro	group	grouped	grouping
+hoe	house		
+lge	large		
+lrn	learn	learnt	learning
+lea	leave		
+lig	light	lighted	lighting
+mi	might		
 nv	never		
-gin	night		
-fot	often		
-dor	order		
-ort	other		
-ap	paper		
-lp	place		
-lpt	plant	planted	planting
-iop	point	pointed	pointing
-ir	right		
+nig	night		
+oft	often		
+ord	order		
+otr	other		
+pa	paper		
+pl	place		
+plt	plant	planted	planting
+poi	point	pointed	pointing
+ri	right		
 rv	river		
-ins	since		
-als	small		
-dns	sound	sounded	sounding
-lps	spell	spelled	spelling
-nst	stand	stood	standing
-rst	start	started	starting
-est	state	stated	stating
-lst	still		
+sin	since		
+sal	small		
+snd	sound	sounded	sounding
+spl	spell	spelled	spelling
+stn	stand	stood	standing
+str	start	started	starting
+ste	state	stated	stating
+stl	still		
 sty	story		
 stu	study	studied	studying
-eit	their		
-hrt	there		
-hst	these		
-ght	thing		
-hkt	think	thought	thinking
-hot	those		
-ehrt	three		
-nu	under		
-lu	until		
+thr	there		
+ths	these		
+thg	thing		
+thk	think	thought	thinking
+tho	those		
+thre	three		
+un	under		
+ul	until		
 ach	watch	watched	watching
-rtw	water		
-hrw	where		
-hiw	which		
-ilw	while		
-etw	white		
-drw	world		
-ouw	would		
-irw	write	wrote	writing
-gny	young		
+wtr	water	watered	watering
+whr	where		
+whi	which		
+wil	while		
+wte	white		
+wrd	world		
+wou	would		
+wri	write	wrote	writing
+yng	young		
 amo	almost		
 aly	always		
-ain	animal		
+ani	animal		
 ans	answer	answered	answering
-aor	around		
+aro	around		
 bem	become		
 bef	before		
-ceh	change	changed	changing
+che	change	changed	changing
 cou	course		
-dru	during		
+dur	during		
 eno	enough		
-afm	family		
-aft	father		
-flo	follow	followed	following
-gov	govern		
-lrt	letter		
-ilt	little		
-mrt	mother	mothered	mothering
-ant	nation		
-bnr	number		
-np	person		people
-bp	public		
-lry	really		
-chs	school		
-ces	second		
-dhs	should		
-msy	system		
+fam	family		
+fat	father	fathered	fathering
+fol	follow	followed	following
+gov	govern	governed	governing
+ltr	letter		
+lit	little		
+mtr	mother	mothered	mothering
+nat	nation		
+nbr	number		
+pn	person		people
+pb	public		
+rly	really		
+sch	school		
+sec	second		
+shd	should		
+sym	system		
 agt	against		
 ano	another		
 bes	because		
@@ -295,28 +293,28 @@ ben	between
 cty	country		
 dev	develop	developed	developing
 ex	example		
-egn	general		
-hrv	however		
-ipt	picture	pictured	picturing
-epr	present		
-opr	problem		
-mpr	program	programmed	programming
-htu	through		
-otw	without		
-cns	consider		
-cin	increase		
-inr	interest		
-mnt	mountain		
-ops	possible		
-ens	sentence		
-got	together		
-dfi	different		
+gen	general		
+hvr	however		
+pit	picture	pictured	picturing
+pre	present	presented	presenting
+pro	problem		
+prm	program	programmed	programming
+thu	through		
+wto	without		
+cns	consider	considered	considering
+inc	increase	increased	increasing
+inr	interest	interested	interesting
+mtn	mountain		
+pos	possible		
+sen	sentence		
+tog	together		
+dif	different		
 ip	important		
-gms	something		
-ost	sometimes		
+smg	something		
+sot	sometimes		
 ku	kubernetes		
-fn	function		
-nq	question		
+fn	function	functioned	functioning
+qn	question	questioned	questioning
 ty	thank you		
-bs	somebody		somebody's
-bey	everybody		everybody's
+sby	somebody		somebody's
+eby	everybody		everybody's
