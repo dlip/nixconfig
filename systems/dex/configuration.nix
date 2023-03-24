@@ -171,8 +171,7 @@ rec {
     autoStart = true;
     enableTun = true;
     config = (import ../downloader/configuration.nix {
-      pkgs = pkgs;
-      config = config;
+      inherit pkgs config;
     });
     privateNetwork = true;
     hostAddress = "10.1.0.1";

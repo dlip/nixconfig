@@ -4,7 +4,6 @@ inputs@{ kmonad
 , envy-sh
 , emoji-menu
 , power-menu
-, sops-nix
 , vscodeNodeDebug2
 , keyd
 , plasma-manager
@@ -15,7 +14,6 @@ inputs@{ kmonad
   # poetry2nix.overlay
   # packages
   (final: prev: {
-    inherit sops-nix;
     rc2nix = plasma-manager.packages.${final.system}.rc2nix;
     actualServer = final.callPackage ./actualServer { src = actual-server; nodejs = final.nodejs-16_x; };
     envy-sh = envy-sh.defaultPackage.${final.system};

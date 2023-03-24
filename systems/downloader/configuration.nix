@@ -5,7 +5,6 @@ in
   imports = [
     ../common/services/qbittorrent.nix
     ../common/services/ssmtp.nix
-    pkgs.sops-nix.nixosModule
   ];
 
   nixpkgs.config.allowUnfree = true;

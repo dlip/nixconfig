@@ -5,6 +5,7 @@ inputs@{ self
 , flake-utils
 , nix-on-droid
 , kmonad
+, sops-nix
 , ...
 }:
 let
@@ -75,7 +76,7 @@ flake-utils.lib.eachDefaultSystem
               ./systems/metabox/configuration.nix
               kmonad.nixosModules.default
               home-manager.nixosModules.home-manager
-              pkgs.sops-nix.nixosModule
+              sops-nix.nixosModules.default
               {
                 home-manager = {
                   useGlobalPkgs = true;
@@ -101,7 +102,7 @@ flake-utils.lib.eachDefaultSystem
           modules = [
             ./systems/dex/configuration.nix
             home-manager.nixosModules.home-manager
-            pkgs.sops-nix.nixosModule
+            sops-nix.nixosModules.default
             {
               home-manager = {
                 sharedModules = [
@@ -138,7 +139,7 @@ flake-utils.lib.eachDefaultSystem
           modules = [
             ./systems/g/configuration.nix
             kmonad.nixosModules.default
-            pkgs.sops-nix.nixosModule
+            sops-nix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager = {
@@ -167,7 +168,7 @@ flake-utils.lib.eachDefaultSystem
           modules = [
             ./systems/x/configuration.nix
             kmonad.nixosModules.default
-            pkgs.sops-nix.nixosModule
+            sops-nix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               home-manager = {
