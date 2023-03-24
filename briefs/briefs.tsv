@@ -2,6 +2,13 @@ chord	output	left modifier	right modifier
 .,	←. ⇧		
 h,	←,		
 '.	←?		
+'n	←n't		
+'d	←'d		
+'s	←'s		
+'l	←'ll		
+'r	←'re		
+'v	←'ve		
+'m	←'m		
 ng	←ing		
 ar	a		
 ai	I		
@@ -185,7 +192,7 @@ tme	time	timed	timing
 tre	tree		
 trn	turn		
 vy	very		
-wl	walk	walked	walking
+wak	walk	walked	walking
 wnt	want	wanted	wanting
 wek	week		
 wel	well		
@@ -318,3 +325,4 @@ qn	question	questioned	questioning
 ty	thank you		
 sby	somebody		somebody's
 eby	everybody		everybody's
+lw	low		

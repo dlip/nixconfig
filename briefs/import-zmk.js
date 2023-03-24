@@ -120,7 +120,7 @@ function mapBindings(x) {
 `;
     let combos = `#define COMBO(NAME, BINDINGS, KEYPOS) \\
   combo_##NAME { \\
-    timeout-ms = <100>; \\
+    timeout-ms = <50>; \\
     bindings = <BINDINGS>; \\
     key-positions = <KEYPOS>; \\
     layers = <0>; \\
@@ -157,7 +157,11 @@ function mapBindings(x) {
         macros += `MACRO(${macro}, ${bindings}${word.includes("⇧") ? "" : " &kp SPC"
           })\n`;
 
-        const positions = [...inputs, "SPC"].map(translatePosition).join(" ");
+        if (inputs.length < 3 && modifier == '') {
+          inputs.push("SPC")
+        }
+
+        const positions = inputs.map(translatePosition).join(" ");
         combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
 
         // Shifted (takes double the sram!)
