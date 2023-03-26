@@ -120,7 +120,7 @@ function mapBindings(x) {
 `;
     let combos = `#define COMBO(NAME, BINDINGS, KEYPOS) \\
   combo_##NAME { \\
-    timeout-ms = <50>; \\
+    timeout-ms = <80>; \\
     bindings = <BINDINGS>; \\
     key-positions = <KEYPOS>; \\
     layers = <0>; \\
