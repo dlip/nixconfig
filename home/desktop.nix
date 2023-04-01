@@ -4,6 +4,7 @@
   # services.dropbox.enable = true;
   imports = [
     ./espanso
+    ./helix
   ];
 
   home.packages = with pkgs.unstable;
@@ -47,7 +48,6 @@
       gotypist
       graphviz
       hexdino
-      helix
       hledger
       imagemagick
       pkgs.iredis

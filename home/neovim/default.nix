@@ -40,7 +40,7 @@ in
         source ${nvimHome}/myinit.vim
       '';
 
-      plugins = with pkgs.unstable.vimPlugins;
+      plugins = with pkgs.vimPlugins;
         let
           telescope = (pluginWithDeps telescope-nvim [ plenary-nvim popup-nvim telescope-frecency-nvim ]);
         in

@@ -70,6 +70,9 @@ function translateKeys(x) {
     case ".":
       return "DOT";
       break;
+    case "@":
+      return "AT";
+      break;
     case ",":
       return "COMMA";
       break;
@@ -154,7 +157,7 @@ function mapBindings(x) {
         const macro = "m_" + word.split("").map(translateKeys).join("");
         const inputs = (keys + modifier).toUpperCase().split("").map(translateKeys);
         const bindings = word.split("").map(mapBindings).join(" ");
-        macros += `MACRO(${macro}, ${bindings}${word.includes("⇧") ? "" : " &kp SPC"
+        macros += `MACRO(${macro}, ${bindings}${word.includes("⇧") || word.includes("@") ? "" : " &kp SPC"
           })\n`;
 
         if (inputs.length < 3 && modifier == '') {
