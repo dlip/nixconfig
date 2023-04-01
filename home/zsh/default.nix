@@ -20,7 +20,8 @@
       v = "nvim";
       x = "xplr";
       ls = "exa";
-      find = "fd";
+      lg = "lazygit";
+      # find = "fd";
       grc = "git reset $(git merge-base HEAD origin/main)";
     };
 

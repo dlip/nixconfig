@@ -3,8 +3,10 @@
 
   # services.dropbox.enable = true;
   imports = [
+    ./alacritty
     ./espanso
     ./helix
+    ./zellij
   ];
 
   home.packages = with pkgs.unstable;
@@ -60,6 +62,7 @@
       kubectx
       kubernetes-helm
       kubetail
+      lazygit
       ledger
       ledger-autosync
       lldb
