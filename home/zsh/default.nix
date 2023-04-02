@@ -15,6 +15,7 @@
       c = "clear";
       clip = "xclip -sel c";
       g = "git";
+      h = "hx";
       n = "nnn";
       ren = "qmv -f do";
       v = "nvim";
@@ -23,6 +24,7 @@
       lg = "lazygit";
       # find = "fd";
       grc = "git reset $(git merge-base HEAD origin/main)";
+      z = "zellij";
     };
 
     initExtra = ''

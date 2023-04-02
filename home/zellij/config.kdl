@@ -1,1 +1,7 @@
 theme "default"
+
+keybinds {
+    normal {
+        unbind "Ctrl o" "Ctrl n" "Ctrl s"
+    }
+}
