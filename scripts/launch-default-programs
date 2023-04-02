@@ -1,8 +1,10 @@
 #!/usr/bin/env bash
 
+sleep 2
 google-chrome-stable&
-kitty --class Work work&
+# kitty --class Work work&
+alacritty -e work&
 obsidian&
-slack&
-teams&
+# slack&
+# teams&
 warpd&

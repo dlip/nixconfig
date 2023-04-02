@@ -1,11 +1,13 @@
 startup() {
-  tmux new-session -d -s work
-  tmux send-keys -t work 'p nixconfig' C-m
-  kitty tmux a -t work&
+  # tmux new-session -d -s work
+  # tmux send-keys -t work 'p nixconfig' C-m
+  # kitty tmux a -t work&
   google-chrome-stable&
+  alacritty -e ~/code/nixconfig/scripts/work&
+  # google-chrome-stable&
   obsidian&
-  slack&
-  teams&
+  # slack&
+  # teams&
   warpd&
 }
 

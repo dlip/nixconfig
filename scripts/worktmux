@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+session="work"
+tmux new-session -d -s $session
+tmux send-keys -t $session 'p nixconfig' C-m
+tmux wait project_opened
