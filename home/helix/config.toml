@@ -2,8 +2,12 @@ theme = "tokyonight_storm"
 
 [editor]
 line-number = "relative"
-indent-guides.render = true
 cursorline = true
+auto-save = true
+bufferline = "multiple"
+
+[editor.indent-guides]
+render = true
 
 [editor.cursor-shape]
 insert = "bar"
@@ -12,6 +16,9 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[keys.normal]
+ret = ":wa"
 
 [keys.normal.space]
 l = ":sh lazygit"

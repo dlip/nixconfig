@@ -27,6 +27,7 @@
     stylua
     lua-language-server
     terraform
+    taplo
     terraform-ls
     tree-sitter
     vale
