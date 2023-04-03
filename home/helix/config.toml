@@ -18,7 +18,73 @@ select = "underline"
 hidden = false
 
 [keys.normal]
+# Escape selections as expected
+esc = ["collapse_selection", "keep_primary_selection"]
+# Return to save all
 ret = ":wa"
+# Use the system clipboard like a normal app
+y = "yank_joined_to_clipboard"
+p = "paste_clipboard_after"
+P = "paste_clipboard_before"
+R = "replace_selections_with_clipboard"
+
+# Search for word under cursor
+"*" = [
+  "move_char_right",
+  "move_prev_word_start",
+  "move_next_word_end",
+  "search_selection",
+  "search_next",
+]
+# Control-Arrows to switch panes
+C-up = "jump_view_up"
+C-down = "jump_view_down"
+C-left = "jump_view_left"
+C-right = "jump_view_right"
+# Shift Arrows move 5 times in direction
+S-up = [
+  "move_line_up",
+  "move_line_up",
+  "move_line_up",
+  "move_line_up",
+  "move_line_up",
+]
+S-down = [
+  "move_line_down",
+  "move_line_down",
+  "move_line_down",
+  "move_line_down",
+  "move_line_down",
+]
+S-left = [
+  "move_char_left",
+  "move_char_left",
+  "move_char_left",
+  "move_char_left",
+  "move_char_left",
+]
+S-right = [
+  "move_char_right",
+  "move_char_right",
+  "move_char_right",
+  "move_char_right",
+  "move_char_right",
+]
+
+[keys.insert]
+esc = ["collapse_selection", "normal_mode"]
+
+[keys.select]
+esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
+
+# Use the system clipboard like a normal app
+y = "yank_joined_to_clipboard"
+p = "replace_selections_with_clipboard"
+P = "paste_clipboard_before"
+R = "replace_selections_with_clipboard"
 
 [keys.normal.space]
+# Git shell
 l = ":sh lazygit"
+# Semi-permenant scratch file
+c = ":o /tmp/scratch"

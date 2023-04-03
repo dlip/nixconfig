@@ -3,5 +3,25 @@ name = "typescript"
 auto-format = true
 
 [[language]]
+name = "tsx"
+auto-format = true
+
+[[language]]
+name = "javascript"
+auto-format = true
+
+[[language]]
+name = "jsx"
+auto-format = true
+
+[[language]]
+name = "bash"
+auto-format = true
+
+[[language]]
+name = "rust"
+auto-format = true
+
+[[language]]
 name = "toml"
 auto-format = true

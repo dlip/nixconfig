@@ -18,6 +18,7 @@
       h = "hx";
       n = "nnn";
       ren = "qmv -f do";
+      s = "rg --files-with-matches"
       v = "nvim";
       x = "xplr";
       ls = "exa";
