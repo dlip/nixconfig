@@ -85,6 +85,6 @@ R = "replace_selections_with_clipboard"
 
 [keys.normal.space]
 # Git shell
-l = ":sh lazygit"
+l = [":sh lazygit", ":reload-all"]
 # Semi-permenant scratch file
 c = ":o /tmp/scratch"
