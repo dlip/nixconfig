@@ -23,10 +23,16 @@ esc = ["collapse_selection", "keep_primary_selection"]
 # Return to save all
 ret = ":wa"
 # Use the system clipboard like a normal app
+d = ["yank_joined_to_clipboard", "delete_selection_noyank"]
+D = "delete_selection_noyank"
 y = "yank_joined_to_clipboard"
+Y = "yank_main_selection_to_clipboard"
 p = "paste_clipboard_after"
 P = "paste_clipboard_before"
 R = "replace_selections_with_clipboard"
+
+# I use an arrow keys layer so i can remap hjkl
+j = "join_selections"
 
 # Search for word under cursor
 "*" = [
@@ -78,10 +84,10 @@ esc = ["collapse_selection", "normal_mode"]
 esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 
 # Use the system clipboard like a normal app
+d = ["yank_joined_to_clipboard", "delete_selection_noyank"]
+D = "delete_selection_noyank"
 y = "yank_joined_to_clipboard"
 p = "replace_selections_with_clipboard"
-P = "paste_clipboard_before"
-R = "replace_selections_with_clipboard"
 
 [keys.normal.space]
 # Git shell
