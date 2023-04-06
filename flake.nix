@@ -74,6 +74,9 @@
       url = "github:rxi/json.lua";
       flake = false;
     };
+    helix = {
+      url = "github:helix-editor/helix";
+    };
     vscodeNodeDebug2 = {
       url = "github:microsoft/vscode-node-debug2";
       flake = false;

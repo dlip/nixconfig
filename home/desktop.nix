@@ -102,6 +102,7 @@
       renameutils
       # rustc
       rustup
+      sd
       stern
       strace
       skopeo
@@ -119,7 +120,7 @@
       usbutils
       vegeta
       ventoy-bin
-      visidata
+      # visidata #broken
       wasmtime
       xdotool
       yarn

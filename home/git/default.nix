@@ -11,7 +11,6 @@
       core = {
         pager = "delta";
         autocrlf = "input";
-        editor = "nvim";
       };
       interactive = { diffFilter = "delta --color-only --features=interactive"; };
       delta = {
