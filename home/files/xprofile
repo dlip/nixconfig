@@ -3,7 +3,8 @@ startup() {
   # tmux send-keys -t work 'p nixconfig' C-m
   # kitty tmux a -t work&
   google-chrome-stable&
-  alacritty -e ~/code/nixconfig/scripts/work&
+  # alacritty -e ~/code/nixconfig/scripts/work&
+  ~/code/nixconfig/scripts/p nixconfig&
   # google-chrome-stable&
   obsidian&
   # slack&

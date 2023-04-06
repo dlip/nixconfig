@@ -7,11 +7,13 @@ if [ -n "${1:-}" ]; then
     filter_params="-q $1"
 fi
 repo_path=$(cat ~/code/projects.txt | fzf $filter_params --select-1)
+name=$(basename $repo_path)
 if [ -n "$repo_path" ]; then
     cd ~/$repo_path
-    tmux split-window -p 20
-    tmux wait -S project_opened
-    tmux select-pane -U
-    nvim
-    $SHELL
+    alacritty -t $name -e bash -c "sleep 0.1 && zellij attach -c $name"&
+    # tmux split-window -p 20
+    # tmux wait -S project_opened
+    # tmux select-pane -U
+    # nvim
+    # $SHELL
 fi
