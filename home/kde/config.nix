@@ -944,6 +944,7 @@
       "kwinrulesrc"."3f123a9e-4c06-454f-b8a3-c0061e0dc469"."wmclass" = "systemmonitor";
       "kwinrulesrc"."3f123a9e-4c06-454f-b8a3-c0061e0dc469"."wmclassmatch" = 1;
       "kwinrulesrc"."4"."Description" = "Application settings for teams";
+      "kwinrulesrc"."4"."clientmachine" = "localhost";
       "kwinrulesrc"."4"."desktops" = "f115a74a-d615-4c76-81e4-379f8183876c";
       "kwinrulesrc"."4"."desktopsrule" = 3;
       "kwinrulesrc"."4"."wmclass" = "microsoft teams - preview";
@@ -957,6 +958,11 @@
       "kwinrulesrc"."5bd38170-b8a2-46e4-bb1f-025c7d5736b4"."clientmachine" = "localhost";
       "kwinrulesrc"."5bd38170-b8a2-46e4-bb1f-025c7d5736b4"."wmclass" = "dolphin";
       "kwinrulesrc"."5bd38170-b8a2-46e4-bb1f-025c7d5736b4"."wmclassmatch" = 1;
+      "kwinrulesrc"."6"."Description" = "Application settings for obsidian";
+      "kwinrulesrc"."6"."desktops" = "4369ca1b-9f03-456f-9652-c81677c4c9de";
+      "kwinrulesrc"."6"."desktopsrule" = 3;
+      "kwinrulesrc"."6"."wmclass" = "obsidian";
+      "kwinrulesrc"."6"."wmclassmatch" = 1;
       "kwinrulesrc"."79b439b4-741b-4fab-92fa-0aec0a62a487"."Description" = "Application settings for alacritty";
       "kwinrulesrc"."79b439b4-741b-4fab-92fa-0aec0a62a487"."clientmachine" = "localhost";
       "kwinrulesrc"."79b439b4-741b-4fab-92fa-0aec0a62a487"."desktops" = "0bd3bcce-62ca-4d40-9867-1edbf63405b6";
@@ -981,6 +987,7 @@
       "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."desktops" = "0bd3bcce-62ca-4d40-9867-1edbf63405b6";
       "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."desktopsrule" = 2;
       "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."wmclass" = "alacritty";
+      "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."wmclasscomplete" = true;
       "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."wmclassmatch" = 1;
       "kwinrulesrc"."d6baacc1-0a9e-4d4d-9e7a-44382997495c"."Description" = "Application settings for slack";
       "kwinrulesrc"."d6baacc1-0a9e-4d4d-9e7a-44382997495c"."clientmachine" = "localhost";
