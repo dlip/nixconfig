@@ -1,4 +1,4 @@
-theme = "tokyonight_storm"
+theme = "catppuccin_mocha"
 
 [editor]
 line-number = "relative"
@@ -16,6 +16,26 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+
+[editor.lsp]
+display-inlay-hints = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name"]
+center = []
+right = [
+  "version-control",
+  "diagnostics",
+  "selections",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type",
+]
+separator = "│"
+mode.normal = "🤔"
+mode.insert = "🫣"
+mode.select = "🤏"
 
 [keys.normal]
 # Escape selections as expected
