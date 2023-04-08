@@ -67,6 +67,7 @@ C-up = "jump_view_up"
 C-down = "jump_view_down"
 C-left = "jump_view_left"
 C-right = "jump_view_right"
+
 # Shift Arrows move 5 times in direction
 S-up = [
   "move_line_up",
@@ -109,9 +110,39 @@ D = "delete_selection_noyank"
 y = "yank_joined_to_clipboard"
 p = "replace_selections_with_clipboard"
 
+# Shift Arrows move 5 times in direction
+S-up = [
+  "extend_line_up",
+  "extend_line_up",
+  "extend_line_up",
+  "extend_line_up",
+  "extend_line_up",
+]
+S-down = [
+  "extend_line_down",
+  "extend_line_down",
+  "extend_line_down",
+  "extend_line_down",
+  "extend_line_down",
+]
+S-left = [
+  "extend_char_left",
+  "extend_char_left",
+  "extend_char_left",
+  "extend_char_left",
+  "extend_char_left",
+]
+S-right = [
+  "extend_char_right",
+  "extend_char_right",
+  "extend_char_right",
+  "extend_char_right",
+  "extend_char_right",
+]
+
 [keys.normal.space]
-# Git shell
-l = [":sh lazygit", ":reload-all"]
+# Reload all
+l = ":reload-all"
 # Semi-permenant scratch file
 c = ":o /tmp/scratch"
 # Poor mans magit
