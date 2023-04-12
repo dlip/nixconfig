@@ -8,6 +8,7 @@ inputs@{ kmonad
 , keyd
 , plasma-manager
 , helix
+, sops-nix
 , ...
 }:
 [
@@ -15,6 +16,7 @@ inputs@{ kmonad
   # poetry2nix.overlay
   # packages
   (final: prev: {
+    inherit sops-nix;
     rc2nix = plasma-manager.packages.${final.system}.rc2nix;
     actualServer = final.callPackage ./actualServer { src = actual-server; nodejs = final.nodejs-16_x; };
     envy-sh = envy-sh.defaultPackage.${final.system};
