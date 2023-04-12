@@ -102,6 +102,7 @@ flake-utils.lib.eachDefaultSystem
           pkgs = pkgsForSystem { system = "x86_64-linux"; };
           modules = [
             ./systems/dex/configuration.nix
+            arion.nixosModules.arion
             home-manager.nixosModules.home-manager
             sops-nix.nixosModules.default
             {
@@ -168,7 +169,6 @@ flake-utils.lib.eachDefaultSystem
           pkgs = pkgsForSystem { system = "x86_64-linux"; };
           modules = [
             ./systems/x/configuration.nix
-            arion.nixosModules.arion
             kmonad.nixosModules.default
             sops-nix.nixosModules.default
             home-manager.nixosModules.home-manager
