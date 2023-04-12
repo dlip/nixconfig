@@ -29,6 +29,9 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     #   inputs.flake-utils.follows = "flake-utils";
     # };
+    arion = {
+      url = "github:hercules-ci/arion";
+    };
     envy-sh = {
       url = "github:dlip/envy.sh";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -75,7 +78,7 @@
       flake = false;
     };
     helix = {
-      url = "github:helix-editor/helix";
+      url = "github:dlip/helix";
     };
     vscodeNodeDebug2 = {
       url = "github:microsoft/vscode-node-debug2";

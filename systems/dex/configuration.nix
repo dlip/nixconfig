@@ -91,6 +91,12 @@ rec {
     };
   };
 
+
+  virtualisation.arion = {
+    backend = "docker";
+    projects.containers.settings.imports = [ ./arion-compose.nix ];
+  };
+
   # systemd.services.actual-server = {
   #   wantedBy = [ "multi-user.target" ];
   #   after = [ "network.target" ];

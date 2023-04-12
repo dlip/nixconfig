@@ -16,6 +16,26 @@
         "type": "github"
       }
     },
+    "arion": {
+      "inputs": {
+        "flake-parts": "flake-parts",
+        "haskell-flake": "haskell-flake",
+        "nixpkgs": "nixpkgs"
+      },
+      "locked": {
+        "lastModified": 1677362634,
+        "narHash": "sha256-TbXibbeyPHFS+WVMlBQ3lY2L6Re5y3qUsZaHYtLQvkw=",
+        "owner": "hercules-ci",
+        "repo": "arion",
+        "rev": "0f27ae484f34a8f0bbc5ef495a96f3a3cecb3eb3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "arion",
+        "type": "github"
+      }
+    },
     "bats-assert": {
       "flake": false,
       "locked": {
@@ -244,6 +264,27 @@
         "type": "github"
       }
     },
+    "flake-parts": {
+      "inputs": {
+        "nixpkgs-lib": [
+          "arion",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1675933616,
+        "narHash": "sha256-/rczJkJHtx16IFxMmAWu5nNYcSXNg1YYXTHoGjLrLUA=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "47478a4a003e745402acf63be7f9a092d51b83d7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "locked": {
         "lastModified": 1678901627,
@@ -274,23 +315,39 @@
         "type": "github"
       }
     },
+    "haskell-flake": {
+      "locked": {
+        "lastModified": 1675296942,
+        "narHash": "sha256-u1X1sblozi5qYEcLp1hxcyo8FfDHnRUVX3dJ/tW19jY=",
+        "owner": "srid",
+        "repo": "haskell-flake",
+        "rev": "c2cafce9d57bfca41794dc3b99c593155006c71e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "srid",
+        "ref": "0.1.0",
+        "repo": "haskell-flake",
+        "type": "github"
+      }
+    },
     "helix": {
       "inputs": {
         "nci": "nci",
-        "nixpkgs": "nixpkgs",
+        "nixpkgs": "nixpkgs_2",
         "parts": "parts_2",
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1680826788,
-        "narHash": "sha256-Jalr+mtKmiIEOviNKtQr/MB9KoYEp/nndTDca2+UU18=",
-        "owner": "helix-editor",
+        "lastModified": 1680943158,
+        "narHash": "sha256-Q9kKEnrFkykF7XKA48zxoMcdDRvGjTCy+k/gyJ12i9Q=",
+        "owner": "dlip",
         "repo": "helix",
-        "rev": "1148ce1fd9941e00bd416bce1f06a987d0e7b5f2",
+        "rev": "e228bccfdb6ad422b6b47fbd1b648f4f690d6aef",
         "type": "github"
       },
       "original": {
-        "owner": "helix-editor",
+        "owner": "dlip",
         "repo": "helix",
         "type": "github"
       }
@@ -450,15 +507,15 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1680213900,
-        "narHash": "sha256-cIDr5WZIj3EkKyCgj/6j3HBH4Jj1W296z7HTcWj1aMA=",
-        "owner": "nixos",
+        "lastModified": 1676300157,
+        "narHash": "sha256-1HjRzfp6LOLfcj/HJHdVKWAkX9QRAouoh6AjzJiIerU=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "e3652e0735fbec227f342712f180f4f21f0594f2",
+        "rev": "545c7a31e5dedea4a6d372712a18e00ce097d462",
         "type": "github"
       },
       "original": {
-        "owner": "nixos",
+        "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -546,6 +603,22 @@
       }
     },
     "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1680213900,
+        "narHash": "sha256-cIDr5WZIj3EkKyCgj/6j3HBH4Jj1W296z7HTcWj1aMA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "e3652e0735fbec227f342712f180f4f21f0594f2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
       "locked": {
         "lastModified": 1680665430,
         "narHash": "sha256-MTVhTukwza1Jlq2gECITZPFnhROmylP2uv3O3cSqQCE=",
@@ -771,6 +844,7 @@
     "root": {
       "inputs": {
         "actual-server": "actual-server",
+        "arion": "arion",
         "emoji-menu": "emoji-menu",
         "envy-sh": "envy-sh",
         "flake-utils": "flake-utils",
@@ -779,7 +853,7 @@
         "keyd": "keyd",
         "kmonad": "kmonad",
         "nix-on-droid": "nix-on-droid",
-        "nixpkgs": "nixpkgs_2",
+        "nixpkgs": "nixpkgs_3",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "openvpn-aws": "openvpn-aws",
         "plasma-manager": "plasma-manager",

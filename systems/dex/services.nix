@@ -1,6 +1,7 @@
 {
   plex = 32400;
   hydra = 3000;
+  homepage = 3001;
   traefik = 9000;
   tekton-dashboard = 30001;
   nix-cache = 5000;

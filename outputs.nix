@@ -6,6 +6,7 @@ inputs@{ self
 , nix-on-droid
 , kmonad
 , sops-nix
+, arion
 , ...
 }:
 let
@@ -167,6 +168,7 @@ flake-utils.lib.eachDefaultSystem
           pkgs = pkgsForSystem { system = "x86_64-linux"; };
           modules = [
             ./systems/x/configuration.nix
+            arion.nixosModules.arion
             kmonad.nixosModules.default
             sops-nix.nixosModules.default
             home-manager.nixosModules.home-manager
