@@ -1,11 +1,11 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs.unstable; [
+    alejandra
     codespell
     gopls
     golangci-lint
     haskellPackages.haskell-language-server
-    nixfmt
-    nixpkgs-fmt
+    nil
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.eslint_d
@@ -19,7 +19,6 @@
     nodePackages.vim-language-server
     nodePackages.yaml-language-server
     proselint
-    rnix-lsp
     rust-analyzer
     # rustfmt
     shfmt
