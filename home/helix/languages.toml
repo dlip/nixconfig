@@ -1,18 +1,32 @@
 [[language]]
 name = "typescript"
 auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+# formatter = { command = "prettier_d_slim", args = [
+#   "--stdin",
+#   "--stdin-filepath files.ts",
+# ] }
 
 [[language]]
 name = "tsx"
 auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "javascript"
 auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "jsx"
 auto-format = true
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
+
+[[language]]
+name = "json"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "json"] }
 
 [[language]]
 name = "bash"
