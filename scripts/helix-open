@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+FILENAME=$1
+zellij action go-to-tab-name editor
+zellij action move-focus up
+zellij action move-focus left
+zellij action write 27
+zellij action write-chars ":o $1"
+zellij action write 13

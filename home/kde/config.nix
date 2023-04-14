@@ -988,7 +988,7 @@
       "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."desktopsrule" = 2;
       "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."wmclass" = "alacritty";
       "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."wmclasscomplete" = true;
-      "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."wmclassmatch" = 1;
+      "kwinrulesrc"."b53d3193-5a7f-44d6-9562-0f9c36f3bb8f"."wmclassmatch" = 2;
       "kwinrulesrc"."d6baacc1-0a9e-4d4d-9e7a-44382997495c"."Description" = "Application settings for slack";
       "kwinrulesrc"."d6baacc1-0a9e-4d4d-9e7a-44382997495c"."clientmachine" = "localhost";
       "kwinrulesrc"."d6baacc1-0a9e-4d4d-9e7a-44382997495c"."desktops" = "f115a74a-d615-4c76-81e4-379f8183876c";

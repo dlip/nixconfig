@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   imports = [
     # ./alacritty
     ./kitty
@@ -53,6 +52,7 @@
     # plover.dev
     qalculate-gtk
     remote-touchpad
+    screenkey
     slack
     # spotify
     # talon
