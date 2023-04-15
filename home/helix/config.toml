@@ -1,4 +1,4 @@
-theme = "nightfox"
+theme = "catppuccin_macchiato"
 
 [editor]
 line-number = "relative"
@@ -18,7 +18,7 @@ select = "underline"
 hidden = false
 
 [editor.lsp]
-display-inlay-hints = true
+display-inlay-hints = false
 
 [editor.statusline]
 left = ["mode", "spinner", "file-name"]

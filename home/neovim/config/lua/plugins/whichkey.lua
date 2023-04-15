@@ -73,7 +73,7 @@ local keymap = {
   ["<Tab>"] = { "<C-^>", "Previous Buffer" },
   b = { function() require('telescope.builtin').buffers({ sort_mru = true, ignore_current_buffer = true }) end,
     "Find Buffers" },
-  f = {
+  p = {
     name = "Find",
     c = { "<cmd>Telescope commands<CR>", "commands" },
     C = { "<cmd>Telescope command_history<CR>", "history" },
@@ -120,7 +120,8 @@ local keymap = {
     ["."] = { "]c", "Next change" },
   },
   n = { "<cmd>NvimTreeToggle<CR>", "NvimTreeToggle" },
-  p = { "<cmd>Telescope fd hidden=true<CR>", "Find Files" },
+  f = { "<cmd>Telescope fd hidden=true<CR>", "Find Files" },
+  ["/"] = { "<cmd>Telescope live_grep hidden=true<CR>", "Text" },
   P = { "<cmd>r!pwgen -ncvs 64<CR>", "Generate Password" },
   s = {
     function()
