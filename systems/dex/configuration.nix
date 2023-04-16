@@ -313,6 +313,20 @@ rec {
       adminpassFile = config.sops.secrets.nextcloud-adminpass.path;
       adminuser = "root";
     };
+    extraApps = {
+      notes = pkgs.fetchzip {
+        sha256 = "WwhDqywqIisDEsEbl6AfC1e47XvAMIauRyvnHhtymE4=";
+        url = "https://github.com/nextcloud-releases/notes/releases/download/v4.7.2/notes.tar.gz";
+      };
+      texteditor = pkgs.fetchzip {
+        sha256 = "Wvd5FhB0kAokaezqBK2QpfIDZgCVjmt1QO2SwSMJs2Y=";
+        url = "https://github.com/nextcloud-releases/files_texteditor/releases/download/v2.15.0/files_texteditor.tar.gz";
+      };
+      tasks = pkgs.fetchzip {
+        sha256 = "pbcw6bHv1Za+F351hDMGkMqeaAw4On8E146dak0boUo=";
+        url = "https://github.com/nextcloud/tasks/releases/download/v0.14.5/tasks.tar.gz";
+      };
+    };
   };
 
   services.postgresql = {
