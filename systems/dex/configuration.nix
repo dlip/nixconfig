@@ -77,19 +77,18 @@ rec {
   hardware.steam-hardware.enable = true;
   environment.systemPackages = with pkgs; [
     google-chrome
-    xboxdrv
   ];
 
 
-  systemd.services.xboxdrv = {
-    wantedBy = [ "multi-user.target" ];
-    after = [ "network.target" ];
-    serviceConfig = {
-      Type = "forking";
-      User = "root";
-      ExecStart = ''${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach --pid-file /var/run/xboxdrv.pid --dbus disabled --silent --deadzone 4000 --deadzone-trigger 10% --mimic-xpad-wireless'';
-    };
-  };
+  # systemd.services.xboxdrv = {
+  #   wantedBy = [ "multi-user.target" ];
+  #   after = [ "network.target" ];
+  #   serviceConfig = {
+  #     Type = "forking";
+  #     User = "root";
+  #     ExecStart = ''${pkgs.xboxdrv}/bin/xboxdrv --daemon --detach --pid-file /var/run/xboxdrv.pid --dbus disabled --silent --deadzone 4000 --deadzone-trigger 10% --mimic-xpad-wireless'';
+  #   };
+  # };
 
 
   virtualisation.arion = {
@@ -297,6 +296,41 @@ rec {
     group = "root";
   };
 
+  sops.secrets.nextcloud-adminpass = { 
+    owner = "nextcloud";
+    group = "nextcloud";
+  };
+
+  services.nextcloud = {
+    enable = true;
+    hostName = "nextcloud.dex-lips.duckdns.org";
+    home = "/media/media/nextcloud";
+    config = {
+      dbtype = "pgsql";
+      dbuser = "nextcloud";
+      dbhost = "/run/postgresql"; # nextcloud will add /.s.PGSQL.5432 by itself
+      dbname = "nextcloud";
+      adminpassFile = config.sops.secrets.nextcloud-adminpass.path;
+      adminuser = "root";
+    };
+  };
+
+  services.postgresql = {
+    enable = true;
+    ensureDatabases = [ "nextcloud" ];
+    ensureUsers = [
+     { name = "nextcloud";
+       ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+     }
+    ];
+  };
+
+  # ensure that postgres is running *before* running the setup
+  systemd.services."nextcloud-setup" = {
+    requires = ["postgresql.service"];
+    after = ["postgresql.service"];
+  };
+
   environment.etc.restic-ignore.text = ''
     .cache
     .Cache
@@ -320,6 +354,7 @@ rec {
         "/mnt/services"
         "/mnt/downloader"
         "/var/lib"
+        "/media/media/nextcloud"
       ];
       repository = "/media/backup/restic";
       passwordFile = config.sops.secrets.restic-encryption.path;

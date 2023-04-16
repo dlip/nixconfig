@@ -107,7 +107,7 @@ Setup SOPS
 If not using sshd generate keyfile
 
 ```sh
-mkdir /mnt/etc/ssh
+mkdir /etc/ssh
 sudo ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key -N ""
 sudo ssh-to-age -private-key -i /etc/ssh/ssh_host_ed25519_key | age-keygen -y
 ```
@@ -125,6 +125,8 @@ sops updatekeys systems/common/secrets/secrets.yaml
 Create secrets
 
 ```sh
+export SOPS_AGE_KEY_FILE=/var/lib/sops-nix/key.txt
 mkdir systems/<HOSTNAME>/secrets
-sops systems/<HOSTNAME>/secrets/secrets.yaml
+touch systems/<HOSTNAME>/secrets/secrets.yaml
+sudo -E sops systems/<HOSTNAME>/secrets/secrets.yaml
 ```
