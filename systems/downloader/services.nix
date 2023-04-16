@@ -6,4 +6,5 @@
   bazarr = 6767;
   qbittorrent = 8080;
   nzbhydra2 = 5076;
+  prowlarr = 9696;
 }

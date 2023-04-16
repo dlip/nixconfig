@@ -91,6 +91,7 @@ in
   };
   services.bazarr = { enable = true; };
   services.jackett = { enable = true; };
+  services.prowlarr = { enable = true; };
 
   services.qbittorrent = {
     enable = true;
