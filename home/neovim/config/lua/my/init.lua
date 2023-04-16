@@ -7,7 +7,7 @@ require("plugins.diffview")
 require("plugins.gitsigns")
 require("plugins.indent-blankline")
 require("plugins.lsp")
-require("plugins.lualine")
+-- require("plugins.lualine") -- rendering issues in alacritty
 require("plugins.luasnip")
 require("plugins.neogit")
 require("plugins.neotest")
