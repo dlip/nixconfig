@@ -44,3 +44,7 @@ auto-format = true
 name = "nix"
 auto-format = true
 formatter = { command = "alejandra" }
+
+[[language]]
+name = "hcl"
+auto-format = true

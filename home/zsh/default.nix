@@ -1,5 +1,9 @@
-{ config, pkgs, lib, ... }:
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -25,7 +29,6 @@
       lg = "lazygit";
       # find = "fd";
       grc = "git reset $(git merge-base HEAD origin/main)";
-      z = "zellij";
     };
 
     initExtra = ''
@@ -67,6 +70,7 @@
         "yarn"
         "zsh-navigation-tools"
         "urltools"
+        "zoxide"
       ];
     };
   };

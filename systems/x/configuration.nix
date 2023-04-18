@@ -1,21 +1,23 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-let params = {
-  hostname = "x";
-};
-in
 {
-  imports =
-    [
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      (import ../common params)
-      ../common/desktop/kde.nix
-      ../common/services/kmonad.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: let
+  params = {
+    hostname = "x";
+  };
+in {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    (import ../common params)
+    ../common/desktop/leftwm.nix
+    # ../common/desktop/kde.nix
+    ../common/services/kmonad.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -32,7 +34,7 @@ in
 
   users.users.dane = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" "dialout" "adbusers" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "docker" "networkmanager" "dialout" "adbusers"]; # Enable ‘sudo’ for the user.
     shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 
@@ -43,16 +45,16 @@ in
 
   hardware.opengl.enable = true;
   hardware.enableAllFirmware = true;
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.prime = {
     sync.enable = true;
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
-  services.flatpak.enable = true;
+  # services.flatpak.enable = true;
 
   networking.firewall = {
-    allowedUDPPorts = [ 51820 ]; # Clients and peers can use the same port, see listenport
+    allowedUDPPorts = [51820]; # Clients and peers can use the same port, see listenport
   };
 
   # Enable WireGuard

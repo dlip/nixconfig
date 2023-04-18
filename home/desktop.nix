@@ -130,5 +130,6 @@
     yq
     # yubikey-manager #broken
     zgrviewer
+    zoxide
   ];
 }

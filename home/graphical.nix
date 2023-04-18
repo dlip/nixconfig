@@ -3,8 +3,9 @@
     # ./alacritty
     ./kitty
     ./rofi
+    ./leftwm
     # ./vscode
-    ./kde
+    # ./kde
     # ./awesome
     # ./sway
   ];
