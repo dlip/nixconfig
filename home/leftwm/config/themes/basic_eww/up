@@ -42,3 +42,5 @@ do
     eww open bar$index
   let index=index+1
 done
+
+systemctl --user restart stalonetray

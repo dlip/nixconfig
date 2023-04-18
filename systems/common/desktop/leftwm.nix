@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{...}: {
   services.xserver = {
     enable = true;
     desktopManager = {
@@ -14,7 +9,13 @@
         enableXfwm = false;
       };
     };
-    displayManager.defaultSession = "xfce+leftwm";
+    displayManager = {
+      lightdm.enable = true;
+      defaultSession = "xfce+leftwm";
+      autoLogin.enable = true;
+      autoLogin.user = "dane";
+      job.preStart = "sleep 2"; # Hack to ensure X is ready for autoLogin
+    };
     windowManager.leftwm.enable = true;
   };
 }
