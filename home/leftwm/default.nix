@@ -8,8 +8,11 @@
 
   home.packages = with pkgs.unstable; [
     eww
+    polybar
     dmenu
     pamixer
+    playerctl
+    brightnessctl
   ];
 
   services.pasystray.enable = true;
