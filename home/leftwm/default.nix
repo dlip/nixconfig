@@ -10,7 +10,6 @@
     eww
     polybar
     feh
-    dmenu
     pamixer
     playerctl
     brightnessctl
