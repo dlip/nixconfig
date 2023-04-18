@@ -10,6 +10,7 @@ startup() {
   # slack&
   # teams&
   warpd&
+  xfce4-screensaver&
 }
 
 # https://github.com/NixOS/nixpkgs/issues/119513
