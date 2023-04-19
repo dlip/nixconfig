@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.alacritty = {
     enable = true;
     settings = {
@@ -28,7 +26,7 @@
       selection.save_to_clipboard = true;
       shell.program = "${pkgs.zsh}/bin/zsh";
       window = {
-        #opacity = 0.9;
+        opacity = 0.9;
         decorations = "full";
         padding = {
           x = 5;

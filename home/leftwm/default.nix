@@ -24,6 +24,12 @@
     tray = "always";
   };
 
+  services.picom = {
+    enable = true;
+    backend = "glx";
+    vSync = true;
+  };
+
   # services.stalonetray = {
   #   enable = true;
   #   config = {
