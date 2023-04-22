@@ -63,7 +63,6 @@
     kubectx
     kubernetes-helm
     kubetail
-    lazygit
     ledger
     ledger-autosync
     lldb
@@ -74,7 +73,6 @@
     # musikcube
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
-    mysql80
     myNodePackages."@prisma/language-server"
     niv
     nix-du

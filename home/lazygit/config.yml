@@ -1,0 +1,5 @@
+customCommands:
+  - key: 't'
+    command: "helix-open {{.SelectedFile.Name | quote}}"
+    context: 'files'
+    description: 'open in helix'
