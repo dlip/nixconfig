@@ -314,6 +314,10 @@ rec {
       adminuser = "root";
     };
     extraApps = {
+      calendar = pkgs.fetchzip {
+        sha256 = "Coug3YUX4YsArzbdSzMBYRrGYak9eDK9bHmc/5u6GXY=";
+        url = "https://github.com/nextcloud-releases/calendar/releases/download/v4.3.3/calendar-v4.3.3.tar.gz";
+      };
       notes = pkgs.fetchzip {
         sha256 = "WwhDqywqIisDEsEbl6AfC1e47XvAMIauRyvnHhtymE4=";
         url = "https://github.com/nextcloud-releases/notes/releases/download/v4.7.2/notes.tar.gz";
