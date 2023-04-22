@@ -1,5 +1,5 @@
 Generated with
 
 ```sh
-node2nix -14 -i node-package.json
+node2nix -18 -i node-package.json
 ```

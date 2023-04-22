@@ -120,7 +120,7 @@
     typespeed
     usbutils
     vegeta
-    ventoy-bin
+    ventoy
     # visidata #broken
     wasmtime
     xdotool
