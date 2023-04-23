@@ -10,6 +10,7 @@
     ./helix
     ./k9s
     ./zellij
+    ./lazygit
   ];
 
   home.packages = with pkgs.unstable; [
