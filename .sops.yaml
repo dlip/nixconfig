@@ -5,7 +5,7 @@ keys:
   - &g age1kw9dz9ze7a32wj6zt84cctrwg9q95udqv0u07vgmj0ltkq0dha0spptqzu
   - &metabox age1ukc0u6p74krmpn5nqw7g26s00xmewu84lwrv4ap6kzwsnf3afgms9klvgf
   - &x age1wajqarhnwgdvwmd3kz0cqx35nwjg3fpe06hdpyuftj0zprwuy4asspdajv
-  - &ptv age12x2ylfqvks4uku7kdf5kzp73u4kqs5ad6wqmn8efhxm20shxg9uss26z80
+  - &ptv age1e87t0gjlaav3uygyqtasjzgg846d3n6v53t90se79qy82ky2e9ksjrkz0x
 creation_rules:
   - path_regex: systems/common/secrets/[^/]+\.yaml$
     key_groups:
