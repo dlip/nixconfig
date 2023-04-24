@@ -152,11 +152,6 @@ in rec {
 
       # List of allowed peers.
       peers = [
-        # S10
-        {
-          publicKey = "KSLRFB50RRSHh3I+yXxI5xB9Aibogrf2o/1xN/tm/jw=";
-          allowedIPs = ["10.100.0.2/32"];
-        }
         # g
         {
           publicKey = "AyT/WKTrPwaiCFLRx68Jz/isw4Rv/4PQ+y3qlNJ32HA=";
@@ -166,6 +161,11 @@ in rec {
         {
           publicKey = "MLNoLlIYeq6F8NBwg/Cu95fwO7BiJbcTRq4dj5MLAzA=";
           allowedIPs = ["10.100.0.4/32"];
+        }
+        # x
+        {
+          publicKey = "lszSFzhXlH1JPG655cXOVawciMryUHTzQ3quh8fQnWc=";
+          allowedIPs = ["10.100.0.5/32"];
         }
       ];
     };

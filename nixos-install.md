@@ -126,3 +126,11 @@ mkdir systems/<HOSTNAME>/secrets
 touch systems/<HOSTNAME>/secrets/secrets.yaml
 sops systems/<HOSTNAME>/secrets/secrets.yaml
 ```
+
+Generate wireguard key
+
+```
+wg genkey | tee /dev/tty | wg pubkey
+```
+
+Add the first line as `wireguard-key` in hosts secret file and add the second line to the peers in `systems/dex/configuration.nix`
