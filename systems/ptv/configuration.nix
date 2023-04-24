@@ -1,14 +1,16 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  config,
+  pkgs,
+  ...
+}: {
+  imports = [
+    # Include the results of the hardware scan.
+    ../common/services/qbittorrent.nix
+    ./hardware-configuration.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -16,7 +18,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
-  networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "ptv"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -77,6 +79,13 @@
     #media-session.enable = true;
   };
 
+  hardware.opengl = {
+    enable = true;
+    extraPackages = with pkgs; [
+      intel-media-driver # LIBVA_DRIVER_NAME=iHD
+    ];
+  };
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -84,12 +93,15 @@
   users.users.tv = {
     isNormalUser = true;
     description = "tv";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       firefox
-    #  thunderbird
+      #  thunderbird
     ];
   };
+
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -97,9 +109,65 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
+    pavucontrol
   ];
+
+  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  # This will automatically import SSH keys as age keys
+  sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
+  # This is using an age key that is expected to already be in the filesystem
+  sops.age.keyFile = "/var/lib/sops-nix/key.txt";
+  # This will generate a new key if the key specified above does not exist
+  sops.age.generateKey = true;
+  # Secrets
+  sops.secrets.nordvpnLogin = {};
+
+  services.openvpn.servers = {
+    nordvpn = {
+      updateResolvConf = true;
+      config = "config /var/lib/openvpn/nordvpn.ovpn";
+    };
+  };
+
+  services.jellyfin = {
+    enable = true;
+    user = "root";
+    group = "root";
+    openFirewall = true;
+  };
+
+  services.sonarr = {
+    enable = true;
+    user = "root";
+    group = "root";
+    openFirewall = true;
+  };
+  services.radarr = {
+    enable = true;
+    user = "root";
+    group = "root";
+    openFirewall = true;
+  };
+  services.lidarr = {
+    enable = true;
+    user = "root";
+    group = "root";
+    openFirewall = true;
+  };
+
+  services.prowlarr = {
+    enable = true;
+    openFirewall = true;
+  };
+
+  services.qbittorrent = {
+    enable = true;
+    user = "root";
+    group = "root";
+    openFirewall = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -112,7 +180,10 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    openFirewall = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -127,5 +198,4 @@
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }
