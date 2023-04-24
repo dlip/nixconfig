@@ -185,11 +185,16 @@
     openFirewall = true;
   };
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  virtualisation.oci-containers = {
+    backend = "docker";
+    containers = {
+      homepage = {
+        image = "ghcr.io/benphelps/homepage:latest";
+        ports = ["3001:3000"];
+        volumes = ["/var/lib/homepage/config:/app/config" "/var/run/docker.sock:/var/run/docker.sock"];
+      };
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
