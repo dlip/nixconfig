@@ -9,4 +9,5 @@
   budget = 5006;
   audiobookshelf = 13378;
   nextcloud = 9000;
+  paperless = 28981;
 }

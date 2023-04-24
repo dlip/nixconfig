@@ -44,7 +44,7 @@
     fusee-launcher
     google-cloud-sdk
     ghc
-    ghostscript
+    # ghostscript
     glow
     gnupg
     gnuplot
@@ -88,6 +88,7 @@
     openvpn
     # openvpn_aws
     pandoc
+    texlive.combined.scheme-medium
     php
     pinentry
     # poetry

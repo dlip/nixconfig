@@ -1,9 +1,12 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, lib, ... }:
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   dex-services = import ./services.nix;
   downloader-services = import ../downloader/services.nix;
   domain = "dex-lips.duckdns.org";
@@ -11,8 +14,7 @@ let
   params = {
     hostname = "dex";
   };
-in
-rec {
+in rec {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -25,10 +27,10 @@ rec {
   networking.firewall.enable = true;
   networking.firewall.allowPing = true;
 
-  networking.firewall.allowedTCPPorts = [ 443 445 139 80 22 8000 6443 1234 ];
-  networking.firewall.allowedUDPPorts = [ 137 138 ];
+  networking.firewall.allowedTCPPorts = [443 445 139 80 22 8000 6443 1234];
+  networking.firewall.allowedUDPPorts = [137 138];
 
-  services.xserver.videoDrivers = [ "nvidia" ];
+  services.xserver.videoDrivers = ["nvidia"];
 
   hardware.enableAllFirmware = true;
 
@@ -36,8 +38,8 @@ rec {
     enable = true;
     description = "Mount backup";
 
-    after = [ "network.target" ];
-    wantedBy = [ "multi-user.target" ];
+    after = ["network.target"];
+    wantedBy = ["multi-user.target"];
     serviceConfig = {
       Type = "oneshot";
       User = "root";
@@ -54,7 +56,7 @@ rec {
 
   users.users.tv = {
     isNormalUser = true;
-    extraGroups = [ ]; # Enable ‘sudo’ for the user.
+    extraGroups = []; # Enable ‘sudo’ for the user.
     shell = "/etc/profiles/per-user/tv/bin/zsh";
   };
 
@@ -62,14 +64,14 @@ rec {
     isNormalUser = true;
     home = "/media/media/home/ryoko";
     createHome = true;
-    extraGroups = [ ]; # Enable ‘sudo’ for the user.
+    extraGroups = []; # Enable ‘sudo’ for the user.
   };
 
   users.users.dane = {
     isNormalUser = true;
     home = "/media/media/home/dane";
     createHome = true;
-    extraGroups = [ "wheel" "docker" "networkmanager" "dialout" "adbusers" ]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "docker" "networkmanager" "dialout" "adbusers"]; # Enable ‘sudo’ for the user.
     shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 
@@ -78,7 +80,6 @@ rec {
   environment.systemPackages = with pkgs; [
     google-chrome
   ];
-
 
   # systemd.services.xboxdrv = {
   #   wantedBy = [ "multi-user.target" ];
@@ -90,10 +91,9 @@ rec {
   #   };
   # };
 
-
   virtualisation.arion = {
     backend = "docker";
-    projects.containers.settings.imports = [ ./arion-compose.nix ];
+    projects.containers.settings.imports = [./arion-compose.nix];
   };
 
   # systemd.services.actual-server = {
@@ -119,14 +119,14 @@ rec {
 
   hardware.bluetooth.enable = true;
   networking.nat.enable = true;
-  networking.nat.internalInterfaces = [ "wg0" "ve-+" ];
+  networking.nat.internalInterfaces = ["wg0" "ve-+"];
   networking.nat.externalInterface = "wlp4s0";
 
   networking.wireguard.interfaces = {
     # "wg0" is the network interface name. You can name the interface arbitrarily.
     wg0 = {
       # Determines the IP address and subnet of the server's end of the tunnel interface.
-      ips = [ "10.100.0.1/24" ];
+      ips = ["10.100.0.1/24"];
 
       # The port that WireGuard listens to. Must be accessible by the client.
       listenPort = 51820;
@@ -155,17 +155,17 @@ rec {
         # S10
         {
           publicKey = "KSLRFB50RRSHh3I+yXxI5xB9Aibogrf2o/1xN/tm/jw=";
-          allowedIPs = [ "10.100.0.2/32" ];
+          allowedIPs = ["10.100.0.2/32"];
         }
         # g
         {
           publicKey = "AyT/WKTrPwaiCFLRx68Jz/isw4Rv/4PQ+y3qlNJ32HA=";
-          allowedIPs = [ "10.100.0.3/32" ];
+          allowedIPs = ["10.100.0.3/32"];
         }
         # flip
         {
           publicKey = "MLNoLlIYeq6F8NBwg/Cu95fwO7BiJbcTRq4dj5MLAzA=";
-          allowedIPs = [ "10.100.0.4/32" ];
+          allowedIPs = ["10.100.0.4/32"];
         }
       ];
     };
@@ -175,9 +175,9 @@ rec {
     ephemeral = true;
     autoStart = true;
     enableTun = true;
-    config = (import ../downloader/configuration.nix {
+    config = import ../downloader/configuration.nix {
       inherit pkgs config;
-    });
+    };
     privateNetwork = true;
     hostAddress = "10.1.0.1";
     localAddress = "10.1.0.2";
@@ -261,23 +261,24 @@ rec {
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
-    virtualHosts = (pkgs.lib.attrsets.mapAttrs'
-      (name: port:
-        pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
-          locations."/" = {
-            proxyPass = "http://127.0.0.1:${toString port}";
-            proxyWebsockets = true;
-          };
-        }))
-      dex-services) // (pkgs.lib.attrsets.mapAttrs'
-      (name: port:
-        pkgs.lib.attrsets.nameValuePair ("${name}.${domain}") ({
-          locations."/" = {
-            proxyPass =
-              "http://${containers.downloader.localAddress}:${toString port}";
-          };
-        }))
-      downloader-services);
+    virtualHosts =
+      (pkgs.lib.attrsets.mapAttrs'
+        (name: port:
+          pkgs.lib.attrsets.nameValuePair "${name}.${domain}" {
+            locations."/" = {
+              proxyPass = "http://127.0.0.1:${toString port}";
+              proxyWebsockets = true;
+            };
+          })
+        dex-services)
+      // (pkgs.lib.attrsets.mapAttrs'
+        (name: port:
+          pkgs.lib.attrsets.nameValuePair "${name}.${domain}" {
+            locations."/" = {
+              proxyPass = "http://${containers.downloader.localAddress}:${toString port}";
+            };
+          })
+        downloader-services);
   };
 
   services.syncthing = {
@@ -296,7 +297,7 @@ rec {
     group = "root";
   };
 
-  sops.secrets.nextcloud-adminpass = { 
+  sops.secrets.nextcloud-adminpass = {
     owner = "nextcloud";
     group = "nextcloud";
   };
@@ -335,11 +336,12 @@ rec {
 
   services.postgresql = {
     enable = true;
-    ensureDatabases = [ "nextcloud" ];
+    ensureDatabases = ["nextcloud"];
     ensureUsers = [
-     { name = "nextcloud";
-       ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
-     }
+      {
+        name = "nextcloud";
+        ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+      }
     ];
   };
 
@@ -347,6 +349,19 @@ rec {
   systemd.services."nextcloud-setup" = {
     requires = ["postgresql.service"];
     after = ["postgresql.service"];
+  };
+
+  sops.secrets.paperless-adminpass = {
+    owner = "paperless";
+    group = "paperless";
+  };
+
+  services.paperless = {
+    enable = true;
+    dataDir = "/var/lib/paperless";
+    mediaDir = "/media/media/paperless/media";
+    consumptionDir = "/media/media/paperless/consume";
+    passwordFile = config.sops.secrets.paperless-adminpass.path;
   };
 
   environment.etc.restic-ignore.text = ''
@@ -380,7 +395,7 @@ rec {
         "--keep-daily 7"
         "--keep-weekly 4"
       ];
-      extraBackupArgs = [ "--exclude-file=/etc/restic-ignore" "--verbose" "2" ];
+      extraBackupArgs = ["--exclude-file=/etc/restic-ignore" "--verbose" "2"];
       timerConfig = {
         OnCalendar = "daily";
         Persistent = true;

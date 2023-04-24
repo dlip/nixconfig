@@ -4,7 +4,7 @@ keys:
   - &downloader age1xv0f3x672rlpsv90wyh75gvz5g6r6fnfgg5ptg9thggl0k3hufeqlqr0y0
   - &g age1kw9dz9ze7a32wj6zt84cctrwg9q95udqv0u07vgmj0ltkq0dha0spptqzu
   - &metabox age1ukc0u6p74krmpn5nqw7g26s00xmewu84lwrv4ap6kzwsnf3afgms9klvgf
-  - &x age1yc84ppt3jwq959qre8ryhvk76j4pes485dw0pren65snvpkglgzq47h05f
+  - &x age1wajqarhnwgdvwmd3kz0cqx35nwjg3fpe06hdpyuftj0zprwuy4asspdajv
 creation_rules:
   - path_regex: systems/common/secrets/[^/]+\.yaml$
     key_groups:
