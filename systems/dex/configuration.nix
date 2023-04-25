@@ -388,6 +388,7 @@ in rec {
         "/mnt/downloader"
         "/var/lib"
         "/media/media/nextcloud"
+        "/media/media/paperless"
       ];
       repository = "/media/backup/restic";
       passwordFile = config.sops.secrets.restic-encryption.path;
