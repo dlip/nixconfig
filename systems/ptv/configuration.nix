@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  lib,
   ...
 }: {
   imports = [
@@ -101,6 +102,7 @@
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
       google-chrome
+      kodi
     ];
   };
 
@@ -175,6 +177,12 @@
     openFirewall = true;
   };
 
+  # systemd.services.podgrab.environment.DATA = lib.mkForce "/media/media/podcasts";
+  # systemd.services.podgrab.serviceConfig.DynamicUser = lib.mkForce false;
+  # services.podgrab = {
+  #   enable = true;
+  #   port = 4242;
+  # };
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
@@ -210,6 +218,7 @@
           "/var/lib/audiobookshelf/config:/config"
           "/var/lib/audiobookshelf/metadata:/metadata"
           "/media/media/audiobooks:/audiobooks"
+          "/media/media/books:/books"
           "/media/media/podcasts:/podcasts"
         ];
       };
