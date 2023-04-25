@@ -14,7 +14,7 @@
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.systemd-boot.configurationLimit = 1;
+  #boot.loader.systemd-boot.configurationLimit = 1;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
@@ -46,12 +46,17 @@
     LC_TIME = "en_AU.UTF-8";
   };
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
   # Enable the XFCE Desktop Environment.
-  services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.xfce.enable = true;
+  services.xserver = {
+    enable = true;
+    desktopManager.xfce.enable = true;
+    displayManager = {
+      lightdm.enable = true;
+      defaultSession = "xfce";
+      autoLogin.enable = true;
+      autoLogin.user = "tv";
+    };
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -95,8 +100,7 @@
     description = "tv";
     extraGroups = ["networkmanager" "wheel"];
     packages = with pkgs; [
-      firefox
-      #  thunderbird
+      google-chrome
     ];
   };
 
@@ -112,6 +116,8 @@
     #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
     #  wget
     pavucontrol
+    xfce.xfce4-pulseaudio-plugin
+    xfce.xfce4-volumed-pulse
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
@@ -190,8 +196,51 @@
     containers = {
       homepage = {
         image = "ghcr.io/benphelps/homepage:latest";
-        ports = ["3001:3000"];
-        volumes = ["/var/lib/homepage/config:/app/config" "/var/run/docker.sock:/var/run/docker.sock"];
+        volumes = [
+          "/var/lib/homepage/config:/app/config"
+          "/var/run/docker.sock:/var/run/docker.sock"
+          "/media/media:/media/media"
+        ];
+        extraOptions = ["--network=host"];
+      };
+      audiobookshelf = {
+        image = "ghcr.io/advplyr/audiobookshelf";
+        ports = ["13378:80"];
+        volumes = [
+          "/var/lib/audiobookshelf/config:/config"
+          "/var/lib/audiobookshelf/metadata:/metadata"
+          "/media/media/audiobooks:/audiobooks"
+          "/media/media/podcasts:/podcasts"
+        ];
+      };
+      readarr = {
+        image = "lscr.io/linuxserver/readarr:develop";
+        extraOptions = ["--network=host"];
+        environment = {
+          PUID = "0";
+          PGID = "0";
+          TZ = "Australia/Sydney";
+        };
+
+        volumes = [
+          "/var/lib/readarr/config:/config"
+          "/media/media:/media/media"
+        ];
+      };
+      readarr-audiobook = {
+        image = "lscr.io/linuxserver/readarr:develop";
+        extraOptions = ["--network=host"];
+        environment = {
+          PUID = "0";
+          PGID = "0";
+          TZ = "Australia/Sydney";
+          PORT = "8788";
+        };
+
+        volumes = [
+          "/var/lib/readarr-audiobook/config:/config"
+          "/media/media:/media/media"
+        ];
       };
     };
   };
