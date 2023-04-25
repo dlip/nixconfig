@@ -222,8 +222,6 @@ in
                   home.email = "tv@lipscombe.com.au";
                   imports = [
                     ./home
-                    ./home/media.nix
-                    ./home/desktop.nix
                   ];
                 };
               };

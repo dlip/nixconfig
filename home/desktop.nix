@@ -11,6 +11,7 @@
     ./k9s
     ./zellij
     ./lazygit
+    ./syncthing
   ];
 
   home.packages = with pkgs.unstable; [

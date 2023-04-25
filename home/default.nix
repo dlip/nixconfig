@@ -27,7 +27,6 @@ with lib;
     ./packages.nix
     ./readline
     ./starship
-    ./syncthing
     ./tmux
     ./version.nix
     ./zsh
