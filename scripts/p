@@ -10,7 +10,12 @@ repo_path=$(cat ~/code/projects.txt | fzf $filter_params --select-1)
 name=$(basename $repo_path)
 if [ -n "$repo_path" ]; then
     cd ~/$repo_path
-    alacritty -t $name -e bash -c "sleep 0.1 && zellij attach -c $name"&
+    if zellij list-sessions | grep "^${name}\$" &> /dev/null; then
+        zellij attach -c "$name"
+    else
+        zellij -s "$name" -l programming
+    fi
+
     # tmux split-window -p 20
     # tmux wait -S project_opened
     # tmux select-pane -U

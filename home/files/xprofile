@@ -3,14 +3,16 @@ startup() {
   # tmux send-keys -t work 'p nixconfig' C-m
   # kitty tmux a -t work&
   google-chrome-stable&
-  # alacritty -e ~/code/nixconfig/scripts/work&
-  ~/code/nixconfig/scripts/p nixconfig&
+  alacritty -e ~/code/nixconfig/scripts/p nixconfig&
+  # alacritty -e bash -c "sleep 2 && ~/code/nixconfig/scripts/p nixconfig"&
   # google-chrome-stable&
   obsidian&
   # slack&
   # teams&
   warpd&
   xfce4-screensaver&
+  # For some reason leftwm is getting the wrong dimensions
+  leftwm command SoftReload
 }
 
 # https://github.com/NixOS/nixpkgs/issues/119513
