@@ -20,15 +20,37 @@ keybinds clear-defaults=true {
     tmux {
         bind "c" { NewTab; SwitchToMode "normal";}
         bind "e" { EditScrollback; SwitchToMode "normal"; }
+        bind "f" { SwitchToMode "entersearch"; }
         bind "h" { NewPane "Down"; SwitchToMode "normal"; }
+        bind "n" { GoToNextTab; SwitchToMode "normal"; }
+        bind "p" { GoToPreviousTab; SwitchToMode "normal"; }
         bind "q" { CloseFocus; SwitchToMode "normal"; }
         bind "Q" { Quit; }
         bind "v" { NewPane "Right"; SwitchToMode "normal"; }
-        bind "Left" { MovePane "Left"; SwitchToMode "normal"; }
-        bind "Right" { MovePane "Right"; SwitchToMode "normal"; }
-        bind "Up" { MovePane "Up"; SwitchToMode "normal"; }
-        bind "Down" { MovePane "Down"; SwitchToMode "normal"; }
-        bind "Esc" "Enter" { SwitchToMode "normal"; }
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
+        bind "Alt Left" { MovePane "Left"; SwitchToMode "normal"; }
+        bind "Alt Right" { MovePane "Right"; SwitchToMode "normal"; }
+        bind "Alt Up" { MovePane "Up"; SwitchToMode "normal"; }
+        bind "Alt Down" { MovePane "Down"; SwitchToMode "normal"; }
+        bind "Up" { ScrollUp; }
+        bind "Down" { ScrollDown; }
+        bind "PageDown" { HalfPageScrollDown; }
+        bind "PageUp" { HalfPageScrollUp; }
+        bind "End" { ScrollToBottom; SwitchToMode "normal"; }
         bind "Ctrl t" { ToggleTab; SwitchToMode "normal"; }
+        bind "Esc" "Enter" { SwitchToMode "normal"; }
+    }
+    entersearch {
+        bind "Enter" { Search "up"; SwitchToMode "search"; }
+        bind "Esc" { ScrollToBottom; SwitchToMode "normal"; }
+    }
+    search {
+        bind "n" { Search "up"; }
+        bind "p" { Search "down"; }
+        bind "Up" { ScrollUp; }
+        bind "Down" { ScrollDown; }
+        bind "PageDown" { HalfPageScrollDown; }
+        bind "PageUp" { HalfPageScrollUp; }
+        bind "Esc" { ScrollToBottom; SwitchToMode "normal"; }
     }
 }

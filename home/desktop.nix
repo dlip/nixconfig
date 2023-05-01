@@ -54,6 +54,7 @@
     gotypist
     graphviz
     hexdino
+    heimdall
     hledger
     imagemagick
     pkgs.iredis
