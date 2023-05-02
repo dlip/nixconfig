@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# search and replace across project with sd
+set -euo pipefail
+IFS=$(echo -en "\n\b")
+
+for file in $(fd --type file); do
+    args=("$@")
+    args+=("$file")
+    sd "${args[@]}"
+done

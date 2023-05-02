@@ -2,7 +2,7 @@
 # Based on the Nightfox.nvim color scheme:
 # https://github.com/EdenEast/nightfox.nvim
 foreground: &foreground "#cdcecf"
-background: &background "#192330"
+background: &background default
 current_line: &current_line "#2b3b51"
 selection: &selection "#2b3b51"
 comment: &comment "#738091"

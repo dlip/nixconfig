@@ -109,6 +109,7 @@ d = ["yank_joined_to_clipboard", "delete_selection_noyank"]
 D = "delete_selection_noyank"
 y = "yank_joined_to_clipboard"
 p = "replace_selections_with_clipboard"
+R = "replace_selections_with_clipboard"
 
 # Shift Arrows move 5 times in direction
 S-up = [

@@ -3,3 +3,7 @@ customCommands:
     command: "helix-open {{.SelectedFile.Name | quote}}"
     context: 'files'
     description: 'open in helix'
+git:
+  paging:
+    colorArg: always
+    pager: delta --dark --paging=never
