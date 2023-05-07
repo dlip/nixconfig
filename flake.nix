@@ -268,6 +268,8 @@
           ];
         };
       };
+    }
+    // {
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         modules = [
           ./systems/nix-on-droid/configuration.nix
