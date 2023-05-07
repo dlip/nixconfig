@@ -9,6 +9,7 @@
     ./espanso
     ./k9s
     ./syncthing
+    ./lsp.nix
   ];
 
   home.packages = with pkgs.unstable; [
@@ -127,6 +128,7 @@
     yarn
     yarn2nix
     youtube-dl
+    yt-dlp
     yq
     # yubikey-manager #broken
     zgrviewer

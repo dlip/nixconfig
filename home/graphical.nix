@@ -26,13 +26,13 @@
     drawio
     easyeffects
     emoji-menu
-    cinnamon.nemo
+    # cinnamon.nemo
     keyd
     power-menu
     firefox
     gimp
-    gnome.file-roller
-    gnome.seahorse
+    # gnome.file-roller
+    # gnome.seahorse
     gramps
     kdenlive
     krita

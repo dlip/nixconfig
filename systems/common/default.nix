@@ -1,8 +1,9 @@
-{ hostname }:
-
-{ config, pkgs, lib, ... }:
-
-let
+{hostname}: {
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   nvidia-offload = pkgs.writeShellScriptBin "nvidia-offload" ''
     export __NV_PRIME_RENDER_OFFLOAD=1
     export __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-G0
@@ -16,14 +17,12 @@ let
 
     ${pkgs.restic}/bin/restic $@
   '';
-in
-{
-  imports =
-    [
-      ./cachix.nix
-      ./services/notify-problems.nix
-      ./services/ssmtp.nix
-    ];
+in {
+  imports = [
+    ./cachix.nix
+    ./services/notify-problems.nix
+    ./services/ssmtp.nix
+  ];
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -32,7 +31,7 @@ in
   system.autoUpgrade = {
     enable = false;
     flake = "github:dlip/nixconfig";
-    flags = [ "--no-write-lock-file" ];
+    flags = ["--no-write-lock-file"];
   };
 
   nixpkgs.config.allowUnfree = true;
@@ -67,7 +66,7 @@ in
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_AU.UTF-8";
-    extraLocaleSettings = { LC_ALL = "en_AU.UTF-8"; };
+    extraLocaleSettings = {LC_ALL = "en_AU.UTF-8";};
   };
 
   fonts.fonts = with pkgs; [
@@ -88,14 +87,14 @@ in
 
   sops.defaultSopsFile = ./.. + builtins.toPath "/${hostname}/secrets/secrets.yaml";
   # This will automatically import SSH keys as age keys
-  sops.age.sshKeyPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
+  sops.age.sshKeyPaths = ["/etc/ssh/ssh_host_ed25519_key"];
   # This is using an age key that is expected to already be in the filesystem
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
   # This will generate a new key if the key specified above does not exist
   sops.age.generateKey = true;
 
-  sops.secrets.restic-encryption = { };
-  sops.secrets.wireguard-key = { };
+  sops.secrets.restic-encryption = {};
+  sops.secrets.wireguard-key = {};
 
   services = {
     gnome.gnome-keyring.enable = true;
@@ -103,7 +102,7 @@ in
 
     dbus = {
       enable = true;
-      packages = [ pkgs.dconf ];
+      packages = [pkgs.dconf];
     };
     xserver = {
       enable = true;
@@ -130,7 +129,7 @@ in
   };
 
   networking.firewall = {
-    allowedUDPPorts = [ 51820 ]; # wireguard
+    allowedUDPPorts = [51820]; # wireguard
     allowedTCPPorts = [
       1701
       9001 # weylus
@@ -146,7 +145,7 @@ in
   # };
 
   services.printing.enable = true;
-  services.printing.drivers = with pkgs; [ brgenml1lpr brgenml1cupswrapper ];
+  services.printing.drivers = with pkgs; [brgenml1lpr brgenml1cupswrapper];
 
   programs.nm-applet.enable = true;
   hardware.opengl.driSupport32Bit = true;
@@ -157,7 +156,6 @@ in
   # Enable sound.
   # sound.enable = true;
   # hardware.pulseaudio.enable = true;
-
 
   # disable suspend on lid closed
   # services.logind.lidSwitch = "ignore";
@@ -196,10 +194,10 @@ in
     media-session.config.bluez-monitor.rules = [
       {
         # Matches all cards
-        matches = [{ "device.name" = "~bluez_card.*"; }];
+        matches = [{"device.name" = "~bluez_card.*";}];
         actions = {
           "update-props" = {
-            "bluez5.reconnect-profiles" = [ "hfp_hf" "hsp_hs" "a2dp_sink" ];
+            "bluez5.reconnect-profiles" = ["hfp_hf" "hsp_hs" "a2dp_sink"];
             # mSBC is not expected to work on all headset + adapter combinations.
             "bluez5.msbc-support" = true;
             # SBC-XQ is not expected to work on all headset + adapter combinations.
@@ -212,9 +210,9 @@ in
       {
         matches = [
           # Matches all sources
-          { "node.name" = "~bluez_input.*"; }
+          {"node.name" = "~bluez_input.*";}
           # Matches all outputs
-          { "node.name" = "~bluez_output.*"; }
+          {"node.name" = "~bluez_output.*";}
         ];
         actions = {
           "node.pause-on-idle" = false;
@@ -243,9 +241,6 @@ in
     glxinfo
     pciutils
     nvidia-offload
-    wine
-    wine64
-    winetricks
     pavucontrol
     restic
     restic-dex
@@ -257,14 +252,13 @@ in
     hyphen
   ];
 
-  environment.pathsToLink = [ "share/hunspell" "share/myspell" "share/hyphen" ];
+  environment.pathsToLink = ["share/hunspell" "share/myspell" "share/hyphen"];
   environment.variables.DICPATH = "/run/current-system/sw/share/hunspell:/run/current-system/sw/share/hyphen";
 
   hardware.ledger.enable = true;
-  services.udev.packages = with pkgs; [ yubikey-personalization via vial ];
+  services.udev.packages = with pkgs; [yubikey-personalization via vial];
   # To use the smart card mode (CCID) of Yubikey, you will need the PCSC-Lite daemon:
   services.pcscd.enable = true;
-
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -292,5 +286,4 @@ in
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "22.11"; # Did you read the comment?
-
 }
