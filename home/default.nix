@@ -1,7 +1,10 @@
-{ config, lib, pkgs, ... }:
-
-with lib;
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}:
+with lib; {
   options.home = {
     name = mkOption {
       type = types.str;
@@ -13,7 +16,6 @@ with lib;
     };
   };
 
-
   imports = [
     #./emacs
     ./bash
@@ -22,6 +24,7 @@ with lib;
     ./git
     ./gpg-agent
     ./lsp.nix
+    ./mime.nix
     ./neovim
     ./nnn
     ./packages.nix

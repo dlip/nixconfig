@@ -44,7 +44,7 @@
     mlt
     mongodb-compass
     mpv
-    neovide
+    # neovide
     # nyxt
     obs-studio
     obsidian

@@ -142,7 +142,16 @@ S-right = [
 ]
 
 [keys.normal.space]
-# Reload all
+# Paste below
+p = [
+  "open_below",
+  "open_below",
+  "normal_mode",
+  "move_line_up",
+  "join_selections",
+  "paste_clipboard_before",
+]
+# Reload all# Paste on new line
 l = ":reload-all"
 # Semi-permenant scratch file
 c = ":o /tmp/scratch"

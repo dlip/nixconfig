@@ -57,6 +57,7 @@
     heimdall
     hledger
     imagemagick
+    joshuto
     pkgs.iredis
     jdk11
     kind
