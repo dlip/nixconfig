@@ -89,6 +89,7 @@
         (command: Execute, value: "rofi -show-icons -show combi -combi-modi 'drun,run' -modi combi", modifier: ["modkey"], key: "r"),
         (command: Execute, value: "rofi -show-icons -modi windowcd -show windowcd", modifier: ["modkey"], key: "o"),
         (command: Execute, value: "rofi -show-icons -modi window -show window", modifier: ["modkey", "Shift"], key: "o"),
+        (command: Execute, value: "rofi -show power-menu -modi power-menu:power-menu", modifier: ["modkey"], key: "q"),
         (command: Execute, value: "emoji-menu", modifier: ["modkey"], key: "period"),
         (command: Execute, value: "CM_LAUNCHER=rofi clipmenu", modifier: ["modkey"],  key: "c"),
         (command: Execute, value: "flameshot gui", key: "Print"),

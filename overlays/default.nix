@@ -1,30 +1,30 @@
-inputs@{ kmonad
+inputs @ {
+  kmonad,
   # , poetry2nix
-, actual-server
-, envy-sh
-, emoji-menu
-, power-menu
-, vscodeNodeDebug2
-, keyd
-, plasma-manager
-, helix
-, sops-nix
-, ...
-}:
-[
+  actual-server,
+  envy-sh,
+  emoji-menu,
+  power-menu,
+  keyd,
+  helix,
+  sops-nix,
+  ...
+}: [
   kmonad.overlays.default
   # poetry2nix.overlay
   # packages
   (final: prev: {
     inherit sops-nix;
-    rc2nix = plasma-manager.packages.${final.system}.rc2nix;
-    actualServer = final.callPackage ./actualServer { src = actual-server; nodejs = final.nodejs-16_x; };
+    actualServer = final.callPackage ./actualServer {
+      src = actual-server;
+      nodejs = final.nodejs-16_x;
+    };
     envy-sh = envy-sh.defaultPackage.${final.system};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
-    myEspanso = final.callPackage ./espanso { };
+    myEspanso = final.callPackage ./espanso {};
     power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
     nnn = prev.nnn.overrideAttrs (oldAttrs: {
-      makeFlags = oldAttrs.makeFlags ++ [ "O_NERD=1" ];
+      makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];
     });
     helix = helix.packages.${final.system}.default;
     # keyd = prev.keyd.overrideAttrs (oldAttrs: {
@@ -46,8 +46,7 @@ inputs@{ kmonad
     #   '';
     # });
 
-    vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 { src = vscodeNodeDebug2; };
-    myNodePackages = final.callPackage ./nodePackages { };
+    myNodePackages = final.callPackage ./nodePackages {};
     # myPythonPackages = final.callPackage ./pythonPackages { };
     # skyscraper = final.callPackage ./skyscraper { };
     # solang = final.callPackage ./solang { };
@@ -58,19 +57,20 @@ inputs@{ kmonad
   # Repos with no build step
   (final: prev: prev.lib.filterAttrs (k: v: prev.lib.hasPrefix "repo" k) inputs)
   # vim plugins
-  (final: prev:
-    {
-      vimPlugins = prev.vimPlugins // builtins.listToAttrs (map
-        (input:
-          let name = final.lib.removePrefix "vimplugin-" input; in
-          {
+  (final: prev: {
+    vimPlugins =
+      prev.vimPlugins
+      // builtins.listToAttrs (map
+        (input: let
+          name = final.lib.removePrefix "vimplugin-" input;
+        in {
+          inherit name;
+          value = final.vimUtils.buildVimPluginFrom2Nix {
             inherit name;
-            value = (final.vimUtils.buildVimPluginFrom2Nix {
-              inherit name;
-              pname = name;
-              src = (builtins.getAttr input inputs);
-            });
-          })
+            pname = name;
+            src = builtins.getAttr input inputs;
+          };
+        })
         (builtins.attrNames (final.lib.filterAttrs (k: v: final.lib.hasPrefix "vimplugin" k) inputs)));
-    })
+  })
 ]

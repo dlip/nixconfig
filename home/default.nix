@@ -25,7 +25,7 @@ with lib; {
     ./gpg-agent
     ./lsp.nix
     ./mime.nix
-    ./neovim
+    # ./neovim
     ./nnn
     ./packages.nix
     ./readline
