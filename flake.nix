@@ -78,7 +78,7 @@
       flake = false;
     };
     helix = {
-      url = "github:dlip/helix";
+      url = "github:helix-editor/helix";
     };
     vscodeNodeDebug2 = {
       url = "github:microsoft/vscode-node-debug2";
