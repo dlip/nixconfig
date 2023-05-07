@@ -7,7 +7,6 @@
   imports = [
     ./alacritty
     ./espanso
-    ./helix
     ./k9s
     ./zellij
     ./lazygit
@@ -77,7 +76,7 @@
     # musikcube
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
-    myNodePackages."@prisma/language-server"
+    # myNodePackages."@prisma/language-server"
     niv
     nix-du
     nodePackages.node2nix

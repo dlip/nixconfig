@@ -23,6 +23,7 @@ with lib; {
     ./fonts.nix
     ./git
     ./gpg-agent
+    ./helix
     ./lsp.nix
     ./mime.nix
     # ./neovim
