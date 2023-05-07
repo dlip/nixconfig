@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-on-droid = {
-      url = "github:t184256/nix-on-droid";
+      url = "github:t184256/nix-on-droid/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
@@ -268,14 +268,12 @@
           ];
         };
       };
-    }
-    // {
-      nixOnDroidConfigurations = {
-        device = nix-on-droid.lib.nixOnDroidConfiguration {
-          config = ./systems/nix-on-droid/configuration.nix;
-          system = "aarch64-linux";
-          pkgs = pkgsForSystem {system = "aarch64-linux";};
-        };
+      nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
+        modules = [
+          ./systems/nix-on-droid/configuration.nix
+        ];
+        pkgs = pkgsForSystem {system = "aarch64-linux";};
+        home-manager-path = home-manager.outPath;
       };
     };
 }

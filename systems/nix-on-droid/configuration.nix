@@ -1,11 +1,13 @@
-{ pkgs, config, ... }:
-
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   # Simply install just the packages
   environment.packages = with pkgs; [
     # User-facing stuff that you really really want to have
     vim # or some other editor, e.g. nano or neovim
-    git
 
     # Some common stuff that people expect to have
     #diffutils
@@ -29,25 +31,20 @@
   environment.etcBackupExtension = ".bak";
 
   # Read the changelog before changing this value
-  system.stateVersion = "21.11";
+  system.stateVersion = "22.11";
 
-  home-manager.config =
-    { pkgs, lib, ... }:
-    {
-      # Read the changelog before changing this value
-      home.stateVersion = "21.11";
+  # Set up nix for flakes
+  nix.extraOptions = ''
+    experimental-features = nix-command flakes
+  '';
 
-      # Use the same overlays as the system packages
-      nixpkgs = { inherit (config.nixpkgs) overlays; };
-      imports = [
-        ../../home
-        ../../home/nix-on-droid.nix
-      ];
-      home.packages = with pkgs; [
-        unzip
-      ];
-    };
-  # If you want the same pkgs instance to be used for nix-on-droid and home-manager
-  home-manager.useGlobalPkgs = true;
+  # Set your time zone
+  #time.timeZone = "Europe/Berlin";
+
+  # Configure home-manager
+  home-manager = {
+    config = ../../home;
+    backupFileExtension = "hm-bak";
+    useGlobalPkgs = true;
+  };
 }
-

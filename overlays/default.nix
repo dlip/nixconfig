@@ -6,11 +6,13 @@ inputs @ {
   emoji-menu,
   power-menu,
   keyd,
-  helix,
+  # helix,
   sops-nix,
+  nix-on-droid,
   ...
 }: [
   kmonad.overlays.default
+  nix-on-droid.overlays.default
   # poetry2nix.overlay
   # packages
   (final: prev: {
@@ -26,7 +28,7 @@ inputs @ {
     nnn = prev.nnn.overrideAttrs (oldAttrs: {
       makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];
     });
-    helix = helix.packages.${final.system}.default;
+    # helix = helix.packages.${final.system}.default;
     # keyd = prev.keyd.overrideAttrs (oldAttrs: {
     #  src = keyd;
     #   buildInputs = [ final.git final.systemd ];
@@ -57,20 +59,20 @@ inputs @ {
   # Repos with no build step
   (final: prev: prev.lib.filterAttrs (k: v: prev.lib.hasPrefix "repo" k) inputs)
   # vim plugins
-  (final: prev: {
-    vimPlugins =
-      prev.vimPlugins
-      // builtins.listToAttrs (map
-        (input: let
-          name = final.lib.removePrefix "vimplugin-" input;
-        in {
-          inherit name;
-          value = final.vimUtils.buildVimPluginFrom2Nix {
-            inherit name;
-            pname = name;
-            src = builtins.getAttr input inputs;
-          };
-        })
-        (builtins.attrNames (final.lib.filterAttrs (k: v: final.lib.hasPrefix "vimplugin" k) inputs)));
-  })
+  # (final: prev: {
+  #   vimPlugins =
+  #     prev.vimPlugins
+  #     // builtins.listToAttrs (map
+  #       (input: let
+  #         name = final.lib.removePrefix "vimplugin-" input;
+  #       in {
+  #         inherit name;
+  #         value = final.vimUtils.buildVimPluginFrom2Nix {
+  #           inherit name;
+  #           pname = name;
+  #           src = builtins.getAttr input inputs;
+  #         };
+  #       })
+  #       (builtins.attrNames (final.lib.filterAttrs (k: v: final.lib.hasPrefix "vimplugin" k) inputs)));
+  # })
 ]
