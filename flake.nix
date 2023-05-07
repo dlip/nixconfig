@@ -270,6 +270,7 @@
       };
     }
     // {
+      # nix-on-droid switch --flake .#default
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         modules = [
           ./systems/nix-on-droid/configuration.nix

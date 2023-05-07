@@ -24,7 +24,8 @@ with lib; {
     ./git
     ./gpg-agent
     ./helix
-    ./lsp.nix
+    ./lazygit
+    #./lsp.nix
     ./mime.nix
     # ./neovim
     ./nnn
@@ -33,6 +34,7 @@ with lib; {
     ./starship
     ./tmux
     ./version.nix
+    ./zellij
     ./zsh
   ];
 }

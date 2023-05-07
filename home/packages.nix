@@ -26,6 +26,7 @@
     p7zip
     ripgrep
     ripgrep-all
+    gnused
     speedread
     sqlite
     sshfs

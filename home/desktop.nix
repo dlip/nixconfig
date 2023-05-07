@@ -8,8 +8,6 @@
     ./alacritty
     ./espanso
     ./k9s
-    ./zellij
-    ./lazygit
     ./syncthing
   ];
 
