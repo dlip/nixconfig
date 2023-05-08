@@ -37,7 +37,7 @@
   nix.extraOptions = ''
     experimental-features = nix-command flakes
   '';
-
+  # user.shell = "/etc/profiles/per-user/nix-on-droid/bin/zsh";
   # Set your time zone
   #time.timeZone = "Europe/Berlin";
 

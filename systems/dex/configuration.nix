@@ -91,9 +91,28 @@ in rec {
   #   };
   # };
 
-  virtualisation.arion = {
+  virtualisation.oci-containers = {
     backend = "docker";
-    projects.containers.settings.imports = [./arion-compose.nix];
+    containers = {
+      homepage = {
+        image = "ghcr.io/benphelps/homepage:latest";
+        volumes = ["/mnt/services/homepage/config:/app/config" "/var/run/docker.sock:/var/run/docker.sock"];
+        extraOptions = ["--network=host"];
+        environment = {
+          PORT = "3001";
+        };
+      };
+      audiobookshelf = {
+        image = "ghcr.io/advplyr/audiobookshelf";
+        ports = ["13378:80"];
+        volumes = [
+          "/mnt/services/audiobookshelf/config:/config"
+          "/mnt/services/audiobookshelf/metadata:/metadata"
+          "/media/media/audiobooks:/audiobooks"
+          "/media/media/podcasts:/podcasts"
+        ];
+      };
+    };
   };
 
   # systemd.services.actual-server = {
