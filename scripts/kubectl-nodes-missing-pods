@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# Use kubectl to get a list of nodes and exclude any that have a pod labeled with the specified label
+label=$1
+
+if [[ -z "$label" ]]; then
+  echo "Please provide a label as the first parameter."
+  exit 1
+fi
+
+missing_nodes=$(kubectl get nodes | grep -E -v "$(kubectl get pods --all-namespaces -l "$label" -o jsonpath='{.items[*].spec.nodeName}' | tr ' ' '|')")
+
+# Print the list of missing nodes
+echo "Nodes missing '$label' pod:"
+echo "$missing_nodes"
