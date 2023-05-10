@@ -22,7 +22,6 @@
     avrdude
     aws-google-auth
     pkgs.awscli2
-    bat
     binutils
     docker-buildx
     # cargo

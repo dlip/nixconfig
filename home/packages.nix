@@ -1,5 +1,10 @@
-{ pkgs, lib, ... }: {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = with pkgs.unstable; [
+    bat
     delta
     dig
     direnv
@@ -22,7 +27,6 @@
     neofetch
     nettools
     nmap
-    # nvimpager # Build hanging
     p7zip
     ripgrep
     ripgrep-all
