@@ -75,7 +75,6 @@
     # musikcube
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
-    # myNodePackages."@prisma/language-server"
     niv
     nix-du
     nodePackages.node2nix

@@ -24,7 +24,6 @@ display-inlay-hints = false
 left = ["mode", "spinner", "file-name"]
 center = []
 right = [
-  "version-control",
   "diagnostics",
   "selections",
   "position",
@@ -67,6 +66,14 @@ C-up = "jump_view_up"
 C-down = "jump_view_down"
 C-left = "jump_view_left"
 C-right = "jump_view_right"
+
+# Control-pgup/dn to switch buffers
+C-pagedown = "goto_next_buffer"
+C-pageup = "goto_previous_buffer"
+
+# Make pgup/dn half page
+pagedown = "half_page_down"
+pageup = "half_page_up"
 
 # Shift Arrows move 5 times in direction
 S-up = [

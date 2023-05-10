@@ -2,6 +2,7 @@
 name = "typescript"
 auto-format = true
 formatter = { command = "prettier", args = ["--parser", "typescript"] }
+# language-server = { command = "vscode-eslint-language-server", args = ["--stdio"], language-id = "typescript" }
 
 # formatter = { command = "prettier_d_slim", args = [
 #   "--stdin",

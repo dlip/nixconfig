@@ -6,6 +6,7 @@
     golangci-lint
     haskellPackages.haskell-language-server
     nil
+    myNodePackages."@prisma/language-server"
     nodePackages.bash-language-server
     nodePackages.dockerfile-language-server-nodejs
     nodePackages.eslint_d
