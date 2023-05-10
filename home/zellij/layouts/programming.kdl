@@ -6,10 +6,10 @@ layout {
         children
     }
 	tab name="editor" focus=true {
-	    pane split_direction="horizontal" {
-			pane size="80%" command="hx" focus=true
-	        pane size="20%"
-	    }
+		pane command="hx"
+    }
+	tab name="shell" {
+		pane command="zsh"
     }
 	tab name="git" {
 		pane command="lazygit"

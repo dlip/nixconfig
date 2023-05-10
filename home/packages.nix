@@ -35,6 +35,7 @@
     tcpdump
     tree
     unzip
+    util-linux
     wget
     wireguard-tools
     zip
