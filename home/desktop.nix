@@ -9,7 +9,6 @@
     ./espanso
     ./k9s
     ./syncthing
-    ./lsp.nix
   ];
 
   home.packages = with pkgs.unstable; [

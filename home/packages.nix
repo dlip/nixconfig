@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs.unstable; [
     bat
     delta
@@ -42,5 +38,6 @@
     wget
     wireguard-tools
     zip
+    zoxide
   ];
 }

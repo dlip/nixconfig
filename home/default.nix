@@ -25,6 +25,7 @@ with lib; {
     ./gpg-agent
     ./helix
     ./lazygit
+    ./lsp.nix
     ./mime.nix
     # ./neovim
     ./nnn
