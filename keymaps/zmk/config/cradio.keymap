@@ -13,7 +13,7 @@
 #define _NAV 1 
 #define _NUM 2 
 #define _MED 3 
-#define _SYS 5 
+#define _SYS 4 
 
 &mt {
   flavor = "tap-preferred";
@@ -44,7 +44,7 @@
       timeout-ms = <100>;
       key-positions = <0 20>;
       bindings = <&tog _SYS>;
-      layers = <0>;
+      layers = <0 _SYS>;
     };
     combo_boot {
       timeout-ms = <100>;
