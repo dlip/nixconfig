@@ -1,9 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: {
+{...}: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -29,6 +24,8 @@
       lg = "lazygit";
       # find = "fd";
       grc = "git reset $(git merge-base HEAD origin/main)";
+      rt = "zellij action rename-tab";
+      zj = "zellij";
     };
 
     initExtra = ''
