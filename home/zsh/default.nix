@@ -32,7 +32,7 @@
     };
 
     initExtra = ''
-      [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
+      # [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
       export EDITOR=hx
       export GOPATH=$HOME/go
       export PATH=$HOME/code/nixconfig/scripts:$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
@@ -42,8 +42,8 @@
       export MANWIDTH=999
       export FZF_DEFAULT_COMMAND='fd'
       export GPG_TTY="$(tty)"
-      gpg-connect-agent /bye
-      export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
+      # gpg-connect-agent /bye
+      # export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
       # Needed for go debugging
       export CGO_CFLAGS=-O
 
