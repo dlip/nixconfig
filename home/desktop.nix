@@ -70,6 +70,7 @@
     mangal
     massren
     mdl
+    mysql80
     # musikcube
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
