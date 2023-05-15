@@ -61,6 +61,14 @@ j = "join_selections"
   "search_selection",
   "search_next",
 ]
+"#" = [
+  "move_char_right",
+  "move_prev_word_start",
+  "move_next_word_end",
+  "search_selection",
+  "search_prev",
+]
+
 # Control-Arrows to switch panes
 C-up = "jump_view_up"
 C-down = "jump_view_down"
