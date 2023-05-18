@@ -262,6 +262,12 @@
                       ./home
                     ];
                   };
+                  dane = {
+                    home.email = "danelipscombe@gmail.com";
+                    imports = [
+                      ./home
+                    ];
+                  };
                 };
               };
             }

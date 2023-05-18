@@ -65,6 +65,9 @@
     xkbVariant = "";
   };
 
+  services.xrdp.enable = true;
+  services.xrdp.defaultWindowManager = "xfce4-session";
+  networking.firewall.allowedTCPPorts = [3389];
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -104,6 +107,12 @@
       google-chrome
       kodi
     ];
+  };
+
+  users.users.dane = {
+    isNormalUser = true;
+    extraGroups = ["wheel" "docker" "networkmanager" "dialout" "adbusers"]; # Enable ‘sudo’ for the user.
+    shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 
   hardware.bluetooth.enable = true;
