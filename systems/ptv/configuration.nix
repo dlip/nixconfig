@@ -103,10 +103,6 @@
     isNormalUser = true;
     description = "tv";
     extraGroups = ["networkmanager" "wheel"];
-    packages = with pkgs; [
-      google-chrome
-      kodi
-    ];
   };
 
   users.users.dane = {
@@ -129,6 +125,8 @@
     pavucontrol
     xfce.xfce4-pulseaudio-plugin
     xfce.xfce4-volumed-pulse
+    google-chrome
+    kodi
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
@@ -263,6 +261,17 @@
     };
   };
 
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = ["10.100.0.6/24"];
+      privateKeyFile = config.sops.secrets.wireguard-key.path;
+      listenPort = 51820;
+
+      peers = [
+        (import ../common/wireguard/dex-peer.nix)
+      ];
+    };
+  };
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave

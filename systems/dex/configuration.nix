@@ -186,6 +186,11 @@ in rec {
           publicKey = "lszSFzhXlH1JPG655cXOVawciMryUHTzQ3quh8fQnWc=";
           allowedIPs = ["10.100.0.5/32"];
         }
+        # ptv
+        {
+          publicKey = "y1+RKIv+REkE/sSD1YEvSP/QQCZKeWKW+Qe9EE94oyU=";
+          allowedIPs = ["10.100.0.6/32"];
+        }
       ];
     };
   };
