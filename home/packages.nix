@@ -27,10 +27,11 @@
     ripgrep
     ripgrep-all
     gnused
+    openssh
     speedread
+    sops
     sqlite
     sshfs
-    openssh
     stack
     tcpdump
     tree

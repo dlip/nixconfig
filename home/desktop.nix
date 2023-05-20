@@ -106,7 +106,6 @@
     stern
     strace
     skopeo
-    sops
     ssh-to-age
     teams
     tesseract4

@@ -127,6 +127,7 @@
     xfce.xfce4-volumed-pulse
     google-chrome
     kodi
+    zoom
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
