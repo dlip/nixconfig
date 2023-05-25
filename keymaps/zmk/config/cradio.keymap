@@ -36,6 +36,11 @@
 
 / {
   macros {
+    ZMK_MACRO (expand,
+      wait-ms = <30>;
+      tap-ms = <40>;
+      bindings = <&kp DOT &kp COMMA>;
+    )
     #include "macros.dtsi"
   };
   combos {
@@ -62,6 +67,12 @@
       timeout-ms = <100>;
       key-positions = <13 14>;
       bindings = <&kp BSPC>;
+      layers = <0>;
+    };
+    combo_expand {
+      timeout-ms = <100>;
+      key-positions = <30 33>;
+      bindings = <&expand>;
       layers = <0>;
     };
     #include "combos.dtsi"
