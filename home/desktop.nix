@@ -70,7 +70,7 @@
     mangal
     massren
     mdl
-    mysql80
+    # mysql80
     # musikcube
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
@@ -101,7 +101,7 @@
     rclone
     renameutils
     # rustc
-    rustup
+    # rustup
     sd
     stern
     strace

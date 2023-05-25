@@ -23,7 +23,7 @@ inputs @ {
     };
     envy-sh = envy-sh.defaultPackage.${final.system};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
-    myEspanso = final.callPackage ./espanso {};
+    # myEspanso = final.callPackage ./espanso {};
     power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
     nnn = prev.nnn.overrideAttrs (oldAttrs: {
       makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];

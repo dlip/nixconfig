@@ -75,8 +75,6 @@ in rec {
     shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 
-  programs.steam.enable = true;
-  hardware.steam-hardware.enable = true;
   environment.systemPackages = with pkgs; [
     google-chrome
   ];

@@ -1,8 +1,11 @@
-{ pkgs, config, ... }: {
-
+{
+  pkgs,
+  config,
+  ...
+}: {
   services.espanso = {
     enable = true;
-    package = pkgs.myEspanso;
+    package = pkgs.unstable.espanso;
   };
   home.file = {
     ".config/espanso/config" = {
