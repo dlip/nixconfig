@@ -58,8 +58,8 @@ in {
     allowedUDPPorts = [51820]; # Clients and peers can use the same port, see listenport
   };
 
-  programs.steam.enable = true;
-  hardware.steam-hardware.enable = true;
+  # programs.steam.enable = true;
+  # hardware.steam-hardware.enable = true;
 
   # TODO: get this working
   # networking.wireguard.interfaces = {
