@@ -33,6 +33,7 @@
     dive
     difftastic
     docker-compose
+    espeak-classic
     eksctl
     evtest
     exiv2
@@ -82,6 +83,7 @@
     nodePackages.reveal-md
     nodePackages.typescript
     nodejs
+    notify-desktop
     notify
     openssl
     openvpn
@@ -109,6 +111,7 @@
     ssh-to-age
     teams
     tesseract4
+    tiramisu
     tldr
     traceroute
     # turbo

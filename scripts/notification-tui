@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+notify() {
+  while read i; do
+    source=$(jq -r '.source' <<< "$i")
+    summary=$(jq -r '.summary' <<< "$i")
+    body=$(jq -r '.body' <<< "$i")
+    echo "ToggleScratchPad Notifications" > $XDG_RUNTIME_DIR/leftwm/command-0.pipe
+    espeak "$source" &> /dev/null&
+    echo "$source
+$summary
+$body 
+"
+  done
+}
+systemctl --user stop xfce4-notifyd
+tiramisu -o '{"source":"#source","summary":"#summary","body":"#body"}' | notify
