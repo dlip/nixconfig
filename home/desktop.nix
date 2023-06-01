@@ -33,8 +33,8 @@
     dive
     difftastic
     docker-compose
-    espeak-classic
     eksctl
+    mimic
     evtest
     exiv2
     file
