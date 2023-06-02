@@ -12,7 +12,7 @@ $body
 "
     # echo "ToggleScratchPad Notifications" > $XDG_RUNTIME_DIR/leftwm/command-0.pipe
     # espeak "${source}. ${summary}. ${body}" &> /dev/null&
-    echo "${source}. ${summary}. ${body}" | mimic
+    echo "${source}. ${summary}. ${body}" | mimic -voice slt_hts
   done
 }
 systemctl --user stop xfce4-notifyd

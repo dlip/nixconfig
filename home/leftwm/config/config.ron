@@ -44,6 +44,7 @@
     insert_behavior: Bottom,
     scratchpad: [
         (name: "Notifications", value: "alacritty -e ~/code/nixconfig/scripts/notification-tui", x: 1520, y: 27, height: 300, width: 400),
+        (name: "Calculator", value: "qalculate-gtk", x: 1120, y: 27, height: 300, width: 800),
     ],
     window_rules: [
       ( window_class: "DBeaver", spawn_on_tag: 2 ),
@@ -62,6 +63,7 @@
     sloppy_mouse_follows_focus: true,
     keybind: [
         (command: ToggleScratchPad, value: "Notifications", modifier: ["modkey"], key: "n"),
+        (command: ToggleScratchPad, value: "Calculator", modifier: ["modkey"], key: "m"),
         (command: Execute, value: "alacritty", modifier: ["modkey"], key: "t"),
         (command: CloseWindow, value: "", modifier: ["modkey", "Shift"], key: "q"),
         (command: SoftReload, value: "", modifier: ["modkey", "Shift"], key: "r"),
