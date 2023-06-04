@@ -19,7 +19,8 @@ in rec {
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
     (import ../common params)
-    ../common/desktop/kde.nix
+    # ../common/desktop/kde.nix
+    ../common/desktop/leftwm.nix
     ../common/services/notify-problems.nix
   ];
 
@@ -131,7 +132,7 @@ in rec {
 
   services.gitea = {
     enable = true;
-    httpPort = 3001;
+    settings.server.HTTP_PORT = 3002;
   };
 
   hardware.bluetooth.enable = true;
@@ -319,59 +320,59 @@ in rec {
     group = "root";
   };
 
-  sops.secrets.nextcloud-adminpass = {
-    owner = "nextcloud";
-    group = "nextcloud";
-  };
+  # sops.secrets.nextcloud-adminpass = {
+  #   owner = "nextcloud";
+  #   group = "nextcloud";
+  # };
 
-  services.nextcloud = {
-    enable = true;
-    hostName = "nextcloud.dex-lips.duckdns.org";
-    home = "/media/media/nextcloud";
-    config = {
-      dbtype = "pgsql";
-      dbuser = "nextcloud";
-      dbhost = "/run/postgresql"; # nextcloud will add /.s.PGSQL.5432 by itself
-      dbname = "nextcloud";
-      adminpassFile = config.sops.secrets.nextcloud-adminpass.path;
-      adminuser = "root";
-    };
-    extraApps = {
-      calendar = pkgs.fetchzip {
-        sha256 = "Coug3YUX4YsArzbdSzMBYRrGYak9eDK9bHmc/5u6GXY=";
-        url = "https://github.com/nextcloud-releases/calendar/releases/download/v4.3.3/calendar-v4.3.3.tar.gz";
-      };
-      notes = pkgs.fetchzip {
-        sha256 = "WwhDqywqIisDEsEbl6AfC1e47XvAMIauRyvnHhtymE4=";
-        url = "https://github.com/nextcloud-releases/notes/releases/download/v4.7.2/notes.tar.gz";
-      };
-      texteditor = pkgs.fetchzip {
-        sha256 = "Wvd5FhB0kAokaezqBK2QpfIDZgCVjmt1QO2SwSMJs2Y=";
-        url = "https://github.com/nextcloud-releases/files_texteditor/releases/download/v2.15.0/files_texteditor.tar.gz";
-      };
-      tasks = pkgs.fetchzip {
-        sha256 = "pbcw6bHv1Za+F351hDMGkMqeaAw4On8E146dak0boUo=";
-        url = "https://github.com/nextcloud/tasks/releases/download/v0.14.5/tasks.tar.gz";
-      };
-    };
-  };
+  # services.nextcloud = {
+  #   enable = true;
+  #   hostName = "nextcloud.dex-lips.duckdns.org";
+  #   home = "/media/media/nextcloud";
+  #   config = {
+  #     dbtype = "pgsql";
+  #     dbuser = "nextcloud";
+  #     dbhost = "/run/postgresql"; # nextcloud will add /.s.PGSQL.5432 by itself
+  #     dbname = "nextcloud";
+  #     adminpassFile = config.sops.secrets.nextcloud-adminpass.path;
+  #     adminuser = "root";
+  #   };
+  #   extraApps = {
+  #     calendar = pkgs.fetchzip {
+  #       sha256 = "Coug3YUX4YsArzbdSzMBYRrGYak9eDK9bHmc/5u6GXY=";
+  #       url = "https://github.com/nextcloud-releases/calendar/releases/download/v4.3.3/calendar-v4.3.3.tar.gz";
+  #     };
+  #     notes = pkgs.fetchzip {
+  #       sha256 = "WwhDqywqIisDEsEbl6AfC1e47XvAMIauRyvnHhtymE4=";
+  #       url = "https://github.com/nextcloud-releases/notes/releases/download/v4.7.2/notes.tar.gz";
+  #     };
+  #     texteditor = pkgs.fetchzip {
+  #       sha256 = "Wvd5FhB0kAokaezqBK2QpfIDZgCVjmt1QO2SwSMJs2Y=";
+  #       url = "https://github.com/nextcloud-releases/files_texteditor/releases/download/v2.15.0/files_texteditor.tar.gz";
+  #     };
+  #     tasks = pkgs.fetchzip {
+  #       sha256 = "pbcw6bHv1Za+F351hDMGkMqeaAw4On8E146dak0boUo=";
+  #       url = "https://github.com/nextcloud/tasks/releases/download/v0.14.5/tasks.tar.gz";
+  #     };
+  #   };
+  # };
 
-  services.postgresql = {
-    enable = true;
-    ensureDatabases = ["nextcloud"];
-    ensureUsers = [
-      {
-        name = "nextcloud";
-        ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
-      }
-    ];
-  };
+  # services.postgresql = {
+  #   enable = true;
+  #   ensureDatabases = ["nextcloud"];
+  #   ensureUsers = [
+  #     {
+  #       name = "nextcloud";
+  #       ensurePermissions."DATABASE nextcloud" = "ALL PRIVILEGES";
+  #     }
+  #   ];
+  # };
 
-  # ensure that postgres is running *before* running the setup
-  systemd.services."nextcloud-setup" = {
-    requires = ["postgresql.service"];
-    after = ["postgresql.service"];
-  };
+  # # ensure that postgres is running *before* running the setup
+  # systemd.services."nextcloud-setup" = {
+  #   requires = ["postgresql.service"];
+  #   after = ["postgresql.service"];
+  # };
 
   sops.secrets.paperless-adminpass = {
     owner = "paperless";
