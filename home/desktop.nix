@@ -109,7 +109,6 @@
     strace
     skopeo
     ssh-to-age
-    super-productivity
     teams
     tesseract4
     tiramisu
