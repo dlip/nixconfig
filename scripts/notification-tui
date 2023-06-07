@@ -3,6 +3,7 @@ set -euo pipefail
 
 notify() {
   while read i; do
+    echo "Message" | mimic -voice slt_hts
     source=$(jq -r '.source' <<< "$i")
     summary=$(jq -r '.summary' <<< "$i")
     body=$(jq -r '.body' <<< "$i")
@@ -12,7 +13,7 @@ $body
 "
     # echo "ToggleScratchPad Notifications" > $XDG_RUNTIME_DIR/leftwm/command-0.pipe
     # espeak "${source}. ${summary}. ${body}" &> /dev/null&
-    echo "${source}. ${summary}. ${body}" | mimic -voice slt_hts
+    echo "${source}. ${summary}" | mimic -voice slt_hts
   done
 }
 systemctl --user stop xfce4-notifyd
