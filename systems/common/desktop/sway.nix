@@ -1,8 +1,11 @@
-{ config, pkgs, lib, ... }:
-
-let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   # bash script to let dbus know about important env variables and
-  # propogate them to relevent services run at the end of sway config
+  # propagate them to relevent services run at the end of sway config
   # see
   # https://github.com/emersion/xdg-desktop-portal-wlr/wiki/"It-doesn't-work"-Troubleshooting-Checklist
   # note: this is pretty much the same as  /etc/sway/config.d/nixos.conf but also restarts
@@ -29,31 +32,25 @@ let
     name = "configure-gtk";
     destination = "/bin/configure-gtk";
     executable = true;
-    text =
-      let
-        schema = pkgs.gsettings-desktop-schemas;
-        datadir = "${schema}/share/gsettings-schemas/${schema.name}";
-      in
-      ''
-        export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
-        gnome_schema=org.gnome.desktop.interface
-        gsettings set $gnome_schema gtk-theme 'Dracula'
-      '';
+    text = let
+      schema = pkgs.gsettings-desktop-schemas;
+      datadir = "${schema}/share/gsettings-schemas/${schema.name}";
+    in ''
+      export XDG_DATA_DIRS=${datadir}:$XDG_DATA_DIRS
+      gnome_schema=org.gnome.desktop.interface
+      gsettings set $gnome_schema gtk-theme 'Dracula'
+    '';
   };
-
-
-in
-{
+in {
   environment.systemPackages = with pkgs; [
-    qtile
     alacritty # gpu accelerated terminal
-    sway
     dbus-sway-environment
     configure-gtk
     wayland
+    xdg-utils # for opening default programs when clicking links
     glib # gsettings
     dracula-theme # gtk theme
-    gnome.adwaita-icon-theme # default gnome cursors
+    gnome3.adwaita-icon-theme # default gnome cursors
     swaylock
     swayidle
     grim # screenshot functionality
@@ -61,16 +58,14 @@ in
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     bemenu # wayland clone of dmenu
     mako # notification system developed by swaywm maintainer
-    wlr-randr
+    wdisplays # tool to configure displays
   ];
-
 
   services.pipewire = {
     enable = true;
     alsa.enable = true;
     pulse.enable = true;
   };
-
 
   # xdg-desktop-portal works by exposing a series of D-Bus interfaces
   # known as portals under a well-known name
@@ -83,8 +78,7 @@ in
     enable = true;
     wlr.enable = true;
     # gtk portal needed to make gtk apps happy
-    extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    gtkUsePortal = true;
+    extraPortals = [pkgs.xdg-desktop-portal-gtk];
   };
 
   # enable sway window manager
@@ -93,7 +87,16 @@ in
     wrapperFeatures.gtk = true;
   };
 
-  # enable brightness management
-  users.users.dane.extraGroups = [ "video" ];
+  # control brightness and volume
+  users.users.dane.extraGroups = ["video"];
   programs.light.enable = true;
+
+  # kanshi systemd service
+  systemd.user.services.kanshi = {
+    description = "kanshi daemon";
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ''${pkgs.kanshi}/bin/kanshi -c kanshi_config_file'';
+    };
+  };
 }
