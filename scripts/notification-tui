@@ -12,14 +12,14 @@ notify() {
     elif [ $ARGS -eq 2 ]; then
       BODY="$i"
       ARGS=0
-      echo "Message" | mimic -voice slt_hts
+      echo "$SOURCE Notification" | mimic -voice slt_hts&
       echo "$SOURCE
 $SUMMARY
 $BODY 
-"
+---"
       # echo "ToggleScratchPad Notifications" > $XDG_RUNTIME_DIR/leftwm/command-0.pipe
       # espeak "${source}. ${summary}. ${body}" &> /dev/null&
-      echo "${SOURCE}. ${SUMMARY}" | mimic -voice slt_hts
+      # echo "${SOURCE}. ${SUMMARY}" | mimic -voice slt_hts
     fi
   done
 }
