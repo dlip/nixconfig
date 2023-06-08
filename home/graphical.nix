@@ -7,7 +7,7 @@
     # ./vscode
     # ./kde
     # ./awesome
-    # ./sway
+    ./sway
   ];
 
   home.packages = with pkgs.unstable; [

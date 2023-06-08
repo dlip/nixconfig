@@ -20,6 +20,7 @@ keybinds clear-defaults=true {
     }
     tmux {
         bind "c" { NewTab; SwitchToMode "normal";}
+        bind "d" { Detach; }
         bind "e" { EditScrollback; SwitchToMode "normal"; }
         bind "f" { SwitchToMode "entersearch"; }
         bind "h" { NewPane "Down"; SwitchToMode "normal"; }
