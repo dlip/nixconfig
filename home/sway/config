@@ -138,6 +138,7 @@ set $menu bemenu-run
 #
 # Layout stuff:
 #
+    workspace_layout tabbed
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
@@ -218,6 +219,11 @@ bar {
 include @sysconfdir@/sway/config.d/*
 
 # my stuff
+
+# Switches
+# bindswitch lid:on output eDP-1 disable
+# bindswitch lid:off output eDP-1 enable
+
 # screenshots
 bindsym $mod+c exec grim  -g "$(slurp)" /tmp/$(date +'%H:%M:%S.png')
 

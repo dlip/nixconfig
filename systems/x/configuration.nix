@@ -48,8 +48,11 @@ in {
   hardware.opengl.enable = true;
   hardware.enableAllFirmware = true;
   services.xserver.videoDrivers = ["nvidia"];
+  hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.prime = {
     sync.enable = true;
+    # powerManagement.enable = false;
+    # offload.enable = true;
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";
   };
