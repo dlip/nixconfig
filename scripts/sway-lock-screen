@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+set -euo pipefail
+swaylock -i ~/sync/wallpapers/nord\ nixos.png --ring-color=5e81ac --inside-color=2e3440 --ring-ver-color=88c0d0 --inside-ver-color=5e81ac --ring-wrong-color=b74242 --inside-wrong-color=c62c2c --line-color=20242c --key-hl-color=88c0d0
