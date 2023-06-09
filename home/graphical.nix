@@ -8,6 +8,7 @@
     # ./kde
     # ./awesome
     ./sway
+    ./hyprland
   ];
 
   home.packages = with pkgs.unstable; [
