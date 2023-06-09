@@ -25,6 +25,7 @@ set $menu bemenu-run
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
 # output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
+output * bg /home/dane/sync/wallpapers/nord\ nixos.png fill
 #
 # Example configuration:
 #
@@ -205,19 +206,19 @@ mode "resize" {
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+# bar {
+#     position top
+# 
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+# 
+#     colors {
+#         statusline #ffffff
+#         background #323232
+#         inactive_workspace #32323200 #32323200 #5c5c5c
+#     }
+# }
 
 include @sysconfdir@/sway/config.d/*
 
@@ -246,6 +247,11 @@ exec configure-gtk
 bindsym XF86MonBrightnessDown exec light -U 10
 bindsym XF86MonBrightnessUp exec light -A 10
 
+# Audio
+bindsym XF86AudioPlay exec 'playerctl play-pause'
+bindsym XF86AudioNext exec 'playerctl next'
+bindsym XF86AudioPrev exec 'playerctl previous'
+
 # Volume
 bindsym XF86AudioRaiseVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ +1%'
 bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
@@ -254,4 +260,5 @@ bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 # give sway a little time to startup before starting kanshi.
 exec sleep 3; systemctl --user restart kanshi.service
 exec_always systemctl --user restart kanshi.service
-exec alacritty & google-chrome-stable & slack
+exec alacritty -e ~/code/nixconfig/scripts/p nixconfig & google-chrome-stable & obsidian --disable-gpu-compositing
+exec_always pkill waybar; waybar

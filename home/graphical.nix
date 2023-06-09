@@ -8,6 +8,7 @@
     # ./kde
     # ./awesome
     ./sway
+    ./waybar
     ./hyprland
   ];
 
