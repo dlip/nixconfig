@@ -64,13 +64,14 @@ set $menu bemenu-run
 # Basics:
 #
     # Start a terminal
-    bindsym $mod+Return exec $term
+    bindsym $mod+t exec $term
 
     # Kill focused window
-    bindsym $mod+Shift+q kill
+    bindsym $mod+w kill
 
     # Start your launcher
     bindsym $mod+d exec $menu
+    bindsym $mod+r exec rofi -show-icons -show combi -combi-modi 'drun,run' -modi combi
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -80,10 +81,12 @@ set $menu bemenu-run
     floating_modifier $mod normal
 
     # Reload the configuration file
-    bindsym $mod+Shift+c reload
+    bindsym $mod+Shift+r reload
 
     # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    # bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+q exec swaymsg exit
+
 #
 # Moving around:
 #
@@ -146,9 +149,9 @@ set $menu bemenu-run
     bindsym $mod+v splitv
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    # bindsym $mod+s layout stacking
+    # bindsym $mod+w layout tabbed
+    # bindsym $mod+e layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -196,7 +199,7 @@ mode "resize" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+# bindsym $mod+r mode "resize"
 
 #
 # Status Bar:
@@ -220,6 +223,15 @@ include @sysconfdir@/sway/config.d/*
 
 # my stuff
 
+# Rules
+# run: swaymsg -t get_tree
+assign [app_id="DBeaver"] 2
+assign [class="Slack"] 3
+assign [class="Google-chrome"] 4
+assign [app_id="Alacritty"] 5
+assign [class="obsidian"] 6
+assign [class="Plexamp"] 7
+
 # Switches
 # bindswitch lid:on output eDP-1 disable
 # bindswitch lid:off output eDP-1 enable
@@ -240,4 +252,6 @@ bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -1%'
 bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 # give sway a little time to startup before starting kanshi.
-exec sleep 5; systemctl --user start kanshi.service
+exec sleep 3; systemctl --user restart kanshi.service
+exec_always systemctl --user restart kanshi.service
+exec alacritty & google-chrome-stable & slack

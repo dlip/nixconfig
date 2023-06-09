@@ -15,7 +15,7 @@ in {
     ./hardware-configuration.nix
     (import ../common params)
     ../common/desktop/sway.nix
-    ../common/desktop/hyprland.nix
+    # ../common/desktop/hyprland.nix
     ../common/desktop/leftwm.nix
     # ../common/desktop/kde.nix
     ../common/services/kmonad.nix
@@ -48,11 +48,12 @@ in {
 
   hardware.opengl.enable = true;
   hardware.enableAllFirmware = true;
+
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia.modesetting.enable = true;
+  # hardware.nvidia.powerManagement.enable = false;
   hardware.nvidia.prime = {
     sync.enable = true;
-    # powerManagement.enable = false;
     # offload.enable = true;
     intelBusId = "PCI:0:2:0";
     nvidiaBusId = "PCI:1:0:0";

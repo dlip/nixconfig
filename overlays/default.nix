@@ -9,10 +9,12 @@ inputs @ {
   # helix,
   sops-nix,
   nix-on-droid,
+  nixpkgs-wayland,
   ...
 }: [
   kmonad.overlays.default
   nix-on-droid.overlays.default
+  nixpkgs-wayland.overlay
   # poetry2nix.overlay
   # packages
   (final: prev: {
