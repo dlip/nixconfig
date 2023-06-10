@@ -94,16 +94,16 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    up   pgup _    _    {    }    ~    |    _    _    _
+  _    _    pgdn up   pgup _    _    _    _    _    _    _    _    _
   _    @hme @lft @dwn @rgt end  tab  @ret @bsp @del @esr _    _
-  _    _    _    _    pgdn _    _    [    ]    `    \    _
+  _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _         lsft      _    _    _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    del  esc  bspc ret  prnt +    7    8    9    *    _    _    _
+  _    `    \    [    ]    prnt +    7    8    9    *    _    _    _
   _    @esl @del @bsp @ret tab  =    @4   @5   @6   @0   _    _
   _    @udo @cut @cpy @pst @all -    1    2    3    /    _
   _    _    _    _         _         _    _    _    _    _
