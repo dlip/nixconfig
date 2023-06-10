@@ -99,4 +99,13 @@ in {
       ExecStart = ''${pkgs.kanshi}/bin/kanshi'';
     };
   };
+
+  # kanshi systemd service
+  systemd.user.services.waybar = {
+    description = "waybar daemon";
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ''${pkgs.waybar}/bin/waybar'';
+    };
+  };
 }
