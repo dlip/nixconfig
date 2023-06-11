@@ -75,6 +75,9 @@ exec swayidle -w \
     # Kill focused window
     bindsym $mod+w kill
 
+    # clipboard
+    bindsym $mod+c exec clipman pick -t rofi
+
     # Start your launcher
     bindsym $mod+d exec $menu
     bindsym $mod+r exec rofi -show-icons -show combi -combi-modi 'drun,run' -modi combi
@@ -228,6 +231,24 @@ mode "resize" {
 include @sysconfdir@/sway/config.d/*
 
 # my stuff
+# styles
+
+# Set Sway default colors 
+set $background 	#313846
+set $highlight  	#b0b4bc
+set $text     		#a9b1d6
+set $white     		#FFFFFF
+
+# Set Sway Colors
+#                   border      background  text  indicator   child_border
+#client.focused	    $white $highlight $background $highlight $highlight
+client.focused	    $white $background $text $background $background
+client.unfocused	$background $background $text $background $background
+# client.focused 		$color5	     $color5	 $background $color5 	 $color5
+# client.focused_inactive	$background  $background $foreground $background $background
+# client.unfocused		$background  $background $foreground $background $background
+# client.urgent			$urgent	     $urgent	 $urgent     $urgent	 $urgent
+
 
 # Rules
 # run: swaymsg -t get_tree
@@ -243,7 +264,7 @@ assign [class="Plexamp"] 7
 # bindswitch lid:off output eDP-1 enable
 
 # screenshots
-bindsym $mod+c exec grim  -g "$(slurp)" /tmp/$(date +'%H:%M:%S.png')
+bindsym Print exec grim  -g "$(slurp)" /tmp/$(date +'%H:%M:%S.png')
 
 exec dbus-sway-environment
 exec configure-gtk
@@ -263,10 +284,12 @@ bindsym XF86AudioLowerVolume exec 'pactl set-sink-volume @DEFAULT_SINK@ -5%'
 bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 # give sway a little time to startup before starting kanshi.
+exec systemctl --user import-environment SWAYSOCK
 exec sleep 3; systemctl --user restart kanshi.service
-exec_always systemctl --user restart kanshi.service
+# exec_always systemctl --user restart kanshi.service
 # exec sleep 3; systemctl --user restart waybar.service
-# exec_always systemctl --user restart waybar.service
+exec_always systemctl --user restart waybar.service
 exec alacritty -e ~/code/nixconfig/scripts/p nixconfig & google-chrome-stable & obsidian
 #exec sleep 3; waybar
-exec_always pkill waybar; waybar
+# exec_always pkill waybar; waybar
+exec wl-paste -t text --watch clipman store

@@ -68,17 +68,17 @@ in {
   # hardware.steam-hardware.enable = true;
 
   # TODO: get this working
-  # networking.wireguard.interfaces = {
-  #   wg0 = {
-  #     ips = ["10.100.0.5/24"];
-  #     privateKeyFile = config.sops.secrets.wireguard-key.path;
-  #     listenPort = 51820;
+  networking.wireguard.interfaces = {
+    wg0 = {
+      ips = ["10.100.0.5/24"];
+      privateKeyFile = config.sops.secrets.wireguard-key.path;
+      listenPort = 51820;
 
-  #     peers = [
-  #       (import ../common/wireguard/dex-peer.nix)
-  #     ];
-  #   };
-  # };
+      peers = [
+        (import ../common/wireguard/dex-peer.nix)
+      ];
+    };
+  };
 
   system.stateVersion = "23.05";
 }

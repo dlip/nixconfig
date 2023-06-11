@@ -4,9 +4,17 @@
   font-size: 13px;
 }
 
+/*
+base
+background-color: #313846;
+text
+color: #a9b1d6;
+highlight 
+background-color: #b0b4bc;
+*/
 window#waybar {
   background-color: #313846;
-  border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+  border-bottom: 1px solid #b0b4bc;
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;
@@ -24,15 +32,6 @@ window#waybar.solo {
     background-color: #FFFFFF;
 }
 */
-
-window#waybar.termite {
-  background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-  background-color: #000000;
-  border: none;
-}
 
 button {
   /* Use box-shadow instead of border so the text isn't offset */
@@ -59,7 +58,9 @@ button:hover {
 }
 
 #workspaces button.focused {
-  background-color: #64727D;
+  background-color: #b0b4bc;
+  color: #313846;
+
   box-shadow: inset 0 -3px #ffffff;
 }
 
@@ -114,9 +115,14 @@ button:hover {
   }
 }
 
+#battery {
+  background-color: #b0b4bc;
+  color: #313846;
+}
+
 #battery.critical:not(.charging) {
-  background-color: #f53c3c;
-  color: #ffffff;
+  background-color: #b0b4bc;
+  color: #313846;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: linear;
@@ -129,7 +135,7 @@ label:focus {
 }
 
 #network.disconnected {
-  background-color: #f53c3c;
+  background-color: #b0b4bc;
   color: #313846;
 }
 
@@ -153,7 +159,6 @@ label:focus {
 
 #keyboard-state {
   background: #97e1ad;
-  color: #000000;
   padding: 0 0px;
   margin: 0 5px;
   min-width: 16px;

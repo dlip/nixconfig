@@ -94,7 +94,7 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    pgdn up   pgup _    _    _    _    _    _    _    _    _
+  _    _    pgup up   pgdn _    _    _    _    _    _    _    _    _
   _    @hme @lft @dwn @rgt end  tab  @ret @bsp @del @esr _    _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _         lsft      _    _    _    _    _
@@ -131,7 +131,7 @@
 (deflayer fn
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    f7   f8   f9   f10  _    _    _
+  _    _    prev pp   next _    _    f7   f8   f9   f10  _    _    _
   _    _    _    _    _    _    @gam f4   f5   f6   f11  _    _
   _    _    _    _    _    _    _    f1   f2   f3   f12  _
   _    _    _    _         _         _    _    _    _    _
