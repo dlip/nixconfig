@@ -14,7 +14,6 @@ background-color: #b0b4bc;
 */
 window#waybar {
   background-color: #313846;
-  border-bottom: 1px solid #b0b4bc;
   color: #ffffff;
   transition-property: background-color;
   transition-duration: .5s;

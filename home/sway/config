@@ -235,15 +235,14 @@ include @sysconfdir@/sway/config.d/*
 
 # Set Sway default colors 
 set $background 	#313846
-set $highlight  	#b0b4bc
+set $highlight  	#81A1C1
 set $text     		#a9b1d6
-set $white     		#FFFFFF
+set $border         #1c2028
 
 # Set Sway Colors
 #                   border      background  text  indicator   child_border
-#client.focused	    $white $highlight $background $highlight $highlight
-client.focused	    $white $background $text $background $background
-client.unfocused	$background $background $text $background $background
+client.focused	    $highlight $background $text $background $background
+client.unfocused	$border    $background $text $background $background
 # client.focused 		$color5	     $color5	 $background $color5 	 $color5
 # client.focused_inactive	$background  $background $foreground $background $background
 # client.unfocused		$background  $background $foreground $background $background
