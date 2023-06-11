@@ -285,11 +285,9 @@ bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 # give sway a little time to startup before starting kanshi.
 exec systemctl --user import-environment SWAYSOCK
-exec sleep 3; systemctl --user restart kanshi.service
-# exec_always systemctl --user restart kanshi.service
-# exec sleep 3; systemctl --user restart waybar.service
+exec_always systemctl --user restart kanshi.service
 exec_always systemctl --user restart waybar.service
 exec alacritty -e ~/code/nixconfig/scripts/p nixconfig & google-chrome-stable & obsidian
-#exec sleep 3; waybar
-# exec_always pkill waybar; waybar
 exec wl-paste -t text --watch clipman store
+for_window [app_id="qalculate-gtk"] move to scratchpad, scratchpad show
+bindsym $mod+m exec swaymsg [app_id="qalculate-gtk"] scratchpad show || exec qalculate-gtk
