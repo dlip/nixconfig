@@ -61,6 +61,7 @@ in {
     wdisplays # tool to configure displays
     clipman
     wofi
+    glpaper
   ];
 
   services.pipewire = {

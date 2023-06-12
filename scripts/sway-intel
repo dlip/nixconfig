@@ -20,3 +20,4 @@ export __GLX_VENDOR_LIBRARY_NAME=intel
 export XWAYLAND_NO_GLAMOR=1
 
 sway --unsupported-gpu -V
+exit
