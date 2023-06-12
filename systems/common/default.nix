@@ -96,22 +96,22 @@ in {
   sops.secrets.restic-encryption = {};
   sops.secrets.wireguard-key = {};
 
-  services = {
-    gnome.gnome-keyring.enable = true;
-    upower.enable = true;
+  # services = {
+  #   gnome.gnome-keyring.enable = true;
+  #   upower.enable = true;
 
-    dbus = {
-      enable = true;
-      packages = [pkgs.dconf];
-    };
-    xserver = {
-      enable = true;
-      layout = "us";
-      # Enable touchpad support (enabled default in most desktopManager).
-      libinput.enable = true;
-      libinput.touchpad.disableWhileTyping = true;
-    };
-  };
+  #   dbus = {
+  #     enable = true;
+  #     packages = [pkgs.dconf];
+  #   };
+  #   xserver = {
+  #     enable = true;
+  #     layout = "us";
+  #     # Enable touchpad support (enabled default in most desktopManager).
+  #     libinput.enable = true;
+  #     libinput.touchpad.disableWhileTyping = true;
+  #   };
+  # };
 
   services.gvfs = {
     enable = true;

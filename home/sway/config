@@ -25,7 +25,7 @@ set $menu bemenu-run
 #
 # Default wallpaper (more resolutions are available in @datadir@/backgrounds/sway/)
 # output * bg @datadir@/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-# output * bg /home/dane/sync/wallpapers/nord\ nixos.png fill
+output * bg /home/dane/sync/wallpapers/nord\ nixos.png fill
 #
 # Example configuration:
 #
@@ -95,6 +95,7 @@ exec swayidle -w \
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+q exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     bindsym $mod+Shift+q exec swaymsg exit
+    bindsym $mod+q exec rofi -show power-menu -modi power-menu:power-menu
 
 #
 # Moving around:
@@ -253,9 +254,12 @@ client.unfocused	$border    $background $text $background $background
 # run: swaymsg -t get_tree
 assign [app_id="DBeaver"] 2
 assign [class="Slack"] 3
+assign [app_id="Slack"] 3
 assign [class="Google-chrome"] 4
+assign [app_id="google-chrome"] 4
 assign [app_id="Alacritty"] 5
 assign [class="obsidian"] 6
+assign [app_id="obsidian"] 6
 assign [class="Plexamp"] 7
 
 # Switches
@@ -284,9 +288,12 @@ bindsym XF86AudioMute exec 'pactl set-sink-mute @DEFAULT_SINK@ toggle'
 
 # give sway a little time to startup before starting kanshi.
 # exec systemctl --user import-environment SWAYSOCK
-exec_always systemctl --user restart kanshi.service
-exec_always systemctl --user import-environment SWAYSOCK; systemctl --user restart waybar.service
-exec alacritty -e ~/code/nixconfig/scripts/p nixconfig & google-chrome-stable & obsidian & fcitx5
+# exec_always sleep 3; systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK; systemctl --user start waybar.service
+# exec_always  --user restart kanshi.service
+# exec_always systemctl --user import-environment SWAYSOCK; systemctl --user restart waybar.service
+exec_always pkill waybar; waybar
+exec alacritty -e ~/code/nixconfig/scripts/p nixconfig & google-chrome-stable & slack & obsidian & fcitx5; 
 exec wl-paste -t text --watch clipman store
 for_window [app_id="qalculate-gtk"] move to scratchpad, scratchpad show
 bindsym $mod+m exec swaymsg [app_id="qalculate-gtk"] scratchpad show || exec qalculate-gtk
+# exec_always pkill glpaper; glpaper eDP-1 ~/code/nixconfig/shaders/glpaper_examples/firering.frag

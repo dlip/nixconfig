@@ -131,7 +131,7 @@ vec3	camera(vec2 uv)
 }
 
 void main() {
-	iTime = time;
+	iTime = time / 40.0;
 	iResolution = resolution;
 	mainImage(gl_FragColor, gl_FragCoord.xy);
 }
