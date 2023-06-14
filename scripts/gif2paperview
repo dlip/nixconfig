@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+for x in ~/sync/wallpapers/animated/*; do
+  FILE=$(basename $x)
+  TARGET="$HOME/paperview/${FILE%.*}"
+  if [ ! -d "$TARGET" ]; then
+    echo $FILE
+    mkdir -p "$TARGET"
+    convert -coalesce "$x" "${TARGET}/out.bmp"
+  fi
+done

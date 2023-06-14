@@ -7,6 +7,7 @@
     # ./vscode
     # ./kde
     # ./awesome
+    ./mpv
     ./sway
     ./waybar
     ./hyprland
@@ -32,6 +33,7 @@
     # cinnamon.nemo
     keyd
     power-menu
+    feh
     firefox
     gimp
     # gnome.file-roller
