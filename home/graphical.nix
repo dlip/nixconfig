@@ -10,6 +10,7 @@
     ./sway
     ./waybar
     ./hyprland
+    ./i3
   ];
 
   home.packages = with pkgs.unstable; [
