@@ -1,9 +1,9 @@
 {pkgs, ...}: {
   imports = [
-    # ./alacritty
-    ./kitty
+    ./alacritty
+    #./kitty
     ./rofi
-    ./leftwm
+    #./leftwm
     # ./vscode
     # ./kde
     # ./awesome
