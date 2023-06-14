@@ -5,7 +5,7 @@
     "text/markdown" = ["helix.desktop"];
     "text/csv" = ["helix.desktop"];
     "image/jpeg" = ["feh.desktop"];
-    "image/png" = ["feh.desktop"];
+    "image/png" = ["swayimg.desktop"];
   };
 in {
   xdg.desktopEntries.helix = {

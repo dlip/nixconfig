@@ -14,7 +14,7 @@ inputs @ {
 }: [
   kmonad.overlays.default
   nix-on-droid.overlays.default
-  nixpkgs-wayland.overlay
+  #nixpkgs-wayland.overlay
   # poetry2nix.overlay
   # packages
   (final: prev: {

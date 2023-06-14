@@ -45,7 +45,6 @@
     logseq
     mlt
     mongodb-compass
-    mpv
     # neovide
     # nyxt
     obs-studio

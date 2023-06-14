@@ -57,11 +57,16 @@ in {
     slurp # screenshot functionality
     wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     bemenu # wayland clone of dmenu
-    mako # notification system developed by swaywm maintainer
+    #mako # notification system developed by swaywm maintainer
+    swaynotificationcenter
     wdisplays # tool to configure displays
     clipman
     wofi
     glpaper
+    swayimg
+    qview
+    mpvpaper
+    swww
   ];
 
   services.pipewire = {
