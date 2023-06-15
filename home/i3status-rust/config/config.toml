@@ -1,13 +1,35 @@
+
+[theme.overrides]
+idle_bg = "#24273a"
+idle_fg = "#cad3f5"
+info_bg = "#24273a"
+info_fg = "#cad3f5"
+good_bg = "#859900"
+good_fg = "#002b36"
+warning_bg = "#8aadf4"
+warning_fg = "#24273a"
+critical_bg = "#f5bde6"
+critical_fg = "#24273a"
+separator = "\ue0b2"
+separator_bg = "auto"
+separator_fg = "auto"
+
 icons_format = "{icon}"
 
 [icons]
-icons = "awesome4"
+icons = "material-nf"
 [icons.overrides]
 bat = ["|E|", "|_|", "|=|", "|F|"]
 bat_charging = "|^| "
 
+# https://docs.rs/i3status-rs/latest/i3status_rs/blocks/index.html
 [[block]]
 block = "cpu"
+
+[[block]]
+block = "memory"
+format = " $icon $mem_total_used_percents.eng(w:2) "
+format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
 
 [[block]]
 block = "disk_space"
@@ -20,9 +42,7 @@ alert = 10.0
 format = " $icon root: $available.eng(w:2) "
 
 [[block]]
-block = "memory"
-format = " $icon $mem_total_used_percents.eng(w:2) "
-format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+block = "net"
 
 [[block]]
 block = "sound"
