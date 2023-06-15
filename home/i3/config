@@ -276,3 +276,6 @@ exec_always --no-startup-id ~/code/nixconfig/scripts/update-wallpaper
 
 for_window [class="Qalculate-gtk"] move to scratchpad, scratchpad show
 bindsym $mod+m exec i3-msg [class="Qalculate-gtk"] scratchpad show || exec qalculate-gtk
+
+for_window [class="btop"] move to scratchpad, scratchpad show, resize set 1880px 1000px, move position 20 50
+bindsym $mod+o exec i3-msg [class="btop"] scratchpad show || exec alacritty --class btop -e btop

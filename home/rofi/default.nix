@@ -1,11 +1,13 @@
-{ pkgs, config, ... }:
-
 {
+  pkgs,
+  config,
+  ...
+}: {
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.kitty}/bin/kitty";
     theme = ./rofi.theme.rasi;
-    font = "FiraCode Nerd Font 10";
+    font = "RobotoMono Nerd Font 10";
     extraConfig = {
       show-icons = true;
       icon-theme = "Papirus";

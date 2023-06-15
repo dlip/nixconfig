@@ -8,6 +8,8 @@
     "image/png" = ["feh.desktop"];
     "x-scheme-handler/https" = ["google-chrome.desktop"];
     "x-scheme-handler/http" = ["google-chrome.desktop"];
+    "x-scheme-handler/msteams" = ["teams.desktop"];
+    "x-scheme-handler/slack" = ["slack.desktop"];
   };
 in {
   xdg.desktopEntries.helix = {

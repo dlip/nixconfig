@@ -9,6 +9,7 @@
     ./espanso
     ./k9s
     ./syncthing
+    ./btop
   ];
 
   home.packages = with pkgs.unstable; [
