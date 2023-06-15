@@ -245,18 +245,18 @@ bar {
                 separator $base
                 background $base
                 statusline $text
-                focused_workspace $pink $base $text
+                focused_workspace $blue $base $text
                 active_workspace $base $base $text
                 inactive_workspace $base $base $text
-                urgent_workspace $base $base $peach
+                urgent_workspace $pink $base $pink
         }
 }
 
 # styles
-client.focused           $pink     $base $text  $rosewater $pink
+client.focused           $blue     $base $text  $rosewater $pink
 client.focused_inactive  $mauve    $base $text  $rosewater $mauve
 client.unfocused         $overlay0 $base $text  $rosewater $mauve
-client.urgent            $overlay0 $base $peach $overlay0  $peach
+client.urgent            $pink $base $pink $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 
