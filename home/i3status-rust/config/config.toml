@@ -1,4 +1,5 @@
-
+[theme]
+theme = "solarized-dark"
 [theme.overrides]
 idle_bg = "#24273a"
 idle_fg = "#cad3f5"
@@ -28,8 +29,17 @@ block = "cpu"
 
 [[block]]
 block = "memory"
-format = " $icon $mem_total_used_percents.eng(w:2) "
-format_alt = " $icon_swap $swap_used_percents.eng(w:2) "
+format = " $icon $mem_used_percents.eng(w:1) "
+interval = 30
+warning_mem = 80
+critical_mem = 90
+
+[[block]]
+block = "temperature"
+format = " $icon $max max "
+format_alt = " $icon $min min, $max max, $average avg "
+interval = 10
+chip = "*-isa-*"
 
 [[block]]
 block = "disk_space"
@@ -43,6 +53,7 @@ format = " $icon root: $available.eng(w:2) "
 
 [[block]]
 block = "net"
+format = " $icon {$signal_strength $ssid $graph_down|No WiFi} "
 
 [[block]]
 block = "sound"
@@ -50,7 +61,22 @@ block = "sound"
 button = "left"
 cmd = "pavucontrol"
 
+# https://openweathermap.org/city/2147714
+[[block]]
+block = "weather"
+format = " $icon $weather ($location) $temp, $wind m/s $direction "
+[block.service]
+name = "openweathermap"
+api_key = "476b81fdcd2cc9ab8d99967ea1c39fee"
+city_id = "2147714"
+units = "metric"
+
 [[block]]
 block = "time"
 interval = 5
 format = " $timestamp.datetime(f:'%a %d/%m %R') "
+
+[[block]]
+block = "tea_timer"
+format = " $icon {$minutes:$seconds |}"
+done_cmd = "notify-desktop 'Timer Finished'"

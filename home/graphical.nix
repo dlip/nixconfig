@@ -17,7 +17,7 @@
   home.packages = with pkgs.unstable; [
     # anki
     appimage-run
-    antimicrox
+    # antimicrox
     arandr
     alttab
     audacity
@@ -45,9 +45,9 @@
     # ledger-live-desktop
     lens
     # libreoffice
-    logseq
+    # logseq
     mlt
-    mongodb-compass
+    # mongodb-compass
     # neovide
     # nyxt
     obs-studio
@@ -59,7 +59,7 @@
     remote-touchpad
     screenkey
     slack
-    # spotify
+    # spotify # cant get any songs to play
     # talon
     tdesktop
     vial

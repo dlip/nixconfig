@@ -268,6 +268,7 @@ assign [class="Google-chrome"] 4
 assign [class="Alacritty"] 5
 assign [class="obsidian"] 6
 assign [class="Plexamp"] 7
+assign [class="Spotify"] 7
 
 # Services
 exec_always --no-startup-id ~/code/nixconfig/scripts/update-wallpaper
