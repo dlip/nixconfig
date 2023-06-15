@@ -1,4 +1,4 @@
-theme "default"
+theme "catppuccin-macchiato"
 pane_frames false
 keybinds clear-defaults=true {
     normal {
