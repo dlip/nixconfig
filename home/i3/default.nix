@@ -51,6 +51,14 @@
     enable = true;
     backend = "glx";
     vSync = true;
+    # fade = true;
+    # fadeDelta = 5;
+    shadow = true;
+    shadowOpacity = 0.5;
+    # hide windows behind other windows
+    opacityRules = [
+      "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
+    ];
   };
 
   services.blueman-applet.enable = true;

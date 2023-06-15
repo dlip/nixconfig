@@ -64,6 +64,9 @@ bindsym $mod+w kill
 # clipboard
 bindsym $mod+c exec CM_LAUNCHER=rofi clipmenu
 
+# go to urgent window
+bindsym $mod+u [urgent=latest] focus
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
@@ -113,13 +116,13 @@ bindsym $mod+f fullscreen toggle
 workspace_layout tabbed
 bindsym $mod+s layout stacking
 bindsym $mod+b layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+p layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+ctrl+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -245,7 +248,7 @@ bar {
                 focused_workspace $pink $base $text
                 active_workspace $base $base $text
                 inactive_workspace $base $base $text
-                urgent_workspace $pink $base $text
+                urgent_workspace $base $base $peach
         }
 }
 
@@ -253,7 +256,7 @@ bar {
 client.focused           $pink     $base $text  $rosewater $pink
 client.focused_inactive  $mauve    $base $text  $rosewater $mauve
 client.unfocused         $overlay0 $base $text  $rosewater $mauve
-client.urgent            $peach    $base $peach $overlay0  $peach
+client.urgent            $overlay0 $base $peach $overlay0  $peach
 client.placeholder       $overlay0 $base $text  $overlay0  $overlay0
 client.background        $base
 

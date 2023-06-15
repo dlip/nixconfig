@@ -5,7 +5,9 @@
     "text/markdown" = ["helix.desktop"];
     "text/csv" = ["helix.desktop"];
     "image/jpeg" = ["feh.desktop"];
-    "image/png" = ["swayimg.desktop"];
+    "image/png" = ["feh.desktop"];
+    "x-scheme-handler/https" = ["google-chrome.desktop"];
+    "x-scheme-handler/http" = ["google-chrome.desktop"];
   };
 in {
   xdg.desktopEntries.helix = {
