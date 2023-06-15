@@ -97,6 +97,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
+# close window with middle click
+bindsym --release button2 kill
+
 # split in horizontal orientation
 bindsym $mod+h split h
 
