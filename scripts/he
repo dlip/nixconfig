@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+# Run command on current file with helix using zellij
+# Requires https://github.com/helix-editor/helix/pull/6985
+set -euo pipefail
+# paste filename
+zellij action write-chars '"%P'
+# yank to command register
+zellij action write-chars '":y'
+# undo
+zellij action write-chars 'u'
+# run command
+zellij action write-chars ':'
+# up
+zellij action write 27 91 65
+# home
+zellij action write 27 91 72
+# write shell command
+zellij action write-chars "sh $@ "
+# enter
+zellij action write 13

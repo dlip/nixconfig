@@ -3,7 +3,7 @@ theme = "catppuccin_macchiato_transparent"
 [editor]
 line-number = "relative"
 cursorline = true
-auto-save = true
+auto-save = false
 bufferline = "multiple"
 
 [editor.indent-guides]
@@ -196,4 +196,4 @@ t = ":o /tmp/scratch"
 #   "move_char_right",
 #   "move_char_right",
 # ]
-n = ":sh ~/code/nixconfig/scripts/nnn-open"
+n = ":sh he nnn-open"
