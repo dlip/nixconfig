@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# esc
+zellij action write 27
+# paste filename and delete to 'n' register and undo
+zellij action write-chars '"%p"nduu'
+# remove tmp file
+rm -f /tmp/nnn-open
+# open tmp file
+zellij action write-chars ':o /tmp/nnn-open'
+# return
+zellij action write 13
+sleep 0.01
+# paste 'n' register
+zellij action write-chars '"nP'
+# write
+zellij action write-chars ':w!'
+# return
+zellij action write 13
+# close tmp buffer
+zellij action write-chars ':bc'
+# return
+zellij action write 13
+FILENAME=$(cat /tmp/nnn-open)
+zellij action new-tab
+zellij action write-chars "nnn '${FILENAME}'; exit"
+zellij action write 13

@@ -36,7 +36,7 @@ critical_mem = 90
 
 [[block]]
 block = "temperature"
-format = " $icon $max max "
+format = " $icon $max "
 format_alt = " $icon $min min, $max max, $average avg "
 interval = 10
 chip = "*-isa-*"

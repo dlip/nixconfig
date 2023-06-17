@@ -42,13 +42,13 @@ esc = ["collapse_selection", "keep_primary_selection"]
 # Return to save all
 ret = ":wa"
 # Use the system clipboard like a normal app
-d = ["yank_joined_to_clipboard", "delete_selection_noyank"]
-D = "delete_selection_noyank"
-y = "yank_joined_to_clipboard"
-Y = "yank_main_selection_to_clipboard"
-p = "paste_clipboard_after"
-P = "paste_clipboard_before"
-R = "replace_selections_with_clipboard"
+# d = ["yank_joined_to_clipboard", "delete_selection_noyank"]
+# D = "delete_selection_noyank"
+# y = "yank_joined_to_clipboard"
+# Y = "yank_main_selection_to_clipboard"
+# p = "paste_clipboard_after"
+# P = "paste_clipboard_before"
+# R = "replace_selections_with_clipboard"
 
 # I use an arrow keys layer so i can remap hjkl
 j = "join_selections"
@@ -158,27 +158,30 @@ S-right = [
 
 [keys.normal.space]
 # Paste below
-p = [
-  "open_below",
-  "open_below",
-  "normal_mode",
-  "move_line_up",
-  "join_selections",
-  "paste_clipboard_before",
-]
+# p = [
+#   "open_below",
+#   "open_below",
+#   "normal_mode",
+#   "move_line_up",
+#   "join_selections",
+#   "paste_clipboard_before",
+# ]
 # Reload all# Paste on new line
 l = ":reload-all"
+# Reload config
+c = ":config-reload"
 # Semi-permenant scratch file
-c = ":o /tmp/scratch"
+t = ":o /tmp/scratch"
 # Poor mans magit
-t = [
-  ":o /tmp/gitstatus",
-  "select_all",
-  "delete_selection_noyank",
-  ":insert-output git status -s",
-  "collapse_selection",
-  "goto_file_start",
-  "move_char_right",
-  "move_char_right",
-  "move_char_right",
-]
+# t = [
+#   ":o /tmp/gitstatus",
+#   "select_all",
+#   "delete_selection_noyank",
+#   ":insert-output git status -s",
+#   "collapse_selection",
+#   "goto_file_start",
+#   "move_char_right",
+#   "move_char_right",
+#   "move_char_right",
+# ]
+n = ":sh ~/code/nixconfig/scripts/nnn-open"

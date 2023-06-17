@@ -54,9 +54,9 @@
       url = "github:jarun/nnn";
       flake = false;
     };
-    # helix = {
-    #   url = "github:helix-editor/helix";
-    # };
+    helix = {
+      url = "github:helix-editor/helix/special-registers";
+    };
   };
 
   outputs = inputs @ {
