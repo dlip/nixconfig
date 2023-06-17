@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 # Run command on current file with helix using zellij
 # Requires https://github.com/helix-editor/helix/pull/6985
+# eg. echo current filename
+# :sh he echo
 set -euo pipefail
 # paste filename
 zellij action write-chars '"%P'
