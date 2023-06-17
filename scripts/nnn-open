@@ -21,7 +21,11 @@ zellij action write 13
 zellij action write-chars ':bc'
 # return
 zellij action write 13
+# get filename
 FILENAME=$(cat /tmp/nnn-open)
-zellij action new-tab
+# open file in existing files tab
+zellij action go-to-tab-name files
+# go to shell
+zellij action write-chars '!'
 zellij action write-chars "nnn '${FILENAME}'; exit"
 zellij action write 13
