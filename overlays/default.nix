@@ -6,7 +6,7 @@ inputs @ {
   emoji-menu,
   power-menu,
   keyd,
-  # helix,
+  helix,
   sops-nix,
   nix-on-droid,
   nixpkgs-wayland,
@@ -14,6 +14,7 @@ inputs @ {
 }: [
   kmonad.overlays.default
   nix-on-droid.overlays.default
+  helix.overlays.default
   #nixpkgs-wayland.overlay
   # poetry2nix.overlay
   # packages
