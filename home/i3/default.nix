@@ -17,6 +17,7 @@
     brightnessctl
     paperview
     xwinwrap
+    pamixer
   ];
 
   i18n.inputMethod = {
@@ -55,10 +56,9 @@
     # fadeDelta = 5;
     shadow = true;
     shadowOpacity = 0.5;
+    # shadowExclude = ["window_type *= 'menu'"];
     # hide windows behind other windows
-    opacityRules = [
-      "0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"
-    ];
+    opacityRules = ["0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"];
   };
 
   services.blueman-applet.enable = true;

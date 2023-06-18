@@ -9,7 +9,7 @@ good_bg = "#859900"
 good_fg = "#002b36"
 warning_bg = "#8aadf4"
 warning_fg = "#24273a"
-critical_bg = "#f5bde6"
+critical_bg = "#ed8796"
 critical_fg = "#24273a"
 separator = "\ue0b2"
 separator_bg = "auto"
@@ -26,6 +26,8 @@ bat_charging = "|^| "
 # https://docs.rs/i3status-rs/latest/i3status_rs/blocks/index.html
 [[block]]
 block = "cpu"
+interval = 1
+format = " $icon $utilization $barchart "
 
 [[block]]
 block = "memory"
@@ -40,6 +42,8 @@ format = " $icon $max max "
 format_alt = " $icon $min min, $max max, $average avg "
 interval = 10
 chip = "*-isa-*"
+info = 80
+warning = 90
 
 [[block]]
 block = "disk_space"
@@ -75,8 +79,3 @@ units = "metric"
 block = "time"
 interval = 5
 format = " $timestamp.datetime(f:'%a %d/%m %R') "
-
-[[block]]
-block = "tea_timer"
-format = " $icon {$minutes:$seconds |}"
-done_cmd = "notify-desktop 'Timer Finished'"

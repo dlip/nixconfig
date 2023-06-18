@@ -6,7 +6,8 @@ mouse_middle_click = close_all
 mouse_right_click = close_current
 corner_radius = 10
 transparency = 10
-frame_width = 2
+frame_width = 1
+font = RobotoMono Nerd Font Mono 10
 
 [urgency_low]
 background = "#24273A"

@@ -14,6 +14,9 @@
 
     displayManager = {
       defaultSession = "none+i3";
+      autoLogin.enable = true;
+      autoLogin.user = "dane";
+      # job.preStart = "sleep 2"; # Hack to ensure X is ready for autoLogin
     };
 
     windowManager.i3 = {
