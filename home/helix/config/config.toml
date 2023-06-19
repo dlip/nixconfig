@@ -196,5 +196,5 @@ t = ":o /tmp/scratch"
 #   "move_char_right",
 #   "move_char_right",
 # ]
-n = ":sh he nnn-open"
-i = ":sh he clip-arg"
+n = ":sh he helix-nnn-open"
+i = ":sh he helix-filename-to-clipboard"
