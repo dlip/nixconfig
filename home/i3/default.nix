@@ -18,6 +18,7 @@
     paperview
     xwinwrap
     pamixer
+    xorg.xkill
   ];
 
   i18n.inputMethod = {

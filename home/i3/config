@@ -60,6 +60,7 @@ bindsym $mod+t exec $term
 
 # kill focused window
 bindsym $mod+w kill
+bindsym $mod+Shift+w exec xkill
 
 # clipboard
 bindsym $mod+c exec CM_LAUNCHER=rofi clipmenu
@@ -173,6 +174,7 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+q exec rofi -show power-menu -modi power-menu:power-menu
 bindsym $mod+Shift+q exec i3-msg exit
 
 # Lock
