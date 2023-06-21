@@ -57,7 +57,7 @@ format = " $icon root: $available.eng(w:2) "
 
 [[block]]
 block = "net"
-format = " $icon {$signal_strength $ssid $graph_down|No WiFi} "
+format = " $icon {$signal_strength $ssid $speed_down $speed_up|No WiFi} "
 
 [[block]]
 block = "sound"

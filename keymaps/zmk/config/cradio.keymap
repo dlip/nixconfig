@@ -15,7 +15,8 @@
 #define _NUM 2
 #define _MED 3
 #define _SYS 4
-#define _GAM 5
+#define _GM1 5
+#define _GM2 6
 
 &mt {
   flavor = "tap-preferred";
@@ -103,7 +104,7 @@
 
     num_layer {
       bindings = <
-        &kp GRAVE        &kp BSLH         &kp LBKT         &kp RBKT         &none                 &none            &kp N7           &kp N8           &kp N9           &kp STAR 
+        &kp GRAVE        &kp BSLH         &kp LBKT         &kp RBKT         &to _GM1              &none            &kp N7           &kp N8           &kp N9           &kp STAR 
         &kp ESC          &mt LALT DEL     &mt LGUI BSPC    &mt LCTRL RET    &kp TAB               &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &kp N0
         &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(V)        &kp PSCRN             &kp MINUS        &kp N1           &kp N2           &kp N3           &kp FSLH 
                                                            &trans           &trans                &trans           &trans
@@ -114,7 +115,7 @@
       bindings = <
         &none            &kp C_VOL_DN     &kp C_STOP       &kp C_VOL_UP     &kp C_BRI_UP          &none            &kp F7           &kp F8           &kp F9           &kp F11
         &none            &mt LALT C_PREV  &mt LGUI C_PP    &mt LCTRL C_NEXT &kp C_BRI_DN          &none            &mt RCTRL F4     &mt RGUI F5      &mt RALT F6      &kp F10
-        &none            &none            &none            &none            &to _GAM              &none            &kp F1           &kp F2           &kp F3           &kp F12
+        &none            &none            &none            &none            &none                 &none            &kp F1           &kp F2           &kp F3           &kp F12
                                                            &trans           &trans                &trans           &trans
       >;
     };
@@ -128,15 +129,24 @@
       >;
     };
 
-    gaming_layer {
+    gaming_layer_1 {
       bindings = <
-        &none           &none            &kp W             &none            &none                 &none            &none            &none            &none            &none
-        &kp CAPS        &kp A            &kp S             &kp D            &none                 &none            &none            &none            &none            &none
-        &none           &none            &none             &none            &to _BSE              &none            &none            &none            &none            &none
-                                                           &none            &kp SPC               &none            &none
+        &kp TAB         &kp Q            &kp W             &kp E            &kp R                 &kp Y            &kp U            &kp UP           &kp O            &kp P
+        &kp LSHIFT      &kp A            &kp S             &kp D            &kp F                 &kp H            &kp LEFT         &kp DOWN         &kp RIGHT        &kp H
+        &kp LCTRL       &kp Z            &kp X             &kp C            &kp V                 &kp N            &kp J            &kp K            &kp L            &kp T
+                                                           &mo _GM2         &kp SPC               &kp G            &kp H
       >;
     };
     
+    gaming_layer_2 {
+      bindings = <
+        &kp ESC         &kp N7           &kp N8            &kp N9           &to _BSE              &none            &none            &none            &none            &none
+        &kp N0          &kp N4           &kp N5            &kp N6           &kp RET               &none            &none            &none            &none            &none
+        &none           &kp N1           &kp N2            &kp N3           &kp BSPC              &none            &none            &none            &none            &none
+                                                           &none            &none                 &none            &none
+      >;
+    };
+
     empty {
       bindings = <
         &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none

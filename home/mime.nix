@@ -6,11 +6,14 @@
     "text/csv" = ["helix.desktop"];
     "image/jpeg" = ["feh.desktop"];
     "image/png" = ["feh.desktop"];
-    "x-scheme-handler/https" = ["google-chrome.desktop"];
-    "x-scheme-handler/http" = ["google-chrome.desktop"];
     "x-scheme-handler/msteams" = ["teams.desktop"];
     "x-scheme-handler/slack" = ["slack.desktop"];
     "inode/directory" = ["thunar.desktop"];
+    "x-scheme-handler/http" = ["google-chrome.desktop"];
+    "x-scheme-handler/https" = ["google-chrome.desktop"];
+    "text/html" = ["google-chrome.desktop"];
+    "x-scheme-handler/about" = ["google-chrome.desktop"];
+    "x-scheme-handler/unknown" = ["google-chrome.desktop"];
   };
 in {
   xdg.desktopEntries.helix = {

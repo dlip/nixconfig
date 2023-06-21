@@ -272,6 +272,8 @@ assign [class="obsidian"] 6
 assign [class="Plexamp"] 7
 assign [class="Spotify"] 7
 
+for_window [title="Todoist$"] move container to workspace 7
+
 # Services
 exec_always --no-startup-id ~/code/nixconfig/scripts/update-wallpaper
 
