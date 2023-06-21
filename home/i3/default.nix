@@ -19,6 +19,7 @@
     xwinwrap
     pamixer
     xorg.xkill
+    xfce.thunar
   ];
 
   i18n.inputMethod = {
@@ -70,5 +71,13 @@
   services.udiskie = {
     enable = true;
     tray = "always";
+  };
+
+  # fix udiskie tray error
+  systemd.user.targets.tray = {
+    Unit = {
+      Description = "Home Manager System Tray";
+      Requires = ["graphical-session-pre.target"];
+    };
   };
 }

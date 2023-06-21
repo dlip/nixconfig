@@ -4,6 +4,6 @@ FILENAME=$1
 # open file in existing files tab
 zellij action go-to-tab-name files
 # go to shell
-zellij action write-chars '!'
-zellij action write-chars "nnn '${FILENAME}'; exit"
+zellij action write-chars ';w'
+zellij action write-chars "${FILENAME}"
 zellij action write 13

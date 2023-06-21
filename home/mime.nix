@@ -10,6 +10,7 @@
     "x-scheme-handler/http" = ["google-chrome.desktop"];
     "x-scheme-handler/msteams" = ["teams.desktop"];
     "x-scheme-handler/slack" = ["slack.desktop"];
+    "inode/directory" = ["thunar.desktop"];
   };
 in {
   xdg.desktopEntries.helix = {

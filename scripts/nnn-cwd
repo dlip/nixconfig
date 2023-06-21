@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+printf "cd to: "
+read -r dir
+
+printf "%s" "0c$dir" > "$NNN_PIPE"

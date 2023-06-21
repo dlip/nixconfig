@@ -7,7 +7,7 @@
       nodePackages.vscode-html-languageserver-bin
     ]
     else [
-      nodePackages.vscode-langservers-extracted
+      # nodePackages.vscode-langservers-extracted dns issue
     ];
 in {
   home.packages = with pkgs.unstable;
