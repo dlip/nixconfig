@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Run command on current file with helix using zellij
+# Requires https://github.com/helix-editor/helix/pull/6985
+# eg. echo current filename
+# :sh he echo
+set -euo pipefail
+# run command
+zellij action write-chars ':'
+# write shell command
+zellij action write-chars "sh xdg-open "
+# ctrl +r to select registry
+zellij action write 18
+# paste from selection registry
+zellij action write-chars '.'
+# append focus command
+zellij action write-chars ' > /dev/null && i3-msg \[urgent=latest\] focus > /dev/null'
+# enter
+zellij action write 13

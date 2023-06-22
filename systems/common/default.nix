@@ -96,6 +96,10 @@ in {
   sops.secrets.restic-encryption = {};
   sops.secrets.wireguard-key = {};
 
+  # keyring
+  services.gnome.gnome-keyring.enable = true;
+  programs.seahorse.enable = true;
+
   # services = {
   #   gnome.gnome-keyring.enable = true;
   #   upower.enable = true;

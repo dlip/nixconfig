@@ -37,7 +37,7 @@
     firefox
     gimp
     # gnome.file-roller
-    # gnome.seahorse
+    gnome.seahorse
     gramps
     kdenlive
     krita
@@ -50,6 +50,7 @@
     # mongodb-compass
     # neovide
     # nyxt
+    nheko
     obs-studio
     obsidian
     postman
