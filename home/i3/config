@@ -65,6 +65,8 @@ bindsym $mod+Shift+w exec xkill
 # clipboard
 bindsym $mod+c exec CM_LAUNCHER=rofi clipmenu
 
+bindsym $mod+p exec rofi -show-icons -modi windowcd -show windowcd
+
 # go to urgent window
 bindsym $mod+u [urgent=latest] focus
 
@@ -117,7 +119,7 @@ bindsym $mod+f fullscreen toggle
 workspace_layout tabbed
 bindsym $mod+s layout stacking
 bindsym $mod+b layout tabbed
-bindsym $mod+p layout toggle split
+bindsym $mod+g layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+space floating toggle
