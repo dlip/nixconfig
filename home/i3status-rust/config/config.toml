@@ -75,9 +75,10 @@ lang = "ja"
 
 [[block]]
 block = "battery"
-format = " $icon $percentage {({$time}時間残り)|}"
+format = " $icon $percentage {(残り{$time}時間)|}"
 device = "DisplayDevice"
 driver = "upower"
+missing_format = ""
 
 [[block]]
 block = "time"
