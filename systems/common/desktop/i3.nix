@@ -29,4 +29,5 @@
       ];
     };
   };
+  services.upower.enable = true;
 }

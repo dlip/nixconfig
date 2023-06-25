@@ -19,9 +19,6 @@ icons_format = "{icon}"
 
 [icons]
 icons = "material-nf"
-[icons.overrides]
-bat = ["|E|", "|_|", "|=|", "|F|"]
-bat_charging = "|^| "
 
 # https://docs.rs/i3status-rs/latest/i3status_rs/blocks/index.html
 [[block]]
@@ -68,12 +65,19 @@ cmd = "pavucontrol"
 # https://openweathermap.org/city/2147714
 [[block]]
 block = "weather"
-format = " $icon $weather ($location) $temp, $wind m/s $direction "
+format = " $icon $weather_verbose ($location) $temp, $wind m/s $direction "
 [block.service]
 name = "openweathermap"
 api_key = "476b81fdcd2cc9ab8d99967ea1c39fee"
 city_id = "2147714"
 units = "metric"
+lang = "ja"
+
+[[block]]
+block = "battery"
+format = " $icon $percentage {($time 時間残り)|}"
+device = "DisplayDevice"
+driver = "upower"
 
 [[block]]
 block = "time"

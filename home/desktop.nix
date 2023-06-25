@@ -24,7 +24,7 @@
     pkgs.awscli2
     binutils
     docker-buildx
-    # cargo
+    cargo
     cargo-wasi
     cheat
     clang-tools
@@ -71,6 +71,7 @@
     (lua.withPackages (ps: with ps; [luacheck]))
     mangal
     massren
+    mdbook
     mdl
     # mysql80
     # musikcube
