@@ -58,6 +58,9 @@ tiling_drag modifier titlebar
 # start a terminal
 bindsym $mod+t exec $term
 
+# Sometimes the display doesn't come back from sleep
+bindsym $mod+x exec xrandr --output eDP-1 --auto
+
 # kill focused window
 bindsym $mod+w kill
 bindsym $mod+Shift+w exec xkill

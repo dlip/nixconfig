@@ -7,7 +7,7 @@ startup() {
   # alacritty -e bash -c "sleep 2 && ~/code/nixconfig/scripts/p nixconfig"&
   # google-chrome-stable&
   obsidian&
-  slack&
+  # slack&
   # teams&
   warpd&
   #xfce4-screensaver&

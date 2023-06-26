@@ -15,7 +15,7 @@
   ];
 
   home.packages = with pkgs.unstable; [
-    # anki
+    anki
     appimage-run
     # antimicrox
     arandr
@@ -51,6 +51,7 @@
     # neovide
     # nyxt
     nheko
+    memento
     obs-studio
     obsidian
     postman

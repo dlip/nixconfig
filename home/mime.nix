@@ -14,6 +14,7 @@
     "text/html" = ["google-chrome.desktop"];
     "x-scheme-handler/about" = ["google-chrome.desktop"];
     "x-scheme-handler/unknown" = ["google-chrome.desktop"];
+    "video/x-matroska" = ["mpv.desktop"];
   };
 in {
   xdg.desktopEntries.helix = {

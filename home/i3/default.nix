@@ -19,7 +19,6 @@
     xwinwrap
     pamixer
     xorg.xkill
-    xfce.thunar
   ];
 
   i18n.inputMethod = {
