@@ -5,6 +5,7 @@ line-number = "relative"
 cursorline = true
 auto-save = false
 bufferline = "multiple"
+rulers = [120]
 
 [editor.indent-guides]
 render = true

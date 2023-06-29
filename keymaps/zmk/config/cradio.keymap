@@ -131,10 +131,10 @@
 
     gaming_layer_1 {
       bindings = <
-        &kp TAB         &kp Q            &kp W             &kp E            &kp R                 &kp Y            &kp U            &kp UP           &kp O            &kp P
-        &kp LSHIFT      &kp A            &kp S             &kp D            &kp F                 &kp H            &kp LEFT         &kp DOWN         &kp RIGHT        &kp H
-        &kp LCTRL       &kp Z            &kp X             &kp C            &kp V                 &kp N            &kp J            &kp K            &kp L            &kp T
-                                                           &mo _GM2         &kp SPC               &kp G            &kp H
+        &kp TAB         &kp Q            &kp W             &kp E            &kp R                 &kp Y            &kp U            &kp I            &kp O            &kp P
+        &kp LSHIFT      &kp A            &kp S             &kp D            &kp F                 &kp H            &kp J            &kp K            &kp L            &kp UP
+        &kp LCTRL       &kp Z            &kp X             &kp C            &kp V                 &kp N            &kp M            &kp LEFT         &kp RIGHT        &kp DOWN
+                                                           &mo _GM2         &kp SPC               &kp G            &kp B
       >;
     };
     
@@ -142,7 +142,7 @@
       bindings = <
         &kp ESC         &kp N7           &kp N8            &kp N9           &to _BSE              &none            &none            &none            &none            &none
         &kp N0          &kp N4           &kp N5            &kp N6           &kp RET               &none            &none            &none            &none            &none
-        &none           &kp N1           &kp N2            &kp N3           &kp BSPC              &none            &none            &none            &none            &none
+        &kp T           &kp N1           &kp N2            &kp N3           &kp BSPC              &none            &none            &none            &none            &none
                                                            &none            &none                 &none            &none
       >;
     };

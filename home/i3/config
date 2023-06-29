@@ -60,6 +60,7 @@ bindsym $mod+t exec $term
 
 # Sometimes the display doesn't come back from sleep
 bindsym $mod+x exec xrandr --output eDP-1 --auto
+bindsym $mod+Shift+x exec xrandr --output eDP-1 --off && xrandr --output HDMI-1-0 --auto
 
 # kill focused window
 bindsym $mod+w kill
@@ -68,6 +69,10 @@ bindsym $mod+Shift+w exec xkill
 # clipboard
 bindsym $mod+c exec CM_LAUNCHER=rofi clipmenu
 
+# file explorer
+bindsym $mod+e exec thunar
+
+# find window
 bindsym $mod+p exec rofi -show-icons -modi windowcd -show windowcd
 
 # go to urgent window
@@ -120,9 +125,10 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 workspace_layout tabbed
-bindsym $mod+s layout stacking
-bindsym $mod+b layout tabbed
-bindsym $mod+g layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+b layout tabbed
+# bindsym $mod+g layout toggle split
+bindsym $mod+l layout toggle tabbed splith splitv
 
 # toggle tiling / floating
 bindsym $mod+space floating toggle
@@ -281,6 +287,7 @@ for_window [title="Todoist$"] move container to workspace 7
 
 # Services
 exec_always --no-startup-id ~/code/nixconfig/scripts/update-wallpaper
+exec systemctl --user restart dunst
 
 # for_window [class="^.*"] border pixel 0
 

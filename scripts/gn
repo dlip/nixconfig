@@ -1,13 +1,21 @@
 #!/usr/bin/env bash
-set -euo pipefail
+set -evuo pipefail
 
 if [ -z "${1:-}" ]; then
   echo "Error: gn <branch>"
   exit 1
 fi
 branch=$1
+
+# a bit slow since it needs to do a remote call
+# main=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
 remote=origin
-main=$(git remote show origin | grep 'HEAD branch' | cut -d' ' -f5)
+if git rev-parse --verify $remote/main >/dev/null 2>&1; then
+    main="main"
+else
+    main="master"
+fi
+
 git fetch $remote $main
 git checkout $remote/$main
 git checkout -b $branch

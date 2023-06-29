@@ -12,12 +12,12 @@
 in {
   home.packages = with pkgs.unstable;
     [
-      alejandra
+      alejandra # nix
       codespell
-      gopls
+      gopls # golang
       golangci-lint
       haskellPackages.haskell-language-server
-      nil
+      marksman # markdown
       myNodePackages."@prisma/language-server"
       nodePackages.bash-language-server
       nodePackages.dockerfile-language-server-nodejs
@@ -25,12 +25,12 @@ in {
       nodePackages.intelephense # php
       nodePackages.prettier
       nodePackages.prettier_d_slim
-      nodePackages.pyright
+      nodePackages.pyright # python
       nodePackages.typescript-language-server
       nodePackages.vim-language-server
       nodePackages.yaml-language-server
       proselint
-      rust-analyzer
+      rust-analyzer # rust
       # rustfmt
       shfmt
       # solang

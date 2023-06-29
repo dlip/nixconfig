@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ../autorandr
+    # ../autorandr
     ../i3status-rust
     ../dunst
   ];
