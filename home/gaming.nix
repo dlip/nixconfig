@@ -1,7 +1,10 @@
-{ pkgs, ... }: {
-
+{pkgs, ...}: {
   home.packages = with pkgs; [
-    minecraft
+    # minecraft
     # lutris
+    mangohud
+    gamemode
+    protontricks
+    vulkan-tools
   ];
 }

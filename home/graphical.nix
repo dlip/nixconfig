@@ -50,7 +50,7 @@
     # mongodb-compass
     # neovide
     # nyxt
-    nheko
+    # nheko # curl error
     memento
     obs-studio
     obsidian
@@ -75,6 +75,6 @@
     # yubikey-manager-qt #broken
     # yubioath-desktop #broken
     zathura
-    zoom-us
+    # zoom-us # download error
   ];
 }

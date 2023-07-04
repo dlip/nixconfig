@@ -39,6 +39,7 @@
       export MANWIDTH=999
       export FZF_DEFAULT_COMMAND='fd'
       export GPG_TTY="$(tty)"
+      export XDG_DATA_HOME="$HOME/.local/share"
       # gpg-connect-agent /bye
       # export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
       # Needed for go debugging

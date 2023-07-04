@@ -240,6 +240,7 @@
                       ./home/desktop.nix
                       ./home/graphical.nix
                       ./home/gamedev.nix
+                      ./home/gaming.nix
                     ];
                   };
                 };

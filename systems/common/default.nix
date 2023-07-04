@@ -258,7 +258,6 @@ in {
     git
     glxinfo
     pciutils
-    nvidia-offload
     pavucontrol
     restic
     restic-dex

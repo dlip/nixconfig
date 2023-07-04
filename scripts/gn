@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -evuo pipefail
+set -euo pipefail
 
 if [ -z "${1:-}" ]; then
   echo "Error: gn <branch>"
