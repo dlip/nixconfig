@@ -38,7 +38,7 @@ in {
 
   users.users.dane = {
     isNormalUser = true;
-    extraGroups = ["wheel" "docker" "networkmanager" "dialout" "adbusers"]; # Enable ‘sudo’ for the user.
+    extraGroups = ["wheel" "docker" "networkmanager" "dialout" "adbusers" "input"]; # Enable ‘sudo’ for the user.
     shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 

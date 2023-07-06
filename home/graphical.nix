@@ -41,10 +41,10 @@
     gramps
     kdenlive
     krita
-    # kicad
+    kicad
     # ledger-live-desktop
     lens
-    # libreoffice
+    libreoffice
     # logseq
     mlt
     # mongodb-compass

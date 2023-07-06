@@ -96,7 +96,8 @@
     pinentry
     # poetry
     postgresql
-    python3
+    # python3
+    (python3.withPackages (ps: with ps; [evdev]))
     pwgen
     # python39Packages.grip
     # python39Packages.pip
@@ -114,6 +115,7 @@
     teams
     tesseract4
     tiramisu
+    tio
     tldr
     traceroute
     # turbo
