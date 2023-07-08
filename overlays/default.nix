@@ -9,7 +9,7 @@ inputs @ {
   helix,
   sops-nix,
   nix-on-droid,
-  nixpkgs-wayland,
+  # nixpkgs-wayland,
   ...
 }: [
   kmonad.overlays.default
