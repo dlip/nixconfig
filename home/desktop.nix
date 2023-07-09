@@ -77,6 +77,7 @@
     # musikcube
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
+    python311Packages.adafruit-nrfutil
     niv
     nix-du
     nodePackages.node2nix

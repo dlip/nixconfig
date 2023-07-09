@@ -17,6 +17,7 @@
 #define _SYS 4
 #define _GM1 5
 #define _GM2 6
+#define _TPO 7
 
 &mt {
   flavor = "tap-preferred";
@@ -44,8 +45,8 @@
       tap-ms = <40>;
       bindings = <&kp DOT &kp COMMA>;
     )
-    #include "macros.dtsi"
   };
+
   combos {
     compatible = "zmk,combos";
     combo_system {
@@ -60,25 +61,13 @@
       bindings = <&bootloader>;
       layers = <0>;
     };
-    combo_bspcword {
+    combo_taipo {
       timeout-ms = <100>;
-      key-positions = <3 4>;
-      bindings = <&kp LC(BSPC)>;
-      layers = <0>;
+      key-positions = <14 24>;
+      bindings = <&tog _TPO>;
     };
-    combo_bspc {
-      timeout-ms = <100>;
-      key-positions = <13 14>;
-      bindings = <&kp BSPC>;
-      layers = <0>;
-    };
-    combo_expand {
-      timeout-ms = <100>;
-      key-positions = <30 33>;
-      bindings = <&expand>;
-      layers = <0>;
-    };
-    #include "combos.dtsi"
+
+    #include "taipo.dtsi"
   };
 
   keymap {
@@ -144,6 +133,15 @@
         &kp N0          &kp N4           &kp N5            &kp N6           &kp RET               &none            &none            &none            &none            &none
         &kp T           &kp N1           &kp N2            &kp N3           &kp BSPC              &none            &none            &none            &none            &none
                                                            &none            &none                 &none            &none
+      >;
+    };
+
+    taipo {
+      bindings = <
+        &kp R            &kp S            &kp N            &kp I            &none                 &none            &kp I            &kp N            &kp S            &kp R
+        &kp A            &kp O            &kp T            &kp E            &none                 &none            &kp E            &kp T            &kp O            &kp A
+        &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none
+                                                           &kp BKSP         &kp SPACE             &kp SPACE        &kp BKSP
       >;
     };
 
