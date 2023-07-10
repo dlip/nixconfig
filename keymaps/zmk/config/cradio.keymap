@@ -63,7 +63,7 @@
     };
     combo_taipo {
       timeout-ms = <100>;
-      key-positions = <14 24>;
+      key-positions = <4 14>;
       bindings = <&tog _TPO>;
     };
 
