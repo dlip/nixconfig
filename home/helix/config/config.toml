@@ -52,10 +52,10 @@ ret = ":wa"
 # R = "replace_selections_with_clipboard"
 
 # I use an arrow keys layer so i can remap hjkl
-j = "join_selections"
-l = ["move_char_right", "move_prev_word_start", "move_next_word_end"]
-h = "search"
-k = "rsearch"
+# j = "join_selections"
+# l = ["move_char_right", "move_prev_word_start", "move_next_word_end"]
+# h = "search"
+# k = "rsearch"
 
 # extend line up
 X = "extend_line_up"
@@ -127,9 +127,9 @@ esc = ["collapse_selection", "normal_mode"]
 [keys.select]
 
 # I use an arrow keys layer so i can remap hjkl
-l = "search_selection"
-h = "extend_search_next"
-k = "extend_search_prev"
+# l = "search_selection"
+# h = "extend_search_next"
+# k = "extend_search_prev"
 esc = ["collapse_selection", "keep_primary_selection", "normal_mode"]
 
 # Use the system clipboard like a normal app
