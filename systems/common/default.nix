@@ -124,6 +124,7 @@ in {
 
   services.avahi = {
     enable = true;
+    openFirewall = true;
     nssmdns = true;
     publish = {
       enable = true;

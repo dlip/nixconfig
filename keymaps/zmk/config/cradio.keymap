@@ -138,12 +138,20 @@
 
     taipo {
       bindings = <
-        &kp R            &kp S            &kp N            &kp I            &none                 &none            &kp I            &kp N            &kp S            &kp R
-        &kp A            &kp O            &kp T            &kp E            &none                 &none            &kp E            &kp T            &kp O            &kp A
-        &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none
-                                                           &kp BKSP         &kp SPACE             &kp SPACE        &kp BKSP
+        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+                                                           &none            &none                 &none            &none
       >;
     };
+    // taipo {
+    //   bindings = <
+    //     &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none
+    //     &kp R            &kp S            &kp N            &kp I            &none                 &none            &kp I            &kp N            &kp S            &kp R
+    //     &kp A            &kp O            &kp T            &kp E            &none                 &none            &kp E            &kp T            &kp O            &kp A
+    //                                                        &kp BKSP         &kp SPACE             &kp SPACE        &kp BKSP
+    //   >;
+    // };
 
     empty {
       bindings = <
