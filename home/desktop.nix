@@ -58,6 +58,7 @@
     joshuto
     pkgs.iredis
     jdk11
+    kaf
     kind
     kmonad
     krename

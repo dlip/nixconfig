@@ -277,6 +277,7 @@ client.background        $base
 # run: i3-msg -t get_tree | jq | grep class
 assign [class="DBeaver"] 2
 assign [class="Slack"] 3
+assign [class="Discord"] 3
 assign [class="Google-chrome"] 4
 assign [class="Alacritty"] 5
 assign [class="obsidian"] 6
