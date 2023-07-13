@@ -23,8 +23,8 @@
 #define BLM 12 // BOTTOM
 #define BLR 11 // BOTTOM
 #define BLP 10 // BOTTOM
-#define LOT 30 // O-THUMB
-#define LIT 31 // I-THUMB
+#define LOT 31 // O-THUMB
+#define LIT 30 // I-THUMB
 
 // RIGHT SIDE
 #define TRI 6 // TOP
@@ -35,8 +35,8 @@
 #define BRM 17 // BOTTOM
 #define BRR 18 // BOTTOM
 #define BRP 19 // BOTTOM
-#define ROT 33 // O-THUMB
-#define RIT 32 // I-THUMB
+#define ROT 32 // O-THUMB
+#define RIT 33 // I-THUMB
 
 // LAYERS
 #define _BSE 0
