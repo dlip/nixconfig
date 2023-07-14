@@ -4,10 +4,12 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: okke-formsma
       url-base: https://github.com/okke-formsma
+    - name: andrewjrae
+      url-base: https://github.com/andrewjrae
   projects:
     - name: zmk
-      remote: zmkfirmware
-      revision: main
+      remote: andrewjrae
+      revision: keycode-pre-releasing
       import: app/west.yml
   self:
     path: config
