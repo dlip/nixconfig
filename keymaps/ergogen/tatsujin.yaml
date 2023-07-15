@@ -1,0 +1,24 @@
+points:
+  zones:
+    matrix:
+      columns:
+        pinky:
+        ring:
+          key:
+            stagger: 10
+        middle:
+          key:
+            stagger: 5
+        index:
+          key:
+            stagger: -8
+      rows:
+        bottom:
+        top:
+    thumbs:
+      anchor:
+        ref: matrix_index_bottom
+        shift: [-7, -u + -15]
+      columns:
+        inner:
+        outer:

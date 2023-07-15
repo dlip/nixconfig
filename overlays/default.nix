@@ -32,24 +32,24 @@ inputs @ {
       makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];
     });
     # helix = helix.packages.${final.system}.default;
-    # keyd = prev.keyd.overrideAttrs (oldAttrs: {
-    #  src = keyd;
-    #   buildInputs = [ final.git final.systemd ];
-    #   installPhase = ''
-    #     mkdir -p $out/bin/
-    #     mkdir -p $out/share/keyd/layouts/
-    #     mkdir -p $out/share/man/man1/
-    #     mkdir -p $out/share/doc/keyd/examples/
-    #     mkdir -p $out/share/libinput/
+    keyd = prev.keyd.overrideAttrs (oldAttrs: {
+      src = keyd;
+      buildInputs = [final.git final.systemd];
+      installPhase = ''
+        mkdir -p $out/bin/
+        mkdir -p $out/share/keyd/layouts/
+        mkdir -p $out/share/man/man1/
+        mkdir -p $out/share/doc/keyd/examples/
+        mkdir -p $out/share/libinput/
 
-    #     install -m755 bin/* $out/bin
-    #     install -m644 docs/*.md $out/share/doc/keyd/
-    #     install -m644 examples/* $out/share/doc/keyd/examples/
-    #     install -m644 layouts/* $out/share/keyd/layouts
-    #     install -m644 data/*.1.gz $out/share/man/man1/
-    #     install -m644 data/keyd.compose $out/share/keyd/
-    #   '';
-    # });
+        install -m755 bin/* $out/bin
+        install -m644 docs/*.md $out/share/doc/keyd/
+        install -m644 examples/* $out/share/doc/keyd/examples/
+        install -m644 layouts/* $out/share/keyd/layouts
+        install -m644 data/*.1.gz $out/share/man/man1/
+        install -m644 data/keyd.compose $out/share/keyd/
+      '';
+    });
 
     myNodePackages = final.callPackage ./nodePackages {};
     # myPythonPackages = final.callPackage ./pythonPackages { };
