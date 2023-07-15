@@ -383,15 +383,15 @@
     "keyd": {
       "flake": false,
       "locked": {
-        "lastModified": 1685848945,
-        "narHash": "sha256-IR0Murvc9aCSuGh01sZEWHyYmmFADtmopGMgt6ydSxU=",
-        "owner": "rvaiya",
+        "lastModified": 1689414483,
+        "narHash": "sha256-BLBN1ULX2Sjn6mjhHOBiE9dokA6VChzSBI2M6H3/JjM=",
+        "owner": "dlip",
         "repo": "keyd",
-        "rev": "2338f11b1ddd81eaddd957de720a3b4279222da0",
+        "rev": "ec52956113e43deada36596816037a3d3af8b7f6",
         "type": "github"
       },
       "original": {
-        "owner": "rvaiya",
+        "owner": "dlip",
         "repo": "keyd",
         "type": "github"
       }
