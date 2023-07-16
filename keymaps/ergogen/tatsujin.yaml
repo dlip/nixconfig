@@ -1,24 +1,54 @@
+units:
+  # Proxy Spacing Variables
+  kx: cx
+  ky: cy
+  # Padding Variables
+  px: kx + 2
+  py: ky + 2
 points:
   zones:
     matrix:
+      key:
+        padding: 1ky
       columns:
         pinky:
+          key:
+            splay: 10
         ring:
           key:
-            stagger: 10
+            stagger: 3
+            spread: 28
+            splay: -5
         middle:
           key:
             stagger: 5
+            spread: 23
+            splay: -5
         index:
           key:
             stagger: -8
+            spread: 23
+            splay: -5
       rows:
         bottom:
         top:
     thumbs:
+      key:
+        padding: 1ky
+        spread: 1kx
       anchor:
         ref: matrix_index_bottom
-        shift: [-7, -u + -15]
+        shift: [30, -10]
       columns:
         inner:
+          key:
+            width: 1.5kx
+            splay: -20
+            rotate: 90
         outer:
+          key:
+            width: 1.5kx
+            rotate: 90
+      rows:
+        cluster:
+          shift: [0, -2ky]
