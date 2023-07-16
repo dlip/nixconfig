@@ -52,3 +52,51 @@ points:
       rows:
         cluster:
           shift: [0, -2ky]
+outlines:
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+    - what: rectangle
+      where: thumbs_inner_cluster
+      size: [1.5kx,ky-0.5]
+    - what: rectangle
+      where: thumbs_outer_cluster
+      size: [1.5kx,ky-0.5]
+  board:
+    - what: polygon
+      operation: stack
+      fillet: 2
+      points:
+        - ref: matrix_pinky_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_ring_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [-0.5px,0.5py]
+        - ref: matrix_middle_top
+          shift: [0.5px,0.5py]
+        - ref: matrix_index_top
+          shift: [0.5px,0.5py]
+        - ref: thumbs_inner_cluster
+          shift: [0.75px,0.5py]
+        - ref: thumbs_outer_cluster
+          shift: [0.75px,-0.5py]
+        - ref: thumbs_outer_cluster
+          shift: [-0.75px,-0.5py]
+        - ref: thumbs_inner_cluster
+          shift: [-0.75px,-0.5py]
+        - ref: thumbs_inner_cluster
+          shift: [-0.75px,0.5py]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px,-1.5py]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5px,-0.5py]
+  combo:
+    - name: board
+    - operation: subtract
+      name: keys
