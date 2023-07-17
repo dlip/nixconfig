@@ -17,21 +17,41 @@ points:
         pinky:
           key:
             splay: 15
+          rows:
+            top.mcu_pin: GP26
+            bottom.mcu_pin: GP12
+            top.mirror.mcu_pin: GP3
+            bottom.mirror.mcu_pin: GP7
         ring:
           key:
             stagger: 3
             spread: 28
             splay: -10
+          rows:
+            top.mcu_pin: GP27
+            bottom.mcu_pin: GP13
+            top.mirror.mcu_pin: GP2
+            bottom.mirror.mcu_pin: GP6
         middle:
           key:
             stagger: 10
             spread: 23
             splay: -5
+          rows:
+            top.mcu_pin: GP28
+            bottom.mcu_pin: GP14
+            top.mirror.mcu_pin: GP1
+            bottom.mirror.mcu_pin: GP5
         index:
           key:
             stagger: -8
             spread: 23
             splay: -5
+          rows:
+            top.mcu_pin: GP29
+            bottom.mcu_pin: GP15
+            top.mirror.mcu_pin: GP0
+            bottom.mirror.mcu_pin: GP4
       rows:
         bottom:
         top:
@@ -48,10 +68,14 @@ points:
             width: 1.5kx
             splay: -20
             rotate: 90
+            mcu_pin: GP11
+            mirror.mcu_pin: GP8
         outer:
           key:
             width: 1.5kx
             rotate: 90
+            mcu_pin: GP10
+            mirror.mcu_pin: GP9
       rows:
         cluster:
           shift: [0, -2ky]
@@ -139,15 +163,23 @@ pcbs:
         outline:
           board
     footprints:
-      choc_hotswap:
+      # choc_hotswap:
+      #   what: choc
+      #   where: true
+      #   params:
+      #     keycaps: true
+      #     hotswap: true
+      #     from: "{{mcu_pin}}"
+      #     to: GND
+      choc:
         what: choc
         where: true
+        adjust:
+          rotate: 180
         params:
           keycaps: true
-          reverse: false
-          hotswap: true
-          from: "{{column_net}}"
-          to: "{{colrow}}"
+          from: "{{mcu_pin}}"
+          to: GND
       mcu:
         what: rp2040zero
         where:
