@@ -24,8 +24,8 @@ points:
             bottom.mirror.mcu_pin: GP7
         ring:
           key:
-            stagger: 5
-            spread: 22
+            stagger: 8
+            spread: 20
             splay: -10
           rows:
             top.mcu_pin: GP27
@@ -61,12 +61,12 @@ points:
         spread: 1kx
       anchor:
         ref: matrix_index_bottom
-        shift: [20, -10]
+        shift: [14, -10]
       columns:
         inner:
           key:
             width: 1.5kx
-            splay: -10
+            splay: -3
             rotate: 90
             mcu_pin: GP11
             mirror.mcu_pin: GP8
