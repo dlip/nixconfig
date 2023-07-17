@@ -8,6 +8,8 @@ units:
 points:
   zones:
     matrix:
+      anchor:
+        shift: [100, -100]
       rotate: -30
       key:
         padding: 1ky
@@ -130,3 +132,31 @@ outlines:
     - name: board
     - operation: subtract
       name: keys
+pcbs:
+  tutorial:
+    outlines:
+      main:
+        outline:
+          board
+    footprints:
+      choc_hotswap:
+        what: choc
+        where: true
+        params:
+          keycaps: true
+          reverse: false
+          hotswap: true
+          from: "{{column_net}}"
+          to: "{{colrow}}"
+      mcu:
+        what: rp2040zero
+        where:
+          ref.aggregate.parts: [matrix_index_top, mirror_matrix_index_top]
+          shift: [-10,-24]
+        params:
+          reverse: true
+          GND: GND
+cases:
+  bottom:
+    - name: board
+      extrude: 1
