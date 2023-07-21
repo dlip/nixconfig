@@ -10,9 +10,9 @@
 #include <dt-bindings/zmk/outputs.h>
 
 // CONFIG
-#define COMBO_TIMEOUT 100
+#define COMBO_TIMEOUT 70
 #define COMBO_LAYERS 7
-#define STICKY_TIMEOUT 2000
+#define STICKY_TIMEOUT 200
 
 // LEFT SIDE
 #define TLI 3 // TOP

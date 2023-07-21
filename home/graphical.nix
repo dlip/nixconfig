@@ -22,7 +22,7 @@
     alttab
     audacity
     brightnessctl
-    # blender
+    blender
     calibre
     cozy
     dbeaver
@@ -35,6 +35,7 @@
     power-menu
     feh
     firefox
+    fstl
     gimp
     # gnome.file-roller
     gnome.seahorse
