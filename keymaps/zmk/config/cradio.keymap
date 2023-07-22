@@ -12,7 +12,7 @@
 // CONFIG
 #define COMBO_TIMEOUT 70
 #define COMBO_LAYERS 7
-#define STICKY_TIMEOUT 200
+#define STICKY_TIMEOUT 500
 
 // LEFT SIDE
 #define TLI 3 // TOP
