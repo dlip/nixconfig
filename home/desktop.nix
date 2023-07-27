@@ -78,6 +78,7 @@
     # musikcube
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
+    ngrok
     python311Packages.adafruit-nrfutil
     niv
     nix-du
@@ -94,6 +95,7 @@
     # openvpn_aws
     pandoc
     texlive.combined.scheme-medium
+    typioca
     php
     pinentry
     # poetry
