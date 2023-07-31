@@ -199,6 +199,7 @@ t = ":o /tmp/scratch"
 # ]
 n = ":sh helix-exec helix-nnn-open"
 i = ":sh helix-exec helix-filename-to-clipboard"
+x = ":bc"
 
 [keys.select.g]
 x = ":sh helix-open-url"

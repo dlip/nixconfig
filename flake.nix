@@ -52,7 +52,7 @@
       flake = false;
     };
     helix = {
-      url = "github:helix-editor/helix/special-registers";
+      url = "github:helix-editor/helix";
     };
   };
 

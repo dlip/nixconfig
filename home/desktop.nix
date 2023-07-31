@@ -107,6 +107,7 @@
     # python39Packages.pip
     # python39Packages.pynvim
     # python39Packages.setuptools
+    qmk
     rclone
     renameutils
     # rustc
@@ -123,6 +124,8 @@
     tldr
     traceroute
     # turbo
+    ttyper
+    terminal-typeracer
     unrar
     wireshark-cli
     ttyper
