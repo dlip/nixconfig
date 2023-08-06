@@ -56,7 +56,7 @@ inputs @ {
     # skyscraper = final.callPackage ./skyscraper { };
     # solang = final.callPackage ./solang { };
     # juliusSpeech = final.callPackage ./juliusSpeech { };
-    # talon = final.callPackage ./talon { };
+    talon = final.callPackage ./talon {};
     # inherit (final.callPackages "${openvpn-aws}/derivations/openvpn.nix" { }) openvpn_aws;
   })
   # Repos with no build step

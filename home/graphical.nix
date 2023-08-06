@@ -63,7 +63,7 @@
     screenkey
     slack
     # spotify # cant get any songs to play
-    # talon
+    talon
     tdesktop
     vial
     vlc
