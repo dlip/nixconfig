@@ -12,6 +12,7 @@
     ./waybar
     ./hyprland
     ./i3
+    ./talon
   ];
 
   home.packages = with pkgs.unstable; [
@@ -63,7 +64,6 @@
     screenkey
     slack
     # spotify # cant get any songs to play
-    talon
     tdesktop
     vial
     vlc

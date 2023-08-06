@@ -19,6 +19,7 @@
     xwinwrap
     pamixer
     xorg.xkill
+    snixembed # for talon tray to show
   ];
 
   # i18n.inputMethod = {
