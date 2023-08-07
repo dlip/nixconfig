@@ -53,7 +53,7 @@
     # neovide
     # nyxt
     # nheko # curl error
-    memento
+    # memento
     obs-studio
     obsidian
     postman
