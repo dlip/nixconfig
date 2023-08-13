@@ -6,6 +6,7 @@ cursorline = true
 auto-save = false
 bufferline = "multiple"
 rulers = [120]
+auto-pairs = false
 
 [editor.indent-guides]
 render = true

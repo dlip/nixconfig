@@ -64,6 +64,7 @@
     screenkey
     slack
     # spotify # cant get any songs to play
+    # teams
     tdesktop
     vial
     vlc

@@ -117,7 +117,6 @@
     strace
     skopeo
     ssh-to-age
-    teams
     tesseract4
     tiramisu
     tio
