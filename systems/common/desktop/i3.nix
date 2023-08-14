@@ -41,7 +41,8 @@
     XMODIFIERS = "@im=ibus";
   };
 
-  environment.systemPackages = with pkgs; [xfce.thunar];
+  environment.systemPackages = with pkgs; [mate.engrampa];
+  programs.thunar.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-archive-plugin
     thunar-volman
