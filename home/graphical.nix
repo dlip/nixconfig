@@ -40,6 +40,7 @@
     gimp
     # gnome.file-roller
     gnome.seahorse
+    google-chrome-dev
     gramps
     kdenlive
     krita
