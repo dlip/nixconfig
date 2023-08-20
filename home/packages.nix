@@ -25,7 +25,7 @@
     nmap
     p7zip
     ripgrep
-    ripgrep-all
+    # ripgrep-all
     gnused
     openssh
     speedread
