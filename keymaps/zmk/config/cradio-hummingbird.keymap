@@ -1,0 +1,216 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
+
+// CONFIG
+#define COMBO_TIMEOUT 70
+#define COMBO_LAYERS 7
+#define STICKY_TIMEOUT 500
+
+// LEFT SIDE
+#define TLI 3 // TOP
+#define TLM 2 // TOP
+#define TLR 1 // TOP
+#define TLP 0 // TOP
+#define BLI 13 // BOTTOM
+#define BLM 12 // BOTTOM
+#define BLR 11 // BOTTOM
+#define BLP 10 // BOTTOM
+#define LOT 31 // O-THUMB
+#define LIT 30 // I-THUMB
+
+// RIGHT SIDE
+#define TRI 6 // TOP
+#define TRM 7 // TOP
+#define TRR 8 // TOP
+#define TRP 9 // TOP
+#define BRI 16 // BOTTOM
+#define BRM 17 // BOTTOM
+#define BRR 18 // BOTTOM
+#define BRP 19 // BOTTOM
+#define ROT 32 // O-THUMB
+#define RIT 33 // I-THUMB
+
+// LAYERS
+#define _BSE 0
+#define _NAV 1
+#define _NUM 2
+#define _MED 3
+#define _SYS 4
+#define _GM1 5
+#define _GM2 6
+#define _TPO 7
+
+&mt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+
+&lt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+
+&sl {
+    release-after-ms = <1000>;
+};
+
+&sk {
+    release-after-ms = <STICKY_TIMEOUT>;
+    quick-release;
+};
+
+/ {
+  macros {
+    ZMK_MACRO (expand,
+      wait-ms = <30>;
+      tap-ms = <40>;
+      bindings = <&kp DOT &kp COMMA>;
+    )
+  };
+
+  combos {
+    compatible = "zmk,combos";
+    combo_system {
+      timeout-ms = <100>;
+      key-positions = <0 20>;
+      bindings = <&tog _SYS>;
+      layers = <0 _SYS>;
+    };
+    combo_boot {
+      timeout-ms = <100>;
+      key-positions = <0 4>;
+      bindings = <&bootloader>;
+      layers = <0>;
+    };
+    combo_bspcl {
+      timeout-ms = <100>;
+      key-positions = <13 14>;
+      bindings = <&kp BSPC>;
+    };
+    combo_bspcr {
+      timeout-ms = <100>;
+      key-positions = <15 16>;
+      bindings = <&kp BSPC>;
+    };
+    combo_esc {
+      timeout-ms = <100>;
+      key-positions = <13 24>;
+      bindings = <&kp ESC>;
+    };
+    combo_ret {
+      timeout-ms = <100>;
+      key-positions = <16 25>;
+      bindings = <&kp RET>;
+    };
+    combo_tab {
+      timeout-ms = <100>;
+      key-positions = <23 24>;
+      bindings = <&kp TAB>;
+    };
+    combo_del {
+      timeout-ms = <100>;
+      key-positions = <25 26>;
+      bindings = <&kp DEL>;
+    };
+    combo_taipo {
+      timeout-ms = <100>;
+      key-positions = <4 14>;
+      bindings = <&tog _TPO>;
+    };
+
+    #include "taipo.dtsi"
+  };
+
+  keymap {
+    compatible = "zmk,keymap";
+
+    default_layer {
+      bindings = <
+        &none            &kp W            &kp F            &kp P            &none                 &none            &kp L            &kp U            &kp Y            &none
+        &lt _MED A       &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &lt _MED O
+        &kp Z            &kp X            &kp C            &kp D            &kp V                 &kp K            &kp H            &kp B            &kp J            &kp Q
+                                                           &mo _NUM         &mt LSHIFT SPC        &sk LSHIFT       &mo _NAV      
+      >;
+    };
+
+    nav_layer {
+      bindings = <
+        &none            &kp PG_UP        &kp UP           &kp PG_DN        &none                 &none            &kp MINUS        &kp SEMI         &kp EQUAL        &none
+        &kp HOME         &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp END               &kp TAB          &mt RCTRL RET    &mt RGUI BSPC    &mt RALT DEL     &kp ESC
+        &none            &none            &none            &none            &none                 &none            &kp SQT          &kp COMMA        &kp DOT          &none
+                                                           &trans           &trans                &trans           &trans
+      >;
+    };
+
+    num_layer {
+      bindings = <
+        &kp GRAVE        &kp BSLH         &kp LBKT         &kp RBKT         &kp PSCRN             &kp EQUAL        &kp N7           &kp N8           &kp N9           &none 
+        &kp ESC          &mt LALT DEL     &mt LGUI BSPC    &mt LCTRL RET    &kp TAB               &kp MINUS        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &kp N0
+        &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(V)        &none                 &none            &kp N1           &kp N2           &kp N3           &kp FSLH 
+                                                           &trans           &trans                &trans           &trans
+      >;
+    };
+
+    media_layer {
+      bindings = <
+        &none            &kp C_VOL_DN     &kp C_STOP       &kp C_VOL_UP     &kp C_BRI_UP          &none            &kp F7           &kp F8           &kp F9           &kp F11
+        &none            &mt LALT C_PREV  &mt LGUI C_PP    &mt LCTRL C_NEXT &kp C_BRI_DN          &none            &mt RCTRL F4     &mt RGUI F5      &mt RALT F6      &kp F10
+        &none            &none            &none            &none            &none                 &none            &kp F1           &kp F2           &kp F3           &kp F12
+                                                           &trans           &trans                &trans           &trans
+      >;
+    };
+
+    system_layer {
+      bindings = <
+        &none            &bt BT_PRV       &bt BT_CLR       &bt BT_NXT       &out OUT_BLE          &none            &none            &none            &none            &none
+        &bootloader      &bt BT_SEL 3     &bt BT_SEL 4     &none            &out OUT_TOG          &none            &none            &none            &none            &none
+        &none            &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &out OUT_USB          &none            &none            &none            &none            &none
+                                                           &trans           &trans                &trans           &trans
+      >;
+    };
+
+    gaming_layer_1 {
+      bindings = <
+        &kp TAB         &kp Q            &kp W             &kp E            &kp R                 &kp Y            &kp U            &kp I            &kp O            &kp P
+        &kp LSHIFT      &kp A            &kp S             &kp D            &kp F                 &kp H            &kp J            &kp K            &kp L            &kp UP
+        &kp LCTRL       &kp Z            &kp X             &kp C            &kp V                 &kp N            &kp M            &kp LEFT         &kp RIGHT        &kp DOWN
+                                                           &mo _GM2         &kp SPC               &kp G            &kp B
+      >;
+    };
+    
+    gaming_layer_2 {
+      bindings = <
+        &kp ESC         &kp N7           &kp N8            &kp N9           &to _BSE              &none            &none            &none            &none            &none
+        &kp N0          &kp N4           &kp N5            &kp N6           &kp RET               &none            &none            &none            &none            &none
+        &kp T           &kp N1           &kp N2            &kp N3           &kp BSPC              &none            &none            &none            &none            &none
+                                                           &none            &none                 &none            &none
+      >;
+    };
+
+    taipo {
+      bindings = <
+        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+                                                           &none            &none                 &none            &none
+      >;
+    };
+
+    empty {
+      bindings = <
+        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+                                                           &none            &none                 &none            &none
+      >;
+    };
+  };
+};
