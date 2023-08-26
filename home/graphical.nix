@@ -34,9 +34,9 @@
     # cinnamon.nemo
     keyd
     power-menu
+    f3d
     feh
     firefox
-    fstl
     gimp
     # gnome.file-roller
     gnome.seahorse

@@ -4,6 +4,7 @@
     "application/x-wine-extension-ini" = ["helix.desktop"];
     "image/jpeg" = ["feh.desktop"];
     "image/png" = ["feh.desktop"];
+    "model/stl" = ["f3d.desktop"];
     "inode/directory" = ["thunar.desktop"];
     "text/csv" = ["helix.desktop"];
     "text/html" = ["google-chrome.desktop"];

@@ -182,6 +182,7 @@ in {
   #     fi
   #   '';
   # };
+  services.locate.enable = true;
 
   # Pipewire sound
   security.rtkit.enable = true;
