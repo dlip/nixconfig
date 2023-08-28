@@ -92,49 +92,49 @@
     };
     combo_dell {
       timeout-ms = <100>;
-      key-positions = <3 4>;
+      key-positions = <23 24>;
       bindings = <&kp DEL>;
       layers = <0>;
     };
     combo_delr {
       timeout-ms = <100>;
-      key-positions = <5 6>;
+      key-positions = <25 26>;
       bindings = <&kp DEL>;
       layers = <0>;
     };
     combo_escl {
       timeout-ms = <100>;
-      key-positions = <13 14>;
+      key-positions = <12 22>;
       bindings = <&kp ESC>;
       layers = <0>;
     };
     combo_escr {
       timeout-ms = <100>;
-      key-positions = <15 16>;
+      key-positions = <17 27>;
       bindings = <&kp ESC>;
       layers = <0>;
     };
     combo_retl {
       timeout-ms = <100>;
-      key-positions = <23 24>;
+      key-positions = <13 23>;
       bindings = <&kp RET>;
       layers = <0>;
     };
    combo_retr {
       timeout-ms = <100>;
-      key-positions = <25 26>;
+      key-positions = <16 26>;
       bindings = <&kp RET>;
       layers = <0>;
     };
     combo_tabl {
       timeout-ms = <100>;
-      key-positions = <13 24>;
+      key-positions = <13 14>;
       bindings = <&kp TAB>;
       layers = <0>;
     };
     combo_tabr {
       timeout-ms = <100>;
-      key-positions = <16 25>;
+      key-positions = <15 16>;
       bindings = <&kp TAB>;
       layers = <0>;
     };
