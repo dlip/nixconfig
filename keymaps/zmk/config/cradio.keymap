@@ -90,13 +90,73 @@
       bindings = <&bootloader>;
       layers = <0>;
     };
-    combo_taipo {
+    combo_dell {
       timeout-ms = <100>;
-      key-positions = <4 14>;
-      bindings = <&tog _TPO>;
+      key-positions = <3 4>;
+      bindings = <&kp DEL>;
+      layers = <0>;
     };
+    combo_delr {
+      timeout-ms = <100>;
+      key-positions = <5 6>;
+      bindings = <&kp DEL>;
+      layers = <0>;
+    };
+    combo_escl {
+      timeout-ms = <100>;
+      key-positions = <13 14>;
+      bindings = <&kp ESC>;
+      layers = <0>;
+    };
+    combo_escr {
+      timeout-ms = <100>;
+      key-positions = <15 16>;
+      bindings = <&kp ESC>;
+      layers = <0>;
+    };
+    combo_retl {
+      timeout-ms = <100>;
+      key-positions = <23 24>;
+      bindings = <&kp RET>;
+      layers = <0>;
+    };
+   combo_retr {
+      timeout-ms = <100>;
+      key-positions = <25 26>;
+      bindings = <&kp RET>;
+      layers = <0>;
+    };
+    combo_tabl {
+      timeout-ms = <100>;
+      key-positions = <13 24>;
+      bindings = <&kp TAB>;
+      layers = <0>;
+    };
+    combo_tabr {
+      timeout-ms = <100>;
+      key-positions = <16 25>;
+      bindings = <&kp TAB>;
+      layers = <0>;
+    };
+    combo_bspcl {
+      timeout-ms = <100>;
+      key-positions = <21 22>;
+      bindings = <&kp BSPC>;
+      layers = <0>;
+    };
+    combo_bspcr {
+      timeout-ms = <100>;
+      key-positions = <27 28>;
+      bindings = <&kp BSPC>;
+      layers = <0>;
+    };
+    // combo_taipo {
+    //   timeout-ms = <100>;
+    //   key-positions = <4 14>;
+    //   bindings = <&tog _TPO>;
+    // };
 
-    #include "taipo.dtsi"
+    // #include "taipo.dtsi"
   };
 
   keymap {
@@ -107,14 +167,14 @@
         &kp Q            &kp W            &kp F            &kp P            &kp B                 &kp J            &kp L            &kp U            &kp Y            &kp SEMI
         &lt _MED A       &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &lt _MED O
         &kp Z            &kp X            &kp C            &kp D            &kp V                 &kp K            &kp H            &kp COMMA        &kp DOT          &kp SQT
-                                                           &mo _NUM         &mt LSHIFT SPC        &sk LSHIFT       &mo _NAV      
+                                                           &kp SPC          &sk LSHIFT            &sk LSHIFT       &mo _NUM   
       >;
     };
 
     nav_layer {
       bindings = <
-        &none            &kp PG_UP        &kp UP           &kp PG_DN        &none                 &none            &none            &none            &none            &none 
-        &kp HOME         &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp END               &kp TAB          &mt RCTRL RET    &mt RGUI BSPC    &mt RALT DEL     &kp ESC
+        &none            &kp PG_UP        &kp UP           &kp PG_DN        &none                 &none            &kp PG_DN        &kp UP           &kp PG_UP        &none
+        &kp HOME         &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp END               &kp HOME         &kp LEFT         &kp DOWN         &kp RIGHT        &kp END
         &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none 
                                                            &trans           &trans                &trans           &trans
       >;
@@ -122,9 +182,9 @@
 
     num_layer {
       bindings = <
-        &kp GRAVE        &kp BSLH         &kp LBKT         &kp RBKT         &to _GM1              &none            &kp N7           &kp N8           &kp N9           &kp STAR 
-        &kp ESC          &mt LALT DEL     &mt LGUI BSPC    &mt LCTRL RET    &kp TAB               &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &kp N0
-        &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(V)        &kp PSCRN             &kp MINUS        &kp N1           &kp N2           &kp N3           &kp FSLH 
+        &none            &kp PG_UP        &kp UP           &kp PG_DN        &none                 &none            &kp N7           &kp N8           &kp N9           &none 
+        &kp HOME         &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp END               &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &kp N0
+        &kp GRAVE        &kp LBKT         &kp RBKT         &kp FSLH         &none                 &kp MINUS        &kp N1           &kp N2           &kp N3           &kp BSLH   
                                                            &trans           &trans                &trans           &trans
       >;
     };
@@ -133,7 +193,7 @@
       bindings = <
         &none            &kp C_VOL_DN     &kp C_STOP       &kp C_VOL_UP     &kp C_BRI_UP          &none            &kp F7           &kp F8           &kp F9           &kp F11
         &none            &mt LALT C_PREV  &mt LGUI C_PP    &mt LCTRL C_NEXT &kp C_BRI_DN          &none            &mt RCTRL F4     &mt RGUI F5      &mt RALT F6      &kp F10
-        &none            &none            &none            &none            &none                 &none            &kp F1           &kp F2           &kp F3           &kp F12
+        &none            &none            &none            &kp PSCRN        &none                 &none            &kp F1           &kp F2           &kp F3           &kp F12
                                                            &trans           &trans                &trans           &trans
       >;
     };
@@ -165,14 +225,14 @@
       >;
     };
 
-    taipo {
-      bindings = <
-        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
-        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
-        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
-                                                           &none            &none                 &none            &none
-      >;
-    };
+    // taipo {
+    //   bindings = <
+    //     &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+    //     &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+    //     &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
+    //                                                        &none            &none                 &none            &none
+    //   >;
+    // };
 
     empty {
       bindings = <
