@@ -22,6 +22,7 @@
     avrdude
     aws-google-auth
     pkgs.awscli2
+    blisp
     binutils
     docker-buildx
     cargo

@@ -41,7 +41,7 @@
     XMODIFIERS = "@im=ibus";
   };
 
-  environment.systemPackages = with pkgs; [mate.engrampa];
+  environment.systemPackages = with pkgs; [gnome.file-roller];
   programs.thunar.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-archive-plugin

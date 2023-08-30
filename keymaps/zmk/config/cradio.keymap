@@ -74,6 +74,11 @@
       tap-ms = <40>;
       bindings = <&kp DOT &kp COMMA>;
     )
+    ZMK_MACRO (end_sentence,
+      wait-ms = <0>;
+      tap-ms = <0>;
+      bindings = <&kp SPC &sk LSHIFT>;
+    )
   };
 
   combos {
@@ -88,6 +93,12 @@
       timeout-ms = <100>;
       key-positions = <0 4>;
       bindings = <&bootloader>;
+      layers = <0>;
+    };
+    end_sentence {
+      timeout-ms = <100>;
+      key-positions = <30 31>;
+      bindings = <&end_sentence>;
       layers = <0>;
     };
     combo_dell {
@@ -166,8 +177,8 @@
       bindings = <
         &kp Q            &kp W            &kp F            &kp P            &kp B                 &kp J            &kp L            &kp U            &kp Y            &kp SEMI
         &lt _MED A       &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &lt _MED O
-        &kp Z            &kp X            &kp C            &kp D            &kp V                 &kp K            &kp H            &kp COMMA        &kp DOT          &kp SQT
-                                                           &kp SPC          &sk LSHIFT            &sk LSHIFT       &mo _NUM   
+        &kp Z            &kp X            &kp C            &mt LCTRL D      &kp V                 &kp K            &kp H            &kp COMMA        &kp DOT          &kp SQT
+                                                           &kp SPC          &sk LSHIFT            &mo _NUM         &key_repeat         
       >;
     };
 
@@ -184,7 +195,7 @@
       bindings = <
         &none            &kp PG_UP        &kp UP           &kp PG_DN        &none                 &none            &kp N7           &kp N8           &kp N9           &none 
         &kp HOME         &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp END               &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &kp N0
-        &kp GRAVE        &kp LBKT         &kp RBKT         &kp FSLH         &none                 &kp MINUS        &kp N1           &kp N2           &kp N3           &kp BSLH   
+        &kp GRAVE        &kp BSLH         &kp LBKT         &kp RBKT         &none                 &kp MINUS        &kp N1           &kp N2           &kp N3           &kp FSLH     
                                                            &trans           &trans                &trans           &trans
       >;
     };
