@@ -40,13 +40,14 @@
 
 // LAYERS
 #define _BSE 0
-#define _NAV 1
-#define _NUM 2
-#define _MED 3
-#define _SYS 4
-#define _GM1 5
-#define _GM2 6
-#define _TPO 7
+#define _CNY 1
+#define _NAV 2
+#define _NUM 3
+#define _MED 4
+#define _SYS 5
+#define _GM1 6
+#define _GM2 7
+#define _TPO 8
 
 &mt {
   flavor = "tap-preferred";
@@ -111,6 +112,15 @@
       >;
     };
 
+    canary_layer {
+      bindings = <
+        &kp W            &kp L            &kp Y            &kp P            &kp B                 &kp Z            &kp F            &kp O            &kp U            &kp SQT
+        &lt _MED C       &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &lt _MED A
+        &kp Q            &kp J            &kp V            &kp D            &kp K                 &kp X            &kp H            &kp SEMI         &kp COMMA        &kp DOT
+                                                           &mo _NUM         &mt LSHIFT SPC        &sk LSHIFT       &mo _NAV      
+      >;
+    };
+
     nav_layer {
       bindings = <
         &none            &kp PG_UP        &kp UP           &kp PG_DN        &none                 &none            &none            &none            &none            &none 
@@ -133,7 +143,7 @@
       bindings = <
         &none            &kp C_VOL_DN     &kp C_STOP       &kp C_VOL_UP     &kp C_BRI_UP          &none            &kp F7           &kp F8           &kp F9           &kp F11
         &none            &mt LALT C_PREV  &mt LGUI C_PP    &mt LCTRL C_NEXT &kp C_BRI_DN          &none            &mt RCTRL F4     &mt RGUI F5      &mt RALT F6      &kp F10
-        &none            &none            &none            &none            &none                 &none            &kp F1           &kp F2           &kp F3           &kp F12
+        &none            &none            &to _CNY         &to _BSE         &none                 &none            &kp F1           &kp F2           &kp F3           &kp F12
                                                            &trans           &trans                &trans           &trans
       >;
     };
