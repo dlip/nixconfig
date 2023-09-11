@@ -110,7 +110,9 @@
               {
                 inherit pkgs system;
                 inherit (config) homeDirectory username;
-                configuration = {imports = config.imports;};
+                configuration = {
+                  imports = config.imports;
+                };
               }
             )
             .activationPackage;
@@ -229,6 +231,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "backup";
                 users = {
                   dane = {
                     home.email = "dane.lipscombe@planpay.com";

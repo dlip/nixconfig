@@ -37,16 +37,21 @@
     f3d
     feh
     firefox
+    # freecad
+    # solvespace
+    inkscape
     gimp
     # gnome.file-roller
     gnome.seahorse
-    google-chrome-dev
+    # google-chrome-dev
+    gparted
     gramps
     kdenlive
     krita
     kicad
+    kisslicer
     # ledger-live-desktop
-    lens
+    # lens
     libreoffice
     # logseq
     mlt

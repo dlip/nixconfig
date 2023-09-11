@@ -5,7 +5,6 @@
     dig
     direnv
     envy-sh
-    exa
     fd
     findutils
     fzf
@@ -19,6 +18,7 @@
     iputils
     jq
     killall
+    lsd
     ncdu
     neofetch
     nettools

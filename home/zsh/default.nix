@@ -20,7 +20,7 @@
       s = "rg --files-with-matches";
       v = "nvim";
       x = "xplr";
-      ls = "exa";
+      ls = "lsd";
       lg = "lazygit";
       # find = "fd";
       grc = "git reset $(git merge-base HEAD origin/main)";
