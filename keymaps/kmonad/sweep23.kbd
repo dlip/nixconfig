@@ -43,7 +43,7 @@
   sal (sticky-key 1000 lalt)
   smt (sticky-key 1000 lmet)
 
-  a (tap-hold 200 a @fn)
+  c (tap-hold 200 c @fn)
   r (tap-hold 200 r lalt)
   s (tap-hold 200 s lmet)
   t (tap-hold 200 t lctl)
@@ -51,7 +51,7 @@
   n (tap-hold 200 n rctl)
   e (tap-hold 200 e rmet)
   i (tap-hold 200 i lalt)
-  o (tap-hold 200 o @med)
+  a (tap-hold 200 a @med)
 
   hme (tap-hold 200 home @fn)
   lft (tap-hold 200 left lalt)
@@ -69,9 +69,9 @@
   ret (tap-hold 200 ret lctl)
   esr (tap-hold 200 esc @med)
 
-  z (tap-hold 200 z C-z)
-  x (tap-hold 200 x C-x)
-  c (tap-hold 200 c C-c)
+  q (tap-hold 200 z C-z)
+  j (tap-hold 200 x C-x)
+  v (tap-hold 200 c C-c)
   d (tap-hold 200 d C-v)
 
   spc (tap-hold 200 spc lsft)
@@ -85,9 +85,9 @@
 (deflayer colemak-dh
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @na  q    w    f    p    b    j    l    u    y    ;    _    _    _
-  @na  @a   @r   @s   @t   g    m    @n   @e   @i   @o   _    _
-  @na  z    x    c    d    v    k    h    ,    .    '    _
+  @na  w    l    y    p    b    z    f    o    u    '    _    _    _
+  @na  @c   @r   @s   @t   g    m    @n   @e   @i   @a   _    _
+  @na  q    j    v    d    k    x    h    ;    ,    .    _
   _    _    @snm @snm      @spc      @snv @snv @snv @snv @snv
 )
 
