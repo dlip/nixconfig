@@ -20,7 +20,7 @@ in rec {
     ./hardware-configuration.nix
     (import ../common params)
     # ../common/desktop/kde.nix
-    ../common/desktop/leftwm.nix
+    ../common/desktop/i3.nix
     ../common/services/notify-problems.nix
   ];
 
@@ -31,7 +31,7 @@ in rec {
   networking.firewall.allowedTCPPorts = [443 445 139 80 22 8000 6443 1234];
   networking.firewall.allowedUDPPorts = [137 138];
 
-  services.xserver.videoDrivers = ["nvidia"];
+  # services.xserver.videoDrivers = ["nvidia"];
 
   hardware.enableAllFirmware = true;
 
@@ -138,7 +138,7 @@ in rec {
   hardware.bluetooth.enable = true;
   networking.nat.enable = true;
   networking.nat.internalInterfaces = ["wg0" "ve-+"];
-  networking.nat.externalInterface = "wlp4s0";
+  networking.nat.externalInterface = "wlp3s0";
 
   networking.wireguard.interfaces = {
     # "wg0" is the network interface name. You can name the interface arbitrarily.
