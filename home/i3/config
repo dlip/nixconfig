@@ -221,7 +221,7 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-# bindsym $mod+r mode "resize"
+bindsym $mod+z mode "resize"
 
 # catppuchin machiatto
 set $rosewater #f4dbd6
