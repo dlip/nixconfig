@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   home.packages = with pkgs.unstable; [
     bat
+    bc
     delta
     dig
     direnv
