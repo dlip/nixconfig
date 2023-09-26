@@ -11,4 +11,5 @@
   audiobookshelf = 13378;
   # nextcloud = 9000;
   paperless = 28981;
+  yaruki = 8095;
 }
