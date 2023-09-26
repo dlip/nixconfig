@@ -65,16 +65,16 @@ function translateKeys(x) {
           inputs.push(modifier);
         }
         const name = `b_${word}`.replaceAll("@", "at").replaceAll(".", "dot");
-        briefs += `SUBS(${name}, "${word} ", KC_BSPC, ${inputs.join(", ")})\n`;
+        briefs += `SUBS(${name}, "${word} ", KC_COMBO, ${inputs.join(", ")})\n`;
         const capitalised = word.charAt(0).toUpperCase() + word.slice(1);
-        briefs += `SUBS(${name}S, "${capitalised} ", KC_BSPC, KC_OS_SFT, ${inputs.join(
+        briefs += `SUBS(${name}S, "${capitalised} ", KC_COMBO, KC_COMBO_SFT, ${inputs.join(
           ", ",
         )})\n`;
       }
 
       addWord(sword);
-      addWord(lword, "KC_SFT_SPC");
-      addWord(rword, "KC_NNM");
+      addWord(lword, "KC_COMBO_ALT1");
+      addWord(rword, "KC_COMBO_ALT2");
     });
 
     await events.once(rl, "close");
