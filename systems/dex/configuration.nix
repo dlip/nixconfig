@@ -111,6 +111,13 @@ in rec {
           "/media/media/podcasts:/podcasts"
         ];
       };
+      yaruki = {
+        image = "dlip/yaruki";
+        ports = ["8095:8080"];
+        volumes = [
+          "/mnt/services/yaruki:/app/data"
+        ];
+      };
     };
   };
 
