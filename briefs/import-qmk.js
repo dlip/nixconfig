@@ -60,16 +60,21 @@ function translateKeys(x) {
           return;
         }
         used[index] = word;
-        const macro = "m_" + word.split("").map(translateKeys).join("");
-        const inputs = (keys + modifier)
-          .toUpperCase()
-          .split("")
-          .map(translateKeys);
+        const inputs = keys.toUpperCase().split("").map(translateKeys);
+        if (modifier) {
+          inputs.push(modifier);
+        }
         const name = `b_${word}`.replaceAll("@", "at").replaceAll(".", "dot");
         briefs += `SUBS(${name}, "${word} ", KC_BSPC, ${inputs.join(", ")})\n`;
+        const capitalised = word.charAt(0).toUpperCase() + word.slice(1);
+        briefs += `SUBS(${name}S, "${capitalised} ", KC_BSPC, KC_OS_SFT, ${inputs.join(
+          ", ",
+        )})\n`;
       }
 
       addWord(sword);
+      addWord(lword, "KC_SFT_SPC");
+      addWord(rword, "KC_NNM");
     });
 
     await events.once(rl, "close");
