@@ -1,67 +1,62 @@
 chord	output	alt1	alt2
 a	a		
 I	I		
-f	of		
-t	to		
+f	of	off	
+t	to	too	
 c	in		
 s	is		
 o	on		
-b	by		
-l	it		
+y	by		
+l	it		its
 r	or		
-p	be		
+b	be		
 v	at		
 j	as		
 k	an		
 w	we		
-u	us		
+u	us		our
 q	if		
 d	do		
 x	no		
-h	he		
-y	up		
+h	he	him	his
+p	up		
 z	so		
-m	me	my	
+m	me		my
 g	go		
 e	the		
 n	and		
-	for		
-	you		
-	not		
-	are		
-	all		
-	new		
-	was		
-	can		
-	has		
-	but		
-	our		
-	one		
-	may		
-	out		
-	use		
-	any		
-	see		
-	his		
-	who		
+fo	for		
+yo	you		your
+nt	not		
+ar	are		
+al	all		
+ne	new		
+wa	was		
+ca	can		
+hs	has		
+bu	but		
+on	one		
+my	may		
+ou	out		
+us	use		
+an	any		
+se	see		
+wo	who		
 	web		
 	now		
 	get		
 	how		
-	its		
-	top		
+to	top		
 	had		
 	day		
 	two		
 	buy		
-	her		
 	add		
-	she		
-	sex		
+he	she		her
+sx	sex		
 	set		
 	map		
 	way		
-	off		
 	did		
 	car		
 	own		
@@ -72,12 +67,10 @@ n	and
 	law		
 	art		
 	old		
-	why		
+wy	why		
 	low		
-	man		
+	man	men	
 	job		
-	too		
-	men		
 	box		
 	gay		
 	air		
@@ -114,11 +107,10 @@ n	and
 	far		
 	oil		
 	bit		
-	that		
-	this		
-	with		
-	from		
-	your		
+ta	that		
+ti	this		
+wt	with		
+fr	from		
 	have		
 	more		
 	will		
@@ -130,15 +122,14 @@ n	and
 	other		
 	information		
 	time		
-	they		
+th	they	them	their
 	site		
-	what		
-	which		
-	their		
+wh	what		
+wi	which		
 	news		
 	there		
 	only		
-	when		
+wn	when		
 	contact		
 	here		
 	business		
@@ -181,7 +172,6 @@ n	and
 	music		
 	data		
 	make		
-	them		
 	should		
 	product		
 	system		
@@ -202,7 +192,7 @@ n	and
 	good		
 	video		
 	well		
-	where		
+we	where		
 	info		
 	rights		
 	public		
@@ -331,7 +321,7 @@ n	and
 	game		
 	members		
 	power		
-	while		
+wl	while		
 	care		
 	network		
 	down		
@@ -364,7 +354,7 @@ n	and
 	board		
 	location		
 	change		
-	white		
+wte	white		
 	text		
 	small		
 	rating		
