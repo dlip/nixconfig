@@ -77,7 +77,7 @@ cu	cut		cutting
 rd	red		
 og	dog		
 op	top		
-si	six		
+sx	six		
 tx	ten		
 wp	war	warred	warring
 ly	lay	laid	laying
@@ -90,53 +90,51 @@ ao	ago
 ot	hot		
 ye	yes		
 yt	yet		
-	arm		
-	ice		
-	art		
-	bed		
-	egg		
-	sit		
-	leg		
-	sky		
-	joy		
-	sat		
-	cow		
-	job		
-	fun		
-	gas		
-	buy		
-	cat		
-	law		
-	bit		
-	lie		
-	ear		
-	son		
-	pay		
-	age		
-	lot		
-	key		
-	row		
-	die		
-	bad		
-	oil		
-	mix		
-	fit		
-	hit		
-	bat		
-	rub		
-	tie		
-	gun		
-	hat		
-	fig		
-	led		
-	win		
-	nor		
-	fat		
-	dad		
-	bar		
-	log		
-	nec		
-ta	that		
+ar	arm		
+ic	ice		
+av	art		
+be	bed		
+eq	egg		
+si	sit	sat	sitting
+lg	leg		
+sk	sky		
+ji	joy		
+co	cow		
+jo	job		
+fu	fun		
+ga	gas		
+by	buy		
+cv	cat		
+lw	law		
+bl	bit		
+li	lie		
+ev	ear		
+so	son		
+pa	pay		
+ej	age		
+lt	lot		
+ke	key		
+rw	row		
+di	die		
+bz	bad		
+oi	oil		
+mi	mix		
+ft	fit		
+hi	hit		
+ba	bat		
+rb	rub		
+tz	tie		
+gu	gun		
+hd	hat		
+fg	fig		
+wi	win		
+nr	nor		
+fa	fat		
+dv	dad		
+bf	bar		
+lz	log		
+nc	nec		
+at	that		
 wt	with		
 th	they	them	their
 ha	have	had	has
@@ -151,7 +149,7 @@ wha	what
 we	when		
 	your		
 	each		
-wi	which		
+whi	which		
 	time		
 	will		
 	about		
@@ -442,7 +440,7 @@ wte	white
 	fine		
 	certain		
 	fall		
-	lead		
+ld	lead	led	leading
 	dark		
 	machine		
 	note		
