@@ -1,5 +1,4 @@
 chord	output	alt1	alt2
-	a		
 I	I		
 f	of	off	
 t	to	too	
@@ -7,7 +6,7 @@ c	in
 s	is		
 l	it		its
 h	he	him	his
-o	on		
+o	on	oh	OK
 a	as		
 b	be		
 v	at		
@@ -16,14 +15,13 @@ y	by
 w	we		
 p	up		
 k	an		
-d	do		
+d	do	did	doing
 q	if		
 z	so		
-g	go		
+g	go	gone	going
 x	no		
 m	me		my
 u	us		our
-	oh		
 j	am		
 e	the		
 n	and		
@@ -41,10 +39,9 @@ us	use
 ho	how		
 he	she	her	
 wy	way		
-se	see		
+se	see	saw	seeing
 tu	two		
 ay	day		
-di	did		
 hu	who		
 my	may		
 nw	now		
@@ -52,50 +49,45 @@ an	any
 ne	new		
 ge	get	got	
 ma	man	men	
-	our		
-sa	say		
+sa	say	said	saying
 lu	low		
-	boy		
+bo	boy		
 ol	old		
-	too		
 st	set		
 ai	air		
-ed	end		
-pu	put		
+ed	end	ended	ending
+pu	put		putting
 ad	add		
 bi	big		
-ct	act		
+ct	act	acted	acting
 wh	why		
 ak	ask		
-	off		
 tr	try		
 ow	own		
 sn	sun		
-ey	eye		
+ae	eye		
 le	let		
-	saw		
 fp	far		
-	sea		
-ru	run		
+ce	sea		
+ru	run	ran	running
 fw	few		
 cr	car		
-	eat		
-	cut		
+et	eat	ate	eating
+cu	cut		cutting
 rd	red		
 og	dog		
-to	top		
-	six		
-	ten		
-wp	war		
-	lay		
+op	top		
+si	six		
+tx	ten		
+wp	war	warred	warring
+ly	lay	laid	laying
 mp	map		
-	fly		
-	cry		
-bo	box		
-	dry		
+fl	fly	flew	flying
+cy	cry	cried	crying
+bx	box		
+ry	dry	dried	drying
 ao	ago		
-	ran		
-	hot		
+ot	hot		
 ye	yes		
 yt	yet		
 	arm		
@@ -150,7 +142,7 @@ th	they	them	their
 ha	have	had	has
 ti	this		
 fr	from		
-	word		
+or	word		
 wha	what		
 	some		
 	other		
@@ -158,7 +150,6 @@ wha	what
 	there		
 we	when		
 	your		
-	said		
 	each		
 wi	which		
 	time		
@@ -618,7 +609,6 @@ wte	white
 	flower		
 	clothes		
 	strange		
-	gone		
 	jump		
 	baby		
 	eight		
