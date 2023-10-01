@@ -72,7 +72,7 @@
     # spotify # cant get any songs to play
     # teams
     tdesktop
-    vial
+    # vial
     vlc
     warpd
     xclip
