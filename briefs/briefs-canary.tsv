@@ -1,23 +1,24 @@
 chord	output	alt1	alt2
+b	be	been	being
 d	do	did	doing
 g	go	gone	going
 h	he	him	his
+I	is	was	
 e	the		
 n	and		
 y	you		your
-w	was		
 f	for		
 r	are		
 o	one		
 x	not		
-b	but		
-c	can		
+bu	but		
+c	can	could	
 z	out		
 a	all		
 u	use	used	using
 q	how		
 s	she	her	hers
-wa	way		
+w	way		
 se	see	saw	
 tu	two		
 hs	has		
@@ -43,12 +44,12 @@ ad	add
 bi	big		
 ac	act		
 wy	why		
-k	ask		
+k	ask	asked	asking
 of	off		
 ty	try		
 on	own		
 su	sun		
-ey	eye		
+ey	eye	eyed	eying
 le	let		
 fa	far		
 ea	sea		
@@ -58,13 +59,13 @@ cr	car
 et	eat		
 cu	cut		cutting
 t	that	those	
-I	with		
+wt	with		
 p	they	them	their
 v	have	had	
 j	this	these	
 fr	from		
 wo	word		
-wt	what		
+wa	what		
 sm	some		
 or	other		
 we	were		
@@ -73,20 +74,18 @@ wen	when
 ec	each		
 wi	which		
 ti	time	timed	timing
-wl	will		
+wl	will	would	
 ab	about		
 my	many		
 tn	then		
 ri	write	wrote	writing
-wu	would		
 li	like	liked	liking
 ln	long		
 mk	make	made	
 tin	thing		
 lu	look	looked	looking
 mo	more		
-co	could		
-cm	come	came	coming
+co	come	came	coming
 nu	number		
 sn	sound	sounded	sounding
 mt	most		
@@ -99,7 +98,6 @@ al	call	called	calling
 fi	first		
 dn	down		
 si	side	sided	siding
-bn	been		
 fd	find	found	finding
 ok	work	worked	working
 pa	part	parted	parting
@@ -116,7 +114,7 @@ yr	year
 so	show	showed	showing
 ev	every		
 go	good		
-gv	give	gave	giving
+gi	give	gave	giving
 ud	under		
 na	name	named	naming
 vr	very		
@@ -126,75 +124,75 @@ rm	form	formed	forming
 sen	sentence		
 gr	great		
 ik	think	thought	thinking
-hp	help		
-lne	line		
-di	differ		
-trn	turn		
-cs	cause		
+hp	help	helped	helping
+lne	line	lined	lining
+di	differ	differed	differing
+trn	turn	turned	turning
+cs	cause	caused	causing
 ch	much		
-me	mean		
+me	mean	meant	meaning
 bf	before		
-mv	move		
+mv	move	moved	moving
 gh	right		
 sam	same		
-tl	tell		
+tl	tell	told	telling
 ds	does		
 the	three		
-wan	want		
+wan	want	wanted	wanting
 wel	well		
 ao	also		
-py	play		
+py	play	played	playing
 sl	small		
 ho	home		
-re	read		
-ha	hand		
+re	read		reading
+ha	hand	handed	handing
 po	port		
 lg	large		
-sp	spell		
+sp	spell	spelled	spelling
 evn	even		
-lan	land		
+lan	land	landed	landing
 he	here		
 mu	must		
 hi	high		
 suc	such		
-fol	follow		
-cn	change		
+fol	follow	followed	following
+cn	change	changed	changing
 wnt	went		
-lh	light		
+lh	light	lighted	lighting
 kin	kind		
-ned	need		
+ned	need	needed	needing
 hse	house		
 pi	picture		
 ag	again		
 ani	animal		
-poi	point		
-mtr	mother		
+poi	point	pointed	pointing
+mtr	mother	mothered	mothering
 wol	world		
-nr	near		
-bu	build		
+nr	near	neared	nearing
+bl	build	built	building
 sef	self		
 ear	earth		
-fat	father		
-hed	head		
-sta	stand		
-pae	page		
+fat	father	fathered	fathering
+hed	head	headed	heading
+sta	stand	stood	standing
+pae	page	paged	paging
 shd	should		
 cnt	country		
 ans	answer		
-sch	school		
-gw	grow		
-stu	study		
+sch	school	schooled	schooling
+gw	grow	grew	growing
+stu	study	studied	studying
 sti	still		
-lea	learn		
-pln	plant		
-cov	cover		
+lea	learn	learned	learning
+pln	plant	planted	planting
+cov	cover	covered	covering
 fod	food		
 fu	four		
 bw	between		
-ste	state		
-ke	keep		
+ste	state	stated	stating
+ke	keep	kept	keeping
 nv	never		
-lat	last		
+lat	last	lasted	lasting
 cy	city		
 tre	tree		
 crs	cross		
@@ -632,7 +630,6 @@ stm	system
 	blow		
 	blood		
 	touch		
-	grew		
 	cent		
 	team		
 	wire		
