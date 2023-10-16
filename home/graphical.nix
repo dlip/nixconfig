@@ -62,6 +62,7 @@
     # memento
     obs-studio
     obsidian
+    openscad
     postman
     plexamp
     # plover.dev
@@ -70,11 +71,13 @@
     screenkey
     slack
     # spotify # cant get any songs to play
+    super-slicer-latest
     # teams
     tdesktop
     # vial
     vlc
     warpd
+    whatsapp-for-linux
     xclip
     # xfce.thunar
     xorg.xmodmap
