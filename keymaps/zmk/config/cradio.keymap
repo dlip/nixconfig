@@ -14,40 +14,13 @@
 #define COMBO_LAYERS 7
 #define STICKY_TIMEOUT 500
 
-// LEFT SIDE
-#define TLI 3 // TOP
-#define TLM 2 // TOP
-#define TLR 1 // TOP
-#define TLP 0 // TOP
-#define BLI 13 // BOTTOM
-#define BLM 12 // BOTTOM
-#define BLR 11 // BOTTOM
-#define BLP 10 // BOTTOM
-#define LOT 31 // O-THUMB
-#define LIT 30 // I-THUMB
-
-// RIGHT SIDE
-#define TRI 6 // TOP
-#define TRM 7 // TOP
-#define TRR 8 // TOP
-#define TRP 9 // TOP
-#define BRI 16 // BOTTOM
-#define BRM 17 // BOTTOM
-#define BRR 18 // BOTTOM
-#define BRP 19 // BOTTOM
-#define ROT 32 // O-THUMB
-#define RIT 33 // I-THUMB
-
 // LAYERS
 #define _BSE 0
-#define _CNY 1
-#define _NAV 2
-#define _NUM 3
-#define _MED 4
-#define _SYS 5
-#define _GM1 6
-#define _GM2 7
-#define _TPO 8
+#define _NNM 1
+#define _MED 2
+#define _SYS 3
+#define _GM1 4
+#define _GM2 5
 
 &mt {
   flavor = "tap-preferred";
@@ -85,19 +58,18 @@
       bindings = <&tog _SYS>;
       layers = <0 _SYS>;
     };
+    combo_media {
+      timeout-ms = <100>;
+      key-positions = <30 31>;
+      bindings = <&mo _MED>;
+      layers = <0>;
+    };
     combo_boot {
       timeout-ms = <100>;
       key-positions = <0 4>;
       bindings = <&bootloader>;
       layers = <0>;
     };
-    // combo_taipo {
-    //   timeout-ms = <100>;
-    //   key-positions = <4 14>;
-    //   bindings = <&tog _TPO>;
-    // };
-
-    // #include "taipo.dtsi"
   };
 
   keymap {
@@ -105,36 +77,18 @@
 
     default_layer {
       bindings = <
-        &kp Q            &kp W            &kp F            &kp P            &kp B                 &kp J            &kp L            &kp U            &kp Y            &kp SEMI
-        &lt _MED A       &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &lt _MED O
-        &kp Z            &kp X            &kp C            &kp D            &kp V                 &kp K            &kp H            &kp COMMA        &kp DOT          &kp SQT
-                                                           &mo _NUM         &mt LSHIFT SPC        &sk LSHIFT       &mo _NAV      
-      >;
-    };
-
-    canary_layer {
-      bindings = <
         &kp W            &kp L            &kp Y            &kp P            &kp B                 &kp Z            &kp F            &kp O            &kp U            &kp SQT
         &lt _MED C       &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &lt _MED A
         &kp Q            &kp J            &kp V            &kp D            &kp K                 &kp X            &kp H            &kp SEMI         &kp COMMA        &kp DOT
-                                                           &mo _NUM         &mt LSHIFT SPC        &sk LSHIFT       &mo _NAV      
+                                                           &mo _NNM         &mt LSHIFT SPC        &sk LSHIFT       &kp BSPC      
       >;
     };
 
-    nav_layer {
+    nnm_layer {
       bindings = <
-        &none            &kp PG_UP        &kp UP           &kp PG_DN        &none                 &none            &none            &none            &none            &none 
-        &kp HOME         &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp END               &kp TAB          &mt RCTRL RET    &mt RGUI BSPC    &mt RALT DEL     &kp ESC
-        &none            &none            &none            &none            &none                 &none            &none            &none            &none            &none 
-                                                           &trans           &trans                &trans           &trans
-      >;
-    };
-
-    num_layer {
-      bindings = <
-        &kp GRAVE        &kp BSLH         &kp LBKT         &kp RBKT         &to _GM1              &none            &kp N7           &kp N8           &kp N9           &kp STAR 
-        &kp ESC          &mt LALT DEL     &mt LGUI BSPC    &mt LCTRL RET    &kp TAB               &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &kp N0
-        &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(V)        &kp PSCRN             &kp MINUS        &kp N1           &kp N2           &kp N3           &kp FSLH 
+        &kp GRAVE        &kp ESC          &kp UP           &kp ENTER        &kp LBKT              &kp RBKT         &kp N7           &kp N8           &kp N9           &kp STAR 
+        &kp DEL          &mt LALT LEFT    &mt LGUI DOWN    &mt LCTRL RIGHT  &kp TAB               &kp EQUAL        &mt RCTRL N4     &mt RGUI N5      &mt RALT N6      &kp N0
+        &kp HOME         &kp PG_UP        &kp PG_DN        &kp END          &kp BSPC              &kp MINUS        &kp N1           &kp N2           &kp N3           &kp FSLH 
                                                            &trans           &trans                &trans           &trans
       >;
     };
@@ -143,7 +97,7 @@
       bindings = <
         &none            &kp C_VOL_DN     &kp C_STOP       &kp C_VOL_UP     &kp C_BRI_UP          &none            &kp F7           &kp F8           &kp F9           &kp F11
         &none            &mt LALT C_PREV  &mt LGUI C_PP    &mt LCTRL C_NEXT &kp C_BRI_DN          &none            &mt RCTRL F4     &mt RGUI F5      &mt RALT F6      &kp F10
-        &none            &none            &to _CNY         &to _BSE         &none                 &none            &kp F1           &kp F2           &kp F3           &kp F12
+        &kp LC(Z)        &kp LC(X)        &kp LC(C)        &kp LC(V)        &kp PSCRN             &none            &kp F1           &kp F2           &kp F3           &kp F12
                                                            &trans           &trans                &trans           &trans
       >;
     };
@@ -171,15 +125,6 @@
         &kp ESC         &kp N7           &kp N8            &kp N9           &to _BSE              &none            &none            &none            &none            &none
         &kp N0          &kp N4           &kp N5            &kp N6           &kp RET               &none            &none            &none            &none            &none
         &kp T           &kp N1           &kp N2            &kp N3           &kp BSPC              &none            &none            &none            &none            &none
-                                                           &none            &none                 &none            &none
-      >;
-    };
-
-    taipo {
-      bindings = <
-        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
-        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
-        &none           &none            &none             &none            &none                 &none            &none            &none            &none            &none
                                                            &none            &none                 &none            &none
       >;
     };

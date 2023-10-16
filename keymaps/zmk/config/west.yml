@@ -8,8 +8,8 @@ manifest:
       url-base: https://github.com/andrewjrae
   projects:
     - name: zmk
-      remote: andrewjrae
-      revision: keycode-pre-releasing
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
   self:
     path: config
