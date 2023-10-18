@@ -43,7 +43,7 @@
 
   # Configure home-manager
   home-manager = {
-    config = ../../home;
+    config = ../../home/nix-on-droid.nix;
     backupFileExtension = "hm-bak";
     useGlobalPkgs = true;
   };
