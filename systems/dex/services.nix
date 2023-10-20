@@ -7,7 +7,7 @@
   tekton-dashboard = 30001;
   nix-cache = 5000;
   syncthing = 8384;
-  budget = 5006;
+  actual = 5006;
   audiobookshelf = 13378;
   # nextcloud = 9000;
   paperless = 28981;
