@@ -1,43 +1,176 @@
 chord	output	alt1	alt2
+I	I		
+f	of	off	
+t	to	too	
+c	in		
+s	is		
+l	it		its
+h	he	him	his
+o	on	oh	OK
+a	as		
+b	be		
+v	at		
+r	or		
+y	by		
+w	we		
+p	up		
+k	an		
+d	do	did	doing
+q	if		
+z	so		
+g	go	gone	going
+x	no		
+m	me		my
+u	us		our
+j	am		
 e	the		
 n	and		
-u	you		your
-s	say	said	saying
-c	can	could	
-t	that		
-w	with		
-y	they	them	their
-v	have	had	having
-I	this	these	
-f	from		
-d	word	worded	wording
-a	what		
-so	some		
-o	other		
-r	were		
-th	there		
-h	when		
-ec	each		
-wh	which		
-ti	time	timed	timing
-l	will	would	
-b	about		
-m	many		
-te	then		
-wi	write	wrote	writing
-k	like	liked	liking
-g	long		
-mk	make	made	making
-tn	thing	things	
-lo	look	looked	looking
-mr	more		
-cm	come	came	coming
-nr	number	numbered	numbering
-sn	sound	sounded	sounding
-ms	most		
-p	person	people	
-ov	over		
-kn	know	knew	knowing
+yo	you		your
+ws	was		
+fo	for		
+re	are		
+on	one		
+nt	not		
+bu	but		
+ca	can		
+ou	out		
+al	all		
+us	use		
+ho	how		
+he	she	her	
+wy	way		
+se	see	saw	seeing
+tu	two		
+ay	day		
+hu	who		
+my	may		
+nw	now		
+an	any		
+ne	new		
+ge	get	got	
+ma	man	men	
+sa	say	said	saying
+lu	low		
+bo	boy		
+ol	old		
+st	set		
+ai	air		
+ed	end	ended	ending
+pu	put		putting
+ad	add		
+bi	big		
+ct	act	acted	acting
+wh	why		
+ak	ask		
+tr	try		
+ow	own		
+sn	sun		
+ae	eye		
+le	let		
+fp	far		
+ce	sea		
+ru	run	ran	running
+fw	few		
+cr	car		
+et	eat	ate	eating
+cu	cut		cutting
+rd	red		
+og	dog		
+op	top		
+sx	six		
+tx	ten		
+wp	war	warred	warring
+ly	lay	laid	laying
+mp	map		
+fl	fly	flew	flying
+cy	cry	cried	crying
+bx	box		
+ry	dry	dried	drying
+ao	ago		
+ot	hot		
+ye	yes		
+yt	yet		
+ar	arm		
+ic	ice		
+av	art		
+be	bed		
+eq	egg		
+si	sit	sat	sitting
+lg	leg		
+sk	sky		
+ji	joy		
+co	cow		
+jo	job		
+fu	fun		
+ga	gas		
+by	buy		
+cv	cat		
+lw	law		
+bl	bit		
+li	lie		
+ev	ear		
+so	son		
+pa	pay		
+ej	age		
+lt	lot		
+ke	key		
+rw	row		
+di	die		
+bz	bad		
+oi	oil		
+mi	mix		
+ft	fit		
+hi	hit		
+ba	bat		
+rb	rub		
+tz	tie		
+gu	gun		
+hd	hat		
+fg	fig		
+wi	win		
+nr	nor		
+fa	fat		
+dv	dad		
+bf	bar		
+lz	log		
+nc	nec		
+at	that		
+wt	with		
+th	they	them	their
+ha	have	had	has
+ti	this		
+fr	from		
+or	word		
+wha	what		
+sm	some		
+otr	other		
+we	were		
+the	there		
+wen	when		
+ech	each		
+whi	which		
+	time		
+	will		
+	about		
+	many		
+	then		
+	write		
+	would		
+	like		
+	these		
+	long		
+	make		
+	thing		
+	look		
+	more		
+	could		
+	come		
+	number		
+	sound		
+	most		
+	people		
+	over		
+	know		
 	water		
 	than		
 	call		
@@ -50,14 +183,16 @@ kn	know	knew	knowing
 	part		
 	take		
 	place		
+	made		
 	live		
-	where		
+whe	where		
 	after		
 	back		
 	little		
 	only		
 	round		
 	year		
+	came		
 	show		
 	every		
 	good		
@@ -66,7 +201,7 @@ kn	know	knew	knowing
 	name		
 	very		
 	through		
-j	just		
+	just		
 	form		
 	sentence		
 	great		
@@ -114,7 +249,7 @@ j	just
 	animal		
 	point		
 	mother		
-wo	world		
+	world		
 	near		
 	build		
 	self		
@@ -153,7 +288,7 @@ wo	world
 	draw		
 	left		
 	late		
-	while		
+whl	while		
 	press		
 	close		
 	night		
@@ -163,8 +298,8 @@ wo	world
 	open		
 	seem		
 	together		
-x	next		
-	white		
+	next		
+wte	white		
 	children		
 	begin		
 	walk		
@@ -234,7 +369,7 @@ x	next
 	numeral		
 	class		
 	wind		
-q	question		
+	question		
 	happen		
 	complete		
 	ship		
@@ -264,7 +399,7 @@ q	question
 	remember		
 	step		
 	early		
-hd	hold		
+	hold		
 	west		
 	ground		
 	interest		
@@ -286,6 +421,7 @@ hd	hold
 	slow		
 	center		
 	love		
+	person		
 	money		
 	serve		
 	appear		
@@ -303,7 +439,7 @@ hd	hold
 	fine		
 	certain		
 	fall		
-	lead		
+ld	lead	led	leading
 	dark		
 	machine		
 	note		
@@ -359,7 +495,7 @@ hd	hold
 	moon		
 	island		
 	foot		
-stm	system		
+	system		
 	busy		
 	test		
 	record		
@@ -470,7 +606,6 @@ stm	system
 	flower		
 	clothes		
 	strange		
-	gone		
 	jump		
 	baby		
 	eight		
@@ -572,6 +707,7 @@ stm	system
 	trouble		
 	shout		
 	except		
+	wrote		
 	seed		
 	tone		
 	join		

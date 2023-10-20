@@ -29,6 +29,7 @@ in {
       nodePackages.typescript-language-server
       nodePackages.vim-language-server
       nodePackages.yaml-language-server
+      openscad-lsp
       proselint
       rust-analyzer # rust
       # rustfmt
