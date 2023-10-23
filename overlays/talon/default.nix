@@ -10,7 +10,7 @@
   freetype,
   glib,
   libGL,
-  libxkbcommon_7,
+  libxkbcommon,
   sqlite,
   udev,
   xorg,
@@ -43,7 +43,7 @@ in
       freetype
       glib
       libGL
-      libxkbcommon_7
+      libxkbcommon
       sqlite
       udev
       xorg.libX11
