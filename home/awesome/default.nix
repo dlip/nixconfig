@@ -1,29 +1,31 @@
-{ pkgs, config, ... }:
-let
+{
+  pkgs,
+  config,
+  ...
+}: let
   awesomeHome = "${config.xdg.configHome}/awesome";
   symlinkedFiles = builtins.listToAttrs (
     map
-      (
-        file: {
-          name = "${awesomeHome}/${file}";
-          value = {
-            source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/awesome/config/${file}";
-          };
-        }
-      )
-      (builtins.attrNames (builtins.readDir ./config))
+    (
+      file: {
+        name = "${awesomeHome}/${file}";
+        value = {
+          source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/awesome/config/${file}";
+        };
+      }
+    )
+    (builtins.attrNames (builtins.readDir ./config))
   );
-in
-{
+in {
   i18n.inputMethod = {
     enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-mozc ];
+    fcitx5.addons = with pkgs; [fcitx5-mozc];
   };
   xsession = {
     enable = true;
     profileExtra = ''
       export GOPATH=$HOME/go
-      export PATH=$HOME/code/nixconfig/scripts:$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
+      export PATH=$HOME/code/nixconfig/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
     '';
 
     windowManager.awesome = {
@@ -35,13 +37,15 @@ in
     };
   };
 
-  home.file = symlinkedFiles // {
-    "${awesomeHome}/env.lua".text = ''
-      arc_icon_theme = "${pkgs.repo-arc-icon-theme}"
-    '';
-    "${awesomeHome}/awesome-wm-widgets".source = pkgs.repo-awesome-wm-widgets;
-    "${awesomeHome}/json.lua".source = "${pkgs.repo-json-lua}/json.lua";
-  };
+  home.file =
+    symlinkedFiles
+    // {
+      "${awesomeHome}/env.lua".text = ''
+        arc_icon_theme = "${pkgs.repo-arc-icon-theme}"
+      '';
+      "${awesomeHome}/awesome-wm-widgets".source = pkgs.repo-awesome-wm-widgets;
+      "${awesomeHome}/json.lua".source = "${pkgs.repo-json-lua}/json.lua";
+    };
 
   home.packages = with pkgs; [
     feh

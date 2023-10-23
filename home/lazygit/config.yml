@@ -1,6 +1,6 @@
 customCommands:
   - key: 't'
-    command: "~/code/nixconfig/scripts/helix-open {{.SelectedFile.Name | quote}}"
+    command: "helix-open {{.SelectedFile.Name | quote}}"
     context: 'files'
     description: 'open in helix'
 git:

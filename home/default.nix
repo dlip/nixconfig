@@ -31,6 +31,7 @@ with lib; {
     ./nnn
     ./packages.nix
     ./readline
+    ./session.nix
     ./starship
     ./tmux
     ./version.nix

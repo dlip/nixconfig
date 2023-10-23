@@ -21,6 +21,9 @@
     autoreconfHook
     avrdude
     aws-google-auth
+    azure-cli
+    patchelf
+    nix-index
     pkgs.awscli2
     blisp
     binutils

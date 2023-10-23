@@ -192,7 +192,7 @@ bindsym $mod+q exec rofi -show power-menu -modi power-menu:power-menu
 bindsym $mod+Shift+q exec i3-msg exit
 
 # Lock
-bindsym $mod+Shift+l exec ~/code/nixconfig/scripts/lock-screen
+bindsym $mod+Shift+l exec lock-screen
 # Suspend
 bindsym $mod+Shift+s exec systemctl suspend
 
@@ -290,7 +290,7 @@ assign [class="Spotify"] 7
 for_window [title="Todoist$"] move container to workspace 7
 
 # Services
-exec_always --no-startup-id ~/code/nixconfig/scripts/update-wallpaper
+exec_always --no-startup-id update-wallpaper
 exec systemctl --user restart dunst
 exec ibus-daemon -rxR
 exec snixembed

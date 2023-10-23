@@ -49,3 +49,24 @@ formatter = { command = "alejandra" }
 [[language]]
 name = "hcl"
 auto-format = true
+
+[[language]]
+name = "templ"
+auto-format = true
+scope = "source.templ"
+injection-regex = "templ"
+grammar = "templ"
+file-types = ["templ"]
+roots = ["go.sum"]
+comment-token = "//"
+indent = { tab-width = 4, unit = "\t" }
+language-servers = ["templ-lsp"]
+formatter = { command = "templ", args = ["fmt"] }
+
+[language-server.templ-lsp]
+command = "templ"
+args = ["lsp"]
+
+[[grammar]]
+name = "templ"
+source = { git = "https://github.com/vrischmann/tree-sitter-templ", rev = "6ab863186d1ba91718125f59deae6cf68d765fcb" }

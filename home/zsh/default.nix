@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.zsh = {
     enable = true;
     enableAutosuggestions = true;
@@ -30,11 +30,6 @@
 
     initExtra = ''
       # [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
-      export EDITOR=hx
-      export GOPATH=$HOME/go
-      export PATH=$HOME/code/nixconfig/scripts:$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
-      export LANG=en_AU.UTF-8
-      export LC_ALL=en_AU.UTF-8
       export MANPAGER="sh -c 'col -bx | bat -l man -p'"
       export MANWIDTH=999
       export FZF_DEFAULT_COMMAND='fd'
@@ -45,6 +40,7 @@
       # Needed for go debugging
       export CGO_CFLAGS=-O
       unalias kaf
+      export NIX_CC=${pkgs.gcc}
 
       if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
         export TERM="xterm-256color"

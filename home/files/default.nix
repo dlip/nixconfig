@@ -1,6 +1,9 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home.file = {
-
     "${config.xdg.configHome}/networkmanager-dmenu".source = ./networkmanager-dmenu;
     "${config.xdg.configHome}/dlv/config.yml".source = ./delve.yaml;
     "${config.xdg.configHome}/warpd/config".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/files/warpd.yaml";
@@ -36,5 +39,7 @@
       BasedOnStyles = proselint, write-good, Joblint
       MinAlertLevel = suggestion
     '';
+
+    "bin".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/bin";
   };
 }

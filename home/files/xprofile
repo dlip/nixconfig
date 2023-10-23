@@ -1,10 +1,11 @@
 startup() {
+  #. /etc/profiles/per-user/$USER/etc/profile.d/hm-session-vars.sh
   # tmux new-session -d -s work
   # tmux send-keys -t work 'p nixconfig' C-m
   # kitty tmux a -t work&
   google-chrome-stable&
-  alacritty -e ~/code/nixconfig/scripts/p nixconfig&
-  # alacritty -e bash -c "sleep 2 && ~/code/nixconfig/scripts/p nixconfig"&
+  alacritty -e p nixconfig&
+  # alacritty -e bash -c "sleep 2 && ~/code/nixconfig/bin/p nixconfig"&
   # google-chrome-stable&
   obsidian&
   slack&

@@ -43,7 +43,7 @@
     layout_mode: Tag,
     insert_behavior: Bottom,
     scratchpad: [
-        (name: "Notifications", value: "alacritty -e ~/code/nixconfig/scripts/notification-tui", x: 1520, y: 27, height: 300, width: 400),
+        (name: "Notifications", value: "alacritty -e ~/code/nixconfig/bin/notification-tui", x: 1520, y: 27, height: 300, width: 400),
         (name: "Htop", value: "alacritty -e htop", x: 520, y: 27, height: 900, width: 1400),
         (name: "Calculator", value: "qalculate-gtk", x: 1120, y: 27, height: 300, width: 800),
     ],

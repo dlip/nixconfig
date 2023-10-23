@@ -35,6 +35,7 @@
     keyd
     power-menu
     f3d
+    fstl
     feh
     firefox
     # freecad
@@ -69,6 +70,7 @@
     qalculate-gtk
     remote-touchpad
     screenkey
+    sidequest
     slack
     # spotify # cant get any songs to play
     super-slicer-latest
