@@ -118,6 +118,13 @@ in rec {
           "/mnt/services/yaruki:/app/data"
         ];
       };
+      actual = {
+        image = "actualbudget/actual-server";
+        ports = ["5006:5006"];
+        volumes = [
+          "/mnt/services/actual:/data"
+        ];
+      };
     };
   };
 
@@ -239,55 +246,101 @@ in rec {
     };
   };
 
-  # services.traefik = {
-  #   enable = true;
-  #   staticConfigOptions = {
-  #     log.level = "DEBUG";
-  #     api = {
-  #       insecure = true;
-  #     };
-  #     certificatesResolvers.myresolver.acme = {
-  #       email = "danelipscombe@gmail.com";
-  #       storage = "/var/lib/traefik/acme.json";
-  #       httpChallenge.entryPoint = "web";
-  #     };
-  #     entryPoints = {
-  #       web = {
-  #         address = ":80";
-  #         http.redirections.entrypoint = {
-  #           to = "websecure";
-  #           scheme = "https";
-  #         };
-  #       };
-  #       websecure = {
-  #         address = ":443";
-  #
-  #         http.tls = {
-  #
-  #           certResolver = "myresolver";
-  #         };
-  #
-  #       };
-  #     };
-  #   };
-  #   dynamicConfigOptions = {
-  #     http = {
-  #       routers.syncthing = {
-  #         rule = "Host(`syncthing.dex-lips.duckdns.org`)";
-  #         service = "syncthing";
-  #         # tls = {
-  #         #   certResolver = "myresolver";
-  #         # };
-  #       };
-  #       services = {
-  #         syncthing = {
-  #           loadBalancer.servers = [{ url = "http://${containers.downloader.localAddress}:9117/"; }];
-  #         };
-  #       };
-  #     };
-  #   };
-  # };
+  sops.secrets.traefik-env = {
+    owner = "traefik";
+    group = "traefik";
+  };
 
+  systemd.services.traefik.serviceConfig.EnvironmentFile = ["/var/run/secrets/traefik-env"];
+  services.traefik = {
+    enable = true;
+    staticConfigOptions = {
+      log.level = "DEBUG";
+      api = {
+        dashboard = true;
+      };
+      certificatesResolvers.letsencrypt.acme = {
+        email = "danelipscombe@gmail.com";
+        storage = "/var/lib/traefik/acme.json";
+        dnsChallenge = {
+          provider = "duckdns";
+          delayBeforeCheck = 5;
+          resolvers = [
+            "1.1.1.1:53"
+            "8.8.8.8:53"
+          ];
+        };
+      };
+      entryPoints = {
+        web = {
+          address = ":80";
+          http.redirections.entrypoint = {
+            to = "websecure";
+            scheme = "https";
+          };
+        };
+        websecure = {
+          address = ":443";
+
+          http.tls = {
+            certResolver = "letsencrypt";
+          };
+        };
+      };
+    };
+    dynamicConfigOptions = {
+      http = {
+        routers =
+          {
+            traefik = {
+              rule = "Host(`traefik.${domain}`)";
+              service = "api@internal";
+              tls = {
+                domains = [
+                  {
+                    main = "*.${domain}";
+                  }
+                ];
+                certResolver = "letsencrypt";
+              };
+            };
+          }
+          // pkgs.lib.attrsets.mapAttrs'
+          (name: port:
+            pkgs.lib.attrsets.nameValuePair "${name}"
+            {
+              rule = "Host(`${name}.${domain}`)";
+              service = "${name}";
+              tls = {
+                domains = [
+                  {
+                    main = "*.${domain}";
+                  }
+                ];
+                certResolver = "letsencrypt";
+              };
+            })
+          (dex-services // downloader-services);
+
+        services =
+          (pkgs.lib.attrsets.mapAttrs'
+            (name: port:
+              pkgs.lib.attrsets.nameValuePair "${name}"
+              {
+                loadBalancer.servers = [{url = "http://127.0.0.1:${toString port}/";}];
+              })
+            dex-services)
+          // (pkgs.lib.attrsets.mapAttrs'
+            (name: port:
+              pkgs.lib.attrsets.nameValuePair "${name}"
+              {
+                loadBalancer.servers = [{url = "http://${containers.downloader.localAddress}:${toString port}/";}];
+              })
+            downloader-services);
+      };
+    };
+  };
+  /*
   services.nginx = {
     enable = true;
     recommendedProxySettings = true;
@@ -310,7 +363,7 @@ in rec {
           })
         downloader-services);
   };
-
+  */
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
