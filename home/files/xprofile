@@ -3,6 +3,7 @@ startup() {
   # tmux new-session -d -s work
   # tmux send-keys -t work 'p nixconfig' C-m
   # kitty tmux a -t work&
+  display-change
   google-chrome-stable&
   alacritty -e p nixconfig&
   # alacritty -e bash -c "sleep 2 && ~/code/nixconfig/bin/p nixconfig"&

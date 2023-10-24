@@ -167,21 +167,19 @@ in {
   # services.autorandr = {
   #   enable = true;
   # };
-  # services.acpid = {
-  #   enable = true;
-  #   lidEventCommands = ''
-  #     export PATH=/run/wrappers/bin:/run/current-system/sw/bin:$PATH
-  #     export DISPLAY=":0"
-  #     export XAUTHORITY="/home/dane/.Xauthority"
-  #     export LID_STATE=$(awk '{print$NF}' /proc/acpi/button/lid/LID/state)
-  #     if [[ $LID_STATE == "closed" ]]; then
-  #       xrandr --output eDP-1-1 --off
-  #     else
-  #       xrandr --auto
-  #       autorandr --change horizontal
-  #     fi
-  #   '';
-  # };
+
+  services.udev = {
+    enable = true;
+    extraRules = ''
+      ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/dane/.Xauthority", RUN+="${pkgs.bash}/bin/bash /home/dane/code/nixconfig/bin/display-change"
+    '';
+  };
+
+  services.acpid = {
+    enable = true;
+    lidEventCommands = "${pkgs.bash}/bin/bash /home/dane/code/nixconfig/bin/display-change";
+  };
+
   services.locate.enable = true;
 
   # Pipewire sound
