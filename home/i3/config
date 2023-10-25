@@ -292,7 +292,7 @@ for_window [title="Todoist$"] move container to workspace 7
 # Services
 exec_always --no-startup-id update-wallpaper
 exec systemctl --user restart dunst
-exec ibus-daemon -rxR
+exec systemctl --user restart pasystray
 exec snixembed
 
 # for_window [class="^.*"] border pixel 0

@@ -22,11 +22,6 @@
     snixembed # for talon tray to show
   ];
 
-  # i18n.inputMethod = {
-  #   enabled = "fcitx5";
-  #   fcitx5.addons = with pkgs; [fcitx5-mozc];
-  # };
-
   services.screen-locker = {
     enable = true;
     xautolock.enable = false;
@@ -61,6 +56,11 @@
     # shadowExclude = ["window_type *= 'menu'"];
     # hide windows behind other windows
     opacityRules = ["0:_NET_WM_STATE@:32a *= '_NET_WM_STATE_HIDDEN'"];
+  };
+
+  i18n.inputMethod = {
+    enabled = "fcitx5";
+    fcitx5.addons = with pkgs; [fcitx5-mozc];
   };
 
   services.blueman-applet.enable = true;

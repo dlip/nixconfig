@@ -65,7 +65,6 @@
     nix-on-droid,
     kmonad,
     sops-nix,
-    arion,
     ...
   }: let
     pkgsForSystem = {
@@ -173,7 +172,6 @@
           pkgs = pkgsForSystem {system = "x86_64-linux";};
           modules = [
             ./systems/dex/configuration.nix
-            arion.nixosModules.arion
             home-manager.nixosModules.home-manager
             sops-nix.nixosModules.default
             {

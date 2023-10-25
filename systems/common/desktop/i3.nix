@@ -30,16 +30,16 @@
     };
   };
 
-  i18n.inputMethod = {
-    enabled = "ibus";
-    ibus.engines = with pkgs.ibus-engines; [typing-booster anthy];
-  };
+  # i18n.inputMethod = {
+  #   enabled = "ibus";
+  #   ibus.engines = with pkgs.ibus-engines; [typing-booster anthy];
+  # };
 
-  environment.sessionVariables = {
-    GTK_IM_MODULE = "ibus";
-    QT_IM_MODULE = "ibus";
-    XMODIFIERS = "@im=ibus";
-  };
+  # environment.sessionVariables = {
+  #   GTK_IM_MODULE = "ibus";
+  #   QT_IM_MODULE = "ibus";
+  #   XMODIFIERS = "@im=ibus";
+  # };
 
   environment.systemPackages = with pkgs; [gnome.file-roller];
   programs.thunar.enable = true;

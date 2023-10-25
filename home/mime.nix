@@ -18,6 +18,7 @@
     "x-scheme-handler/about" = ["google-chrome.desktop"];
     "x-scheme-handler/unknown" = ["google-chrome.desktop"];
     "x-scheme-handler/postman" = ["Postman.desktop"];
+    "x-scheme-handler/sidequest" = ["SideQuest.desktop"];
   };
 in {
   xdg.desktopEntries.helix = {

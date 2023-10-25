@@ -3,17 +3,17 @@ const fs = require("fs");
 const readline = require("readline");
 
 const positions = [
-  "Q",
   "W",
-  "F",
+  "L",
+  "Y",
   "P",
   "B",
-  "J",
-  "L",
+  "Z",
+  "F",
+  "O",
   "U",
-  "Y",
-  ";",
-  "A",
+  "SQT",
+  "C",
   "R",
   "S",
   "T",
@@ -22,21 +22,21 @@ const positions = [
   "N",
   "E",
   "I",
-  "O",
-  "Z",
-  "X",
-  "C",
-  "D",
+  "A",
+  "Q",
+  "J",
   "V",
+  "D",
   "K",
+  "X",
   "H",
+  "SEMI",
   "COMMA",
   "DOT",
-  "SQT",
   "LMOD",
-  "SPC",
-  "LSHIFT",
   "RMOD",
+  "LSHIFT",
+  "COMBO",
 ];
 
 function translatePosition(x) {
@@ -145,24 +145,25 @@ function mapBindings(x) {
       let index = keys.split("").sort().join("");
       if (used[index]) {
         throw new Error(
-          `Can't use combo '${keys}' for word '${sword}' already used by ${used[index]}`
+          `Can't use combo '${keys}' for word '${sword}' already used by ${used[index]}`,
         );
       }
 
-      function addWord(word, modifier = '') {
-        if(!word) {
+      function addWord(word, modifier = "") {
+        if (!word) {
           return;
         }
         used[index] = word;
         const macro = "m_" + word.split("").map(translateKeys).join("");
-        const inputs = (keys + modifier).toUpperCase().split("").map(translateKeys);
+        const inputs = (keys + modifier)
+          .toUpperCase()
+          .split("")
+          .concat(["COMBO"])
+          .map(translateKeys);
         const bindings = word.split("").map(mapBindings).join(" ");
-        macros += `MACRO(${macro}, ${bindings}${word.includes("⇧") || word.includes("@") ? "" : " &kp SPC"
-          })\n`;
-
-        if (inputs.length < 3 && modifier == '') {
-          inputs.push("SPC")
-        }
+        macros += `MACRO(${macro}, ${bindings}${
+          word.includes("⇧") || word.includes("@") ? "" : " &kp SPC"
+        })\n`;
 
         const positions = inputs.map(translatePosition).join(" ");
         combos += `COMBO(${macro}, &macro_${macro}, ${positions})\n`;
@@ -173,8 +174,8 @@ function mapBindings(x) {
       }
 
       addWord(sword);
-      addWord(lword, '⇐');
-      addWord(rword, '⇒');
+      addWord(lword, "⇐");
+      addWord(rword, "⇒");
     });
 
     await events.once(rl, "close");

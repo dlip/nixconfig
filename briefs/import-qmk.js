@@ -4,6 +4,8 @@ const readline = require("readline");
 
 function translateKeys(x) {
   switch (x) {
+    case "C":
+      return "KC_SFT_C";
     case "R":
       return "KC_ALT_R";
     case "S":
@@ -16,6 +18,8 @@ function translateKeys(x) {
       return "KC_GUI_E";
     case "I":
       return "KC_ALT_I";
+    case "A":
+      return "KC_SFT_A";
     default:
       return `KC_${x}`;
   }
