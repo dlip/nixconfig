@@ -14,10 +14,6 @@ with lib; {
       type = types.str;
       default = "danelipscombe@gmail.com";
     };
-    os = mkOption {
-      type = types.str;
-      default = "linux";
-    };
   };
 
   imports = [

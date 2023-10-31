@@ -1,4 +1,8 @@
-{config, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.git = {
     enable = true;
 
@@ -19,7 +23,7 @@
       };
       credential = {
         helper =
-          if config.home.os == "macos"
+          if pkgs.stdenv.isDarwin
           then "osxkeychain"
           else "store";
       };
