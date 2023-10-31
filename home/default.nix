@@ -14,6 +14,10 @@ with lib; {
       type = types.str;
       default = "danelipscombe@gmail.com";
     };
+    os = mkOption {
+      type = types.str;
+      default = "linux";
+    };
   };
 
   imports = [
@@ -22,11 +26,10 @@ with lib; {
     ./files
     ./fonts.nix
     ./git
-    ./gpg-agent
+    #./gpg-agent
     ./helix
     ./lazygit
     ./lsp.nix
-    ./mime.nix
     # ./neovim
     ./nnn
     ./packages.nix

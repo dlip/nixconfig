@@ -87,13 +87,15 @@
       };
 
     configs = rec {
-      dane = {
-        username = "dane";
-        homeDirectory = "/home/dane";
-        imports = [
-          ./home
-        ];
-      };
+      dane = [
+        ./home
+        {
+          home = {
+            username = "dane";
+            homeDirectory = "/home/dane";
+          };
+        }
+      ];
     };
   in
     flake-utils.lib.eachDefaultSystem
@@ -107,11 +109,8 @@
             (
               home-manager.lib.homeManagerConfiguration
               {
-                inherit pkgs system;
-                inherit (config) homeDirectory username;
-                configuration = {
-                  imports = config.imports;
-                };
+                inherit pkgs;
+                modules = config;
               }
             )
             .activationPackage;

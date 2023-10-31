@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   programs.git = {
     enable = true;
 
@@ -12,20 +12,25 @@
         pager = "delta";
         autocrlf = "input";
       };
-      interactive = { diffFilter = "delta --color-only --features=interactive"; };
+      interactive = {diffFilter = "delta --color-only --features=interactive";};
       delta = {
         features = "calochortus-lyallii";
         side-by-side = true;
       };
-      credential = { helper = "store"; };
-      status = { showUntrackedFiles = "all"; };
-      transfer = { fsckobjects = false; };
-      push = { default = "current"; };
+      credential = {
+        helper =
+          if config.home.os == "macos"
+          then "git-credential-osxkeychain"
+          else "store";
+      };
+      status = {showUntrackedFiles = "all";};
+      transfer = {fsckobjects = false;};
+      push = {default = "current";};
       pull = {
         rebase = false;
         default = "current";
       };
-      color = { ui = true; };
+      color = {ui = true;};
       merge = {
         conflictstyle = "diff3";
         summary = true;
@@ -35,15 +40,15 @@
         keepBackup = false;
       };
       "mergetool \"nvim\"".cmd = ''nvim -f -c "MergetoolStart" "$MERGED" "$BASE" "$LOCAL" "$REMOTE"'';
-      branch = { autoSetupMerge = "always"; };
-      instaweb = { port = 1234; };
-      ui = { color = true; };
+      branch = {autoSetupMerge = "always";};
+      instaweb = {port = 1234;};
+      ui = {color = true;};
       rebase = {
         stat = true;
         autoSquash = true;
         autostash = true;
       };
-      stash = { showPatch = true; };
+      stash = {showPatch = true;};
     };
     aliases = {
       st = "status";

@@ -15,8 +15,6 @@
     gnumake
     gotop
     htop
-    iotop
-    iputils
     jq
     killall
     lsd

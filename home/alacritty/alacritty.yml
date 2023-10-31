@@ -4,6 +4,7 @@ window:
     padding:
         x: 5
         y: 5
+    option_as_alt: OnlyLeft # other values are None, OnlyRight, Both
 colors:
     # Default colors
     primary:

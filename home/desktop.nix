@@ -8,16 +8,13 @@
     ./alacritty
     ./espanso
     ./k9s
-    ./syncthing
     ./btop
   ];
 
   home.packages = with pkgs.unstable; [
-    acpi
     age
     air
     ansifilter
-    appimage-run
     autoreconfHook
     avrdude
     aws-google-auth
@@ -26,7 +23,6 @@
     nix-index
     pkgs.awscli2
     blisp
-    binutils
     docker-buildx
     cargo
     cargo-wasi
@@ -39,12 +35,9 @@
     difftastic
     docker-compose
     eksctl
-    mimic
-    evtest
     exiv2
     file
     fluxcd
-    fusee-launcher
     google-cloud-sdk
     ghc
     # ghostscript
@@ -56,16 +49,12 @@
     gotypist
     graphviz
     hexdino
-    heimdall
-    hledger
     imagemagick
     joshuto
     pkgs.iredis
     jdk11
     kaf
     kind
-    kmonad
-    krename
     kubectl
     kubectx
     kubernetes-helm
@@ -83,9 +72,7 @@
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
     ngrok
-    python311Packages.adafruit-nrfutil
     niv
-    nix-du
     nodePackages.node2nix
     nodePackages.pnpm
     nodePackages.quicktype
@@ -104,28 +91,24 @@
     pinentry
     # poetry
     postgresql
-    # python3
-    (python3.withPackages (ps: with ps; [evdev]))
+    python3
+    # (python3.withPackages (ps: with ps; [evdev]))
     pwgen
     # python39Packages.grip
     # python39Packages.pip
     # python39Packages.pynvim
     # python39Packages.setuptools
-    qmk
     rclone
     renameutils
     # rustc
     # rustup
     sd
     stern
-    strace
     skopeo
     ssh-to-age
     tesseract4
-    tiramisu
     tio
     tldr
-    traceroute
     # turbo
     ttyper
     terminal-typeracer
@@ -133,12 +116,9 @@
     wireshark-cli
     ttyper
     typespeed
-    usbutils
     vegeta
-    ventoy
     # visidata #broken
     wasmtime
-    xdotool
     yarn
     yarn2nix
     youtube-dl

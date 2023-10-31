@@ -39,7 +39,6 @@
       # export SSH_AUTH_SOCK="/run/user/$UID/gnupg/S.gpg-agent.ssh"
       # Needed for go debugging
       export CGO_CFLAGS=-O
-      unalias kaf
       export NIX_CC=${pkgs.gcc}
 
       if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
