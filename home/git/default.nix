@@ -20,7 +20,7 @@
       credential = {
         helper =
           if config.home.os == "macos"
-          then "git-credential-osxkeychain"
+          then "osxkeychain"
           else "store";
       };
       status = {showUntrackedFiles = "all";};
