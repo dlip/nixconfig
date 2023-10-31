@@ -50,6 +50,7 @@
       enable = true;
       plugins = [
         "aws"
+        "brew"
         "docker"
         "direnv"
         "encode64"

@@ -9,6 +9,10 @@
       url = "github:nix-community/home-manager/release-23.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # nixpkgs-wayland = {
     #   url = "github:nix-community/nixpkgs-wayland";
     #   inputs.nixpkgs.follows = "nixpkgs-unstable";
@@ -65,6 +69,7 @@
     nix-on-droid,
     kmonad,
     sops-nix,
+    nix-darwin,
     ...
   }: let
     pkgsForSystem = {
@@ -276,8 +281,6 @@
           ];
         };
       };
-    }
-    // {
       # nix-on-droid switch --flake .#default
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         modules = [
@@ -285,6 +288,11 @@
         ];
         pkgs = pkgsForSystem {system = "aarch64-linux";};
         home-manager-path = home-manager.outPath;
+      };
+      # nix run nix-darwin -- switch --flake .#default
+      darwinConfigurations.default = nix-darwin.lib.darwinSystem {
+        modules = [./systems/darwin/configuration.nix];
+        specialArgs = {pkgs = pkgsForSystem {system = "aarch64-darwin";};};
       };
     };
 }
