@@ -291,7 +291,31 @@
       };
       # nix run nix-darwin -- switch --flake .#default
       darwinConfigurations.default = nix-darwin.lib.darwinSystem {
-        modules = [./systems/darwin/configuration.nix];
+        modules = [
+          ./systems/darwin/configuration.nix
+          home-manager.darwinModules.default
+          {
+            users.users.dane.home = "/Users/dane";
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              backupFileExtension = "backup";
+              users = {
+                dane = {
+                  home = {
+                    email = "danelipscombe@gmail.com";
+                  };
+                  imports = [
+                    ./home
+                    ./home/macos.nix
+                    ./home/desktop.nix
+                    ./home/graphical.nix
+                  ];
+                };
+              };
+            };
+          }
+        ];
         specialArgs = {pkgs = pkgsForSystem {system = "aarch64-darwin";};};
       };
     };
