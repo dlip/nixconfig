@@ -13,9 +13,9 @@
 
   home.packages = with pkgs.unstable; [
     acpi
-    appimage-run
+    # appimage-run
     binutils
-    mimic
+    # mimic
     evtest
     fusee-launcher
     iotop
@@ -23,7 +23,7 @@
     kmonad
     krename
     nix-du
-    python311Packages.adafruit-nrfutil
+    # python311Packages.adafruit-nrfutil
     qmk
     strace
     tiramisu

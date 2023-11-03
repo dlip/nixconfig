@@ -22,7 +22,7 @@ in {
       nodePackages.bash-language-server
       nodePackages.dockerfile-language-server-nodejs
       nodePackages.eslint_d
-      nodePackages.intelephense # php
+      # nodePackages.intelephense # php
       nodePackages.prettier
       nodePackages.prettier_d_slim
       nodePackages.pyright # python

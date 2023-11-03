@@ -31,7 +31,7 @@
     libreoffice
     obs-studio
     plexamp
-    postman
+    # postman not found error
     remote-touchpad
     screenkey
     sidequest
