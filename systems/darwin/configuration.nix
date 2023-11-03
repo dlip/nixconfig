@@ -4,8 +4,11 @@
   # environment.systemPackages = [
   #   pkgs.vim
   # ];
-  homebrew.enable = true;
-  homebrew.casks = ["maccy" "rectangle"];
+  homebrew = {
+    enable = true;
+    onActivation.cleanup = "uninstall";
+    casks = ["maccy" "clocker"];
+  };
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;

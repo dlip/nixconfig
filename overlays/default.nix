@@ -9,6 +9,7 @@ inputs @ {
   helix,
   sops-nix,
   nix-on-droid,
+  mac-app-util,
   # nixpkgs-wayland,
   ...
 }: [
@@ -19,7 +20,7 @@ inputs @ {
   # poetry2nix.overlay
   # packages
   (final: prev: {
-    inherit sops-nix;
+    inherit sops-nix mac-app-util;
     actualServer = final.callPackage ./actualServer {
       src = actual-server;
       nodejs = final.nodejs-16_x;

@@ -58,6 +58,7 @@
     helix = {
       url = "github:helix-editor/helix";
     };
+    mac-app-util.url = "github:hraban/mac-app-util";
   };
 
   outputs = inputs @ {
