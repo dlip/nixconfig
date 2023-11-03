@@ -12,6 +12,7 @@
   ];
 
   home.packages = with pkgs.unstable; [
+    archivemount
     age
     air
     ansifilter
@@ -62,6 +63,7 @@
     ledger
     ledger-autosync
     lldb
+    lsof
     (lua.withPackages (ps: with ps; [luacheck]))
     mangal
     massren

@@ -8,6 +8,7 @@
     ./i3
     ./rofi
     ./talon
+    ./graphical.nix
   ];
 
   home.packages = with pkgs.unstable; [

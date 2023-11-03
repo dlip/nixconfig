@@ -2,6 +2,7 @@
   associations = {
     "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
     "application/x-wine-extension-ini" = ["helix.desktop"];
+    "application/zip" = ["org.gnome.FileRoller.desktop"];
     "image/jpeg" = ["feh.desktop"];
     "image/png" = ["feh.desktop"];
     "model/stl" = ["fstl.desktop"];

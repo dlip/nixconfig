@@ -5,7 +5,10 @@
 }: {
   # services.dropbox.enable = true;
   imports = [
+    ./default.nix
     ./syncthing
+    ./desktop.nix
+    ./linux-graphical.nix
   ];
 
   home.packages = with pkgs.unstable; [

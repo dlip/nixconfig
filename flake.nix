@@ -160,9 +160,7 @@
                   dane = {
                     home.email = "dane.lipscombe@immutable.com.au";
                     imports = [
-                      ./home
-                      ./home/desktop.nix
-                      ./home/graphical.nix
+                      ./home/linux-desktop.nix
                       ./home/gaming.nix
                     ];
                   };
@@ -185,9 +183,7 @@
                 users = {
                   dane = {
                     imports = [
-                      ./home
-                      ./home/desktop.nix
-                      ./home/graphical.nix
+                      ./home/linux-desktop.nix
                     ];
                   };
                 };
@@ -210,9 +206,7 @@
                 users = {
                   dane = {
                     imports = [
-                      ./home
-                      ./home/desktop.nix
-                      ./home/graphical.nix
+                      ./home/linux-desktop.nix
                       ./home/gaming.nix
                     ];
                   };
@@ -238,9 +232,7 @@
                   dane = {
                     home.email = "dane.lipscombe@planpay.com";
                     imports = [
-                      ./home
-                      ./home/desktop.nix
-                      ./home/graphical.nix
+                      ./home/linux-desktop.nix
                       ./home/gamedev.nix
                       ./home/gaming.nix
                     ];
@@ -306,10 +298,7 @@
                     email = "danelipscombe@gmail.com";
                   };
                   imports = [
-                    ./home
                     ./home/macos.nix
-                    ./home/desktop.nix
-                    ./home/graphical.nix
                   ];
                 };
               };
