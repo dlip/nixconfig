@@ -10,6 +10,7 @@
     #./sway
     #./waybar
     #./hyprland
+    ./wezterm
   ];
 
   home.packages = with pkgs.unstable; [

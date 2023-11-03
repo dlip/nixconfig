@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+id=$(yabai -m query --windows | jq "map(select(.app == \"$1\"))[0].id  | select( . != null )")
+
+if [[ "$id" == "" ]]; then
+    echo "Error: Window not found"
+    exit 1
+fi
+yabai -m window --focus $id

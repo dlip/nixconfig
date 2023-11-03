@@ -166,8 +166,11 @@ cmd + ctrl + alt + shift - 5 : yabai -m window --space 5
 cmd + ctrl + alt + shift - 6 : yabai -m window --space 6
 
 cmd + ctrl + alt - f : yabai -m window --toggle float
-cmd + ctrl + alt - t : open -a iterm2
-cmd + ctrl + alt - g : open -a 'Google Chrome'
-cmd + ctrl + alt - e : open -a 'Finder'
-cmd + ctrl + alt - l : open -a 'LarkSuite'
+
+# get app names
+# yabai -m query --windows | jq 'map(.app)'
+cmd + ctrl + alt - t : yabai-focus WezTerm
+cmd + ctrl + alt - g : yabai-focus 'Google Chrome'
+cmd + ctrl + alt - e : yabai-focus Finder
+cmd + ctrl + alt - l : yabai-focus Lark
 cmd + ctrl + alt - r : launchctl stop org.nixos.yabai && launchctl start org.nixos.yabai && launchctl stop org.nixos.skhd && launchctl start org.nixos.skhd
