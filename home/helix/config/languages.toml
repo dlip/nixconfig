@@ -49,3 +49,8 @@ formatter = { command = "alejandra" }
 [[language]]
 name = "hcl"
 auto-format = true
+
+[[language]]
+name = "scheme"
+formatter = { command = "raco", args = ["fmt", "-i"] }
+auto-format = true

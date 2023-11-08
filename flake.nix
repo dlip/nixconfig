@@ -56,7 +56,7 @@
       flake = false;
     };
     helix = {
-      url = "github:helix-editor/helix";
+      url = "github:mattwparas/helix/steel-event-system";
     };
     mac-app-util.url = "github:hraban/mac-app-util";
   };

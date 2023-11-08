@@ -7,7 +7,7 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "uninstall";
-    casks = ["maccy" "clocker"];
+    casks = ["maccy" "clocker" "docker"];
   };
 
   # Auto upgrade nix package and the daemon service.
