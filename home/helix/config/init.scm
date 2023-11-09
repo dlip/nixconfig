@@ -23,7 +23,7 @@
   ;; Randomly select the theme from the possible themes list
   (helix.theme *helix.cx* (list (select-random options)) helix.PromptEvent::Validate))
 
-(randomly-pick-theme possible-themes)
+; (randomly-pick-theme possible-themes)
 
 ;;;;;;;;;;;;;;;;;;;;;;;; Default modes ;;;;;;;;;;;;;;;;;;;;;;;
 
@@ -203,7 +203,7 @@
 
 (apply-options *helix.cx* *config-map*)
 
-(randomly-pick-theme possible-themes)
+; (randomly-pick-theme possible-themes)
 
 ;; Probably should be a symbol?
 
