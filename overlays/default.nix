@@ -10,6 +10,7 @@ inputs @ {
   sops-nix,
   nix-on-droid,
   mac-app-util,
+  steel,
   # nixpkgs-wayland,
   ...
 }: [
@@ -56,6 +57,7 @@ inputs @ {
     # myPythonPackages = final.callPackage ./pythonPackages { };
     # skyscraper = final.callPackage ./skyscraper { };
     # solang = final.callPackage ./solang { };
+    steel = steel.defaultPackage.${final.system};
     # juliusSpeech = final.callPackage ./juliusSpeech { };
     talon = final.callPackage ./talon {};
     # inherit (final.callPackages "${openvpn-aws}/derivations/openvpn.nix" { }) openvpn_aws;

@@ -59,6 +59,10 @@
       url = "github:mattwparas/helix/steel-event-system";
     };
     mac-app-util.url = "github:hraban/mac-app-util";
+    steel = {
+      url = "github:dlip/steel/add-nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs = inputs @ {

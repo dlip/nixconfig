@@ -104,6 +104,7 @@
     # rustc
     # rustup
     sd
+    steel
     stern
     skopeo
     ssh-to-age
