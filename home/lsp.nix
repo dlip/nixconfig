@@ -31,6 +31,8 @@ in {
       nodePackages.yaml-language-server
       openscad-lsp
       proselint
+      python311Packages.black
+      python311Packages.python-lsp-server
       racket # requires `raco pkg install fmt`
       rust-analyzer # rust
       # rustfmt

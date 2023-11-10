@@ -51,6 +51,11 @@ name = "hcl"
 auto-format = true
 
 [[language]]
+name = "python"
+formatter = { command = "black", args = ["-"] }
+auto-format = true
+
+[[language]]
 name = "scheme"
 formatter = { command = "raco", args = ["fmt", "-i"] }
 auto-format = true

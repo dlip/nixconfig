@@ -13,7 +13,7 @@ if [ -n "$repo_path" ]; then
     if zellij list-sessions | grep "^${name}\$" &> /dev/null; then
         zellij attach -c "$name"
     else
-        zellij -s "$name" -l programming
+        direnv exec ~/$repo_path zellij -s "$name" -l programming
     fi
 
     # tmux split-window -p 20
