@@ -6,6 +6,14 @@
 
 (define HARPOON-FILE ".helix/harpoon.txt")
 
+(define (read-harpoon-file)
+  (unless (path-exists? ".helix")
+    (create-directory! ".helix"))
+
+  (cond
+    [(path-exists? HARPOON-FILE) (~> (open-input-file HARPOON-FILE) (read-port-to-string) (read!))]
+    [else '()]))
+
 (define (editor-get-doc-if-exists editor doc-id)
   (if (editor-doc-exists? editor doc-id) (editor->get-document editor doc-id) #f))
 
@@ -19,4 +27,10 @@
 
 (define (harpoon-add cx)
   (let ([current-file (current-path cx)])
-    (if current-file (write-line! (open-output-file HARPOON-FILE) (current-path cx)) '())))
+    (when current-file
+      (let ([contents (append (read-harpoon-file) (list (current-path cx)))]
+            [output-file (open-output-file HARPOON-FILE)])
+        (map (lambda (line)
+               (when (string? line)
+                 (write-line! output-file line)))
+             contents)))))
