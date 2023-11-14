@@ -3,6 +3,7 @@
 (require-builtin helix/core/editor)
 
 (require "cogs/keymaps.scm")
+(require "cogs/harpoon.scm")
 (require (only-in "cogs/scheme-indent.scm" scheme-indent))
 
 (require "steel/sorting/merge-sort.scm")
@@ -21,7 +22,8 @@
          new-function
          shell
          current-focus
-         git-add)
+         git-add
+         harpoon-add)
 
 ;;;;;;;;;;;;;;; File Tree ;;;;;;;;;;;;;;;;;
 
