@@ -647,3 +647,9 @@
     [(skip-compile expr exprs ...)
      (begin
        (skip-compile exprs ...))]))
+
+;; Notes
+(require "cogs/logseq.scm")
+(provide find-note
+         search-in-note
+         open-daily-note)

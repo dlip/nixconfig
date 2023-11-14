@@ -72,4 +72,7 @@
       merge = "merge --no-edit";
     };
   };
+  home.file = {
+    "${config.xdg.configHome}/git/ignore".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/git/ignore";
+  };
 }

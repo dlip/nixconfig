@@ -184,6 +184,8 @@
    ; ":dummy") ;; "space" (hash "/" ":search-in-directory") ;; Uncomment if you'd like to make this keybinding
    )))
 
+(add-global-keybinding (hash "normal" (hash "space" (hash "o" ":recentf-open-files"))))
+
 (define scm-keybindings (hash "insert" (hash "ret" ':scheme-indent "C-l" ':insert-lambda)))
 
 ;; Grab whatever the existing keybinding map is

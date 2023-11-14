@@ -60,7 +60,7 @@
     };
     mac-app-util.url = "github:hraban/mac-app-util";
     steel = {
-      url = "github:dlip/steel/add-nix-flake";
+      url = "github:mattwparas/steel";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
