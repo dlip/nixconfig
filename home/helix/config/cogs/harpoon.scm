@@ -28,9 +28,22 @@
 (define (harpoon-add cx)
   (let ([current-file (current-path cx)])
     (when current-file
-      (let ([contents (append (read-harpoon-file) (list (current-path cx)))]
+      (let ([contents (remove-duplicates (append (read-harpoon-file) (list (current-path cx))))]
             [output-file (open-output-file HARPOON-FILE)])
         (map (lambda (line)
                (when (string? line)
                  (write-line! output-file line)))
              contents)))))
+
+(define (remove-duplicates lst)
+  ;; Iterate over, grabbing each value, check if its in the hash, otherwise skip it
+  (define (remove-duplicates-via-hash lst accum set)
+    (cond
+      [(null? lst) accum]
+      [else
+       (let ([elem (car lst)])
+         (if (hashset-contains? set elem)
+             (remove-duplicates-via-hash (cdr lst) accum set)
+             (remove-duplicates-via-hash (cdr lst) (cons elem accum) (hashset-insert set elem))))]))
+
+  (reverse (remove-duplicates-via-hash lst '() (hashset))))
