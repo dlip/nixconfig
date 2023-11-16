@@ -184,6 +184,39 @@
    ; ":dummy") ;; "space" (hash "/" ":search-in-directory") ;; Uncomment if you'd like to make this keybinding
    )))
 
+(add-global-keybinding (hash "normal"
+                             (hash "h"
+                                   (hash "s"
+                                         ":harpoon-add"
+                                         "x"
+                                         ":harpoon-del"
+                                         "n"
+                                         ":harpoon-next"
+                                         "p"
+                                         ":harpoon-prev"
+                                         "t"
+                                         ":harpoon-picker"
+                                         "a"
+                                         ":harpoon-goto-0"
+                                         "b"
+                                         ":harpoon-goto-1"
+                                         "c"
+                                         ":harpoon-goto-2"
+                                         "d"
+                                         ":harpoon-goto-3"
+                                         "e"
+                                         ":harpoon-goto-4"
+                                         "f"
+                                         ":harpoon-goto-5"
+                                         "g"
+                                         ":harpoon-goto-6"
+                                         "h"
+                                         ":harpoon-goto-7"
+                                         "i"
+                                         ":harpoon-goto-8"
+                                         "j"
+                                         ":harpoon-goto-9"))))
+
 (add-global-keybinding (hash "normal" (hash "space" (hash "o" ":recentf-open-files"))))
 
 (define scm-keybindings (hash "insert" (hash "ret" ':scheme-indent "C-l" ':insert-lambda)))

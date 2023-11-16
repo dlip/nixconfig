@@ -23,7 +23,21 @@
          shell
          current-focus
          git-add
-         harpoon-add)
+         harpoon-add
+         harpoon-del
+         harpoon-next
+         harpoon-prev
+         harpoon-picker
+         harpoon-goto-0
+         harpoon-goto-1
+         harpoon-goto-2
+         harpoon-goto-3
+         harpoon-goto-4
+         harpoon-goto-5
+         harpoon-goto-6
+         harpoon-goto-7
+         harpoon-goto-8
+         harpoon-goto-9)
 
 ;;;;;;;;;;;;;;; File Tree ;;;;;;;;;;;;;;;;;
 
