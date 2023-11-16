@@ -22,8 +22,16 @@ in {
   home.packages = [
     ((pkgs.unstable.emacsPackagesFor emacs).emacsWithPackages (epkgs: (
       with epkgs; [
+        catppuccin-theme
+        counsel
+        ivy
+        lsp-mode
+        nix-ts-mode
+        projectile
+        swiper
         treesit-grammars.with-all-grammars
         treesit-auto
+        which-key
       ]
     )))
   ];
