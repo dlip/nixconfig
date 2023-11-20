@@ -24,6 +24,11 @@ in {
       with epkgs; [
         catppuccin-theme
         counsel
+	direnv
+        evil
+        evil-collection
+        evil-tutor
+        general
         ivy
         lsp-mode
         nix-ts-mode
