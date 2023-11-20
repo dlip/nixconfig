@@ -19,6 +19,8 @@
          harpoon-goto-9)
 
 (define HARPOON-FILE ".helix/harpoon.txt")
+(define (show-msg cx str)
+  (helix.run-shell-command cx (list "echo" str) helix.PromptEvent::Validate))
 
 (define (read-harpoon-file)
   (unless (path-exists? ".helix")
@@ -49,6 +51,11 @@
                  (write-line! output-file line)))
              contents)))))
 
+(define (remove-one x li)
+  (cond
+    [(equal? (car li) x) (cdr li)]
+    [else (cons (car li) (remove-one x (cdr li)))]))
+
 (define (harpoon-del cx)
   (let ([current-file (current-path cx)] [contents (read-harpoon-file)])
     (when current-file
@@ -64,7 +71,7 @@
 (define (harpoon-goto cx index)
   (let ([current-file (current-path cx)] [contents (read-harpoon-file)])
     (if (empty? contents)
-        #f
+        (show-msg cx "Error: No harpoons!")
         (let ([next-index
                (if index
                    (if (>= index (length contents)) 0 (if (< index 0) (- (length contents) 1) index))
