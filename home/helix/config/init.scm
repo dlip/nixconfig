@@ -196,6 +196,8 @@
                                          ":harpoon-prev"
                                          "t"
                                          ":harpoon-picker"
+                                         "r"
+                                         ":harpoon-debug"
                                          "a"
                                          ":harpoon-goto-0"
                                          "b"

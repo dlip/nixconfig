@@ -28,6 +28,7 @@
          harpoon-next
          harpoon-prev
          harpoon-picker
+         harpoon-debug
          harpoon-goto-0
          harpoon-goto-1
          harpoon-goto-2

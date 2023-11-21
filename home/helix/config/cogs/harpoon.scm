@@ -7,6 +7,7 @@
          harpoon-next
          harpoon-prev
          harpoon-picker
+         harpoon-debug
          harpoon-goto-0
          harpoon-goto-1
          harpoon-goto-2
@@ -21,6 +22,9 @@
 (define HARPOON-FILE ".helix/harpoon.txt")
 (define (show-msg cx str)
   (helix.run-shell-command cx (list "echo" str) helix.PromptEvent::Validate))
+
+(define (harpoon-debug cx)
+  (show-msg cx "hi"))
 
 (define (read-harpoon-file)
   (unless (path-exists? ".helix")
@@ -42,14 +46,13 @@
     (if document (Document-path document) #f)))
 
 (define (harpoon-add cx)
-  (let ([current-file (current-path cx)])
-    (when current-file
-      (let ([contents (remove-duplicates (append (read-harpoon-file) (list (current-path cx))))]
-            [output-file (open-output-file HARPOON-FILE)])
-        (map (lambda (line)
-               (when (string? line)
-                 (write-line! output-file line)))
-             contents)))))
+  (let* ([current-file (current-path cx)]
+         [contents (remove-duplicates (append (read-harpoon-file) (list (current-path cx))))]
+         [output-file (open-output-file HARPOON-FILE)])
+    (map (lambda (line)
+           (when (string? line)
+             (write-line! output-file line)))
+         contents)))
 
 (define (remove-one x li)
   (cond
@@ -57,16 +60,17 @@
     [else (cons (car li) (remove-one x (cdr li)))]))
 
 (define (harpoon-del cx)
-  (let ([current-file (current-path cx)] [contents (read-harpoon-file)])
-    (when current-file
-      (let ([index (find-index (read-harpoon-file) (current-path cx))])
-        (when index
-          (let ([contents (append (take contents index) (drop contents (+ index 1)))]
-                [output-file (open-output-file HARPOON-FILE)])
-            (map (lambda (line)
-                   (when (string? line)
-                     (write-line! output-file line)))
-                 contents)))))))
+  (let* ([current-file (current-path cx)]
+         [contents (read-harpoon-file)]
+         [index (find-index contents current-file)])
+    (if index
+        (let ([new-contents (append (take contents index) (drop contents (+ index 1)))]
+              [output-file (open-output-file HARPOON-FILE)])
+          (map (lambda (line)
+                 (when (string? line)
+                   (write-line! output-file line)))
+               new-contents))
+        (show-msg cx "Error: not found"))))
 
 (define (harpoon-goto cx index)
   (let ([current-file (current-path cx)] [contents (read-harpoon-file)])
@@ -80,7 +84,10 @@
 
 (define (find-index list val)
   (define (find l i)
-    (if (empty? l) #f (if (equal? (first l) val) i (find (rest l) (+ i 1)))))
+    (cond
+      [(empty? l) #f]
+      [(equal? (first l) val) i]
+      [else (find (rest l) (+ i 1))]))
   (find list 0))
 
 (define (harpoon-inc cx inc)
@@ -89,7 +96,6 @@
 
 (define (harpoon-next cx)
   (harpoon-inc cx 1))
-
 (define (harpoon-prev cx)
   (harpoon-inc cx -1))
 
