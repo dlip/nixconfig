@@ -174,3 +174,6 @@ cmd + ctrl + alt - g : yabai-focus 'Google Chrome'
 cmd + ctrl + alt - e : yabai-focus Finder
 cmd + ctrl + alt - l : yabai-focus Lark
 cmd + ctrl + alt - r : launchctl stop org.nixos.yabai && launchctl start org.nixos.yabai && launchctl stop org.nixos.skhd && launchctl start org.nixos.skhd
+
+cmd + ctrl + alt - o : /opt/homebrew/bin/SwitchAudioSource -s 'BlueAnt StreamX'
+cmd + ctrl + alt - u : /opt/homebrew/bin/SwitchAudioSource -s '32inch LG FHD'

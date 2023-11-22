@@ -68,7 +68,7 @@
     massren
     mdbook
     mdl
-    # mysql80
+    mysql80
     # musikcube
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil

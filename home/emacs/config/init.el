@@ -11,12 +11,15 @@
 (use-package lsp-mode
   :init
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-c l")
+  ;;(setq lsp-keymap-prefix "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
          (python-ts-mode . lsp)
          ;; if you want which-key integratio
          (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
+  :config
+  (general-def 'normal lsp-mode :definer 'minor-mode
+    "SPC l" lsp-command-map)
+  )
 
 ;; UI
 (use-package catppuccin-theme
@@ -46,8 +49,8 @@
   :bind (:map projectile-mode-map
               ("s-p" . projectile-command-map)
               ("C-c p" . projectile-command-map)))
-  :config
-  (setq projectile-project-search-path '("~/code/"))
+:config
+(setq projectile-project-search-path '("~/code/"))
 
 (use-package ivy
   :config
@@ -68,20 +71,32 @@
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
   (evil-mode))
+
 (use-package evil-collection
   :after evil
   :config
   (setq evil-collection-mode-list '(dashboard dired ibuffer))
   (evil-collection-init))
 (use-package evil-tutor)
-(add-hook 'evil-insert-state-exit-hook
-          (lambda ()
-            (call-interactively #'save-buffer)))
- 
+;; (add-hook 'evil-insert-state-exit-hook
+;;           (lambda ()
+;;             (call-interactively #'save-buffer)))
+
+(use-package format-all
+  :commands format-all-mode
+  :hook (prog-mode . format-all-mode)
+  :config
+  (setq-default format-all-formatters '(("C"     (astyle "--mode=c"))
+                                        ("Shell" (shfmt "-i" "4" "-ci")))))
+
 (use-package general
   :config
   (general-evil-setup)
-
+  (general-define-key
+   :states 'normal
+   "RET" 'evil-write)
+  ;;(general-def 'normal lsp-mode :definer 'minor-mode
+  ;;"SPC l" lsp-command-map)
   ;; set up 'SPC' as the global leader key
   (general-create-definer dlip/leader-keys
     :states '(normal insert visual emacs)
@@ -98,15 +113,51 @@
     "br" '(revert-buffer :wk "Reload buffer")
     "f" '(projectile-find-file :wk "Open file picker")
     "i" '(:ignore t :wk "Init")
+    "l" '(:ignore t :wk "LSP")
+    "lw" '(:ignore t :wk "Workspace")
+    "lF" '(:ignore t :wk "Folder")
+    "l=" '(:ignore t :wk "Formatting")
+    "lT" '(:ignore t :wk "Toggles")
+    "lg" '(:ignore t :wk "Goto")
+    "lh" '(:ignore t :wk "Help")
+    "lr" '(:ignore t :wk "Refactor")
+    "la" '(:ignore t :wk "Action")
+    "lG" '(:ignore t :wk "Peek")
     "io" '(open-init :wk "Open init")
     "ir" '(reload-init :wk "Reload init")
+    ;;"l" lsp-command-map
     "p" projectile-command-map
+    "v" '(vterm-toggle :wk "Vterm")
     )
-)
+  )
 
 (use-package direnv
- :config
- (direnv-mode))
+  :config
+  (direnv-mode))
+
+(use-package vterm
+  :config
+  (setq
+   vterm-max-scrollback 5000))
+
+(use-package vterm-toggle
+  :after vterm
+  :config
+  (setq vterm-toggle-fullscreen-p nil)
+  (setq vterm-toggle-scope 'project)
+  (add-to-list 'display-buffer-alist
+               '((lambda (buffer-or-name _)
+                   (let ((buffer (get-buffer buffer-or-name)))
+                     (with-current-buffer buffer
+                       (or (equal major-mode 'vterm-mode)
+                           (string-prefix-p vterm-buffer-name (buffer-name buffer))))))
+                 (display-buffer-reuse-window display-buffer-at-bottom)
+                 ;;(display-buffer-reuse-window display-buffer-in-direction)
+                 ;;display-buffer-in-direction/direction/dedicated is added in emacs27
+                 ;;(direction . bottom)
+                 ;;(dedicated . t) ;dedicated is supported in emacs27
+                 (reusable-frames . visible)
+                 (window-height . 0.3))))
 
 ;; CUSTOM
 (defun open-init ()
@@ -117,8 +168,6 @@
   (interactive)
   (load-file user-init-file))
 
-(global-set-key (kbd "C-c i") 'open-init)
-(global-set-key (kbd "C-c r") 'reload-init)
 (global-set-key (kbd "<home>") 'beginning-of-line)
 (global-set-key (kbd "<end>") 'end-of-line)
 (global-set-key (kbd "<escape>") 'keyboard-escape-quit)
@@ -131,9 +180,9 @@ This is particularly useful under Mac OS X and macOS, where GUI
 apps are not started from a shell."
   (interactive)
   (let ((path-from-shell (replace-regexp-in-string
-              "[ \t\n]*$" "" (shell-command-to-string
-                      "$SHELL --login -c 'echo $PATH'"
-                            ))))
+			  "[ \t\n]*$" "" (shell-command-to-string
+					  "$SHELL --login -c 'echo $PATH'"
+					  ))))
     (setenv "PATH" path-from-shell)
     (setq exec-path (split-string path-from-shell path-separator))))
 

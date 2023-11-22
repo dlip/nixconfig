@@ -7,6 +7,8 @@
          harpoon-next
          harpoon-prev
          harpoon-picker
+         harpoon-edit
+         harpoon-refresh
          harpoon-debug
          harpoon-goto-0
          harpoon-goto-1
@@ -34,6 +36,21 @@
     [(path-exists? HARPOON-FILE) (~> (open-input-file HARPOON-FILE) (read-port-to-string) (read!))]
     [else '()]))
 
+(define *harpoons* (read-harpoon-file))
+
+(define (flush-harpoons)
+  (let ([output-file (open-output-file HARPOON-FILE)])
+    (map (lambda (line)
+           (when (string? line)
+             (write-line! output-file line)))
+         *harpoons*)))
+
+(define (harpoon-refresh cx)
+  (set! *harpoons* (read-harpoon-file)))
+
+(define (harpoon-edit cx)
+  (helix.open cx (list HARPOON-FILE) helix.PromptEvent::Validate))
+
 (define (editor-get-doc-if-exists editor doc-id)
   (if (editor-doc-exists? editor doc-id) (editor->get-document editor doc-id) #f))
 
@@ -46,41 +63,22 @@
     (if document (Document-path document) #f)))
 
 (define (harpoon-add cx)
-  (let* ([current-file (current-path cx)]
-         [contents (remove-duplicates (append (read-harpoon-file) (list (current-path cx))))]
-         [output-file (open-output-file HARPOON-FILE)])
-    (map (lambda (line)
-           (when (string? line)
-             (write-line! output-file line)))
-         contents)))
-
-(define (remove-one x li)
-  (cond
-    [(equal? (car li) x) (cdr li)]
-    [else (cons (car li) (remove-one x (cdr li)))]))
+  (set! *harpoons* (remove-duplicates (append *harpoons* (list (current-path cx)))))
+  (flush-harpoons))
 
 (define (harpoon-del cx)
-  (let* ([current-file (current-path cx)]
-         [contents (read-harpoon-file)]
-         [index (find-index contents current-file)])
+  (let ([index (find-index *harpoons* (current-path cx))])
     (if index
-        (let ([new-contents (append (take contents index) (drop contents (+ index 1)))]
-              [output-file (open-output-file HARPOON-FILE)])
-          (map (lambda (line)
-                 (when (string? line)
-                   (write-line! output-file line)))
-               new-contents))
+        ((set! *harpoons* (append (take *harpoons* index) (drop *harpoons* (+ index 1))))
+         (flush-harpoons))
         (show-msg cx "Error: not found"))))
 
 (define (harpoon-goto cx index)
-  (let ([current-file (current-path cx)] [contents (read-harpoon-file)])
-    (if (empty? contents)
-        (show-msg cx "Error: No harpoons!")
-        (let ([next-index
-               (if index
-                   (if (>= index (length contents)) 0 (if (< index 0) (- (length contents) 1) index))
-                   0)])
-          (helix.open cx (list (list-ref contents next-index)) helix.PromptEvent::Validate)))))
+  (let ([next-index (cond
+                      [(>= index (length *harpoons*)) 0]
+                      [(< index 0) (- (length *harpoons*) 1)]
+                      [else index])])
+    (helix.open cx (list (list-ref *harpoons* next-index)) helix.PromptEvent::Validate)))
 
 (define (find-index list val)
   (define (find l i)
@@ -91,7 +89,7 @@
   (find list 0))
 
 (define (harpoon-inc cx inc)
-  (let ([index (find-index (read-harpoon-file) (current-path cx))])
+  (let ([index (find-index *harpoons* (current-path cx))])
     (if index (harpoon-goto cx (+ index inc)) (harpoon-goto cx 0))))
 
 (define (harpoon-next cx)
@@ -121,7 +119,7 @@
   (harpoon-goto cx 9))
 
 (define (harpoon-picker cx)
-  (push-component! cx (Picker::new (read-harpoon-file))))
+  (push-component! cx (Picker::new *harpoons*)))
 
 (define (remove-duplicates lst)
   ;; Iterate over, grabbing each value, check if its in the hash, otherwise skip it

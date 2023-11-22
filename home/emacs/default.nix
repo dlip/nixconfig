@@ -24,10 +24,11 @@ in {
       with epkgs; [
         catppuccin-theme
         counsel
-	direnv
+        direnv
         evil
         evil-collection
         evil-tutor
+        format-all
         general
         ivy
         lsp-mode
@@ -36,6 +37,8 @@ in {
         swiper
         treesit-grammars.with-all-grammars
         treesit-auto
+        vterm
+        vterm-toggle
         which-key
       ]
     )))

@@ -8,6 +8,7 @@
     enable = true;
     onActivation.cleanup = "uninstall";
     casks = ["maccy" "clocker" "docker" "flameshot"];
+    brews = ["switchaudio-osx"];
   };
 
   # Auto upgrade nix package and the daemon service.
