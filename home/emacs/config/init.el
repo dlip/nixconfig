@@ -21,6 +21,11 @@
     "SPC l" lsp-command-map)
   )
 
+(use-package dap-mode
+  :after lsp-mode
+  :config
+  (dap-auto-configure-mode))
+
 ;; UI
 (use-package catppuccin-theme
   :config
@@ -30,9 +35,12 @@
 
 (set-frame-font "RobotoMono Nerd Font 15" nil t)
 
+(setq inhibit-startup-message t)
+(setq initial-scratch-message nil)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
 (tool-bar-mode -1)
+(xterm-mouse-mode 1)
 
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
@@ -70,12 +78,15 @@
   (setq evil-want-keybinding nil)
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
-  (evil-mode))
+  (evil-mode)
+  :config
+  (evil-set-undo-system 'undo-redo)
+  )
 
 (use-package evil-collection
   :after evil
   :config
-  (setq evil-collection-mode-list '(dashboard dired ibuffer))
+  ;;(setq evil-collection-mode-list '(dashboard dired ibuffer))
   (evil-collection-init))
 (use-package evil-tutor)
 ;; (add-hook 'evil-insert-state-exit-hook
@@ -94,25 +105,54 @@
   (general-evil-setup)
   (general-define-key
    :states 'normal
-   "RET" 'evil-write)
-  ;;(general-def 'normal lsp-mode :definer 'minor-mode
-  ;;"SPC l" lsp-command-map)
-  ;; set up 'SPC' as the global leader key
-  (general-create-definer dlip/leader-keys
+   "RET" 'evil-write
+   "U" 'evil-redo
+   "g a" 'evil-switch-to-windows-last-buffer
+   )
+
+  (general-define-key
+   "C-<left>" 'evil-window-left
+   "C-<right>" 'evil-window-right
+   "C-<up>" 'evil-window-up
+   "C-<down>" 'evil-window-down
+   )
+
+  (general-create-definer space-leader
     :states '(normal insert visual emacs)
     :keymaps 'override
     :prefix "SPC" ;; set leader
     :global-prefix "M-SPC") ;; access leader in insert mode
 
-  (dlip/leader-keys
+  (space-leader
     "b" '(:ignore t :wk "buffer")
     "bb" '(switch-to-buffer :wk "Switch buffer")
     "bk" '(kill-this-buffer :wk "Kill this buffer")
     "bn" '(next-buffer :wk "Next buffer")
     "bp" '(previous-buffer :wk "Previous buffer")
     "br" '(revert-buffer :wk "Reload buffer")
+    "d" '(dired-jump :wk "Dired")
     "f" '(projectile-find-file :wk "Open file picker")
-    "i" '(:ignore t :wk "Init")
+    "g" '(:ignore t :wk "Git")
+    "g /" '(magit-displatch :wk "Magit dispatch")
+    "g ." '(magit-file-displatch :wk "Magit file dispatch")
+    "g b" '(magit-branch-checkout :wk "Switch branch")
+    "g c" '(:ignore t :wk "Create")
+    "g c b" '(magit-branch-and-checkout :wk "Create branch and checkout")
+    "g c c" '(magit-commit-create :wk "Create commit")
+    "g c f" '(magit-commit-fixup :wk "Create fixup commit")
+    "g C" '(magit-clone :wk "Clone repo")
+    "g f" '(:ignore t :wk "Find")
+    "g f c" '(magit-show-commit :wk "Show commit")
+    "g f f" '(magit-find-file :wk "Magit find file")
+    "g f g" '(magit-find-git-config-file :wk "Find gitconfig file")
+    "g a" '(magit-stage-file :wk "Git stage file")
+    "g F" '(magit-fetch :wk "Git fetch")
+    "g s" '(magit-status :wk "Magit status")
+    "g i" '(magit-init :wk "Initialize git repo")
+    "g l" '(magit-log-buffer-file :wk "Magit buffer log")
+    "g r" '(vc-revert :wk "Git revert file")
+    "g t" '(git-timemachine :wk "Git time machine")
+    "g u" '(magit-stage-file :wk "Git unstage file")
     "l" '(:ignore t :wk "LSP")
     "lw" '(:ignore t :wk "Workspace")
     "lF" '(:ignore t :wk "Folder")
@@ -123,11 +163,14 @@
     "lr" '(:ignore t :wk "Refactor")
     "la" '(:ignore t :wk "Action")
     "lG" '(:ignore t :wk "Peek")
-    "io" '(open-init :wk "Open init")
-    "ir" '(reload-init :wk "Reload init")
+    "i" '(:ignore t :wk "Init")
+    "ie" '(open-init :wk "Edit")
+    "ir" '(reload-init :wk "Reload")
     ;;"l" lsp-command-map
+    "n" '(neotree-toggle :wk "Neotree Toggle")
     "p" projectile-command-map
     "v" '(vterm-toggle :wk "Vterm")
+    "x" '(evil-delete-buffer :wk "Close Buffer")
     )
   )
 
@@ -138,7 +181,13 @@
 (use-package vterm
   :config
   (setq
-   vterm-max-scrollback 5000))
+   vterm-max-scrollback 5000)
+  (define-key vterm-mode-map (kbd "M-v") #'vterm-toggle-hide)
+  (define-key vterm-mode-map (kbd "C-<up>") #'evil-window-up)
+  (define-key vterm-mode-map (kbd "C-<down>") #'evil-window-down)
+  (define-key vterm-mode-map (kbd "C-<left>") #'evil-window-left)
+  (define-key vterm-mode-map (kbd "C-<right>") #'evil-window-right)
+  )
 
 (use-package vterm-toggle
   :after vterm
@@ -158,6 +207,62 @@
                  ;;(dedicated . t) ;dedicated is supported in emacs27
                  (reusable-frames . visible)
                  (window-height . 0.3))))
+
+(use-package magit
+  )
+
+(use-package neotree
+  :config
+  (setq neo-smart-open t
+        neo-show-hidden-files t
+        neo-window-width 55
+        neo-window-fixed-size nil
+        inhibit-compacting-font-caches t
+        projectile-switch-project-action 'neotree-projectile-action)
+  ;; truncate long file names in neotree
+  (add-hook 'neo-after-create-hook
+            #'(lambda (_)
+		(with-current-buffer (get-buffer neo-buffer-name)
+                  (setq truncate-lines t)
+                  (setq word-wrap nil)
+                  (make-local-variable 'auto-hscroll-mode)
+                  (setq auto-hscroll-mode nil)))))
+
+(use-package all-the-icons
+  :ensure t
+  :if (display-graphic-p))
+
+(use-package all-the-icons-dired
+  :hook (dired-mode . (lambda () (all-the-icons-dired-mode t))))
+
+(use-package dired-open
+  :config
+  (setq dired-open-extensions '(("gif" . "sxiv")
+                                ("jpg" . "sxiv")
+                                ("png" . "sxiv")
+                                ("mkv" . "mpv")
+                                ("mp4" . "mpv"))))
+;; not working
+(use-package dired-preview
+  :config
+  ;; Default values for demo purposes
+  (setq dired-preview-delay 0.7)
+  (setq dired-preview-max-size (expt 2 20))
+  (setq dired-preview-ignored-extensions-regexp
+	(concat "\\."
+		"\\(mkv\\|webm\\|mp4\\|mp3\\|ogg\\|m4a"
+		"\\|gz\\|zst\\|tar\\|xz\\|rar\\|zip"
+		"\\|iso\\|epub\\|pdf\\)"))
+
+  ;; Enable `dired-preview-mode' in a given Dired buffer or do it
+  ;; globally:
+  (dired-preview-global-mode 1)
+  )
+
+(use-package evil-mc
+  :config
+  (global-evil-mc-mode  1)
+  )
 
 ;; CUSTOM
 (defun open-init ()

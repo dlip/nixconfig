@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./alacritty
-    ./emacs
+    # ./emacs
     #./kitty
     #./leftwm
     # ./vscode

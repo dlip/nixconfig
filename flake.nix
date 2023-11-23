@@ -61,7 +61,6 @@
     mac-app-util.url = "github:hraban/mac-app-util";
     steel = {
       url = "github:mattwparas/steel";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
   };
 

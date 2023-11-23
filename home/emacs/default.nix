@@ -22,16 +22,25 @@ in {
   home.packages = [
     ((pkgs.unstable.emacsPackagesFor emacs).emacsWithPackages (epkgs: (
       with epkgs; [
+        all-the-icons
+        all-the-icons-dired
         catppuccin-theme
         counsel
+        dap-mode
         direnv
+        dired-open
+        dired-preview
         evil
+        evil-mc
         evil-collection
         evil-tutor
         format-all
         general
+        git-timemachine
         ivy
         lsp-mode
+        magit
+        neotree
         nix-ts-mode
         projectile
         swiper

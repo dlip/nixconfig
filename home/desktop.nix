@@ -45,7 +45,7 @@
     gnupg
     gnuplot
     go
-    gobang
+    # gobang
     gotypist
     graphviz
     hexdino

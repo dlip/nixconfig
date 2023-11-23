@@ -33,13 +33,13 @@ in {
       proselint
       python311Packages.black
       python311Packages.python-lsp-server
-      racket # requires `raco pkg install fmt`
+      # racket-minimal # requires `raco pkg install fmt`
       rust-analyzer # rust
       # rustfmt
       shfmt
       # solang
       stylua
-      lua-language-server
+      # lua-language-server # arm error
       terraform
       taplo
       terraform-ls
