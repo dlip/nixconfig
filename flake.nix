@@ -62,6 +62,22 @@
     steel = {
       url = "github:mattwparas/steel";
     };
+    vscodeNodeDebug2 = {
+      url = "github:microsoft/vscode-node-debug2";
+      flake = false;
+    };
+    vimplugin-fix-cursor-hold-nvim = {
+      url = "github:antoinemadec/FixCursorHold.nvim";
+      flake = false;
+    };
+    vimplugin-neotest-vim-test = {
+      url = "github:nvim-neotest/neotest-vim-test";
+      flake = false;
+    };
+    vimplugin-nvim-neotest = {
+      url = "github:nvim-neotest/neotest";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {

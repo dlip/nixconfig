@@ -34,12 +34,12 @@ in {
       vimAlias = true;
       vimdiffAlias = true;
 
+      # let g:vscode_node_debug2_root_path = "${pkgs.vscodeNodeDebug2}"
       extraConfig = ''
-        let g:lua_ls_root_path = "${pkgs.unstable.lua-language-server}"
+        let g:lua_ls_root_path = "${pkgs.lua-language-server}"
         let g:awesome_root_path = "${awesomeSrc}"
-        let g:vscode_node_debug2_root_path = "${pkgs.vscodeNodeDebug2}"
         let g:friendly_snippets_path = "${pkgs.vimPlugins.friendly-snippets}"
-        let g:copilot_node_command = "${pkgs.nodejs-16_x}/bin/node"
+        let g:copilot_node_command = "${pkgs.nodejs-18_x}/bin/node"
         imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
         let g:copilot_no_tab_map = v:true
         source ${nvimHome}/myinit.vim

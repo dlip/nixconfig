@@ -11,6 +11,7 @@ inputs @ {
   nix-on-droid,
   mac-app-util,
   steel,
+  vscodeNodeDebug2,
   # nixpkgs-wayland,
   ...
 }: [
@@ -26,6 +27,7 @@ inputs @ {
       src = actual-server;
       nodejs = final.nodejs-16_x;
     };
+    vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 {src = vscodeNodeDebug2;};
     envy-sh = envy-sh.defaultPackage.${final.system};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
     # myEspanso = final.callPackage ./espanso {};
@@ -65,20 +67,20 @@ inputs @ {
   # Repos with no build step
   (final: prev: prev.lib.filterAttrs (k: v: prev.lib.hasPrefix "repo" k) inputs)
   # vim plugins
-  # (final: prev: {
-  #   vimPlugins =
-  #     prev.vimPlugins
-  #     // builtins.listToAttrs (map
-  #       (input: let
-  #         name = final.lib.removePrefix "vimplugin-" input;
-  #       in {
-  #         inherit name;
-  #         value = final.vimUtils.buildVimPluginFrom2Nix {
-  #           inherit name;
-  #           pname = name;
-  #           src = builtins.getAttr input inputs;
-  #         };
-  #       })
-  #       (builtins.attrNames (final.lib.filterAttrs (k: v: final.lib.hasPrefix "vimplugin" k) inputs)));
-  # })
+  (final: prev: {
+    vimPlugins =
+      prev.vimPlugins
+      // builtins.listToAttrs (map
+        (input: let
+          name = final.lib.removePrefix "vimplugin-" input;
+        in {
+          inherit name;
+          value = final.vimUtils.buildVimPluginFrom2Nix {
+            inherit name;
+            pname = name;
+            src = builtins.getAttr input inputs;
+          };
+        })
+        (builtins.attrNames (final.lib.filterAttrs (k: v: final.lib.hasPrefix "vimplugin" k) inputs)));
+  })
 ]

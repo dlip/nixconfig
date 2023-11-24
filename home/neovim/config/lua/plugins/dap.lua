@@ -67,13 +67,13 @@ dap.configurations.typescriptreact = dap.configurations.typescript
 dap.configurations.javascript = dap.configurations.typescript
 dap.configurations.javascriptreact = dap.configurations.typescript
 
-dap.adapters.node2 = {
-  type = "executable",
-  command = "node",
-  args = {
-    vim.g.vscode_node_debug2_root_path .. "/out/src/nodeDebug.js",
-  },
-}
+-- dap.adapters.node2 = {
+--   type = "executable",
+--   command = "node",
+--   args = {
+--     vim.g.vscode_node_debug2_root_path .. "/out/src/nodeDebug.js",
+--   },
+-- }
 
 dap.configurations.rust = {
   {
