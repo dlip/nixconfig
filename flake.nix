@@ -1,12 +1,12 @@
 {
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-23.05";
-    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.05";
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
     home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nix-darwin = {
@@ -15,7 +15,7 @@
     };
     # nixpkgs-wayland = {
     #   url = "github:nix-community/nixpkgs-wayland";
-    #   inputs.nixpkgs.follows = "nixpkgs-unstable";
+    #   inputs.nixpkgs.follows = "nixpkgs";
     # };
     kmonad = {
       url = "github:kmonad/kmonad?dir=nix";
@@ -78,18 +78,26 @@
       url = "github:nvim-neotest/neotest";
       flake = false;
     };
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
+      # url = "github:nix-community/nixvim/nixos-23.05";
+
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs @ {
     self,
     nixpkgs,
-    nixpkgs-unstable,
+    nixpkgs-stable,
     home-manager,
     flake-utils,
     nix-on-droid,
     kmonad,
     sops-nix,
     nix-darwin,
+    nixvim,
     ...
   }: let
     pkgsForSystem = {
@@ -103,9 +111,9 @@
           (import ./overlays inputs)
           ++ [
             (final: prev: {
-              unstable = pkgsForSystem {
+              stable = pkgsForSystem {
                 inherit system;
-                pkgs = nixpkgs-unstable;
+                pkgs = nixpkgs-stable;
               };
             })
           ];
@@ -161,6 +169,14 @@
 
         pushNixStoreDockerImage = pkgs.callPackage ./pkgs/pushNixStoreDockerImage {};
       };
+      devShell = let
+        nvim = nixvim.legacyPackages."${system}".makeNixvim (builtins.removeAttrs (import ./home/nixvim.nix {}).programs.nixvim ["enable"]);
+      in
+        pkgs.mkShell {
+          buildInputs = with pkgs; [
+            nvim
+          ];
+        };
     })
     // {
       nixosConfigurations = {
@@ -318,6 +334,7 @@
                     email = "danelipscombe@gmail.com";
                   };
                   imports = [
+                    nixvim.homeManagerModules.nixvim
                     ./home/macos.nix
                   ];
                 };

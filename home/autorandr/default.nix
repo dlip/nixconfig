@@ -7,7 +7,7 @@
     "${config.xdg.configHome}/autorandr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/autorandr/config";
   };
 
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     autorandr
   ];
 

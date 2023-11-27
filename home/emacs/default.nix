@@ -3,7 +3,7 @@
   config,
   ...
 }: let
-  emacs = pkgs.unstable.emacs29.override {
+  emacs = pkgs.emacs29.override {
     withNativeCompilation = true;
     withTreeSitter = true;
   };
@@ -20,7 +20,7 @@ in {
   };
 
   home.packages = [
-    ((pkgs.unstable.emacsPackagesFor emacs).emacsWithPackages (epkgs: (
+    ((pkgs.emacsPackagesFor emacs).emacsWithPackages (epkgs: (
       with epkgs; [
         all-the-icons
         all-the-icons-dired
@@ -67,7 +67,7 @@ in {
 
   # programs.emacs = {
   #   enable = true;
-  #   package = pkgs.unstable.emacs29.override {
+  #   package = pkgs.emacs29.override {
   #     withNativeCompilation = true;
   #     withTreeSitter = true;
   #   };

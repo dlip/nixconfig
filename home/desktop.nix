@@ -11,7 +11,7 @@
     ./btop
   ];
 
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     archivemount
     age
     air

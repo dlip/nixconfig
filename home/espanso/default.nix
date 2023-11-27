@@ -7,7 +7,7 @@
     Unit = {Description = "Espanso: cross platform text expander in Rust";};
     Service = {
       Type = "exec";
-      ExecStart = "${pkgs.unstable.espanso}/bin/espanso daemon";
+      ExecStart = "${pkgs.espanso}/bin/espanso daemon";
       Restart = "on-failure";
     };
     Install = {WantedBy = ["default.target"];};

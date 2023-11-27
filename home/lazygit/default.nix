@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  home.packages = [pkgs.unstable.lazygit];
+  home.packages = [pkgs.lazygit];
 
   home.file =
     if pkgs.stdenv.isDarwin

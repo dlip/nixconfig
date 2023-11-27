@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  extraPackages = with pkgs.unstable;
+  extraPackages = with pkgs;
     if system == "aarch64-linux"
     then [
       nodePackages.vscode-css-languageserver-bin
@@ -10,7 +10,7 @@
       # nodePackages.vscode-langservers-extracted dns issue
     ];
 in {
-  home.packages = with pkgs.unstable;
+  home.packages = with pkgs;
     [
       alejandra # nix
       codespell

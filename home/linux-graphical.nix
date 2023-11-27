@@ -11,7 +11,7 @@
     ./graphical.nix
   ];
 
-  home.packages = with pkgs.unstable; [
+  home.packages = with pkgs; [
     anki
     alttab
     arandr
