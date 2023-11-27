@@ -5,7 +5,7 @@
     delta
     dig
     direnv
-    envy-sh
+    # envy-sh
     fd
     findutils
     fzf

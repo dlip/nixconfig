@@ -219,6 +219,7 @@
                 users = {
                   dane = {
                     imports = [
+                      nixvim.homeManagerModules.nixvim
                       ./home/linux-desktop.nix
                     ];
                   };

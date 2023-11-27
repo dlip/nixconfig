@@ -21,7 +21,7 @@
     aws-google-auth
     patchelf
     nix-index
-    pkgs.awscli2
+    stable.awscli2
     blisp
     docker-buildx
     cargo
