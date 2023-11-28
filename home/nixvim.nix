@@ -89,6 +89,15 @@
           silent = true;
         };
       }
+      {
+        mode = "n";
+        key = "<leader>y";
+        action = "<cmd>let @+=expand('%').':'.line('.')<CR>";
+        options = {
+          desc = "Yank filename";
+          silent = true;
+        };
+      }
       # Window Splits
       {
         mode = ["n" "x" "o"];
@@ -163,9 +172,9 @@
       {
         mode = "n";
         key = "<leader>gx";
-        action = "<cmd>Gitsigns discard_hunk<Cr>";
+        action = "<cmd>Gitsigns reset_hunk<Cr>";
         options = {
-          desc = "Discard hunk";
+          desc = "Reset hunk";
           silent = true;
         };
       }
@@ -176,6 +185,7 @@
         enable = true;
         registrations = {
           "<leader>g" = "Git";
+          "<leader>gy" = "Yank git link";
         };
       };
       telescope = {
@@ -206,6 +216,9 @@
             action = "lsp_references";
             desc = "Goto references";
           };
+        };
+        extraOptions = {
+          pickers = {find_files = {hidden = true;};};
         };
       };
 
@@ -291,6 +304,7 @@
         };
       };
       gitsigns.enable = true;
+      gitlinker.enable = true;
       neogit = {
         enable = true;
         autoRefresh = true;
@@ -326,7 +340,22 @@
           }
         ];
         mapping = {
-          "<Esc>" = "cmp.mapping.abort()";
+          "<Esc>" = {
+            action = ''
+              function(fallback)
+                if cmp.visible() then
+                  vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
+                  cmp.abort()
+                else
+                  fallback()
+                end
+              end
+            '';
+            modes = [
+              "i"
+              "s"
+            ];
+          };
           "<CR>" = "cmp.mapping.confirm({ select = false })";
           "<Tab>" = {
             action = ''
