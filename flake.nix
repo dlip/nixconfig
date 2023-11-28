@@ -313,6 +313,17 @@
       nixOnDroidConfigurations.default = nix-on-droid.lib.nixOnDroidConfiguration {
         modules = [
           ./systems/nix-on-droid/configuration.nix
+          {
+            # Configure home-manager
+            home-manager = {
+              config = ./home/nix-on-droid.nix;
+              backupFileExtension = "hm-bak";
+              useGlobalPkgs = true;
+              sharedModules = [
+                nixvim.homeManagerModules.nixvim
+              ];
+            };
+          }
         ];
         pkgs = pkgsForSystem {system = "aarch64-linux";};
         home-manager-path = home-manager.outPath;

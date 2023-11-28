@@ -22,7 +22,7 @@ with lib; {
     ./fonts.nix
     ./git
     #./gpg-agent
-    ./helix
+    # ./helix
     ./lazygit
     ./lsp.nix
     # ./neovim

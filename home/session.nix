@@ -5,6 +5,6 @@
     EDITOR = "nvim";
     LANG = "en_AU.UTF-8";
     LC_ALL = "en_AU.UTF-8";
-    STEEL_HOME = "${pkgs.steel}/lib";
+    # STEEL_HOME = "${pkgs.steel}/lib";
   };
 }

@@ -40,11 +40,4 @@
   user.shell = "/etc/profiles/per-user/nix-on-droid/bin/zsh";
   # Set your time zone
   time.timeZone = "Australia/Sydney";
-
-  # Configure home-manager
-  home-manager = {
-    config = ../../home/nix-on-droid.nix;
-    backupFileExtension = "hm-bak";
-    useGlobalPkgs = true;
-  };
 }
