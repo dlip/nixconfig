@@ -17,6 +17,7 @@ with lib; {
   };
 
   imports = [
+    pkgs.nixvim.homeManagerModules.nixvim
     ./bash
     ./files
     ./fonts.nix

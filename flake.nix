@@ -219,7 +219,6 @@
                 users = {
                   dane = {
                     imports = [
-                      nixvim.homeManagerModules.nixvim
                       ./home/linux-desktop.nix
                     ];
                   };
@@ -335,7 +334,6 @@
                     email = "danelipscombe@gmail.com";
                   };
                   imports = [
-                    nixvim.homeManagerModules.nixvim
                     ./home/macos.nix
                   ];
                 };

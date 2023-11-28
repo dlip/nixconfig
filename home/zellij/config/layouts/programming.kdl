@@ -6,7 +6,7 @@ layout {
         children
     }
 	tab name="editor" focus=true {
-		pane command="hx"
+		pane command="nvim"
     }
 	tab name="shell" {
 		pane command="zsh"
