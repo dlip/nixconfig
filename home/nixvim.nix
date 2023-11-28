@@ -1,4 +1,4 @@
-{...}: {
+{pkgs, ...}: {
   programs.nixvim = {
     enable = true;
 
@@ -8,10 +8,8 @@
     };
     clipboard.register = "unnamedplus"; # Use system clipboard
     options = {
-      # Hybrid Line Numbers
       relativenumber = true; # Relative line numbers
       number = true; # Show current line number
-
       backup = false; # don't create backups
       swapfile = false; # Disable the swap file
       modeline = true; # Tags such as 'vim:ft=sh'
@@ -20,6 +18,11 @@
       incsearch = true; # Incremental search: show match for partly typed search command
       ignorecase = true; # When the search query is lower-case, match both lower and upper-case
       smartcase = true; # Override the 'ignorecase' option if the search pattern contains upper
+      expandtab = true; # use spaces instead of tabs
+      shiftwidth = 2; # shift 2 spaces when tab
+      tabstop = 4; # 1 tab == 4 spaces
+      smartindent = true; # autoindent new lines
+      lazyredraw = true; # faster scrolling
     };
     globals.mapleader = " ";
     keymaps = [
@@ -135,7 +138,7 @@
         key = "<leader>gn";
         action = "<cmd>Neogit<Cr>";
         options = {
-          desc = "Next git hunk";
+          desc = "Neogit";
           silent = true;
         };
       }
@@ -157,12 +160,22 @@
           silent = true;
         };
       }
+      {
+        mode = "n";
+        key = "<leader>gx";
+        action = "<cmd>Gitsigns discard_hunk<Cr>";
+        options = {
+          desc = "Discard hunk";
+          silent = true;
+        };
+      }
     ];
     plugins = {
       lightline.enable = true;
       which-key = {
         enable = true;
         registrations = {
+          "<leader>g" = "Git";
         };
       };
       telescope = {
@@ -176,6 +189,10 @@
           "<leader>b" = {
             action = "buffers";
             desc = "Find Buffers";
+          };
+          "<leader>d" = {
+            action = "diagnostics";
+            desc = "Diagnostics";
           };
           "<leader>f" = {
             action = "find_files";
@@ -274,7 +291,10 @@
         };
       };
       gitsigns.enable = true;
-      neogit.enable = true;
+      neogit = {
+        enable = true;
+        autoRefresh = true;
+      };
       comment-nvim.enable = true;
       nvim-tree = {
         enable = true;
@@ -287,7 +307,10 @@
           };
         };
       };
-      luasnip.enable = true;
+      luasnip = {
+        enable = true;
+        fromVscode = [{paths = "${pkgs.vimPlugins.friendly-snippets}";}];
+      };
       lspkind.enable = true;
       nvim-cmp = {
         enable = true;
@@ -296,12 +319,53 @@
           {name = "path";}
           {name = "nvim_lsp";}
           {name = "luasnip";}
+          {
+            name = "buffer";
+            # Words from other open buffers can also be suggested.
+            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+          }
         ];
         mapping = {
           "<Esc>" = "cmp.mapping.abort()";
-          "<Down>" = "cmp.mapping.select_next_item()";
-          "<Up>" = "cmp.mapping.select_prev_item()";
-          "<CR>" = "cmp.mapping.confirm({ select = true })";
+          "<CR>" = "cmp.mapping.confirm({ select = false })";
+          "<Tab>" = {
+            action = ''
+                   function(fallback)
+              local luasnip = require("luasnip")
+                     if cmp.visible() then
+                       cmp.select_next_item()
+                     elseif luasnip.expandable() then
+                       luasnip.expand()
+                     elseif luasnip.expand_or_jumpable() then
+                       luasnip.expand_or_jump()
+                     else
+                       fallback()
+                     end
+                   end
+            '';
+            modes = [
+              "i"
+              "s"
+            ];
+          };
+          "<S-Tab>" = {
+            action = ''
+                   function(fallback)
+              local luasnip = require("luasnip")
+                     if cmp.visible() then
+                       cmp.select_prev_item()
+                     elseif luasnip.jumpable(-1) then
+                       luasnip.jump(-1)
+                     else
+                       fallback()
+                     end
+                   end
+            '';
+            modes = [
+              "i"
+              "s"
+            ];
+          };
         };
       };
     };

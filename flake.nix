@@ -170,7 +170,7 @@
         pushNixStoreDockerImage = pkgs.callPackage ./pkgs/pushNixStoreDockerImage {};
       };
       devShell = let
-        nvim = nixvim.legacyPackages."${system}".makeNixvim (builtins.removeAttrs (import ./home/nixvim.nix {}).programs.nixvim ["enable"]);
+        nvim = nixvim.legacyPackages."${system}".makeNixvim (builtins.removeAttrs (pkgs.callPackage ./home/nixvim.nix {}).programs.nixvim ["enable"]);
       in
         pkgs.mkShell {
           buildInputs = with pkgs; [
