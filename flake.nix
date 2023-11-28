@@ -334,6 +334,7 @@
                     email = "danelipscombe@gmail.com";
                   };
                   imports = [
+                    nixvim.homeManagerModules.nixvim
                     ./home/macos.nix
                   ];
                 };

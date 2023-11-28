@@ -24,6 +24,26 @@
       smartindent = true; # autoindent new lines
       lazyredraw = true; # faster scrolling
     };
+    autoCmd = [
+      {
+        # Restore enter in quickfix
+        event = ["FileType"];
+        pattern = ["qf"];
+        command = "nmap <buffer> <CR> <CR>";
+      }
+      {
+        # Quit quickfix with q
+        event = ["FileType"];
+        pattern = ["qf"];
+        command = "nmap <buffer><silent> q :ccl<CR>";
+      }
+      {
+        # Quit help with q
+        event = ["FileType"];
+        pattern = ["help"];
+        command = "nmap <buffer><silent> q :q<CR>";
+      }
+    ];
     globals.mapleader = " ";
     keymaps = [
       {
@@ -186,15 +206,23 @@
         registrations = {
           "<leader>g" = "Git";
           "<leader>gy" = "Yank git link";
+          "<leader>h" = "Harpoon Add";
+          "<leader>H" = "Harpoon Menu";
+          "<leader>1" = "Harpoon 1";
+          "<leader>2" = "Harpoon 2";
+          "<leader>3" = "Harpoon 3";
+          "<leader>4" = "Harpoon 4";
+          "<leader>," = "Previous Harpoon";
+          "<leader>." = "Next Harpoon";
         };
       };
       telescope = {
         enable = true;
         extensions.frecency.enable = true;
         keymaps = {
-          "<leader>/" = {
-            action = "live_grep";
-            desc = "Grep";
+          "<leader>'" = {
+            action = "resume";
+            desc = "Resume Telescope";
           };
           "<leader>b" = {
             action = "buffers";
@@ -211,6 +239,18 @@
           "<leader>m" = {
             action = "man_pages";
             desc = "Search Manual";
+          };
+          "<leader>p" = {
+            action = "live_grep";
+            desc = "Grep";
+          };
+          "<leader>s" = {
+            action = "lsp_document_symbols";
+            desc = "Symbols";
+          };
+          "<leader>S" = {
+            action = "lsp_dynamic_workspace_symbols";
+            desc = "Workspace Symbols";
           };
           "gr" = {
             action = "lsp_references";
@@ -252,6 +292,10 @@
               action = "code_action";
               desc = "Code Actions";
             };
+            "<leader>r" = {
+              action = "rename";
+              desc = "Rename Symbol";
+            };
             "<leader>F" = {
               action = "format";
               desc = "Format";
@@ -259,6 +303,10 @@
             "gd" = {
               action = "definition";
               desc = "Goto definition";
+            };
+            "gD" = {
+              action = "declaration";
+              desc = "Goto declaration";
             };
             "gy" = {
               action = "type_definition";
@@ -278,16 +326,17 @@
 
       lsp-format = {
         enable = true;
-        lspServersToEnable = ["nil_ls"];
       };
 
       treesitter = {
         enable = true;
         nixvimInjections = true;
       };
+      treesitter-context.enable = true;
 
       none-ls = {
         enable = true;
+        onAttach = "require('lsp-format').on_attach";
         sources = {
           formatting = {
             alejandra.enable = true;
@@ -321,6 +370,25 @@
           };
         };
       };
+      harpoon = {
+        enable = true;
+
+        enableTelescope = true;
+        keymapsSilent = true;
+        keymaps = {
+          addFile = "<leader>h";
+          navFile = {
+            "1" = "<leader>1";
+            "2" = "<leader>2";
+            "3" = "<leader>3";
+            "4" = "<leader>4";
+          };
+          navNext = "<leader>.";
+          navPrev = "<leader>,";
+          toggleQuickMenu = "<leader>H";
+        };
+      };
+
       luasnip = {
         enable = true;
         fromVscode = [{paths = "${pkgs.vimPlugins.friendly-snippets}";}];
@@ -398,5 +466,8 @@
         };
       };
     };
+    extraPlugins = with pkgs.vimPlugins; [
+      vim-fetch
+    ];
   };
 }
