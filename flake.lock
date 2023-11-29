@@ -846,10 +846,7 @@
         "repo-nnn": "repo-nnn",
         "sops-nix": "sops-nix",
         "steel": "steel",
-        "vimplugin-fix-cursor-hold-nvim": "vimplugin-fix-cursor-hold-nvim",
-        "vimplugin-neotest-vim-test": "vimplugin-neotest-vim-test",
-        "vimplugin-nvim-neotest": "vimplugin-nvim-neotest",
-        "vscodeNodeDebug2": "vscodeNodeDebug2"
+        "vimplugin-telescope-gitsigns": "vimplugin-telescope-gitsigns"
       }
     },
     "rust-overlay": {
@@ -1023,67 +1020,19 @@
         "type": "github"
       }
     },
-    "vimplugin-fix-cursor-hold-nvim": {
+    "vimplugin-telescope-gitsigns": {
       "flake": false,
       "locked": {
-        "lastModified": 1676287387,
-        "narHash": "sha256-HwaKkwANoNHe512eDvuOJ48tG8nDh7r67magi8OA/Vw=",
-        "owner": "antoinemadec",
-        "repo": "FixCursorHold.nvim",
-        "rev": "1900f89dc17c603eec29960f57c00bd9ae696495",
+        "lastModified": 1698685979,
+        "narHash": "sha256-ULmo84ameJ4D62wrvsb+9YCUKGhOYpHvgIffGKF0Vo8=",
+        "owner": "radyz",
+        "repo": "telescope-gitsigns",
+        "rev": "e568da4b8b6da800bd9274f7b509c0da81fc8615",
         "type": "github"
       },
       "original": {
-        "owner": "antoinemadec",
-        "repo": "FixCursorHold.nvim",
-        "type": "github"
-      }
-    },
-    "vimplugin-neotest-vim-test": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1681720687,
-        "narHash": "sha256-fFm5Yt2Sus5jLSapHUtLlDkBWPLLKfWsj2NSXD8NPYo=",
-        "owner": "nvim-neotest",
-        "repo": "neotest-vim-test",
-        "rev": "75c4228882ae4883b11bfce9b8383e637eb44192",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvim-neotest",
-        "repo": "neotest-vim-test",
-        "type": "github"
-      }
-    },
-    "vimplugin-nvim-neotest": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1699863439,
-        "narHash": "sha256-9bUy2JZ52fVK9uY2M8qDHmW4o0YDEI+zcy/MCM+p6Ok=",
-        "owner": "nvim-neotest",
-        "repo": "neotest",
-        "rev": "d424d262d01bccc1e0b038c9a7220a755afd2a1f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvim-neotest",
-        "repo": "neotest",
-        "type": "github"
-      }
-    },
-    "vscodeNodeDebug2": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1628019784,
-        "narHash": "sha256-Sym+E9MUjngYRoEixO8fDE04PIFTsU4V2cxYJXdnEr0=",
-        "owner": "microsoft",
-        "repo": "vscode-node-debug2",
-        "rev": "20ee19f33af9b54b92cf50ce478c07da3a5188b3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "microsoft",
-        "repo": "vscode-node-debug2",
+        "owner": "radyz",
+        "repo": "telescope-gitsigns",
         "type": "github"
       }
     }

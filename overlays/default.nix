@@ -11,7 +11,7 @@ inputs @ {
   nix-on-droid,
   mac-app-util,
   steel,
-  vscodeNodeDebug2,
+  # vscodeNodeDebug2,
   nixvim,
   # nixpkgs-wayland,
   ...
@@ -28,7 +28,7 @@ inputs @ {
       src = actual-server;
       nodejs = final.nodejs-16_x;
     };
-    vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 {src = vscodeNodeDebug2;};
+    # vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 {src = vscodeNodeDebug2;};
     envy-sh = envy-sh.defaultPackage.${final.system};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
     # myEspanso = final.callPackage ./espanso {};
@@ -76,7 +76,7 @@ inputs @ {
           name = final.lib.removePrefix "vimplugin-" input;
         in {
           inherit name;
-          value = final.vimUtils.buildVimPluginFrom2Nix {
+          value = final.vimUtils.buildVimPlugin {
             inherit name;
             pname = name;
             src = builtins.getAttr input inputs;

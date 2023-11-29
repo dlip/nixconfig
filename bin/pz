@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Open project
+filter_params=""
+if [ -n "${1:-}" ]; then
+    filter_params="-q $1"
+fi
+repo_path=$(cat ~/code/projects.txt | fzf $filter_params --select-1)
+name=$(basename $repo_path)
+if [ -n "$repo_path" ]; then
+    cd ~/$repo_path
+    if zellij list-sessions | grep "^${name}\$" &> /dev/null; then
+        zellij attach -c "$name"
+    else
+        direnv exec ~/$repo_path zellij -s "$name" -l programming
+    fi
+
+    # tmux split-window -p 20
+    # tmux wait -S project_opened
+    # tmux select-pane -U
+    # nvim
+    # $SHELL
+fi

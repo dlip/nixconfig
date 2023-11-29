@@ -7,19 +7,25 @@ if [ -n "${1:-}" ]; then
 	filter_params="-q $1"
 fi
 repo_path=$(cat ~/code/projects.txt | fzf $filter_params --select-1)
-name=$(basename $repo_path)
+session=$(basename $repo_path)
 if [ -n "$repo_path" ]; then
 	cd ~/$repo_path
-	if zellij list-sessions | grep "^${name}\$" &>/dev/null; then
-		zellij attach -c "$name"
+	if tmux has-session -t $session 2>/dev/null; then
+		tmux attach-session -t "$session"
 	else
-		# direnv exec ~/$repo_path
-		zellij -s "$name" -l programming
+		tmux new-session -d -s $session
+		window=0
+		tmux send-keys -t $session:$window "$EDITOR" Enter
+		window=1
+		tmux new-window -t $session:$window -n 'shell'
+		window=2
+		tmux new-window -t $session:$window -n 'git'
+		tmux send-keys -t $session:$window "lazygit" Enter
+		window=3
+		tmux new-window -t $session:$window -n 'files'
+		tmux send-keys -t $session:$window "nnn" Enter
+		window=0
+		tmux select-window -t $session:$window
+		tmux attach-session -t "$session"
 	fi
-
-	# tmux split-window -p 20
-	# tmux wait -S project_opened
-	# tmux select-pane -U
-	# nvim
-	# $SHELL
 fi

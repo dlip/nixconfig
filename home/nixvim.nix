@@ -83,6 +83,24 @@
         options.desc = "Replay macro recorded by qq";
       }
       {
+        mode = "x";
+        key = "p";
+        action = "P";
+        options.desc = "Paste without yank";
+      }
+      {
+        mode = "n";
+        key = "x";
+        action = "\"_x";
+        options.desc = "Delete without yank";
+      }
+      {
+        mode = "n";
+        key = "X";
+        action = "\"_X";
+        options.desc = "Backspace without yank";
+      }
+      {
         mode = "n";
         key = "<leader>x";
         action = "<cmd>bd<CR>";
@@ -122,25 +140,25 @@
       {
         mode = ["n" "x" "o"];
         key = "<C-Up>";
-        action = "<C-w>k";
+        action = "<cmd>TmuxNavigateUp<CR>";
         options.desc = "Go to the up window";
       }
       {
         mode = ["n" "x" "o"];
         key = "<C-Down>";
-        action = "<C-w>j";
+        action = "<cmd>TmuxNavigateDown<CR>";
         options.desc = "Go to the down window";
       }
       {
         mode = ["n" "x" "o"];
         key = "<C-Left>";
-        action = "<C-w>h";
+        action = "<cmd>TmuxNavigateLeft<CR>";
         options.desc = "Go to the left window";
       }
       {
         mode = ["n" "x" "o"];
         key = "<C-Right>";
-        action = "<C-w>l";
+        action = "<cmd>TmuxNavigateRight<CR>";
         options.desc = "Go to the right window";
       }
       # Git
@@ -164,7 +182,7 @@
       }
       {
         mode = "n";
-        key = "<leader>gn";
+        key = "<leader>n";
         action = "<cmd>Neogit<Cr>";
         options = {
           desc = "Neogit";
@@ -198,6 +216,15 @@
           silent = true;
         };
       }
+      {
+        mode = "n";
+        key = "<leader>gc";
+        action = "<cmd>Telescope git_signs<CR>";
+        options = {
+          desc = "Changes in buffer";
+          silent = true;
+        };
+      }
     ];
     plugins = {
       lightline.enable = true;
@@ -219,6 +246,7 @@
       telescope = {
         enable = true;
         extensions.frecency.enable = true;
+        enabledExtensions = ["git_signs"];
         keymaps = {
           "<leader>'" = {
             action = "resume";
@@ -388,6 +416,7 @@
           toggleQuickMenu = "<leader>H";
         };
       };
+      tmux-navigator.enable = true;
 
       luasnip = {
         enable = true;
@@ -468,6 +497,7 @@
     };
     extraPlugins = with pkgs.vimPlugins; [
       vim-fetch
+      telescope-gitsigns
     ];
   };
 }

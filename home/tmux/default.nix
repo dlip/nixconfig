@@ -1,6 +1,4 @@
-{ pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     clock24 = true;
@@ -8,9 +6,9 @@
       prefix-highlight
       sensible
       yank
-      resurrect
-      continuum
-      nord
+      # resurrect
+      # continuum
+      catppuccin
       pain-control
       extrakto
       tmux-fzf
@@ -19,20 +17,25 @@
     extraConfig = ''
       set -g default-terminal "tmux-256color"
       set -ag terminal-overrides ",xterm-kitty:RGB"
+      set -g @catppuccin_flavour 'macchiato'
       set-option -g prefix C-t
       bind-key C-t send-prefix
       bind-key C-a last-window
       set -g mouse on
       bind S choose-tree
+      set-option -g history-limit 20000
+      set-option -g set-titles on
+      set-option -g set-titles-string "#S"
       TMUX_FZF_LAUNCH_KEY="f" # Key Prefix + f
 
       TMUX_FZF_OPTIONS="-p -w 62% -h 38%"
       TMUX_FZF_PANE_FORMAT="[#{window_name}] #{pane_current_command}  [#{pane_width}x#{pane_height}] [history #{history_size}/#{history_limit}, #{history_bytes} bytes] #{?pane_active,[active],[inactive]}"
       TMUX_FZF_POPUP=0
       bind-key r source-file ~/.config/tmux/tmux.conf \; display-message "config reloaded"
-      set-option -g status-interval 5
-      set-option -g automatic-rename on
-      set-option -g automatic-rename-format '#{b:pane_current_path}'
+      bind-key e run-shell "tmux-edit-output"
+      # set-option -g status-interval 5
+      # set-option -g automatic-rename on
+      # set-option -g automatic-rename-format '#{b:pane_current_path}'
       bind -n M-Left  previous-window
       bind -n M-Right next-window
       bind-key -n M-S-Left swap-window -t -1\; select-window -t -1
@@ -62,18 +65,24 @@
       if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
         "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
 
+      bind-key -r -T prefix Up resize-pane -U 5
+      bind-key -r -T prefix Down resize-pane -D 5
+      bind-key -r -T prefix Left resize-pane -L 5
+      bind-key -r -T prefix Right resize-pane -R 5
+
       bind-key -T copy-mode-vi 'C-Left' select-pane -L
       bind-key -T copy-mode-vi 'C-Down' select-pane -D
       bind-key -T copy-mode-vi 'C-Up' select-pane -U
       bind-key -T copy-mode-vi 'C-Right' select-pane -R
       bind-key -T copy-mode-vi 'C-\' select-pane -l
-      
+
       # Ensure path is maintained
       bind c new-window -c "#{pane_current_path}"
       bind s split-window -c "#{pane_current_path}"
       bind v split-window -h -c "#{pane_current_path}"
 
       bind X kill-window
+      bind Q kill-session
     '';
   };
 }
