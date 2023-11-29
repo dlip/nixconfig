@@ -33,6 +33,10 @@
       tabstop = 4; # 1 tab == 4 spaces
       smartindent = true; # autoindent new lines
       lazyredraw = true; # faster scrolling
+      list = true; # show hidden characters
+      listchars = {
+        trail = "•"; # trailing space
+      };
     };
     autoCmd = [
       {
@@ -368,6 +372,10 @@
       lsp-format.enable = true;
       nvim-autopairs.enable = true;
       leap.enable = true;
+      indent-blankline = {
+        enable = true;
+        scope.enabled = false;
+      };
 
       treesitter = {
         enable = true;
@@ -504,6 +512,16 @@
               "i"
               "s"
             ];
+          };
+        };
+      };
+      dap = {
+        enable = true;
+        extensions = {
+          dap-ui.enable = true;
+          dap-python = {
+            enable = true;
+            adapterPythonPath = "${pkgs.python3.withPackages (ps: with ps; [debugpy])}/bin/python3";
           };
         };
       };
