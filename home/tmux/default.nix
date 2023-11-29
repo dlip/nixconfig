@@ -23,6 +23,7 @@
       set -g @catppuccin_status_modules_right "null"
       run-shell ${pkgs.tmux-catppuccin}/catppuccin.tmux
 
+      bind-key a last-window
       bind S choose-tree
       set-option -g history-limit 20000
       set-option -g set-titles on

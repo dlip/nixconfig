@@ -1,10 +1,20 @@
 {pkgs, ...}: {
   programs.nixvim = {
     enable = true;
+    enableMan = false; # https://github.com/nix-community/nixvim/issues/754
 
     colorschemes.catppuccin = {
       enable = true;
       flavour = "macchiato";
+      integrations = {
+        cmp = true;
+        gitsigns = true;
+        treesitter = true;
+        telescope = {
+          enabled = true;
+        };
+        markdown = true;
+      };
     };
     clipboard.register = "unnamedplus"; # Use system clipboard
     options = {
@@ -227,7 +237,10 @@
       }
     ];
     plugins = {
-      lightline.enable = true;
+      lualine = {
+        enable = true;
+        theme = "catppuccin";
+      };
       which-key = {
         enable = true;
         registrations = {
@@ -352,9 +365,9 @@
         };
       };
 
-      lsp-format = {
-        enable = true;
-      };
+      lsp-format.enable = true;
+      nvim-autopairs.enable = true;
+      leap.enable = true;
 
       treesitter = {
         enable = true;
@@ -364,7 +377,7 @@
 
       none-ls = {
         enable = true;
-        onAttach = "require('lsp-format').on_attach";
+        # onAttach = "require('lsp-format').on_attach";
         sources = {
           formatting = {
             alejandra.enable = true;
