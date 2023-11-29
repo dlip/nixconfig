@@ -846,6 +846,7 @@
         "repo-nnn": "repo-nnn",
         "sops-nix": "sops-nix",
         "steel": "steel",
+        "tmux-catppuccin": "tmux-catppuccin",
         "vimplugin-telescope-gitsigns": "vimplugin-telescope-gitsigns"
       }
     },
@@ -1002,6 +1003,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "tmux-catppuccin": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1698854691,
+        "narHash": "sha256-kn3kf7eiiwXj57tgA7fs5N2+B2r441OtBlM8IBBLl4I=",
+        "owner": "catppuccin",
+        "repo": "tmux",
+        "rev": "47e33044b4b47b1c1faca1e42508fc92be12131a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "tmux",
         "type": "github"
       }
     },

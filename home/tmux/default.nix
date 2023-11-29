@@ -3,25 +3,26 @@
     enable = true;
     clock24 = true;
     plugins = with pkgs.tmuxPlugins; [
-      prefix-highlight
-      sensible
       yank
-      # resurrect
-      # continuum
-      catppuccin
-      pain-control
       extrakto
       tmux-fzf
     ];
     keyMode = "vi";
+    baseIndex = 1;
+    prefix = "C-t";
+    shortcut = "a";
+    mouse = true;
+    terminal = "tmux-256color";
     extraConfig = ''
-      set -g default-terminal "tmux-256color"
       set -ag terminal-overrides ",xterm-kitty:RGB"
+      set-option -g status-position top
       set -g @catppuccin_flavour 'macchiato'
-      set-option -g prefix C-t
-      bind-key C-t send-prefix
-      bind-key C-a last-window
-      set -g mouse on
+      set -g @catppuccin_window_default_text "#W"
+      set -g @catppuccin_window_current_text "#W"
+      set -g @catppuccin_status_modules_left "session"
+      set -g @catppuccin_status_modules_right "null"
+      run-shell ${pkgs.tmux-catppuccin}/catppuccin.tmux
+
       bind S choose-tree
       set-option -g history-limit 20000
       set-option -g set-titles on
@@ -77,7 +78,7 @@
       bind-key -T copy-mode-vi 'C-\' select-pane -l
 
       # Ensure path is maintained
-      bind c new-window -c "#{pane_current_path}"
+      bind c new-window -c "#{pane_current_path}" -n ""
       bind s split-window -c "#{pane_current_path}"
       bind v split-window -h -c "#{pane_current_path}"
 

@@ -14,6 +14,7 @@ inputs @ {
   # vscodeNodeDebug2,
   nixvim,
   # nixpkgs-wayland,
+  tmux-catppuccin,
   ...
 }: [
   kmonad.overlays.default
@@ -23,7 +24,7 @@ inputs @ {
   # poetry2nix.overlay
   # packages
   (final: prev: {
-    inherit sops-nix mac-app-util nixvim;
+    inherit sops-nix mac-app-util nixvim tmux-catppuccin;
     actualServer = final.callPackage ./actualServer {
       src = actual-server;
       nodejs = final.nodejs-16_x;

@@ -13,18 +13,18 @@ if [ -n "$repo_path" ]; then
 	if tmux has-session -t $session 2>/dev/null; then
 		tmux attach-session -t "$session"
 	else
-		tmux new-session -d -s $session
-		window=0
-		tmux send-keys -t $session:$window "$EDITOR" Enter
+		tmux new-session -d -s $session -n editor
 		window=1
-		tmux new-window -t $session:$window -n 'shell'
+		tmux send-keys -t $session:$window "$EDITOR" Enter
 		window=2
+		tmux new-window -t $session:$window -n 'shell'
+		window=3
 		tmux new-window -t $session:$window -n 'git'
 		tmux send-keys -t $session:$window "lazygit" Enter
-		window=3
+		window=4
 		tmux new-window -t $session:$window -n 'files'
 		tmux send-keys -t $session:$window "nnn" Enter
-		window=0
+		window=1
 		tmux select-window -t $session:$window
 		tmux attach-session -t "$session"
 	fi

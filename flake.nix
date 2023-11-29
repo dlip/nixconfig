@@ -66,6 +66,10 @@
       url = "github:radyz/telescope-gitsigns";
       flake = false;
     };
+    tmux-catppuccin = {
+      url = "github:catppuccin/tmux";
+      flake = false;
+    };
     nixvim = {
       url = "github:nix-community/nixvim";
       # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
