@@ -51,10 +51,6 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    repo-nnn = {
-      url = "github:jarun/nnn";
-      flake = false;
-    };
     helix = {
       url = "github:mattwparas/helix/steel-event-system";
     };
@@ -66,8 +62,16 @@
       url = "github:radyz/telescope-gitsigns";
       flake = false;
     };
-    tmux-catppuccin = {
+    repo-nnn = {
+      url = "github:jarun/nnn";
+      flake = false;
+    };
+    repo-tmux-catppuccin = {
       url = "github:catppuccin/tmux";
+      flake = false;
+    };
+    repo-catppuccin-zsh-syntax-highlighting = {
+      url = "github:catppuccin/zsh-syntax-highlighting";
       flake = false;
     };
     nixvim = {

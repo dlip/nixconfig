@@ -34,8 +34,10 @@
       smartindent = true; # autoindent new lines
       lazyredraw = true; # faster scrolling
       list = true; # show hidden characters
+      # what hidden characters to show
       listchars = {
         trail = "•"; # trailing space
+        tab = "»\ "; # tabs
       };
     };
     autoCmd = [
@@ -462,7 +464,9 @@
             action = ''
               function(fallback)
                 if cmp.visible() then
-                  vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
+                  if not cmp.get_selected_entry() then
+                    vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
+                  end
                   cmp.abort()
                 else
                   fallback()
@@ -474,45 +478,53 @@
               "s"
             ];
           };
+          "<Up>" = {
+            action = ''
+              function(fallback)
+                local luasnip = require("luasnip")
+                if cmp.get_selected_entry() then
+                  cmp.scroll_docs(-4)
+                elseif luasnip.jumpable(-1) then
+                  luasnip.jump(-1)
+                else
+                  if cmp.visible() then
+                    cmp.abort()
+                  end
+                  fallback()
+                end
+              end
+            '';
+            modes = [
+              "i"
+              "s"
+            ];
+          };
+          "<Down>" = {
+            action = ''
+              function(fallback)
+                local luasnip = require("luasnip")
+                if cmp.get_selected_entry() then
+                  cmp.scroll_docs(4)
+                elseif luasnip.expandable() then
+                  luasnip.expand()
+                elseif luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
+                else
+                  if cmp.visible() then
+                    cmp.abort()
+                  end
+                  fallback()
+                end
+              end
+            '';
+            modes = [
+              "i"
+              "s"
+            ];
+          };
           "<CR>" = "cmp.mapping.confirm({ select = false })";
-          "<Tab>" = {
-            action = ''
-                   function(fallback)
-              local luasnip = require("luasnip")
-                     if cmp.visible() then
-                       cmp.select_next_item()
-                     elseif luasnip.expandable() then
-                       luasnip.expand()
-                     elseif luasnip.expand_or_jumpable() then
-                       luasnip.expand_or_jump()
-                     else
-                       fallback()
-                     end
-                   end
-            '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<S-Tab>" = {
-            action = ''
-                   function(fallback)
-              local luasnip = require("luasnip")
-                     if cmp.visible() then
-                       cmp.select_prev_item()
-                     elseif luasnip.jumpable(-1) then
-                       luasnip.jump(-1)
-                     else
-                       fallback()
-                     end
-                   end
-            '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
+          "<Tab>" = "cmp.mapping.select_next_item()";
+          "<S-Tab>" = "cmp.mapping.select_prev_item()";
         };
       };
       dap = {

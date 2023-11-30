@@ -810,6 +810,22 @@
         "type": "github"
       }
     },
+    "repo-catppuccin-zsh-syntax-highlighting": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1665638423,
+        "narHash": "sha256-Q7KmwUd9fblprL55W0Sf4g7lRcemnhjh4/v+TacJSfo=",
+        "owner": "catppuccin",
+        "repo": "zsh-syntax-highlighting",
+        "rev": "06d519c20798f0ebe275fc3a8101841faaeee8ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "zsh-syntax-highlighting",
+        "type": "github"
+      }
+    },
     "repo-nnn": {
       "flake": false,
       "locked": {
@@ -823,6 +839,22 @@
       "original": {
         "owner": "jarun",
         "repo": "nnn",
+        "type": "github"
+      }
+    },
+    "repo-tmux-catppuccin": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1698854691,
+        "narHash": "sha256-kn3kf7eiiwXj57tgA7fs5N2+B2r441OtBlM8IBBLl4I=",
+        "owner": "catppuccin",
+        "repo": "tmux",
+        "rev": "47e33044b4b47b1c1faca1e42508fc92be12131a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "catppuccin",
+        "repo": "tmux",
         "type": "github"
       }
     },
@@ -843,10 +875,11 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixvim": "nixvim",
         "power-menu": "power-menu",
+        "repo-catppuccin-zsh-syntax-highlighting": "repo-catppuccin-zsh-syntax-highlighting",
         "repo-nnn": "repo-nnn",
+        "repo-tmux-catppuccin": "repo-tmux-catppuccin",
         "sops-nix": "sops-nix",
         "steel": "steel",
-        "tmux-catppuccin": "tmux-catppuccin",
         "vimplugin-telescope-gitsigns": "vimplugin-telescope-gitsigns"
       }
     },
@@ -1003,22 +1036,6 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "tmux-catppuccin": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1698854691,
-        "narHash": "sha256-kn3kf7eiiwXj57tgA7fs5N2+B2r441OtBlM8IBBLl4I=",
-        "owner": "catppuccin",
-        "repo": "tmux",
-        "rev": "47e33044b4b47b1c1faca1e42508fc92be12131a",
-        "type": "github"
-      },
-      "original": {
-        "owner": "catppuccin",
-        "repo": "tmux",
         "type": "github"
       }
     },

@@ -13,6 +13,7 @@
     shortcut = "a";
     mouse = true;
     terminal = "tmux-256color";
+    escapeTime = 0;
     extraConfig = ''
       set -ag terminal-overrides ",xterm-kitty:RGB"
       set-option -g status-position top
@@ -21,9 +22,10 @@
       set -g @catppuccin_window_current_text "#W"
       set -g @catppuccin_status_modules_left "session"
       set -g @catppuccin_status_modules_right "null"
-      run-shell ${pkgs.tmux-catppuccin}/catppuccin.tmux
+      run-shell ${pkgs.repo-tmux-catppuccin}/catppuccin.tmux
 
       bind-key a last-window
+      bind C-s copy-mode
       bind S choose-tree
       set-option -g history-limit 20000
       set-option -g set-titles on
@@ -66,6 +68,9 @@
         "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\'  'select-pane -l'"
       if-shell -b '[ "$(echo "$tmux_version >= 3.0" | bc)" = 1 ]' \
         "bind-key -n 'C-\\' if-shell \"$is_vim\" 'send-keys C-\\\\'  'select-pane -l'"
+
+      bind-key -T copy-mode-vi / command-prompt -i -p "search down" "send -X search-forward-incremental \"%%%\""
+      bind-key -T copy-mode-vi ? command-prompt -i -p "search up" "send -X search-backward-incremental \"%%%\""
 
       bind-key -r -T prefix Up resize-pane -U 5
       bind-key -r -T prefix Down resize-pane -D 5
