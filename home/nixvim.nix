@@ -32,8 +32,12 @@
       shiftwidth = 2; # shift 2 spaces when tab
       tabstop = 4; # 1 tab == 4 spaces
       smartindent = true; # autoindent new lines
+      wrap = false; # Disable line wrapping
+      scrolloff = 5; # keep cursor away from top/bottom edge of the screen
+      cursorline = true; # highlight current line
       lazyredraw = true; # faster scrolling
       list = true; # show hidden characters
+      exrc = true; # Loads project specific settings from .exrc, .nvimrc and .nvim.lua files
       # what hidden characters to show
       listchars = {
         trail = "•"; # trailing space
@@ -225,6 +229,15 @@
       }
       {
         mode = "n";
+        key = "<leader>gp";
+        action = "<cmd>Gitsigns preview_hunk<Cr>";
+        options = {
+          desc = "Preview Hunk";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>gx";
         action = "<cmd>Gitsigns reset_hunk<Cr>";
         options = {
@@ -241,7 +254,130 @@
           silent = true;
         };
       }
+      # debug
+      {
+        mode = "n";
+        key = "<leader>ec";
+        action = "<cmd>DapContinue<CR>";
+        options = {
+          desc = "Continue";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ej";
+        action = "<cmd>DapLoadLaunchJSON<CR>";
+        options = {
+          desc = "Load launch.json";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>eq";
+        action = "<cmd>DapRestartFrame<CR>";
+        options = {
+          desc = "Continue";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ev";
+        action = "<cmd>DapSetLogLevel<CR>";
+        options = {
+          desc = "Set Log Level";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>el";
+        action = "<cmd>DapShowLog<CR>";
+        options = {
+          desc = "Show Log";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ei";
+        action = "<cmd>DapStepInto<CR>";
+        options = {
+          desc = "Step Into";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>eo";
+        action = "<cmd>DapStepOut<CR>";
+        options = {
+          desc = "Step Out";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>es";
+        action = "<cmd>DapStepOver<CR>";
+        options = {
+          desc = "Step Over";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ex";
+        action = "<cmd>DapTerminate<CR>";
+        options = {
+          desc = "Terminate";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>eb";
+        action = "<cmd>DapToggleBreakpoint<CR>";
+        options = {
+          desc = "Toggle Breakpoint";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>er";
+        action = "<cmd>DapToggleRepl<CR>";
+        options = {
+          desc = "Toggle Repl";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ed";
+        action = "function() require('dapui').toggle() end";
+        lua = true;
+        options = {
+          desc = "Toggle UI";
+          silent = true;
+        };
+      }
     ];
+    extraConfigLua = ''
+      local dap, dapui = require("dap"), require("dapui")
+      require('dap.ext.vscode').load_launchjs()
+      dap.listeners.after.event_initialized["dapui_config"] = function()
+        dapui.open()
+      end
+      dap.listeners.before.event_terminated["dapui_config"] = function()
+        dapui.close()
+      end
+      dap.listeners.before.event_exited["dapui_config"] = function()
+        dapui.close()
+      end
+    '';
     plugins = {
       lualine = {
         enable = true;
@@ -250,6 +386,7 @@
       which-key = {
         enable = true;
         registrations = {
+          "<leader>e" = "Debug";
           "<leader>g" = "Git";
           "<leader>gy" = "Yank git link";
           "<leader>h" = "Harpoon Add";
@@ -305,7 +442,12 @@
           };
         };
         extraOptions = {
-          pickers = {find_files = {hidden = true;};};
+          pickers = {
+            find_files = {
+              hidden = true;
+              file_ignore_patterns = ["%.git/.*"];
+            };
+          };
         };
       };
 
@@ -387,14 +529,13 @@
 
       none-ls = {
         enable = true;
-        # onAttach = "require('lsp-format').on_attach";
+        enableLspFormat = true;
         sources = {
           formatting = {
             alejandra.enable = true;
             black.enable = true;
             eslint.enable = true;
             gofmt.enable = true;
-            prettier.enable = true;
             shfmt.enable = true;
             stylua.enable = true;
             jq.enable = true;
@@ -463,12 +604,16 @@
           "<Esc>" = {
             action = ''
               function(fallback)
+                local luasnip = require("luasnip")
                 if cmp.visible() then
                   if not cmp.get_selected_entry() then
                     vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
                   end
                   cmp.abort()
                 else
+                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+                    luasnip.unlink_current()
+                  end
                   fallback()
                 end
               end
@@ -489,6 +634,9 @@
                 else
                   if cmp.visible() then
                     cmp.abort()
+                  end
+                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+                    luasnip.unlink_current()
                   end
                   fallback()
                 end
@@ -513,6 +661,9 @@
                   if cmp.visible() then
                     cmp.abort()
                   end
+                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+                    luasnip.unlink_current()
+                  end
                   fallback()
                 end
               end
@@ -522,7 +673,32 @@
               "s"
             ];
           };
-          "<CR>" = "cmp.mapping.confirm({ select = false })";
+          "<CR>" = {
+            action = ''
+              function(fallback)
+                local luasnip = require("luasnip")
+                if cmp.get_selected_entry() then
+                  cmp.confirm({ select = false })
+                elseif luasnip.expandable() then
+                  luasnip.expand()
+                elseif luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
+                else
+                  if cmp.visible() then
+                    cmp.abort()
+                  end
+                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+                    luasnip.unlink_current()
+                  end
+                  fallback()
+                end
+              end
+            '';
+            modes = [
+              "i"
+              "s"
+            ];
+          };
           "<Tab>" = "cmp.mapping.select_next_item()";
           "<S-Tab>" = "cmp.mapping.select_prev_item()";
         };
@@ -531,10 +707,7 @@
         enable = true;
         extensions = {
           dap-ui.enable = true;
-          dap-python = {
-            enable = true;
-            adapterPythonPath = "${pkgs.python3.withPackages (ps: with ps; [debugpy])}/bin/python3";
-          };
+          dap-python.enable = true;
         };
       };
     };
