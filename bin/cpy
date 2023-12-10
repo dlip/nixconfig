@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+if which xsel &>/dev/null; then
+	xsel --clipboard --input
+elif which pbpaste &>/dev/null; then
+	pbcopy
+fi

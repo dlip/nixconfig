@@ -12,7 +12,6 @@
 
     shellAliases = {
       c = "clear";
-      clip = "xclip -sel c";
       g = "git";
       h = "hx";
       n = "nnn";

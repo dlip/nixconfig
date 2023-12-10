@@ -1,7 +1,8 @@
 {pkgs, ...}: {
   programs.nixvim = {
     enable = true;
-    enableMan = false; # https://github.com/nix-community/nixvim/issues/754
+    viAlias = true;
+    vimAlias = true;
 
     colorschemes.catppuccin = {
       enable = true;
@@ -62,6 +63,12 @@
         event = ["FileType"];
         pattern = ["help"];
         command = "nmap <buffer><silent> q :q<CR>";
+      }
+      {
+        # Wrap markdown
+        event = ["FileType"];
+        pattern = ["markdown"];
+        command = "<cmd>set wrap<CR>";
       }
     ];
     globals.mapleader = " ";
@@ -376,6 +383,39 @@
       end
       dap.listeners.before.event_exited["dapui_config"] = function()
         dapui.close()
+      end
+
+      dap.configurations.lua = {
+        {
+          type = "nlua",
+          request = "attach",
+          name = "Run this file",
+          start_neovim = {},
+        },
+        -- {
+        --   type = "nlua",
+        --   request = "attach",
+        --   name = "Attach to running Neovim instance (port = 8086)",
+        --   port = 8086,
+        -- },
+      }
+
+      dap.adapters.nlua = function(callback, conf)
+        local adapter = {
+          type = "server",
+          host = conf.host or "127.0.0.1",
+          port = conf.port or 8086,
+        }
+        if conf.start_neovim then
+          local dap_run = dap.run
+          dap.run = function(c)
+            adapter.port = c.port
+            adapter.host = c.host
+          end
+          require("osv").run_this()
+          dap.run = dap_run
+        end
+        callback(adapter)
       end
     '';
     plugins = {
@@ -714,6 +754,7 @@
     extraPlugins = with pkgs.vimPlugins; [
       vim-fetch
       telescope-gitsigns
+      one-small-step-for-vimkind
     ];
   };
 }

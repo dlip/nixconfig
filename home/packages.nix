@@ -5,6 +5,7 @@
     delta
     dig
     direnv
+    entr
     # envy-sh
     fd
     findutils

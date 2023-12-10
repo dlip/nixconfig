@@ -62,6 +62,10 @@
       url = "github:radyz/telescope-gitsigns";
       flake = false;
     };
+    vimplugin-one-small-step-for-vimkind = {
+      url = "github:jbyuki/one-small-step-for-vimkind";
+      flake = false;
+    };
     repo-nnn = {
       url = "github:jarun/nnn";
       flake = false;
