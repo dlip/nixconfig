@@ -218,7 +218,34 @@
       }
       {
         mode = "n";
+        key = "<leader>gh";
+        action = "<cmd>Telescope git_bcommits<Cr>";
+        options = {
+          desc = "Stage hunk";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>gl";
+        action = "<cmd>Telescope git_commits<Cr>";
+        options = {
+          desc = "Stage hunk";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>gs";
+        action = "<cmd>Telescope git_status<Cr>";
+        options = {
+          desc = "Stage hunk";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ga";
         action = "<cmd>Gitsigns stages_hunk<Cr>";
         options = {
           desc = "Stage hunk";
