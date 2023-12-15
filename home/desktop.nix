@@ -9,6 +9,7 @@
     ./espanso
     ./k9s
     ./btop
+    ./nushell
   ];
 
   home.packages = with pkgs; [
@@ -50,8 +51,8 @@
     graphviz
     hexdino
     imagemagick
+    jc
     joshuto
-    pkgs.iredis
     jdk11
     kaf
     kind

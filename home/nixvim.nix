@@ -26,6 +26,8 @@
       modeline = true; # Tags such as 'vim:ft=sh'
       modelines = 100; # Sets the type of modelines
       undofile = true; # Automatically save and restore undo history
+      splitright = true; # vertical split to the right
+      splitbelow = true; # horizontal split to the bottom
       incsearch = true; # Incremental search: show match for partly typed search command
       ignorecase = true; # When the search query is lower-case, match both lower and upper-case
       smartcase = true; # Override the 'ignorecase' option if the search pattern contains upper
@@ -35,6 +37,7 @@
       smartindent = true; # autoindent new lines
       wrap = false; # Disable line wrapping
       scrolloff = 5; # keep cursor away from top/bottom edge of the screen
+      foldlevel = 99; # unfold everything by default
       cursorline = true; # highlight current line
       lazyredraw = true; # faster scrolling
       list = true; # show hidden characters
@@ -68,7 +71,7 @@
         # Wrap markdown
         event = ["FileType"];
         pattern = ["markdown"];
-        command = "<cmd>set wrap<CR>";
+        command = "set wrap<CR>";
       }
     ];
     globals.mapleader = " ";
@@ -444,6 +447,8 @@
         end
         callback(adapter)
       end
+
+      require'nu'.setup{}
     '';
     plugins = {
       lualine = {
@@ -527,6 +532,19 @@
           lua-ls.enable = true;
           nil_ls.enable = true;
           pyright.enable = true;
+          pylsp = {
+            enable = true;
+            settings.plugins = {
+              jedi_definition = {
+                enabled = true;
+              };
+            };
+          };
+          rust-analyzer = {
+            enable = true;
+            installCargo = true;
+            installRustc = true;
+          };
           tsserver.enable = true;
           yamlls.enable = true;
         };
@@ -572,7 +590,7 @@
               action = "implementation";
               desc = "Goto Implementation";
             };
-            "k" = {
+            "<leader>k" = {
               action = "hover";
               desc = "Hover";
             };
@@ -591,6 +609,13 @@
       treesitter = {
         enable = true;
         nixvimInjections = true;
+        grammarPackages = with pkgs.tree-sitter-grammars;
+          [
+            tree-sitter-nu
+          ]
+          ++ builtins.attrValues (pkgs.lib.filterAttrs (k: v: pkgs.lib.hasPrefix "tree-sitter" k) pkgs.vimPlugins.nvim-treesitter.builtGrammars);
+        indent = true;
+        folding = true;
       };
       treesitter-context.enable = true;
 
@@ -630,9 +655,9 @@
         };
       };
       harpoon = {
-        enable = true;
+        enable = false;
 
-        enableTelescope = true;
+        #enableTelescope = true;
         keymapsSilent = true;
         keymaps = {
           addFile = "<leader>h";
@@ -782,6 +807,7 @@
       vim-fetch
       telescope-gitsigns
       one-small-step-for-vimkind
+      nu
     ];
   };
 }

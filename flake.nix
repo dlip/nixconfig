@@ -66,6 +66,10 @@
       url = "github:jbyuki/one-small-step-for-vimkind";
       flake = false;
     };
+    vimplugin-nu = {
+      url = "github:LhKipp/nvim-nu";
+      flake = false;
+    };
     repo-nnn = {
       url = "github:jarun/nnn";
       flake = false;
