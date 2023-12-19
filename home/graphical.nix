@@ -54,7 +54,7 @@
     # xournalpp
     # yubikey-manager-qt #broken
     # yubioath-desktop #broken
-    zathura
+    # zathura # brokon on mac https://github.com/NixOS/nixpkgs/issues/274276
     # zoom-us # download error
   ];
 }
