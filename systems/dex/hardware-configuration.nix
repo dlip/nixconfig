@@ -83,6 +83,16 @@
     options = ["bind"];
   };
 
+  fileSystems."/audiobooks" = {
+    device = "/media/media/audiobooks";
+    options = ["bind"];
+  };
+
+  fileSystems."/podcasts" = {
+    device = "/media/media/podcasts";
+    options = ["bind"];
+  };
+
   swapDevices = [{device = "/.swapfile";}];
 
   powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
