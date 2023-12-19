@@ -40,7 +40,7 @@
     # nyxt
     # nheko # curl error
     # memento
-    obsidian
+    # obsidian
     openscad
     # plover.dev
     qalculate-gtk
