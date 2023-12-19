@@ -90,6 +90,11 @@ in rec {
   #   };
   # };
 
+  services.audiobookshelf = {
+    enable = true;
+    port = 13378;
+  };
+
   virtualisation.oci-containers = {
     backend = "docker";
     containers = {
@@ -101,16 +106,16 @@ in rec {
           PORT = "3001";
         };
       };
-      audiobookshelf = {
-        image = "ghcr.io/advplyr/audiobookshelf";
-        ports = ["13378:80"];
-        volumes = [
-          "/mnt/services/audiobookshelf/config:/config"
-          "/mnt/services/audiobookshelf/metadata:/metadata"
-          "/media/media/audiobooks:/audiobooks"
-          "/media/media/podcasts:/podcasts"
-        ];
-      };
+      # audiobookshelf = {
+      #   image = "ghcr.io/advplyr/audiobookshelf";
+      #   ports = ["13378:80"];
+      #   volumes = [
+      #     "/mnt/services/audiobookshelf/config:/config"
+      #     "/mnt/services/audiobookshelf/metadata:/metadata"
+      #     "/media/media/audiobooks:/audiobooks"
+      #     "/media/media/podcasts:/podcasts"
+      #   ];
+      # };
       yaruki = {
         image = "dlip/yaruki";
         ports = ["8095:8080"];
