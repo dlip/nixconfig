@@ -36,5 +36,6 @@ with lib; {
     ./version.nix
     ./zellij
     ./zsh
+    ./nushell
   ];
 }

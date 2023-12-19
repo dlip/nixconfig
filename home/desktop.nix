@@ -9,7 +9,6 @@
     ./espanso
     ./k9s
     ./btop
-    ./nushell
   ];
 
   home.packages = with pkgs; [
