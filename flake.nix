@@ -273,6 +273,7 @@
                   dane = {
                     home.email = "dane.lipscombe@planpay.com";
                     imports = [
+                      nixvim.homeManagerModules.nixvim
                       ./home/linux-desktop.nix
                       ./home/gamedev.nix
                       ./home/gaming.nix
