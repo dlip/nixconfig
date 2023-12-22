@@ -449,6 +449,7 @@
       end
 
       require'nu'.setup{}
+      require'lspconfig'.nushell.setup{}
     '';
     plugins = {
       lualine = {

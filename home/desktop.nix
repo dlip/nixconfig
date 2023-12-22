@@ -100,6 +100,7 @@
     # python39Packages.pynvim
     # python39Packages.setuptools
     rclone
+    redis
     renameutils
     # rustc
     # rustup
