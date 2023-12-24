@@ -22,6 +22,25 @@ in {
     ../common/services/kmonad.nix
   ];
 
+  # networking.firewall.extraCommands = ''
+  #   # Flush the tables. This may cut the system's internet.
+  #   iptables -F
+  #
+  #   # The default policy, if no other rules match, is to refuse traffic.
+  #   iptables -P OUTPUT DROP
+  #   iptables -P INPUT DROP
+  #   iptables -P FORWARD DROP
+  #
+  #   # Let the VPN client communicate with the outside world.
+  #   iptables -A OUTPUT -j ACCEPT -m owner --gid-owner openvpn
+  #
+  #   # The loopback device is harmless, and TUN is required for the VPN.
+  #   iptables -A OUTPUT -j ACCEPT -o lo
+  #   iptables -A OUTPUT -j ACCEPT -o tun+
+  #
+  #   # We should permit replies to traffic we've sent out.
+  #   iptables -A INPUT -j ACCEPT -m state --state ESTABLISHED
+  # '';
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -71,6 +90,17 @@ in {
     nvidiaBusId = "PCI:1:0:0";
   };
   # services.flatpak.enable = true;
+
+  systemd.services.keyd = {
+    description = "keyd daemon";
+    wantedBy = ["sysinit.target"];
+    requires = ["local-fs.target"];
+    after = ["local-fs.target"];
+    serviceConfig = {
+      Type = "simple";
+      ExecStart = ''${pkgs.keyd}/bin/keyd'';
+    };
+  };
 
   networking.firewall = {
     allowedUDPPorts = [51820]; # Clients and peers can use the same port, see listenport

@@ -1,6 +1,6 @@
 {...}: {
   services.kmonad = {
-    enable = true;
+    enable = false;
     keyboards = {
       sweep = {
         name = "sweep";
