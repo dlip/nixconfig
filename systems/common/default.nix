@@ -133,6 +133,7 @@ in {
   };
 
   networking.firewall = {
+    enable = true;
     allowedUDPPorts = [51820]; # wireguard
     allowedTCPPorts = [
       1701
@@ -288,10 +289,4 @@ in {
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = true;
 }

@@ -50,6 +50,7 @@
   i (tap-hold 200 i lalt)
   a (tap-hold 200 a @med)
 
+  bsp (tap-hold 200 bspc lsft)
   lft (tap-hold 200 left lalt)
   dwn (tap-hold 200 down lmet)
   rgt (tap-hold 200 right lctl)
@@ -60,7 +61,6 @@
   0 (tap-hold 200 0 @med)
 
   del (tap-hold 200 del lalt)
-  bsp (tap-hold 200 bspc lmet)
   ret (tap-hold 200 ret lctl)
   esr (tap-hold 200 esc @med)
 
@@ -83,16 +83,16 @@
   w    l    y    p    b    @na  @na  z    f    o    u    '    _    _
   @c   @r   @s   @t   g    @na  @na  m    @n   @e   @i   @a   _
   q    j    v    d    k    @na  @na  x    h    ;    ,    .
-  _    _    @nav @nav      @spc      rsft rsft bspc bspc bspc bspc
+  _    _    @nav @nav      @spc      @ssf @ssf bspc bspc bspc bspc
 )
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   `    esc  up   ret  [    @na  @na  ]    7    8    9    \    _    _
-  @del @lft @dwn @rgt tab  @na  @na  =    @4   @5   @6   @0   _
-  home pgup pgdn end  bspc @na  @na  -    1    2    3    /
-  _    _    _    _         lsft      _    _    _    _    _    _
+  bspc @lft @dwn @rgt tab  @na  @na  =    @4   @5   @6   @0   _
+  home pgup pgdn end  del  @na  @na  -    1    2    3    /
+  _    _    _    _         _         _    _    _    _    _    _
 )
 
 (defalias

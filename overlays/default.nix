@@ -54,6 +54,10 @@ inputs @ {
         install -m644 data/*.1.gz $out/share/man/man1/
         install -m644 data/keyd.compose $out/share/keyd/
       '';
+      postPatch = ''
+        substituteInPlace Makefile \
+          --replace /usr ""
+      '';
     });
 
     myNodePackages = final.callPackage ./nodePackages {};

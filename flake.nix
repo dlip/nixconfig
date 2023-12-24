@@ -40,7 +40,7 @@
       flake = false;
     };
     keyd = {
-      url = "github:dlip/keyd";
+      url = "github:rvaiya/keyd";
       flake = false;
     };
     power-menu = {
