@@ -22,49 +22,30 @@ in {
     ../common/services/kmonad.nix
   ];
 
-  # networking.firewall.extraCommands = ''
-  #   # Flush the tables. This may cut the system's internet.
-  #   iptables -F
-  #
-  #   # The default policy, if no other rules match, is to refuse traffic.
-  #   iptables -P OUTPUT DROP
-  #   iptables -P INPUT DROP
-  #   iptables -P FORWARD DROP
-  #
-  #   # Let the VPN client communicate with the outside world.
-  #   iptables -A OUTPUT -j ACCEPT -m owner --gid-owner openvpn
-  #
-  #   # The loopback device is harmless, and TUN is required for the VPN.
-  #   iptables -A OUTPUT -j ACCEPT -o lo
-  #   iptables -A OUTPUT -j ACCEPT -o tun+
-  #
-  #   # We should permit replies to traffic we've sent out.
-  #   iptables -A INPUT -j ACCEPT -m state --state ESTABLISHED
-  # '';
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.supportedFilesystems = ["ntfs"];
-  # Setup keyfile
-  boot.initrd.secrets = {
-    "/crypto_keyfile.bin" = null;
-  };
+  #   networking.firewall.extraCommands = ''
+        # Flush the tables. This may cut the system's internet.
+        iptables -F
 
-  # Enable swap on luks
-  boot.initrd.luks.devices."luks-f677fb62-e4b4-4816-847f-1ad76aebd4c2".device = "/dev/disk/by-uuid/f677fb62-e4b4-4816-847f-1ad76aebd4c2";
-  boot.initrd.luks.devices."luks-f677fb62-e4b4-4816-847f-1ad76aebd4c2".keyFile = "/crypto_keyfile.bin";
+        # The default policy, if no other rules match, is to refuse traffic.
+        iptables -P OUTPUT DROP
+        iptables -P INPUT DROP
+        iptables -P FORWARD DROP
 
-  users.users.dane = {
-    isNormalUser = true;
-    extraGroups = ["wheel" "docker" "networkmanager" "dialout" "adbusers" "input"]; # Enable ‘sudo’ for the user.
-    shell = "/etc/profiles/per-user/dane/bin/zsh";
-  };
+        # Let the VPN client communicate with the outside world.
+        iptables -A OUTPUT -j ACCEPT -m owner --gid-owner openvpn
 
-  virtualisation.virtualbox.host.enable = true;
-  # boot.extraModprobeConfig = ''
-  #   options snd-intel-dspcfg dsp_driver=2
-  # '';
+        # The loopback device is harmless, and TUN is required for the VPN.
+        iptables -A OUTPUT -j ACCEPT -o lo
+        iptables -A OUTPUT -j ACCEPT -o tun+
+
+        # We should permit replies to traffic we've sent out.
+        iptables -A INPUT -j ACCEPT -m state --state ESTABLISHED
+     # '';
 
   hardware.opengl = {
     enable = true;

@@ -21,11 +21,71 @@ in {
   };
 
   environment.systemPackages = with pkgs; [traceroute];
-
+  #-P INPUT ACCEPT
+  #-P FORWARD ACCEPT
+  #-P OUTPUT ACCEPT
+  #-N nixos-fw
+  #-N nixos-fw-accept
+  #-N nixos-fw-log-refuse
+  #-N nixos-fw-refuse
+  #-A INPUT -j nixos-fw
+  #-A nixos-fw -i lo -j nixos-fw-accept
+  #-A nixos-fw -m conntrack --ctstate RELATED,ESTABLISHED -j nixos-fw-accept
+  #-A nixos-fw -p tcp -m tcp --dport 6767 -j nixos-fw-accept
+  #-A nixos-fw -p tcp -m tcp --dport 7878 -j nixos-fw-accept
+  #-A nixos-fw -p tcp -m tcp --dport 8080 -j nixos-fw-accept
+  #-A nixos-fw -p tcp -m tcp --dport 8686 -j nixos-fw-accept
+  #-A nixos-fw -p tcp -m tcp --dport 8989 -j nixos-fw-accept
+  #-A nixos-fw -p tcp -m tcp --dport 9696 -j nixos-fw-accept
+  #-A nixos-fw -p icmp -m icmp --icmp-type 8 -j nixos-fw-accept
+  #-A nixos-fw -j nixos-fw-log-refuse
+  #-A nixos-fw-accept -j ACCEPT
+  #-A nixos-fw-log-refuse -p tcp -m tcp --tcp-flags FIN,SYN,RST,ACK SYN -j LOG --log-prefix "refused connection: " --log-level 6
+  #-A nixos-fw-log-refuse -m pkttype ! --pkt-type unicast -j nixos-fw-refuse
+  #-A nixos-fw-log-refuse -j nixos-fw-refuse
+  #-A nixos-fw-refuse -j DROP
   networking = {
+    nameservers = ["1.1.1.1" "8.8.8.8" "8.8.4.4"];
     firewall = {
       enable = true;
       allowedTCPPorts = pkgs.lib.attrsets.attrValues downloader-services;
+      # extraCommands = ''
+      #   # Flush the tables. This may cut the system's internet.
+      #   iptables -F
+      #
+      #   # The default policy, if no other rules match, is to refuse traffic.
+      #   iptables -P OUTPUT DROP
+      #   iptables -P INPUT DROP
+      #   iptables -P FORWARD DROP
+      #
+      #   # Let the VPN client communicate with the outside world.
+      #   iptables -A OUTPUT -j ACCEPT -m owner --gid-owner openvpn
+      #
+      #   # The loopback device is harmless, and TUN is required for the VPN.
+      #   iptables -A OUTPUT -j ACCEPT -o lo
+      #   iptables -A OUTPUT -j ACCEPT -o tun+
+      #
+      #   # We should permit replies to traffic we've sent out.
+      #   iptables -A INPUT -j ACCEPT -m state --state ESTABLISHED
+      # '';
+    };
+  };
+
+  users.users.openvpn = {
+    isSystemUser = true;
+    group = "openvpn";
+  };
+  users.groups.openvpn = {};
+
+  systemd.services.nordvpn = {
+    enable = true;
+    wantedBy = ["sysinit.target"];
+    after = ["network.target"];
+    description = "nordvpn";
+    serviceConfig = {
+      Type = "notify";
+      Restart = "always";
+      ExecStart = "${pkgs.openvpn}/bin/openvpn --user openvpn --config /mnt/services/openvpn/nordvpn.ovpn";
     };
   };
 
@@ -61,13 +121,6 @@ in {
     timerConfig = {
       OnActiveSec = "4h";
       OnUnitActiveSec = "4h";
-    };
-  };
-
-  services.openvpn.servers = {
-    nordvpn = {
-      updateResolvConf = true;
-      config = "config /mnt/services/openvpn/nordvpn.ovpn";
     };
   };
 

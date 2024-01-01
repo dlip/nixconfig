@@ -439,18 +439,19 @@ in rec {
   #   after = ["postgresql.service"];
   # };
 
-  sops.secrets.paperless-adminpass = {
-    owner = "paperless";
-    group = "paperless";
-  };
+  # sops.secrets.paperless-adminpass = {
+  #   owner = "paperless";
+  #   group = "paperless";
+  # };
 
-  services.paperless = {
-    enable = true;
-    dataDir = "/var/lib/paperless";
-    mediaDir = "/media/media/paperless/media";
-    consumptionDir = "/media/media/paperless/consume";
-    passwordFile = config.sops.secrets.paperless-adminpass.path;
-  };
+  # hanging on doCheck
+  # services.paperless = {
+  #   enable = true;
+  #   dataDir = "/var/lib/paperless";
+  #   mediaDir = "/media/media/paperless/media";
+  #   consumptionDir = "/media/media/paperless/consume";
+  #   passwordFile = config.sops.secrets.paperless-adminpass.path;
+  # };
 
   environment.etc.restic-ignore.text = ''
     .cache
