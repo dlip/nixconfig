@@ -72,7 +72,7 @@
     # musikcube
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
-    ngrok
+    # ngrok
     niv
     nodePackages.node2nix
     nodePackages.pnpm
