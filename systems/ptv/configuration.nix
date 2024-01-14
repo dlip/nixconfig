@@ -138,7 +138,9 @@
   # This will generate a new key if the key specified above does not exist
   sops.age.generateKey = true;
   # Secrets
-  sops.secrets.nordvpnLogin = {};
+  sops.secrets.nordvpnLogin = {
+    sopsFile = ../common/secrets/secrets.yaml;
+  };
 
   services.openvpn.servers = {
     nordvpn = {
@@ -148,7 +150,7 @@
   };
 
   services.jellyfin = {
-    enable = true;
+    enable = false;
     user = "root";
     group = "root";
     openFirewall = true;
