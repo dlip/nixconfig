@@ -256,6 +256,10 @@ in rec {
     group = "traefik";
   };
 
+  services.cron.systemCronJobs = [
+    ''*/10 * * * * root eval "export `cat /var/run/secrets/traefik-env`" && ${pkgs.curl}/bin/curl http://www.duckdns.org/update/lips-home/$DUCKDNS_TOKEN''
+  ];
+
   systemd.services.traefik.serviceConfig.EnvironmentFile = ["/var/run/secrets/traefik-env"];
   services.traefik = {
     enable = true;
