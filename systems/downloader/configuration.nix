@@ -43,7 +43,7 @@ in {
     };
   };
 
-  sops.defaultSopsFile = ./secrets/secrets.yaml;
+  sops.defaultSopsFile = ../common/secrets/secrets.yaml;
   # This will automatically import SSH keys as age keys
   sops.age.sshKeyPaths = ["/var/lib/ssh/ssh_host_ed25519_key"];
   # This is using an age key that is expected to already be in the filesystem
@@ -51,7 +51,6 @@ in {
   # This will generate a new key if the key specified above does not exist
   sops.age.generateKey = true;
   # Secrets
-  sops.secrets.restic-encryption = {};
   sops.secrets.nordvpnLogin = {};
 
   # qbittorrent stops downloading when vpn gets reconnected

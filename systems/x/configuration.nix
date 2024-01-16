@@ -27,25 +27,12 @@ in {
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
   boot.supportedFilesystems = ["ntfs"];
-  #   networking.firewall.extraCommands = ''
-        # Flush the tables. This may cut the system's internet.
-        iptables -F
 
-        # The default policy, if no other rules match, is to refuse traffic.
-        iptables -P OUTPUT DROP
-        iptables -P INPUT DROP
-        iptables -P FORWARD DROP
-
-        # Let the VPN client communicate with the outside world.
-        iptables -A OUTPUT -j ACCEPT -m owner --gid-owner openvpn
-
-        # The loopback device is harmless, and TUN is required for the VPN.
-        iptables -A OUTPUT -j ACCEPT -o lo
-        iptables -A OUTPUT -j ACCEPT -o tun+
-
-        # We should permit replies to traffic we've sent out.
-        iptables -A INPUT -j ACCEPT -m state --state ESTABLISHED
-     # '';
+  users.users.dane = {
+    isNormalUser = true;
+    extraGroups = ["wheel" "docker" "networkmanager" "dialout" "adbusers"]; # Enable ‘sudo’ for the user.
+    shell = "/etc/profiles/per-user/dane/bin/zsh";
+  };
 
   hardware.opengl = {
     enable = true;
@@ -71,6 +58,10 @@ in {
     nvidiaBusId = "PCI:1:0:0";
   };
   # services.flatpak.enable = true;
+
+  sops.secrets.nordvpnLogin = {
+    sopsFile = ../common/secrets/secrets.yaml;
+  };
 
   systemd.services.keyd = {
     description = "keyd daemon";

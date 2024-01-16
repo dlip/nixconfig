@@ -103,6 +103,7 @@
     isNormalUser = true;
     description = "tv";
     extraGroups = ["networkmanager" "wheel"];
+    shell = "/etc/profiles/per-user/tv/bin/zsh";
   };
 
   users.users.dane = {
