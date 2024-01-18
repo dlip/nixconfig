@@ -9,6 +9,7 @@
     ./syncthing
     ./desktop.nix
     ./linux-graphical.nix
+    ./mime.nix
   ];
 
   home.packages = with pkgs; [

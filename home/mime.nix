@@ -1,16 +1,16 @@
 {...}: let
   associations = {
     "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
-    "application/x-wine-extension-ini" = ["helix.desktop"];
+    "application/x-wine-extension-ini" = ["nvimterminal.desktop"];
     "application/zip" = ["org.gnome.FileRoller.desktop"];
     "image/jpeg" = ["feh.desktop"];
     "image/png" = ["feh.desktop"];
     "model/stl" = ["fstl.desktop"];
     "inode/directory" = ["thunar.desktop"];
-    "text/csv" = ["helix.desktop"];
+    "text/csv" = ["nvimterminal.desktop"];
     "text/html" = ["google-chrome.desktop"];
-    "text/markdown" = ["helix.desktop"];
-    "text/plain" = ["helix.desktop"];
+    "text/markdown" = ["nvimterminal.desktop"];
+    "text/plain" = ["nvimterminal.desktop"];
     "video/x-matroska" = ["mpv.desktop"];
     "x-scheme-handler/msteams" = ["teams.desktop"];
     "x-scheme-handler/slack" = ["slack.desktop"];
@@ -22,6 +22,11 @@
     "x-scheme-handler/sidequest" = ["SideQuest.desktop"];
   };
 in {
+  xdg.desktopEntries.nvimterminal = {
+    name = "nvimterminal";
+    genericName = "Neovim Text Editor";
+    exec = "nvimterminal %u";
+  };
   xdg.desktopEntries.helix = {
     name = "helix";
     genericName = "Helix Text Editor";
