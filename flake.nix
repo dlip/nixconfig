@@ -301,14 +301,7 @@
                     home.email = "tv@lipscombe.com.au";
                     imports = [
                       nixvim.homeManagerModules.nixvim
-                      ./home/linux-desktop.nix
-                    ];
-                  };
-                  dane = {
-                    home.email = "danelipscombe@gmail.com";
-                    imports = [
-                      nixvim.homeManagerModules.nixvim
-                      ./home/linux-desktop.nix
+                      ./home/default.nix
                     ];
                   };
                 };

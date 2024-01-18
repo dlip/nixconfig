@@ -6,7 +6,11 @@
   pkgs,
   lib,
   ...
-}: {
+}: let
+  ptv-services = import ./services.nix;
+  downloader-services = import ../downloader/services.nix;
+  domain = "ptv-lips.duckdns.org";
+in rec {
   imports = [
     # Include the results of the hardware scan.
     ../common/services/qbittorrent.nix
@@ -19,6 +23,12 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.efi.efiSysMountPoint = "/boot/efi";
 
+  nix = {
+    settings.auto-optimise-store = true;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
   networking.hostName = "ptv"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
@@ -67,7 +77,7 @@
 
   services.xrdp.enable = true;
   services.xrdp.defaultWindowManager = "xfce4-session";
-  networking.firewall.allowedTCPPorts = [3389];
+  networking.firewall.allowedTCPPorts = [80 443 3389];
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -128,7 +138,11 @@
     xfce.xfce4-volumed-pulse
     google-chrome
     kodi
-    zoom-us
+    # (pkgs.kodi.passthru.withPackages (kodiPkgs:
+    #   with kodiPkgs; [
+    #     jellyfin
+    #   ]))
+    # zoom-us
   ];
 
   sops.defaultSopsFile = ./secrets/secrets.yaml;
@@ -138,131 +152,164 @@
   sops.age.keyFile = "/var/lib/sops-nix/key.txt";
   # This will generate a new key if the key specified above does not exist
   sops.age.generateKey = true;
-  # Secrets
-  sops.secrets.nordvpnLogin = {
-    sopsFile = ../common/secrets/secrets.yaml;
-  };
 
-  services.openvpn.servers = {
-    nordvpn = {
-      updateResolvConf = true;
-      config = "config /var/lib/openvpn/nordvpn.ovpn";
+  networking.nat.enable = true;
+  networking.nat.internalInterfaces = ["wg0" "ve-+"];
+  networking.nat.externalInterface = "wlp1s0";
+
+  containers.downloader = {
+    ephemeral = true;
+    autoStart = true;
+    enableTun = true;
+    config = import ../downloader/configuration.nix {
+      inherit pkgs config;
+    };
+    privateNetwork = true;
+    hostAddress = "10.1.0.1";
+    localAddress = "10.1.0.2";
+    bindMounts = {
+      "/mnt/services" = {
+        hostPath = "/mnt/services";
+        isReadOnly = false;
+      };
+      "/media/media" = {
+        hostPath = "/media/media";
+        isReadOnly = false;
+      };
+      "/var/lib" = {
+        hostPath = "/mnt/downloader/var/lib";
+        isReadOnly = false;
+      };
+      "/var/run/secrets" = {
+        hostPath = "/var/run/secrets";
+        isReadOnly = false;
+      };
+      "/run/secrets.d" = {
+        hostPath = "/run/secrets.d";
+        isReadOnly = false;
+      };
     };
   };
 
+  sops.secrets.traefik-env = {
+    owner = "traefik";
+    group = "traefik";
+    sopsFile = ../common/secrets/secrets.yaml;
+  };
+
+  services.cron.systemCronJobs = [
+    ''*/10 * * * * root eval "export `cat /var/run/secrets/traefik-env`" && ${pkgs.curl}/bin/curl http://www.duckdns.org/update/plips-home/$DUCKDNS_TOKEN''
+  ];
+
+  systemd.services.traefik.serviceConfig.EnvironmentFile = ["/var/run/secrets/traefik-env"];
+  services.traefik = {
+    enable = true;
+    staticConfigOptions = {
+      log.level = "DEBUG";
+      api = {
+        dashboard = true;
+      };
+      certificatesResolvers.letsencrypt.acme = {
+        email = "danelipscombe@gmail.com";
+        storage = "/var/lib/traefik/acme.json";
+        dnsChallenge = {
+          provider = "duckdns";
+          delayBeforeCheck = 5;
+          resolvers = [
+            "1.1.1.1:53"
+            "8.8.8.8:53"
+          ];
+        };
+      };
+      entryPoints = {
+        web = {
+          address = ":80";
+          http.redirections.entrypoint = {
+            to = "websecure";
+            scheme = "https";
+          };
+        };
+        websecure = {
+          address = ":443";
+
+          http.tls = {
+            certResolver = "letsencrypt";
+          };
+        };
+      };
+    };
+    dynamicConfigOptions = {
+      http = {
+        routers =
+          {
+            traefik = {
+              rule = "Host(`traefik.${domain}`)";
+              service = "api@internal";
+              tls = {
+                domains = [
+                  {
+                    main = "*.${domain}";
+                  }
+                ];
+                certResolver = "letsencrypt";
+              };
+            };
+          }
+          // pkgs.lib.attrsets.mapAttrs'
+          (name: port:
+            pkgs.lib.attrsets.nameValuePair "${name}"
+            {
+              rule = "Host(`${name}.${domain}`)";
+              service = "${name}";
+              tls = {
+                domains = [
+                  {
+                    main = "*.${domain}";
+                  }
+                ];
+                certResolver = "letsencrypt";
+              };
+            })
+          (ptv-services // downloader-services);
+
+        services =
+          (pkgs.lib.attrsets.mapAttrs'
+            (name: port:
+              pkgs.lib.attrsets.nameValuePair "${name}"
+              {
+                loadBalancer.servers = [{url = "http://127.0.0.1:${toString port}/";}];
+              })
+            ptv-services)
+          // (pkgs.lib.attrsets.mapAttrs'
+            (name: port:
+              pkgs.lib.attrsets.nameValuePair "${name}"
+              {
+                loadBalancer.servers = [{url = "http://${containers.downloader.localAddress}:${toString port}/";}];
+              })
+            downloader-services);
+      };
+    };
+  };
+  sops.secrets.nordvpnLogin = {
+    sopsFile = ../common/secrets/secrets.yaml;
+  };
+  #
   services.jellyfin = {
-    enable = false;
-    user = "root";
-    group = "root";
-    openFirewall = true;
-  };
-
-  services.sonarr = {
     enable = true;
     user = "root";
     group = "root";
     openFirewall = true;
   };
-  services.radarr = {
-    enable = true;
-    user = "root";
-    group = "root";
-    openFirewall = true;
-  };
-  services.lidarr = {
-    enable = true;
-    user = "root";
-    group = "root";
-    openFirewall = true;
-  };
-
-  services.prowlarr = {
-    enable = true;
-    openFirewall = true;
-  };
-
-  services.qbittorrent = {
-    enable = true;
-    user = "root";
-    group = "root";
-    openFirewall = true;
-  };
-
-  # systemd.services.podgrab.environment.DATA = lib.mkForce "/media/media/podcasts";
-  # systemd.services.podgrab.serviceConfig.DynamicUser = lib.mkForce false;
-  # services.podgrab = {
-  #   enable = true;
-  #   port = 4242;
-  # };
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # List services that you want to enable:
+  services.homepage-dashboard.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
     openFirewall = true;
   };
-
-  virtualisation.oci-containers = {
-    backend = "docker";
-    containers = {
-      homepage = {
-        image = "ghcr.io/benphelps/homepage:latest";
-        volumes = [
-          "/var/lib/homepage/config:/app/config"
-          "/var/run/docker.sock:/var/run/docker.sock"
-          "/media/media:/media/media"
-        ];
-        extraOptions = ["--network=host"];
-      };
-      audiobookshelf = {
-        image = "ghcr.io/advplyr/audiobookshelf";
-        ports = ["13378:80"];
-        volumes = [
-          "/var/lib/audiobookshelf/config:/config"
-          "/var/lib/audiobookshelf/metadata:/metadata"
-          "/media/media/audiobooks:/audiobooks"
-          "/media/media/books:/books"
-          "/media/media/podcasts:/podcasts"
-        ];
-      };
-      readarr = {
-        image = "lscr.io/linuxserver/readarr:develop";
-        extraOptions = ["--network=host"];
-        environment = {
-          PUID = "0";
-          PGID = "0";
-          TZ = "Australia/Sydney";
-        };
-
-        volumes = [
-          "/var/lib/readarr/config:/config"
-          "/media/media:/media/media"
-        ];
-      };
-      readarr-audiobook = {
-        image = "lscr.io/linuxserver/readarr:develop";
-        extraOptions = ["--network=host"];
-        environment = {
-          PUID = "0";
-          PGID = "0";
-          TZ = "Australia/Sydney";
-          PORT = "8788";
-        };
-
-        volumes = [
-          "/var/lib/readarr-audiobook/config:/config"
-          "/media/media:/media/media"
-        ];
-      };
-    };
+  services.audiobookshelf = {
+    enable = true;
+    port = 13378;
   };
 
   # sops.secrets.wireguard-key = {};

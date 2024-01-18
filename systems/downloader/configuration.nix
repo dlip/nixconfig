@@ -105,7 +105,14 @@ in {
     user = "root";
     group = "root";
   };
+  services.readarr = {
+    enable = true;
+    user = "root";
+    group = "root";
+  };
   services.bazarr = {enable = true;};
+  # https://github.com/NixOS/nixpkgs/issues/155475
+  systemd.services.prowlarr.environment.HOME = "/var/empty";
   services.prowlarr = {enable = true;};
 
   services.qbittorrent = {
