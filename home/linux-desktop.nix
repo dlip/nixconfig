@@ -10,6 +10,7 @@
     ./desktop.nix
     ./linux-graphical.nix
     ./mime.nix
+    ./btop
   ];
 
   home.packages = with pkgs; [

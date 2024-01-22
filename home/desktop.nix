@@ -8,7 +8,6 @@
     ./alacritty
     ./espanso
     ./k9s
-    ./btop
   ];
 
   home.packages = with pkgs; [
