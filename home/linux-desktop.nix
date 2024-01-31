@@ -24,6 +24,7 @@
     kmonad
     krename
     nix-du
+    ns-usbloader
     # python311Packages.adafruit-nrfutil
     qmk
     strace
