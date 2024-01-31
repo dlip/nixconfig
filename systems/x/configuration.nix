@@ -63,14 +63,24 @@ in {
     sopsFile = ../common/secrets/secrets.yaml;
   };
 
-  systemd.services.keyd = {
-    description = "keyd daemon";
-    wantedBy = ["sysinit.target"];
-    requires = ["local-fs.target"];
-    after = ["local-fs.target"];
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = ''${pkgs.keyd}/bin/keyd'';
+  # systemd.services.keyd = {
+  #   description = "keyd daemon";
+  #   wantedBy = ["sysinit.target"];
+  #   requires = ["local-fs.target"];
+  #   after = ["local-fs.target"];
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     ExecStart = ''${pkgs.keyd}/bin/keyd'';
+  #   };
+  # };
+
+  services.kanata = {
+    enable = true;
+    keyboards = {
+      laptop = {
+        # devices = ["/dev/input/by-path/platform-i8042-serio-0-event-kbd"];
+        config = builtins.readFile ../../keymaps/kanata/canary.kbd;
+      };
     };
   };
 

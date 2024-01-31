@@ -22,6 +22,7 @@
     fusee-launcher
     iotop
     iputils
+    kanata
     kmonad
     krename
     nix-du
