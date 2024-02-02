@@ -224,7 +224,7 @@
         key = "<leader>gh";
         action = "<cmd>Telescope git_bcommits<Cr>";
         options = {
-          desc = "Stage hunk";
+          desc = "Buffer history";
           silent = true;
         };
       }
@@ -490,16 +490,16 @@
             desc = "Diagnostics";
           };
           "<leader>f" = {
-            action = "find_files";
-            desc = "Find Files";
+            action = "live_grep";
+            desc = "Grep";
           };
           "<leader>m" = {
             action = "man_pages";
             desc = "Search Manual";
           };
           "<leader>p" = {
-            action = "live_grep";
-            desc = "Grep";
+            action = "find_files";
+            desc = "Find Files";
           };
           "<leader>s" = {
             action = "lsp_document_symbols";
@@ -532,14 +532,14 @@
           jsonls.enable = true;
           lua-ls.enable = true;
           nil_ls.enable = true;
-          pyright.enable = true;
+          # pyright.enable = true;
           pylsp = {
             enable = true;
-            settings.plugins = {
-              jedi_definition = {
-                enabled = true;
-              };
-            };
+            # settings.plugins = {
+            #   jedi_definition = {
+            #     enabled = true;
+            #   };
+            # };
           };
           rust-analyzer = {
             enable = true;
