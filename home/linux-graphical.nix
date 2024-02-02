@@ -23,6 +23,7 @@
     gnome.seahorse
     gparted
     firefox
+    f3d
     fstl
     keyd
     kdenlive

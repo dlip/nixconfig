@@ -22,7 +22,6 @@
     emoji-menu
     # cinnamon.nemo
     power-menu
-    f3d
     feh
     # freecad
     # solvespace
