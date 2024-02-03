@@ -1,0 +1,70 @@
+(defalias
+  a (chord briefs a)
+  b (chord briefs b)
+  c (chord briefs c)
+  d (chord briefs d)
+  e (chord briefs e)
+  f (chord briefs f)
+  g (chord briefs g)
+  h (chord briefs h)
+  i (chord briefs i)
+  j (chord briefs j)
+  k (chord briefs k)
+  l (chord briefs l)
+  m (chord briefs m)
+  n (chord briefs n)
+  o (chord briefs o)
+  p (chord briefs p)
+  q (chord briefs q)
+  r (chord briefs r)
+  s (chord briefs s)
+  t (chord briefs t)
+  u (chord briefs u)
+  v (chord briefs v)
+  w (chord briefs w)
+  x (chord briefs x)
+  y (chord briefs y)
+  z (chord briefs z)
+  ' (chord briefs ')
+  ; (chord briefs ;)
+  , (chord briefs ,)
+  . (chord briefs .)
+  bsp (chord briefs bspc)
+)
+
+(defchords briefs 100
+  (a) (tap-hold $tap-timeout $hold-timeout a @med)
+  (b) b
+  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
+  (d) d
+  (e) (tap-hold $tap-timeout $hold-timeout e rmet)
+  (f) f
+  (g) g
+  (h) h
+  (i) (tap-hold $tap-timeout $hold-timeout i lalt)
+  (j) j
+  (k) k
+  (l) l
+  (m) m
+  (n) (tap-hold $tap-timeout $hold-timeout n rctl)
+  (o) o
+  (p) p
+  (q) q
+  (r) (tap-hold $tap-timeout $hold-timeout r lalt)
+  (s) (tap-hold $tap-timeout $hold-timeout s lmet)
+  (t) (tap-hold $tap-timeout $hold-timeout t lctl)
+  (u) u
+  (v) v
+  (w) w
+  (x) x
+  (y) y
+  (z) z
+  (') '
+  (;) ;
+  (,) ,
+  (.) .
+  (bspc) bspc
+  (bspc m e) (macro m e n u)
+  (bspc e) (macro t h e)
+  (bspc n e) (macro n e w)
+)
