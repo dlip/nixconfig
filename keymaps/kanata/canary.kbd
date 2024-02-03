@@ -12,6 +12,7 @@
 )
 
 (defalias
+  rpt rpt-any
   na (layer-switch base)
   med (layer-toggle media)
   nav (layer-toggle nav)
@@ -62,27 +63,27 @@
 (deflayer base
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  w    l    y    p    b    @na  @na  z    f    o    u    '    _    _
-  @c   @r   @s   @t   g    @na  @na  m    @n   @e   @i   @a   _
-  q    j    v    d    k    @na  @na  x    h    ;    ,    .
-  _    _    @nav @nav      @spc      @ssf @ssf bspc bspc bspc bspc
+  w    l    y    p    b    XX   XX   z    f    o    u    '    _    _
+  @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
+  q    j    v    d    k    XX   XX   x    h    ;    ,    .
+  _    lrld @nav @nav      @spc      @ssf @ssf bspc bspc @rpt bspc
 )
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    esc  up   ret  [    @na  @na  ]    7    8    9    \    _    _
-  bspc @lft @dwn @rgt tab  @na  @na  =    @4   @5   @6   @0   _
-  home pgup pgdn end  del  @na  @na  -    1    2    3    /
+  `    esc  up   ret  [    XX   XX   ]    7    8    9    \    _    _
+  bspc @lft @dwn @rgt tab  XX   XX   =    @4   @5   @6   @0   _
+  home pgup pgdn end  del  XX   XX   -    1    2    3    /
   _    _    _    _         _         _    _    _    _    _    _
 )
 
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    volu @na  @na  f7   f8   f9   f10  _    _    _
-  prnt prev pp   next vold @na  @gam f4   f5   f6   f11  _    _
-  @udo @cut @cpy @pst prnt @na  @na  f1   f2   f3   f12  _
+  _    _    _    _    volu XX   XX   f7   f8   f9   f10  _    _    _
+  prnt prev pp   next vold XX   @gam f4   f5   f6   f11  _    _
+  @udo @cut @cpy @pst prnt XX   XX   f1   f2   f3   f12  _
   _    _    _   _          _         _    _    _    _    _    _
 )
 
