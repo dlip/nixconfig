@@ -33,7 +33,7 @@
       smartcase = true; # Override the 'ignorecase' option if the search pattern contains upper
       expandtab = true; # use spaces instead of tabs
       shiftwidth = 2; # shift 2 spaces when tab
-      tabstop = 4; # 1 tab == 4 spaces
+      tabstop = 2; # 1 tab == 2 spaces
       smartindent = true; # autoindent new lines
       wrap = false; # Disable line wrapping
       scrolloff = 5; # keep cursor away from top/bottom edge of the screen
@@ -67,13 +67,19 @@
         pattern = ["help"];
         command = "nmap <buffer><silent> q :q<CR>";
       }
-      {
-        # Wrap markdown
-        event = ["FileType"];
-        pattern = ["markdown"];
-        command = "set wrap<CR>";
-      }
     ];
+    files = {
+      "ftplugin/go.lua" = {
+        options = {
+          expandtab = false;
+        };
+      };
+      "ftplugin/markdown.lua" = {
+        options = {
+          wrap = true;
+        };
+      };
+    };
     globals.mapleader = " ";
     keymaps = [
       {
