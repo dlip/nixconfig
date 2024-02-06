@@ -138,6 +138,15 @@
       }
       {
         mode = "n";
+        key = "<leader>D";
+        action = "<cmd>TroubleToggle<CR>";
+        options = {
+          desc = "Trouble Toggle";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>x";
         action = "<cmd>bd<CR>";
         options = {
@@ -606,6 +615,7 @@
       };
 
       lsp-format.enable = true;
+      trouble.enable = true;
       nvim-autopairs.enable = true;
       leap.enable = true;
       indent-blankline = {

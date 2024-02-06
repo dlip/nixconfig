@@ -27,6 +27,11 @@
       zj = "zellij";
     };
 
+    initExtraFirst = ''
+      # https://github.com/ohmyzsh/ohmyzsh/issues/6338
+      export DISABLE_MAGIC_FUNCTIONS=true
+    '';
+
     initExtra = ''
       # [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
       export MANPAGER="sh -c 'col -bx | bat -l man -p'"
