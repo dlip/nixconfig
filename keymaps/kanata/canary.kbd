@@ -1,3 +1,7 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
 (defvar
   tap-timeout 0
   hold-timeout 200
@@ -39,7 +43,7 @@
   ret (tap-hold $tap-timeout $hold-timeout ret lctl)
   esr (tap-hold $tap-timeout $hold-timeout esc @med)
 
-  spc (tap-hold $tap-timeout $hold-timeout spc @med)
+  spc (tap-hold $tap-timeout $hold-timeout spc lsft)
   cpy C-c
   pst C-v
   cut C-x
@@ -61,7 +65,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   `    esc  up   ret  [    XX   XX   ]    7    8    9    \    _    _
-  bspc @lft @dwn @rgt tab  XX   XX   =    @4   @5   @6   @0   _
+  tab @lft @dwn @rgt  bspc XX   XX   =    @4   @5   @6   @0   _
   home pgup pgdn end  del  XX   XX   -    1    2    3    /
   _    _    _    _         _         _    _    _    _    _    _
 )

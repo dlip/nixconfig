@@ -35,7 +35,7 @@
 (defchords briefs 100
   (a) (tap-hold $tap-timeout $hold-timeout a @med)
   (b) b
-  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
+  (c) (tap-hold $tap-timeout $hold-timeout c @med)
   (d) d
   (e) (tap-hold $tap-timeout $hold-timeout e rmet)
   (f) f
@@ -49,13 +49,13 @@
   (n) (tap-hold $tap-timeout $hold-timeout n rctl)
   (o) o
   (p) p
-  (q) q
+  (q) (tap-hold $tap-timeout $hold-timeout q @med)
   (r) (tap-hold $tap-timeout $hold-timeout r lalt)
   (s) (tap-hold $tap-timeout $hold-timeout s lmet)
   (t) (tap-hold $tap-timeout $hold-timeout t lctl)
   (u) u
   (v) v
-  (w) w
+  (w) (tap-hold $tap-timeout $hold-timeout w @med)
   (x) x
   (y) y
   (z) z
@@ -64,7 +64,11 @@
   (,) ,
   (.) .
   (bspc) bspc
-  (bspc m e) (macro m e n u)
-  (bspc e) (macro t h e)
-  (bspc n e) (macro n e w)
+  (t g) bspc
+  (m n) bspc
+  (bspc m e) (macro m e n u spc)
+  (bspc e) (macro t h e spc)
+  (bspc n e) (macro n e w spc)
+  ;; chords start
+  ;; chords end
 )

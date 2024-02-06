@@ -1,0 +1,65 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
+(defalias
+  ld (chord taipo ld)
+  la (chord taipo la)
+  ln (chord taipo ln)
+  li (chord taipo li)
+  lr (chord taipo lr)
+  lo (chord taipo lo)
+  lt (chord taipo lt)
+  le (chord taipo le)
+  rd (chord taipo rd)
+  ra (chord taipo ra)
+  rn (chord taipo rn)
+  ri (chord taipo ri)
+  rr (chord taipo rr)
+  ro (chord taipo ro)
+  rt (chord taipo rt)
+  re (chord taipo re)
+)
+
+(defchords taipo 100
+  (ld) d
+  (la) a
+  (ln) n
+  (li) i
+  (lr) r
+  (lo) o
+  (lt) t
+  (le) e
+  (ln li) s
+  (lt le) h
+
+  (rd) d
+  (ra) a
+  (rn) n
+  (ri) i
+  (rr) r
+  (ro) o
+  (rt) t
+  (re) e
+  (rn ri) s
+  (rt re) h
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt muhenkan  spc  henkan ralt prtsc katakanahiragana rctl cmp
+)
+
+(deflayer base
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  @ld  @la  @ln  @li  _    _    _    _    @ri  @rn  @ra  @rd  _    _
+  @lr  @lo  @lt  @le  _    _    _    _    @re  @rt  @ro  @rr  _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    lrld _    _         _         _    _    _    _    _    _
+)
+

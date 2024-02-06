@@ -4,8 +4,12 @@ const readline = require("readline");
 
 function translateKeys(x) {
   switch (x) {
+    case "Q":
+      return "KC_MED_Q";
+    case "W":
+      return "KC_MED_W";
     case "C":
-      return "KC_SFT_C";
+      return "KC_MED_C";
     case "R":
       return "KC_ALT_R";
     case "S":
@@ -19,7 +23,7 @@ function translateKeys(x) {
     case "I":
       return "KC_ALT_I";
     case "A":
-      return "KC_SFT_A";
+      return "KC_MED_A";
     default:
       return `KC_${x}`;
   }
