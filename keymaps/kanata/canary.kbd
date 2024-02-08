@@ -20,14 +20,10 @@
 
 (defalias
   rpt rpt-any
-  na (layer-switch base)
   med (layer-toggle media)
   nav (layer-toggle nav)
 
   ssf (one-shot 1000 lsft)
-  sct (one-shot 1000 lctl)
-  sal (one-shot 1000 lalt)
-  smt (one-shot 1000 lmet)
 
   lft (tap-hold $tap-timeout $hold-timeout left lalt)
   dwn (tap-hold $tap-timeout $hold-timeout down lmet)
@@ -36,13 +32,8 @@
   4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
   5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
   6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
-  0 (tap-hold $tap-timeout $hold-timeout 0 @med)
 
-  del (tap-hold $tap-timeout $hold-timeout del lalt)
-  ret (tap-hold $tap-timeout $hold-timeout ret lctl)
-  esr (tap-hold $tap-timeout $hold-timeout esc @med)
-
-  spc (tap-hold $tap-timeout $hold-timeout spc lsft)
+  spc (tap-hold $tap-timeout $hold-timeout spc @med)
   cpy C-c
   pst C-v
   cut C-x
@@ -63,9 +54,9 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    esc  up   ret  [    XX   XX   \    7    8    9    /    _    _
-  tab @lft @dwn @rgt  ]    XX   XX   =    @4   @5   @6   @0   _
-  home pgup pgdn end  del  XX   XX   -    1    2    3    .
+  `    esc  up   ret  del  XX   XX   \    7    8    9    /    _    _
+  tab @lft @dwn @rgt  [    XX   XX   =    @4   @5   @6   0   _
+  home pgup pgdn end  ]    XX   XX   -    1    2    3    .
   _    _    _    _         _         _    _    _    _    _    _
 )
 
