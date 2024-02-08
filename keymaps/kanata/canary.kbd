@@ -24,7 +24,6 @@
   med (layer-toggle media)
   nav (layer-toggle nav)
 
-  snv (one-shot 1000 @nav)
   ssf (one-shot 1000 lsft)
   sct (one-shot 1000 lctl)
   sal (one-shot 1000 lalt)
@@ -64,9 +63,9 @@
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    esc  up   ret  [    XX   XX   ]    7    8    9    \    _    _
-  tab @lft @dwn @rgt  bspc XX   XX   =    @4   @5   @6   @0   _
-  home pgup pgdn end  del  XX   XX   -    1    2    3    /
+  `    esc  up   ret  [    XX   XX   \    7    8    9    /    _    _
+  tab @lft @dwn @rgt  ]    XX   XX   =    @4   @5   @6   @0   _
+  home pgup pgdn end  del  XX   XX   -    1    2    3    .
   _    _    _    _         _         _    _    _    _    _    _
 )
 

@@ -64,8 +64,19 @@
   (,) ,
   (.) .
   (bspc) bspc
+  (p b) ret
+  (s t g) ret
   (t g) bspc
-  (m n) bspc
+  (d k) esc
+  (t k) del
+  (p g) tab
+  (z f) `
+  (m n) =
+  (x h) -
+  (x n) /
+  (m h) \
+  (m f) [
+  (z n) ]
   (bspc m e) (macro m e n u spc)
   (bspc e) (macro t h e spc)
   (bspc n e) (macro n e w spc)
