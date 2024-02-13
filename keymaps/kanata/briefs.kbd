@@ -30,12 +30,13 @@
   , (chord briefs ,)
   . (chord briefs .)
   bsp (chord briefs bspc)
+  atb (multi alt (layer-while-held tab))
 )
 
 (defchords briefs 100
   (a) (tap-hold $tap-timeout $hold-timeout a @med)
   (b) b
-  (c) (tap-hold $tap-timeout $hold-timeout c @med)
+  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
   (d) d
   (e) (tap-hold $tap-timeout $hold-timeout e rmet)
   (f) f

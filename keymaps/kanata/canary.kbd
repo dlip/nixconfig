@@ -39,6 +39,7 @@
   cut C-x
   udo C-z
   all C-a
+  stb S-tab
 )
 
 
@@ -67,6 +68,15 @@
   prnt prev pp   next vold XX   @gam f4   f5   f6   f11  _    _
   @udo @cut @cpy @pst prnt XX   XX   f1   f2   f3   f12  _
   _    _    _   _          _         _    _    _    _    _    _
+)
+
+(deflayer tab
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    stb  _    tab  _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _         _         _    _    _    _    _    _
 )
 
 (defalias

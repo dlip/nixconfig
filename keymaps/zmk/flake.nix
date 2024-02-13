@@ -84,6 +84,7 @@
             echo 'press enter then reset'
             read
             sleep 5
+            # west flash -d build/shield_${side}
             echo 'copying firmware'
             systemctl --user restart udiskie
             sleep 1

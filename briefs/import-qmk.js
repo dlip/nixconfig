@@ -10,6 +10,14 @@ function translateKeys(x) {
       return "KC_GUI_S";
     case "T":
       return "KC_CTL_T";
+    case "D":
+      return "KC_SFT_D";
+    case "V":
+      return "KC_CAG_V";
+    case "SCLN":
+      return "KC_CAG_SCLN";
+    case "H":
+      return "KC_SFT_H";
     case "N":
       return "KC_CTL_N";
     case "E":
