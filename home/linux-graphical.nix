@@ -16,7 +16,7 @@
     alttab
     arandr
     brightnessctl
-    # blender
+    blender
     calibre
     drawio
     easyeffects
