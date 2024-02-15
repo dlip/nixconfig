@@ -58,37 +58,36 @@
 (deflayer base
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  w    l    y    p    b    XX   XX   z    f    o    u    '    _    _
-  @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
-  q    j    v    d    k    XX   XX   x    h    ;    ,    .
+  w    l    y    p    XX   XX   XX   XX   f    o    u    '    _    _
+  @c   @r   @s   @t   XX   XX   XX   XX   @n   @e   @i   @a   _
+  q    j    v    d    XX   XX   XX   XX   h    ;    ,    .
   _    lrld @num @num      @spc      @nav @nav bspc bspc @rpt bspc
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    del  ret  b    XX  XX   XX    XX   7    8    9    /    _    _
-  tab  @esc @bsp @g   XX  XX   XX    XX   @4   @5   @6   @0   _
-  \    -    =    k    XX  XX   XX    XX   1    2    3    .
+  `    del  ret  b    _    _    _    _    7    8    9    /    _    _
+  tab  @esc @bsp @g   _    _    _    _    @4   @5   @6   @0   _
+  \    -    =    k    _    _    _    _    1    2    3    .
   _    _    _    _         _         _    _    _    _    _    _
 )
 
-    
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    [    up   ]    XX   XX   XX   XX   z    _    ret  del  _    _
-  tab  @lft @dwn @rgt XX   XX   XX   XX   @m   @bsp @esc tab  _
-  home pgup pgdn end  XX   XX   XX   XX   x    _    _    _
+  `    [    up   ]    _    _    _    _    z    ret  del  _    _    _
+  tab  @lft @dwn @rgt _    _    _    _    @m   @bsp @esc tab  _
+  home pgup pgdn end  _    _    _    _    x    _    _    _
   _    _    _    _         _         _    _    _    _    _    _
 )
 
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    volu XX   XX   f7   f8   f9   f10  _    _    _
-  prnt prev pp   next vold XX   @gam f4   f5   f6   f11  _    _
-  @udo @cut @cpy @pst prnt XX   XX   f1   f2   f3   f12  _
+  @gam vold prnt volu _    _    _    _    f7   f8   f9   f10  _    _
+  prnt prev pp   next _    _    _    _    f4   f5   f6   f11  _
+  @udo @cut @cpy @pst _    _    _    _    f1   f2   f3   f12
   _    _    _   _          _         _    _    _    _    _    _
 )
 
