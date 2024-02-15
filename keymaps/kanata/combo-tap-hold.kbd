@@ -13,13 +13,13 @@
 )
 
 (defchords chords 100
-  (q) (tap-hold 0 200 q lctl)
-  (w) w
-  (e) e
-  (w e) r
+  (q) (tap-hold 0 200 q lsft)
+  (w) (tap-hold 0 200 w lctl)
+  (e) left
 )
 
 (deflayer base
   @q @w @e
 )
+
 
