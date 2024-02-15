@@ -1,115 +1,3 @@
-(defcfg
-  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
-)
-
-(defvar
-  tap-timeout 0
-  hold-timeout 200
-)
-
-(defalias
-  w (chord combosl w)
-  l (chord combosl l)
-  y (chord combosl y)
-  p (chord combosl p)
-  b (chord combosl b)
-  
-  c (chord combosl c)
-  r (chord combosl r)
-  s (chord combosl s)
-  t (chord combosl t)
-  g (chord combosl g)
-
-  q (chord combosl q)
-  j (chord combosl j)
-  v (chord combosl v)
-  d (chord combosl d)
-  k (chord combosl k)
-
-  nav (chord combosl nav)
-
-
-  z (chord combosr z)
-  f (chord combosr f)
-  o (chord combosr o)
-  u (chord combosr u)
-  ' (chord combosr ')
-
-  m (chord combosr m)
-  n (chord combosr n)
-  e (chord combosr e)
-  i (chord combosr i)
-  a (chord combosr a)
-
-  h (chord combosr h)
-  x (chord combosr x)
-  ; (chord combosr ;)
-  , (chord combosr ,)
-  . (chord combosr .)
-
-  bsp (chord combosr bsp)
-)
-
-(defchords combosl 50
-  (w) (tap-hold $tap-timeout $hold-timeout w @med)
-  (l) l
-  (y) y
-  (p) p
-  (b) b
-  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
-  (r) (tap-hold $tap-timeout $hold-timeout r lalt)
-  (s) (tap-hold $tap-timeout $hold-timeout s lmet)
-  (t) (tap-hold $tap-timeout $hold-timeout t lctl)
-  (g) g
-  (q) q
-  (j) j
-  (d) d
-  (v) v
-  (k) k
-
-  (nav) (layer-toggle nav)
-  (nav p) b
-  (nav t) g
-  (nav d) k
-  (nav s) ret
-  (nav r) esc
-  (nav c) del
-
-)
-
-(defchords combosr 50
-  (z) z
-  (f) f
-  (o) o
-  (u) u
-  (') '
-  (m) m
-  (n) (tap-hold $tap-timeout $hold-timeout n rctl)
-  (e) (tap-hold $tap-timeout $hold-timeout e rmet)
-  (i) (tap-hold $tap-timeout $hold-timeout i lalt)
-  (a) (tap-hold $tap-timeout $hold-timeout a lsft)
-  (;) ;
-  (x) x
-  (h) h
-  (,) ,
-  (.) .
-  (bsp) bspc
-  (bsp f) z
-  (bsp n) m
-  (bsp h) x
-  (bsp o) \
-  (bsp e) =
-  (bsp ;) -
-  (bsp i) [
-  (bsp a) ]
-
-  ;;(bspc m e) (macro m e n u spc)
-  ;;(bspc e) (macro t h e spc)
-  ;;(bspc n e) (macro n e w spc)
-  ;; chords start
-  ;; chords end
-)
-
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -118,11 +6,34 @@
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt muhenkan  spc  henkan ralt prtsc katakanahiragana rctl cmp
 )
+(defvar
+  tap-timeout 0
+  hold-timeout 200
+)
 
 (defalias
   rpt rpt-any
+  na (layer-switch base)
   med (layer-toggle media)
+  nav (layer-toggle nav)
 
+  snv (one-shot 1000 @nav)
+  ssf (one-shot-release 1000 lsft)
+  sct (one-shot 1000 lctl)
+  sal (one-shot 1000 lalt)
+  smt (one-shot 1000 lmet)
+
+  c (tap-hold $tap-timeout $hold-timeout c lsft)
+  r (tap-hold $tap-timeout $hold-timeout r lalt)
+  s (tap-hold $tap-timeout $hold-timeout s lmet)
+  t (tap-hold $tap-timeout $hold-timeout t lctl)
+
+  n (tap-hold $tap-timeout $hold-timeout n rctl)
+  e (tap-hold $tap-timeout $hold-timeout e rmet)
+  i (tap-hold $tap-timeout $hold-timeout i lalt)
+  a (tap-hold $tap-timeout $hold-timeout a @med)
+
+  bsp (tap-hold $tap-timeout $hold-timeout bspc lsft)
   lft (tap-hold $tap-timeout $hold-timeout left lalt)
   dwn (tap-hold $tap-timeout $hold-timeout down lmet)
   rgt (tap-hold $tap-timeout $hold-timeout rght lctl)
@@ -130,6 +41,16 @@
   4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
   5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
   6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
+  0 (tap-hold $tap-timeout $hold-timeout 0 @med)
+
+  del (tap-hold $tap-timeout $hold-timeout del lalt)
+  ret (tap-hold $tap-timeout $hold-timeout ret lctl)
+  esr (tap-hold $tap-timeout $hold-timeout esc @med)
+
+  q (tap-hold $tap-timeout $hold-timeout z C-z)
+  j (tap-hold $tap-timeout $hold-timeout x C-x)
+  v (tap-hold $tap-timeout $hold-timeout c C-c)
+  d (tap-hold $tap-timeout $hold-timeout d C-v)
 
   spc (tap-hold $tap-timeout $hold-timeout spc @med)
   cpy C-c
@@ -137,17 +58,15 @@
   cut C-x
   udo C-z
   all C-a
-  ssf (one-shot-release 1000 lsft)
 )
-
 
 (deflayer base
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @w   @l   @y   @p   @b   XX   XX   @z   @f   @o   @u   @'    _    _
-  @c   @r   @s   @t   @g   XX   XX   @m   @n   @e   @i   @a   _
-  @q   @j   @v   @d   @k   XX   XX   @x   @h   @;   @,   @.
-  _    lrld @nav @nav      @spc      @bsp @bsp @bsp @bsp @rpt bspc
+  w    l    y    p    b    XX   XX   z    f    o    u    '    _    _
+  @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
+  q    j    v    d    k    XX   XX   x    h    ;    ,    .
+  _    lrld @nav @nav      @spc      @ssf @ssf bspc bspc @rpt bspc
 )
 
 (deflayer nav
