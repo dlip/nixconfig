@@ -16,9 +16,7 @@
   na (layer-switch base)
   med (layer-toggle media)
   nav (layer-toggle nav)
-  stk (layer-toggle oneshot)
 
-  sos (multi (one-shot 1000 @stk))
   snv (one-shot 1000 @nav)
   ssf (one-shot 1000 lsft)
   sct (one-shot 1000 lctl)
@@ -54,7 +52,7 @@
   v (tap-hold $tap-timeout $hold-timeout c C-c)
   d (tap-hold $tap-timeout $hold-timeout d C-v)
 
-  spc (tap-hold $tap-timeout $hold-timeout spc @nav)
+  spc (tap-hold $tap-timeout $hold-timeout spc @med)
   cpy C-c
   pst C-v
   cut C-x
@@ -68,23 +66,14 @@
   w    l    y    p    b    XX   XX   z    f    o    u    '    _    _
   @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
   q    j    v    d    k    XX   XX   x    h    ;    ,    .
-  _    lrld @sos @nav      @spc      @ssf @ssf bspc bspc @rpt bspc
-)
-
-(deflayer oneshot
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    b    _    _    _    _    z    _    _    _    _    _
-  _    _    _    g    _    _    _    _    m    _    _    _    _
-  _    _    _    k    _    _    _    _    x    _    _    _
-  _    _    _    _         _         _    _    _    _    _    _
+  _    lrld @nav @nav      @spc      @ssf @ssf bspc bspc @rpt bspc
 )
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   `    esc  up   ret  [    XX   XX   ]    7    8    9    \    _    _
-  tab  @lft @dwn @rgt tab  XX   XX   =    @4   @5   @6   @0   _
+  bspc @lft @dwn @rgt tab  XX   XX   =    @4   @5   @6   @0   _
   home pgup pgdn end  del  XX   XX   -    1    2    3    /
   _    _    _    _         _         _    _    _    _    _    _
 )

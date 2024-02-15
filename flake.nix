@@ -111,6 +111,10 @@
       import pkgs {
         inherit system;
         config.allowUnfree = true;
+        # https://github.com/NixOS/nixpkgs/issues/273611
+        config.permittedInsecurePackages = [
+          "electron-25.9.0"
+        ];
         overlays =
           (import ./overlays inputs)
           ++ [

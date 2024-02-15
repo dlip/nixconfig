@@ -1,0 +1,12 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
+(defsrc
+  q w
+)
+
+(deflayer base
+  (one-shot-release 1000 lsft) w
+)
+

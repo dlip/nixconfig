@@ -7,7 +7,99 @@
   hold-timeout 200
 )
 
-(include briefs.kbd)
+(defalias
+  a (chord combos a)
+  b (chord combos b)
+  c (chord combos c)
+  d (chord combos d)
+  e (chord combos e)
+  f (chord combos f)
+  g (chord combos g)
+  h (chord combos h)
+  i (chord combos i)
+  j (chord combos j)
+  k (chord combos k)
+  l (chord combos l)
+  m (chord combos m)
+  n (chord combos n)
+  o (chord combos o)
+  p (chord combos p)
+  q (chord combos q)
+  r (chord combos r)
+  s (chord combos s)
+  t (chord combos t)
+  u (chord combos u)
+  v (chord combos v)
+  w (chord combos w)
+  x (chord combos x)
+  y (chord combos y)
+  z (chord combos z)
+  ' (chord combos ')
+  ; (chord combos ;)
+  , (chord combos ,)
+  . (chord combos .)
+  bsp (chord combos bsp)
+  nav (chord combos nav)
+)
+
+(defchords combos 100
+  (a) (tap-hold $tap-timeout $hold-timeout a @med)
+  (b) b
+  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
+  (d) d
+  (e) (tap-hold $tap-timeout $hold-timeout e rmet)
+  (f) f
+  (g) g
+  (h) h
+  (i) (tap-hold $tap-timeout $hold-timeout i lalt)
+  (j) j
+  (k) k
+  (l) l
+  (m) m
+  (n) (tap-hold $tap-timeout $hold-timeout n rctl)
+  (o) o
+  (p) p
+  (q) (tap-hold $tap-timeout $hold-timeout q @med)
+  (r) (tap-hold $tap-timeout $hold-timeout r lalt)
+  (s) (tap-hold $tap-timeout $hold-timeout s lmet)
+  (t) (tap-hold $tap-timeout $hold-timeout t lctl)
+  (u) u
+  (v) v
+  (w) (tap-hold $tap-timeout $hold-timeout w @med)
+  (x) x
+  (y) y
+  (z) z
+  (') '
+  (;) ;
+  (,) ,
+  (.) .
+  ;; (p t) b
+  ;; (t d) g
+  ;; (v d) k
+  ;; (n h) m
+  ;; (f n) z
+  ;; (h ;) x
+  (nav) (layer-toggle nav)
+  (nav p) b
+  (nav t) g
+  (nav d) k
+  (bsp) bspc
+  (bsp f) z
+  (bsp n) m
+  (bsp h) x
+  ;; (p b) ret
+  ;; (s t g) ret
+  ;; (t g) bspc
+  ;; (d k) esc
+  ;; (t k) del
+  ;; (p g) tab
+
+  ;;(bspc m e) (macro m e n u spc)
+  ;;(bspc e) (macro t h e spc)
+  ;;(bspc n e) (macro n e w spc)
+  ;; chords start
+  ;; chords end
+)
 
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -21,9 +113,6 @@
 (defalias
   rpt rpt-any
   med (layer-toggle media)
-  nav (layer-toggle nav)
-
-  ssf (one-shot 1000 lsft)
 
   lft (tap-hold $tap-timeout $hold-timeout left lalt)
   dwn (tap-hold $tap-timeout $hold-timeout down lmet)
@@ -33,13 +122,13 @@
   5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
   6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
 
-  spc (tap-hold $tap-timeout $hold-timeout spc @med)
+  spc (tap-hold $tap-timeout $hold-timeout spc @nav)
   cpy C-c
   pst C-v
   cut C-x
   udo C-z
   all C-a
-  stb S-tab
+  ssf (one-shot-release 1000 lsft)
 )
 
 
@@ -49,7 +138,7 @@
   @w   @l   @y   @p   @b   XX   XX   @z   @f   @o   @u   @'    _    _
   @c   @r   @s   @t   @g   XX   XX   @m   @n   @e   @i   @a   _
   @q   @j   @v   @d   @k   XX   XX   @x   @h   @;   @,   @.
-  _    lrld @nav @nav      @spc      @ssf @ssf @bsp bspc @rpt bspc
+  _    lrld @nav @nav      @spc      @ssf @ssf @bsp @bsp @rpt bspc
 )
 
 (deflayer nav
@@ -68,15 +157,6 @@
   prnt prev pp   next vold XX   @gam f4   f5   f6   f11  _    _
   @udo @cut @cpy @pst prnt XX   XX   f1   f2   f3   f12  _
   _    _    _   _          _         _    _    _    _    _    _
-)
-
-(deflayer tab
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    stb  _    tab  _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _         _         _    _    _    _    _    _
 )
 
 (defalias

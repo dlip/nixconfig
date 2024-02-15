@@ -1,0 +1,25 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
+(defsrc
+  q w e
+)
+
+(defalias
+  q (chord chords q)
+  w (chord chords w)
+  e (chord chords e)
+)
+
+(defchords chords 100
+  (q) (tap-hold 0 200 q lctl)
+  (w) w
+  (e) e
+  (w e) r
+)
+
+(deflayer base
+  @q @w @e
+)
+
