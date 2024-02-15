@@ -8,91 +8,92 @@
 )
 
 (defalias
-  a (chord combos a)
-  b (chord combos b)
-  c (chord combos c)
-  d (chord combos d)
-  e (chord combos e)
-  f (chord combos f)
-  g (chord combos g)
-  h (chord combos h)
-  i (chord combos i)
-  j (chord combos j)
-  k (chord combos k)
-  l (chord combos l)
-  m (chord combos m)
-  n (chord combos n)
-  o (chord combos o)
-  p (chord combos p)
-  q (chord combos q)
-  r (chord combos r)
-  s (chord combos s)
-  t (chord combos t)
-  u (chord combos u)
-  v (chord combos v)
-  w (chord combos w)
-  x (chord combos x)
-  y (chord combos y)
-  z (chord combos z)
-  ' (chord combos ')
-  ; (chord combos ;)
-  , (chord combos ,)
-  . (chord combos .)
-  bsp (chord combos bsp)
-  nav (chord combos nav)
+  w (chord combosl w)
+  l (chord combosl l)
+  y (chord combosl y)
+  p (chord combosl p)
+  b (chord combosl b)
+  
+  c (chord combosl c)
+  r (chord combosl r)
+  s (chord combosl s)
+  t (chord combosl t)
+  g (chord combosl g)
+
+  q (chord combosl q)
+  j (chord combosl j)
+  v (chord combosl v)
+  d (chord combosl d)
+  k (chord combosl k)
+
+  nav (chord combosl nav)
+
+
+  z (chord combosr z)
+  f (chord combosr f)
+  o (chord combosr o)
+  u (chord combosr u)
+  ' (chord combosr ')
+
+  m (chord combosr m)
+  n (chord combosr n)
+  e (chord combosr e)
+  i (chord combosr i)
+  a (chord combosr a)
+
+  h (chord combosr h)
+  x (chord combosr x)
+  ; (chord combosr ;)
+  , (chord combosr ,)
+  . (chord combosr .)
+
+  bsp (chord combosr bsp)
 )
 
-(defchords combos 100
-  (a) (tap-hold $tap-timeout $hold-timeout a @med)
+(defchords combosl 50
+  (w) (tap-hold $tap-timeout $hold-timeout w @med)
+  (l) l
+  (y) y
+  (p) p
   (b) b
   (c) (tap-hold $tap-timeout $hold-timeout c lsft)
-  (d) d
-  (e) (tap-hold $tap-timeout $hold-timeout e rmet)
-  (f) f
-  (g) g
-  (h) h
-  (i) (tap-hold $tap-timeout $hold-timeout i lalt)
-  (j) j
-  (k) k
-  (l) l
-  (m) m
-  (n) (tap-hold $tap-timeout $hold-timeout n rctl)
-  (o) o
-  (p) p
-  (q) (tap-hold $tap-timeout $hold-timeout q @med)
   (r) (tap-hold $tap-timeout $hold-timeout r lalt)
   (s) (tap-hold $tap-timeout $hold-timeout s lmet)
   (t) (tap-hold $tap-timeout $hold-timeout t lctl)
-  (u) u
+  (g) g
+  (q) (tap-hold $tap-timeout $hold-timeout q @med)
+  (j) j
+  (d) d
   (v) v
-  (w) (tap-hold $tap-timeout $hold-timeout w @med)
-  (x) x
-  (y) y
-  (z) z
-  (') '
-  (;) ;
-  (,) ,
-  (.) .
-  ;; (p t) b
-  ;; (t d) g
-  ;; (v d) k
-  ;; (n h) m
-  ;; (f n) z
-  ;; (h ;) x
+  (k) k
+
   (nav) (layer-toggle nav)
   (nav p) b
   (nav t) g
   (nav d) k
+
+)
+
+(defchords combosr 50
+  (z) z
+  (f) f
+  (o) o
+  (u) u
+  (') '
+  (m) m
+  (n) (tap-hold $tap-timeout $hold-timeout n rctl)
+  (e) (tap-hold $tap-timeout $hold-timeout e rmet)
+  (i) (tap-hold $tap-timeout $hold-timeout i lalt)
+  (a) (tap-hold $tap-timeout $hold-timeout a @med)
+  (;) ;
+  (x) x
+  (h) h
+  (,) ,
+  (.) .
   (bsp) bspc
   (bsp f) z
   (bsp n) m
   (bsp h) x
-  ;; (p b) ret
-  ;; (s t g) ret
-  ;; (t g) bspc
-  ;; (d k) esc
-  ;; (t k) del
-  ;; (p g) tab
 
   ;;(bspc m e) (macro m e n u spc)
   ;;(bspc e) (macro t h e spc)
