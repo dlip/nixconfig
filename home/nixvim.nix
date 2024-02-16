@@ -165,6 +165,15 @@
       }
       {
         mode = "n";
+        key = "<leader>b";
+        action = "<cmd>Telescope buffers sort_last_used=true ignore_current_buffer=true<CR>";
+        options = {
+          desc = "Frequently Used Files";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>u";
         action = "<cmd>Telescope frecency default_text=:CWD:<CR>";
         options = {
@@ -303,6 +312,15 @@
         action = "<cmd>Telescope git_signs<CR>";
         options = {
           desc = "Changes in buffer";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>l";
+        action = "<cmd>LazyGit<CR>";
+        options = {
+          desc = "LazyGit";
           silent = true;
         };
       }
@@ -495,10 +513,6 @@
           "<leader>'" = {
             action = "resume";
             desc = "Resume Telescope";
-          };
-          "<leader>b" = {
-            action = "buffers";
-            desc = "Find Buffers";
           };
           "<leader>d" = {
             action = "diagnostics";
@@ -821,10 +835,11 @@
       };
     };
     extraPlugins = with pkgs.vimPlugins; [
-      vim-fetch
-      telescope-gitsigns
-      one-small-step-for-vimkind
+      lazygit-nvim
       nu
+      one-small-step-for-vimkind
+      telescope-gitsigns
+      vim-fetch
     ];
   };
 }
