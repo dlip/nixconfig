@@ -1,3 +1,7 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -23,6 +27,16 @@
   sal (one-shot 1000 lalt)
   smt (one-shot 1000 lmet)
 
+  stb (multi sft (layer-while-held tab))
+  atb (multi alt (layer-while-held tab))
+  mtb (multi met (layer-while-held tab))
+  ctb (multi ctl (layer-while-held tab))
+
+  w (tap-hold $tap-timeout $hold-timeout w @atb)
+  l (tap-hold $tap-timeout $hold-timeout l @atb)
+  y (tap-hold $tap-timeout $hold-timeout y @mtb)
+  p (tap-hold $tap-timeout $hold-timeout p @ctb)
+
   c (tap-hold $tap-timeout $hold-timeout c lsft)
   r (tap-hold $tap-timeout $hold-timeout r lalt)
   s (tap-hold $tap-timeout $hold-timeout s lmet)
@@ -31,7 +45,7 @@
   n (tap-hold $tap-timeout $hold-timeout n rctl)
   e (tap-hold $tap-timeout $hold-timeout e rmet)
   i (tap-hold $tap-timeout $hold-timeout i lalt)
-  a (tap-hold $tap-timeout $hold-timeout a @med)
+  a (tap-hold $tap-timeout $hold-timeout a lsft)
 
   bsp (tap-hold $tap-timeout $hold-timeout bspc lsft)
   lft (tap-hold $tap-timeout $hold-timeout left lalt)
@@ -47,23 +61,19 @@
   ret (tap-hold $tap-timeout $hold-timeout ret lctl)
   esr (tap-hold $tap-timeout $hold-timeout esc @med)
 
-  q (tap-hold $tap-timeout $hold-timeout z C-z)
-  j (tap-hold $tap-timeout $hold-timeout x C-x)
-  v (tap-hold $tap-timeout $hold-timeout c C-c)
-  d (tap-hold $tap-timeout $hold-timeout d C-v)
-
   spc (tap-hold $tap-timeout $hold-timeout spc @med)
   cpy C-c
   pst C-v
   cut C-x
   udo C-z
   all C-a
+
 )
 
 (deflayer base
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  w    l    y    p    b    XX   XX   z    f    o    u    '    _    _
+  @w   @l   @y   @p   b    XX   XX   z    f    o    u    '    _    _
   @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
   q    j    v    d    k    XX   XX   x    h    ;    ,    .
   _    lrld @nav @nav      @spc      @ssf @ssf bspc bspc @rpt bspc
@@ -85,6 +95,15 @@
   prnt prev pp   next vold XX   @gam f4   f5   f6   f11  _    _
   @udo @cut @cpy @pst prnt XX   XX   f1   f2   f3   f12  _
   _    _    _   _          _         _    _    _    _    _    _
+)
+
+(deflayer tab
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  lsft lalt lmet lctl _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    S-tab S-tab         tab       _    _    _    _    _    _
 )
 
 (defalias
