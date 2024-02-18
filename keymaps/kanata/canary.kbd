@@ -20,9 +20,12 @@
   na (layer-switch base)
   med (layer-toggle media)
   nav (layer-toggle nav)
+  gam (layer-switch gaming)
+  dis (layer-switch disable)
+  bse (layer-switch base)
 
   snv (one-shot 1000 @nav)
-  ssf (one-shot-release 1000 lsft)
+  ssf (one-shot 1000 lsft)
   sct (one-shot 1000 lctl)
   sal (one-shot 1000 lalt)
   smt (one-shot 1000 lmet)
@@ -47,7 +50,7 @@
   i (tap-hold $tap-timeout $hold-timeout i lalt)
   a (tap-hold $tap-timeout $hold-timeout a lsft)
 
-  bsp (tap-hold $tap-timeout $hold-timeout bspc lsft)
+  bsp (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
   lft (tap-hold $tap-timeout $hold-timeout left lalt)
   dwn (tap-hold $tap-timeout $hold-timeout down lmet)
   rgt (tap-hold $tap-timeout $hold-timeout rght lctl)
@@ -72,11 +75,11 @@
 
 (deflayer base
   _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    @dis
   @w   @l   @y   @p   b    XX   XX   z    f    o    u    '    _    _
   @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
   q    j    v    d    k    XX   XX   x    h    ;    ,    .
-  _    lrld @nav @nav      @spc      @ssf @ssf bspc bspc @rpt bspc
+  _    lrld @nav @nav      @spc      @ssf @bsp @ssf bspc @rpt bspc
 )
 
 (deflayer nav
@@ -106,13 +109,13 @@
   _    _    S-tab S-tab         tab       _    _    _    _    _    _
 )
 
-(defalias
-  pau pause
-  gam (layer-switch gaming)
-)
-
-(defalias
-  bse (layer-switch base)
+(deflayer disable
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    @bse
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX         XX         XX    XX    XX    XX    XX    XX
 )
 
 (deflayer gaming

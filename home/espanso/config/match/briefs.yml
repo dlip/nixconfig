@@ -1,0 +1,33 @@
+matches:
+  - trigger: "t,;"
+    replace: "the "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "t.,;"
+    replace: "the. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "n,;"
+    replace: "and "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "n.,;"
+    replace: "and. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "u,;"
+    replace: "you "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "u.,;"
+    replace: "you. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "r,;"
+    replace: "are "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "r.,;"
+    replace: "are. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"

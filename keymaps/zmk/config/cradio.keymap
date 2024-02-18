@@ -25,11 +25,13 @@
 &mt {
   flavor = "tap-preferred";
   tapping_term_ms = <200>;
+  quick_tap_ms = <200>;
 };
 
 &lt {
   flavor = "tap-preferred";
   tapping_term_ms = <200>;
+  quick_tap_ms = <200>;
 };
 
 &sl {
@@ -42,13 +44,31 @@
 };
 
 / {
+  behaviors {
+    hmt: hold_preferred_mod_tap {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <0>;
+      flavor = "hold-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+    hlt: hold_preferred_layer_tap {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <200>;
+      quick-tap-ms = <0>;
+      flavor = "hold-preferred";
+      bindings = <&mo>, <&kp>;
+    };
+  };
   macros {
     ZMK_MACRO (expand,
       wait-ms = <30>;
       tap-ms = <40>;
-      bindings = <&kp DOT &kp COMMA>;
+      bindings = <&kp COMMA &kp SEMI>;
     )
-    #include "macros.dtsi"
+    // #include "macros.dtsi"
   };
 
   combos {
@@ -65,7 +85,7 @@
       bindings = <&bootloader>;
       layers = <0>;
     };
-    #include "combos.dtsi"
+    // #include "combos.dtsi"
   };
 
   keymap {
@@ -74,9 +94,9 @@
     default_layer {
       bindings = <
         &kp W            &kp L            &kp Y            &kp P            &kp B                 &kp Z            &kp F            &kp O            &kp U            &kp SQT
-        &kp C            &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &mt LSHIFT A
+        &mt LSHIFT C     &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &mt LSHIFT A
         &kp Q            &kp J            &kp V            &mt LSHIFT D     &kp K                 &kp X            &kp H            &kp SEMI         &kp COMMA        &kp DOT
-                                                           &mo _NNM         &lt _MED SPC          &sk LSHIFT       &kp BSPC
+                                                           &hlt _NNM TAB    &lt _MED SPC          &hmt LSHIFT BSPC &expand
       >;
     };
 

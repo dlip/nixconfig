@@ -40,9 +40,8 @@ matches:
           cmd: "curl ifconfig.co"
 
   # Vim
-  # - trigger: ".,."
+  # - trigger: ".,;"
   #   replace: "\\(.*\\)"
-
   # Personal
   - trigger: "emg,;"
     replace: "danelipscombe@gmail.com"

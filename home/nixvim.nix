@@ -69,6 +69,11 @@
       }
     ];
     files = {
+      "ftplugin/tsv.lua" = {
+        options = {
+          expandtab = false;
+        };
+      };
       "ftplugin/go.lua" = {
         options = {
           expandtab = false;
