@@ -1,50 +1,25 @@
-a
-I
-of
-to
-in
-is
-it
-he
-on
-as
-at
-be
-or
-by
-we
-an
-do
-if
-up
-so
-go
-no
-my
-me
-us
 the	t
 and	a
 you	y
-was	s
+was	w
 for	f
 are	r
 his	h
 one	o
-had	j
+had	
 but	b
 not	x
 all	q
 can	c
-use	u
-she	k
-how	z
+use	u	used	using
+she	s
+how	
 out	
 her	
 him	
-has	
+has	z
 see	
-way	w
+way	
 who	
 oil	
 its	i
@@ -66,7 +41,7 @@ put	p
 end	e
 big	
 why	
-ask	
+ask	k
 men	
 try	
 off	
@@ -84,11 +59,11 @@ eat
 far	
 let	l
 cut	
-that	v
+that	
 with	
 they	
 this	
-have	
+have	v	had
 from	
 word	
 what	
@@ -128,7 +103,7 @@ back
 give	
 most	
 very	
-just	
+just	j
 name	
 good	
 help	

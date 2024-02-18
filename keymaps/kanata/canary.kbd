@@ -50,7 +50,6 @@
   i (tap-hold $tap-timeout $hold-timeout i lalt)
   a (tap-hold $tap-timeout $hold-timeout a lsft)
 
-  bsp (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
   lft (tap-hold $tap-timeout $hold-timeout left lalt)
   dwn (tap-hold $tap-timeout $hold-timeout down lmet)
   rgt (tap-hold $tap-timeout $hold-timeout rght lctl)
@@ -63,6 +62,10 @@
   del (tap-hold $tap-timeout $hold-timeout del lalt)
   ret (tap-hold $tap-timeout $hold-timeout ret lctl)
   esr (tap-hold $tap-timeout $hold-timeout esc @med)
+
+  bsp (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
+  tnv (tap-hold-press $tap-timeout $hold-timeout tab @nav)
+  exp (macro , ;)
 
   spc (tap-hold $tap-timeout $hold-timeout spc @med)
   cpy C-c
@@ -79,14 +82,14 @@
   @w   @l   @y   @p   b    XX   XX   z    f    o    u    '    _    _
   @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
   q    j    v    d    k    XX   XX   x    h    ;    ,    .
-  _    lrld @nav @nav      @spc      @ssf @bsp @ssf bspc @rpt bspc
+  _    lrld @tnv @tnv      @spc      @bsp @bsp @exp @exp @rpt bspc
 )
 
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   `    esc  up   ret  del  XX   XX   \    7    8    9    /    _    _
-  tab @lft @dwn @rgt  [    XX   XX   =    @4   @5   @6   0   _
+  tab @lft @dwn @rgt  [    XX   XX   =    @4   @5   @6   0    _
   home pgup pgdn end  ]    XX   XX   -    1    2    3    .
   _    _    _    _         _         _    _    _    _    _    _
 )

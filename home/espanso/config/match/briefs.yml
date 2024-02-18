@@ -35,15 +35,15 @@ matches:
     replace: "you, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "s,;"
+  - trigger: "w,;"
     replace: "was "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "s.,;"
+  - trigger: "w.,;"
     replace: "was. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "s,,;"
+  - trigger: "w,,;"
     replace: "was, "
     propagate_case: true
     uppercase_style: "capitalize_words"
@@ -93,18 +93,6 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "o,,;"
     replace: "one, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "j,;"
-    replace: "had "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "j.,;"
-    replace: "had. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "j,,;"
-    replace: "had, "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "b,;"
@@ -167,40 +155,52 @@ matches:
     replace: "use, "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "k,;"
+  - trigger: "uq,;"
+    replace: "used "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "uq.,;"
+    replace: "used. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "uq,,;"
+    replace: "used, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "uj,;"
+    replace: "using "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "uj.,;"
+    replace: "using. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "uj,,;"
+    replace: "using, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "s,;"
     replace: "she "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "k.,;"
+  - trigger: "s.,;"
     replace: "she. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "k,,;"
+  - trigger: "s,,;"
     replace: "she, "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "z,;"
-    replace: "how "
+    replace: "has "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "z.,;"
-    replace: "how. "
+    replace: "has. "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "z,,;"
-    replace: "how, "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "w,;"
-    replace: "way "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "w.,;"
-    replace: "way. "
-    propagate_case: true
-    uppercase_style: "capitalize_words"
-  - trigger: "w,,;"
-    replace: "way, "
+    replace: "has, "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "i,;"
@@ -287,6 +287,18 @@ matches:
     replace: "end, "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "k,;"
+    replace: "ask "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "k.,;"
+    replace: "ask. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "k,,;"
+    replace: "ask, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "l,;"
     replace: "let "
     propagate_case: true
@@ -300,15 +312,39 @@ matches:
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "v,;"
-    replace: "that "
+    replace: "have "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "v.,;"
-    replace: "that. "
+    replace: "have. "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "v,,;"
-    replace: "that, "
+    replace: "have, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vq,;"
+    replace: "had "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vq.,;"
+    replace: "had. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vq,,;"
+    replace: "had, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "j,;"
+    replace: "just "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "j.,;"
+    replace: "just. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "j,,;"
+    replace: "just, "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "stm,;"

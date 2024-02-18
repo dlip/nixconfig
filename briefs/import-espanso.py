@@ -1,6 +1,8 @@
 import csv
 
 expand_trigger = ",;"
+alt_suffix_1 = "q"
+alt_suffix_2 = "j"
 seen = {}
 output = "matches:\n"
 line_no = 0
@@ -35,6 +37,10 @@ with open("briefs/briefs-espanso.txt") as file:
         line_no += 1
         if len(line) > 1 and line[1]:
             add_brief(line[0], line[1])
+        if len(line) > 2 and line[2]:
+            add_brief(line[2], f"{line[1]}{alt_suffix_1}")
+        if len(line) > 3 and line[3]:
+            add_brief(line[3], f"{line[1]}{alt_suffix_2}")
 
 with open("home/espanso/config/match/briefs.yml", "w") as file:
     file.write(output)
