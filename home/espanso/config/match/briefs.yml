@@ -7,20 +7,56 @@ matches:
     replace: "the. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "n,;"
+  - trigger: "t,,;"
+    replace: "the, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "a,;"
     replace: "and "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "n.,;"
+  - trigger: "a.,;"
     replace: "and. "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "u,;"
+  - trigger: "a,,;"
+    replace: "and, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "y,;"
     replace: "you "
     propagate_case: true
     uppercase_style: "capitalize_words"
-  - trigger: "u.,;"
+  - trigger: "y.,;"
     replace: "you. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "y,,;"
+    replace: "you, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "s,;"
+    replace: "was "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "s.,;"
+    replace: "was. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "s,,;"
+    replace: "was, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "f,;"
+    replace: "for "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "f.,;"
+    replace: "for. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "f,,;"
+    replace: "for, "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "r,;"
@@ -29,5 +65,273 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "r.,;"
     replace: "are. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "r,,;"
+    replace: "are, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "h,;"
+    replace: "his "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "h.,;"
+    replace: "his. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "h,,;"
+    replace: "his, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "o,;"
+    replace: "one "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "o.,;"
+    replace: "one. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "o,,;"
+    replace: "one, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "j,;"
+    replace: "had "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "j.,;"
+    replace: "had. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "j,,;"
+    replace: "had, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "b,;"
+    replace: "but "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "b.,;"
+    replace: "but. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "b,,;"
+    replace: "but, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "x,;"
+    replace: "not "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "x.,;"
+    replace: "not. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "x,,;"
+    replace: "not, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "q,;"
+    replace: "all "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "q.,;"
+    replace: "all. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "q,,;"
+    replace: "all, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "c,;"
+    replace: "can "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "c.,;"
+    replace: "can. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "c,,;"
+    replace: "can, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "u,;"
+    replace: "use "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "u.,;"
+    replace: "use. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "u,,;"
+    replace: "use, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "k,;"
+    replace: "she "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "k.,;"
+    replace: "she. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "k,,;"
+    replace: "she, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "z,;"
+    replace: "how "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "z.,;"
+    replace: "how. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "z,,;"
+    replace: "how, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "w,;"
+    replace: "way "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "w.,;"
+    replace: "way. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "w,,;"
+    replace: "way, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "i,;"
+    replace: "its "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "i.,;"
+    replace: "its. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "i,,;"
+    replace: "its, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "n,;"
+    replace: "now "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "n.,;"
+    replace: "now. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "n,,;"
+    replace: "now, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "d,;"
+    replace: "day "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "d.,;"
+    replace: "day. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "d,,;"
+    replace: "day, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "g,;"
+    replace: "get "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "g.,;"
+    replace: "get. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "g,,;"
+    replace: "get, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "m,;"
+    replace: "may "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "m.,;"
+    replace: "may. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "m,,;"
+    replace: "may, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "p,;"
+    replace: "put "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "p.,;"
+    replace: "put. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "p,,;"
+    replace: "put, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "e,;"
+    replace: "end "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "e.,;"
+    replace: "end. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "e,,;"
+    replace: "end, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "l,;"
+    replace: "let "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "l.,;"
+    replace: "let. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "l,,;"
+    replace: "let, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "v,;"
+    replace: "that "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "v.,;"
+    replace: "that. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "v,,;"
+    replace: "that, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "stm,;"
+    replace: "system "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "stm.,;"
+    replace: "system. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "stm,,;"
+    replace: "system, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "wor,;"
+    replace: "world "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "wor.,;"
+    replace: "world. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "wor,,;"
+    replace: "world, "
     propagate_case: true
     uppercase_style: "capitalize_words"
