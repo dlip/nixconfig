@@ -1,16 +1,21 @@
 import csv
 import logging
 import sys
+import json
 
 log = logging.getLogger(__name__)
 log.addHandler(logging.StreamHandler(sys.stdout))
 log.setLevel(logging.DEBUG)
 
 used = {}
-limit = 100
+seen = {}
+limit = 5050
 line_no = 0
 min_chars = 3
 min_improvement = 40
+banned_suffixes = "qj"
+# reject same finger sequences
+reject_sfs = True
 layout_qwerty = """
 qwertyuiop
 asdfghjkl;
@@ -72,7 +77,7 @@ def find_combinations(s, prefix="", index=0):
     return result
 
 
-def has_sfb(brief):
+def has_sfs(brief):
     for i in range(0, len(brief) - 1):
         if keyboard_layout_map[brief[i]] == keyboard_layout_map[brief[i + 1]]:
             return True
@@ -84,18 +89,28 @@ def find_brief(word):
     if len(word) < min_chars:
         log.debug(f"rejected: minimum chars less than {min_chars}")
         return None
+    if word in seen:
+        log.debug(f"rejected: already seen")
+        return None
+    for c in word:
+        if c not in keyboard_layout:
+            log.debug(f"rejected: letter '{c}' not in keyboard layout")
+            return None
 
+    seen[word] = True
     combinations = find_combinations(word)
     combinations.sort(key=len)
     for brief in combinations:
         log.debug(brief)
         if not brief in used:
+            if reject_sfs and has_sfs(brief):
+                log.debug(f"rejected: has sfs")
+                continue
+            if len(brief) > 1 and brief[-1] in banned_suffixes:
+                log.debug(f"rejected: '{brief[-1]}' is a banned suffix")
+                continue
             improvement = ((len(word) - len(brief)) / len(word)) * 100
             if improvement > min_improvement:
-                if has_sfb(brief):
-                    log.debug(f"rejected: has sfb")
-                    continue
-
                 log.debug(f"selected: improvement: {improvement}")
                 used[brief] = word
                 return brief
@@ -110,6 +125,16 @@ def find_brief(word):
 
 
 with open("briefs/english-data.txt") as file:
+    verb_data = {}
+    with open("briefs/verbs-conjugations.json") as verbs_file:
+        data = json.load(verbs_file)
+        for verb in data:
+            if "verb" in verb and "participle" in verb and "gerund" in verb:
+                verb_data[
+                    verb["verb"]
+                ] = f"\t{verb['participle'][0]}\t{verb['gerund'][0]}"
+
+    output = ""
     while True:
         line_no += 1
         if line_no > limit:
@@ -119,5 +144,14 @@ with open("briefs/english-data.txt") as file:
             break
         word = word.strip()
         brief = find_brief(word)
+
         if brief:
-            log.info(f"{word}\t{brief}")
+            alternate = ""
+            if word in verb_data:
+                alternate = verb_data[word]
+            line = f"{word}\t{brief}{alternate}"
+            log.info(line)
+            output += line + "\n"
+
+    with open("briefs/briefs-espanso.txt", "w") as file:
+        file.write(output)
