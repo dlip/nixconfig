@@ -11,6 +11,21 @@ limit = 100
 line_no = 0
 min_chars = 3
 min_improvement = 40
+layout_qwerty = """
+qwertyuiop
+asdfghjkl;
+zxcvbnm,./
+"""
+layout_colemak = """
+qwfpgjluy;
+arstdhneio
+zxcvbkm,./
+"""
+layout_colemak_dh = """
+qwfpbjluy;
+arstgmneio
+zxcdvkh,./
+"""
 layout_canary = """
 wlypkzfou'
 crstbxneia
