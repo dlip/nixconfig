@@ -96,7 +96,7 @@ happen	ha	happened	happening
 family	fa
 president	pr
 house	ho
-show	sw	(E)	showing
+show	sw	showed	showing
 again	ag
 student	su
 might	mi

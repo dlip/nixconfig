@@ -1908,15 +1908,15 @@ matches:
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "swq,;"
-    replace: "(E) "
+    replace: "showed "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "swq.,;"
-    replace: "(E). "
+    replace: "showed. "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "swq,,;"
-    replace: "(E), "
+    replace: "showed, "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "swj,;"
