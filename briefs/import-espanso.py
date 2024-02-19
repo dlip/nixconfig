@@ -27,6 +27,10 @@ def add_brief(word, trigger):
         f'    replace: "{word}, "\n'
         f"    propagate_case: true\n"
         f'    uppercase_style: "capitalize_words"\n'
+        f'  - trigger: "{trigger};{expand_trigger}"\n'
+        f'    replace: "{word}; "\n'
+        f"    propagate_case: true\n"
+        f'    uppercase_style: "capitalize_words"\n'
     )
     seen[trigger] = word
 
@@ -47,8 +51,18 @@ with open("home/espanso/config/match/briefs.yml", "w") as file:
 
 with open("briefs/training.txt", "w") as file:
     index = 0
-    for word in seen.values():
-        file.write(f"{word} ")
+    words = ""
+    briefs = ""
+    for brief, word in seen.items():
+        if brief[-1] == alt_suffix_1 or brief[-1] == alt_suffix_2:
+            continue
+        words += f"{word} "
+        briefs += brief + (" " * (len(word) + 1 - len(brief)))
         index += 1
         if index % 10 == 0:
+            file.write(words.rstrip())
             file.write("\n")
+            file.write(briefs.rstrip())
+            file.write("\n")
+            words = ""
+            briefs = ""
