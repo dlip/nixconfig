@@ -11,11 +11,20 @@ limit = 100
 line_no = 0
 min_chars = 3
 min_improvement = 40
-keyboard_layout = """
+layout_canary = """
 wlypkzfou'
 crstbxneia
 qjvdgmh/,.
 """
+keyboard_layout = layout_canary
+keyboard_finger_maping = """
+1234455678
+1234455678
+1234455678
+"""
+keyboard_layout_map = {}
+for i in range(0, len(keyboard_layout)):
+    keyboard_layout_map[keyboard_layout[i]] = keyboard_finger_maping[i]
 
 
 def find_combinations(s, prefix="", index=0):
@@ -48,6 +57,13 @@ def find_combinations(s, prefix="", index=0):
     return result
 
 
+def has_sfb(brief):
+    for i in range(0, len(brief) - 1):
+        if keyboard_layout_map[brief[i]] == keyboard_layout_map[brief[i + 1]]:
+            return True
+    return False
+
+
 def find_brief(word):
     log.debug(f"=== {word} ===")
     if len(word) < min_chars:
@@ -61,7 +77,11 @@ def find_brief(word):
         if not brief in used:
             improvement = ((len(word) - len(brief)) / len(word)) * 100
             if improvement > min_improvement:
-                log.debug(improvement)
+                if has_sfb(brief):
+                    log.debug(f"rejected: has sfb")
+                    continue
+
+                log.debug(f"selected: improvement: {improvement}")
                 used[brief] = word
                 return brief
             else:
@@ -70,6 +90,7 @@ def find_brief(word):
         else:
             log.debug("rejected: already used")
 
+    log.debug("dropped: no brief found")
     return None
 
 
@@ -85,5 +106,3 @@ with open("briefs/english-data.txt") as file:
         brief = find_brief(word)
         if brief:
             log.info(f"{word}\t{brief}")
-        else:
-            log.debug("dropped: no brief found")
