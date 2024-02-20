@@ -9,13 +9,13 @@ log.setLevel(logging.DEBUG)
 
 used = {}
 seen = {}
-limit = 5050
+limit = 0
 line_no = 0
 min_chars = 3
 min_improvement = 40
 banned_suffixes = "qj"
-# reject same finger sequences
-reject_sfs = True
+# avoid same finger bigrams (sequences which use the same key in a row)
+avoid_sfb = True
 layout_qwerty = """
 qwertyuiop
 asdfghjkl;
@@ -77,7 +77,7 @@ def find_combinations(s, prefix="", index=0):
     return result
 
 
-def has_sfs(brief):
+def has_sfb(brief):
     for i in range(0, len(brief) - 1):
         if keyboard_layout_map[brief[i]] == keyboard_layout_map[brief[i + 1]]:
             return True
@@ -100,22 +100,29 @@ def find_brief(word):
     seen[word] = True
     combinations = find_combinations(word)
     combinations.sort(key=len)
+    sfb_option = None
     for brief in combinations:
         log.debug(brief)
         if not brief in used:
-            if reject_sfs and has_sfs(brief):
-                log.debug(f"rejected: has sfs")
-                continue
             if len(brief) > 1 and brief[-1] in banned_suffixes:
                 log.debug(f"rejected: '{brief[-1]}' is a banned suffix")
                 continue
             improvement = ((len(word) - len(brief)) / len(word)) * 100
             if improvement > min_improvement:
+                if avoid_sfb and has_sfb(brief):
+                    if not sfb_option:
+                        sfb_option = brief
+                    log.debug(f"avoided: has sfb. improvement: {improvement}")
+                    continue
                 log.debug(f"selected: improvement: {improvement}")
                 used[brief] = word
                 return brief
             else:
                 log.debug(f"rejected: improvement insufficient: {improvement}")
+                if sfb_option:
+                    log.debug(f"fallback to sfb option: {sfb_option}")
+                    used[sfb_option] = word
+                    return sfb_option
                 return None
         else:
             log.debug("rejected: already used")
@@ -137,7 +144,7 @@ with open("briefs/english-data.txt") as file:
     output = ""
     while True:
         line_no += 1
-        if line_no > limit:
+        if limit > 0 and line_no > limit:
             break
         word = file.readline()
         if not word:

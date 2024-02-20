@@ -863,6 +863,22 @@ matches:
     replace: "when; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "wc,;"
+    replace: "which "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "wc.,;"
+    replace: "which. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "wc,,;"
+    replace: "which, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "wc;,;"
+    replace: "which; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "l,;"
     replace: "like "
     propagate_case: true
@@ -1053,6 +1069,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "ts;,;"
     replace: "these; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tg,;"
+    replace: "thing "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tg.,;"
+    replace: "thing. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tg,,;"
+    replace: "thing, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tg;,;"
+    replace: "thing; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "wl,;"
@@ -2093,6 +2125,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "mu;,;"
     replace: "much; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tk,;"
+    replace: "talk "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tk.,;"
+    replace: "talk. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tk,,;"
+    replace: "talk, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tk;,;"
+    replace: "talk; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tkq,;"
+    replace: "talked "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tkq.,;"
+    replace: "talked. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tkq,,;"
+    replace: "talked, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tkq;,;"
+    replace: "talked; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tkj,;"
+    replace: "talking "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tkj.,;"
+    replace: "talking. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tkj,,;"
+    replace: "talking, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tkj;,;"
+    replace: "talking; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "ke,;"
@@ -3503,6 +3583,22 @@ matches:
     replace: "company; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "sy,;"
+    replace: "story "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sy.,;"
+    replace: "story. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sy,,;"
+    replace: "story, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sy;,;"
+    replace: "story; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ty,;"
     replace: "today "
     propagate_case: true
@@ -3871,6 +3967,22 @@ matches:
     replace: "small; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "mn,;"
+    replace: "month "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mn.,;"
+    replace: "month. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mn,,;"
+    replace: "month, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mn;,;"
+    replace: "month; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "pm,;"
     replace: "program "
     propagate_case: true
@@ -3965,6 +4077,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "bu;,;"
     replace: "business; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hm,;"
+    replace: "home "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hm.,;"
+    replace: "home. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hm,,;"
+    replace: "home, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hm;,;"
+    replace: "home; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "ki,;"
@@ -4173,6 +4301,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "pe;,;"
     replace: "percent; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "aa,;"
+    replace: "away "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "aa.,;"
+    replace: "away. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "aa,,;"
+    replace: "away, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "aa;,;"
+    replace: "away; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "ac,;"
@@ -4831,6 +4975,54 @@ matches:
     replace: "information; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "lr,;"
+    replace: "learn "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lr.,;"
+    replace: "learn. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lr,,;"
+    replace: "learn, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lr;,;"
+    replace: "learn; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lrq,;"
+    replace: "learnt "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lrq.,;"
+    replace: "learnt. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lrq,,;"
+    replace: "learnt, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lrq;,;"
+    replace: "learnt; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lrj,;"
+    replace: "learning "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lrj.,;"
+    replace: "learning. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lrj,,;"
+    replace: "learning, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "lrj;,;"
+    replace: "learning; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ae,;"
     replace: "already "
     propagate_case: true
@@ -4909,6 +5101,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "min;,;"
     replace: "minute; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pt,;"
+    replace: "party "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pt.,;"
+    replace: "party. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pt,,;"
+    replace: "party, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pt;,;"
+    replace: "party; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "ic,;"
@@ -5167,6 +5375,22 @@ matches:
     replace: "speaking; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "bk,;"
+    replace: "black "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bk.,;"
+    replace: "black. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bk,,;"
+    replace: "black, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bk;,;"
+    replace: "black; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "mem,;"
     replace: "member "
     propagate_case: true
@@ -5389,6 +5613,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "en;,;"
     replace: "enough; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ll,;"
+    replace: "level "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ll.,;"
+    replace: "level. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ll,,;"
+    replace: "level, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ll;,;"
+    replace: "level; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "llq,;"
+    replace: "leveled "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "llq.,;"
+    replace: "leveled. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "llq,,;"
+    replace: "leveled, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "llq;,;"
+    replace: "leveled; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "llj,;"
+    replace: "leveling "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "llj.,;"
+    replace: "leveling. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "llj,,;"
+    replace: "leveling, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "llj;,;"
+    replace: "leveling; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pc,;"
@@ -5935,6 +6207,38 @@ matches:
     replace: "policy; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "tb,;"
+    replace: "table "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tb.,;"
+    replace: "table. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tb,,;"
+    replace: "table, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tb;,;"
+    replace: "table; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hn,;"
+    replace: "human "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hn.,;"
+    replace: "human. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hn,,;"
+    replace: "human, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hn;,;"
+    replace: "human; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ple,;"
     replace: "please "
     propagate_case: true
@@ -6191,6 +6495,54 @@ matches:
     replace: "education; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "bd,;"
+    replace: "build "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bd.,;"
+    replace: "build. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bd,,;"
+    replace: "build, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bd;,;"
+    replace: "build; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bdq,;"
+    replace: "built "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bdq.,;"
+    replace: "built. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bdq,,;"
+    replace: "built, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bdq;,;"
+    replace: "built; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bdj,;"
+    replace: "building "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bdj.,;"
+    replace: "building. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bdj,,;"
+    replace: "building, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bdj;,;"
+    replace: "building; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ep,;"
     replace: "expect "
     propagate_case: true
@@ -6253,6 +6605,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "him;,;"
     replace: "himself; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ss,;"
+    replace: "sense "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ss.,;"
+    replace: "sense. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ss,,;"
+    replace: "sense, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ss;,;"
+    replace: "sense; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ssq,;"
+    replace: "sensed "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ssq.,;"
+    replace: "sensed. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ssq,,;"
+    replace: "sensed, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ssq;,;"
+    replace: "sensed; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ssj,;"
+    replace: "sensing "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ssj.,;"
+    replace: "sensing. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ssj,,;"
+    replace: "sensing, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ssj;,;"
+    replace: "sensing; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "acr,;"
@@ -6431,6 +6831,54 @@ matches:
     replace: "possible; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "sv,;"
+    replace: "serve "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sv.,;"
+    replace: "serve. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sv,,;"
+    replace: "serve, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sv;,;"
+    replace: "serve; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "svq,;"
+    replace: "served "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "svq.,;"
+    replace: "served. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "svq,,;"
+    replace: "served, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "svq;,;"
+    replace: "served; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "svj,;"
+    replace: "serving "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "svj.,;"
+    replace: "serving. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "svj,,;"
+    replace: "serving, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "svj;,;"
+    replace: "serving; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "at,;"
     replace: "although "
     propagate_case: true
@@ -6557,6 +7005,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "any;,;"
     replace: "anyone; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bb,;"
+    replace: "baby "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bb.,;"
+    replace: "baby. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bb,,;"
+    replace: "baby, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bb;,;"
+    replace: "baby; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "wg,;"
@@ -7087,6 +7551,54 @@ matches:
     replace: "valuing; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "pk,;"
+    replace: "pick "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pk.,;"
+    replace: "pick. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pk,,;"
+    replace: "pick, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pk;,;"
+    replace: "pick; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pkq,;"
+    replace: "picked "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pkq.,;"
+    replace: "picked. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pkq,,;"
+    replace: "picked, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pkq;,;"
+    replace: "picked; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pkj,;"
+    replace: "picking "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pkj.,;"
+    replace: "picking. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pkj,,;"
+    replace: "picking, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pkj;,;"
+    replace: "picking; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ph,;"
     replace: "phone "
     propagate_case: true
@@ -7407,6 +7919,22 @@ matches:
     replace: "relationship; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "fn,;"
+    replace: "fine "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fn.,;"
+    replace: "fine. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fn,,;"
+    replace: "fine, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fn;,;"
+    replace: "fine; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "pla,;"
     replace: "player "
     propagate_case: true
@@ -7645,6 +8173,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "for;,;"
     replace: "former; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "rl,;"
+    replace: "role "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "rl.,;"
+    replace: "role. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "rl,,;"
+    replace: "role, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "rl;,;"
+    replace: "role; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pre,;"
@@ -7967,6 +8511,102 @@ matches:
     replace: "special; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "fm,;"
+    replace: "film "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fm.,;"
+    replace: "film. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fm,,;"
+    replace: "film, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fm;,;"
+    replace: "film; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fmq,;"
+    replace: "filmed "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fmq.,;"
+    replace: "filmed. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fmq,,;"
+    replace: "filmed, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fmq;,;"
+    replace: "filmed; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fmj,;"
+    replace: "filming "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fmj.,;"
+    replace: "filming. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fmj,,;"
+    replace: "filming, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fmj;,;"
+    replace: "filming; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tp,;"
+    replace: "type "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tp.,;"
+    replace: "type. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tp,,;"
+    replace: "type, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tp;,;"
+    replace: "type; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tpq,;"
+    replace: "typed "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tpq.,;"
+    replace: "typed. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tpq,,;"
+    replace: "typed, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tpq;,;"
+    replace: "typed; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tpj,;"
+    replace: "typing "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tpj.,;"
+    replace: "typing. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tpj,,;"
+    replace: "typing, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tpj;,;"
+    replace: "typing; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "art,;"
     replace: "article "
     propagate_case: true
@@ -7997,6 +8637,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "cha;,;"
     replace: "chance; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dg,;"
+    replace: "drug "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dg.,;"
+    replace: "drug. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dg,,;"
+    replace: "drug, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dg;,;"
+    replace: "drug; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "em,;"
@@ -8383,6 +9039,22 @@ matches:
     replace: "mattering; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "dd,;"
+    replace: "dead "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dd.,;"
+    replace: "dead. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dd,,;"
+    replace: "dead, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dd;,;"
+    replace: "dead; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ia,;"
     replace: "image "
     propagate_case: true
@@ -8445,6 +9117,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "pic;,;"
     replace: "picture; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pp,;"
+    replace: "paper "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pp.,;"
+    replace: "paper. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pp,,;"
+    replace: "paper, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pp;,;"
+    replace: "paper; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "eg,;"
@@ -8653,6 +9341,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "tec;,;"
     replace: "technology; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cc,;"
+    replace: "catch "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cc.,;"
+    replace: "catch. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cc,,;"
+    replace: "catch, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cc;,;"
+    replace: "catch; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ccq,;"
+    replace: "caught "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ccq.,;"
+    replace: "caught. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ccq,,;"
+    replace: "caught, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ccq;,;"
+    replace: "caught; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ccj,;"
+    replace: "catching "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ccj.,;"
+    replace: "catching. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ccj,,;"
+    replace: "catching, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ccj;,;"
+    replace: "catching; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "com,;"
@@ -9007,6 +9743,22 @@ matches:
     replace: "checking; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "pg,;"
+    replace: "page "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pg.,;"
+    replace: "page. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pg,,;"
+    replace: "page, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pg;,;"
+    replace: "page; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "fg,;"
     replace: "fight "
     propagate_case: true
@@ -9069,6 +9821,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "if;,;"
     replace: "itself; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tt,;"
+    replace: "test "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tt.,;"
+    replace: "test. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tt,,;"
+    replace: "test, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "tt;,;"
+    replace: "test; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttq,;"
+    replace: "tested "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttq.,;"
+    replace: "tested. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttq,,;"
+    replace: "tested, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttq;,;"
+    replace: "tested; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttj,;"
+    replace: "testing "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttj.,;"
+    replace: "testing. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttj,,;"
+    replace: "testing, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttj;,;"
+    replace: "testing; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pat,;"
@@ -9167,6 +9967,22 @@ matches:
     replace: "whatever; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "hf,;"
+    replace: "half "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hf.,;"
+    replace: "half. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hf,,;"
+    replace: "half, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hf;,;"
+    replace: "half; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "vd,;"
     replace: "video "
     propagate_case: true
@@ -9181,6 +9997,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "vd;,;"
     replace: "video; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "td,;"
+    replace: "third "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "td.,;"
+    replace: "third. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "td,,;"
+    replace: "third, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "td;,;"
+    replace: "third; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "rec,;"
@@ -9935,6 +10767,22 @@ matches:
     replace: "increasing; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "nh,;"
+    replace: "north "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nh.,;"
+    replace: "north. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nh,,;"
+    replace: "north, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nh;,;"
+    replace: "north; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "cul,;"
     replace: "culture "
     propagate_case: true
@@ -10125,6 +10973,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "dwj;,;"
     replace: "drawing; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dp,;"
+    replace: "drop "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dp.,;"
+    replace: "drop. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dp,,;"
+    replace: "drop, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dp;,;"
+    replace: "drop; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpq,;"
+    replace: "dropped "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpq.,;"
+    replace: "dropped. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpq,,;"
+    replace: "dropped, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpq;,;"
+    replace: "dropped; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpj,;"
+    replace: "dropping "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpj.,;"
+    replace: "dropping. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpj,,;"
+    replace: "dropping, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpj;,;"
+    replace: "dropping; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pri,;"
@@ -10365,6 +11261,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "mes;,;"
     replace: "message; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eo,;"
+    replace: "enjoy "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eo.,;"
+    replace: "enjoy. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eo,,;"
+    replace: "enjoy, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eo;,;"
+    replace: "enjoy; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eoq,;"
+    replace: "enjoyed "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eoq.,;"
+    replace: "enjoyed. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eoq,,;"
+    replace: "enjoyed, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eoq;,;"
+    replace: "enjoyed; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eoj,;"
+    replace: "enjoying "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eoj.,;"
+    replace: "enjoying. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eoj,,;"
+    replace: "enjoying, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eoj;,;"
+    replace: "enjoying; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "sil,;"
@@ -11311,6 +12255,54 @@ matches:
     replace: "accepting; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "ee,;"
+    replace: "enter "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ee.,;"
+    replace: "enter. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ee,,;"
+    replace: "enter, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ee;,;"
+    replace: "enter; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eeq,;"
+    replace: "entered "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eeq.,;"
+    replace: "entered. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eeq,,;"
+    replace: "entered, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eeq;,;"
+    replace: "entered; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eej,;"
+    replace: "entering "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eej.,;"
+    replace: "entering. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eej,,;"
+    replace: "entering, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eej;,;"
+    replace: "entering; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "men,;"
     replace: "mention "
     propagate_case: true
@@ -11741,6 +12733,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "imaj;,;"
     replace: "imagining; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kg,;"
+    replace: "king "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kg.,;"
+    replace: "king. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kg,,;"
+    replace: "king, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kg;,;"
+    replace: "king; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "prs,;"
@@ -12527,6 +13535,22 @@ matches:
     replace: "removing; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "dk,;"
+    replace: "dark "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dk.,;"
+    replace: "dark. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dk,,;"
+    replace: "dark, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dk;,;"
+    replace: "dark; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "uo,;"
     replace: "union "
     propagate_case: true
@@ -12767,6 +13791,54 @@ matches:
     replace: "reality; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "vs,;"
+    replace: "visit "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vs.,;"
+    replace: "visit. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vs,,;"
+    replace: "visit, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vs;,;"
+    replace: "visit; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vsq,;"
+    replace: "visited "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vsq.,;"
+    replace: "visited. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vsq,,;"
+    replace: "visited, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vsq;,;"
+    replace: "visited; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vsj,;"
+    replace: "visiting "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vsj.,;"
+    replace: "visiting. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vsj,,;"
+    replace: "visiting, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vsj;,;"
+    replace: "visiting; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "cb,;"
     replace: "club "
     propagate_case: true
@@ -12797,6 +13869,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "ju;,;"
     replace: "justice; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "rr,;"
+    replace: "river "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "rr.,;"
+    replace: "river. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "rr,,;"
+    replace: "river, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "rr;,;"
+    replace: "river; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "mer,;"
@@ -13311,6 +14399,22 @@ matches:
     replace: "managing; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "dt,;"
+    replace: "date "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dt.,;"
+    replace: "date. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dt,,;"
+    replace: "date, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dt;,;"
+    replace: "date; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "chg,;"
     replace: "charge "
     propagate_case: true
@@ -13677,6 +14781,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "cntj;,;"
     replace: "containing; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bt,;"
+    replace: "beat "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bt.,;"
+    replace: "beat. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bt,,;"
+    replace: "beat, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bt;,;"
+    replace: "beat; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "btq,;"
+    replace: "beaten "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "btq.,;"
+    replace: "beaten. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "btq,,;"
+    replace: "beaten, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "btq;,;"
+    replace: "beaten; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "btj,;"
+    replace: "beating "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "btj.,;"
+    replace: "beating. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "btj,,;"
+    replace: "beating, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "btj;,;"
+    replace: "beating; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "der,;"
@@ -14061,6 +15213,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "pai;,;"
     replace: "particular; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nn,;"
+    replace: "none "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nn.,;"
+    replace: "none. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nn,,;"
+    replace: "none, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nn;,;"
+    replace: "none; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "wei,;"
@@ -14655,6 +15823,54 @@ matches:
     replace: "reader; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "mh,;"
+    replace: "march "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mh.,;"
+    replace: "march. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mh,,;"
+    replace: "march, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mh;,;"
+    replace: "march; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mhq,;"
+    replace: "marched "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mhq.,;"
+    replace: "marched. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mhq,,;"
+    replace: "marched, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mhq;,;"
+    replace: "marched; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mhj,;"
+    replace: "marching "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mhj.,;"
+    replace: "marching. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mhj,,;"
+    replace: "marching, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mhj;,;"
+    replace: "marching; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "mac,;"
     replace: "machine "
     propagate_case: true
@@ -14717,6 +15933,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "ino;,;"
     replace: "income; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "oo,;"
+    replace: "onto "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "oo.,;"
+    replace: "onto. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "oo,,;"
+    replace: "onto, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "oo;,;"
+    replace: "onto; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "thr,;"
@@ -14893,6 +16125,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "sen;,;"
     replace: "senator; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ui,;"
+    replace: "unit "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ui.,;"
+    replace: "unit. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ui,,;"
+    replace: "unit, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ui;,;"
+    replace: "unit; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pho,;"
@@ -15373,6 +16621,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "int;,;"
     replace: "institution; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fh,;"
+    replace: "faith "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fh.,;"
+    replace: "faith. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fh,,;"
+    replace: "faith, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fh;,;"
+    replace: "faith; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pof,;"
@@ -17007,6 +18271,22 @@ matches:
     replace: "encouraging; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "bg,;"
+    replace: "blog "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bg.,;"
+    replace: "blog. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bg,,;"
+    replace: "blog, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bg;,;"
+    replace: "blog; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "bel,;"
     replace: "belief "
     propagate_case: true
@@ -17021,6 +18301,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "bel;,;"
     replace: "belief; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "db,;"
+    replace: "debt "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "db.,;"
+    replace: "debt. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "db,,;"
+    replace: "debt, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "db;,;"
+    replace: "debt; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "lb,;"
@@ -17773,6 +19069,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "welj;,;"
     replace: "welcoming; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gd,;"
+    replace: "gold "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gd.,;"
+    replace: "gold. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gd,,;"
+    replace: "gold, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gd;,;"
+    replace: "gold; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "jm,;"
@@ -18895,6 +20207,54 @@ matches:
     replace: "currently; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "cw,;"
+    replace: "crowd "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cw.,;"
+    replace: "crowd. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cw,,;"
+    replace: "crowd, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cw;,;"
+    replace: "crowd; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cwq,;"
+    replace: "crowded "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cwq.,;"
+    replace: "crowded. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cwq,,;"
+    replace: "crowded, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cwq;,;"
+    replace: "crowded; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cwj,;"
+    replace: "crowding "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cwj.,;"
+    replace: "crowding. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cwj,,;"
+    replace: "crowding, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cwj;,;"
+    replace: "crowding; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "apm,;"
     replace: "apartment "
     propagate_case: true
@@ -18925,6 +20285,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "srv;,;"
     replace: "survive; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gt,;"
+    replace: "guest "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gt.,;"
+    replace: "guest. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gt,,;"
+    replace: "guest, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gt;,;"
+    replace: "guest; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pec,;"
@@ -19325,6 +20701,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "asp;,;"
     replace: "aspect; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gb,;"
+    replace: "grab "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gb.,;"
+    replace: "grab. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gb,,;"
+    replace: "grab, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gb;,;"
+    replace: "grab; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gbq,;"
+    replace: "grabed "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gbq.,;"
+    replace: "grabed. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gbq,,;"
+    replace: "grabed, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gbq;,;"
+    replace: "grabed; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gbj,;"
+    replace: "grabing "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gbj.,;"
+    replace: "grabing. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gbj,,;"
+    replace: "grabing, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gbj;,;"
+    replace: "grabing; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "fav,;"
@@ -20221,6 +21645,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "iflj;,;"
     replace: "influencing; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kk,;"
+    replace: "kick "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kk.,;"
+    replace: "kick. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kk,,;"
+    replace: "kick, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kk;,;"
+    replace: "kick; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kkq,;"
+    replace: "kicked "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kkq.,;"
+    replace: "kicked. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kkq,,;"
+    replace: "kicked, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kkq;,;"
+    replace: "kicked; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kkj,;"
+    replace: "kicking "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kkj.,;"
+    replace: "kicking. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kkj,,;"
+    replace: "kicking, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kkj;,;"
+    replace: "kicking; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "anu,;"
@@ -21407,6 +22879,22 @@ matches:
     replace: "defend; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "pd,;"
+    replace: "pound "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pd.,;"
+    replace: "pound. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pd,,;"
+    replace: "pound, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pd;,;"
+    replace: "pound; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "crc,;"
     replace: "correct "
     propagate_case: true
@@ -22109,6 +23597,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "cfij;,;"
     replace: "confirming; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ii,;"
+    replace: "insist "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ii.,;"
+    replace: "insist. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ii,,;"
+    replace: "insist, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ii;,;"
+    replace: "insist; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iiq,;"
+    replace: "insisted "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iiq.,;"
+    replace: "insisted. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iiq,,;"
+    replace: "insisted, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iiq;,;"
+    replace: "insisted; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iij,;"
+    replace: "insisting "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iij.,;"
+    replace: "insisting. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iij,,;"
+    replace: "insisting, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iij;,;"
+    replace: "insisting; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "fot,;"
@@ -23679,6 +25215,22 @@ matches:
     replace: "gender; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "oe,;"
+    replace: "ocean "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "oe.,;"
+    replace: "ocean. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "oe,,;"
+    replace: "ocean, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "oe;,;"
+    replace: "ocean; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "und,;"
     replace: "unidentified "
     propagate_case: true
@@ -23869,6 +25421,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "sroj;,;"
     replace: "surrounding; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mnn,;"
+    replace: "manner "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mnn.,;"
+    replace: "manner. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mnn,,;"
+    replace: "manner, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mnn;,;"
+    replace: "manner; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "srp,;"
@@ -24189,6 +25757,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "je;,;"
     replace: "jewish; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ys,;"
+    replace: "yours "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ys.,;"
+    replace: "yours. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ys,,;"
+    replace: "yours, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ys;,;"
+    replace: "yours; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pls,;"
@@ -24733,6 +26317,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "cvn;,;"
     replace: "convention; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jr,;"
+    replace: "jury "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jr.,;"
+    replace: "jury. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jr,,;"
+    replace: "jury, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jr;,;"
+    replace: "jury; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "ici,;"
@@ -29695,6 +31295,22 @@ matches:
     replace: "passage; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "pee,;"
+    replace: "pepper "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pee.,;"
+    replace: "pepper. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pee,,;"
+    replace: "pepper, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pee;,;"
+    replace: "pepper; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ez,;"
     replace: "emphasize "
     propagate_case: true
@@ -30095,6 +31711,54 @@ matches:
     replace: "contemporary; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "jl,;"
+    replace: "jail "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jl.,;"
+    replace: "jail. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jl,,;"
+    replace: "jail, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jl;,;"
+    replace: "jail; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jlq,;"
+    replace: "jailed "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jlq.,;"
+    replace: "jailed. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jlq,,;"
+    replace: "jailed, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jlq;,;"
+    replace: "jailed; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jlj,;"
+    replace: "jailing "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jlj.,;"
+    replace: "jailing. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jlj,,;"
+    replace: "jailing, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "jlj;,;"
+    replace: "jailing; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ito,;"
     replace: "interpretation "
     propagate_case: true
@@ -30125,6 +31789,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "brk;,;"
     replace: "breakfast; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "see,;"
+    replace: "severe "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "see.,;"
+    replace: "severe. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "see,,;"
+    replace: "severe, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "see;,;"
+    replace: "severe; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pfl,;"
@@ -30365,6 +32045,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "trs;,;"
     replace: "transfer; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "uu,;"
+    replace: "usual "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "uu.,;"
+    replace: "usual. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "uu,,;"
+    replace: "usual, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "uu;,;"
+    replace: "usual; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "cin,;"
@@ -31887,6 +33583,22 @@ matches:
     replace: "communicating; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "vy,;"
+    replace: "vary "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vy.,;"
+    replace: "vary. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vy,,;"
+    replace: "vary, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "vy;,;"
+    replace: "vary; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "jc,;"
     replace: "jacket "
     propagate_case: true
@@ -32013,6 +33725,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "pstj;,;"
     replace: "protesting; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mm,;"
+    replace: "mama "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mm.,;"
+    replace: "mama. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mm,,;"
+    replace: "mama, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mm;,;"
+    replace: "mama; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "cie,;"
@@ -32543,6 +34271,22 @@ matches:
     replace: "urging; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "ff,;"
+    replace: "fifth "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ff.,;"
+    replace: "fifth. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ff,,;"
+    replace: "fifth, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ff;,;"
+    replace: "fifth; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "foa,;"
     replace: "formula "
     propagate_case: true
@@ -32557,6 +34301,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "foa;,;"
     replace: "formula; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "poo,;"
+    replace: "potato "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "poo.,;"
+    replace: "potato. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "poo,,;"
+    replace: "potato, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "poo;,;"
+    replace: "potato; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "mst,;"
@@ -32957,6 +34717,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "vac;,;"
     replace: "vacation; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gg,;"
+    replace: "gang "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gg.,;"
+    replace: "gang. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gg,,;"
+    replace: "gang, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gg;,;"
+    replace: "gang; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "piv,;"
@@ -33677,6 +35453,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "rcg;,;"
     replace: "recognition; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dee,;"
+    replace: "detect "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dee.,;"
+    replace: "detect. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dee,,;"
+    replace: "detect, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dee;,;"
+    replace: "detect; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "tab,;"
@@ -35007,6 +36799,22 @@ matches:
     replace: "sheriff; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "cii,;"
+    replace: "clinic "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cii.,;"
+    replace: "clinic. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cii,,;"
+    replace: "clinic, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cii;,;"
+    replace: "clinic; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "cio,;"
     replace: "coalition "
     propagate_case: true
@@ -35325,6 +37133,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "cok;,;"
     replace: "cookie; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "teo,;"
+    replace: "terror "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "teo.,;"
+    replace: "terror. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "teo,,;"
+    replace: "terror, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "teo;,;"
+    replace: "terror; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "weh,;"
@@ -39055,6 +40879,22 @@ matches:
     replace: "engagement; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "dff,;"
+    replace: "differ "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dff.,;"
+    replace: "differ. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dff,,;"
+    replace: "differ, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dff;,;"
+    replace: "differ; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "eti,;"
     replace: "extensive "
     propagate_case: true
@@ -39343,6 +41183,22 @@ matches:
     replace: "decent; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "poe,;"
+    replace: "poetry "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "poe.,;"
+    replace: "poetry. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "poe,,;"
+    replace: "poetry, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "poe;,;"
+    replace: "poetry; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ted,;"
     replace: "thread "
     propagate_case: true
@@ -39485,6 +41341,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "frk;,;"
     replace: "frankly; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cce,;"
+    replace: "cancel "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cce.,;"
+    replace: "cancel. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cce,,;"
+    replace: "cancel, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cce;,;"
+    replace: "cancel; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "drv,;"
@@ -40543,6 +42415,22 @@ matches:
     replace: "actress; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "fma,;"
+    replace: "format "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fma.,;"
+    replace: "format. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fma,,;"
+    replace: "format, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fma;,;"
+    replace: "format; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ctv,;"
     replace: "controversy "
     propagate_case: true
@@ -40943,6 +42831,22 @@ matches:
     replace: "treaty; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "prl,;"
+    replace: "partly "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "prl.,;"
+    replace: "partly. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "prl,,;"
+    replace: "partly, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "prl;,;"
+    replace: "partly; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "coni,;"
     replace: "consciousness "
     propagate_case: true
@@ -41037,6 +42941,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "say;,;"
     replace: "stability; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nm,;"
+    replace: "norm "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nm.,;"
+    replace: "norm. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nm,,;"
+    replace: "norm, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "nm;,;"
+    replace: "norm; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "gei,;"
@@ -41823,6 +43743,22 @@ matches:
     replace: "summary; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "srr,;"
+    replace: "server "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "srr.,;"
+    replace: "server. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "srr,,;"
+    replace: "server, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "srr;,;"
+    replace: "server; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "leh,;"
     replace: "leather "
     propagate_case: true
@@ -41983,6 +43919,22 @@ matches:
     replace: "wildlife; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "soe,;"
+    replace: "soccer "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "soe.,;"
+    replace: "soccer. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "soe,,;"
+    replace: "soccer, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "soe;,;"
+    replace: "soccer; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "mda,;"
     replace: "mandate "
     propagate_case: true
@@ -42029,6 +43981,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "nig;,;"
     replace: "nightmare; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "brr,;"
+    replace: "barrel "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "brr.,;"
+    replace: "barrel. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "brr,,;"
+    replace: "barrel, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "brr;,;"
+    replace: "barrel; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "hom,;"
@@ -42509,6 +44477,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "elu;,;"
     replace: "exclude; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "coe,;"
+    replace: "closet "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "coe.,;"
+    replace: "closet. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "coe,,;"
+    replace: "closet, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "coe;,;"
+    replace: "closet; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "rpi,;"
@@ -43455,6 +45439,22 @@ matches:
     replace: "pollution; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "pte,;"
+    replace: "poster "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pte.,;"
+    replace: "poster. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pte,,;"
+    replace: "poster, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pte;,;"
+    replace: "poster; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "nop,;"
     replace: "nonprofit "
     propagate_case: true
@@ -43853,6 +45853,38 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "pnsj;,;"
     replace: "punishing; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpi,;"
+    replace: "depict "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpi.,;"
+    replace: "depict. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpi,,;"
+    replace: "depict, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "dpi;,;"
+    replace: "depict; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iu,;"
+    replace: "input "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iu.,;"
+    replace: "input. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iu,,;"
+    replace: "input, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iu;,;"
+    replace: "input; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "smg,;"
@@ -45295,6 +47327,22 @@ matches:
     replace: "bacteria; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "pto,;"
+    replace: "pastor "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pto.,;"
+    replace: "pastor. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pto,,;"
+    replace: "pastor, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "pto;,;"
+    replace: "pastor; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "aeu,;"
     replace: "adequate "
     propagate_case: true
@@ -45375,6 +47423,22 @@ matches:
     replace: "stimulus; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "ptn,;"
+    replace: "patent "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ptn.,;"
+    replace: "patent. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ptn,,;"
+    replace: "patent, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ptn;,;"
+    replace: "patent; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "pwd,;"
     replace: "powder "
     propagate_case: true
@@ -45389,6 +47453,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "pwd;,;"
     replace: "powder; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hh,;"
+    replace: "harsh "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hh.,;"
+    replace: "harsh. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hh,,;"
+    replace: "harsh, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hh;,;"
+    replace: "harsh; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "sry,;"
@@ -45613,6 +47693,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "cow;,;"
     replace: "cowboy; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "inn,;"
+    replace: "intent "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "inn.,;"
+    replace: "intent. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "inn,,;"
+    replace: "intent, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "inn;,;"
+    replace: "intent; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "csg,;"
@@ -46511,6 +48607,22 @@ matches:
     replace: "dramatically; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "cll,;"
+    replace: "caller "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cll.,;"
+    replace: "caller. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cll,,;"
+    replace: "caller, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cll;,;"
+    replace: "caller; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "hk,;"
     replace: "hook "
     propagate_case: true
@@ -47119,6 +49231,22 @@ matches:
     replace: "regulatory; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "coo,;"
+    replace: "colony "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "coo.,;"
+    replace: "colony. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "coo,,;"
+    replace: "colony, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "coo;,;"
+    replace: "colony; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "wal,;"
     replace: "walking "
     propagate_case: true
@@ -47231,6 +49359,22 @@ matches:
     replace: "adolescent; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "gk,;"
+    replace: "greek "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gk.,;"
+    replace: "greek. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gk,,;"
+    replace: "greek, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gk;,;"
+    replace: "greek; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ox,;"
     replace: "oxygen "
     propagate_case: true
@@ -47277,6 +49421,38 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "fuo;,;"
     replace: "functional; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "paa,;"
+    replace: "palace "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "paa.,;"
+    replace: "palace. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "paa,,;"
+    replace: "palace, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "paa;,;"
+    replace: "palace; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ctt,;"
+    replace: "cotton "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ctt.,;"
+    replace: "cotton. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ctt,,;"
+    replace: "cotton, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ctt;,;"
+    replace: "cotton; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "esm,;"
@@ -47951,6 +50127,22 @@ matches:
     replace: "classical; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "cvy,;"
+    replace: "convey "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cvy.,;"
+    replace: "convey. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cvy,,;"
+    replace: "convey, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cvy;,;"
+    replace: "convey; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "coms,;"
     replace: "compensation "
     propagate_case: true
@@ -48301,6 +50493,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "pmt;,;"
     replace: "parameter; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gp,;"
+    replace: "grip "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gp.,;"
+    replace: "grip. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gp,,;"
+    replace: "grip, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gp;,;"
+    replace: "grip; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gpq,;"
+    replace: "gripped "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gpq.,;"
+    replace: "gripped. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gpq,,;"
+    replace: "gripped, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gpq;,;"
+    replace: "gripped; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gpj,;"
+    replace: "gripping "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gpj.,;"
+    replace: "gripping. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gpj,,;"
+    replace: "gripping, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "gpj;,;"
+    replace: "gripping; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "mof,;"
@@ -49103,6 +51343,54 @@ matches:
     replace: "identical; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "ree,;"
+    replace: "regret "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ree.,;"
+    replace: "regret. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ree,,;"
+    replace: "regret, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ree;,;"
+    replace: "regret; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "reeq,;"
+    replace: "regreted "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "reeq.,;"
+    replace: "regreted. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "reeq,,;"
+    replace: "regreted, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "reeq;,;"
+    replace: "regreted; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "reej,;"
+    replace: "regreting "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "reej.,;"
+    replace: "regreting. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "reej,,;"
+    replace: "regreting, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "reej;,;"
+    replace: "regreting; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "qs,;"
     replace: "quest "
     propagate_case: true
@@ -49487,6 +51775,22 @@ matches:
     replace: "courtesy; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "stt,;"
+    replace: "statue "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "stt.,;"
+    replace: "statue. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "stt,,;"
+    replace: "statue, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "stt;,;"
+    replace: "statue; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "prec,;"
     replace: "precise "
     propagate_case: true
@@ -49501,6 +51805,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "prec;,;"
     replace: "precise; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cui,;"
+    replace: "cruise "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cui.,;"
+    replace: "cruise. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cui,,;"
+    replace: "cruise, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cui;,;"
+    replace: "cruise; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "ley,;"
@@ -49837,6 +52157,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "uny;,;"
     replace: "underlying; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "seo,;"
+    replace: "sensor "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "seo.,;"
+    replace: "sensor. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "seo,,;"
+    replace: "sensor, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "seo;,;"
+    replace: "sensor; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "dlo,;"
@@ -50287,6 +52623,22 @@ matches:
     replace: "instinct; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "ept,;"
+    replace: "export "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ept.,;"
+    replace: "export. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ept,,;"
+    replace: "export, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ept;,;"
+    replace: "export; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "seve,;"
     replace: "seventh "
     propagate_case: true
@@ -50301,6 +52653,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "seve;,;"
     replace: "seventh; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fx,;"
+    replace: "fixed "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fx.,;"
+    replace: "fixed. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fx,,;"
+    replace: "fixed, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "fx;,;"
+    replace: "fixed; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "brc,;"
@@ -50461,6 +52829,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "core;,;"
     replace: "correction; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kd,;"
+    replace: "kinda "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kd.,;"
+    replace: "kinda. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kd,,;"
+    replace: "kinda, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "kd;,;"
+    replace: "kinda; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "reli,;"
@@ -50895,6 +53279,22 @@ matches:
     replace: "creativity; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "caa,;"
+    replace: "casual "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "caa.,;"
+    replace: "casual. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "caa,,;"
+    replace: "casual, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "caa;,;"
+    replace: "casual; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "obi,;"
     replace: "objection "
     propagate_case: true
@@ -50909,6 +53309,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "obi;,;"
     replace: "objection; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "clr,;"
+    replace: "clever "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "clr.,;"
+    replace: "clever. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "clr,,;"
+    replace: "clever, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "clr;,;"
+    replace: "clever; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "rvu,;"
@@ -50989,6 +53405,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "rum;,;"
     replace: "resume; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cpt,;"
+    replace: "carpet "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cpt.,;"
+    replace: "carpet. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cpt,,;"
+    replace: "carpet, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "cpt;,;"
+    replace: "carpet; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "iri,;"
@@ -51101,6 +53533,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "fsi;,;"
     replace: "fossil; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ptr,;"
+    replace: "patrol "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ptr.,;"
+    replace: "patrol. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ptr,,;"
+    replace: "patrol, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ptr;,;"
+    replace: "patrol; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "mca,;"
@@ -52015,6 +54463,22 @@ matches:
     replace: "believer; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "inm,;"
+    replace: "inmate "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "inm.,;"
+    replace: "inmate. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "inm,,;"
+    replace: "inmate, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "inm;,;"
+    replace: "inmate; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "thg,;"
     replace: "thoroughly "
     propagate_case: true
@@ -52909,6 +55373,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "slm;,;"
     replace: "salmon; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "css,;"
+    replace: "census "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "css.,;"
+    replace: "census. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "css,,;"
+    replace: "census, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "css;,;"
+    replace: "census; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "aol,;"
@@ -54191,6 +56671,22 @@ matches:
     replace: "experienced; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "mx,;"
+    replace: "mixed "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mx.,;"
+    replace: "mixed. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mx,,;"
+    replace: "mixed, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "mx;,;"
+    replace: "mixed; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "vp,;"
     replace: "vampire "
     propagate_case: true
@@ -54847,6 +57343,22 @@ matches:
     replace: "compelling; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "eev,;"
+    replace: "eleven "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eev.,;"
+    replace: "eleven. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eev,,;"
+    replace: "eleven, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "eev;,;"
+    replace: "eleven; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "bck,;"
     replace: "backyard "
     propagate_case: true
@@ -55359,6 +57871,22 @@ matches:
     replace: "inherit; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "sve,;"
+    replace: "strive "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sve.,;"
+    replace: "strive. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sve,,;"
+    replace: "strive, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sve;,;"
+    replace: "strive; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "apc,;"
     replace: "appreciation "
     propagate_case: true
@@ -55437,6 +57965,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "dry;,;"
     replace: "desperately; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "thn,;"
+    replace: "throne "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "thn.,;"
+    replace: "throne. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "thn,,;"
+    replace: "throne, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "thn;,;"
+    replace: "throne; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "bru,;"
@@ -55663,6 +58207,22 @@ matches:
     replace: "trainer; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "iuc,;"
+    replace: "induce "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iuc.,;"
+    replace: "induce. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iuc,,;"
+    replace: "induce, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "iuc;,;"
+    replace: "induce; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "ayt,;"
     replace: "anytime "
     propagate_case: true
@@ -55693,6 +58253,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "mra;,;"
     replace: "morality; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "syr,;"
+    replace: "syrian "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "syr.,;"
+    replace: "syrian. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "syr,,;"
+    replace: "syrian, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "syr;,;"
+    replace: "syrian; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "pipe,;"
@@ -56045,6 +58621,22 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "cout;,;"
     replace: "countless; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sse,;"
+    replace: "sunset "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sse.,;"
+    replace: "sunset. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sse,,;"
+    replace: "sunset, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "sse;,;"
+    replace: "sunset; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "acg,;"
@@ -56527,6 +59119,22 @@ matches:
     replace: "warrant; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "ttt,;"
+    replace: "tattoo "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttt.,;"
+    replace: "tattoo. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttt,,;"
+    replace: "tattoo, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "ttt;,;"
+    replace: "tattoo; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "sft,;"
     replace: "softly "
     propagate_case: true
@@ -56911,6 +59519,22 @@ matches:
     replace: "murderer; "
     propagate_case: true
     uppercase_style: "capitalize_words"
+  - trigger: "bge,;"
+    replace: "burger "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bge.,;"
+    replace: "burger. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bge,,;"
+    replace: "burger, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "bge;,;"
+    replace: "burger; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
   - trigger: "tex,;"
     replace: "textbook "
     propagate_case: true
@@ -56957,6 +59581,54 @@ matches:
     uppercase_style: "capitalize_words"
   - trigger: "afw;,;"
     replace: "afterward; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmm,;"
+    replace: "hammer "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmm.,;"
+    replace: "hammer. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmm,,;"
+    replace: "hammer, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmm;,;"
+    replace: "hammer; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmmq,;"
+    replace: "hammered "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmmq.,;"
+    replace: "hammered. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmmq,,;"
+    replace: "hammered, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmmq;,;"
+    replace: "hammered; "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmmj,;"
+    replace: "hammering "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmmj.,;"
+    replace: "hammering. "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmmj,,;"
+    replace: "hammering, "
+    propagate_case: true
+    uppercase_style: "capitalize_words"
+  - trigger: "hmmj;,;"
+    replace: "hammering; "
     propagate_case: true
     uppercase_style: "capitalize_words"
   - trigger: "ky,;"

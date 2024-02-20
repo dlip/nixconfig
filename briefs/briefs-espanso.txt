@@ -32,6 +32,7 @@ year	ye
 some	so
 want	wa	wanted	wanting
 when	we
+which	wc
 like	l	liked	liking
 other	ot
 could	cu
@@ -40,6 +41,7 @@ here	he
 look	lo	looked	looking
 more	mo
 these	ts
+thing	tg
 well	wl
 because	be
 also	al
@@ -81,6 +83,7 @@ over	ov
 school	sc
 state	sa	stated	stating
 much	mu
+talk	tk	talked	talking
 keep	ke	kept	keeping
 leave	le	left	leaving
 help	hl	helped	helping
@@ -129,6 +132,7 @@ government	gv
 next	nt
 city	ci
 company	cm
+story	sy
 today	ty
 move	mv	moved	moving
 must	mt
@@ -146,10 +150,12 @@ read	re	read	reading
 anything	ay
 nothing	no
 small	sl
+month	mn
 program	pm	programmed	programming
 maybe	mb
 under	un
 business	bu
+home	hm
 kind	ki
 stop	sp	stopped	stopping
 study	sd
@@ -159,6 +165,7 @@ name	na	named	naming
 idea	id
 room	ro
 percent	pe
+away	aa
 actually	ac
 large	lg
 though	tho
@@ -190,9 +197,11 @@ until	ut
 father	ft
 create	cr
 information	in
+learn	lr	learnt	learning
 already	ae
 kill	kl	killed	killing
 minute	min
+party	pt
 include	ic	included	including
 together	tog
 follow	fl	followed	following
@@ -201,6 +210,7 @@ remember	rm	remembered	remembering
 often	of
 reason	rs
 speak	sk	spoken	speaking
+black	bk
 member	mem
 community	ct
 once	oc
@@ -211,6 +221,7 @@ lead	ld	led	leading
 continue	ce	continued	continuing
 whether	whe
 enough	en
+level	ll	leveled	leveling
 political	pc
 almost	as
 university	uv
@@ -239,6 +250,8 @@ second	sec
 street	str
 everyone	eve
 policy	pol
+table	tb
+human	hn
 please	ple	pleased	pleasing
 hope	hp	hoped	hoping
 process	prc
@@ -249,8 +262,10 @@ death	de
 experience	ex
 easy	es
 education	ed
+build	bd	built	building
 expect	ep	expected	expecting
 himself	him
+sense	ss	sensed	sensing
 across	acr
 college	cl
 music	mc
@@ -260,12 +275,14 @@ police	poi
 effect	ef
 season	sea
 possible	pos
+serve	sv	served	serving
 although	at
 market	mk
 require	reu
 listen	lis	listened	listening
 according	ad
 anyone	any
+baby	bb
 wrong	wg
 decide	dc	decided	deciding
 republican	rp
@@ -285,6 +302,7 @@ wife	wf
 decision	ds
 receive	rv	received	receiving
 value	va	valued	valuing
+pick	pk	picked	picking
 phone	ph	phoned	phoning
 thanks	tha
 event	et
@@ -297,6 +315,7 @@ church	chu
 model	ml
 perhaps	per
 relationship	rel
+fine	fn
 player	pla
 couple	cp
 million	mil
@@ -308,6 +327,7 @@ light	lh	lighted	lighting
 development	dl
 federal	fed
 former	for
+role	rl
 pretty	pre
 myself	mye
 view	vi
@@ -324,8 +344,11 @@ project	prt
 return	ret	returned	returning
 position	pot
 special	spe
+film	fm	filmed	filming
+type	tp	typed	typing
 article	art
 chance	cha
+drug	dg
 economic	em
 situation	sit
 choose	cho	chosen	choosing
@@ -338,10 +361,12 @@ yourself	yr
 carry	cy	carried	carrying
 brother	bro
 matter	mat	mattered	mattering
+dead	dd
 image	ia
 simply	sim
 society	soi
 picture	pic
+paper	pp
 energy	eg
 personal	pes
 building	bul
@@ -353,6 +378,7 @@ evidence	evi
 product	prd
 realize	rz	realized	realizing
 technology	tec
+catch	cc	caught	catching
 comment	com	commented	commenting
 cover	cv	covered	covering
 describe	des	described	describing
@@ -365,13 +391,17 @@ campaign	cam
 ground	gn
 election	ele
 check	ck	checked	checking
+page	pg
 fight	fg	fought	fighting
 itself	if
+test	tt	tested	testing
 patient	pat
 produce	pru	produced	producing
 certain	cer
 whatever	wv
+half	hf
 video	vd
+third	td
 recent	rec
 available	ava
 ready	ry
@@ -409,6 +439,7 @@ behavior	bv
 certainly	cet
 nearly	nr
 increase	inc	increased	increasing
+north	nh
 culture	cul
 medical	med
 everybody	eb
@@ -419,6 +450,7 @@ response	res
 population	pop
 worker	wor
 draw	dw	drawn	drawing
+drop	dp	dropped	dropping
 private	pri
 tonight	ton
 letter	let
@@ -430,6 +462,7 @@ nature	nau
 administration	adm
 common	cmo
 message	mes
+enjoy	eo	enjoyed	enjoying
 similar	sil
 congress	cog
 attack	ak	attacked	attacking
@@ -473,6 +506,7 @@ quality	qa
 quickly	qi
 worry	wy	worried	worrying
 accept	ace	accepted	accepting
+enter	ee	entered	entering
 mention	men	mentioned	mentioning
 movement	mov
 section	set
@@ -494,6 +528,7 @@ feeling	fel
 despite	dep
 degree	deg
 imagine	ima	imagined	imagining
+king	kg
 present	prs	presented	presenting
 foreign	foi
 disease	dis
@@ -533,6 +568,7 @@ completely	col
 opinion	opn
 interview	iw
 remove	rem	removed	removing
+dark	dk
 union	uo
 professor	prf
 pressure	peu
@@ -546,8 +582,10 @@ environment	env
 specific	spc
 version	ve
 reality	rei
+visit	vs	visited	visiting
 club	cb
 justice	ju
+river	rr
 memory	mer
 camera	cae
 global	glo
@@ -570,6 +608,7 @@ respond	rsp
 trouble	tro	troubled	troubling
 conversation	cov
 manage	man	managed	managing
+date	dt
 charge	chg	charged	charging
 assume	asu
 writer	wri
@@ -583,6 +622,7 @@ reveal	rev	revealed	revealing
 access	acs
 debate	deb	debated	debating
 contain	cnt	contained	containing
+beat	bt	beaten	beating
 democratic	der
 glass	gs
 improve	io	improved	improving
@@ -601,6 +641,7 @@ victim	vc
 cancer	cac
 speech	sph
 particular	pai
+none	nn
 weight	wei
 tomorrow	tom
 positive	pov
@@ -636,10 +677,12 @@ insurance	inu
 text	tx
 freedom	fre
 reader	rad
+march	mh	marched	marching
 machine	mac
 november	nov
 generation	ger
 income	ino
+onto	oo
 throughout	thr
 threat	tht
 solution	sol
@@ -649,6 +692,7 @@ obviously	ob
 refer	rf
 investigation	inv
 senator	sen
+unit	ui
 photograph	pho
 july	jy
 television	tel
@@ -673,6 +717,7 @@ participant	pac
 judge	jd	judged	judging
 pattern	pae
 institution	int
+faith	fh
 professional	pof
 reflect	ref	reflected	reflecting
 folk	fk
@@ -753,7 +798,9 @@ murder	mur	murdered	murdering
 object	obe	objected	objecting
 express	exr
 encourage	enc	encouraged	encouraging
+blog	bg
 belief	bel
+debt	db
 labor	lb
 understanding	ur
 neighborhood	ng
@@ -785,6 +832,7 @@ billion	bil
 reform	rfo
 ignore	ign	ignored	ignoring
 welcome	wel	welcomed	welcoming
+gold	gd
 jump	jm	jumped	jumping
 planet	pln
 location	loc
@@ -843,8 +891,10 @@ limit	lm
 appreciate	apr	appreciated	appreciating
 observe	obs	observed	observing
 currently	cue
+crowd	cw	crowded	crowding
 apartment	apm
 survive	srv
+guest	gt
 protection	pec
 intelligence	ing
 yesterday	yt
@@ -866,6 +916,7 @@ relation	rao
 flight	fli
 dangerous	dan
 aspect	asp
+grab	gb	grabed	grabing
 favorite	fav
 january	jan
 independent	inp
@@ -912,6 +963,7 @@ quiet	qe
 spread	spa
 bright	brg
 influence	ifl	influenced	influencing
+kick	kk	kicked	kicking
 annual	anu
 procedure	pod
 respect	rse
@@ -962,6 +1014,7 @@ progress	prg
 surprise	sus	surprised	surprising
 assessment	ase
 defend	dfe
+pound	pd
 correct	crc	corrected	correcting
 married	mad
 slightly	sli
@@ -994,6 +1047,7 @@ deserve	dse	deserved	deserving
 famous	fao
 intervention	itv
 confirm	cfi	confirmed	confirming
+insist	ii	insisted	insisting
 fourth	fot
 native	nai
 supreme	spm
@@ -1072,6 +1126,7 @@ soviet	sov
 profit	pfi
 careful	caf
 gender	ged
+ocean	oe
 unidentified	und
 circumstance	cic
 declare	dcl	declared	declaring
@@ -1080,6 +1135,7 @@ organize	oz
 english	enl
 neither	net
 surround	sro	surrounded	surrounding
+manner	mnn
 surprised	srp
 percentage	pea
 massive	mav
@@ -1096,6 +1152,7 @@ beauty	beu
 bottle	bol
 component	cpo
 jewish	je
+yours	ys
 plastic	pls
 indian	idi
 stress	sre	stressed	stressing
@@ -1124,6 +1181,7 @@ guilty	gul
 catholic	cah
 variable	vb
 convention	cvn
+jury	jr
 incident	ici
 hearing	hei
 everywhere	ew
@@ -1376,6 +1434,7 @@ substance	sub
 atmosphere	ats
 muslim	mul
 passage	psg
+pepper	pee
 emphasize	ez	emphasized	emphasizing
 square	squ
 recipe	rci
@@ -1397,8 +1456,10 @@ engineering	egn
 advance	ada
 anonymous	aon
 contemporary	coy
+jail	jl	jailed	jailing
 interpretation	ito
 breakfast	brk
+severe	see
 profile	pfl
 saving	sav
 adjust	adu
@@ -1412,6 +1473,7 @@ entertainment	eta
 academy	acy
 teaspoon	tes
 transfer	trs
+usual	uu
 clinical	cin
 avenue	avn
 priest	pie
@@ -1491,12 +1553,14 @@ hurricane	hur
 accurate	aur
 provision	pvi
 communicate	cmc	communicated	communicating
+vary	vy
 jacket	jc
 increasing	ica
 equally	eqa
 implication	imc
 fiction	fic
 protest	pst	protested	protesting
+mama	mm
 criteria	cie
 potentially	pnt
 assault	asa
@@ -1528,7 +1592,9 @@ carbon	crb
 islamic	ism
 stranger	sag
 urge	ug	urged	urging
+fifth	ff
 formula	foa
+potato	poo
 monster	mst
 telephone	tep	telephoned	telephoning
 excited	eci
@@ -1548,6 +1614,7 @@ illustrate	ilu
 provider	pvd
 activist	atv
 vacation	vac
+gang	gg
 privacy	piv
 arrange	ara	arranged	arranging
 penalty	pna
@@ -1589,6 +1656,7 @@ absence	abe
 offensive	ofs
 symbol	smb
 recognition	rcg
+detect	dee
 tablespoon	tab
 construct	csr
 approval	aro
@@ -1660,6 +1728,7 @@ stadium	sad
 translate	tan	translated	translating
 mortgage	mog
 sheriff	she
+clinic	cii
 coalition	cio
 naturally	nal
 hopefully	hop
@@ -1678,6 +1747,7 @@ assure	asr	assured	assuring
 utility	uti
 aggressive	ags
 cookie	cok
+terror	teo
 wealthy	weh
 update	upa
 alliance	ali
@@ -1885,6 +1955,7 @@ killing	kil
 photographer	pht
 running	run
 engagement	ega
+differ	dff
 extensive	eti
 divorce	dvc	divorced	divorcing
 vessel	ves
@@ -1901,6 +1972,7 @@ punishment	pun
 romantic	rom
 economist	ecm
 decent	dcn
+poetry	poe
 thread	ted
 wooden	wde
 confuse	cfu
@@ -1910,6 +1982,7 @@ decrease	dcr
 resort	ror
 legacy	lec
 frankly	frk
+cancel	cce
 derive	drv
 formation	frm
 grandfather	grd
@@ -1972,6 +2045,7 @@ diamond	dao
 conviction	cvc
 playoff	plo
 actress	ars
+format	fma
 controversy	ctv
 grocery	grc
 headquarters	heu
@@ -1995,12 +2069,14 @@ membership	meb
 standing	sdn
 possession	posi
 treaty	try
+partly	prl
 consciousness	coni
 manufacturing	maf
 announcement	aou
 makeup	map
 prediction	pct
 stability	say
+norm	nm
 genius	gei
 gently	get
 operator	opa
@@ -2046,6 +2122,7 @@ moderate	mde
 jazz	jz
 infant	ift
 summary	smr
+server	srr
 leather	leh
 radiation	rda
 prompt	pmp
@@ -2054,9 +2131,11 @@ operating	ort
 assert	aer	asserted	asserting
 discourse	dco
 wildlife	wif
+soccer	soe
 mandate	mda
 downtown	dow
 nightmare	nig
+barrel	brr
 homeless	hom
 uncomfortable	unc
 execute	eut
@@ -2081,6 +2160,7 @@ workshop	wos
 inquiry	iqu
 admire	amr	admired	admiring
 exclude	elu
+closet	coe
 reporting	rpi
 touchdown	toc
 experimental	epr
@@ -2136,6 +2216,7 @@ frustration	frs
 changing	cgi
 demonstration	dms
 pollution	put
+poster	pte
 nonprofit	nop
 guidance	gun
 exhibit	ehb
@@ -2157,6 +2238,8 @@ orientation	ore
 trigger	tig
 wherever	wer
 punish	pns	punished	punishing
+depict	dpi
+input	iu
 seemingly	smg
 widespread	wip
 competitor	comp
@@ -2239,12 +2322,15 @@ sacrifice	scf
 spectrum	srm
 dragon	dro
 bacteria	bct
+pastor	pto
 adequate	aeu
 tackle	tak
 occupation	ocp
 compose	como
 stimulus	smu
+patent	ptn
 powder	pwd
+harsh	hh
 surprisingly	sry
 correctly	cey
 govern	gor
@@ -2259,6 +2345,7 @@ divine	dvn
 transmission	tam
 commonly	cly
 cowboy	cow
+intent	inn
 counseling	csg
 gentle	gel
 rhythm	rhy
@@ -2311,6 +2398,7 @@ trailer	tai
 pitcher	pih
 goodbye	god
 dramatically	drm
+caller	cll
 hook	hk	hooked	hooking
 behavioral	ber
 boring	boi
@@ -2345,6 +2433,7 @@ importantly	imy
 invisible	ivb
 sergeant	serg
 regulatory	rgo
+colony	coo
 walking	wal
 accessible	acl
 integration	iga
@@ -2352,9 +2441,12 @@ spouse	sos
 excitement	eit
 residence	rsd
 adolescent	adl
+greek	gk
 oxygen	ox
 gravity	grv
 functional	fuo
+palace	paa
+cotton	ctt
 estimated	esm
 endorse	edr
 lawmaker	lam
@@ -2393,6 +2485,7 @@ rebuild	rbu
 romance	roa
 deadline	dln
 classical	clas
+convey	cvy
 compensation	coms
 insect	ict
 output	out
@@ -2415,6 +2508,7 @@ realistic	rit
 assemble	aem
 necessity	nec
 parameter	pmt
+grip	gp	gripped	gripping
 modify	mof
 sponsor	sno
 mathematics	mah
@@ -2461,6 +2555,7 @@ immune	imu
 calendar	ced
 paragraph	para
 identical	idl
+regret	ree	regreted	regreting
 quest	qs
 entrepreneur	etu
 specify	spy
@@ -2485,7 +2580,9 @@ southwest	suh
 upcoming	upc
 someday	soy
 courtesy	cty
+statue	stt
 precise	prec
+cruise	cui
 legally	ley
 embassy	eba
 patience	pati
@@ -2507,6 +2604,7 @@ hidden	hid
 chronicle	chrn
 suburb	sbu
 underlying	uny
+sensor	seo
 deploy	dlo
 magnitude	mgn
 suspicion	susi
@@ -2535,13 +2633,16 @@ therapist	tap
 backup	bau
 workplace	wop
 instinct	inst
+export	ept
 seventh	seve
+fixed	fx
 broadcast	brc	broadcast	broadcasting
 disclose	dsl	disclosed	disclosing
 execution	euo
 chuckle	chk
 density	dns
 correction	core
+kinda	kd
 relieve	reli
 teammate	tmt
 corridor	cdo
@@ -2569,12 +2670,15 @@ hockey	hoc
 proposition	pros
 ancestor	aet
 creativity	crv
+casual	caa
 objection	obi
+clever	clr
 revolutionary	rvu
 carbohydrate	crh
 reportedly	rol
 forehead	foh
 resume	rum
+carpet	cpt
 interior	iri
 questionnaire	que
 departure	dau
@@ -2582,6 +2686,7 @@ behalf	bef
 diplomatic	dlm
 subsidy	sbi
 fossil	fsi
+patrol	ptr
 mechanic	mca
 screening	scg
 continuing	cong
@@ -2635,6 +2740,7 @@ painter	pnr
 residential	rde
 counterpart	cep
 believer	bli
+inmate	inm
 thoroughly	thg
 filter	flt
 pillow	piw
@@ -2685,6 +2791,7 @@ performer	pmr
 protective	proi
 programming	png
 salmon	slm
+census	css
 accomplishment	aol
 conscience	cosc
 fortunately	foy
@@ -2757,6 +2864,7 @@ coastal	coas
 partial	part
 flexible	fle
 experienced	eri
+mixed	mx
 vampire	vp
 optimistic	opm
 dessert	dese
@@ -2798,6 +2906,7 @@ unclear	ucl
 workout	wou
 wilderness	wir
 compelling	comg
+eleven	eev
 backyard	bck
 partially	pari
 guardian	gur
@@ -2828,11 +2937,13 @@ scratch	sah	scratched	scratching
 verify	vf
 offender	ond
 inherit	ihe
+strive	sve
 appreciation	apc
 canvas	cav
 proceedings	pcg
 magical	mgi
 desperately	dry
+throne	thn
 brutal	bru
 propaganda	proa
 projection	pje
@@ -2847,8 +2958,10 @@ developmental	dvm
 socially	soci
 courtroom	ctm
 trainer	tin
+induce	iuc
 anytime	ayt
 morality	mra
+syrian	syr
 pipeline	pipe
 instant	insa
 doorway	doy
@@ -2871,6 +2984,7 @@ jealous	jea
 invade	ivd
 excessive	eiv
 countless	cout
+sunset	sse
 accounting	acg
 faithful	faf
 freely	fey
@@ -2901,6 +3015,7 @@ balloon	bln
 monument	mum
 reluctant	ruc
 warrant	wat
+tattoo	ttt
 softly	sft
 graduation	gri
 deliberately	dlb
@@ -2925,9 +3040,11 @@ vocabulary	voc
 ashamed	aha
 stunning	stun
 murderer	mud
+burger	bge
 textbook	tex
 sensation	sens
 afterward	afw
+hammer	hmm	hammered	hammering
 keyboard	ky
 persist	pers
 predator	pred

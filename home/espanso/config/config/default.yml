@@ -2,6 +2,7 @@
 # backend: Clipboard
 backend: Inject
 disable_x11_fast_inject: true
+undo_backspace: false
 # inject_delay: 100
 # key_delay: 100
 # This is the default configuration file, change it as you like it
