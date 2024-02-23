@@ -30,11 +30,6 @@
   sal (one-shot 1000 lalt)
   smt (one-shot 1000 lmet)
 
-  stb (multi sft (layer-while-held tab))
-  atb (multi alt (layer-while-held tab))
-  mtb (multi met (layer-while-held tab))
-  ctb (multi ctl (layer-while-held tab))
-
   w (tap-hold $tap-timeout $hold-timeout w @atb)
   l (tap-hold $tap-timeout $hold-timeout l @atb)
   y (tap-hold $tap-timeout $hold-timeout y @mtb)
@@ -101,15 +96,6 @@
   prnt prev pp   next vold XX   @gam f4   f5   f6   f11  _    _
   @udo @cut @cpy @pst prnt XX   XX   f1   f2   f3   f12  _
   _    _    _   _          _         _    _    _    _    _    _
-)
-
-(deflayer tab
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  lsft lalt lmet lctl _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    S-tab S-tab         tab       _    _    _    _    _    _
 )
 
 (deflayer disable
