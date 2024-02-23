@@ -83,6 +83,10 @@
       bind-key -T copy-mode-vi 'C-Right' select-pane -R
       bind-key -T copy-mode-vi 'C-\' select-pane -l
 
+      # Don't jump to the end of the pane after selection
+      unbind-key -T copy-mode-vi MouseDragEnd1Pane
+      bind-key -T copy-mode-vi y send-keys -X copy-selection
+
       # Ensure path is maintained
       bind c new-window -c "#{pane_current_path}" -n ""
       bind s split-window -c "#{pane_current_path}"
