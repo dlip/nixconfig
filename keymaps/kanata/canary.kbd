@@ -30,11 +30,6 @@
   sal (one-shot 1000 lalt)
   smt (one-shot 1000 lmet)
 
-  w (tap-hold $tap-timeout $hold-timeout w @atb)
-  l (tap-hold $tap-timeout $hold-timeout l @atb)
-  y (tap-hold $tap-timeout $hold-timeout y @mtb)
-  p (tap-hold $tap-timeout $hold-timeout p @ctb)
-
   c (tap-hold $tap-timeout $hold-timeout c lsft)
   r (tap-hold $tap-timeout $hold-timeout r lalt)
   s (tap-hold $tap-timeout $hold-timeout s lmet)
@@ -74,7 +69,7 @@
 (deflayer base
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    @dis
-  @w   @l   @y   @p   b    XX   XX   z    f    o    u    '    _    _
+  w    l    y    p    b    XX   XX   z    f    o    u    '    _    _
   @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
   q    j    v    d    k    XX   XX   x    h    ;    ,    .
   _    lrld @tnv @tnv      @spc      @bsp @bsp @exp @exp @rpt bspc
