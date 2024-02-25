@@ -209,6 +209,11 @@ in rec {
           publicKey = "y1+RKIv+REkE/sSD1YEvSP/QQCZKeWKW+Qe9EE94oyU=";
           allowedIPs = ["10.100.0.6/32"];
         }
+        # rmob
+        {
+          publicKey = "SjRIualgEpDnqE5ohIrYD+u7aeIz3zrVVwXHohenVmA=";
+          allowedIPs = ["10.100.0.7/32"];
+        }
       ];
     };
   };
