@@ -49,7 +49,7 @@ in rec {
 
     script = ''
       if ! /run/wrappers/bin/mount | grep -q -wi "/media/backup"; then
-         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/sdf backup
+         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/disk/by-uuid/8c4746b9-7ccb-4a94-8e72-502ea6ff4a49 backup
          /run/wrappers/bin/mount /dev/mapper/backup /media/backup
       fi
     '';
