@@ -1,6 +1,6 @@
 matches:
   # Dates
-  - trigger: ".,da"
+  - trigger: "das',;"
     replace: "{{mydate}}"
     vars:
       - name: mydate
@@ -8,21 +8,21 @@ matches:
         params:
           format: "%m/%d/%Y"
 
-  - trigger: ".,dd"
+  - trigger: "dad',;"
     replace: "{{mydate}}"
     vars:
       - name: mydate
         type: date
         params:
           format: "%Y-%m-%d"
-  - trigger: ".,dh"
+  - trigger: "dam',;"
     replace: "{{mydate}}"
     vars:
       - name: mydate
         type: date
         params:
           format: "# %d %a"
-  - trigger: ".,tt"
+  - trigger: "ti',;"
     replace: "{{mytime}}"
     vars:
       - name: mytime
@@ -31,7 +31,7 @@ matches:
           format: "%H:%M"
 
   # Shell commands
-  - trigger: ".,ip"
+  - trigger: "ip',;"
     replace: "{{output}}"
     vars:
       - name: output
@@ -40,20 +40,20 @@ matches:
           cmd: "curl ifconfig.co"
 
   # Vim
-  # - trigger: ".,;"
-  #   replace: "\\(.*\\)"
+  - trigger: "v',;"
+    replace: "\\(.*\\)"
   # Personal
-  - trigger: "emg,;"
+  - trigger: "eg',;"
     replace: "danelipscombe@gmail.com"
-  - trigger: "emw,;"
+  - trigger: "ew',;"
     replace: "dane.lipscombe@planpay.com"
-  - trigger: "dl,;"
+  - trigger: "dl',;"
     replace: "Dane Lipscombe"
-  - trigger: "dn,;"
+  - trigger: "d',;"
     replace: "Dane"
-  - trigger: "lp,;"
+  - trigger: "l',;"
     replace: "Lipscombe"
-  - trigger: "tp,;"
+  - trigger: "tp',;"
     replace: "TestPassword!123"
-  - trigger: "tc,;"
+  - trigger: "tc',;"
     replace: "42424242424242420125123"
