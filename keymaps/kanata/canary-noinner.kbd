@@ -28,7 +28,6 @@
 
   nav (chord combosl nav)
 
-
   z (chord combosr z)
   f (chord combosr f)
   o (chord combosr o)

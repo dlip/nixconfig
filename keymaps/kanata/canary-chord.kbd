@@ -2,6 +2,97 @@
 ;;   linux-dev /dev/input/by-path/platform-i8043-serio-0-event-kbd
 ;; )
 
+(defalias
+  w (chord combos w)
+  l (chord combos l)
+  y (chord combos y)
+  p (chord combos p)
+  b (chord combos b)
+  
+  c (chord combos c)
+  r (chord combos r)
+  s (chord combos s)
+  t (chord combos t)
+  g (chord combos g)
+
+  q (chord combos q)
+  j (chord combos j)
+  v (chord combos v)
+  d (chord combos d)
+  k (chord combos k)
+
+
+  z (chord combos z)
+  f (chord combos f)
+  o (chord combos o)
+  u (chord combos u)
+  ' (chord combos ')
+
+  m (chord combos m)
+  n (chord combos n)
+  e (chord combos e)
+  i (chord combos i)
+  a (chord combos a)
+
+  h (chord combos h)
+  x (chord combos x)
+  ; (chord combos ;)
+  , (chord combos ,)
+  . (chord combos .)
+
+  tnv (chord combos tnv)
+  spc (chord combos spc)
+  bsp (chord combos bsp)
+  tgr (chord combos tgr)
+)
+
+(defvar
+  tap-timeout 0
+  hold-timeout 200
+)
+
+(defchords combos 50
+  (w) (tap-hold $tap-timeout $hold-timeout w @med)
+  (l) l
+  (y) y
+  (p) p
+  (b) b
+  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
+  (r) (tap-hold $tap-timeout $hold-timeout r lalt)
+  (s) (tap-hold $tap-timeout $hold-timeout s lmet)
+  (t) (tap-hold $tap-timeout $hold-timeout t lctl)
+  (g) g
+  (q) q
+  (j) j
+  (d) d
+  (v) v
+  (k) k
+
+  (z) z
+  (f) f
+  (o) o
+  (u) u
+  (') '
+  (m) m
+  (n) (tap-hold $tap-timeout $hold-timeout n rctl)
+  (e) (tap-hold $tap-timeout $hold-timeout e rmet)
+  (i) (tap-hold $tap-timeout $hold-timeout i lalt)
+  (a) (tap-hold $tap-timeout $hold-timeout a lsft)
+  (;) ;
+  (x) x
+  (h) h
+  (,) ,
+  (.) .
+
+  (tnv) (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle nav))
+  (spc) (tap-hold $tap-timeout $hold-timeout spc (layer-toggle media))
+  (bsp) (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
+  (tgr) (XX)
+
+  ;; chords start
+  ;; chords end
+)
+
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -10,10 +101,7 @@
   lsft z    x    c    v    b    n    m    ,    .    /    rsft
   lctl lmet lalt muhenkan  spc  henkan ralt prtsc katakanahiragana rctl cmp
 )
-(defvar
-  tap-timeout 0
-  hold-timeout 200
-)
+
 
 (defalias
   rpt rpt-any
@@ -53,11 +141,6 @@
   ret (tap-hold $tap-timeout $hold-timeout ret lctl)
   esr (tap-hold $tap-timeout $hold-timeout esc @med)
 
-  bsp (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
-  tnv (tap-hold-press $tap-timeout $hold-timeout tab @nav)
-  exp (macro , ;)
-
-  spc (tap-hold $tap-timeout $hold-timeout spc @med)
   cpy C-c
   pst C-v
   cut C-x
