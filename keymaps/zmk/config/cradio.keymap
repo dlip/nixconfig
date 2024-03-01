@@ -63,12 +63,7 @@
     };
   };
   macros {
-    ZMK_MACRO (expand,
-      wait-ms = <30>;
-      tap-ms = <40>;
-      bindings = <&kp COMMA &kp SEMI>;
-    )
-    // #include "macros.dtsi"
+    #include "macros.dtsi"
   };
 
   combos {
@@ -85,7 +80,7 @@
       bindings = <&bootloader>;
       layers = <0>;
     };
-    // #include "combos.dtsi"
+    #include "combos.dtsi"
   };
 
   keymap {
@@ -96,7 +91,7 @@
         &kp W            &kp L            &kp Y            &kp P            &kp B                 &kp Z            &kp F            &kp O            &kp U            &kp SQT
         &mt LSHIFT C     &mt LALT R       &mt LGUI S       &mt LCTRL T      &kp G                 &kp M            &mt RCTRL N      &mt RGUI E       &mt RALT I       &mt LSHIFT A
         &kp Q            &kp J            &kp V            &mt LSHIFT D     &kp K                 &kp X            &kp H            &kp SEMI         &kp COMMA        &kp DOT
-                                                           &hlt _NNM TAB    &lt _MED SPC          &hmt LSHIFT BSPC &expand
+                                                           &hlt _NNM TAB    &lt _MED SPC          &hmt LSHIFT BSPC &none
       >;
     };
 
