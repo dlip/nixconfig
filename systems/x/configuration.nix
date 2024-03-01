@@ -46,7 +46,7 @@ in {
   hardware.enableAllFirmware = true;
 
   services.xserver.videoDrivers = ["nvidia"];
-  hardware.nvidia.modesetting.enable = true;
+  hardware.nvidia.modesetting.enable = false;
   # hardware.nvidia.powerManagement.enable = false;
   hardware.nvidia.prime = {
     # sync.enable = true;
