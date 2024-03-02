@@ -9,11 +9,6 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
-// CONFIG
-#define COMBO_TIMEOUT 70
-#define COMBO_LAYERS 7
-#define STICKY_TIMEOUT 500
-
 // LAYERS
 #define _BSE 0
 #define _NNM 1
@@ -24,14 +19,14 @@
 
 &mt {
   flavor = "tap-preferred";
-  tapping_term_ms = <200>;
-  quick_tap_ms = <200>;
+  tapping-term-ms = <200>;
+  quick-tap-ms = <200>;
 };
 
 &lt {
   flavor = "tap-preferred";
-  tapping_term_ms = <200>;
-  quick_tap_ms = <200>;
+  tapping-term-ms = <200>;
+  quick-tap-ms = <200>;
 };
 
 &sl {
@@ -39,7 +34,7 @@
 };
 
 &sk {
-    release-after-ms = <STICKY_TIMEOUT>;
+    release-after-ms = <500>;
     quick-release;
 };
 
