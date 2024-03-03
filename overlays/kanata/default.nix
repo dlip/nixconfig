@@ -13,11 +13,11 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "jtroo";
     repo = pname;
-    rev = "delay-oneshot-release-10ms";
-    sha256 = "sha256-sBxpweUExqKTmbX0mx4eI2UsAiFd0R3XygbGrNY9V8U=";
+    rev = "634ed973ce9aa2a6e22aa162efad0e1a493e985b";
+    sha256 = "sha256-Vz1UwDRxlSl1k4GoNGgsP0DhvNbyF8RmWPYJ/3FY/KM=";
   };
 
-  cargoHash = "sha256-22cAxYAxX94r33FSdCdfoLu7oI/HDPGkY2U9Kqr6dPk=";
+  cargoHash = "sha256-Om24NNpV26Ef7MDzuWVMeUou8bXgL9NTUCWsCZ9F4Ic=";
 
   buildInputs = lib.optionals stdenv.isDarwin [darwin.apple_sdk.frameworks.IOKit];
 

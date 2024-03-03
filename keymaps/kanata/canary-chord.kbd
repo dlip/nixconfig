@@ -1,6 +1,13 @@
-;; (defcfg
-;;   linux-dev /dev/input/by-path/platform-i8043-serio-0-event-kbd
-;; )
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
+(defvar
+  tap-timeout 0
+  hold-timeout 200
+)
+
+(include abbr.kbd)
 
 (defalias
   w (chord combos w)
@@ -8,7 +15,7 @@
   y (chord combos y)
   p (chord combos p)
   b (chord combos b)
-  
+
   c (chord combos c)
   r (chord combos r)
   s (chord combos s)
@@ -40,58 +47,12 @@
   , (chord combos ,)
   . (chord combos .)
 
-  tnv (chord combos tnv)
-  spc (chord combos spc)
-  bsp (chord combos bsp)
-  tgr (chord combos tgr)
+  alt1 (chord combos alt1)
+  alt2 (chord combos alt2)
+  sft (chord combos sft)
+  cbo (chord combos cbo)
 )
 
-(defvar
-  tap-timeout 0
-  hold-timeout 200
-)
-
-(defchords combos 50
-  (w) (tap-hold $tap-timeout $hold-timeout w @med)
-  (l) l
-  (y) y
-  (p) p
-  (b) b
-  (c) (tap-hold $tap-timeout $hold-timeout c lsft)
-  (r) (tap-hold $tap-timeout $hold-timeout r lalt)
-  (s) (tap-hold $tap-timeout $hold-timeout s lmet)
-  (t) (tap-hold $tap-timeout $hold-timeout t lctl)
-  (g) g
-  (q) q
-  (j) j
-  (d) d
-  (v) v
-  (k) k
-
-  (z) z
-  (f) f
-  (o) o
-  (u) u
-  (') '
-  (m) m
-  (n) (tap-hold $tap-timeout $hold-timeout n rctl)
-  (e) (tap-hold $tap-timeout $hold-timeout e rmet)
-  (i) (tap-hold $tap-timeout $hold-timeout i lalt)
-  (a) (tap-hold $tap-timeout $hold-timeout a lsft)
-  (;) ;
-  (x) x
-  (h) h
-  (,) ,
-  (.) .
-
-  (tnv) (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle nav))
-  (spc) (tap-hold $tap-timeout $hold-timeout spc (layer-toggle media))
-  (bsp) (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
-  (tgr) (XX)
-
-  ;; chords start
-  ;; chords end
-)
 
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
@@ -118,16 +79,6 @@
   sal (one-shot 1000 lalt)
   smt (one-shot 1000 lmet)
 
-  c (tap-hold $tap-timeout $hold-timeout c lsft)
-  r (tap-hold $tap-timeout $hold-timeout r lalt)
-  s (tap-hold $tap-timeout $hold-timeout s lmet)
-  t (tap-hold $tap-timeout $hold-timeout t lctl)
-
-  n (tap-hold $tap-timeout $hold-timeout n rctl)
-  e (tap-hold $tap-timeout $hold-timeout e rmet)
-  i (tap-hold $tap-timeout $hold-timeout i lalt)
-  a (tap-hold $tap-timeout $hold-timeout a lsft)
-
   lft (tap-hold $tap-timeout $hold-timeout left lalt)
   dwn (tap-hold $tap-timeout $hold-timeout down lmet)
   rgt (tap-hold $tap-timeout $hold-timeout rght lctl)
@@ -150,12 +101,12 @@
 )
 
 (deflayer base
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    @dis
-  w    l    y    p    b    XX   XX   z    f    o    u    '    _    _
-  @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
-  q    j    v    d    k    XX   XX   x    h    ;    ,    .
-  _    lrld @tnv @tnv      @spc      @bsp @bsp @exp @exp @rpt bspc
+  _    _    _     _      _     _    _    _    _    _    _    _    _
+  _    _    _     _      _     _    _    _    _    _    _    _    _    @dis
+  @w   @l   @y    @p     @b    XX   XX   @z   @f   @o   @u   @'   _    _
+  @c   @r   @s    @t     @g    XX   XX   @m   @n   @e   @i   @a   _
+  @q   @j   @v    @d     @k    XX   XX   @x   @h   @;   @,   @.
+  _    lrld @alt1 @alt1  @alt2           @sft @sft @cbo @cbo @rpt bspc
 )
 
 (deflayer nav
@@ -170,9 +121,9 @@
 (deflayer media
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    volu XX   XX   f7   f8   f9   f10  _    _    _
-  prnt prev pp   next vold XX   @gam f4   f5   f6   f11  _    _
-  @udo @cut @cpy @pst prnt XX   XX   f1   f2   f3   f12  _
+  _    _    _    _    prnt XX   XX   f7   f8   f9   f10  _    _    _
+  prnt prev pp   next volu XX   @gam f4   f5   f6   f11  _    _
+  @udo @cut @cpy @pst vold XX   XX   f1   f2   f3   f12  _
   _    _    _   _          _         _    _    _    _    _    _
 )
 
