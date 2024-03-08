@@ -58,6 +58,8 @@ config.keys = {
     mods = "SUPER|SHIFT",
     action = act.MoveTabRelative(1),
   },
+  { key = "Backspace", mods = "CTRL", action = act.SendKey({ key = "w", mods = "CTRL" }) },
+  { key = "Backspace", mods = "ALT",  action = act.SendKey({ key = "w", mods = "CTRL" }) },
 }
 
 -- and finally, return the configuration to wezterm
