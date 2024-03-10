@@ -281,7 +281,7 @@ const thumbOrigin = new Trsf()
   .rotate(0, [0, 0, 0], [1, 0, 0])
   .rotate(-60, [0, 0, 0], [0, 1, 0])
   .rotate(0, [0, 0, 0], [0, 0, 1])
-  .translate(-38, 0, -16)
+  .translate(-43, 0, -16)
   .translateBy(new Trsf()
     .placeOnMatrix({
       ...curvature,
@@ -325,6 +325,18 @@ const thumbs: Key[] = [
       .translate(0, 0, 0)
       .transformBy(thumbOrigin),
     keycap: { profile: "choc", row: 5 }
+  },
+  {
+    type: "trackball",
+    aspect: 1,
+    cluster: "thumbs",
+    position: new Trsf()
+      .rotate(0, [0, 0, 0], [1, 0, 0])
+      .rotate(70, [0, 0, 0], [0, 1, 0])
+      .rotate(0, [0, 0, 0], [0, 0, 1])
+      .translate(20, 45, 15)
+      .transformBy(thumbOrigin),
+    size: { radius: 20.9, sides: 20 }
   }
 ]
 
