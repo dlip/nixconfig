@@ -10,6 +10,14 @@ const options: Options = {
   connector: "trrs",
   connectorSizeUSB: "average",
   connectorIndex: -1,
+  wristRest: {
+    length: 80,
+    maxWidth: 100,
+    xOffset: 30,
+    zOffset: 0,
+    angle: 3,
+    tenting: 6
+  },
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: true,
   verticalClearance: 0.1,
@@ -44,7 +52,7 @@ const pinkyCurvature = {
  * then translated by the z offset.
  */
 const upperKeysPlane = new Trsf()
-  .rotate(12, [0, 0, 0], [0, 1, 0], false)
+  .rotate(17, [0, 0, 0], [0, 1, 0], false)
   .rotate(1, [0, 0, 0], [1, 0, 0], false)
   .translate(0, 0, 0, false)
 
@@ -280,8 +288,8 @@ const fingers: Key[] = [
 const thumbOrigin = new Trsf()
   .rotate(0, [0, 0, 0], [1, 0, 0])
   .rotate(-60, [0, 0, 0], [0, 1, 0])
-  .rotate(0, [0, 0, 0], [0, 0, 1])
-  .translate(-43, 0, -16)
+  .rotate(30, [0, 0, 0], [0, 0, 1])
+  .translate(-45, 0, -20)
   .translateBy(new Trsf()
     .placeOnMatrix({
       ...curvature,
@@ -333,8 +341,8 @@ const thumbs: Key[] = [
     position: new Trsf()
       .rotate(0, [0, 0, 0], [1, 0, 0])
       .rotate(70, [0, 0, 0], [0, 1, 0])
-      .rotate(0, [0, 0, 0], [0, 0, 1])
-      .translate(20, 45, 15)
+      .rotate(-10, [0, 0, 0], [0, 0, 1])
+      .translate(35, 33, -4)
       .transformBy(thumbOrigin),
     size: { radius: 20.9, sides: 20 }
   }
