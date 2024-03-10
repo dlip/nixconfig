@@ -658,19 +658,19 @@
       none-ls = {
         enable = true;
         enableLspFormat = true;
-        sources = {
-          formatting = {
-            alejandra.enable = true;
-            black.enable = true;
-            eslint.enable = true;
-            gofmt.enable = true;
-            shfmt.enable = true;
-            stylua.enable = true;
-            jq.enable = true;
-            markdownlint.enable = true;
-            rustfmt.enable = true;
-          };
-        };
+        # sources = {
+        #   formatting = {
+        #     alejandra.enable = true;
+        #     black.enable = true;
+        #     eslint.enable = true;
+        #     gofmt.enable = true;
+        #     shfmt.enable = true;
+        #     stylua.enable = true;
+        #     jq.enable = true;
+        #     markdownlint.enable = true;
+        #     rustfmt.enable = true;
+        #   };
+        # };
       };
       gitsigns.enable = true;
       gitlinker.enable = true;
@@ -717,17 +717,17 @@
       lspkind.enable = true;
       nvim-cmp = {
         enable = true;
-        snippet.expand = "luasnip";
-        sources = [
-          {name = "path";}
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {
-            name = "buffer";
-            # Words from other open buffers can also be suggested.
-            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          }
-        ];
+        # snippet.expand = "luasnip";
+        # sources = [
+        #   {name = "path";}
+        #   {name = "nvim_lsp";}
+        #   {name = "luasnip";}
+        #   {
+        #     name = "buffer";
+        #     # Words from other open buffers can also be suggested.
+        #     option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+        #   }
+        # ];
         mapping = {
           "<Esc>" = {
             action = ''
