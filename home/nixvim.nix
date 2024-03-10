@@ -658,25 +658,27 @@
       none-ls = {
         enable = true;
         enableLspFormat = true;
-        # sources = {
-        #   formatting = {
-        #     alejandra.enable = true;
-        #     black.enable = true;
-        #     eslint.enable = true;
-        #     gofmt.enable = true;
-        #     shfmt.enable = true;
-        #     stylua.enable = true;
-        #     jq.enable = true;
-        #     markdownlint.enable = true;
-        #     rustfmt.enable = true;
-        #   };
-        # };
+        sources = {
+          formatting = {
+            alejandra.enable = true;
+            black.enable = true;
+            # eslint.enable = true;
+            gofmt.enable = true;
+            shfmt.enable = true;
+            stylua.enable = true;
+            # jq.enable = true;
+            markdownlint.enable = true;
+            # rustfmt.enable = true;
+          };
+        };
       };
       gitsigns.enable = true;
       gitlinker.enable = true;
       neogit = {
         enable = true;
-        autoRefresh = true;
+        settings = {
+          autoRefresh = true;
+        };
       };
       comment-nvim.enable = true;
       nvim-tree = {
@@ -715,120 +717,122 @@
         fromVscode = [{paths = "${pkgs.vimPlugins.friendly-snippets}";}];
       };
       lspkind.enable = true;
-      nvim-cmp = {
+      cmp = {
         enable = true;
-        # snippet.expand = "luasnip";
-        # sources = [
-        #   {name = "path";}
-        #   {name = "nvim_lsp";}
-        #   {name = "luasnip";}
-        #   {
-        #     name = "buffer";
-        #     # Words from other open buffers can also be suggested.
-        #     option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-        #   }
-        # ];
-        mapping = {
-          "<Esc>" = {
-            action = ''
-              function(fallback)
-                local luasnip = require("luasnip")
-                if cmp.visible() then
-                  if not cmp.get_selected_entry() then
-                    vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
-                  end
-                  cmp.abort()
-                else
-                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
-                    luasnip.unlink_current()
-                  end
-                  fallback()
-                end
-              end
-            '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<Up>" = {
-            action = ''
-              function(fallback)
-                local luasnip = require("luasnip")
-                if cmp.get_selected_entry() then
-                  cmp.scroll_docs(-4)
-                elseif luasnip.jumpable(-1) then
-                  luasnip.jump(-1)
-                else
-                  if cmp.visible() then
-                    cmp.abort()
-                  end
-                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
-                    luasnip.unlink_current()
-                  end
-                  fallback()
-                end
-              end
-            '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<Down>" = {
-            action = ''
-              function(fallback)
-                local luasnip = require("luasnip")
-                if cmp.get_selected_entry() then
-                  cmp.scroll_docs(4)
-                elseif luasnip.expandable() then
-                  luasnip.expand()
-                elseif luasnip.expand_or_jumpable() then
-                  luasnip.expand_or_jump()
-                else
-                  if cmp.visible() then
-                    cmp.abort()
-                  end
-                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
-                    luasnip.unlink_current()
-                  end
-                  fallback()
-                end
-              end
-            '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<CR>" = {
-            action = ''
-              function(fallback)
-                local luasnip = require("luasnip")
-                if cmp.get_selected_entry() then
-                  cmp.confirm({ select = false })
-                elseif luasnip.expandable() then
-                  luasnip.expand()
-                elseif luasnip.expand_or_jumpable() then
-                  luasnip.expand_or_jump()
-                else
-                  if cmp.visible() then
-                    cmp.abort()
-                  end
-                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
-                    luasnip.unlink_current()
-                  end
-                  fallback()
-                end
-              end
-            '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<Tab>" = "cmp.mapping.select_next_item()";
-          "<S-Tab>" = "cmp.mapping.select_prev_item()";
+        settings = {
+          snippet.expand = "luasnip";
+          sources = [
+            {name = "path";}
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
+            {
+              name = "buffer";
+              # Words from other open buffers can also be suggested.
+              option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+            }
+          ];
+          # mapping = {
+          #   "<Esc>" = {
+          #     action = ''
+          #       function(fallback)
+          #         local luasnip = require("luasnip")
+          #         if cmp.visible() then
+          #           if not cmp.get_selected_entry() then
+          #             vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
+          #           end
+          #           cmp.abort()
+          #         else
+          #           if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+          #             luasnip.unlink_current()
+          #           end
+          #           fallback()
+          #         end
+          #       end
+          #     '';
+          #     modes = [
+          #       "i"
+          #       "s"
+          #     ];
+          #   };
+          #   "<Up>" = {
+          #     action = ''
+          #       function(fallback)
+          #         local luasnip = require("luasnip")
+          #         if cmp.get_selected_entry() then
+          #           cmp.scroll_docs(-4)
+          #         elseif luasnip.jumpable(-1) then
+          #           luasnip.jump(-1)
+          #         else
+          #           if cmp.visible() then
+          #             cmp.abort()
+          #           end
+          #           if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+          #             luasnip.unlink_current()
+          #           end
+          #           fallback()
+          #         end
+          #       end
+          #     '';
+          #     modes = [
+          #       "i"
+          #       "s"
+          #     ];
+          #   };
+          #   "<Down>" = {
+          #     action = ''
+          #       function(fallback)
+          #         local luasnip = require("luasnip")
+          #         if cmp.get_selected_entry() then
+          #           cmp.scroll_docs(4)
+          #         elseif luasnip.expandable() then
+          #           luasnip.expand()
+          #         elseif luasnip.expand_or_jumpable() then
+          #           luasnip.expand_or_jump()
+          #         else
+          #           if cmp.visible() then
+          #             cmp.abort()
+          #           end
+          #           if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+          #             luasnip.unlink_current()
+          #           end
+          #           fallback()
+          #         end
+          #       end
+          #     '';
+          #     modes = [
+          #       "i"
+          #       "s"
+          #     ];
+          #   };
+          #   "<CR>" = {
+          #     action = ''
+          #       function(fallback)
+          #         local luasnip = require("luasnip")
+          #         if cmp.get_selected_entry() then
+          #           cmp.confirm({ select = false })
+          #         elseif luasnip.expandable() then
+          #           luasnip.expand()
+          #         elseif luasnip.expand_or_jumpable() then
+          #           luasnip.expand_or_jump()
+          #         else
+          #           if cmp.visible() then
+          #             cmp.abort()
+          #           end
+          #           if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+          #             luasnip.unlink_current()
+          #           end
+          #           fallback()
+          #         end
+          #       end
+          #     '';
+          #     modes = [
+          #       "i"
+          #       "s"
+          #     ];
+          #   };
+          #   "<Tab>" = "cmp.mapping.select_next_item()";
+          #   "<S-Tab>" = "cmp.mapping.select_prev_item()";
+          # };
         };
       };
       dap = {
