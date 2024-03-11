@@ -2,7 +2,7 @@ const options: Options = {
   wallThickness: 4,
   wallShrouding: 0,
   webThickness: 0,
-  screwIndices: [-1, -1, -1, -1, -1, -1, -1],
+  screwIndices: [-1, -1, -1, -1, -1],
   screwType: "screw insert",
   screwSize: "M3",
   screwCountersink: true,
@@ -33,7 +33,7 @@ const options: Options = {
 // connectorIndex: 27.2
 
 const curvature = {
-  curvatureOfColumn: 20,
+  curvatureOfColumn: 30,
   curvatureOfRow: 5,
   spacingOfRows: 20.5,
   spacingOfColumns: 21.5
@@ -72,7 +72,7 @@ const fingers: Key[] = [
         row: 0.20000000000000018
       })
       .translate(0, 0, 0)
-      .translate(12, 8, 0)
+      .translate(12, 4, 0)
       .transformBy(upperKeysPlane)
       .rotateTowards([0, 0, 1], 0.8)
   },
