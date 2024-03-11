@@ -72,7 +72,7 @@ const fingers: Key[] = [
         row: 0.20000000000000018
       })
       .translate(0, 0, 0)
-      .translate(12, 4, 0)
+      .translate(12, 7, 0)
       .transformBy(upperKeysPlane)
       .rotateTowards([0, 0, 1], 0.8)
   },
@@ -307,7 +307,7 @@ const thumbOrigin = new Trsf()
   .rotate(0, [0, 0, 0], [1, 0, 0])
   .rotate(-60, [0, 0, 0], [0, 1, 0])
   .rotate(30, [0, 0, 0], [0, 0, 1])
-  .translate(-45, 0, -10)
+  .translate(-45, 0, -15)
   .translateBy(new Trsf()
     .placeOnMatrix({
       ...curvature,
