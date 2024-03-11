@@ -59,6 +59,22 @@ const upperKeysPlane = new Trsf()
 /** Definitions for the upper keys. */
 const fingers: Key[] = [
   {
+    type: "trackball",
+    aspect: 1,
+    cluster: "fingers",
+    size: { radius: 20.9, sides: 20 }
+    position: new Trsf()
+      .placeOnMatrix({
+        ...curvature,
+        column: -3.5,
+        row: 0.20000000000000018
+      })
+      .translate(0, 0, 0)
+      .translate(12, 8, 0)
+      .transformBy(upperKeysPlane)
+      .rotateTowards([0, 0, 1], 0.8)
+  },
+  {
     type: "choc",
     keycap: {
       profile: "choc",
@@ -334,18 +350,6 @@ const thumbs: Key[] = [
       .transformBy(thumbOrigin),
     keycap: { profile: "choc", row: 5 }
   },
-  {
-    type: "trackball",
-    aspect: 1,
-    cluster: "thumbs",
-    position: new Trsf()
-      .rotate(0, [0, 0, 0], [1, 0, 0])
-      .rotate(70, [0, 0, 0], [0, 1, 0])
-      .rotate(-10, [0, 0, 0], [0, 0, 1])
-      .translate(35, 33, -4)
-      .transformBy(thumbOrigin),
-    size: { radius: 20.9, sides: 20 }
-  }
 ]
 
 const wristRestOrigin = new Trsf()
