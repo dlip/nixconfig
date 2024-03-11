@@ -42,6 +42,9 @@
       lazyredraw = true; # faster scrolling
       list = true; # show hidden characters
       exrc = true; # Loads project specific settings from .exrc, .nvimrc and .nvim.lua files
+      hidden = true; # enable background buffers
+      history = 100; # remember n lines in history
+      synmaxcol = 240; # max column for syntax highlight
       # what hidden characters to show
       listchars = {
         trail = "•"; # trailing space
