@@ -10,6 +10,7 @@ const options: Options = {
   connector: "trrs",
   connectorSizeUSB: "average",
   connectorIndex: -1,
+  /*
   wristRest: {
     length: 80,
     maxWidth: 100,
@@ -18,6 +19,7 @@ const options: Options = {
     angle: 3,
     tenting: 6
   },
+  */
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: true,
   verticalClearance: 0.1,
@@ -62,7 +64,7 @@ const fingers: Key[] = [
     type: "trackball",
     aspect: 1,
     cluster: "fingers",
-    size: { radius: 20.9, sides: 20 }
+    size: { radius: 20.9, sides: 50 },
     position: new Trsf()
       .placeOnMatrix({
         ...curvature,
@@ -305,7 +307,7 @@ const thumbOrigin = new Trsf()
   .rotate(0, [0, 0, 0], [1, 0, 0])
   .rotate(-60, [0, 0, 0], [0, 1, 0])
   .rotate(30, [0, 0, 0], [0, 0, 1])
-  .translate(-45, 0, -20)
+  .translate(-45, 0, -10)
   .translateBy(new Trsf()
     .placeOnMatrix({
       ...curvature,
@@ -316,14 +318,6 @@ const thumbOrigin = new Trsf()
     .translate(8.75, -8.75, 0)
   )
   .translate(4, -5, 4)
-
-/** The curvature of the thumb cluster. */
-const thumbCurvature = {
-  curvatureOfRow: 0,
-  curvatureOfColumn: 0,
-  spacingOfColumns: 20,
-  spacingOfRows: 20
-}
 
 const thumbs: Key[] = [
   {
