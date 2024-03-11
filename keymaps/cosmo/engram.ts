@@ -2,6 +2,8 @@ const options: Options = {
   wallThickness: 4,
   wallShrouding: 0,
   webThickness: 0,
+  webMinThicknessFactor: 0.8,
+  keyBasis: "choc",
   screwIndices: [-1, -1, -1, -1, -1],
   screwType: "screw insert",
   screwSize: "M3",
