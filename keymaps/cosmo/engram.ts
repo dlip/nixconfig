@@ -72,9 +72,9 @@ const fingers: Key[] = [
         row: 0.20000000000000018
       })
       .translate(0, 0, 0)
-      .translate(12, 7, 0)
+      .translate(10, 7, 0)
       .transformBy(upperKeysPlane)
-      .rotateTowards([0, 0, 1], 0.8)
+      .rotateTowards([0, 0, 1], 1)
   },
   {
     type: "choc",
