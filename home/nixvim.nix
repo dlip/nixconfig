@@ -181,6 +181,15 @@
         };
       }
       {
+        mode = "x";
+        key = "<leader>f";
+        action = "<cmd>Telescope grep_string<CR>";
+        options = {
+          desc = "Grep selection";
+          silent = true;
+        };
+      }
+      {
         mode = "n";
         key = "<leader>u";
         action = "<cmd>Telescope frecency default_text=:CWD:<CR>";
@@ -194,7 +203,16 @@
         key = "<leader>y";
         action = "<cmd>let @+=expand('%').':'.line('.')<CR>";
         options = {
-          desc = "Yank filename";
+          desc = "Yank relative filename with line";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>Y";
+        action = "<cmd>let @+=expand('%:p')<CR>";
+        options = {
+          desc = "Yank absolute filename";
           silent = true;
         };
       }
