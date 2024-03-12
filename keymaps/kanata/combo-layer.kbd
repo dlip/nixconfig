@@ -1,0 +1,35 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
+(defsrc
+  q w e
+  spc
+)
+
+(defalias
+  q (chord chords q)
+  w (chord chords w)
+  e (chord chords e)
+  layertab (chord chords layertab)
+)
+
+(defchords chords 100
+  (q) (tap-hold 0 200 q lsft)
+  (w) (tap-hold 0 200 w lctl)
+  (e) left
+  (layertab) (tap-hold-press 0 200 tab (layer-toggle raise))
+  (layertab q) b
+)
+
+(deflayer base
+  @q @w @e
+  @layertab
+)
+
+
+(deflayer raise
+  a b c
+  -
+)
+
