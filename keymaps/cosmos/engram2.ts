@@ -4,7 +4,7 @@ const options: Options = {
   webThickness: 0,
   webMinThicknessFactor: 0.8,
   keyBasis: "choc",
-  screwIndices: [-1, -1, -1, -1, -1, -1, -1],
+  screwIndices: [-1, -1, -1, -1, -1],
   screwType: "screw insert",
   screwSize: "M3",
   screwCountersink: true,
@@ -12,7 +12,7 @@ const options: Options = {
   connector: "trrs",
   connectorSizeUSB: "average",
   connectorIndex: -1,
-  microcontroller: "kb2040-adafruit",
+  microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: true,
   verticalClearance: 0.1,
   clearScrews: true,
@@ -47,13 +47,28 @@ const pinkyCurvature = {
  * then translated by the z offset.
  */
 const upperKeysPlane = new Trsf()
-  .rotate(17, [0, 0, 0], [0, 1, 0], false)
+  .rotate(20, [0, 0, 0], [0, 1, 0], false)
   .rotate(1, [0, 0, 0], [1, 0, 0], false)
   .translate(0, 0, 0, false)
 
 
 /** Definitions for the upper keys. */
 const fingers: Key[] = [
+  {
+    type: "trackball",
+    aspect: 1,
+    cluster: "fingers",
+    size: { radius: 20.9, sides: 50 },
+    position: new Trsf()
+      .placeOnMatrix({
+        ...curvature,
+        column: -3.5,
+        row: 0.20000000000000018
+      })
+      .translate(13, 9, 0)
+      .transformBy(upperKeysPlane)
+      .rotateTowards([0, 0, 1], 1)
+  },
   {
     type: "choc",
     keycap: {
@@ -295,7 +310,7 @@ const thumbOrigin = new Trsf()
     .transformBy(upperKeysPlane)
     .translate(8.75, -8.75, 0)
   )
-  .translate(19, -7, -10)
+  .translate(9, -7, -10)
 
 /** The curvature of the thumb cluster. */
 const thumbCurvature = {
