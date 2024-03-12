@@ -14,7 +14,7 @@ const options: Options = {
   connectorIndex: -1,
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: true,
-  verticalClearance: 0.3,
+  verticalClearance: 3,
   clearScrews: true,
   shell: { type: "basic", lip: false }
 }
@@ -47,7 +47,7 @@ const pinkyCurvature = {
  * then translated by the z offset.
  */
 const upperKeysPlane = new Trsf()
-  .rotate(20, [0, 0, 0], [0, 1, 0], false)
+  .rotate(25, [0, 0, 0], [0, 1, 0], false)
   .rotate(1, [0, 0, 0], [1, 0, 0], false)
   .translate(0, 0, 0, false)
 
@@ -65,7 +65,7 @@ const fingers: Key[] = [
         column: -3.5,
         row: 0.20000000000000018
       })
-      .translate(13, 10, 0)
+      .translate(12, 10, 0)
       .transformBy(upperKeysPlane)
       .rotateTowards([0, 0, 1], 1)
   },
@@ -310,13 +310,13 @@ const thumbOrigin = new Trsf()
     .transformBy(upperKeysPlane)
     .translate(8.75, -8.75, 0)
   )
-  .translate(9, -7, -10)
+  .translate(9, -7, -5)
 
 /** The curvature of the thumb cluster. */
 const thumbCurvature = {
   curvatureOfRow: 0,
   curvatureOfColumn: 0,
-  spacingOfColumns: 20,
+  spacingOfColumns: 19,
   spacingOfRows: 20
 }
 
