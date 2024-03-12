@@ -65,7 +65,7 @@ const fingers: Key[] = [
         column: -3.5,
         row: 0.20000000000000018
       })
-      .translate(12, 10, 0)
+      .translate(10, 10, 0)
       .transformBy(upperKeysPlane)
       .rotateTowards([0, 0, 1], 1)
   },
