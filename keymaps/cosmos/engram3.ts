@@ -74,7 +74,7 @@ const fingers: Key[] = [
     keycap: {
       profile: "choc",
       row: 2,
-      letter: "u"
+      letter: "l"
     },
     aspect: 1,
     cluster: "fingers",
@@ -93,7 +93,7 @@ const fingers: Key[] = [
       profile: "choc",
       row: 3,
       home: "index",
-      letter: "j"
+      letter: "h"
     },
     aspect: 1,
     cluster: "fingers",
@@ -111,7 +111,7 @@ const fingers: Key[] = [
     keycap: {
       profile: "choc",
       row: 4,
-      letter: "m"
+      letter: "r"
     },
     aspect: 1,
     cluster: "fingers",
@@ -129,7 +129,7 @@ const fingers: Key[] = [
     keycap: {
       profile: "choc",
       row: 2,
-      letter: "i"
+      letter: "d"
     },
     aspect: 1,
     cluster: "fingers",
@@ -148,7 +148,7 @@ const fingers: Key[] = [
       profile: "choc",
       row: 3,
       home: "middle",
-      letter: "k"
+      letter: "t"
     },
     aspect: 1,
     cluster: "fingers",
@@ -166,7 +166,7 @@ const fingers: Key[] = [
     keycap: {
       profile: "choc",
       row: 4,
-      letter: ","
+      letter: "m"
     },
     aspect: 1,
     cluster: "fingers",
@@ -184,7 +184,7 @@ const fingers: Key[] = [
     keycap: {
       profile: "choc",
       row: 2,
-      letter: "o"
+      letter: "w"
     },
     aspect: 1,
     cluster: "fingers",
@@ -203,7 +203,7 @@ const fingers: Key[] = [
       profile: "choc",
       row: 3,
       home: "ring",
-      letter: "l"
+      letter: "s"
     },
     aspect: 1,
     cluster: "fingers",
@@ -221,7 +221,7 @@ const fingers: Key[] = [
     keycap: {
       profile: "choc",
       row: 4,
-      letter: "."
+      letter: "f"
     },
     aspect: 1,
     cluster: "fingers",
@@ -239,7 +239,7 @@ const fingers: Key[] = [
     keycap: {
       profile: "choc",
       row: 2,
-      letter: "p"
+      letter: "v"
     },
     aspect: 1,
     cluster: "fingers",
@@ -258,7 +258,7 @@ const fingers: Key[] = [
       profile: "choc",
       row: 3,
       home: "pinky",
-      letter: ";"
+      letter: "n"
     },
     aspect: 1,
     cluster: "fingers",
@@ -276,7 +276,7 @@ const fingers: Key[] = [
     keycap: {
       profile: "choc",
       row: 4,
-      letter: "/"
+      letter: "p"
     },
     aspect: 1,
     cluster: "fingers",
