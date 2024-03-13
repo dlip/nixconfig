@@ -10,10 +10,10 @@ const options: Options = {
   screwCountersink: true,
   rounded: {},
   connector: "trrs",
-  connectorSizeUSB: "average",
+  connectorSizeUSB: "big",
   connectorIndex: -1,
   microcontroller: "waveshare-rp2040-zero",
-  fastenMicrocontroller: true,
+  fastenMicrocontroller: false,
   verticalClearance: 3,
   clearScrews: true,
   shell: { type: "basic", lip: false }
@@ -65,7 +65,7 @@ const fingers: Key[] = [
         column: -3.5,
         row: 0.20000000000000018
       })
-      .translate(10, 10, 0)
+      .translate(8, 19, 0)
       .transformBy(upperKeysPlane)
       .rotateTowards([0, 0, 1], 1)
   },
@@ -249,7 +249,7 @@ const fingers: Key[] = [
         column: 2,
         row: -1
       })
-      .translate(3, -10, 10)
+      .translate(3, -6, 6)
       .transformBy(upperKeysPlane)
   },
   {
@@ -268,7 +268,7 @@ const fingers: Key[] = [
         column: 2,
         row: 0
       })
-      .translate(3, -10, 10)
+      .translate(3, -6, 6)
       .transformBy(upperKeysPlane)
   },
   {
@@ -286,7 +286,7 @@ const fingers: Key[] = [
         column: 2,
         row: 1
       })
-      .translate(3, -10, 10)
+      .translate(3, -6, 6)
       .transformBy(upperKeysPlane)
   }
 ]
