@@ -4,7 +4,7 @@ const options: Options = {
   webThickness: 0,
   webMinThicknessFactor: 0.8,
   keyBasis: "choc",
-  screwIndices: [20, 23, 35],
+  screwIndices: [21.3, 27.8, 35],
   screwType: "screw insert",
   screwSize: "M3",
   screwCountersink: true,
@@ -38,7 +38,7 @@ const curvature = {
  */
 const pinkyCurvature = {
   ...curvature,
-  curvatureOfColumn: 30
+  curvatureOfColumn: 25
 }
 
 /**
@@ -249,7 +249,7 @@ const fingers: Key[] = [
         column: 2,
         row: -1
       })
-      .translate(3, -6, 6)
+      .translate(3, -5, 5)
       .transformBy(upperKeysPlane)
   },
   {
@@ -268,7 +268,7 @@ const fingers: Key[] = [
         column: 2,
         row: 0
       })
-      .translate(3, -6, 6)
+      .translate(3, -5, 5)
       .transformBy(upperKeysPlane)
   },
   {
@@ -286,7 +286,7 @@ const fingers: Key[] = [
         column: 2,
         row: 1
       })
-      .translate(3, -6, 6)
+      .translate(3, -5, 5)
       .transformBy(upperKeysPlane)
   }
 ]
@@ -299,7 +299,7 @@ const fingers: Key[] = [
 const thumbOrigin = new Trsf()
   .rotate(0, [0, 0, 0], [1, 0, 0])
   .rotate(-60, [0, 0, 0], [0, 1, 0])
-  .rotate(10, [0, 0, 0], [0, 0, 1])
+  .rotate(5, [0, 0, 0], [0, 0, 1])
   .translate(-45, 0, -15)
   .translateBy(new Trsf()
     .placeOnMatrix({
