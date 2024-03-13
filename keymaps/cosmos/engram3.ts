@@ -4,7 +4,7 @@ const options: Options = {
   webThickness: 0,
   webMinThicknessFactor: 0.8,
   keyBasis: "choc",
-  screwIndices: [-1, -1, -1, -1, -1],
+  screwIndices: [20, 23, 35],
   screwType: "screw insert",
   screwSize: "M3",
   screwCountersink: true,
@@ -14,7 +14,7 @@ const options: Options = {
   connectorIndex: -1,
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: false,
-  verticalClearance: 3,
+  verticalClearance: 1,
   clearScrews: true,
   shell: { type: "basic", lip: false }
 }
@@ -299,7 +299,7 @@ const fingers: Key[] = [
 const thumbOrigin = new Trsf()
   .rotate(0, [0, 0, 0], [1, 0, 0])
   .rotate(-60, [0, 0, 0], [0, 1, 0])
-  .rotate(30, [0, 0, 0], [0, 0, 1])
+  .rotate(10, [0, 0, 0], [0, 0, 1])
   .translate(-45, 0, -15)
   .translateBy(new Trsf()
     .placeOnMatrix({
@@ -310,7 +310,7 @@ const thumbOrigin = new Trsf()
     .transformBy(upperKeysPlane)
     .translate(8.75, -8.75, 0)
   )
-  .translate(9, -7, -5)
+  .translate(5, 4, 0)
 
 /** The curvature of the thumb cluster. */
 const thumbCurvature = {
