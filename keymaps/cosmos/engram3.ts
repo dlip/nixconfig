@@ -14,7 +14,7 @@ const options: Options = {
   connectorIndex: -1,
   microcontroller: "waveshare-rp2040-zero",
   fastenMicrocontroller: false,
-  verticalClearance: 1,
+  verticalClearance: 3,
   clearScrews: true,
   shell: { type: "basic", lip: false }
 }
@@ -249,7 +249,7 @@ const fingers: Key[] = [
         column: 2,
         row: -1
       })
-      .translate(3, -5, 10)
+      .translate(3, -10, 10)
       .transformBy(upperKeysPlane)
   },
   {
@@ -268,7 +268,7 @@ const fingers: Key[] = [
         column: 2,
         row: 0
       })
-      .translate(3, -5, 10)
+      .translate(3, -10, 10)
       .transformBy(upperKeysPlane)
   },
   {
@@ -286,7 +286,7 @@ const fingers: Key[] = [
         column: 2,
         row: 1
       })
-      .translate(3, -5, 10)
+      .translate(3, -10, 10)
       .transformBy(upperKeysPlane)
   }
 ]
