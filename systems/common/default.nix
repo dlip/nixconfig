@@ -177,7 +177,7 @@ in {
 
   services.acpid = {
     enable = true;
-    lidEventCommands = "${pkgs.bash}/bin/bash /home/dane/code/nixconfig/bin/display-change";
+    # lidEventCommands = "${pkgs.bash}/bin/bash /home/dane/code/nixconfig/bin/display-change";
   };
 
   services.locate.enable = true;
