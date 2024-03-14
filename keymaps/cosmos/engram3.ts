@@ -4,7 +4,7 @@ const options: Options = {
   webThickness: 0,
   webMinThicknessFactor: 0.8,
   keyBasis: "choc",
-  screwIndices: [21.5, 27.5],
+  screwIndices: [21.5, 27.5, 36.6],
   screwType: "screw insert",
   screwSize: "M3",
   screwCountersink: true,
