@@ -36,7 +36,8 @@
     remote-touchpad
     screenkey
     sidequest
-    super-slicer-latest
+    # orca-slicer
+    stable.super-slicer # broken https://github.com/NixOS/nixpkgs/issues/294114
     tdesktop
     vlc
     warpd

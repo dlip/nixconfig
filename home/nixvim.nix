@@ -683,13 +683,13 @@
           formatting = {
             alejandra.enable = true;
             black.enable = true;
-            eslint.enable = true;
+            # eslint.enable = true;
             gofmt.enable = true;
             shfmt.enable = true;
             stylua.enable = true;
-            jq.enable = true;
+            # jq.enable = true;
             markdownlint.enable = true;
-            rustfmt.enable = true;
+            # rustfmt.enable = true;
           };
         };
       };
@@ -697,7 +697,9 @@
       gitlinker.enable = true;
       neogit = {
         enable = true;
-        autoRefresh = true;
+        settings = {
+          auto_refresh = true;
+        };
       };
       comment-nvim.enable = true;
       nvim-tree = {
@@ -736,22 +738,22 @@
         fromVscode = [{paths = "${pkgs.vimPlugins.friendly-snippets}";}];
       };
       lspkind.enable = true;
-      nvim-cmp = {
+      cmp = {
         enable = true;
-        snippet.expand = "luasnip";
-        sources = [
-          {name = "path";}
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {
-            name = "buffer";
-            # Words from other open buffers can also be suggested.
-            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          }
-        ];
-        mapping = {
-          "<Esc>" = {
-            action = ''
+        settings = {
+          snippet.expand = "luasnip";
+          sources = [
+            {name = "path";}
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
+            {
+              name = "buffer";
+              # Words from other open buffers can also be suggested.
+              option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+            }
+          ];
+          mapping = {
+            "<Esc>" = ''
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.visible() then
@@ -767,13 +769,7 @@
                 end
               end
             '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<Up>" = {
-            action = ''
+            "<Up>" = ''
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.get_selected_entry() then
@@ -791,13 +787,7 @@
                 end
               end
             '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<Down>" = {
-            action = ''
+            "<Down>" = ''
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.get_selected_entry() then
@@ -817,13 +807,8 @@
                 end
               end
             '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<CR>" = {
-            action = ''
+
+            "<CR>" = ''
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.get_selected_entry() then
@@ -843,13 +828,10 @@
                 end
               end
             '';
-            modes = [
-              "i"
-              "s"
-            ];
+
+            "<Tab>" = "cmp.mapping.select_next_item()";
+            "<S-Tab>" = "cmp.mapping.select_prev_item()";
           };
-          "<Tab>" = "cmp.mapping.select_next_item()";
-          "<S-Tab>" = "cmp.mapping.select_prev_item()";
         };
       };
       dap = {
