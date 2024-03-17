@@ -30,6 +30,7 @@
     # python311Packages.adafruit-nrfutil
     qmk
     strace
+    tagainijisho
     tiramisu
     traceroute
     usbutils
