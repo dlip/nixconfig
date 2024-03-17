@@ -5,7 +5,9 @@
 }: {
   # services.dropbox.enable = true;
   imports = [
-    ./i3
+    ./sway
+    ./waybar
+    # ./i3
     ./rofi
     ./talon
     ./graphical.nix

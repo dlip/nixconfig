@@ -60,6 +60,7 @@ in {
     #mako # notification system developed by swaywm maintainer
     swaynotificationcenter
     wdisplays # tool to configure displays
+    wlr-randr
     clipman
     wofi
     glpaper

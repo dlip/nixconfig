@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+export PATH=/run/wrappers/bin:/run/current-system/sw/bin:$PATH
+export DISPLAY=":0"
+export XAUTHORITY="/home/dane/.Xauthority"
+
+log() {
+	# return
+	echo "$1"
+	echo "$(date +"%T") $1" >/tmp/display-change
+}
+
+HDMI=$(wlr-randr | grep HDMI | sed 's/ .*//')
+
+log "dchange"
+export LID_STATE=$(awk '{print$NF}' /proc/acpi/button/lid/LID/state)
+log $LID_STATE
+if [[ $LID_STATE == "closed" ]]; then
+
+	wlr-randr --output eDP-1 --off
+	if wlr-randr | grep -q "HDMI-1-0 connected"; then
+		wlr-randr --output $HDMI --primary --mode 1920x1080
+	fi
+else
+	wlr-randr --output eDP-1 --on
+	if [ ! -z $HDMI ]; then
+		log "hdmi connected"
+		wlr-randr --output eDP-1 --mode 1920x1200 --output $HDMI --mode 1920x1080
+	else
+		log "hdmi not connected"
+		wlr-randr --output eDP-1 --mode 1920x1200 --pos 0x0 --primary
+	fi
+fi
