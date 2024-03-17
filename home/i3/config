@@ -291,6 +291,7 @@ assign [class="Spotify"] 7
 for_window [title="Todoist$"] move container to workspace 7
 
 # Services
+exec_always --no-startup-id display-change
 exec_always --no-startup-id update-wallpaper
 exec systemctl --user restart dunst
 exec systemctl --user restart pasystray
