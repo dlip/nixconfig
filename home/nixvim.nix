@@ -36,7 +36,8 @@
       tabstop = 2; # 1 tab == 2 spaces
       smartindent = true; # autoindent new lines
       wrap = false; # Disable line wrapping
-      scrolloff = 5; # keep cursor away from top/bottom edge of the screen
+      scrolloff = 10; # keep cursor away from top/bottom edge of the screen
+      sidescrolloff = 20; # keep cursor away from right edge of the screen
       foldlevel = 99; # unfold everything by default
       cursorline = true; # highlight current line
       lazyredraw = true; # faster scrolling
