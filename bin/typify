@@ -14,14 +14,12 @@ if not os.path.isfile(filename):
     sys.exit(1)
 
 lines = ""
-if filename.endswith(".epub"):
-    result = subprocess.run(
-        ["pandoc", "-f", "epub", "-t", "plain", filename], stdout=subprocess.PIPE
-    )
-    lines = result.stdout.decode("utf-8").splitlines()
-else:
+if filename.endswith(".txt"):
     with open(filename) as file:
         lines = file.readlines()
+else:
+    result = subprocess.run(["pandoc", "-t", "plain", filename], stdout=subprocess.PIPE)
+    lines = result.stdout.decode("utf-8").splitlines()
 
 output = ""
 for line in lines:
