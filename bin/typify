@@ -1,10 +1,11 @@
 #!/usr/bin/env python
-# Make a text file easier to practice typing by putting each paragraph on a single line
+# Make a file easier to practice typing by putting each paragraph on a single line
 import sys
 import os
+import subprocess
 
 if len(sys.argv) < 2:
-    print("Error: Usage typeify <file>")
+    print("Error: Usage typify <file>")
     sys.exit(1)
 
 filename = sys.argv[1]
@@ -12,12 +13,21 @@ if not os.path.isfile(filename):
     print(f"Error: file {file} does not exist")
     sys.exit(1)
 
+lines = ""
+if filename.endswith(".epub"):
+    result = subprocess.run(
+        ["pandoc", "-f", "epub", "-t", "plain", filename], stdout=subprocess.PIPE
+    )
+    lines = result.stdout.decode("utf-8").splitlines()
+else:
+    with open(filename) as file:
+        lines = file.readlines()
+
 output = ""
-with open(filename) as file:
-    for line in file:
-        if len(line.strip()) == 0:
-            if output != "":
-                print(output.strip() + "\n")
-                output = ""
-        else:
-            output += line.strip().replace("\n", "") + " "
+for line in lines:
+    if len(line.strip()) == 0:
+        if output != "":
+            print(output.strip() + "\n")
+            output = ""
+    else:
+        output += line.strip().replace("\n", "") + " "
