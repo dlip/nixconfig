@@ -70,6 +70,10 @@
       url = "github:LhKipp/nvim-nu";
       flake = false;
     };
+    vimplugin-wpm = {
+      url = "github:jcdickinson/wpm.nvim";
+      flake = false;
+    };
     repo-nnn = {
       url = "github:jarun/nnn";
       flake = false;

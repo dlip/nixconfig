@@ -469,6 +469,13 @@
           require('nvim-autopairs').setup({
             disable_filetype = { "text" },
           })
+          local wpm = require("wpm")
+          wpm.setup({})
+          require('lualine').setup {
+            sections = {
+              lualine_y = {wpm.wpm, wpm.historic_graph, 'progress'},
+            },
+          }
           vim.opt_local.sidescrolloff=500
           vim.fn.search("^$")
           print("Typing mode")
@@ -861,6 +868,7 @@
       one-small-step-for-vimkind
       telescope-gitsigns
       vim-fetch
+      wpm
     ];
   };
 }

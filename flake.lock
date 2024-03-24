@@ -896,7 +896,8 @@
         "steel": "steel",
         "vimplugin-nu": "vimplugin-nu",
         "vimplugin-one-small-step-for-vimkind": "vimplugin-one-small-step-for-vimkind",
-        "vimplugin-telescope-gitsigns": "vimplugin-telescope-gitsigns"
+        "vimplugin-telescope-gitsigns": "vimplugin-telescope-gitsigns",
+        "vimplugin-wpm": "vimplugin-wpm"
       }
     },
     "rust-overlay": {
@@ -1100,6 +1101,22 @@
       "original": {
         "owner": "radyz",
         "repo": "telescope-gitsigns",
+        "type": "github"
+      }
+    },
+    "vimplugin-wpm": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1694384583,
+        "narHash": "sha256-iWdMLNHvAr1XQJVVVjbpkcFHviD7i14ZWLSO6Bb/p7o=",
+        "owner": "jcdickinson",
+        "repo": "wpm.nvim",
+        "rev": "dba1dd57fe744cd0e09c54fb0b2c334eaed777f8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jcdickinson",
+        "repo": "wpm.nvim",
         "type": "github"
       }
     }
