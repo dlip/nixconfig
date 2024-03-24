@@ -22,6 +22,7 @@ config.window_frame = {
   active_titlebar_bg = "#333333",
   inactive_titlebar_bg = "#333333",
 }
+config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
   left = 0,
   right = 0,

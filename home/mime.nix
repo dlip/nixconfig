@@ -30,7 +30,7 @@ in {
   xdg.desktopEntries.helix = {
     name = "helix";
     genericName = "Helix Text Editor";
-    exec = "alacritty -e hx %u";
+    exec = "wezterm -e hx %u";
   };
   xdg.desktopEntries.blender-nvidia-offload = {
     name = "Blender Nvidia Offload";

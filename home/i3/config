@@ -11,7 +11,7 @@
 
 set $mod Mod4
 set $cag Mod1+Control+Mod4
-set $term alacritty
+set $term wezterm
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -57,7 +57,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+t exec $term
+# bindsym $mod+t exec $term
 
 # Sometimes the display doesn't come back from sleep
 bindsym $mod+x exec xrandr --output eDP-1 --auto
@@ -284,6 +284,7 @@ assign [class="Slack"] 3
 assign [class="discord"] 3
 assign [class="Google-chrome"] 4
 assign [class="Alacritty"] 5
+assign [class="org.wezfurlong.wezterm"] 5
 assign [class="obsidian"] 6
 assign [class="Plexamp"] 7
 assign [class="Spotify"] 7
