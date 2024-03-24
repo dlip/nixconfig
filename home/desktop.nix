@@ -88,7 +88,6 @@
     texlive.combined.scheme-medium
     typioca
     php
-    pinentry
     # poetry
     postgresql
     (python3.withPackages (ps: with ps; [pyusb tkinter]))

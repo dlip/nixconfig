@@ -27,6 +27,7 @@
     krename
     nix-du
     ns-usbloader
+    pinentry
     # python311Packages.adafruit-nrfutil
     qmk
     strace

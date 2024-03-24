@@ -32,7 +32,7 @@ in {
       openscad-lsp
       proselint
       python311Packages.black
-      python311Packages.python-lsp-server
+      # python311Packages.python-lsp-server
       # racket-minimal # requires `raco pkg install fmt`
       rust-analyzer # rust
       # rustfmt
