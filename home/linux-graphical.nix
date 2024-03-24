@@ -37,6 +37,7 @@
     screenkey
     sidequest
     super-slicer-latest
+    prusa-slicer
     tdesktop
     vlc
     warpd
