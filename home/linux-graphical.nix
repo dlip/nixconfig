@@ -37,7 +37,8 @@
     screenkey
     sidequest
     # orca-slicer
-    stable.super-slicer # broken https://github.com/NixOS/nixpkgs/issues/294114
+    # super-slicer-latest
+    prusa-slicer
     tdesktop
     vlc
     warpd

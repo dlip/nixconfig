@@ -32,6 +32,16 @@ in {
     genericName = "Helix Text Editor";
     exec = "alacritty -e hx %u";
   };
+  xdg.desktopEntries.blender-nvidia-offload = {
+    name = "Blender Nvidia Offload";
+    genericName = "3D modeler";
+    exec = "nvidia-offload blender";
+  };
+  xdg.desktopEntries.superslicer-nvidia-offload = {
+    name = "SuperSlicer Nvidia Offload";
+    genericName = "3D Printing Software";
+    exec = "nvidia-offload superslicer";
+  };
   xdg.mimeApps = {
     enable = true;
     associations.added = associations;
