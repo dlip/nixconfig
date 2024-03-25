@@ -824,6 +824,38 @@
         "type": "github"
       }
     },
+    "repo-arc-icon-theme": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1479849780,
+        "narHash": "sha256-TfYtzwo69AC5hHbzEqB4r5Muqvn/eghCGSlmjMCFA7I=",
+        "owner": "horst3180",
+        "repo": "arc-icon-theme",
+        "rev": "55a575386a412544c3ed2b5617a61f842ee4ec15",
+        "type": "github"
+      },
+      "original": {
+        "owner": "horst3180",
+        "repo": "arc-icon-theme",
+        "type": "github"
+      }
+    },
+    "repo-awesome-wm-widgets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1704592721,
+        "narHash": "sha256-VUljSRsBB5S6XCPtT+dcvM6uOcESO4nJNl3x0IJEA7E=",
+        "owner": "streetturtle",
+        "repo": "awesome-wm-widgets",
+        "rev": "85fbddf6d932172acacf72253c3d96b66cd4dd57",
+        "type": "github"
+      },
+      "original": {
+        "owner": "streetturtle",
+        "repo": "awesome-wm-widgets",
+        "type": "github"
+      }
+    },
     "repo-catppuccin-zsh-syntax-highlighting": {
       "flake": false,
       "locked": {
@@ -837,6 +869,22 @@
       "original": {
         "owner": "catppuccin",
         "repo": "zsh-syntax-highlighting",
+        "type": "github"
+      }
+    },
+    "repo-json-lua": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1592496233,
+        "narHash": "sha256-BrM+r0VVdaeFgLfzmt1wkj0sC3dj9nNojkuZJK5f35s=",
+        "owner": "rxi",
+        "repo": "json.lua",
+        "rev": "dbf4b2dd2eb7c23be2773c89eb059dadd6436f94",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rxi",
+        "repo": "json.lua",
         "type": "github"
       }
     },
@@ -889,7 +937,10 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixvim": "nixvim",
         "power-menu": "power-menu",
+        "repo-arc-icon-theme": "repo-arc-icon-theme",
+        "repo-awesome-wm-widgets": "repo-awesome-wm-widgets",
         "repo-catppuccin-zsh-syntax-highlighting": "repo-catppuccin-zsh-syntax-highlighting",
+        "repo-json-lua": "repo-json-lua",
         "repo-nnn": "repo-nnn",
         "repo-tmux-catppuccin": "repo-tmux-catppuccin",
         "sops-nix": "sops-nix",

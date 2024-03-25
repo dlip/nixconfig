@@ -18,7 +18,8 @@ in {
     # ../common/desktop/hyprland.nix
     # ../common/desktop/leftwm.nix
     # ../common/desktop/kde.nix
-    ../common/desktop/i3.nix
+    ../common/desktop/awesome.nix
+    # ../common/desktop/i3.nix
     ../common/services/kmonad.nix
   ];
 

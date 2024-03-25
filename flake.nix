@@ -86,6 +86,18 @@
       url = "github:catppuccin/zsh-syntax-highlighting";
       flake = false;
     };
+    repo-awesome-wm-widgets = {
+      url = "github:streetturtle/awesome-wm-widgets";
+      flake = false;
+    };
+    repo-arc-icon-theme = {
+      url = "github:horst3180/arc-icon-theme";
+      flake = false;
+    };
+    repo-json-lua = {
+      url = "github:rxi/json.lua";
+      flake = false;
+    };
     nixvim = {
       url = "github:nix-community/nixvim";
       # If you are not running an unstable channel of nixpkgs, select the corresponding branch of nixvim.
