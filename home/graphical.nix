@@ -2,7 +2,7 @@
   imports = [
     ./alacritty
     # ./emacs
-    #./kitty
+    ./kitty
     #./leftwm
     # ./vscode
     # ./kde

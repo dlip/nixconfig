@@ -5,7 +5,8 @@
 }: {
   # services.dropbox.enable = true;
   imports = [
-    ./awesome
+    ./hyprland
+    # ./awesome
     # ./i3
     ./rofi
     ./talon

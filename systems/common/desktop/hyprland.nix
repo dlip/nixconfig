@@ -6,6 +6,6 @@
 }: {
   programs.hyprland = {
     enable = true;
-    nvidiaPatches = true;
+    # nvidiaPatches = true;
   };
 }

@@ -15,10 +15,10 @@ in {
     ./hardware-configuration.nix
     (import ../common params)
     ../common/desktop/sway.nix
-    # ../common/desktop/hyprland.nix
+    ../common/desktop/hyprland.nix
     # ../common/desktop/leftwm.nix
     # ../common/desktop/kde.nix
-    ../common/desktop/awesome.nix
+    # ../common/desktop/awesome.nix
     # ../common/desktop/i3.nix
     ../common/services/kmonad.nix
   ];
