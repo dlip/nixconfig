@@ -20,5 +20,6 @@
     grimblast
     cliphist
     fuzzel
+    swayidle
   ];
 }
