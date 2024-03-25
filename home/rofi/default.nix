@@ -5,6 +5,7 @@
 }: {
   programs.rofi = {
     enable = true;
+    package = pkgs.rofi-wayland;
     terminal = "${pkgs.kitty}/bin/kitty";
     theme = ./rofi.theme.rasi;
     font = "RobotoMono Nerd Font 10";

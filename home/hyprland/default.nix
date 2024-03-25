@@ -17,7 +17,6 @@
     sway-contrib.grimshot
     grimblast
     cliphist
-    rofi
     fuzzel
   ];
 }
