@@ -33,6 +33,7 @@
             "unlocked": ""
         }
     },
+    "modules-center": ["hyprland/window"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
