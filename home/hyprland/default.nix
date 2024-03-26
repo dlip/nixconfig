@@ -10,6 +10,7 @@
 
   home.file = {
     "${config.xdg.configHome}/hypr/hyprland.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/hyprland/hyprland.conf";
+    "${config.xdg.configHome}/hypr/hypridle.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/hyprland/hypridle.conf";
     "${config.xdg.configHome}/hypr/macchiato.conf".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/hyprland/macchiato.conf";
   };
 
@@ -23,5 +24,7 @@
     swayidle
     udiskie
     overskride
+    hypridle
+    libnotify
   ];
 }
