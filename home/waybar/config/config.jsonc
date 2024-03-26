@@ -18,6 +18,7 @@
   "modules-right": [
     "idle_inhibitor",
     "pulseaudio",
+    "bluetooth",
     "network",
     "cpu",
     "memory",
@@ -120,7 +121,7 @@
   "clock": {
     // https://howardhinnant.github.io/date/date.html#to_stream_formatting
     "format": "{:%I:%M %p - %a %d/%m/%y}",
-    // "timezone": "America/New_York",
+    "timezone": "Australia/Sydney",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format-alt": "{:%Y-%m-%d}"
   },
@@ -210,5 +211,8 @@
       ]
     },
     "on-click-right": "pavucontrol"
+  },
+  "bluetooth": {
+    "on-click": "overskride"
   }
 }

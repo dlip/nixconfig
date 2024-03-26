@@ -21,5 +21,7 @@
     cliphist
     fuzzel
     swayidle
+    udiskie
+    overskride
   ];
 }
