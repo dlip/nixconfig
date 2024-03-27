@@ -680,7 +680,9 @@
       leap.enable = true;
       indent-blankline = {
         enable = true;
-        scope.enabled = false;
+        settings = {
+          scope.enabled = false;
+        };
       };
 
       treesitter = {
@@ -721,7 +723,7 @@
           auto_refresh = true;
         };
       };
-      comment-nvim.enable = true;
+      comment.enable = true;
       nvim-tree = {
         enable = true;
         updateFocusedFile = {

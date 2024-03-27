@@ -6,7 +6,7 @@
   # services.dropbox.enable = true;
   imports = [
     ./alacritty
-    ./espanso
+    # ./espanso
     ./k9s
   ];
 
