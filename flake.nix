@@ -160,6 +160,7 @@
       docker = [
         nixvim.homeManagerModules.nixvim
         ./home/default.nix
+        ./home/desktop.nix
         {
           home = {
             username = "root";

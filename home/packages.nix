@@ -2,6 +2,7 @@
   home.packages = with pkgs; [
     bat
     bc
+    curl
     delta
     dig
     direnv
@@ -16,10 +17,12 @@
     gnumake
     gotop
     htop
+    iconv
     jq
     killall
     lsd
     ncdu
+    ncurses
     neofetch
     nettools
     nmap

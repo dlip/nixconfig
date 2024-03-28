@@ -34,6 +34,7 @@
 
     initExtra = ''
       # [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
+      export TERM="xterm-256color"
       export MANPAGER="sh -c 'col -bx | bat -l man -p'"
       export MANWIDTH=999
       export FZF_DEFAULT_COMMAND='fd'
@@ -44,9 +45,6 @@
       # Needed for go debugging
       export CGO_CFLAGS=-O
 
-      if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-        export TERM="xterm-256color"
-      fi
       source "${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
       source "${pkgs.repo-catppuccin-zsh-syntax-highlighting}/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh"
     '';
