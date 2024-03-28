@@ -6,5 +6,5 @@ services:
     build: .
     container_name: nix
     volumes:
-      - ~/code:/root/code
+      - ~:/root
     working_dir: /root
