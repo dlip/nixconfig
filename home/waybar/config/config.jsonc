@@ -210,9 +210,9 @@
         ""
       ]
     },
-    "on-click-right": "pavucontrol"
+    "on-click": "pavucontrol"
   },
   "bluetooth": {
-    "on-click": "overskride"
+    "on-click": "blueman-manager"
   }
 }

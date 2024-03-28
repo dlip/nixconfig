@@ -13,17 +13,16 @@
   };
 
   home.packages = with pkgs; [
-    playerctl
     brightnessctl
-    sway-contrib.grimshot
-    grimblast
     cliphist
     fuzzel
+    grimblast
+    hypridle
+    hyprlock
+    libnotify
+    playerctl
+    sway-contrib.grimshot
     swayidle
     udiskie
-    overskride
-    hypridle
-    libnotify
-    hyprlock
   ];
 }

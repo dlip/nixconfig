@@ -168,14 +168,14 @@ in {
 
   services.udev = {
     enable = true;
-    extraRules = ''
-      ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/dane/.Xauthority", RUN+="${pkgs.bash}/bin/bash /home/dane/code/nixconfig/bin/display-change"
-    '';
+    # extraRules = ''
+    #   ACTION=="change", SUBSYSTEM=="drm", ENV{DISPLAY}=":0", ENV{XAUTHORITY}="/home/dane/.Xauthority", RUN+="${pkgs.bash}/bin/bash /home/dane/code/nixconfig/bin/display-change"
+    # '';
   };
 
   services.acpid = {
     enable = true;
-    lidEventCommands = "${pkgs.bash}/bin/bash /home/dane/code/nixconfig/bin/display-change";
+    # lidEventCommands = "${pkgs.bash}/bin/bash /home/dane/code/nixconfig/bin/display-change";
   };
 
   services.locate.enable = true;
