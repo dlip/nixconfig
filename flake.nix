@@ -157,6 +157,16 @@
           };
         }
       ];
+      docker = [
+        nixvim.homeManagerModules.nixvim
+        ./home/default.nix
+        {
+          home = {
+            username = "root";
+            homeDirectory = "/root";
+          };
+        }
+      ];
     };
   in
     flake-utils.lib.eachDefaultSystem
