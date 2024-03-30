@@ -25,6 +25,10 @@
       url = "github:kmonad/kmonad?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    kanata = {
+      url = "github:jtroo/kanata";
+      flake = false;
+    };
     nix-on-droid = {
       url = "github:t184256/nix-on-droid/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";

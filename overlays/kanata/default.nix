@@ -5,19 +5,21 @@
   rustPlatform,
   fetchFromGitHub,
   withCmd ? false,
+  src,
 }:
 rustPlatform.buildRustPackage rec {
   pname = "kanata";
   version = "1.5.0";
+  inherit src;
 
-  src = fetchFromGitHub {
-    owner = "jtroo";
-    repo = pname;
-    rev = "d60524ab340efd0e49acd3ad256959173f33b6e0";
-    sha256 = "sha256-S5UyvzFA8JB+0WOo2CbqpFaU7S0amPNqs3ynXl9H5KQ=";
-  };
+  # src = fetchFromGitHub {
+  #   owner = "jtroo";
+  #   repo = pname;
+  #   rev = "cebf123b0c4cda8592fa3a09f98cb78e4c8f9f61";
+  #   sha256 = "sha256-cg0lEbA+ou/HWcjkpmQLpGTYoJ54INVgJLQq1PCU7RQ=";
+  # };
 
-  cargoHash = "sha256-Y0EROsgnz3gDzw06/Fz08tqOk/lJMoTcbbZS62t4kCY=";
+  cargoHash = "sha256-jDL41AX0xzU0xhAsMKQbsuHZI4e7pBf+GeU+2EPhjkc=";
 
   buildInputs = lib.optionals stdenv.isDarwin [darwin.apple_sdk.frameworks.IOKit];
 

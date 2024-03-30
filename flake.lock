@@ -570,6 +570,22 @@
         "type": "github"
       }
     },
+    "kanata": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1711769003,
+        "narHash": "sha256-cg0lEbA+ou/HWcjkpmQLpGTYoJ54INVgJLQq1PCU7RQ=",
+        "owner": "jtroo",
+        "repo": "kanata",
+        "rev": "cebf123b0c4cda8592fa3a09f98cb78e4c8f9f61",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jtroo",
+        "repo": "kanata",
+        "type": "github"
+      }
+    },
     "keyd": {
       "flake": false,
       "locked": {
@@ -1054,6 +1070,7 @@
         "helix": "helix",
         "home-manager": "home-manager",
         "hyprland": "hyprland",
+        "kanata": "kanata",
         "keyd": "keyd",
         "kmonad": "kmonad",
         "mac-app-util": "mac-app-util",

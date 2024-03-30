@@ -5,6 +5,7 @@ inputs @ {
   envy-sh,
   emoji-menu,
   power-menu,
+  kanata,
   keyd,
   helix,
   sops-nix,
@@ -38,7 +39,7 @@ inputs @ {
     nnn = prev.nnn.overrideAttrs (oldAttrs: {
       makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];
     });
-    kanata = final.callPackage ./kanata {};
+    kanata = final.callPackage ./kanata {src = kanata;};
     # helix = helix.packages.${final.system}.default;
     keyd = prev.keyd.overrideAttrs (oldAttrs: {
       src = keyd;
