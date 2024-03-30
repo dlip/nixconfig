@@ -19,6 +19,7 @@
     grimblast
     hypridle
     hyprlock
+    hyprpaper
     libnotify
     playerctl
     sway-contrib.grimshot
