@@ -1,5 +1,5 @@
 {
-  "$schema": "/etc/xdg/swaync/configSchema.json",
+  "$schema": "configSchema.json",
   "positionX": "right",
   "positionY": "top",
   "layer": "overlay",
@@ -29,7 +29,6 @@
   "hide-on-clear": false,
   "hide-on-action": true,
   "script-fail-notify": true,
-  "scripts": {},
   "notification-visibility": {
     "example-name": {
       "state": "muted",
