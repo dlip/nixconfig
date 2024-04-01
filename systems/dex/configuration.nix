@@ -20,7 +20,7 @@ in rec {
     ./hardware-configuration.nix
     (import ../common params)
     # ../common/desktop/kde.nix
-    ../common/desktop/i3.nix
+    ../common/desktop/hyprland.nix
     ../common/services/notify-problems.nix
   ];
 
