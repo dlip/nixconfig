@@ -16,6 +16,7 @@ inputs @ {
   nixvim,
   # nixpkgs-wayland,
   hyprland,
+  hyprcursor-catppuccin,
   ...
 }: [
   kmonad.overlays.default
@@ -35,6 +36,7 @@ inputs @ {
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
     # myEspanso = final.callPackage ./espanso {};
     hyprland = hyprland.packages.${final.system}.hyprland;
+    hyprcursor-catppuccin = hyprcursor-catppuccin.packages.${final.system}.hyprcursor-catppuccin;
     power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
     nnn = prev.nnn.overrideAttrs (oldAttrs: {
       makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];

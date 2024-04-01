@@ -34,7 +34,6 @@
 
     initExtra = ''
       # [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
-      export TERM="xterm-256color"
       export MANPAGER="sh -c 'col -bx | bat -l man -p'"
       export MANWIDTH=999
       export FZF_DEFAULT_COMMAND='fd'

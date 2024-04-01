@@ -12,7 +12,6 @@
     prefix = "C-t";
     shortcut = "a";
     mouse = true;
-    terminal = "tmux-256color";
     escapeTime = 0;
     extraConfig = ''
       set -ag terminal-overrides ",xterm-kitty:RGB"

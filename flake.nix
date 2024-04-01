@@ -17,6 +17,10 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprcursor-catppuccin = {
+      url = "github:NotAShelf/hyprcursor-catppuccin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # nixpkgs-wayland = {
     #   url = "github:nix-community/nixpkgs-wayland";
     #   inputs.nixpkgs.follows = "nixpkgs";
