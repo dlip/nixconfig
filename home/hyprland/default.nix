@@ -9,15 +9,15 @@
     ../swaylock
   ];
 
-  home.file = {
-    "${config.xdg.configHome}/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/hyprland/config";
-    "${config.home.homeDirectory}/.local/share/icons/HyprBibataModernClassicSVG".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/hyprland/icons/HyprBibataModernClassicSVG";
-  };
-  # // (pkgs.lib.attrsets.mapAttrs' (
-  #   folder: type:
-  #     pkgs.lib.attrsets.nameValuePair ("${config.home.homeDirectory}/.local/share/icons/${folder}".source)
-  #     (config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/hyprland/icons/${folder}")
-  # ) (builtins.readDir ./icons));
+  home.file =
+    {
+      "${config.xdg.configHome}/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/hyprland/config";
+    }
+    // (pkgs.lib.attrsets.mapAttrs' (
+      folder: type:
+        pkgs.lib.attrsets.nameValuePair "${config.home.homeDirectory}/.local/share/icons/${folder}"
+        {source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/hyprland/icons/${folder}";}
+    ) (builtins.readDir ./icons));
 
   home.packages = with pkgs; [
     brightnessctl
