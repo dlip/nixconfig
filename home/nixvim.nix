@@ -18,7 +18,7 @@
       };
     };
     clipboard.register = "unnamedplus"; # Use system clipboard
-    options = {
+    opts = {
       relativenumber = true; # Relative line numbers
       number = true; # Show current line number
       backup = false; # don't create backups
@@ -74,17 +74,17 @@
     ];
     files = {
       "ftplugin/tsv.lua" = {
-        options = {
+        opts = {
           expandtab = false;
         };
       };
       "ftplugin/go.lua" = {
-        options = {
+        opts = {
           expandtab = false;
         };
       };
       "ftplugin/markdown.lua" = {
-        options = {
+        opts = {
           wrap = true;
         };
       };
