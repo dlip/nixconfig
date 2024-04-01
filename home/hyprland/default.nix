@@ -6,7 +6,7 @@
 }: {
   imports = [
     ../waybar
-    ../swaylock
+    ../swaync
   ];
 
   home.file =
