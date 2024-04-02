@@ -233,17 +233,19 @@
           modules = [
             ./systems/metabox/configuration.nix
             kmonad.nixosModules.default
-            home-manager.nixosModules.home-manager
             sops-nix.nixosModules.default
+            home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "backup";
                 users = {
                   dane = {
-                    home.email = "dane.lipscombe@immutable.com.au";
                     imports = [
+                      nixvim.homeManagerModules.nixvim
                       ./home/linux-desktop.nix
+                      ./home/gamedev.nix
                       ./home/gaming.nix
                     ];
                   };
