@@ -23,6 +23,7 @@
   home.packages = with pkgs; [
     brightnessctl
     cliphist
+    wl-clipboard # wl-copy and wl-paste for copy/paste from stdin / stdout
     fuzzel
     grimblast
     hypridle
