@@ -6,5 +6,8 @@ services:
     build: .
     container_name: nix
     volumes:
-      - ~:/root
-    working_dir: /root
+      - ~/code:/root/code
+    working_dir: /root/code
+    restart: always
+    command: sleep infinity
+

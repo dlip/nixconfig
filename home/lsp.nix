@@ -40,9 +40,8 @@ in {
       # solang
       stylua
       # lua-language-server # arm error
-      terraform
       taplo
-      terraform-ls
+      # terraform-ls
       tree-sitter
       vale
       vim-vint
