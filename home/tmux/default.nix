@@ -16,6 +16,7 @@
     escapeTime = 0;
     extraConfig = ''
       set -ag terminal-overrides ",xterm-kitty:RGB"
+      set -as terminal-features ",xterm-kitty:clipboard"
       set-option -g status-position top
       set -g @catppuccin_flavour 'macchiato'
       set -g @catppuccin_window_default_text "#W"
