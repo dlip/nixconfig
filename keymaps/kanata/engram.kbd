@@ -24,10 +24,6 @@
   (m) m
   (f) f
   (p) p
-  (alt1) (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle nav))
-  (alt2) (tap-hold $tap-timeout $hold-timeout spc (layer-toggle media))
-  (sft) (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
-  (cbo) C-bspc
   (w v) z
   (f p) q
   (j k) .
@@ -66,10 +62,10 @@
   s (tap-hold $tap-timeout $hold-timeout s lalt)
   n (tap-hold $tap-timeout $hold-timeout n lsft)
 
-  alt1 (chord combos alt1)
-  alt2 (chord combos alt2)
-  sft (chord combos sft)
-  cbo (chord combos cbo)
+  alt1 (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle nav))
+  alt2 (tap-hold $tap-timeout $hold-timeout spc (layer-toggle media))
+  sft (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
+  cbo C-bspc
 )
 
 
@@ -88,6 +84,7 @@
   na (layer-switch base)
   med (layer-toggle media)
   nav (layer-toggle nav)
+  nv2 (layer-toggle nav2)
   gam (layer-switch gaming)
   dis (layer-switch disable)
   bse (layer-switch base)
@@ -134,6 +131,15 @@
   `    esc  up   ret  XX   XX   XX   XX   7    8    9    \    _    _
   del @lft  @dwn @rgt XX   XX   XX   XX   @4   @5   @6   0    _
   [   ]     -    =    XX   XX   XX   XX   1    2    3    .
+  _    _    _    _         @nv2           _    _    _    _    _    _
+)
+
+(deflayer nav2
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  `    esc  pgup ret  XX   XX   XX   XX   7    8    9    \    _    _
+  del home  pgdn end  XX   XX   XX   XX   ,    .    '    S-'  _
+  [   ]     -    =    XX   XX   XX   XX   1    2    3    .
   _    _    _    _         _         _    _    _    _    _    _
 )
 
@@ -143,7 +149,7 @@
   _    prnt vold volu XX  XX   XX   XX    f7   f8   f9   f11  _    _
   @udo @cut @cpy @pst XX  XX   XX   XX    f4   f5   f6   f10  _
   XX   prev pp   next XX  XX   XX   XX    f1   f2   f3   f12
-  _    _    _   _          _         _    _    _    _    _    _
+  _    _    @nv2 @nv2     _         _    _    _    _    _    _
 )
 
 (deflayer disable
