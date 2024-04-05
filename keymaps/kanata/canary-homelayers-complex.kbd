@@ -1,7 +1,9 @@
 ;; (defcfg
 ;;   linux-dev /dev/input/by-path/platform-i8043-serio-0-event-kbd
 ;; )
-
+(defcfg
+  process-unmapped-keys yes
+)
 (defsrc
   esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
   grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
@@ -12,9 +14,22 @@
 )
 (defvar
   tap-timeout 0
-  hold-timeout 200
-)
+  hold-timeout 150
 
+  left-hand-keys (
+    w l y p b
+    c r s t g
+    q j v d k
+  )
+  right-hand-keys (
+    z f o u '
+    m n e i a
+    x h ; , .
+  )
+)
+(deffakekeys
+  to-base (layer-switch base)
+)
 (defalias
   rpt rpt-any
   na (layer-switch base)
@@ -30,35 +45,28 @@
   sal (one-shot 1000 lalt)
   smt (one-shot 1000 lmet)
 
-  w (tap-hold-release $tap-timeout $hold-timeout w lalt)
-  l (tap-hold-release $tap-timeout $hold-timeout l lmet)
-  y (tap-hold-release $tap-timeout $hold-timeout y lctl)
-  p (tap-hold-release $tap-timeout $hold-timeout p (layer-toggle num))
+  tap (multi
+    (layer-switch nomods)
+    (on-idle-fakekey to-base tap 20)
+  )
 
-  c (tap-hold-release $tap-timeout $hold-timeout c lalt)
-  r (tap-hold-release $tap-timeout $hold-timeout r lmet)
-  s (tap-hold-release $tap-timeout $hold-timeout s lctl)
-  t (tap-hold-release $tap-timeout $hold-timeout t (layer-toggle alpha2))
+  p (tap-hold-release-keys $tap-timeout $hold-timeout (multi p @tap) (layer-toggle num) $left-hand-keys)
 
-  q (tap-hold-release $tap-timeout $hold-timeout q lalt)
-  j (tap-hold-release $tap-timeout $hold-timeout j lmet)
-  v (tap-hold-release $tap-timeout $hold-timeout v lctl)
-  d (tap-hold-release $tap-timeout $hold-timeout d (layer-toggle fn))
+  c (tap-hold-release-keys $tap-timeout $hold-timeout (multi c @tap) lalt $left-hand-keys)
+  r (tap-hold-release-keys $tap-timeout $hold-timeout (multi r @tap) lmet $left-hand-keys)
+  s (tap-hold-release-keys $tap-timeout $hold-timeout (multi s @tap) lctl $left-hand-keys)
+  t (tap-hold-release-keys $tap-timeout $hold-timeout (multi t @tap) (layer-toggle alpha2) $left-hand-keys)
 
-  f (tap-hold-release $tap-timeout $hold-timeout f (layer-toggle nav))
-  o (tap-hold-release $tap-timeout $hold-timeout o rctl)
-  u (tap-hold-release $tap-timeout $hold-timeout u lmet)
-  ' (tap-hold-release $tap-timeout $hold-timeout ' lalt)
+  d (tap-hold-release-keys $tap-timeout $hold-timeout (multi d @tap) (layer-toggle fn) $left-hand-keys)
 
-  n (tap-hold-release $tap-timeout $hold-timeout n (layer-toggle nav))
-  e (tap-hold-release $tap-timeout $hold-timeout e rctl)
-  i (tap-hold-release $tap-timeout $hold-timeout i lmet)
-  a (tap-hold-release $tap-timeout $hold-timeout a lalt)
+  f (tap-hold-release-keys $tap-timeout $hold-timeout (multi f @tap) (layer-toggle nav) $right-hand-keys)
 
-  h (tap-hold-release $tap-timeout $hold-timeout h (layer-toggle nav))
-  ; (tap-hold-release $tap-timeout $hold-timeout ; rctl)
-  , (tap-hold-release $tap-timeout $hold-timeout , lmet)
-  . (tap-hold-release $tap-timeout $hold-timeout . lalt)
+  n (tap-hold-release-keys $tap-timeout $hold-timeout (multi n @tap) (layer-toggle nav) $right-hand-keys)
+  e (tap-hold-release-keys $tap-timeout $hold-timeout (multi e @tap) rctl $right-hand-keys)
+  i (tap-hold-release-keys $tap-timeout $hold-timeout (multi i @tap) lmet $right-hand-keys)
+  a (tap-hold-release-keys $tap-timeout $hold-timeout (multi a @tap) lalt $right-hand-keys)
+
+  h (tap-hold-release-keys $tap-timeout $hold-timeout (multi h @tap) (layer-toggle nav) $right-hand-keys)
 
   bsp (tap-hold-release $tap-timeout $hold-timeout bspc lsft)
   tmd(tap-hold-press $tap-timeout $hold-timeout tab @med)
@@ -76,12 +84,19 @@
 (deflayer base
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    @dis
-  @w   @l   @y   @p   b    XX   XX   z    @f   @o   @u   @'   _    _
+  w    l    y    @p   b    XX   XX   z    @f   o    u    '   _    _
   @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
-  @q   @j   @v   @d   k    XX   XX   x    @h   @;   @,   @.
+  q    j    v    @d   k    XX   XX   x    @h   ;    ,    .
   _    lrld @tmd @tmd      @spc      @bsp @bsp @exp @exp @rpt bspc
 )
-
+(deflayer nomods
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    @dis
+  w    l    y    p   b    XX   XX   z     f    o    u    '   _    _
+  c    r    s    t   g    XX   XX   m     n    e    i    a   _
+  q    j    v    d   k    XX   XX   x     h    ;    ,    .
+  _    lrld @tmd @tmd     @spc      @bsp @bsp @exp @exp @rpt bspc
+)
 (deflayer alpha2
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
@@ -142,7 +157,7 @@
   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
   XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
-  XX    XX    XX    XX         XX         XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX          XX    XX    XX    XX    XX    XX
 )
 
 (deflayer gaming
