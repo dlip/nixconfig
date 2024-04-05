@@ -1,0 +1,164 @@
+;; (defcfg
+;;   linux-dev /dev/input/by-path/platform-i8043-serio-0-event-kbd
+;; )
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt muhenkan  spc  henkan ralt prtsc katakanahiragana rctl cmp
+)
+(defvar
+  tap-timeout 0
+  hold-timeout 200
+)
+
+(defalias
+  rpt rpt-any
+  na (layer-switch base)
+  med (layer-toggle media)
+  nav (layer-toggle nav)
+  gam (layer-switch gaming)
+  dis (layer-switch disable)
+  bse (layer-switch base)
+
+  snv (one-shot 1000 @nav)
+  ssf (one-shot 1000 lsft)
+  sct (one-shot 1000 lctl)
+  sal (one-shot 1000 lalt)
+  smt (one-shot 1000 lmet)
+
+  w (tap-hold-release $tap-timeout $hold-timeout w lalt)
+  l (tap-hold-release $tap-timeout $hold-timeout l lmet)
+  y (tap-hold-release $tap-timeout $hold-timeout y lctl)
+  p (tap-hold-release $tap-timeout $hold-timeout p (layer-toggle num))
+
+  c (tap-hold-release $tap-timeout $hold-timeout c lalt)
+  r (tap-hold-release $tap-timeout $hold-timeout r lmet)
+  s (tap-hold-release $tap-timeout $hold-timeout s lctl)
+  t (tap-hold-release $tap-timeout $hold-timeout t (layer-toggle alpha2))
+
+  q (tap-hold-release $tap-timeout $hold-timeout q lalt)
+  j (tap-hold-release $tap-timeout $hold-timeout j lmet)
+  v (tap-hold-release $tap-timeout $hold-timeout v lctl)
+  d (tap-hold-release $tap-timeout $hold-timeout d (layer-toggle fn))
+
+  f (tap-hold-release $tap-timeout $hold-timeout f (layer-toggle nav))
+  o (tap-hold-release $tap-timeout $hold-timeout o rctl)
+  u (tap-hold-release $tap-timeout $hold-timeout u lmet)
+  ' (tap-hold-release $tap-timeout $hold-timeout ' lalt)
+
+  n (tap-hold-release $tap-timeout $hold-timeout n (layer-toggle nav))
+  e (tap-hold-release $tap-timeout $hold-timeout e rctl)
+  i (tap-hold-release $tap-timeout $hold-timeout i lmet)
+  a (tap-hold-release $tap-timeout $hold-timeout a lalt)
+
+  h (tap-hold-release $tap-timeout $hold-timeout h (layer-toggle nav))
+  ; (tap-hold-release $tap-timeout $hold-timeout ; rctl)
+  , (tap-hold-release $tap-timeout $hold-timeout , lmet)
+  . (tap-hold-release $tap-timeout $hold-timeout . lalt)
+
+  bsp (tap-hold-release $tap-timeout $hold-timeout bspc lsft)
+  tmd(tap-hold-press $tap-timeout $hold-timeout tab @med)
+  exp (macro , ;)
+
+  spc (tap-hold-release $tap-timeout $hold-timeout spc lsft)
+  cpy C-c
+  pst C-v
+  cut C-x
+  udo C-z
+  all C-a
+
+)
+
+(deflayer base
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    @dis
+  @w   @l   @y   @p   b    XX   XX   z    @f   @o   @u   @'   _    _
+  @c   @r   @s   @t   g    XX   XX   m    @n   @e   @i   @a   _
+  @q   @j   @v   @d   k    XX   XX   x    @h   @;   @,   @.
+  _    lrld @tmd @tmd      @spc      @bsp @bsp @exp @exp @rpt bspc
+)
+
+(deflayer alpha2
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    g    m    b    k    _
+  _    _    _    _    _    _    _    _    _    _    x    z
+  _    _    _    _         _         _    _    _    _    _    _
+)
+
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  `    esc  up   ret  _    _    _    _    _    _    _    _    _    _
+  bspc left down right _    _    _    _    _    _    _    _    _
+  home pgup pgdn end  _    _    _    _    _    _    _    _
+  _    _    _    _         _         _    _    _    _    _    _
+)
+
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    7    8    9    /    _    _
+  _    _    _    _    _    _    _    _    4    5    6    0    _
+  _    _    _    _    _    _    _    _    1    2    3    .
+  _    _    _    _         _         _    _    _    _    _    _
+)
+
+(deflayer media
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  prnt mmid mlft mrgt _    _    _    _    _    _    _    _    _    _
+  @udo @cut @cpy @pst _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _         _         _    _    _    _    _    _
+)
+
+(deflayer fn
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    f7   f8   f9   f10  _    _    _
+  _    _    _    _    _    _    _    f4   f5   f6   f11  _    _
+  _    _    _    _    _    _    _    f1   f2   f3   f12  _
+  _    _    _    _         _         _    _    _    _    _    _
+)
+
+(deflayer media2
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    volu XX   XX   f7   f8   f9   f10  _    _    _
+  prnt prev pp   next vold XX   @gam f4   f5   f6   f11  _    _
+  @udo @cut @cpy @pst prnt XX   XX   f1   f2   f3   f12  _
+  _    _    _   _          _         _    _    _    _    _    _
+)
+
+(deflayer disable
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    @bse
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX         XX         XX    XX    XX    XX    XX    XX
+)
+
+(deflayer gaming
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  tab  q    w    e    r    t    _    _    _    up   _    _    _    _
+  lsft a    s    d    f    g    _    @bse lft  down rght _    _
+  lctl z    x    c    v    b    _    _    _    _    _    _
+  _    lalt esc  _         spc       _    _    _    _    _    _
+)
+
+(deflayer empty
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _         _         _    _    _    _    _    _
+)
