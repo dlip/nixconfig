@@ -11,8 +11,8 @@
   lctl lmet lalt muhenkan  spc  henkan ralt prtsc katakanahiragana rctl cmp
 )
 (defvar
-  tap-timeout 0
-  hold-timeout 200
+  tap-timeout 100
+  hold-timeout 100
 )
 
 (defalias
@@ -30,41 +30,41 @@
   sal (one-shot 1000 lalt)
   smt (one-shot 1000 lmet)
 
-  w (tap-hold-release $tap-timeout $hold-timeout w lalt)
-  l (tap-hold-release $tap-timeout $hold-timeout l lmet)
-  y (tap-hold-release $tap-timeout $hold-timeout y lctl)
-  p (tap-hold-release $tap-timeout $hold-timeout p (layer-toggle num))
+  w (tap-hold $tap-timeout $hold-timeout w lalt)
+  l (tap-hold $tap-timeout $hold-timeout l lmet)
+  y (tap-hold $tap-timeout $hold-timeout y lctl)
+  p (tap-hold $tap-timeout $hold-timeout p (layer-toggle num))
 
-  c (tap-hold-release $tap-timeout $hold-timeout c lalt)
-  r (tap-hold-release $tap-timeout $hold-timeout r lmet)
-  s (tap-hold-release $tap-timeout $hold-timeout s lctl)
-  t (tap-hold-release $tap-timeout $hold-timeout t (layer-toggle alpha2))
+  c (tap-hold $tap-timeout $hold-timeout c lalt)
+  r (tap-hold $tap-timeout $hold-timeout r lmet)
+  s (tap-hold $tap-timeout $hold-timeout s lctl)
+  t (tap-hold $tap-timeout $hold-timeout t (layer-toggle alpha2))
 
-  q (tap-hold-release $tap-timeout $hold-timeout q lalt)
-  j (tap-hold-release $tap-timeout $hold-timeout j lmet)
-  v (tap-hold-release $tap-timeout $hold-timeout v lctl)
-  d (tap-hold-release $tap-timeout $hold-timeout d (layer-toggle fn))
+  q (tap-hold $tap-timeout $hold-timeout q lalt)
+  j (tap-hold $tap-timeout $hold-timeout j lmet)
+  v (tap-hold $tap-timeout $hold-timeout v lctl)
+  d (tap-hold $tap-timeout $hold-timeout d (layer-toggle fn))
 
-  f (tap-hold-release $tap-timeout $hold-timeout f (layer-toggle nav))
-  o (tap-hold-release $tap-timeout $hold-timeout o rctl)
-  u (tap-hold-release $tap-timeout $hold-timeout u lmet)
-  ' (tap-hold-release $tap-timeout $hold-timeout ' lalt)
+  f (tap-hold $tap-timeout $hold-timeout f (layer-toggle nav))
+  o (tap-hold $tap-timeout $hold-timeout o rctl)
+  u (tap-hold $tap-timeout $hold-timeout u lmet)
+  ' (tap-hold $tap-timeout $hold-timeout ' lalt)
 
-  n (tap-hold-release $tap-timeout $hold-timeout n (layer-toggle nav))
-  e (tap-hold-release $tap-timeout $hold-timeout e rctl)
-  i (tap-hold-release $tap-timeout $hold-timeout i lmet)
-  a (tap-hold-release $tap-timeout $hold-timeout a lalt)
+  n (tap-hold $tap-timeout $hold-timeout n (layer-toggle nav))
+  e (tap-hold $tap-timeout $hold-timeout e rctl)
+  i (tap-hold $tap-timeout $hold-timeout i lmet)
+  a (tap-hold $tap-timeout $hold-timeout a lalt)
 
-  h (tap-hold-release $tap-timeout $hold-timeout h (layer-toggle nav))
-  ; (tap-hold-release $tap-timeout $hold-timeout ; rctl)
-  , (tap-hold-release $tap-timeout $hold-timeout , lmet)
-  . (tap-hold-release $tap-timeout $hold-timeout . lalt)
+  h (tap-hold $tap-timeout $hold-timeout h (layer-toggle nav))
+  ; (tap-hold $tap-timeout $hold-timeout ; rctl)
+  , (tap-hold $tap-timeout $hold-timeout , lmet)
+  . (tap-hold $tap-timeout $hold-timeout . lalt)
 
-  bsp (tap-hold-release $tap-timeout $hold-timeout bspc lsft)
+  bsp (tap-hold $tap-timeout $hold-timeout bspc lsft)
   tmd(tap-hold-press $tap-timeout $hold-timeout tab @med)
   exp (macro , ;)
 
-  spc (tap-hold-release $tap-timeout $hold-timeout spc lsft)
+  spc (tap-hold $tap-timeout $hold-timeout spc lsft)
   cpy C-c
   pst C-v
   cut C-x
