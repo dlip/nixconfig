@@ -7,7 +7,7 @@
     "${config.xdg.configHome}/networkmanager-dmenu".source = ./networkmanager-dmenu;
     "${config.xdg.configHome}/dlv/config.yml".source = ./delve.yaml;
     "${config.xdg.configHome}/warpd/config".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/files/warpd.yaml";
-    "${config.home.homeDirectory}/.xprofile".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/files/xprofile";
+    # "${config.home.homeDirectory}/.xprofile".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/files/xprofile";
 
     "${config.xdg.configHome}/feh/themes".text = ''
       feh --reverse --auto-rotate --fullscreen

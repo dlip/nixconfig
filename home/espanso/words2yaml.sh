@@ -1,1 +1,0 @@
-cat <(echo "matches:") <(cat newlist.txt | sd '(.*) (.*)' ' - trigger: "$2.,"\n   replace: "$1 "') > config/match/words.yml

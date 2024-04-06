@@ -6,7 +6,7 @@
   # services.dropbox.enable = true;
   imports = [
     ./alacritty
-    ./espanso
+    # ./espanso
     ./k9s
   ];
 
@@ -88,11 +88,9 @@
     texlive.combined.scheme-medium
     typioca
     php
-    pinentry
     # poetry
     postgresql
-    python3
-    # (python3.withPackages (ps: with ps; [evdev]))
+    (python3.withPackages (ps: with ps; [pyusb tkinter]))
     pwgen
     # python39Packages.grip
     # python39Packages.pip

@@ -20,7 +20,7 @@ in rec {
     ./hardware-configuration.nix
     (import ../common params)
     # ../common/desktop/kde.nix
-    ../common/desktop/i3.nix
+    ../common/desktop/hyprland.nix
     ../common/services/notify-problems.nix
   ];
 
@@ -49,7 +49,7 @@ in rec {
 
     script = ''
       if ! /run/wrappers/bin/mount | grep -q -wi "/media/backup"; then
-         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/sdf backup
+         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/disk/by-uuid/8c4746b9-7ccb-4a94-8e72-502ea6ff4a49 backup
          /run/wrappers/bin/mount /dev/mapper/backup /media/backup
       fi
     '';
@@ -208,6 +208,11 @@ in rec {
         {
           publicKey = "y1+RKIv+REkE/sSD1YEvSP/QQCZKeWKW+Qe9EE94oyU=";
           allowedIPs = ["10.100.0.6/32"];
+        }
+        # rmob
+        {
+          publicKey = "SjRIualgEpDnqE5ohIrYD+u7aeIz3zrVVwXHohenVmA=";
+          allowedIPs = ["10.100.0.7/32"];
         }
       ];
     };
@@ -443,19 +448,19 @@ in rec {
   #   after = ["postgresql.service"];
   # };
 
-  # sops.secrets.paperless-adminpass = {
-  #   owner = "paperless";
-  #   group = "paperless";
-  # };
+  sops.secrets.paperless-adminpass = {
+    owner = "paperless";
+    group = "paperless";
+  };
 
   # hanging on doCheck
-  # services.paperless = {
-  #   enable = true;
-  #   dataDir = "/var/lib/paperless";
-  #   mediaDir = "/media/media/paperless/media";
-  #   consumptionDir = "/media/media/paperless/consume";
-  #   passwordFile = config.sops.secrets.paperless-adminpass.path;
-  # };
+  services.paperless = {
+    enable = true;
+    dataDir = "/var/lib/paperless";
+    mediaDir = "/media/media/paperless/media";
+    consumptionDir = "/media/media/paperless/consume";
+    passwordFile = config.sops.secrets.paperless-adminpass.path;
+  };
 
   environment.etc.restic-ignore.text = ''
     .cache

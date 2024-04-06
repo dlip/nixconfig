@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.zsh = {
     enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     enableCompletion = true;
 
     history = {
@@ -44,9 +44,6 @@
       # Needed for go debugging
       export CGO_CFLAGS=-O
 
-      if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-        export TERM="xterm-256color"
-      fi
       source "${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
       source "${pkgs.repo-catppuccin-zsh-syntax-highlighting}/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh"
     '';

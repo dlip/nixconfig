@@ -13,6 +13,14 @@
       url = "github:LnL7/nix-darwin/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    hyprcursor-catppuccin = {
+      url = "github:NotAShelf/hyprcursor-catppuccin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     # nixpkgs-wayland = {
     #   url = "github:nix-community/nixpkgs-wayland";
     #   inputs.nixpkgs.follows = "nixpkgs";
@@ -20,6 +28,10 @@
     kmonad = {
       url = "github:kmonad/kmonad?dir=nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    kanata = {
+      url = "github:jtroo/kanata";
+      flake = false;
     };
     nix-on-droid = {
       url = "github:t184256/nix-on-droid/release-22.11";
@@ -70,6 +82,10 @@
       url = "github:LhKipp/nvim-nu";
       flake = false;
     };
+    vimplugin-wpm = {
+      url = "github:jcdickinson/wpm.nvim";
+      flake = false;
+    };
     repo-nnn = {
       url = "github:jarun/nnn";
       flake = false;
@@ -80,6 +96,18 @@
     };
     repo-catppuccin-zsh-syntax-highlighting = {
       url = "github:catppuccin/zsh-syntax-highlighting";
+      flake = false;
+    };
+    repo-awesome-wm-widgets = {
+      url = "github:streetturtle/awesome-wm-widgets";
+      flake = false;
+    };
+    repo-arc-icon-theme = {
+      url = "github:horst3180/arc-icon-theme";
+      flake = false;
+    };
+    repo-json-lua = {
+      url = "github:rxi/json.lua";
       flake = false;
     };
     nixvim = {
@@ -134,6 +162,17 @@
           home = {
             username = "dane";
             homeDirectory = "/home/dane";
+          };
+        }
+      ];
+      docker = [
+        nixvim.homeManagerModules.nixvim
+        ./home/default.nix
+        ./home/desktop.nix
+        {
+          home = {
+            username = "root";
+            homeDirectory = "/root";
           };
         }
       ];
@@ -194,17 +233,19 @@
           modules = [
             ./systems/metabox/configuration.nix
             kmonad.nixosModules.default
-            home-manager.nixosModules.home-manager
             sops-nix.nixosModules.default
+            home-manager.nixosModules.home-manager
             {
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "backup";
                 users = {
                   dane = {
-                    home.email = "dane.lipscombe@immutable.com.au";
                     imports = [
+                      nixvim.homeManagerModules.nixvim
                       ./home/linux-desktop.nix
+                      ./home/gamedev.nix
                       ./home/gaming.nix
                     ];
                   };

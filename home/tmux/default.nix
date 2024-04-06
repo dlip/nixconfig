@@ -16,6 +16,7 @@
     escapeTime = 0;
     extraConfig = ''
       set -ag terminal-overrides ",xterm-kitty:RGB"
+      set -as terminal-features ",xterm-kitty:clipboard"
       set-option -g status-position top
       set -g @catppuccin_flavour 'macchiato'
       set -g @catppuccin_window_default_text "#W"
@@ -82,6 +83,10 @@
       bind-key -T copy-mode-vi 'C-Up' select-pane -U
       bind-key -T copy-mode-vi 'C-Right' select-pane -R
       bind-key -T copy-mode-vi 'C-\' select-pane -l
+
+      # Don't jump to the end of the pane after selection
+      unbind-key -T copy-mode-vi MouseDragEnd1Pane
+      bind-key -T copy-mode-vi y send-keys -X copy-selection
 
       # Ensure path is maintained
       bind c new-window -c "#{pane_current_path}" -n ""

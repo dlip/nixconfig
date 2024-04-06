@@ -23,16 +23,13 @@ in {
   };
   xsession = {
     enable = true;
-    profileExtra = ''
-      export GOPATH=$HOME/go
-      export PATH=$HOME/code/nixconfig/bin:$HOME/.local/bin:$GOPATH/bin:$HOME/.cargo/bin:$PATH
-    '';
+    profileExtra = builtins.readFile ../files/xprofile;
 
     windowManager.awesome = {
       enable = true;
       luaModules = with pkgs.luaPackages; [
         luarocks # is the package manager for Lua modules
-        luadbi-mysql # Database abstraction layer
+        # luadbi-mysql # Database abstraction layer
       ];
     };
   };
@@ -58,6 +55,7 @@ in {
     brightnessctl
     notify-desktop
     i3lock-color
+    xorg.xkill
   ];
 
   services.screen-locker = {
@@ -88,13 +86,14 @@ in {
   services.clipmenu.enable = true;
   services.flameshot.enable = true;
   services.volnoti.enable = true;
+  services.poweralertd.enable = true;
   services.udiskie = {
     enable = true;
     tray = "always";
   };
 
   services.picom = {
-    enable = true;
+    enable = false;
     backend = "glx";
     vSync = true;
   };

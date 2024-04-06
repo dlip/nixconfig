@@ -1,7 +1,12 @@
-{ config, pkgs, lib, ... }:
 {
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   hardware.pulseaudio.enable = false;
   services.xserver = {
+    enable = true;
     displayManager = {
       lightdm.enable = true;
       defaultSession = "none+awesome";
@@ -12,5 +17,4 @@
 
     windowManager.awesome.enable = true;
   };
-
 }

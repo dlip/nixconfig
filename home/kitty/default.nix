@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   programs.kitty = {
     enable = true;
     settings = {
@@ -10,7 +9,6 @@
       bold_italic_font = "auto";
       enable_audio_bell = "no";
       background_opacity = "0.9";
-
 
       # Tokyo Night color scheme for kitty terminal emulator
       # https://github.com/davidmathers/tokyo-night-kitty-theme
@@ -81,6 +79,9 @@
       tab_bar_background = "#101014";
     };
 
+    keybindings = {
+      "ctrl+backspace" = "send_text all \\x17";
+    };
     # keybindings = {
     #   "kitty_mod+w" = "new_window_with_cwd";
     #   "kitty_mod+q" = "close_window";

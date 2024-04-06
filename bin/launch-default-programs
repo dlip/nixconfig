@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 sleep 2
-google-chrome-stable&
+google-chrome-stable &
 # kitty --class Work work&
-alacritty -e work&
-obsidian&
+wezterm -e work &
+obsidian &
 # slack&
 # teams&
-warpd&
+warpd &

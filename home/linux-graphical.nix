@@ -5,7 +5,9 @@
 }: {
   # services.dropbox.enable = true;
   imports = [
-    ./i3
+    ./hyprland
+    # ./awesome
+    # ./i3
     ./rofi
     ./talon
     ./graphical.nix
@@ -36,7 +38,9 @@
     remote-touchpad
     screenkey
     sidequest
-    super-slicer-latest
+    # orca-slicer
+    # super-slicer-latest
+    prusa-slicer
     tdesktop
     vlc
     warpd

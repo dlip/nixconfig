@@ -7,7 +7,8 @@
   homebrew = {
     enable = true;
     onActivation.cleanup = "uninstall";
-    casks = ["maccy" "clocker" "docker" "flameshot"];
+    taps = ["espanso/espanso"];
+    casks = ["maccy" "clocker" "docker" "flameshot" "espanso"];
     brews = ["switchaudio-osx"];
   };
 

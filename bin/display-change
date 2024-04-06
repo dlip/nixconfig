@@ -4,35 +4,26 @@ export DISPLAY=":0"
 export XAUTHORITY="/home/dane/.Xauthority"
 
 log() {
-    # return
-    echo "$1"
-    echo "$(date +"%T") $1" >> /var/log/display-change
+	# return
+	echo "$1"
+	echo "$(date +"%T") $1" >/var/log/display-change
 }
 
 log "dchange"
 export LID_STATE=$(awk '{print$NF}' /proc/acpi/button/lid/LID/state)
 log $LID_STATE
 if [[ $LID_STATE == "closed" ]]; then
-    log "lid closed"
-    xrandr --output eDP-1 --off
-    if xrandr | grep -q "HDMI-1-0 connected"; then
-        xrandr --output HDMI-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal
-    # else
-    #     xrandr --output HDMI-1-0 --off
-    fi
+	xrandr --output eDP-1 --off
+	if xrandr | grep -q "HDMI-1-0 connected"; then
+		xrandr --output HDMI-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+	fi
 else
-    log "lid open"
-    xrandr --output eDP-1 --off
-    if xrandr | grep -q "HDMI-1-0 connected"; then
-        log "hdmi connected"
-        xrandr --output eDP-1 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal
-    else
-        log "hdmi not connected"
-        # xrandr --output eDP-1 --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI-1-0 --same-as eDP-1 
-        # xrandr --output eDP-1 --primary --mode 1920x1200 --pos 0x0 --rotate normal --output HDMI-1-0 --mode 1920x1080 --pos 0x0 --rotate normal
-        
-        # xrandr --output HDMI-1-0 --off
-        xrandr --output eDP-1 --mode 1920x1200 --pos 0x0 --rotate normal --primary
-    fi
+	xrandr --output eDP-1 --off
+	if xrandr | grep -q "HDMI-1-0 connected"; then
+		log "hdmi connected"
+		xrandr --output eDP-1 --mode 1920x1200 --pos 1920x0 --rotate normal --output HDMI-1-0 --primary --mode 1920x1080 --pos 0x0 --rotate normal
+	else
+		log "hdmi not connected"
+		xrandr --output eDP-1 --mode 1920x1200 --pos 0x0 --rotate normal --primary
+	fi
 fi
-

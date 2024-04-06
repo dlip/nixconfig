@@ -1,0 +1,13 @@
+---
+version: "3.9"
+
+services:
+  nix:
+    build: .
+    container_name: nix
+    volumes:
+      - ~/code:/root/code
+    working_dir: /root/code
+    restart: always
+    command: sleep infinity
+

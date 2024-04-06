@@ -1,0 +1,129 @@
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+)
+
+(defvar
+  tap-timeout 0
+  hold-timeout 200
+)
+
+(defsrc
+  esc  f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12
+  grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt muhenkan  spc  henkan ralt prtsc katakanahiragana rctl cmp
+)
+
+
+(defalias
+  rpt rpt-any
+  bse (layer-switch base)
+  sym (layer-toggle sym)
+  num (layer-toggle num)
+  med (layer-toggle media)
+  gam (layer-switch gaming)
+  dis (layer-switch disable)
+
+  c (tap-hold $tap-timeout $hold-timeout c lsft)
+  i (tap-hold $tap-timeout $hold-timeout i lalt)
+  e (tap-hold $tap-timeout $hold-timeout e lmet)
+  a (tap-hold $tap-timeout $hold-timeout a lctl)
+  
+  h (tap-hold $tap-timeout $hold-timeout h rctl)
+  t (tap-hold $tap-timeout $hold-timeout t rmet)
+  s (tap-hold $tap-timeout $hold-timeout s lalt)
+  n (tap-hold $tap-timeout $hold-timeout n lsft)
+
+
+  udo (tap-hold $tap-timeout $hold-timeout C-z lsft)
+  cut (tap-hold $tap-timeout $hold-timeout C-x lsft)
+  cpy (tap-hold $tap-timeout $hold-timeout C-c lsft)
+  pst (tap-hold $tap-timeout $hold-timeout C-v lsft)
+
+  ' (tap-hold $tap-timeout $hold-timeout ' rctl)
+  , (tap-hold $tap-timeout $hold-timeout , rmet)
+  . (tap-hold $tap-timeout $hold-timeout . lalt)
+  ; (tap-hold $tap-timeout $hold-timeout ; rsft)
+
+
+  dot (tap-hold $tap-timeout $hold-timeout . lsft)
+  lft (tap-hold $tap-timeout $hold-timeout left lalt)
+  dwn (tap-hold $tap-timeout $hold-timeout down lmet)
+  rgt (tap-hold $tap-timeout $hold-timeout rght lctl)
+
+  4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
+  5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
+  6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
+  0 (tap-hold $tap-timeout $hold-timeout 0 rsft)
+
+
+  alt1 (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle sym))
+  alt2 (tap-hold $tap-timeout $hold-timeout spc (layer-toggle num))
+  sft (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
+  cbo C-bspc
+)
+
+(deflayer base
+  _    _    _     _      _     _    _    _    _    _    _    _    _
+  _    _    _     _      _     _    _    _    _    _    _    _    _    @dis
+  b    y    o     u      XX    XX   XX   XX   l    d    w    v    _    _
+  @c   @i   @e    @a     XX    XX   XX   XX   @h   @t   @s   @n   _
+  g    x    j     k      XX    XX   XX   XX   r    m    f    p
+  _    lrld @alt1 @alt1  @alt2           @sft @sft @cbo @cbo @rpt bspc
+)
+
+(deflayer sym
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  `    esc  del  ret  _    _    _    _    z    -    =    \    _    _
+  @udo @cut @cpy @pst _    _    _    _    '    ,    .    ;    _
+  prnt mmid mrgt mlft _    _    _    _    q    [    ]    /
+  _    _    _    _         @med           _    _    _    _    _    _
+)
+
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  S-8  esc  up   ret  _    _    _    _    7    8    9    S-6  _    _
+  @dot @lft @dwn @rgt _    _    _    _    @4   @5   @6   @0   _
+  /   -     =    +    _    _    _    _    1    2    3    S-5
+  _    _    @med @med      -              _    _    _    _    _    _
+)
+
+(deflayer media
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  XX   vold pgup volu XX  XX   XX   XX    f7   f8   f9   f11  _    _
+  brup home pgdn end  XX  XX   XX   XX    f4   f5   f6   f10  _
+  brdn prev pp   next XX  XX   XX   XX    f1   f2   f3   f12
+  _    _    _    _        _         _    _    _    _    _    _
+)
+
+(deflayer disable
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    @bse
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX    XX
+  XX    XX    XX    XX         XX         XX    XX    XX    XX    XX    XX
+)
+
+(deflayer gaming
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  tab  q    w    e    r    t    _    _    _    up   _    _    _    _
+  lsft a    s    d    f    g    _    @bse lft  down rght _    _
+  lctl z    x    c    v    b    _    _    _    _    _    _
+  _    lalt esc  _         spc       _    _    _    _    _    _
+)
+
+(deflayer empty
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _         _         _    _    _    _    _    _
+)

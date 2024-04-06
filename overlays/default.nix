@@ -5,6 +5,7 @@ inputs @ {
   envy-sh,
   emoji-menu,
   power-menu,
+  kanata,
   keyd,
   helix,
   sops-nix,
@@ -14,6 +15,8 @@ inputs @ {
   # vscodeNodeDebug2,
   nixvim,
   # nixpkgs-wayland,
+  hyprland,
+  hyprcursor-catppuccin,
   ...
 }: [
   kmonad.overlays.default
@@ -32,10 +35,13 @@ inputs @ {
     envy-sh = envy-sh.defaultPackage.${final.system};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
     # myEspanso = final.callPackage ./espanso {};
+    hyprland = hyprland.packages.${final.system}.hyprland;
+    hyprcursor-catppuccin = hyprcursor-catppuccin.packages.${final.system}.hyprcursor-catppuccin;
     power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
     nnn = prev.nnn.overrideAttrs (oldAttrs: {
       makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];
     });
+    kanata = final.callPackage ./kanata {src = kanata;};
     # helix = helix.packages.${final.system}.default;
     keyd = prev.keyd.overrideAttrs (oldAttrs: {
       src = keyd;

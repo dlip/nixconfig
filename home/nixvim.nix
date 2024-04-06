@@ -18,7 +18,7 @@
       };
     };
     clipboard.register = "unnamedplus"; # Use system clipboard
-    options = {
+    opts = {
       relativenumber = true; # Relative line numbers
       number = true; # Show current line number
       backup = false; # don't create backups
@@ -36,12 +36,16 @@
       tabstop = 2; # 1 tab == 2 spaces
       smartindent = true; # autoindent new lines
       wrap = false; # Disable line wrapping
-      scrolloff = 5; # keep cursor away from top/bottom edge of the screen
+      scrolloff = 10; # keep cursor away from top/bottom edge of the screen
+      sidescrolloff = 20; # keep cursor away from right edge of the screen
       foldlevel = 99; # unfold everything by default
       cursorline = true; # highlight current line
       lazyredraw = true; # faster scrolling
       list = true; # show hidden characters
       exrc = true; # Loads project specific settings from .exrc, .nvimrc and .nvim.lua files
+      hidden = true; # enable background buffers
+      history = 100; # remember n lines in history
+      synmaxcol = 240; # max column for syntax highlight
       # what hidden characters to show
       listchars = {
         trail = "•"; # trailing space
@@ -69,13 +73,18 @@
       }
     ];
     files = {
+      "ftplugin/tsv.lua" = {
+        opts = {
+          expandtab = false;
+        };
+      };
       "ftplugin/go.lua" = {
-        options = {
+        opts = {
           expandtab = false;
         };
       };
       "ftplugin/markdown.lua" = {
-        options = {
+        opts = {
           wrap = true;
         };
       };
@@ -165,6 +174,24 @@
       }
       {
         mode = "n";
+        key = "<leader>b";
+        action = "<cmd>Telescope buffers sort_last_used=true ignore_current_buffer=true<CR>";
+        options = {
+          desc = "Frequently Used Files";
+          silent = true;
+        };
+      }
+      {
+        mode = "x";
+        key = "<leader>f";
+        action = "<cmd>Telescope grep_string<CR>";
+        options = {
+          desc = "Grep selection";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>u";
         action = "<cmd>Telescope frecency default_text=:CWD:<CR>";
         options = {
@@ -177,7 +204,16 @@
         key = "<leader>y";
         action = "<cmd>let @+=expand('%').':'.line('.')<CR>";
         options = {
-          desc = "Yank filename";
+          desc = "Yank relative filename with line";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>Y";
+        action = "<cmd>let @+=expand('%:p')<CR>";
+        options = {
+          desc = "Yank absolute filename";
           silent = true;
         };
       }
@@ -306,6 +342,15 @@
           silent = true;
         };
       }
+      {
+        mode = "n";
+        key = "<leader>l";
+        action = "<cmd>LazyGit<CR>";
+        options = {
+          desc = "LazyGit";
+          silent = true;
+        };
+      }
       # debug
       {
         mode = "n";
@@ -418,6 +463,25 @@
       }
     ];
     extraConfigLua = ''
+      vim.api.nvim_create_user_command("Typing",
+        function()
+          require('cmp').setup.buffer { enabled = false }
+          require('nvim-autopairs').setup({
+            disable_filetype = { "text" },
+          })
+          local wpm = require("wpm")
+          wpm.setup({})
+          require('lualine').setup {
+            sections = {
+              lualine_y = {wpm.wpm, wpm.historic_graph, 'progress'},
+            },
+          }
+          vim.opt_local.sidescrolloff=500
+          vim.fn.search("^$")
+          print("Typing mode")
+        end,
+        {}
+      )
       local dap, dapui = require("dap"), require("dapui")
       require('dap.ext.vscode').load_launchjs()
       dap.listeners.after.event_initialized["dapui_config"] = function()
@@ -495,10 +559,6 @@
           "<leader>'" = {
             action = "resume";
             desc = "Resume Telescope";
-          };
-          "<leader>b" = {
-            action = "buffers";
-            desc = "Find Buffers";
           };
           "<leader>d" = {
             action = "diagnostics";
@@ -620,7 +680,9 @@
       leap.enable = true;
       indent-blankline = {
         enable = true;
-        scope.enabled = false;
+        settings = {
+          scope.enabled = false;
+        };
       };
 
       treesitter = {
@@ -643,13 +705,13 @@
           formatting = {
             alejandra.enable = true;
             black.enable = true;
-            eslint.enable = true;
+            # eslint.enable = true;
             gofmt.enable = true;
             shfmt.enable = true;
             stylua.enable = true;
-            jq.enable = true;
+            # jq.enable = true;
             markdownlint.enable = true;
-            rustfmt.enable = true;
+            # rustfmt.enable = true;
           };
         };
       };
@@ -657,9 +719,11 @@
       gitlinker.enable = true;
       neogit = {
         enable = true;
-        autoRefresh = true;
+        settings = {
+          auto_refresh = true;
+        };
       };
-      comment-nvim.enable = true;
+      comment.enable = true;
       nvim-tree = {
         enable = true;
         updateFocusedFile = {
@@ -696,22 +760,22 @@
         fromVscode = [{paths = "${pkgs.vimPlugins.friendly-snippets}";}];
       };
       lspkind.enable = true;
-      nvim-cmp = {
+      cmp = {
         enable = true;
-        snippet.expand = "luasnip";
-        sources = [
-          {name = "path";}
-          {name = "nvim_lsp";}
-          {name = "luasnip";}
-          {
-            name = "buffer";
-            # Words from other open buffers can also be suggested.
-            option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
-          }
-        ];
-        mapping = {
-          "<Esc>" = {
-            action = ''
+        settings = {
+          snippet.expand = "luasnip";
+          sources = [
+            {name = "path";}
+            {name = "nvim_lsp";}
+            {name = "luasnip";}
+            {
+              name = "buffer";
+              # Words from other open buffers can also be suggested.
+              option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
+            }
+          ];
+          mapping = {
+            "<Esc>" = ''
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.visible() then
@@ -727,13 +791,7 @@
                 end
               end
             '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<Up>" = {
-            action = ''
+            "<Up>" = ''
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.get_selected_entry() then
@@ -751,13 +809,7 @@
                 end
               end
             '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<Down>" = {
-            action = ''
+            "<Down>" = ''
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.get_selected_entry() then
@@ -777,13 +829,8 @@
                 end
               end
             '';
-            modes = [
-              "i"
-              "s"
-            ];
-          };
-          "<CR>" = {
-            action = ''
+
+            "<CR>" = ''
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.get_selected_entry() then
@@ -803,13 +850,10 @@
                 end
               end
             '';
-            modes = [
-              "i"
-              "s"
-            ];
+
+            "<Tab>" = "cmp.mapping.select_next_item()";
+            "<S-Tab>" = "cmp.mapping.select_prev_item()";
           };
-          "<Tab>" = "cmp.mapping.select_next_item()";
-          "<S-Tab>" = "cmp.mapping.select_prev_item()";
         };
       };
       dap = {
@@ -821,10 +865,12 @@
       };
     };
     extraPlugins = with pkgs.vimPlugins; [
-      vim-fetch
-      telescope-gitsigns
-      one-small-step-for-vimkind
+      lazygit-nvim
       nu
+      one-small-step-for-vimkind
+      telescope-gitsigns
+      vim-fetch
+      wpm
     ];
   };
 }
