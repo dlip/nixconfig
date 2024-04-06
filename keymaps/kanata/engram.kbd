@@ -20,7 +20,7 @@
 (defalias
   rpt rpt-any
   bse (layer-switch base)
-  sym (layer-toggle sym)
+  nav (layer-toggle nav)
   num (layer-toggle num)
   med (layer-toggle media)
   gam (layer-switch gaming)
@@ -37,6 +37,7 @@
   n (tap-hold $tap-timeout $hold-timeout n lsft)
 
 
+  all (tap-hold $tap-timeout $hold-timeout C-a lsft)
   udo (tap-hold $tap-timeout $hold-timeout C-z lsft)
   cut (tap-hold $tap-timeout $hold-timeout C-x lsft)
   cpy (tap-hold $tap-timeout $hold-timeout C-c lsft)
@@ -59,8 +60,8 @@
   0 (tap-hold $tap-timeout $hold-timeout 0 rsft)
 
 
-  alt1 (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle sym))
-  alt2 (tap-hold $tap-timeout $hold-timeout spc (layer-toggle num))
+  alt1 (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle nav))
+  alt2 (tap-hold-release $tap-timeout $hold-timeout spc (layer-toggle num))
   sft (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
   cbo C-bspc
 )
@@ -75,20 +76,20 @@
 )
 
 (deflayer nav
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  XX   esc  del  ret  _    _    _    _    home up   end  pgup   _    _
-  @udo @cut @cpy @pst _    _    _    _    left down right pgdn  _
-  prnt mmid mrgt mlft _    _    _    _    XX   XX   XX    XX
-  _    _    _    _         @med           _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _     _    _
+  _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  prnt mmid mrgt mlft _    _    _    _    home up   end   XX   _    _
+  @all del  esc  ret  _    _    _    _    left down right rsft _
+  @udo @cut @cpy @pst _    _    _    _    pgdn pgup XX    XX
+  _    _    _    _         @med           _    _    _     _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  q    `    -    =    _    _    _    _    7    8    9    \    _    _
+  `    -    =    q    _    _    _    _    7    8    9    \    _    _
   ;    '    ,    .    _    _    _    _    @4   @5   @6   @0   _
-  z    ?    [    ]    _    _    _    _    1    2    3    /
+  XX   [    ]    z    _    _    _    _    1    2    3    /
   _    _    @med @med      -              _    _    _    _    _    _
 )
 
@@ -96,7 +97,7 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   XX   XX   vold volu XX  XX   XX   XX    f7   f8   f9   f11  _    _
-  brdn prev pp   next XX  XX   XX   XX    f1   f2   f3   f12
+  brdn prev pp   next XX  XX   XX   XX    f1   f2   f3   f12  -
   XX   XX   XX   XX   XX  XX   XX   XX    f1   f2   f3   f12
   _    _    _    _        _         _    _    _    _    _    _
 )
