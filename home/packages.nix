@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    cargo
     bat
     bc
     delta
@@ -27,6 +28,7 @@
     ripgrep
     # ripgrep-all
     gnused
+    iputils
     openssh
     speedread
     sops
