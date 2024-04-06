@@ -36,6 +36,19 @@
   s (tap-hold $tap-timeout $hold-timeout s lalt)
   n (tap-hold $tap-timeout $hold-timeout n lsft)
 
+
+  udo (tap-hold $tap-timeout $hold-timeout C-z lsft)
+  cut (tap-hold $tap-timeout $hold-timeout C-x lsft)
+  cpy (tap-hold $tap-timeout $hold-timeout C-c lsft)
+  pst (tap-hold $tap-timeout $hold-timeout C-v lsft)
+
+  ' (tap-hold $tap-timeout $hold-timeout ' rctl)
+  , (tap-hold $tap-timeout $hold-timeout , rmet)
+  . (tap-hold $tap-timeout $hold-timeout . lalt)
+  ; (tap-hold $tap-timeout $hold-timeout ; rsft)
+
+
+  dot (tap-hold $tap-timeout $hold-timeout . lsft)
   lft (tap-hold $tap-timeout $hold-timeout left lalt)
   dwn (tap-hold $tap-timeout $hold-timeout down lmet)
   rgt (tap-hold $tap-timeout $hold-timeout rght lctl)
@@ -43,23 +56,13 @@
   4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
   5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
   6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
-  0 (tap-hold $tap-timeout $hold-timeout 0 @med)
+  0 (tap-hold $tap-timeout $hold-timeout 0 rsft)
 
-  del (tap-hold $tap-timeout $hold-timeout del lalt)
-  ret (tap-hold $tap-timeout $hold-timeout ret lctl)
-  esr (tap-hold $tap-timeout $hold-timeout esc @med)
 
   alt1 (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle sym))
   alt2 (tap-hold $tap-timeout $hold-timeout spc (layer-toggle num))
   sft (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
-
   cbo C-bspc
-  cpy C-c
-  pst C-v
-  cut C-x
-  udo C-z
-  all C-a
-
 )
 
 (deflayer base
@@ -74,28 +77,19 @@
 (deflayer sym
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    esc  del  ret  _    _    _    _    z    -    =    /    _    _
-  @udo @cut @cpy @pst _    _    _    _    ,    .    '    ;    _
-  prnt mmid mrgt mlft _    _    _    _    q    [    ]    \
-  _    _    _    _         _              _    _    _    _    _    _
+  `    esc  del  ret  _    _    _    _    z    -    =    \    _    _
+  @udo @cut @cpy @pst _    _    _    _    '    ,    .    ;    _
+  prnt mmid mrgt mlft _    _    _    _    q    [    ]    /
+  _    _    _    _         @med           _    _    _    _    _    _
 )
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   S-8  esc  up   ret  _    _    _    _    7    8    9    S-6  _    _
-  .    @lft @dwn @rgt _    _    _    _    @4   @5   @6   0    _
+  @dot @lft @dwn @rgt _    _    _    _    @4   @5   @6   @0   _
   /   -     =    +    _    _    _    _    1    2    3    S-5
   _    _    @med @med      -              _    _    _    _    _    _
-)
-
-(deflayer nav2
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    esc  pgup ret  _    _    _    _    7    8    9    \    _    _
-  del home  pgdn end  _    _    _    _    ,    .    '    S-'  _
-  [   ]     -    =    _    _    _    _    1    2    3    .
-  _    _    _    _         _              _    _    _    _    _    _
 )
 
 (deflayer media
