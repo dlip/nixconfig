@@ -482,50 +482,50 @@
         end,
         {}
       )
-      local dap, dapui = require("dap"), require("dapui")
-      require('dap.ext.vscode').load_launchjs()
-      dap.listeners.after.event_initialized["dapui_config"] = function()
-        dapui.open()
-      end
-      dap.listeners.before.event_terminated["dapui_config"] = function()
-        dapui.close()
-      end
-      dap.listeners.before.event_exited["dapui_config"] = function()
-        dapui.close()
-      end
+      -- local dap, dapui = require("dap"), require("dapui")
+      -- require('dap.ext.vscode').load_launchjs()
+      -- dap.listeners.after.event_initialized["dapui_config"] = function()
+      --   dapui.open()
+      -- end
+      -- dap.listeners.before.event_terminated["dapui_config"] = function()
+      --   dapui.close()
+      -- end
+      -- dap.listeners.before.event_exited["dapui_config"] = function()
+      --   dapui.close()
+      -- end
 
-      dap.configurations.lua = {
-        {
-          type = "nlua",
-          request = "attach",
-          name = "Run this file",
-          start_neovim = {},
-        },
+      -- dap.configurations.lua = {
+      --   {
+      --     type = "nlua",
+      --     request = "attach",
+      --     name = "Run this file",
+      --     start_neovim = {},
+      --   },
         -- {
         --   type = "nlua",
         --   request = "attach",
         --   name = "Attach to running Neovim instance (port = 8086)",
         --   port = 8086,
         -- },
-      }
+      -- }
 
-      dap.adapters.nlua = function(callback, conf)
-        local adapter = {
-          type = "server",
-          host = conf.host or "127.0.0.1",
-          port = conf.port or 8086,
-        }
-        if conf.start_neovim then
-          local dap_run = dap.run
-          dap.run = function(c)
-            adapter.port = c.port
-            adapter.host = c.host
-          end
-          require("osv").run_this()
-          dap.run = dap_run
-        end
-        callback(adapter)
-      end
+      -- dap.adapters.nlua = function(callback, conf)
+      --   local adapter = {
+      --     type = "server",
+      --     host = conf.host or "127.0.0.1",
+      --     port = conf.port or 8086,
+      --   }
+      --   if conf.start_neovim then
+      --     local dap_run = dap.run
+      --     dap.run = function(c)
+      --       adapter.port = c.port
+      --       adapter.host = c.host
+      --     end
+      --     require("osv").run_this()
+      --     dap.run = dap_run
+      --   end
+      --   callback(adapter)
+      -- end
 
       require'nu'.setup{}
       require'lspconfig'.nushell.setup{}
@@ -856,13 +856,13 @@
           };
         };
       };
-      dap = {
-        enable = true;
-        extensions = {
-          dap-ui.enable = true;
-          dap-python.enable = true;
-        };
-      };
+      # dap = {
+      #   enable = true;
+      #   extensions = {
+      #     dap-ui.enable = true;
+      #     dap-python.enable = true;
+      #   };
+      # };
     };
     extraPlugins = with pkgs.vimPlugins; [
       lazygit-nvim
