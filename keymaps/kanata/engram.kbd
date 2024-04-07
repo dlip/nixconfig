@@ -53,9 +53,9 @@
 
 
   ; (tap-hold $tap-timeout $hold-timeout ; lsft)
+  , (tap-hold $tap-timeout $hold-timeout , lalt)
+  . (tap-hold $tap-timeout $hold-timeout . lmet)
   ' (tap-hold $tap-timeout $hold-timeout ' lalt)
-  , (tap-hold $tap-timeout $hold-timeout , lmet)
-  . (tap-hold $tap-timeout $hold-timeout . lctl)
 
   4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
   5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
@@ -73,8 +73,8 @@
   f6 (tap-hold $tap-timeout $hold-timeout f6 lalt)
   f10 (tap-hold $tap-timeout $hold-timeout f10 rsft)
 
-  alt1 (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle nav))
-  alt2 (tap-hold-release $tap-timeout $hold-timeout spc (layer-toggle num))
+  alt1 (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle num))
+  alt2 (tap-hold $tap-timeout $hold-timeout spc (layer-toggle nav))
   sft (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
   cbo C-bspc
 )
@@ -88,22 +88,22 @@
   _    lrld @alt1 @alt1  @alt2           @sft @sft @cbo @cbo @rpt bspc
 )
 
+(deflayer num
+  _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  `    -    =    q    _    _    _    _    7    8    9    \    _    _
+  @;   @,   @.   @'   _    _    _    _    @4   @5   @6   @0   _
+  XX   [    ]    z    _    _    _    _    1    2    3    /
+  _    _    _    _    @fun           _    _    _    _    _    _
+)
+
 (deflayer nav
   _    _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
   prnt mmid mlft mrgt _    _    _    _    home up   end   XX   _    _
   @all @del @esc @ret _    _    _    _    @lft @dwn @rgt  rsft _
   @udo @cut @cpy @pst _    _    _    _    pgdn pgup XX    XX
-  _    _    _    _         @fun           _    _    _     _    _    _
-)
-
-(deflayer num
-  _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    -    =    q    _    _    _    _    7    8    9    \    _    _
-  @;   @'   @,   @.   _    _    _    _    @4   @5   @6   @0   _
-  XX   [    ]    z    _    _    _    _    1    2    3    /
-  _    _    @fun @fun      -              _    _    _    _    _    _
+  _    _    @fun @fun      -              _    _    _     _    _    _
 )
 
 (deflayer fun
