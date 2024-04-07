@@ -22,7 +22,7 @@
   bse (layer-switch base)
   nav (layer-toggle nav)
   num (layer-toggle num)
-  med (layer-toggle media)
+  fun (layer-toggle fun)
   gam (layer-switch gaming)
   dis (layer-switch disable)
 
@@ -37,28 +37,41 @@
   n (tap-hold $tap-timeout $hold-timeout n lsft)
 
 
-  all (tap-hold $tap-timeout $hold-timeout C-a lsft)
-  udo (tap-hold $tap-timeout $hold-timeout C-z lsft)
-  cut (tap-hold $tap-timeout $hold-timeout C-x lsft)
-  cpy (tap-hold $tap-timeout $hold-timeout C-c lsft)
-  pst (tap-hold $tap-timeout $hold-timeout C-v lsft)
-
-  ' (tap-hold $tap-timeout $hold-timeout ' rctl)
-  , (tap-hold $tap-timeout $hold-timeout , rmet)
-  . (tap-hold $tap-timeout $hold-timeout . lalt)
-  ; (tap-hold $tap-timeout $hold-timeout ; rsft)
-
-
-  dot (tap-hold $tap-timeout $hold-timeout . lsft)
-  lft (tap-hold $tap-timeout $hold-timeout left lalt)
-  dwn (tap-hold $tap-timeout $hold-timeout down lmet)
-  rgt (tap-hold $tap-timeout $hold-timeout rght lctl)
+  ; (tap-hold $tap-timeout $hold-timeout ; lsft)
+  ' (tap-hold $tap-timeout $hold-timeout ' lalt)
+  , (tap-hold $tap-timeout $hold-timeout , lmet)
+  . (tap-hold $tap-timeout $hold-timeout . lctl)
 
   4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
   5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
   6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
   0 (tap-hold $tap-timeout $hold-timeout 0 rsft)
 
+
+  all (tap-hold $tap-timeout $hold-timeout C-a lsft)
+  del (tap-hold $tap-timeout $hold-timeout del lalt)
+  esc (tap-hold $tap-timeout $hold-timeout esc lmet)
+  ret (tap-hold $tap-timeout $hold-timeout ret lctl)
+
+  lft (tap-hold $tap-timeout $hold-timeout left lctl)
+  dwn (tap-hold $tap-timeout $hold-timeout down lmet)
+  rgt (tap-hold $tap-timeout $hold-timeout rght lalt)
+
+  udo C-z
+  cut C-x
+  cpy C-c
+  pst C-v
+
+
+  mut (tap-hold $tap-timeout $hold-timeout mute lsft)
+  prv (tap-hold $tap-timeout $hold-timeout prev lalt)
+  pp (tap-hold $tap-timeout $hold-timeout pp lmet)
+  nxt (tap-hold $tap-timeout $hold-timeout next lctl)
+
+  f4 (tap-hold $tap-timeout $hold-timeout f4 rctl)
+  f5 (tap-hold $tap-timeout $hold-timeout f5 rmet)
+  f6 (tap-hold $tap-timeout $hold-timeout f6 lalt)
+  f10 (tap-hold $tap-timeout $hold-timeout f10 rsft)
 
   alt1 (tap-hold-press $tap-timeout $hold-timeout tab (layer-toggle nav))
   alt2 (tap-hold-release $tap-timeout $hold-timeout spc (layer-toggle num))
@@ -75,30 +88,31 @@
   _    lrld @alt1 @alt1  @alt2           @sft @sft @cbo @cbo @rpt bspc
 )
 
-(deflayer nav
-  _    _    _    _    _    _    _    _    _    _    _     _    _
-  _    _    _    _    _    _    _    _    _    _    _     _    _    _
-  prnt mmid mrgt mlft _    _    _    _    home up   end   XX   _    _
-  @all del  esc  ret  _    _    _    _    left down right rsft _
-  @udo @cut @cpy @pst _    _    _    _    pgdn pgup XX    XX
-  _    _    _    _         @med           _    _    _     _    _    _
-)
 
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   `    -    =    q    _    _    _    _    7    8    9    \    _    _
-  ;    '    ,    .    _    _    _    _    @4   @5   @6   @0   _
+  @;   @'   @,   @.   _    _    _    _    @4   @5   @6   @0   _
   XX   [    ]    z    _    _    _    _    1    2    3    /
-  _    _    @med @med      -              _    _    _    _    _    _
+  _    _    @fun @fun      -              _    _    _    _    _    _
 )
 
-(deflayer media
+(deflayer nav
+  _    _    _    _    _    _    _    _    _    _    _     _    _
+  _    _    _    _    _    _    _    _    _    _    _     _    _    _
+  prnt mmid mrgt mlft _    _    _    _    home up   end   XX   _    _
+  @all @del @esc @ret _    _    _    _    @lft @dwn @rgt  rsft _
+  @udo @cut @cpy @pst _    _    _    _    pgdn pgup XX    XX
+  _    _    _    _         @fun           _    _    _     _    _    _
+)
+
+(deflayer fun
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   XX   XX   vold volu XX  XX   XX   XX    f7   f8   f9   f11  _    _
-  brdn prev pp   next XX  XX   XX   XX    f1   f2   f3   f12  -
-  XX   XX   XX   XX   XX  XX   XX   XX    f1   f2   f3   f12
+  @mut @prv @pp  @nxt XX  XX   XX   XX    @f4  @f5  @f6  @f10 -
+  XX   XX   brdn brup XX  XX   XX   XX    f1   f2   f3   f12
   _    _    _    _        _         _    _    _    _    _    _
 )
 
