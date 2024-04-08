@@ -4,7 +4,7 @@
 
 (defvar
   tap-timeout 0
-  hold-timeout 200
+  hold-timeout 180
 )
 
 (defsrc
@@ -20,8 +20,8 @@
 (defalias
   rpt rpt-any
   bse (layer-switch base)
-  nav (layer-toggle nav)
   num (layer-toggle num)
+  nav (layer-toggle nav)
   fun (layer-toggle fun)
   gam (layer-switch gaming)
   dis (layer-switch disable)
@@ -30,11 +30,22 @@
   i (tap-hold $tap-timeout $hold-timeout i lalt)
   e (tap-hold $tap-timeout $hold-timeout e lmet)
   a (tap-hold $tap-timeout $hold-timeout a lctl)
-  
+
   h (tap-hold $tap-timeout $hold-timeout h rctl)
   t (tap-hold $tap-timeout $hold-timeout t rmet)
   s (tap-hold $tap-timeout $hold-timeout s lalt)
   n (tap-hold $tap-timeout $hold-timeout n lsft)
+
+
+  q (tap-hold $tap-timeout $hold-timeout q lsft)
+  ' (tap-hold $tap-timeout $hold-timeout ' lalt)
+  , (tap-hold $tap-timeout $hold-timeout , lmet)
+  . (tap-hold $tap-timeout $hold-timeout . lalt)
+
+  4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
+  5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
+  6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
+  0 (tap-hold $tap-timeout $hold-timeout 0 rsft)
 
 
   all (tap-hold $tap-timeout $hold-timeout C-a lsft)
@@ -50,18 +61,6 @@
   cut C-x
   cpy C-c
   pst C-v
-
-
-  ; (tap-hold $tap-timeout $hold-timeout ; lsft)
-  , (tap-hold $tap-timeout $hold-timeout , lalt)
-  . (tap-hold $tap-timeout $hold-timeout . lmet)
-  ' (tap-hold $tap-timeout $hold-timeout ' lalt)
-
-  4 (tap-hold $tap-timeout $hold-timeout 4 rctl)
-  5 (tap-hold $tap-timeout $hold-timeout 5 rmet)
-  6 (tap-hold $tap-timeout $hold-timeout 6 lalt)
-  0 (tap-hold $tap-timeout $hold-timeout 0 rsft)
-
 
   mut (tap-hold $tap-timeout $hold-timeout mute lsft)
   prv (tap-hold $tap-timeout $hold-timeout prev lalt)
@@ -91,9 +90,9 @@
 (deflayer num
   _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  `    -    =    q    _    _    _    _    7    8    9    \    _    _
-  @;   @,   @.   @'   _    _    _    _    @4   @5   @6   @0   _
-  XX   [    ]    z    _    _    _    _    1    2    3    /
+  `    ;    -    =    _    _    _    _    7    8    9    \    _    _
+  @q   @'   @,   @.   _    _    _    _    @4   @5   @6   @0   _
+  z    XX   [    ]    _    _    _    _    1    2    3    /
   _    _    _    _    @fun           _    _    _    _    _    _
 )
 
