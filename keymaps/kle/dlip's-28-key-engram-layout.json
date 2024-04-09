@@ -1,0 +1,93 @@
+[
+  {
+    "name": "dlip's 28 Key Engram Layout"
+  },
+  [
+    {
+      "t": "#000000\n\n#ff0000\n#0000ff\n\n\n\n#008000",
+      "fa": [
+        0,
+        0,
+        2,
+        2,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    "B\n\n` ~\nPrint\n\n\n\nReset",
+    "Y\n\n; :\nMse 3",
+    "O\n\n- _\nMse 1\n\n\n\nVol -",
+    "U\n\n= +\nMse 2\n\n\n\nVol +",
+    {
+      "x": 1
+    },
+    "L\n\n7 &\nHome\n\n\n\nF7",
+    "D\n\n8 *\n↑\n\n\n\nF8",
+    "W\n\n9 (\nEnd\n\n\n\nF9",
+    "V\n\n\\ |\nPgUp\n\n\n\nF11"
+  ],
+  [
+    {
+      "t": "#000000\n\n#ff0000\n#0000ff\n \n\n\n#008000",
+      "a": 0
+    },
+    "C\n\nQ\nAll\nShift\n\n\nMute",
+    "I\n\n' \"\nDel\nAlt\n\n\nPrev",
+    "E\n\n, <\nEsc\nSuper\n\n\nPlay",
+    "A\n\n. >\nEnter\nCtrl\n\n\nNext",
+    {
+      "x": 1
+    },
+    "H\n\n4 $\n←\nCtrl\n\n\nF4",
+    "T\n\n5 %\n↓\nSuper\n\n\nF5",
+    "S\n\n6 ^\n→\nAlt\n\n\nF6",
+    "N\n\n0 )\nPgDn\nShift\n\n\nF10"
+  ],
+  [
+    {
+      "t": "#000000\n\n#ff0000\n#0000ff\n\n\n\n#008000",
+      "a": 4
+    },
+    "G\n\nZ\nUndo",
+    "X\n\n\nCut",
+    "J\n\n[ {\nCopy\n\n\n\nBri -",
+    "K\n\n] }\nPaste\n\n\n\nBri +",
+    {
+      "x": 1
+    },
+    "R\n\n1 !\n\n\n\n\nF1",
+    "M\n\n2 @\n\n\n\n\nF2",
+    "F\n\n3 #\n\n\n\n\nF3",
+    "P\n\n/ ?\n\n\n\n\nF12"
+  ],
+  [
+    {
+      "x": 2,
+      "t": "#000000\n\n\n\n#ff0000",
+      "a": 0
+    },
+    "Tab\n\n\n\nNum",
+    {
+      "t": "#000000\n\n\n\n#0000ff"
+    },
+    "Space\n\n\n\nNav",
+    {
+      "x": 1,
+      "t": "#000000"
+    },
+    "Bspc\n\n\n\nShift",
+    "Del Word\n\n\n\nCombo"
+  ],
+  [
+    {
+      "x": 2,
+      "t": "#000000\n\n\n\n#008000",
+      "a": 5,
+      "w": 2,
+      "h": 0.5
+    },
+    "Both\n\n\n\nFun"
+  ]
+]
