@@ -558,38 +558,38 @@
         keymaps = {
           "<leader>'" = {
             action = "resume";
-            desc = "Resume Telescope";
+            options = {desc = "Resume Telescope";};
           };
           "<leader>d" = {
             action = "diagnostics";
-            desc = "Diagnostics";
+            options = {desc = "Diagnostics";};
           };
           "<leader>f" = {
             action = "live_grep";
-            desc = "Grep";
+            options = {desc = "Grep";};
           };
           "<leader>m" = {
             action = "man_pages";
-            desc = "Search Manual";
+            options = {desc = "Search Manual";};
           };
           "<leader>p" = {
             action = "find_files";
-            desc = "Find Files";
+            options = {desc = "Find Files";};
           };
           "<leader>s" = {
             action = "lsp_document_symbols";
-            desc = "Symbols";
+            options = {desc = "Symbols";};
           };
           "<leader>S" = {
             action = "lsp_dynamic_workspace_symbols";
-            desc = "Workspace Symbols";
+            options = {desc = "Workspace Symbols";};
           };
           "gr" = {
             action = "lsp_references";
-            desc = "Goto references";
+            options = {desc = "Goto references";};
           };
         };
-        extraOptions = {
+        settings = {
           pickers = {
             find_files = {
               hidden = true;
