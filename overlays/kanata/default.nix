@@ -19,7 +19,7 @@ rustPlatform.buildRustPackage rec {
   #   sha256 = "sha256-cg0lEbA+ou/HWcjkpmQLpGTYoJ54INVgJLQq1PCU7RQ=";
   # };
 
-  cargoHash = "sha256-ts86igOQu00h9d2MueYpQ15l891fg8Ll5JrfYdiW6uY=";
+  cargoHash = "sha256-JJ0xZkP9NEzlN44C0URXC8cMc/fOlJC++UaEfWEQHgo=";
 
   buildInputs = lib.optionals stdenv.isDarwin [darwin.apple_sdk.frameworks.IOKit];
 
