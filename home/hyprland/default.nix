@@ -34,5 +34,6 @@
     sway-contrib.grimshot
     swayidle
     udiskie
+    networkmanagerapplet
   ];
 }
