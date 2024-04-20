@@ -6,15 +6,17 @@
 
     colorschemes.catppuccin = {
       enable = true;
-      flavour = "macchiato";
-      integrations = {
-        cmp = true;
-        gitsigns = true;
-        treesitter = true;
-        telescope = {
-          enabled = true;
+      settings = {
+        flavour = "macchiato";
+        integrations = {
+          cmp = true;
+          gitsigns = true;
+          treesitter = true;
+          telescope = {
+            enabled = true;
+          };
+          markdown = true;
         };
-        markdown = true;
       };
     };
     clipboard.register = "unnamedplus"; # Use system clipboard
@@ -476,6 +478,7 @@
               lualine_y = {wpm.wpm, wpm.historic_graph, 'progress'},
             },
           }
+          vim.opt_local.scrolloff=50
           vim.opt_local.sidescrolloff=500
           vim.fn.search("^$")
           print("Typing mode")

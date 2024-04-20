@@ -29,6 +29,7 @@
     fstl
     keyd
     kdenlive
+    kooha
     krita
     # kicad # "Service '${name}.service' with 'Type=oneshot' cannot have 'Restart=always' or 'Restart=on-success'"
     libreoffice
