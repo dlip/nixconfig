@@ -12,4 +12,5 @@
   # nextcloud = 9000;
   paperless = 28981;
   yaruki = 8095;
+  photoprism = 2342;
 }
