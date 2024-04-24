@@ -33,7 +33,7 @@
     '';
 
     "${config.xdg.configHome}/vale/vale.ini".text = ''
-      StylesPath = ${pkgs.vale.data}/share/vale/styles
+      StylesPath = ${pkgs.vale}/share/vale/styles
 
       [*.md]
       BasedOnStyles = proselint, write-good, Joblint
