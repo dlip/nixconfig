@@ -1,6 +1,7 @@
-;; (defcfg
-;;   linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
-;; )
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+  concurrent-tap-hold yes
+)
 
 (defvar
   tap-timeout 0
@@ -78,9 +79,9 @@
   cbo C-bspc
 )
 
-(defchordsv2-experimental
-  (bspc @h)   (macro h e l l o) 250 first-release ()
-)
+;; (defchordsv2-experimental
+;;  (ralt k)   (macro h e l l o) 250 all-released ()
+;; )
 
 (deflayer base
   _    _    _     _      _     _    _    _    _    _    _    _    _

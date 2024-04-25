@@ -41,6 +41,9 @@ inputs @ {
     nnn = prev.nnn.overrideAttrs (oldAttrs: {
       makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];
     });
+    rofimoji = prev.rofimoji.overrideAttrs (oldAttrs: {
+      rofi = final.rofi-wayland;
+    });
     kanata = final.callPackage ./kanata {src = kanata;};
     # helix = helix.packages.${final.system}.default;
     keyd = prev.keyd.overrideAttrs (oldAttrs: {
