@@ -3,6 +3,8 @@
   concurrent-tap-hold yes
 )
 
+(include abbrv2.kbd)
+
 (defvar
   tap-timeout 0
   hold-timeout 180
@@ -78,10 +80,6 @@
   sft (tap-hold-press $tap-timeout $hold-timeout bspc lsft)
   cbo C-bspc
 )
-
-;; (defchordsv2-experimental
-;;  (ralt k)   (macro h e l l o) 250 all-released ()
-;; )
 
 (deflayer base
   _    _    _     _      _     _    _    _    _    _    _    _    _
