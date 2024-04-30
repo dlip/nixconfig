@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DATA=$(cliphist list | grep '[[ binary .* png .* ]]' | head -n 1)
+FILE="$HOME/Pictures/$(date +"%Y-%m-%d-%H:%M:%S").png"
+echo "$DATA" | cliphist decode >"$FILE"
+
+ret_val=$(notify-send --action="dir=Open Dir" --action="file=Open File" "Wrote screenshot" "$FILE")
+
+case $ret_val in
+"dir")
+	xdg-open "$(dirname $FILE)"
+	;;
+"file")
+	xdg-open "$FILE"
+	;;
+esac

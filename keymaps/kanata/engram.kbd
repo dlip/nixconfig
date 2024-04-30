@@ -100,8 +100,8 @@
   _    _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
   @udo @cut @cpy @pst _    _    _    _    home up   end   XX   _    _
-  @all @del @esc @ret _    _    _    _    @lft @dwn @rgt  rsft _
-  _    _    _    prnt _    _    _    _    pgdn pgup XX    XX
+  @cbo @del @esc @ret _    _    _    _    @lft @dwn @rgt  rsft _
+  prnt  _    _   _    _    _    _    _    pgdn pgup XX    XX
   _    _    @fun @fun      -              _    _    _     _    _    _
 )
 
