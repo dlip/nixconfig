@@ -11,11 +11,9 @@
   services.greetd = {
     enable = true;
     settings = rec {
-      initial_session = {
-        command = "${pkgs.hyprland}/bin/Hyprland";
-        user = "dane";
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --cmd ${pkgs.hyprland}/bin/Hyprland";
       };
-      default_session = initial_session;
     };
   };
   services.xserver.desktopManager.runXdgAutostartIfNone = true;

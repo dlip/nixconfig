@@ -22,7 +22,6 @@
     calibre
     drawio
     easyeffects
-    gnome.seahorse
     gparted
     firefox
     f3d
