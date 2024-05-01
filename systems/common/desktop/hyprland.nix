@@ -17,7 +17,10 @@
     };
   };
   services.xserver.desktopManager.runXdgAutostartIfNone = true;
-  environment.systemPackages = with pkgs; [gnome.file-roller];
+  environment.systemPackages = with pkgs; [
+    gnome.file-roller
+    gnome3.adwaita-icon-theme # default gnome cursors
+  ];
   programs.thunar.enable = true;
   programs.thunar.plugins = with pkgs.xfce; [
     thunar-archive-plugin

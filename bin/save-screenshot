@@ -9,7 +9,7 @@ ret_val=$(notify-send --action="dir=Open Dir" --action="file=Open File" "Wrote s
 
 case $ret_val in
 "dir")
-	xdg-open "$(dirname $FILE)"
+	dbus-send --session --print-reply --dest=org.freedesktop.FileManager1 --type=method_call /org/freedesktop/FileManager1 org.freedesktop.FileManager1.ShowItems array:string:"file://$FILE" string:""
 	;;
 "file")
 	xdg-open "$FILE"
