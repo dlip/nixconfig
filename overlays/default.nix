@@ -31,6 +31,7 @@ inputs @ {
       src = actual-server;
       nodejs = final.nodejs-16_x;
     };
+    waybar = final.callPackage ./waybar {};
     # vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 {src = vscodeNodeDebug2;};
     envy-sh = envy-sh.defaultPackage.${final.system};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
