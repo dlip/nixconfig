@@ -1,11 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DATA=$(cliphist list | grep '[[ binary .* png .* ]]' | head -n 1)
+DATA=$(cliphist list | (grep '\[\[ binary .* png .* \]\]$' || true) | head -n 1)
 FILE="$HOME/Pictures/$(date +"%Y-%m-%d-%H:%M:%S").png"
-echo "$DATA" | cliphist decode >"$FILE"
+if [ -z "$DATA" ]; then
+	echo "Error: No images found in clipboard"
+	notify-send "Save screenshot" "Error: No images found in clipboard"
+	exit 1
+fi
 
-ret_val=$(notify-send --action="dir=Open Dir" --action="file=Open File" "Wrote screenshot" "$FILE")
+echo "$DATA" | cliphist decode >"$FILE"
+echo "Wrote $FILE"
+
+ret_val=$(notify-send --icon="$FILE" --action="dir=Open Dir" --action="file=Open File" "Save screenshot" "Wrote $FILE")
 
 case $ret_val in
 "dir")
