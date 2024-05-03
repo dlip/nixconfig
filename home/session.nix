@@ -5,6 +5,7 @@
     EDITOR = "nvim";
     LANG = "en_AU.UTF-8";
     LC_ALL = "en_AU.UTF-8";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "$HOME/.steam/root/compatibilitytools.d";
     # STEEL_HOME = "${pkgs.steel}/lib";
   };
 }

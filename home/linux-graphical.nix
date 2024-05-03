@@ -33,6 +33,7 @@
     # kicad # "Service '${name}.service' with 'Type=oneshot' cannot have 'Restart=always' or 'Restart=on-success'"
     libreoffice
     obs-studio
+    pulsemixer
     plexamp
     # postman not found error
     remote-touchpad
