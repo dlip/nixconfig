@@ -22,6 +22,7 @@
     "network",
     "cpu",
     "memory",
+    "disk",
     "temperature",
     "battery",
     "tray",
@@ -130,7 +131,10 @@
     "tooltip": false
   },
   "memory": {
-    "format": "{}% "
+    "format": "{}% "
+  },
+  "disk": {
+    "format": "{free} "
   },
   "temperature": {
     // "thermal-zone": 2,
