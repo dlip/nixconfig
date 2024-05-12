@@ -147,6 +147,15 @@
       }
       {
         mode = "n";
+        key = "<leader>c";
+        action = "<cmd>:%y+<CR>";
+        options = {
+          desc = "Copy buffer contents";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>D";
         action = "<cmd>TroubleToggle<CR>";
         options = {
