@@ -6,4 +6,5 @@
   readarr = 8787;
   qbittorrent = 8080;
   prowlarr = 9696;
+  # suwayomi = 4567;
 }
