@@ -121,5 +121,15 @@ in {
     group = "root";
   };
 
+  # services.suwayomi-server = {
+  #   enable = true;
+  #   user = "root";
+  #   group = "root";
+  #   dataDir = "/media/media/manga";
+  #   settings = {
+  #     server.port = 4567;
+  #   };
+  # };
+
   system.stateVersion = "23.05";
 }
