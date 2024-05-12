@@ -31,7 +31,6 @@
     ripgrep
     # ripgrep-all
     gnused
-    iputils
     openssh
     speedread
     sops

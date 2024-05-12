@@ -1,7 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if which xsel &>/dev/null; then
+if which wl-copy &>/dev/null; then
+	wl-copy
+elif which xsel &>/dev/null; then
 	xsel --clipboard --input
 elif which pbpaste &>/dev/null; then
 	pbcopy

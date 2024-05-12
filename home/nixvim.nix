@@ -149,6 +149,15 @@
       }
       {
         mode = "n";
+        key = "<leader>c";
+        action = "<cmd>:%y+<CR>";
+        options = {
+          desc = "Copy buffer contents";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
         key = "<leader>D";
         action = "<cmd>TroubleToggle<CR>";
         options = {
@@ -782,10 +791,8 @@
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.visible() then
-                  if not cmp.get_selected_entry() then
-                    vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
-                  end
-                  cmp.abort()
+                  vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
+                  cmp.confirm({ select = false })
                 else
                   if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
                     luasnip.unlink_current()

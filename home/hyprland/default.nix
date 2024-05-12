@@ -35,5 +35,6 @@
     swayidle
     udiskie
     networkmanagerapplet
+    rofimoji
   ];
 }

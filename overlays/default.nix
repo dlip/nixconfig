@@ -31,6 +31,7 @@ inputs @ {
       src = actual-server;
       nodejs = final.nodejs-16_x;
     };
+    waybar = final.callPackage ./waybar {}; # fix hyprland socket path
     # vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 {src = vscodeNodeDebug2;};
     envy-sh = envy-sh.defaultPackage.${final.system};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
@@ -40,6 +41,9 @@ inputs @ {
     power-menu = final.writeShellScriptBin "power-menu" (builtins.readFile "${power-menu}/rofi-power-menu");
     nnn = prev.nnn.overrideAttrs (oldAttrs: {
       makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];
+    });
+    rofimoji = prev.rofimoji.overrideAttrs (oldAttrs: {
+      rofi = final.rofi-wayland;
     });
     kanata = final.callPackage ./kanata {src = kanata;};
     # helix = helix.packages.${final.system}.default;

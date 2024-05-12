@@ -21,6 +21,7 @@
     evtest
     fusee-launcher
     iotop
+    iputils
     kanata
     kmonad
     krename
@@ -36,5 +37,6 @@
     usbutils
     ventoy
     xdotool
+    xorg.xhost # add root to xsession: xhost si:localuser:root
   ];
 }
