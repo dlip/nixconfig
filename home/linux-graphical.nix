@@ -22,17 +22,18 @@
     calibre
     drawio
     easyeffects
-    gnome.seahorse
     gparted
     firefox
     f3d
     fstl
     keyd
     kdenlive
+    kooha
     krita
-    # kicad # "Service '${name}.service' with 'Type=oneshot' cannot have 'Restart=always' or 'Restart=on-success'"
+    kicad-unstable
     libreoffice
     obs-studio
+    pulsemixer
     plexamp
     # postman not found error
     remote-touchpad

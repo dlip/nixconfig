@@ -6,15 +6,17 @@
 
     colorschemes.catppuccin = {
       enable = true;
-      flavour = "macchiato";
-      integrations = {
-        cmp = true;
-        gitsigns = true;
-        treesitter = true;
-        telescope = {
-          enabled = true;
+      settings = {
+        flavour = "macchiato";
+        integrations = {
+          cmp = true;
+          gitsigns = true;
+          treesitter = true;
+          telescope = {
+            enabled = true;
+          };
+          markdown = true;
         };
-        markdown = true;
       };
     };
     clipboard.register = "unnamedplus"; # Use system clipboard
@@ -485,6 +487,7 @@
               lualine_y = {wpm.wpm, wpm.historic_graph, 'progress'},
             },
           }
+          vim.opt_local.scrolloff=50
           vim.opt_local.sidescrolloff=500
           vim.fn.search("^$")
           print("Typing mode")
@@ -788,10 +791,8 @@
               function(fallback)
                 local luasnip = require("luasnip")
                 if cmp.visible() then
-                  if not cmp.get_selected_entry() then
-                    vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
-                  end
-                  cmp.abort()
+                  vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
+                  cmp.confirm({ select = false })
                 else
                   if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
                     luasnip.unlink_current()

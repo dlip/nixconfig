@@ -1,6 +1,7 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+# trace: warning: using unmanaged configuration for homepage-dashboard is deprecated and will be removed in 24.05. please see the NixOS documentation for `services.homepage-dashboard' and add your bookmarks, services, widgets, and other configuration using the options provided.
 {
   config,
   pkgs,
@@ -58,21 +59,21 @@ in rec {
   };
 
   # Enable the XFCE Desktop Environment.
-  services.xserver = {
-    enable = true;
-    desktopManager.xfce.enable = true;
+  services = {
     displayManager = {
-      lightdm.enable = true;
       defaultSession = "xfce";
       autoLogin.enable = true;
       autoLogin.user = "tv";
     };
-  };
-
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "au";
-    xkbVariant = "";
+    xserver = {
+      enable = true;
+      desktopManager.xfce.enable = true;
+      displayManager.lightdm.enable = true;
+      xkb = {
+        layout = "au";
+        variant = "";
+      };
+    };
   };
 
   services.xrdp.enable = true;

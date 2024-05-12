@@ -1,10 +1,16 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     # minecraft
-    # lutris
+    bottles
+    heroic
+    lutris
     mangohud
     gamemode
     protontricks
+    protonup
     vulkan-tools
+    # wine
+    wine64
+    winetricks
   ];
 }

@@ -12,7 +12,7 @@
   home.file =
     {
       "${config.xdg.configHome}/hypr".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/code/nixconfig/home/hyprland/config";
-      "${config.home.homeDirectory}/.local/share/icons/hyprcursor-catppuccin".source = "${pkgs.hyprcursor-catppuccin}";
+      # "${config.home.homeDirectory}/.local/share/icons/hyprcursor-catppuccin".source = "${pkgs.hyprcursor-catppuccin}";
     }
     // (pkgs.lib.attrsets.mapAttrs' (
       folder: type:
@@ -34,5 +34,7 @@
     sway-contrib.grimshot
     swayidle
     udiskie
+    networkmanagerapplet
+    rofimoji
   ];
 }

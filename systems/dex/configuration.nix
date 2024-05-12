@@ -462,6 +462,17 @@ in rec {
     passwordFile = config.sops.secrets.paperless-adminpass.path;
   };
 
+  sops.secrets.photoprism-adminpass = {};
+
+  services.photoprism = {
+    enable = true;
+    originalsPath = "/media/media/photos";
+    importPath = "/media/media/photos/import";
+    passwordFile = config.sops.secrets.photoprism-adminpass.path;
+  };
+
+  # services.homepage-dashboard.enable = true;
+
   environment.etc.restic-ignore.text = ''
     .cache
     .Cache
@@ -487,6 +498,7 @@ in rec {
         "/var/lib"
         "/media/media/nextcloud"
         "/media/media/paperless"
+        "/media/media/photos"
       ];
       repository = "/media/backup/restic";
       passwordFile = config.sops.secrets.restic-encryption.path;

@@ -1,6 +1,12 @@
-;; (defcfg
-;;   linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
-;; )
+;; Dlip's 28 Key Engram Layout
+;; Adapted from the QMK version https://github.com/dlip/qmk_firmware/blob/dlip/keyboards/tamatama/keymaps/engram/README.md
+
+(defcfg
+  linux-dev /dev/input/by-path/platform-i8042-serio-0-event-kbd
+  concurrent-tap-hold yes
+)
+
+(include abbrv2.kbd)
 
 (defvar
   tap-timeout 0
@@ -100,8 +106,8 @@
   _    _    _    _    _    _    _    _    _    _    _     _    _
   _    _    _    _    _    _    _    _    _    _    _     _    _    _
   @udo @cut @cpy @pst _    _    _    _    home up   end   XX   _    _
-  @sft @del @esc @ret _    _    _    _    @lft @dwn @rgt  rsft _
-  prnt  _    _   _    _    _    _    _    pgdn pgup XX    XX
+  @all @del @esc @ret _    _    _    _    @lft @dwn @rgt  rsft _
+  _    _    _    prnt _    _    _    _    pgdn pgup XX    XX
   _    _    @fun @fun      -              _    _    _     _    _    _
 )
 
