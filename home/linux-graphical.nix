@@ -38,7 +38,6 @@
     # postman not found error
     remote-touchpad
     screenkey
-    sidequest
     # orca-slicer
     # super-slicer-latest
     prusa-slicer

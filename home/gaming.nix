@@ -8,6 +8,7 @@
     gamemode
     protontricks
     protonup
+    sidequest
     vulkan-tools
     # wine
     wine64
