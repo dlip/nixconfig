@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Make a file easier to practice typing by putting each paragraph on a single line
+# Make a file easier to practice typing by putting each paragraph on a single line and replace non ascii characters
 import sys
 import os
 import subprocess
@@ -22,10 +22,30 @@ else:
     lines = result.stdout.decode("utf-8").splitlines()
 
 output = ""
+replacements = [
+    ["—", "-"],
+    ["“", '"'],
+    ["”", '"'],
+    ["‘", "'"],
+    ["’", "'"],
+    ["ç", "c"],
+    ["æ", "ae"],
+    ["™", "TM"],
+    ["•", "."],
+]
+
+
 for line in lines:
     if len(line.strip()) == 0:
         if output != "":
-            print(output.strip() + "\n")
+            output = output.strip()
+            for replacement in replacements:
+                output = output.replace(replacement[0], replacement[1])
+            for c in output:
+                if not c.isascii():
+                    raise Exception(f"'{c}' is not an ascii character, please map it")
+
+            print(output + "\n")
             output = ""
     else:
         output += line.strip().replace("\n", "") + " "
