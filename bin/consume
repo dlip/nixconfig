@@ -1,20 +1,27 @@
 #!/usr/bin/env bash
 set -euo pipefail
-# Consume a text file line by line and speedread it
+# Consume a text file line by line and feed to a command
 trap quit SIGINT
 quit() {
     echo "quit"
     exit
 }
-if [ -z "${1:-}" ]; then
-  echo "Error: consume <file>"
+if [ -z "${2:-}" ]; then
+  echo "Error: consume <file> <command>"
   exit 1
 fi
 FILE=$1
+COMMAND=$2
 while true; do
     LINE=$(head -n 1 "$FILE")
     if [ ! -z "$LINE" ]; then
-        echo "$LINE" | speedread -w 400
+        if [[ "$COMMAND" == "typeracer" ]]; then
+            typeracer -r "$LINE"
+        else
+            echo "$LINE" | $COMMAND
+        fi
+        echo "Press enter to continue or ctrl+c to quit"
+        read
     fi
     tail -n +2 "$FILE" > /tmp/consume && mv /tmp/consume "$FILE"
 done

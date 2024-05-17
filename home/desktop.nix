@@ -116,7 +116,6 @@
     terminal-typeracer
     unrar
     wireshark-cli
-    ttyper
     typespeed
     vegeta
     # visidata #broken
