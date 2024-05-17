@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+set -euo pipefail
+# Consume a text file line by line and speedread it
+trap quit SIGINT
+quit() {
+    echo "quit"
+    exit
+}
+if [ -z "${1:-}" ]; then
+  echo "Error: consume <file>"
+  exit 1
+fi
+FILE=$1
+while true; do
+    LINE=$(head -n 1 "$FILE")
+    if [ ! -z "$LINE" ]; then
+        echo "$LINE" | speedread -w 400
+    fi
+    tail -n +2 "$FILE" > /tmp/consume && mv /tmp/consume "$FILE"
+done

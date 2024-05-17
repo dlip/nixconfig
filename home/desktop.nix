@@ -47,6 +47,8 @@
     # gobang
     gotypist
     graphviz
+    hottext
+    speedread
     hexdino
     imagemagick
     jc
