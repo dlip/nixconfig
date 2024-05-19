@@ -9,7 +9,7 @@
 }:
 rustPlatform.buildRustPackage rec {
   pname = "kanata";
-  version = "1.5.0";
+  version = "1.7.0";
   inherit src;
 
   # src = fetchFromGitHub {
@@ -19,7 +19,7 @@ rustPlatform.buildRustPackage rec {
   #   sha256 = "sha256-cg0lEbA+ou/HWcjkpmQLpGTYoJ54INVgJLQq1PCU7RQ=";
   # };
 
-  cargoHash = "sha256-jLpzrEWV4+Ct4gVAZ19/xbHUnShz4D75UVQKSiIIsTQ=";
+  cargoHash = "sha256-NIkhsZ63iqMI9/NkOaGzDqhC7r7dKYkkz9U0AX0eEmI=";
 
   buildInputs = lib.optionals stdenv.isDarwin [darwin.apple_sdk.frameworks.IOKit];
 
