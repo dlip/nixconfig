@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+rm ~/.local/state/nix/profiles/home-manager-*
+nix-collect-garbage -d
