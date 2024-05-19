@@ -14,14 +14,18 @@ FILE=$1
 COMMAND=$2
 while true; do
     LINE=$(head -n 1 "$FILE")
+    OPTION=""
     if [ ! -z "$LINE" ]; then
         if [[ "$COMMAND" == "typeracer" ]]; then
             typeracer -r "$LINE"
         else
             echo "$LINE" | $COMMAND
         fi
-        echo "Press enter to continue or ctrl+c to quit"
-        read
+        read -p "Press enter to continue, q to save and quit or ctrl+c to quit without saving: " OPTION
     fi
     tail -n +2 "$FILE" > /tmp/consume && mv /tmp/consume "$FILE"
+    if [[ "$OPTION" == "q" ]]; then
+        echo "Saving and quitting"
+        exit 0
+    fi
 done
