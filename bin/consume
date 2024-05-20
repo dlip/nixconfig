@@ -3,29 +3,45 @@ set -euo pipefail
 # Consume a text file line by line and feed to a command
 trap quit SIGINT
 quit() {
-    echo "quit"
-    exit
+	echo "quit"
+	exit
 }
 if [ -z "${2:-}" ]; then
-  echo "Error: consume <file> <command>"
-  exit 1
+	echo "Error: consume <file> <command>"
+	exit 1
 fi
 FILE=$1
 COMMAND=$2
-while true; do
-    LINE=$(head -n 1 "$FILE")
-    OPTION=""
-    if [ ! -z "$LINE" ]; then
-        if [[ "$COMMAND" == "typeracer" ]]; then
-            typeracer -r "$LINE"
-        else
-            echo "$LINE" | $COMMAND
-        fi
-        read -p "Press enter to continue, q to save and quit or ctrl+c to quit without saving: " OPTION
-    fi
-    tail -n +2 "$FILE" > /tmp/consume && mv /tmp/consume "$FILE"
-    if [[ "$OPTION" == "q" ]]; then
-        echo "Saving and quitting"
-        exit 0
-    fi
+POS_FILE="$1.pos"
+POS=0
+LINES=$(($(wc -l <"$FILE")))
+if [ -f "$POS_FILE" ]; then
+	echo "Position file found"
+	POS=$(($(cat "$POS_FILE")))
+	if [[ $POS == $LINES ]]; then
+		echo "Already processed all lines"
+		exit 0
+	fi
+fi
+while [ $POS -lt $LINES ]; do
+	LINE="$(tail -n $(($LINES - $POS)) "$FILE" | head -n 1 || true)"
+
+	((POS++))
+	echo "Current position: line $POS of $LINES"
+	OPTION=""
+	if [ ! -z "$LINE" ]; then
+		if [[ "$COMMAND" == "typeracer" ]]; then
+			typeracer -r "$(echo $LINE)"
+		else
+			echo "$LINE" | $COMMAND
+		fi
+		read -p "Press enter to continue, q to save and quit or ctrl+c to quit without saving: " OPTION
+	else
+		echo "Skipping empty line"
+	fi
+	echo "$POS" >"$POS_FILE"
+	if [[ "$OPTION" == "q" ]]; then
+		echo "Saving and quitting"
+		exit 0
+	fi
 done
