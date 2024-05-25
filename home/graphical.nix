@@ -4,7 +4,7 @@
     # ./emacs
     ./kitty
     #./leftwm
-    # ./vscode
+    ./vscode
     # ./kde
     # ./awesome
     ./mpv
@@ -17,7 +17,7 @@
   home.packages = with pkgs; [
     # antimicrox
     audacity
-    dbeaver
+    dbeaver-bin
     discord
     emoji-menu
     # cinnamon.nemo

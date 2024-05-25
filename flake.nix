@@ -25,10 +25,6 @@
     #   url = "github:nix-community/nixpkgs-wayland";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
-    kmonad = {
-      url = "github:kmonad/kmonad?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     kanata = {
       url = "github:jtroo/kanata";
       flake = false;
@@ -126,7 +122,6 @@
     home-manager,
     flake-utils,
     nix-on-droid,
-    kmonad,
     sops-nix,
     nix-darwin,
     nixvim,
@@ -232,7 +227,6 @@
           pkgs = pkgsForSystem {system = "x86_64-linux";};
           modules = [
             ./systems/metabox/configuration.nix
-            kmonad.nixosModules.default
             sops-nix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
@@ -282,7 +276,6 @@
           pkgs = pkgsForSystem {system = "x86_64-linux";};
           modules = [
             ./systems/g/configuration.nix
-            kmonad.nixosModules.default
             sops-nix.nixosModules.default
             home-manager.nixosModules.home-manager
             {
@@ -306,7 +299,6 @@
           pkgs = pkgsForSystem {system = "x86_64-linux";};
           modules = [
             ./systems/x/configuration.nix
-            kmonad.nixosModules.default
             sops-nix.nixosModules.default
             home-manager.nixosModules.home-manager
             {

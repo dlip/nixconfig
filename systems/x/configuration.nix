@@ -20,7 +20,6 @@ in {
     # ../common/desktop/kde.nix
     # ../common/desktop/awesome.nix
     # ../common/desktop/i3.nix
-    ../common/services/kmonad.nix
   ];
 
   # Bootloader.

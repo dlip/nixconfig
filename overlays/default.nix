@@ -1,5 +1,4 @@
 inputs @ {
-  kmonad,
   # , poetry2nix
   actual-server,
   envy-sh,
@@ -19,7 +18,6 @@ inputs @ {
   hyprcursor-catppuccin,
   ...
 }: [
-  kmonad.overlays.default
   nix-on-droid.overlays.default
   helix.overlays.default
   #nixpkgs-wayland.overlay
