@@ -210,9 +210,9 @@
   ],
   "whichkey.delay": 500,
   "window.zoomLevel": 2,
-  "workbench.colorTheme": "Nord",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "workbench.editor.enablePreview": false,
-  "workbench.iconTheme": "eq-material-theme-icons-light",
+  "workbench.iconTheme": "catppuccin-macchiato",
   "workbench.startupEditor": "none",
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
