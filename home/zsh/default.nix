@@ -25,6 +25,7 @@
       grc = "git reset $(git merge-base HEAD origin/main)";
       rt = "zellij action rename-tab";
       zj = "zellij";
+      code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
     };
 
     initExtraFirst = ''
@@ -35,6 +36,7 @@
     initExtra = ''
       # [ -f $HOME/.nix-profile/etc/profile.d/nix.sh ] && source $HOME/.nix-profile/etc/profile.d/nix.sh
       export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+      export MANROFFOPT="-c"
       export MANWIDTH=999
       export FZF_DEFAULT_COMMAND='fd'
       export GPG_TTY="$(tty)"
