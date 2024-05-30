@@ -465,8 +465,7 @@
       {
         mode = "n";
         key = "<leader>ed";
-        action = "function() require('dapui').toggle() end";
-        lua = true;
+        action.__raw = "function() require('dapui').toggle() end";
         options = {
           desc = "Toggle UI";
           silent = true;
