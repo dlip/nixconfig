@@ -872,6 +872,7 @@
       #     dap-python.enable = true;
       #   };
       # };
+      openscad.enable = true;
     };
     extraPlugins = with pkgs.vimPlugins; [
       lazygit-nvim
