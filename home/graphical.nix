@@ -17,7 +17,6 @@
   home.packages = with pkgs; [
     # antimicrox
     audacity
-    dbeaver-bin
     discord
     emoji-menu
     # cinnamon.nemo

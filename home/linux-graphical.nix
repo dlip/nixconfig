@@ -20,6 +20,7 @@
     brightnessctl
     blender
     calibre
+    dbeaver-bin
     drawio
     easyeffects
     gparted
