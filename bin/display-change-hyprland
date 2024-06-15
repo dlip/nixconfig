@@ -19,8 +19,7 @@ if [ $LID_CLOSED -eq 0 ]; then
 	else
 		echo "hdmi not connected"
 		echo "locking the session"
-		pidof hyprlock || hyprlock
-		hyprctl dispatch dpms off
+		pidof hyprlock || hyprlock && display-change-hyprland
 	fi
 else
 	echo "lid open"
@@ -30,4 +29,5 @@ else
 	hyprctl dispatch dpms on
 fi
 
-echo --------------
+echo "Display change finished"
+echo "-----------------------"
