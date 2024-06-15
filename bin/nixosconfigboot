@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-nice -19 nixos-rebuild --use-remote-sudo boot --flake .# "$@"
+nice -19 nixos-rebuild --use-remote-sudo boot --flake .# "$@" --show-trace

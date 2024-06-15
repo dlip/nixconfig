@@ -42,7 +42,7 @@ inputs @ {
     rofimoji = prev.rofimoji.overrideAttrs (oldAttrs: {
       rofi = final.rofi-wayland;
     });
-    kanata = final.callPackage ./kanata {src = kanata;};
+    # kanata = final.callPackage ./kanata {src = kanata;};
     # helix = helix.packages.${final.system}.default;
     keyd = prev.keyd.overrideAttrs (oldAttrs: {
       src = keyd;

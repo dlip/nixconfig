@@ -613,6 +613,7 @@
       lsp = {
         enable = true;
         servers = {
+          # bashls.enable = true;
           gopls.enable = true;
           html.enable = true;
           jsonls.enable = true;
@@ -722,6 +723,7 @@
             stylua.enable = true;
             # jq.enable = true;
             markdownlint.enable = true;
+            prettierd.enable = true;
             # rustfmt.enable = true;
           };
         };

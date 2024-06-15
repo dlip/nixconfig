@@ -4,7 +4,7 @@
     # ./emacs
     ./kitty
     #./leftwm
-    ./vscode
+    # ./vscode
     # ./kde
     # ./awesome
     ./mpv

@@ -5,7 +5,6 @@
 }: {
   programs.nushell = {
     enable = true;
-    package = pkgs.nushellFull;
     extraConfig = ''
       source "${pkgs.nu_scripts}/share/nu_scripts/aliases/git/git-aliases.nu"
       source "${pkgs.nu_scripts}/share/nu_scripts/custom-completions/git/git-completions.nu"
