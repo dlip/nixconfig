@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+echo "Display change $(date)"
+
+grep -q closed /proc/acpi/button/lid/LID/state
+LID_CLOSED=$?
+
+hyprctl monitors | grep -q HDMI
+HDMI_CONNECTED=$?
+
+if [ $LID_CLOSED -eq 0 ]; then
+	echo "lid closed"
+	if [ $HDMI_CONNECTED -eq 0 ]; then
+		echo "hdmi connected"
+		echo "disabling laptop monitor"
+		hyprctl keyword monitor "eDP-1,disable"
+		echo "turning monitors on"
+		hyprctl dispatch dpms on
+	else
+		echo "hdmi not connected"
+		echo "locking the session"
+		pidof hyprlock || hyprlock
+		hyprctl dispatch dpms off
+	fi
+else
+	echo "lid open"
+	echo "enabling laptop monitor"
+	hyprctl keyword monitor "eDP-1,preferred,auto,1"
+	echo "turning monitors on"
+	hyprctl dispatch dpms on
+fi
+
+echo --------------
