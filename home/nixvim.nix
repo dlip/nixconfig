@@ -628,11 +628,11 @@
             #   };
             # };
           };
-          rust-analyzer = {
-            enable = true;
-            installCargo = true;
-            installRustc = true;
-          };
+          # rust-analyzer = {
+          #   enable = true;
+          #   installCargo = true;
+          #   installRustc = true;
+          # };
           tsserver.enable = true;
           yamlls.enable = true;
         };
