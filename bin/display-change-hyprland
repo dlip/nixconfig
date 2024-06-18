@@ -5,6 +5,8 @@ echo "Display change $(date)"
 grep -q closed /proc/acpi/button/lid/LID/state
 LID_CLOSED=$?
 
+# Without this sleep there the command fails when hyrpland is reloading from a config change
+sleep 0.5
 hyprctl monitors | grep -q HDMI
 HDMI_CONNECTED=$?
 
