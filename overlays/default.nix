@@ -24,7 +24,7 @@ inputs @ {
   # poetry2nix.overlay
   # packages
   (final: prev: {
-    inherit sops-nix mac-app-util nixvim;
+    inherit sops-nix mac-app-util;
     actualServer = final.callPackage ./actualServer {
       src = actual-server;
       nodejs = final.nodejs-16_x;
@@ -39,6 +39,25 @@ inputs @ {
     nnn = prev.nnn.overrideAttrs (oldAttrs: {
       makeFlags = oldAttrs.makeFlags ++ ["O_NERD=1"];
     });
+
+    nixvim = nixvim.legacyPackages.${final.system}.makeNixvimWithModule {
+      module = import ./nixvim;
+      extraSpecialArgs = {
+        extraPlugins = builtins.listToAttrs (map
+          (input: let
+            name = final.lib.removePrefix "vimplugin-" input;
+          in {
+            inherit name;
+            value = final.vimUtils.buildVimPlugin {
+              inherit name;
+              pname = name;
+              src = builtins.getAttr input inputs;
+            };
+          })
+          (builtins.attrNames (final.lib.filterAttrs (k: v: final.lib.hasPrefix "vimplugin" k) inputs)));
+      };
+    };
+
     rofimoji = prev.rofimoji.overrideAttrs (oldAttrs: {
       rofi = final.rofi-wayland;
     });

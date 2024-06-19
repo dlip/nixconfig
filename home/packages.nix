@@ -26,6 +26,7 @@
     ncurses
     neofetch
     nettools
+    nixvim
     nmap
     p7zip
     ripgrep

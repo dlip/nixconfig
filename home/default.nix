@@ -26,7 +26,7 @@ with lib; {
     ./lazygit
     ./lsp.nix
     # ./neovim
-    ./nixvim.nix
+    # ./nixvim.nix
     ./nnn
     ./packages.nix
     ./readline

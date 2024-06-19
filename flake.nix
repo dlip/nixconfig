@@ -161,7 +161,6 @@
         }
       ];
       docker = [
-        nixvim.homeManagerModules.nixvim
         ./home/default.nix
         ./home/desktop.nix
         {
@@ -237,7 +236,6 @@
                 users = {
                   dane = {
                     imports = [
-                      nixvim.homeManagerModules.nixvim
                       ./home/linux-desktop.nix
                       ./home/gamedev.nix
                       ./home/gaming.nix
@@ -262,7 +260,6 @@
                 users = {
                   dane = {
                     imports = [
-                      nixvim.homeManagerModules.nixvim
                       ./home/linux-desktop.nix
                     ];
                   };
@@ -310,7 +307,6 @@
                   dane = {
                     home.email = "dane.lipscombe@planpay.com";
                     imports = [
-                      nixvim.homeManagerModules.nixvim
                       ./home/linux-desktop.nix
                       ./home/gamedev.nix
                       ./home/gaming.nix
@@ -337,7 +333,6 @@
                     home.name = "TV Lipscombe";
                     home.email = "tv@lipscombe.com.au";
                     imports = [
-                      nixvim.homeManagerModules.nixvim
                       ./home/default.nix
                     ];
                   };
@@ -357,9 +352,6 @@
               config = ./home/nix-on-droid.nix;
               backupFileExtension = "hm-bak";
               useGlobalPkgs = true;
-              sharedModules = [
-                nixvim.homeManagerModules.nixvim
-              ];
             };
           }
         ];
@@ -383,7 +375,6 @@
                     email = "danelipscombe@gmail.com";
                   };
                   imports = [
-                    nixvim.homeManagerModules.nixvim
                     ./home/macos.nix
                   ];
                 };
