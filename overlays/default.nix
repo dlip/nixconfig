@@ -43,14 +43,7 @@ inputs @ {
     nixvim = nixvim.legacyPackages.${final.system}.makeNixvimWithModule {
       module = import ./nixvim;
       extraSpecialArgs = {
-        extraPluginsSrc = builtins.listToAttrs (map
-          (input: let
-            name = final.lib.removePrefix "vimplugin-" input;
-          in {
-            inherit name;
-            value = builtins.getAttr input inputs;
-          })
-          (builtins.attrNames (final.lib.filterAttrs (k: v: final.lib.hasPrefix "vimplugin" k) inputs)));
+        extraPluginsSrc = final.lib.filterAttrs (n: v: final.lib.hasPrefix "vimplugin-" n) inputs;
       };
     };
 
