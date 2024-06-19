@@ -3,13 +3,13 @@
   extraPluginsSrc,
   ...
 }: let
-  extraPlugins = builtins.mapAttrs (name: value:
+  extraPlugins = builtins.attrValues (builtins.mapAttrs (name: value:
     pkgs.vimUtils.buildVimPlugin {
       inherit name;
       pname = name;
       src = value;
     })
-  extraPluginsSrc;
+  extraPluginsSrc);
 in {
   colorschemes.catppuccin = {
     enable = true;
@@ -884,12 +884,8 @@ in {
     openscad.enable = true;
   };
   extraPlugins = with pkgs.vimPlugins;
-  with extraPlugins; [
-    lazygit-nvim
-    nu
-    one-small-step-for-vimkind
-    telescope-gitsigns
-    vim-fetch
-    wpm
-  ];
+    [
+      lazygit-nvim
+    ]
+    ++ extraPlugins;
 }
