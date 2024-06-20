@@ -9,6 +9,7 @@
       bold_italic_font = "auto";
       enable_audio_bell = "no";
       background_opacity = "0.9";
+      kitty_mod = "ctrl+alt";
 
       # Tokyo Night color scheme for kitty terminal emulator
       # https://github.com/davidmathers/tokyo-night-kitty-theme
@@ -70,6 +71,7 @@
       # Tab bar
       tab_bar_style = "fade";
       tab_fade = "1";
+      tab_bar_edge = "top";
       active_tab_foreground = "#3d59a1";
       active_tab_background = "#16161e";
       active_tab_font_style = "bold";
@@ -81,6 +83,21 @@
 
     keybindings = {
       "ctrl+backspace" = "send_text all \\x17";
+      "kitty_mod+t" = "new_tab";
+      "kitty_mod+w" = "close_tab";
+      "kitty_mod+r" = "set_tab_title";
+      "kitty_mod+shift+left" = "move_tab_backward";
+      "kitty_mod+shift+right" = "move_tab_forward";
+      "kitty_mod+1" = "goto_tab 1";
+      "kitty_mod+2" = "goto_tab 2";
+      "kitty_mod+3" = "goto_tab 3";
+      "kitty_mod+4" = "goto_tab 4";
+      "kitty_mod+5" = "goto_tab 5";
+      "kitty_mod+6" = "goto_tab 6";
+      "kitty_mod+7" = "goto_tab 7";
+      "kitty_mod+8" = "goto_tab 8";
+      "kitty_mod+9" = "goto_tab 9";
+      "kitty_mod+0" = "goto_tab 10";
     };
     # keybindings = {
     #   "kitty_mod+w" = "new_window_with_cwd";
