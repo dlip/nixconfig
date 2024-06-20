@@ -84,6 +84,7 @@
     keybindings = {
       "ctrl+backspace" = "send_text all \\x17";
       "kitty_mod+t" = "new_tab";
+      "kitty_mod+shift+t" = "new_tab_with_cwd";
       "kitty_mod+w" = "close_tab";
       "kitty_mod+r" = "set_tab_title";
       "kitty_mod+shift+left" = "move_tab_backward";
@@ -98,20 +99,8 @@
       "kitty_mod+8" = "goto_tab 8";
       "kitty_mod+9" = "goto_tab 9";
       "kitty_mod+0" = "goto_tab 10";
+      # "alt+left" = "send_text all \\x1b\\x62";
+      # "alt+right" = "send_text all \\x1b\\x66";
     };
-    # keybindings = {
-    #   "kitty_mod+w" = "new_window_with_cwd";
-    #   "kitty_mod+q" = "close_window";
-    #   "kitty_mod+[" = "previous_window";
-    #   "kitty_mod+]" = "next_window";
-    #   "kitty_mod+t" = "new_tab";
-    #   "kitty_mod+x" = "close_tab";
-    #   "kitty_mod+<" = "previous_tab";
-    #   "kitty_mod+>" = "next_tab";
-    #   "alt+left" = "send_text all \\x1b\\x62";
-    #   "alt+right" = "send_text all \\x1b\\x66";
-    #   "ctrl+shift+c" = "copy_to_clipboard";
-    #   "ctrl+shift+v" = "paste_from_clipboard";
-    # };
   };
 }
