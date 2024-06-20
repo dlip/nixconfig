@@ -5,30 +5,37 @@ echo "Display change $(date)"
 grep -q closed /proc/acpi/button/lid/LID/state
 LID_CLOSED=$?
 
-# Without this sleep there the command fails when hyrpland is reloading from a config change
-sleep 0.5
-hyprctl monitors | grep -q HDMI
-HDMI_CONNECTED=$?
+for _ in {1..30}; do
+  hyprctl monitors | grep -q HDMI
+  HDMI_CONNECTED=$?
+  # sometimes errors when reloading config
+  if hyprctl monitors | grep -q "Couldn't read"; then
+    echo "Error getting monitors, retrying..."
+    sleep 0.1
+    continue
+  fi
+  break
+done
 
-if [ $LID_CLOSED -eq 0 ]; then
-	echo "lid closed"
-	if [ $HDMI_CONNECTED -eq 0 ]; then
-		echo "hdmi connected"
-		echo "disabling laptop monitor"
-		hyprctl keyword monitor "eDP-1,disable"
-		echo "turning monitors on"
-		hyprctl dispatch dpms on
-	else
-		echo "hdmi not connected"
-		echo "locking the session"
-		pidof hyprlock || hyprlock && display-change-hyprland
-	fi
+if [ "$LID_CLOSED" -eq 0 ]; then
+  echo "lid closed"
+  if [ "$HDMI_CONNECTED" -eq 0 ]; then
+    echo "hdmi connected"
+    echo "disabling laptop monitor"
+    hyprctl keyword monitor "eDP-1,disable"
+    echo "turning monitors on"
+    hyprctl dispatch dpms on
+  else
+    echo "hdmi not connected"
+    echo "locking the session"
+    pidof hyprlock || hyprlock && display-change-hyprland
+  fi
 else
-	echo "lid open"
-	echo "enabling laptop monitor"
-	hyprctl keyword monitor "eDP-1,preferred,auto,1"
-	echo "turning monitors on"
-	hyprctl dispatch dpms on
+  echo "lid open"
+  echo "enabling laptop monitor"
+  hyprctl keyword monitor "eDP-1,preferred,auto,1"
+  echo "turning monitors on"
+  hyprctl dispatch dpms on
 fi
 
 echo "Display change finished"
