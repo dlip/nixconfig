@@ -8,6 +8,7 @@
     ./hyprland
     # ./awesome
     # ./i3
+    ./mpv
     ./rofi
     ./talon
     ./graphical.nix

@@ -7,7 +7,6 @@
     # ./vscode
     # ./kde
     # ./awesome
-    ./mpv
     #./sway
     #./waybar
     #./hyprland
