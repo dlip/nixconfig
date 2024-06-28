@@ -8,7 +8,7 @@
     enable = true;
     onActivation.cleanup = "uninstall";
     taps = ["espanso/espanso"];
-    casks = ["maccy" "clocker" "docker" "flameshot" "espanso" "dbeaver-community"];
+    casks = ["maccy" "clocker" "docker" "flameshot" "espanso" "dbeaver-community" "caffeine"];
     brews = ["switchaudio-osx"];
   };
 
