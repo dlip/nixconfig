@@ -25,6 +25,7 @@
     drawio
     easyeffects
     gparted
+    gramps
     firefox
     f3d
     fstl

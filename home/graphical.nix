@@ -27,7 +27,6 @@
     gimp
     # gnome.file-roller
     # google-chrome-dev
-    gramps
     # ledger-live-desktop
     # lens
     # logseq

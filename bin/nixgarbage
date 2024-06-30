@@ -2,4 +2,4 @@
 set -euo pipefail
 
 rm -f ~/.local/state/nix/profiles/home-manager-*
-nix-collect-garbage -d
+sudo nix-collect-garbage -d
