@@ -34,9 +34,10 @@
     krita
     kicad-unstable
     libreoffice
-    obs-studio
+    obs-studio # sudo modprobe v4l2loopback devices=1 video_nr=21 card_label="OBS Cam" exclusive_caps=1
+    v4l-utils
     pulsemixer
-    plexamp
+    # plexamp
     # postman not found error
     remote-touchpad
     screenkey

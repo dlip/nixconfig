@@ -26,7 +26,7 @@ in {
     v4l2loopback
   ];
   boot.extraModprobeConfig = ''
-    options v4l2loopback devices=1 video_nr=1 card_label="OBS Cam" exclusive_caps=1
+    options v4l2loopback devices=1 video_nr=21 card_label="OBS Cam" exclusive_caps=1
   '';
   security.polkit.enable = true;
 
@@ -160,7 +160,7 @@ in {
   services.printing.drivers = with pkgs; [brgenml1lpr brgenml1cupswrapper];
 
   programs.nm-applet.enable = true;
-  hardware.opengl.driSupport32Bit = true;
+  hardware.graphics.enable32Bit = true;
   hardware.enableAllFirmware = true;
 
   programs.adb.enable = true;

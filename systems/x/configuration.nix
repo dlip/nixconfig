@@ -34,7 +34,7 @@ in {
     shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 
-  hardware.opengl = {
+  hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
       intel-media-driver # LIBVA_DRIVER_NAME=iHD

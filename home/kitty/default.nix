@@ -99,6 +99,8 @@
       "kitty_mod+8" = "goto_tab 8";
       "kitty_mod+9" = "goto_tab 9";
       "kitty_mod+0" = "goto_tab 10";
+      "ctrl+shift+c" = "copy_to_clipboard";
+      "ctrl+shift+v" = "paste_from_clipboard";
       # "alt+left" = "send_text all \\x1b\\x62";
       # "alt+right" = "send_text all \\x1b\\x66";
     };
