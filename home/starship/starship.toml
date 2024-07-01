@@ -1,5 +1,5 @@
 format = """
-$directory$git_branch$git_status$nodejs$rust$golang$php
+$directory$git_branch$git_status$rust$golang$php
 $hostname$time$character"""
 
 [hostname]

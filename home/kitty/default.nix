@@ -2,7 +2,8 @@
   programs.kitty = {
     enable = true;
     settings = {
-      font_size = 10;
+      font_size = 15;
+      macos_option_as_alt = true;
       font_family = "RobotoMono Nerd Font Mono";
       bold_font = "auto";
       italic_font = "auto";
@@ -11,74 +12,84 @@
       background_opacity = "0.9";
       kitty_mod = "ctrl+alt";
 
-      # Tokyo Night color scheme for kitty terminal emulator
-      # https://github.com/davidmathers/tokyo-night-kitty-theme
-      #
-      # Based on Tokyo Night color theme for Visual Studio Code
-      # https://github.com/enkia/tokyo-night-vscode-theme
+      # https://github.com/catppuccin/kitty/blob/main/themes/macchiato.conf
+      # The basic colors
+      foreground = "#cad3f5";
+      background = "#24273a";
+      selection_foreground = "#24273a";
+      selection_background = "#f4dbd6";
 
-      foreground = "#a9b1d6";
-      background = "#1a1b26";
+      # Cursor colors
+      cursor = "#f4dbd6";
+      cursor_text_color = "#24273a";
 
-      # Black
-      color0 = "#414868";
-      color8 = "#414868";
+      # URL underline color when hovering with mouse
+      url_color = "#f4dbd6";
 
-      # Red
-      color1 = "#f7768e";
-      color9 = "#f7768e";
+      # Kitty window border colors
+      active_border_color = "#b7bdf8";
+      inactive_border_color = "#6e738d";
+      bell_border_color = "#eed49f";
 
-      # Green
-      color2 = "#73daca";
-      color10 = "#73daca";
+      # OS Window titlebar colors
+      wayland_titlebar_color = "system";
+      macos_titlebar_color = "system";
 
-      # Yellow
-      color3 = "#e0af68";
-      color11 = "#e0af68";
+      # Tab bar colors
+      active_tab_foreground = "#181926";
+      active_tab_background = "#c6a0f6";
+      inactive_tab_foreground = "#cad3f5";
+      inactive_tab_background = "#1e2030";
+      tab_bar_background = "#181926";
 
-      # Blue
-      color4 = "#7aa2f7";
-      color12 = "#7aa2f7";
+      # Colors for marks (marked text in the terminal)
+      mark1_foreground = "#24273a";
+      mark1_background = "#b7bdf8";
+      mark2_foreground = "#24273a";
+      mark2_background = "#c6a0f6";
+      mark3_foreground = "#24273a";
+      mark3_background = "#7dc4e4";
 
-      # Magenta
-      color5 = "#bb9af7";
-      color13 = "#bb9af7";
+      # The 16 terminal colors
 
-      # Cyan
-      color6 = "#7dcfff";
-      color14 = "#7dcfff";
+      # black
+      color0 = "#494d64";
+      color8 = "#5b6078";
 
-      # White
-      color7 = "#c0caf5";
-      color15 = "#c0caf5";
+      # red
+      color1 = "#ed8796";
+      color9 = "#ed8796";
 
-      # Cursor
-      cursor = "#c0caf5";
-      cursor_text_color = "#1a1b26";
+      # green
+      color2 = "#a6da95";
+      color10 = "#a6da95";
 
-      # Selection highlight
-      selection_foreground = "none";
-      selection_background = "#28344a";
+      # yellow
+      color3 = "#eed49f";
+      color11 = "#eed49f";
 
-      # The color for highlighting URLs on mouse-over
-      url_color = "#9ece6a";
+      # blue
+      color4 = "#8aadf4";
+      color12 = "#8aadf4";
 
-      # Window borders
-      active_border_color = "#3d59a1";
-      inactive_border_color = "#101014";
-      bell_border_color = "#e0af68";
+      # magenta
+      color5 = "#f5bde6";
+      color13 = "#f5bde6";
+
+      # cyan
+      color6 = "#8bd5ca";
+      color14 = "#8bd5ca";
+
+      # white
+      color7 = "#b8c0e0";
+      color15 = "#a5adcb";
 
       # Tab bar
       tab_bar_style = "fade";
       tab_fade = "1";
       tab_bar_edge = "top";
-      active_tab_foreground = "#3d59a1";
-      active_tab_background = "#16161e";
       active_tab_font_style = "bold";
-      inactive_tab_foreground = "#787c99";
-      inactive_tab_background = "#16161e";
       inactive_tab_font_style = "bold";
-      tab_bar_background = "#101014";
     };
 
     keybindings = {
