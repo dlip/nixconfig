@@ -55,6 +55,7 @@ in {
     hidden = true; # enable background buffers
     history = 100; # remember n lines in history
     synmaxcol = 240; # max column for syntax highlight
+    mousemodel = "extend"; # right click to extend selection
     # what hidden characters to show
     listchars = {
       trail = "•"; # trailing space
@@ -366,6 +367,15 @@ in {
       action = "<cmd>LazyGit<CR>";
       options = {
         desc = "LazyGit";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>/";
+      action = "<cmd>Telscope current_buffer_fuzzy_find<CR>";
+      options = {
+        desc = "Fuzzy find";
         silent = true;
       };
     }
@@ -771,6 +781,12 @@ in {
         navNext = "<leader>.";
         navPrev = "<leader>,";
         toggleQuickMenu = "<leader>H";
+      };
+    };
+    image = {
+      enable = true;
+      integrations = {
+        markdown.enabled = true;
       };
     };
     tmux-navigator.enable = true;

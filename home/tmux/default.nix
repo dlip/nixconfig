@@ -33,6 +33,7 @@
       set-option -g set-titles-string "#S"
       TMUX_FZF_LAUNCH_KEY="f" # Key Prefix + f
 
+      set-option -g allow-passthrough on
       TMUX_FZF_OPTIONS="-p -w 62% -h 38%"
       TMUX_FZF_PANE_FORMAT="[#{window_name}] #{pane_current_command}  [#{pane_width}x#{pane_height}] [history #{history_size}/#{history_limit}, #{history_bytes} bytes] #{?pane_active,[active],[inactive]}"
       TMUX_FZF_POPUP=0
