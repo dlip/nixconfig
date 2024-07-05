@@ -157,6 +157,18 @@ in {
     }
     {
       mode = "n";
+      key = "gf";
+      action = "gF";
+      options.desc = "Go to file with line number";
+    }
+    {
+      mode = "n";
+      key = "gF";
+      action = "gf";
+      options.desc = "Go to file ignoring line number";
+    }
+    {
+      mode = "n";
       key = "<leader>c";
       action = "<cmd>:%y+<CR>";
       options = {
@@ -489,75 +501,79 @@ in {
       };
     }
   ];
-  extraConfigLua = ''
-    vim.api.nvim_create_user_command("Typing",
-      function()
-        require('cmp').setup.buffer { enabled = false }
-        require('nvim-autopairs').setup({
-          disable_filetype = { "text" },
-        })
-        local wpm = require("wpm")
-        wpm.setup({})
-        require('lualine').setup {
-          sections = {
-            lualine_y = {wpm.wpm, wpm.historic_graph, 'progress'},
-          },
-        }
-        vim.opt_local.scrolloff=50
-        vim.opt_local.sidescrolloff=500
-        vim.fn.search("^$")
-        print("Typing mode")
-      end,
-      {}
-    )
-    -- local dap, dapui = require("dap"), require("dapui")
-    -- require('dap.ext.vscode').load_launchjs()
-    -- dap.listeners.after.event_initialized["dapui_config"] = function()
-    --   dapui.open()
-    -- end
-    -- dap.listeners.before.event_terminated["dapui_config"] = function()
-    --   dapui.close()
-    -- end
-    -- dap.listeners.before.event_exited["dapui_config"] = function()
-    --   dapui.close()
-    -- end
+  extraConfigLua =
+    /*
+    lua
+    */
+    ''
+      vim.api.nvim_create_user_command("Typing",
+        function()
+          require('cmp').setup.buffer { enabled = false }
+          require('nvim-autopairs').setup({
+            disable_filetype = { "text" },
+          })
+          local wpm = require("wpm")
+          wpm.setup({})
+          require('lualine').setup {
+            sections = {
+              lualine_y = {wpm.wpm, wpm.historic_graph, 'progress'},
+            },
+          }
+          vim.opt_local.scrolloff=50
+          vim.opt_local.sidescrolloff=500
+          vim.fn.search("^$")
+          print("Typing mode")
+        end,
+        {}
+      )
+      -- local dap, dapui = require("dap"), require("dapui")
+      -- require('dap.ext.vscode').load_launchjs()
+      -- dap.listeners.after.event_initialized["dapui_config"] = function()
+      --   dapui.open()
+      -- end
+      -- dap.listeners.before.event_terminated["dapui_config"] = function()
+      --   dapui.close()
+      -- end
+      -- dap.listeners.before.event_exited["dapui_config"] = function()
+      --   dapui.close()
+      -- end
 
-    -- dap.configurations.lua = {
-    --   {
-    --     type = "nlua",
-    --     request = "attach",
-    --     name = "Run this file",
-    --     start_neovim = {},
-    --   },
-      -- {
-      --   type = "nlua",
-      --   request = "attach",
-      --   name = "Attach to running Neovim instance (port = 8086)",
-      --   port = 8086,
-      -- },
-    -- }
+      -- dap.configurations.lua = {
+      --   {
+      --     type = "nlua",
+      --     request = "attach",
+      --     name = "Run this file",
+      --     start_neovim = {},
+      --   },
+        -- {
+        --   type = "nlua",
+        --   request = "attach",
+        --   name = "Attach to running Neovim instance (port = 8086)",
+        --   port = 8086,
+        -- },
+      -- }
 
-    -- dap.adapters.nlua = function(callback, conf)
-    --   local adapter = {
-    --     type = "server",
-    --     host = conf.host or "127.0.0.1",
-    --     port = conf.port or 8086,
-    --   }
-    --   if conf.start_neovim then
-    --     local dap_run = dap.run
-    --     dap.run = function(c)
-    --       adapter.port = c.port
-    --       adapter.host = c.host
-    --     end
-    --     require("osv").run_this()
-    --     dap.run = dap_run
-    --   end
-    --   callback(adapter)
-    -- end
+      -- dap.adapters.nlua = function(callback, conf)
+      --   local adapter = {
+      --     type = "server",
+      --     host = conf.host or "127.0.0.1",
+      --     port = conf.port or 8086,
+      --   }
+      --   if conf.start_neovim then
+      --     local dap_run = dap.run
+      --     dap.run = function(c)
+      --       adapter.port = c.port
+      --       adapter.host = c.host
+      --     end
+      --     require("osv").run_this()
+      --     dap.run = dap_run
+      --   end
+      --   callback(adapter)
+      -- end
 
-    require'nu'.setup{}
-    require'lspconfig'.nushell.setup{}
-  '';
+      require'nu'.setup{}
+      require'lspconfig'.nushell.setup{}
+    '';
   plugins = {
     lualine = {
       enable = true;
@@ -811,79 +827,95 @@ in {
           }
         ];
         mapping = {
-          "<Esc>" = ''
-            function(fallback)
-              local luasnip = require("luasnip")
-              if cmp.visible() then
-                vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
-                cmp.confirm({ select = false })
-              else
-                if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
-                  luasnip.unlink_current()
-                end
-                fallback()
-              end
-            end
-          '';
-          "<Up>" = ''
-            function(fallback)
-              local luasnip = require("luasnip")
-              if cmp.get_selected_entry() then
-                cmp.scroll_docs(-4)
-              elseif luasnip.jumpable(-1) then
-                luasnip.jump(-1)
-              else
+          "<Esc>" =
+            /*
+            lua
+            */
+            ''
+              function(fallback)
+                local luasnip = require("luasnip")
                 if cmp.visible() then
-                  cmp.abort()
+                  vim.defer_fn(function() vim.cmd('stopinsert') end, 1)
+                  cmp.confirm({ select = false })
+                else
+                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+                    luasnip.unlink_current()
+                  end
+                  fallback()
                 end
-                if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
-                  luasnip.unlink_current()
-                end
-                fallback()
               end
-            end
-          '';
-          "<Down>" = ''
-            function(fallback)
-              local luasnip = require("luasnip")
-              if cmp.get_selected_entry() then
-                cmp.scroll_docs(4)
-              elseif luasnip.expandable() then
-                luasnip.expand()
-              elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-              else
-                if cmp.visible() then
-                  cmp.abort()
+            '';
+          "<Up>" =
+            /*
+            lua
+            */
+            ''
+              function(fallback)
+                local luasnip = require("luasnip")
+                if cmp.get_selected_entry() then
+                  cmp.scroll_docs(-4)
+                elseif luasnip.jumpable(-1) then
+                  luasnip.jump(-1)
+                else
+                  if cmp.visible() then
+                    cmp.abort()
+                  end
+                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+                    luasnip.unlink_current()
+                  end
+                  fallback()
                 end
-                if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
-                  luasnip.unlink_current()
-                end
-                fallback()
               end
-            end
-          '';
+            '';
+          "<Down>" =
+            /*
+            lua
+            */
+            ''
+              function(fallback)
+                local luasnip = require("luasnip")
+                if cmp.get_selected_entry() then
+                  cmp.scroll_docs(4)
+                elseif luasnip.expandable() then
+                  luasnip.expand()
+                elseif luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
+                else
+                  if cmp.visible() then
+                    cmp.abort()
+                  end
+                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+                    luasnip.unlink_current()
+                  end
+                  fallback()
+                end
+              end
+            '';
 
-          "<CR>" = ''
-            function(fallback)
-              local luasnip = require("luasnip")
-              if cmp.get_selected_entry() then
-                cmp.confirm({ select = false })
-              elseif luasnip.expandable() then
-                luasnip.expand()
-              elseif luasnip.expand_or_jumpable() then
-                luasnip.expand_or_jump()
-              else
-                if cmp.visible() then
-                  cmp.abort()
+          "<CR>" =
+            /*
+            lua
+            */
+            ''
+              function(fallback)
+                local luasnip = require("luasnip")
+                if cmp.get_selected_entry() then
+                  cmp.confirm({ select = false })
+                elseif luasnip.expandable() then
+                  luasnip.expand()
+                elseif luasnip.expand_or_jumpable() then
+                  luasnip.expand_or_jump()
+                else
+                  if cmp.visible() then
+                    cmp.abort()
+                  end
+                  if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
+                    luasnip.unlink_current()
+                  end
+                  fallback()
                 end
-                if luasnip.session.current_nodes[vim.api.nvim_get_current_buf()] then
-                  luasnip.unlink_current()
-                end
-                fallback()
               end
-            end
-          '';
+            '';
 
           "<Tab>" = "cmp.mapping.select_next_item()";
           "<S-Tab>" = "cmp.mapping.select_prev_item()";

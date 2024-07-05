@@ -25,8 +25,6 @@ with lib; {
     # ./helix
     ./lazygit
     ./lsp.nix
-    # ./neovim
-    # ./nixvim.nix
     ./nnn
     ./packages.nix
     ./readline
