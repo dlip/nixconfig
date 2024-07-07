@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+default_sink_name=$(pactl get-default-sink)
+virtual_sink_name="MySink"
+virtual_sink="${virtual_sink_name}:monitor"
+vr_headphones="alsa_capture.vrserver:input"
+vr_microphones="alsa_capture.vrserver:monitor"
+channels=("FL" "FR")
+
+# Check if MySink exists
+if ! $(pw-link -i | grep -q ${virtual_sink_name}); then
+  # Create null sink
+  pactl load-module module-null-sink sink_name=${virtual_sink_name}
+fi
+
+while true; do
+  if $(pw-link -i | grep -q vrserver); then
+    if [ "$(pactl get-default-sink)" != "${virtual_sink_name}" ]; then
+      default_sink_name=$(pactl get-default-sink)
+      echo "${vr_headphones} found. Switching to it via virtual sink - ${virtual_sink_name}"
+      pactl set-default-sink ${virtual_sink_name}
+    fi
+
+    # Fix if link doesn't exist
+    for channel in "${channels[@]}"; do
+      if [ "$(pw-link ${virtual_sink}_${channel} ${vr_headphones}_${channel} 2>&1)" != "failed to link ports: File exists" ]; then
+        echo "Disconnecting everything from ${vr_headphones}_${channel}"
+        for tmp_output in $(pw-link -o | grep ${channel}); do
+          pw-link -d ${tmp_output} ${vr_headphones}_${channel}
+        done
+        echo "Connecting ${virtual_sink}_${channel} to ${vr_headphones}_${channel}"
+        pw-link ${virtual_sink}_${channel} ${vr_headphones}_${channel}
+      fi
+    done
+  else
+    if [ "$(pactl get-default-sink)" != "${default_sink_name}" ]; then
+      echo "${vr_headphones} not found. Switching to default sink - ${default_sink_name}"
+      pactl set-default-sink ${default_sink_name}
+    fi
+  fi
+  sleep 1
+done

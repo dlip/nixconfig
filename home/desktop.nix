@@ -74,6 +74,7 @@
     # myPythonPackages.shirah-reader
     # myPythonPackages.adafruit-nrfutil
     # ngrok
+    nix-init
     niv
     nodePackages.node2nix
     nodePackages.pnpm

@@ -38,7 +38,6 @@
     # memento
     obsidian
     openscad
-    # plover.dev
     qalculate-gtk
     slack
     # spotify # cant get any songs to play

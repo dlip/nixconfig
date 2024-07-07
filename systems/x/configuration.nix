@@ -116,7 +116,12 @@ in {
     allowedUDPPorts = [51820]; # Clients and peers can use the same port, see listenport
   };
 
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+    dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+    localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+  };
   hardware.steam-hardware.enable = true;
 
   # TODO: get this working

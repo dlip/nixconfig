@@ -15,7 +15,7 @@
 
   home.packages = with pkgs; [
     acpi
-    # appimage-run
+    appimage-run
     binutils
     # mimic
     evtest
