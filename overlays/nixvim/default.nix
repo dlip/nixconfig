@@ -506,26 +506,6 @@ in {
     lua
     */
     ''
-      vim.api.nvim_create_user_command("Typing",
-        function()
-          require('cmp').setup.buffer { enabled = false }
-          require('nvim-autopairs').setup({
-            disable_filetype = { "text" },
-          })
-          local wpm = require("wpm")
-          wpm.setup({})
-          require('lualine').setup {
-            sections = {
-              lualine_y = {wpm.wpm, wpm.historic_graph, 'progress'},
-            },
-          }
-          vim.opt_local.scrolloff=50
-          vim.opt_local.sidescrolloff=500
-          vim.fn.search("^$")
-          print("Typing mode")
-        end,
-        {}
-      )
       -- local dap, dapui = require("dap"), require("dapui")
       -- require('dap.ext.vscode').load_launchjs()
       -- dap.listeners.after.event_initialized["dapui_config"] = function()

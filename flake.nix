@@ -21,23 +21,14 @@
       url = "github:NotAShelf/hyprcursor-catppuccin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # nixpkgs-wayland = {
-    #   url = "github:nix-community/nixpkgs-wayland";
-    #   inputs.nixpkgs.follows = "nixpkgs";
+    # kanata = {
+    #   url = "github:jtroo/kanata";
+    #   flake = false;
     # };
-    kanata = {
-      url = "github:jtroo/kanata";
-      flake = false;
-    };
     nix-on-droid = {
       url = "github:t184256/nix-on-droid/release-22.11";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
-    };
-    envy-sh = {
-      url = "github:dlip/envy.sh";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-utils.follows = "flake-utils";
     };
     actual-server = {
       url = "github:actualbudget/actual-server";
@@ -45,10 +36,6 @@
     };
     emoji-menu = {
       url = "github:jchook/emoji-menu";
-      flake = false;
-    };
-    keyd = {
-      url = "github:rvaiya/keyd";
       flake = false;
     };
     power-menu = {
@@ -63,9 +50,6 @@
       url = "github:mattwparas/helix/steel-event-system";
     };
     mac-app-util.url = "github:hraban/mac-app-util";
-    steel = {
-      url = "github:mattwparas/steel";
-    };
     vimplugin-telescope-gitsigns = {
       url = "github:radyz/telescope-gitsigns";
       flake = false;
@@ -78,10 +62,6 @@
       url = "github:LhKipp/nvim-nu";
       flake = false;
     };
-    vimplugin-wpm = {
-      url = "github:jcdickinson/wpm.nvim";
-      flake = false;
-    };
     repo-nnn = {
       url = "github:jarun/nnn";
       flake = false;
@@ -92,18 +72,6 @@
     };
     repo-catppuccin-zsh-syntax-highlighting = {
       url = "github:catppuccin/zsh-syntax-highlighting";
-      flake = false;
-    };
-    repo-awesome-wm-widgets = {
-      url = "github:streetturtle/awesome-wm-widgets";
-      flake = false;
-    };
-    repo-arc-icon-theme = {
-      url = "github:horst3180/arc-icon-theme";
-      flake = false;
-    };
-    repo-json-lua = {
-      url = "github:rxi/json.lua";
       flake = false;
     };
     nixvim = {

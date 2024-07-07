@@ -1,26 +1,21 @@
 inputs @ {
   # , poetry2nix
   actual-server,
-  envy-sh,
   emoji-menu,
   power-menu,
-  kanata,
-  keyd,
+  # kanata,
   helix,
   sops-nix,
   nix-on-droid,
   mac-app-util,
-  steel,
   # vscodeNodeDebug2,
   nixvim,
-  # nixpkgs-wayland,
   hyprland,
   hyprcursor-catppuccin,
   ...
 }: [
   nix-on-droid.overlays.default
   helix.overlays.default
-  #nixpkgs-wayland.overlay
   # poetry2nix.overlay
   # packages
   (final: prev: {
@@ -30,7 +25,6 @@ inputs @ {
       nodejs = final.nodejs-16_x;
     };
     # vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 {src = vscodeNodeDebug2;};
-    envy-sh = envy-sh.defaultPackage.${final.system};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
     # myEspanso = final.callPackage ./espanso {};
     hyprland = hyprland.packages.${final.system}.hyprland;
@@ -52,34 +46,11 @@ inputs @ {
     });
     # kanata = final.callPackage ./kanata {src = kanata;};
     # helix = helix.packages.${final.system}.default;
-    keyd = prev.keyd.overrideAttrs (oldAttrs: {
-      src = keyd;
-      buildInputs = [final.git final.systemd];
-      installPhase = ''
-        mkdir -p $out/bin/
-        mkdir -p $out/share/keyd/layouts/
-        mkdir -p $out/share/man/man1/
-        mkdir -p $out/share/doc/keyd/examples/
-        mkdir -p $out/share/libinput/
-
-        install -m755 bin/* $out/bin
-        install -m644 docs/*.md $out/share/doc/keyd/
-        install -m644 examples/* $out/share/doc/keyd/examples/
-        install -m644 layouts/* $out/share/keyd/layouts
-        install -m644 data/*.1.gz $out/share/man/man1/
-        install -m644 data/keyd.compose $out/share/keyd/
-      '';
-      postPatch = ''
-        substituteInPlace Makefile \
-          --replace /usr ""
-      '';
-    });
 
     myNodePackages = final.callPackage ./nodePackages {};
     # myPythonPackages = final.callPackage ./pythonPackages { };
     # skyscraper = final.callPackage ./skyscraper { };
     # solang = final.callPackage ./solang { };
-    steel = steel.defaultPackage.${final.system};
     # juliusSpeech = final.callPackage ./juliusSpeech { };
     talon = final.callPackage ./talon {};
     # inherit (final.callPackages "${openvpn-aws}/derivations/openvpn.nix" { }) openvpn_aws;
