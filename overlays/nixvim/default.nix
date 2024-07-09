@@ -632,14 +632,14 @@ in {
         jsonls.enable = true;
         lua-ls.enable = true;
         nil-ls.enable = true;
-        # pyright.enable = true;
+        ruff.enable = true;
         pylsp = {
           enable = true;
-          # settings.plugins = {
-          #   jedi_definition = {
-          #     enabled = true;
-          #   };
-          # };
+          extraOptions = {
+            analysis = {
+              ignore = ["*"];
+            };
+          };
         };
         rust-analyzer = {
           enable = true;
@@ -785,6 +785,7 @@ in {
         markdown.enabled = true;
       };
     };
+    lazygit.enable = true;
     tmux-navigator.enable = true;
 
     luasnip = {
@@ -913,7 +914,6 @@ in {
   };
   extraPlugins = with pkgs.vimPlugins;
     [
-      lazygit-nvim
     ]
     ++ extraPlugins;
 }
