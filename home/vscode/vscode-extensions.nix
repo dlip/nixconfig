@@ -297,7 +297,7 @@
     name = "python";
     publisher = "ms-python";
     version = "2024.11.2024070802";
-    sha256 = "0lbww6z6pwhk8hn38cpqdc9p9kchvhrh29sgf9msw15d5ljiahqb";
+    sha256 = "9ZKKPWkh5aouncb1r9WDXjY0vIoehuA06NBttiCur7M=";
   }
   {
     name = "remote-containers";
