@@ -729,7 +729,6 @@ in {
       sources = {
         formatting = {
           alejandra.enable = true;
-          black.enable = true;
           # eslint.enable = true;
           gofmt.enable = true;
           shfmt.enable = true;

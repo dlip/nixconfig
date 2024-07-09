@@ -92,7 +92,6 @@
     nix-on-droid,
     sops-nix,
     nix-darwin,
-    nixvim,
     ...
   }: let
     pkgsForSystem = {
@@ -118,7 +117,7 @@
           ];
       };
 
-    configs = rec {
+    configs = {
       dane = [
         ./home
         {
@@ -178,18 +177,15 @@
 
         pushNixStoreDockerImage = pkgs.callPackage ./pkgs/pushNixStoreDockerImage {};
       };
-      devShell = let
-        nvim = nixvim.legacyPackages."${system}".makeNixvim (builtins.removeAttrs (pkgs.callPackage ./home/nixvim.nix {}).programs.nixvim ["enable"]);
-      in
-        pkgs.mkShell {
-          buildInputs = with pkgs; [
-            nvim
-          ];
-        };
+      devShell = pkgs.mkShell {
+        buildInputs = [
+          pkgs.nixvim
+        ];
+      };
     })
     // {
       nixosConfigurations = {
-        metabox = nixpkgs.lib.nixosSystem rec {
+        metabox = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = pkgsForSystem {system = "x86_64-linux";};
           modules = [
@@ -214,7 +210,7 @@
             }
           ];
         };
-        dex = nixpkgs.lib.nixosSystem rec {
+        dex = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = pkgsForSystem {system = "x86_64-linux";};
           modules = [
@@ -236,7 +232,7 @@
             }
           ];
         };
-        g = nixpkgs.lib.nixosSystem rec {
+        g = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = pkgsForSystem {system = "x86_64-linux";};
           modules = [
@@ -259,7 +255,7 @@
             }
           ];
         };
-        x = nixpkgs.lib.nixosSystem rec {
+        x = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = pkgsForSystem {system = "x86_64-linux";};
           modules = [
@@ -285,7 +281,7 @@
             }
           ];
         };
-        ptv = nixpkgs.lib.nixosSystem rec {
+        ptv = nixpkgs.lib.nixosSystem {
           system = "x86_64-linux";
           pkgs = pkgsForSystem {system = "x86_64-linux";};
           modules = [
