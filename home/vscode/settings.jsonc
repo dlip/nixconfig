@@ -235,5 +235,6 @@
   },
   "editor.stickyScroll.enabled": true,
   "window.menuBarVisibility": "hidden",
-  "workbench.sideBar.location": "right"
+  "workbench.sideBar.location": "right",
+  "python.defaultInterpreterPath": "/Users/bytedance/code/ocloud-api-row/venv"
 }
