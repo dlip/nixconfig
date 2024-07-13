@@ -4,6 +4,8 @@
     emacs-all-the-icons-fonts
     font-awesome
     fontconfig
+    hachimarupop
+    hanazono
     noto-fonts
     noto-fonts-cjk
     # noto-fonts-emoji # broken

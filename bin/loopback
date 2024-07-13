@@ -11,7 +11,7 @@ set -euo pipefail
 # Record your sound (videoconference) from virtual2.monitor
 
 MICROPHONE=${MICROPHONE:-"alsa_input.usb-BlueAnt_StreamX_BlueAnt_StreamX_20200508V100-00.pro-input-0"}
-SPEAKERS=${SPEAKERS:-"alsa_output.pci-0000_01_00.1.pro-output-3"}
+SPEAKERS=${SPEAKERS:-"alsa_output.usb-BlueAnt_StreamX_BlueAnt_StreamX_20200508V100-00.pro-output-0"}
 
 module_file="/tmp/pulseaudio_module_list.txt"
 
