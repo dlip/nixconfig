@@ -12,20 +12,20 @@
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
-  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "uas" "sd_mod" "btintel"];
+  boot.initrd.availableKernelModules = ["xhci_pci" "ahci" "usb_storage" "usbhid" "uas" "sd_mod" "btintel" "nvme" "rtsx_pci_sdmmc"];
   boot.initrd.kernelModules = [];
   boot.kernelModules = ["kvm-intel"];
   boot.extraModulePackages = [];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/3c17bc3c-872a-4483-a6ec-29cb1b5a14d1";
+    device = "/dev/disk/by-uuid/dc9c2954-7c2f-4c7a-85c7-feda0111f655";
     fsType = "ext4";
   };
 
-  boot.initrd.luks.devices."cryptroot".device = "/dev/disk/by-uuid/6b9e61d0-b58c-475b-a9fd-d1e2ed0217f5";
+  boot.initrd.luks.devices."luks-ebfbfe12-c14d-4f80-a45f-1b1cbb197bd5".device = "/dev/disk/by-uuid/ebfbfe12-c14d-4f80-a45f-1b1cbb197bd5";
 
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/0B69-96D6";
+    device = "/dev/disk/by-uuid/820A-C888";
     fsType = "vfat";
   };
 
@@ -93,7 +93,11 @@
     options = ["bind"];
   };
 
-  swapDevices = [{device = "/.swapfile";}];
+  # swapDevices = [{device = "/.swapfile";}];
 
-  powerManagement.cpuFreqGovernor = lib.mkDefault "powersave";
+  networking.useDHCP = lib.mkDefault true;
+  # networking.interfaces.wlp0s20f3.useDHCP = lib.mkDefault true;
+
+  nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

@@ -2,8 +2,15 @@
 
 echo "Display change $(date)"
 
-grep -q closed /proc/acpi/button/lid/LID/state
-LID_CLOSED=$?
+if [ -f "/proc/acpi/button/lid/LID/state" ]; then
+  grep -q closed /proc/acpi/button/lid/LID/state
+  LID_CLOSED=$?
+elif [ -f "/proc/acpi/button/lid/LID0/state" ]; then
+  grep -q closed /proc/acpi/button/lid/LID0/state
+  LID_CLOSED=$?
+else
+  LID_CLOSED=0
+fi
 
 # monitor command sometimes errors when reloading config
 for _ in {1..30}; do
