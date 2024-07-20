@@ -17,7 +17,6 @@
     ansifilter
     autoreconfHook
     avrdude
-    aws-google-auth
     patchelf
     nix-index
     stable.awscli2
@@ -60,12 +59,9 @@
     kubectx
     kubernetes-helm
     kubetail
-    ledger
-    ledger-autosync
     lldb
     lsof
     (lua.withPackages (ps: with ps; [luacheck]))
-    mangal
     massren
     mdbook
     mdl
@@ -123,7 +119,6 @@
     wasmtime
     yarn
     yarn2nix
-    youtube-dl
     yt-dlp
     yq
     # yubikey-manager #broken

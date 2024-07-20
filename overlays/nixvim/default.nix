@@ -718,7 +718,7 @@ in {
           tree-sitter-nu
         ]
         ++ builtins.attrValues (pkgs.lib.filterAttrs (k: v: pkgs.lib.hasPrefix "tree-sitter" k) pkgs.vimPlugins.nvim-treesitter.builtGrammars);
-      indent = true;
+      settings.indent.enable = true;
       folding = true;
     };
     treesitter-context.enable = true;
