@@ -52,6 +52,16 @@
     };
   };
 
+  fileSystems."/media/media3" = {
+    device = "/dev/disk/by-uuid/5e2a3276-1da2-4e4a-928d-fb000ca24fa9"; # UUID for encrypted partition
+    fsType = "ext4";
+    encrypted = {
+      enable = true;
+      label = "media3";
+      blkDev = "/dev/disk/by-uuid/247f0476-38a2-4e2e-a059-2139ffb58324"; # UUID for dev
+      keyFile = "/lukskey";
+    };
+  };
   # Why does this not work???
   # fileSystems."/media/backup" = {
   #   device =
