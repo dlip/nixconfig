@@ -87,12 +87,31 @@ in rec {
       Group = "root";
     };
 
-    script = ''
-      if ! /run/wrappers/bin/mount | grep -q -wi "/media/backup"; then
-         ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/disk/by-uuid/8c4746b9-7ccb-4a94-8e72-502ea6ff4a49 backup
-         /run/wrappers/bin/mount /dev/mapper/backup /media/backup
-      fi
-    '';
+    script =
+      /*
+      bash
+      */
+      ''
+        UUID=""
+        for ID in 8c4746b9-7ccb-4a94-8e72-502ea6ff4a49 05d74c77-c9f2-4101-af0b-b1c7141a4fd0; do
+          if [ -e "/dev/disk/by-uuid/$ID" ]; then
+            echo "found disk $ID"
+            UUID=$ID
+            break
+          fi
+        done
+
+        if [ "$UUID" == "" ]; then
+          echo "backup device not found"
+          exit 1
+        fi
+
+
+        if ! /run/wrappers/bin/mount | grep -q -wi "/media/backup"; then
+           ${pkgs.cryptsetup}/bin/cryptsetup --key-file /root/lukskey luksOpen /dev/disk/by-uuid/$UUID backup
+           /run/wrappers/bin/mount /dev/mapper/backup /media/backup
+        fi
+      '';
   };
 
   users.users.tv = {
@@ -530,12 +549,12 @@ in rec {
   services.restic.backups = {
     dex = {
       paths = [
-        "/home" # probably not needed?
-        "/root" # done
+        "/home"
+        "/root"
         "/media/media/home"
-        "/mnt/services" # done
-        "/mnt/downloader" # done
-        "/var/lib" # done
+        "/mnt/services"
+        "/mnt/downloader"
+        "/var/lib"
         "/media/media/nextcloud"
         "/media/media/paperless"
         "/media/media/photos"
@@ -602,5 +621,14 @@ in rec {
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.kanata = {
+    enable = true;
+    keyboards = {
+      laptop = {
+        devices = ["/dev/input/by-path/platform-i8042-serio-0-event-kbd"];
+        config = builtins.readFile ../../keymaps/kanata/engram.kbd;
+      };
+    };
+  };
   system.stateVersion = "23.05"; # Did you read the comment?
 }
