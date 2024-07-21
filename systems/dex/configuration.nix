@@ -216,7 +216,7 @@ in rec {
   hardware.bluetooth.enable = true;
   networking.nat.enable = true;
   networking.nat.internalInterfaces = ["wg0" "ve-+"];
-  networking.nat.externalInterface = "wlp3s0";
+  networking.nat.externalInterface = "enp8s0";
 
   networking.wireguard.interfaces = {
     # "wg0" is the network interface name. You can name the interface arbitrarily.
