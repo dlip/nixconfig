@@ -507,19 +507,18 @@ in rec {
   #   after = ["postgresql.service"];
   # };
 
-  # sops.secrets.paperless-adminpass = {
-  #   owner = "paperless";
-  #   group = "paperless";
-  # };
+  sops.secrets.paperless-adminpass = {
+    owner = "paperless";
+    group = "paperless";
+  };
 
-  # hanging on doCheck
-  # services.paperless = {
-  #   enable = true;
-  #   dataDir = "/var/lib/paperless";
-  #   mediaDir = "/media/media/paperless/media";
-  #   consumptionDir = "/media/media/paperless/consume";
-  #   passwordFile = config.sops.secrets.paperless-adminpass.path;
-  # };
+  services.paperless = {
+    enable = true;
+    dataDir = "/var/lib/paperless";
+    mediaDir = "/media/media/paperless/media";
+    consumptionDir = "/media/media/paperless/consume";
+    passwordFile = config.sops.secrets.paperless-adminpass.path;
+  };
 
   sops.secrets.photoprism-adminpass = {};
 
