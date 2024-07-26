@@ -44,6 +44,7 @@ in {
     ];
   };
   hardware.enableAllFirmware = true;
+  hardware.opentabletdriver.enable = true;
 
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
