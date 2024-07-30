@@ -385,7 +385,7 @@ in {
     {
       mode = "n";
       key = "<leader>/";
-      action = "<cmd>Telscope current_buffer_fuzzy_find<CR>";
+      action = "<cmd>Telescope current_buffer_fuzzy_find<CR>";
       options = {
         desc = "Fuzzy find";
         silent = true;
