@@ -561,19 +561,52 @@ in {
     };
     which-key = {
       enable = true;
-      registrations = {
-        "<leader>e" = "Debug";
-        "<leader>g" = "Git";
-        "<leader>gy" = "Yank git link";
-        "<leader>h" = "Harpoon Add";
-        "<leader>H" = "Harpoon Menu";
-        "<leader>1" = "Harpoon 1";
-        "<leader>2" = "Harpoon 2";
-        "<leader>3" = "Harpoon 3";
-        "<leader>4" = "Harpoon 4";
-        "<leader>," = "Previous Harpoon";
-        "<leader>." = "Next Harpoon";
-      };
+      settings.spec = [
+        {
+          __unkeyed-1 = "<leader>e";
+          desc = "Debug";
+        }
+        {
+          __unkeyed-1 = "<leader>g";
+          desc = "Git";
+        }
+        {
+          __unkeyed-1 = "<leader>gy";
+          desc = "Yank git link";
+        }
+        {
+          __unkeyed-1 = "<leader>h";
+          desc = "Harpoon Add";
+        }
+        {
+          __unkeyed-1 = "<leader>H";
+          desc = "Harpoon Menu";
+        }
+        {
+          __unkeyed-1 = "<leader>1";
+          desc = "Harpoon 1";
+        }
+        {
+          __unkeyed-1 = "<leader>2";
+          desc = "Harpoon 2";
+        }
+        {
+          __unkeyed-1 = "<leader>3";
+          desc = "Harpoon 3";
+        }
+        {
+          __unkeyed-1 = "<leader>4";
+          desc = "Harpoon 4";
+        }
+        {
+          __unkeyed-1 = "<leader>,";
+          desc = "Previous Harpoon";
+        }
+        {
+          __unkeyed-1 = "<leader>.";
+          desc = "Next Harpoon";
+        }
+      ];
     };
     telescope = {
       enable = true;
