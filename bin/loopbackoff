@@ -10,7 +10,7 @@ fi
 
 while read -r module; do
   if [[ "${module}" =~ ^[0-9]+$ ]]; then
-    pactl unload-module "${module}"
+    pactl unload-module "${module}" || true
   else
     echo "ERROR: file ${module_file} is not correctly formated" >&2
     exit 1

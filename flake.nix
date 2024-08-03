@@ -272,6 +272,7 @@
                     home.email = "dane.lipscombe@planpay.com";
                     imports = [
                       ./home/linux-desktop.nix
+                      ./home/linux-graphical.nix
                       ./home/gamedev.nix
                       ./home/gaming.nix
                     ];

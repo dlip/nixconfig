@@ -8,7 +8,6 @@
     ./default.nix
     ./syncthing
     ./desktop.nix
-    ./linux-graphical.nix
     ./mime.nix
     ./btop
   ];
@@ -25,7 +24,7 @@
     kanata
     kmonad
     krename
-    nix-du
+    # nix-du
     ns-usbloader
     pinentry
     # python311Packages.adafruit-nrfutil
