@@ -1,6 +1,6 @@
 inputs @ {
   # , poetry2nix
-  actual-server,
+  # actual-server,
   emoji-menu,
   power-menu,
   # kanata,
@@ -20,10 +20,10 @@ inputs @ {
   # packages
   (final: prev: {
     inherit sops-nix mac-app-util;
-    actualServer = final.callPackage ./actualServer {
-      src = actual-server;
-      nodejs = final.nodejs-16_x;
-    };
+    # actualServer = final.callPackage ./actualServer {
+    #   src = actual-server;
+    #   nodejs = final.nodejs-16_x;
+    # };
     # vscodeNodeDebug2 = final.callPackage ./vscodeNodeDebug2 {src = vscodeNodeDebug2;};
     emoji-menu = final.writeShellScriptBin "emoji-menu" (builtins.readFile "${emoji-menu}/bin/emoji-menu");
     # myEspanso = final.callPackage ./espanso {};

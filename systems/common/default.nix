@@ -219,7 +219,6 @@ in {
 
   virtualisation.docker.enable = true;
   hardware.nvidia-container-toolkit.enable = true;
-  systemd.enableUnifiedCgroupHierarchy = false;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -30,10 +30,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.home-manager.follows = "home-manager";
     };
-    actual-server = {
-      url = "github:actualbudget/actual-server";
-      flake = false;
-    };
+    # actual-server = {
+    #   url = "github:actualbudget/actual-server";
+    #   flake = false;
+    # };
     emoji-menu = {
       url = "github:jchook/emoji-menu";
       flake = false;
