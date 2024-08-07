@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.zsh = {
     enable = true;
     autosuggestion.enable = true;
@@ -8,24 +12,6 @@
       ignoreDups = true;
       save = 1000000;
       size = 1000000;
-    };
-
-    shellAliases = {
-      c = "clear";
-      g = "git";
-      h = "hx";
-      n = "nnn";
-      ren = "qmv -f do";
-      s = "rg --files-with-matches";
-      v = "nvim";
-      x = "xplr";
-      ls = "lsd";
-      lg = "lazygit";
-      # find = "fd";
-      grc = "git reset $(git merge-base HEAD origin/main)";
-      rt = "zellij action rename-tab";
-      zj = "zellij";
-      code = "code --enable-features=UseOzonePlatform --ozone-platform=wayland";
     };
 
     initExtraFirst = ''
@@ -48,6 +34,7 @@
 
       source "${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
       source "${pkgs.repo-catppuccin-zsh-syntax-highlighting}/themes/catppuccin_macchiato-zsh-syntax-highlighting.zsh"
+      source "${config.home.homeDirectory}/code/nixconfig/bin/aliases"
     '';
 
     oh-my-zsh = {
