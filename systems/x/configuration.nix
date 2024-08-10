@@ -118,8 +118,8 @@ in {
   };
 
   networking.firewall = {
-    allowedTCPPorts = [3000 32412];
-    allowedUDPPorts = [51820]; # Clients and peers can use the same port, see listenport
+    allowedTCPPorts = [3000];
+    allowedUDPPorts = [51820 32412]; # Clients and peers can use the same port, see listenport
   };
 
   programs.steam = {
