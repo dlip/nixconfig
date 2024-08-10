@@ -34,6 +34,10 @@ in {
     shell = "/etc/profiles/per-user/dane/bin/zsh";
   };
 
+  environment.systemPackages = with pkgs; [
+    plex-mpv-shim
+  ];
+
   hardware.graphics = {
     enable = true;
     extraPackages = with pkgs; [
@@ -114,6 +118,7 @@ in {
   };
 
   networking.firewall = {
+    allowedTCPPorts = [3000 32412];
     allowedUDPPorts = [51820]; # Clients and peers can use the same port, see listenport
   };
 
