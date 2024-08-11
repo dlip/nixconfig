@@ -81,6 +81,9 @@
 
       # inputs.nixpkgs.follows = "nixpkgs";
     };
+    talon = {
+      url = "github:nix-community/talon-nix";
+    };
   };
 
   outputs = inputs @ {
@@ -92,6 +95,7 @@
     nix-on-droid,
     sops-nix,
     nix-darwin,
+    talon,
     ...
   }: let
     pkgsForSystem = {
@@ -262,6 +266,7 @@
             ./systems/x/configuration.nix
             sops-nix.nixosModules.default
             home-manager.nixosModules.home-manager
+            talon.nixosModules.talon
             {
               home-manager = {
                 useGlobalPkgs = true;
