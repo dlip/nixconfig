@@ -754,7 +754,13 @@ in {
       settings.indent.enable = true;
       folding = true;
     };
-    treesitter-context.enable = true;
+    treesitter-context = {
+      enable = true;
+      settings = {
+        max_lines = 8;
+        trim_scope = "outer";
+      };
+    };
 
     none-ls = {
       enable = true;
