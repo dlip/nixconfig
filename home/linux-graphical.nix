@@ -51,6 +51,7 @@
     vlc
     warpd
     whatsapp-for-linux
+    xdragon
     yacreader
   ];
 }

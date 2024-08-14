@@ -32,6 +32,7 @@ with lib; {
     ./starship
     ./tmux
     ./version.nix
+    ./yazi
     ./zellij
     ./zsh
     ./nushell
