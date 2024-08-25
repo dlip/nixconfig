@@ -214,8 +214,8 @@ in {
 
   hardware.bluetooth.enable = true;
   services.blueman.enable = true;
-  services.clamav.daemon.enable = true;
-  services.clamav.updater.enable = true;
+  # services.clamav.daemon.enable = true;
+  # services.clamav.updater.enable = true;
 
   virtualisation.docker.enable = true;
   hardware.nvidia-container-toolkit.enable = true;

@@ -22,6 +22,7 @@
     iotop
     iputils
     kanata
+    kdePackages.k3b # export QTWEBENGINE_DISABLE_SANDBOX=1; sudo -EH k3b
     kmonad
     krename
     # nix-du

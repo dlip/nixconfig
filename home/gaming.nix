@@ -3,8 +3,8 @@
     alvr
     # minecraft
     bottles
-    heroic
-    lutris
+    # heroic
+    # lutris
     mangohud
     gamemode
     protontricks

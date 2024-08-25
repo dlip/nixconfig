@@ -26,7 +26,7 @@
     cargo-wasi
     cheat
     clang-tools
-    clamav
+    # clamav
     delve
     deno
     dive
@@ -110,7 +110,7 @@
     tldr
     # turbo
     ttyper
-    terminal-typeracer
+    # terminal-typeracer
     unrar
     wireshark-cli
     typespeed
