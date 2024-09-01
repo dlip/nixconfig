@@ -750,7 +750,30 @@ in {
         [
           tree-sitter-nu
         ]
-        ++ builtins.attrValues (pkgs.lib.filterAttrs (k: v: pkgs.lib.hasPrefix "tree-sitter" k) pkgs.vimPlugins.nvim-treesitter.builtGrammars);
+        ++ (with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+          # https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/editors/vim/plugins/nvim-treesitter/generated.nix
+          bash
+          git_config
+          git_rebase
+          gitattributes
+          gitcommit
+          gitignore
+          json
+          jsonc
+          lua
+          make
+          markdown
+          nix
+          readline
+          regex
+          ssh-config
+          toml
+          vim
+          vimdoc
+          xml
+          yaml
+        ]);
+      # ++ builtins.attrValues (pkgs.lib.filterAttrs (k: v: pkgs.lib.hasPrefix "tree-sitter" k) pkgs.vimPlugins.nvim-treesitter.builtGrammars);
       settings.indent.enable = true;
       folding = true;
     };

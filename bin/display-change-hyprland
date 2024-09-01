@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 echo "Display change $(date)"
+echo "Lid $(cat /proc/acpi/button/lid/LID/state)"
 
 if [ -f "/proc/acpi/button/lid/LID/state" ]; then
   grep -q closed /proc/acpi/button/lid/LID/state
@@ -22,19 +23,23 @@ for _ in {1..30}; do
   break
 done
 
-hyprctl monitors | grep -q HDMI
-HDMI_CONNECTED=$?
+IMONITOR=$(hyprctl monitors | grep -E 'Monitor (eDP)' | head -n 1 | cut -d' ' -f2-2)
+MONITOR=$(hyprctl monitors | grep -E 'Monitor (DP|HDMI)' | head -n 1 | cut -d' ' -f2-2)
+echo "monitor $MONITOR"
+hyprctl monitors
+# hyprctl monitors | grep -q HDMI
+#HDMI_CONNECTED=$?
 
 if [ "$LID_CLOSED" -eq 0 ]; then
   echo "lid closed"
-  if [ "$HDMI_CONNECTED" -eq 0 ]; then
-    echo "hdmi connected"
+  if [ -n "$MONITOR" ]; then
+    echo "monitor connected"
     echo "disabling laptop monitor"
     hyprctl keyword monitor "eDP-1,disable"
     echo "turning monitors on"
     hyprctl dispatch dpms on
   else
-    echo "hdmi not connected"
+    echo "monitor not connected"
     echo "locking the session"
     pidof hyprlock || hyprlock && display-change-hyprland
   fi

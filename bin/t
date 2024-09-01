@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Open project
+
+PROJECTS="$HOME/code"
+# Ensure each project is in zoxide
+for path in $(find "$PROJECTS" -maxdepth 1 -mindepth 1 -type d -o -type l); do
+  if [[ $(zoxide query -l -s "$path" | wc -c) -eq 0 ]]; then
+    zoxide add "$path"
+  fi
+done
+
+filter_params=""
+if [ -n "${1:-}" ]; then
+  filter_params="-q $1"
+fi
+repo_path=$(zoxide query -l "$PROJECTS/" | sed "s|$PROJECTS/||" | fzf $filter_params --select-1)
+session=$(basename $repo_path)
+if [ -n "$repo_path" ]; then
+  cd "$PROJECTS/$repo_path"
+  if tmux has-session -t $session 2>/dev/null; then
+    if [ -n "${TMUX:-}" ]; then
+      tmux switch-client -t "$session"
+    else
+      tmux attach-session -t "$session"
+    fi
+  else
+    zoxide add "$PROJECTS/$repo_path"
+    tmux new-session -d -s $session -n editor direnv exec . $EDITOR
+    window=2
+    tmux new-window -t $session:$window -n 'shell'
+    window=3
+    tmux new-window -t $session:$window -n 'git' lazygit
+    window=4
+    tmux new-window -t $session:$window -n 'files' nnn
+    window=1
+    tmux select-window -t $session:$window
+    if [ -n "${TMUX:-}" ]; then
+      tmux switch-client -t "$session"
+    else
+      tmux attach-session -t "$session"
+    fi
+  fi
+fi
