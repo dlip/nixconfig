@@ -557,7 +557,7 @@ in {
   plugins = {
     lualine = {
       enable = true;
-      theme = "catppuccin";
+      settings.options.theme = "catppuccin";
     };
     which-key = {
       enable = true;
