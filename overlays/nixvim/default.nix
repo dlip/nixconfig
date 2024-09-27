@@ -18,7 +18,7 @@ in {
       integrations = {
         cmp = true;
         gitsigns = true;
-        treesitter = true;
+        # treesittertsserver = true;
         telescope = {
           enabled = true;
         };
@@ -679,7 +679,7 @@ in {
           installCargo = true;
           installRustc = true;
         };
-        tsserver.enable = true;
+        ts-ls.enable = true;
         yamlls.enable = true;
       };
       keymaps = {
@@ -972,6 +972,7 @@ in {
     #   };
     # };
     openscad.enable = true;
+    web-devicons.enable = true;
   };
   extraPlugins = with pkgs.vimPlugins;
     [
